@@ -11,5 +11,14 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .jpIC, name: "card.hayakaken", imageName: "jpIC_hayakaken", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.sugoca", imageName: "jpIC_sugoca", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.SAPICA", imageName: "jpIC_SAPICA", isDefault: false),
-    CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_IruCa", isDefault: false)
+    CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_IruCa", isDefault: false),
+    
+    
+    // MARK:cnTunion
+    CardDesigin(type: .cnTunion, name: "card.default", imageName: "cnTunion_dummy",  isDefault: true),
+    CardDesigin(type: .cnTunion, name: "北京一卡通", imageName: "cnTunion_beijing",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "上海公共交通卡", imageName: "cnTunion_shanghai",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "深圳通", imageName: "cnTunion_shenzhen",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "羊城通", imageName: "cnTunion_yangchengtong",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "八达通", imageName: "cnTunion_hkOctopus",  isDefault: false)
 ]
