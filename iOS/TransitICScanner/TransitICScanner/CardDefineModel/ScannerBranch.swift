@@ -4,7 +4,8 @@ import CoreNFC
 
 let cardItems: [CardInfo] = [
     jpIC,
-    jpIC_other
+    jpIC_other,
+    cnTunion
 ]
 
 /// 種別で動作を切り替える定義
@@ -15,6 +16,8 @@ extension NFCScannerModel {
             self.jpIC_scan(tag,session)
         case "jpIC_other":
             self.jpIC_scan(tag,session)
+        case "cnTunion":
+            self.cnTunion_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -26,6 +29,7 @@ extension NFCScannerModel {
 enum ConverterType: String {
     case jpIC
     case jpIC_other
+    case cnTunion
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -33,6 +37,8 @@ enum ConverterType: String {
             jpIC_Converter.cardInfo(info)
         case .jpIC_other:
             jpIC_Converter.cardInfo(info)
+        case .cnTunion:
+            cnTunion_Converter.cardInfo(info)
         }
     }
 
@@ -42,6 +48,8 @@ enum ConverterType: String {
             jpIC_Converter.history(item)
         case .jpIC_other:
             jpIC_Converter.history(item)
+        case .cnTunion:
+            cnTunion_Converter.history(item)
         }
     }
 }
