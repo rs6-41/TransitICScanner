@@ -20,7 +20,7 @@ extension NFCScannerModel {
         case "cnTunion":
             self.cnTunion_scan(tag,session)
         case "hkOctopus":
-            self.hkOctopus_scan(tag,session)
+            await self.hkOctopus_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -42,9 +42,9 @@ enum ConverterType: String {
         case .jpIC_other:
             jpIC_Converter.cardInfo(info)
         case .cnTunion:
-            cnTunion_Converter.cardInfo(
+            cnTunion_Converter.cardInfo(info)
         case .hkOctopus:
-            hkOctopus_Converter.cardInfo(info))
+            hkOctopus_Converter.cardInfo(info)
         }
     }
 
