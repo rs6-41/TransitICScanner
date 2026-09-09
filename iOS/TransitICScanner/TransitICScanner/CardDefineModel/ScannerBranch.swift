@@ -24,7 +24,7 @@ extension NFCScannerModel {
         case "hkOctopus":
             await self.hkOctopus_scan(tag,session)
         case "krOneCard":
-            await self.hkOctopus_scan(tag,session)
+            await self.krOneCard_scan(tag,session)
         case "twICash":
             await self.twICash_scan(tag,session)
             
