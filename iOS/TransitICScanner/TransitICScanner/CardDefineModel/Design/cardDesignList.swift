@@ -27,5 +27,8 @@ let cardDesignList:[CardDesigin] = [
     
     // MARK:krOneCard
     CardDesigin(type: .krOneCard, name: "card.tmoney", imageName: "krOneCard_tmoney",  isDefault: true),
-    CardDesigin(type: .krOneCard, name: "card.ezl", imageName: "krOneCard_ezl",  isDefault: true)
+    CardDesigin(type: .krOneCard, name: "card.ezl", imageName: "krOneCard_ezl",  isDefault: true),
+    
+    // MARK:twICash
+    CardDesigin(type: .twICash, name: "card.twICash", imageName: "twICash",  isDefault: true)
 ]
