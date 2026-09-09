@@ -23,5 +23,9 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .cnTunion, name: "八达通", imageName: "cnTunion_hkOctopus",  isDefault: false),
     
     // MARK:hkOctopus
-    CardDesigin(type: .hkOctopus, name: "card.hkOctopus", imageName: "hkOctopus",  isDefault: true)
+    CardDesigin(type: .hkOctopus, name: "card.hkOctopus", imageName: "hkOctopus",  isDefault: true),
+    
+    // MARK:krOneCard
+    CardDesigin(type: .krOneCard, name: "card.tmoney", imageName: "krOneCard_tmoney",  isDefault: true),
+    CardDesigin(type: .krOneCard, name: "card.ezl", imageName: "krOneCard_ezl",  isDefault: true)
 ]
