@@ -24,9 +24,7 @@ let krOneCard = CardInfo(
         currency: "currency.KRW",
         converter:.krOneCard
     ),
-    infomation: AnyView(
-        krOneCard_info()
-    )
+    infomation: nil
 )
 
 extension NFCScannerModel {
