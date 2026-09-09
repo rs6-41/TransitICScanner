@@ -24,9 +24,9 @@ extension NFCScannerModel {
         case "hkOctopus":
             await self.hkOctopus_scan(tag,session)
         case "krOneCard":
-            await self.krOneCard_scan(tag,session)
+            self.krOneCard_scan(tag,session)
         case "twICash":
-            await self.twICash_scan(tag,session)
+            self.twICash_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -72,7 +72,7 @@ enum ConverterType: String {
             hkOctopus_Converter.history(item)
         case .krOneCard:
             krOneCard_Converter.history(item)
-        case .krOneCard:
+        case .twICash:
             twICash_Converter.history(item)
         }
     }
