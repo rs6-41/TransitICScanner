@@ -25,8 +25,8 @@ iOSではMifare Classicの読み取りができない。
 | 地域 | 名称 | 実装名 | NFC | 規格 | iOS | Android | 備考 |
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | 北海道 | DoCard/Asaca | | Type-F | 独自 | | | |
-| 札幌 | SAPICA | | Type-F | 🈹サイバネ | ✅ | | |
-| 香川 | IruCa | | Type-F | 🈹サイバネ | ✅ | | |
+| 札幌 | SAPICA | jpIC_other | Type-F | 🈹サイバネ | ✅ | | |
+| 香川 | IruCa | jpIC_other | Type-F | 🈹サイバネ | ✅ | | |
 | 長崎 | N+ | jpNplus | Type-F | 独自 | | | |
 
 ## コミットメッセージ規定
