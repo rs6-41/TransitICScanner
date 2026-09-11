@@ -30,5 +30,9 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .krOneCard, name: "card.ezl", imageName: "krOneCard_ezl",  isDefault: true),
     
     // MARK:twICash
-    CardDesigin(type: .twICash, name: "card.twICash", imageName: "twICash",  isDefault: true)
+    CardDesigin(type: .twICash, name: "card.twICash", imageName: "twICash",  isDefault: true),
+    
+    
+    // MARK:jpNplus
+    CardDesigin(type: .jpNplus, name: "card.jpNplus", imageName: "jpNplus", isDefault: true)
 ]
