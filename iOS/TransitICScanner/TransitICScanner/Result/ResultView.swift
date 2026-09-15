@@ -37,7 +37,7 @@ struct ResultView: View {
                 }
             }
             .navigationTitle(
-                Text(result.info?.displayName ?? String(localized:"result.title"))
+                Text(String(localized: String.LocalizationValue(result.info?.displayName ?? "result.title")))
             )
             
         }

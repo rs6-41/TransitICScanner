@@ -80,6 +80,8 @@ enum ConverterType: String {
             krOneCard_Converter.history(item)
         case .twICash:
             twICash_Converter.history(item)
+        case .jpNplus:
+            jpNplus_Converter.history(item)
         }
     }
 }
