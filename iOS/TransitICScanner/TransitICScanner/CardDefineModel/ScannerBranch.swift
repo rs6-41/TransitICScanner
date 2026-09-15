@@ -31,6 +31,9 @@ extension NFCScannerModel {
         case "jpNplus":
             self.jpNplus_scan(tag,session)
             
+        case "jpNplus":
+            self.jpNplus_scan(tag,session)
+            
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
             return
