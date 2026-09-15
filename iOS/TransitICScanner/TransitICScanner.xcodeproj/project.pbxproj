@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA8EA9AE3059037D00E17AC2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */; };
-		AA8EA9B03059038500E17AC2 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */; };
+		AA48C8D33057CE880052CA11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA48C8D23057CE880052CA11 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		AA48C8D23057CE880052CA11 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,8 +48,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */,
-				AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */,
+				AA48C8D23057CE880052CA11 /* Localizable.xcstrings */,
 				000000000000000000000020 /* Products */,
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
 			);
@@ -124,8 +121,7 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				AA8EA9B03059038500E17AC2 /* InfoPlist.xcstrings in Resources */,
-				AA8EA9AE3059037D00E17AC2 /* Localizable.xcstrings in Resources */,
+				AA48C8D33057CE880052CA11 /* Localizable.xcstrings in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
