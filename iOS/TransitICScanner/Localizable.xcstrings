@@ -1,0 +1,2442 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "%@ %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "%@%@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "%@%@ %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$@%3$@"
+          }
+        }
+      }
+    },
+    "%@%@%@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@%3$@"
+          }
+        }
+      }
+    },
+    "0%@" : {
+
+    },
+    "card.company.jr" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        }
+      }
+    },
+    "card.company.kotoden" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ことでん"
+          }
+        }
+      }
+    },
+    "card.default" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
+          }
+        }
+      }
+    },
+    "card.ezl" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL"
+          }
+        }
+      }
+    },
+    "card.hayakaken" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はやかけん"
+          }
+        }
+      }
+    },
+    "card.hkOctopus" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オクトパス/八達通"
+          }
+        }
+      }
+    },
+    "card.hongkong_tunion" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オクトパス/八達通"
+          }
+        }
+      }
+    },
+    "card.icoca" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
+        }
+      }
+    },
+    "card.jpNplus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エヌタスカード"
+          }
+        }
+      }
+    },
+    "card.kcash" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "K-CASH / 케이캐쉬"
+          }
+        }
+      }
+    },
+    "card.macau_tunion" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオパス"
+          }
+        }
+      }
+    },
+    "card.manaca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
+        }
+      }
+    },
+    "card.moiba" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        }
+      }
+    },
+    "card.nimoca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
+        }
+      }
+    },
+    "card.pasmo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
+        }
+      }
+    },
+    "card.phone" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モバイル"
+          }
+        }
+      }
+    },
+    "card.SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "card.snapper" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snapper"
+          }
+        }
+      }
+    },
+    "card.sugoca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
+        }
+      }
+    },
+    "card.suica" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        }
+      }
+    },
+    "card.tmoney" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money / 티머니"
+          }
+        }
+      }
+    },
+    "card.toica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        }
+      }
+    },
+    "card.twEasyCard_old" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard（悠遊卡）"
+          }
+        }
+      }
+    },
+    "card.twICash" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        }
+      }
+    },
+    "card.web.moMacauPass" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオパス"
+          }
+        }
+      }
+    },
+    "card.web.twEasyCard_old" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard（悠遊卡）"
+          }
+        }
+      }
+    },
+    "card.web.twEasyCard_old.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡/悠遊聯名卡/超級悠遊卡"
+          }
+        }
+      }
+    },
+    "card.web.twiPass_old" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "iPASS（一卡通）"
+          }
+        }
+      }
+    },
+    "cardList.area.cn" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中国本土"
+          }
+        }
+      }
+    },
+    "cardList.area.hk" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港"
+          }
+        }
+      }
+    },
+    "cardList.area.jp" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日本"
+          }
+        }
+      }
+    },
+    "cardList.area.kr" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓国"
+          }
+        }
+      }
+    },
+    "cardList.area.mo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオ"
+          }
+        }
+      }
+    },
+    "cardList.area.tw" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台湾"
+          }
+        }
+      }
+    },
+    "cardList.cnTunion" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-Union（交通聯合）"
+          }
+        }
+      }
+    },
+    "cardList.cnTunion.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "T-Unionマークのある中国の交通カード"
+          }
+        }
+      }
+    },
+    "cardList.description" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "各ブランドは本アプリの提携・承認関係にありません。\nスキャン結果は参考用です。"
+          }
+        }
+      }
+    },
+    "cardList.error.nfc" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFCに非対応の端末か、NFCが無効です。"
+          }
+        }
+      }
+    },
+    "cardList.hkOctopus" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus（八達通）"
+          }
+        }
+      }
+    },
+    "cardList.hkOctopus.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オクトパスカード"
+          }
+        }
+      }
+    },
+    "cardList.jpDoCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doカード / Asacaカード"
+          }
+        }
+      }
+    },
+    "cardList.jpDoCard.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川電気軌道および道北バス"
+          }
+        }
+      }
+    },
+    "cardList.jpIC" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "交通系ICカード"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_other.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA(札幌)、IruCa(香川)"
+          }
+        }
+      }
+    },
+    "cardList.jpIC.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica, PASMO, ICOCAなど全国互換カード"
+          }
+        }
+      }
+    },
+    "cardList.jpNplus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エヌタス(N+)"
+          }
+        }
+      }
+    },
+    "cardList.jpNplus.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎バスカード"
+          }
+        }
+      }
+    },
+    "cardList.krOneCard" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        }
+      }
+    },
+    "cardList.krOneCard.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money, EZLなど韓国の大半の交通カード"
+          }
+        }
+      }
+    },
+    "cardList.nowLocate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在の地域"
+          }
+        }
+      }
+    },
+    "cardList.otherLocate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "他の地域"
+          }
+        }
+      }
+    },
+    "cardList.title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通カード"
+          }
+        }
+      }
+    },
+    "cardList.twEasyCard_old" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard（悠遊卡）"
+          }
+        }
+      }
+    },
+    "cardList.twEasyCard_super" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Super EasyCard（超級悠遊卡）"
+          }
+        }
+      }
+    },
+    "cardList.twEasyCard_super.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Superロゴのある悠遊卡"
+          }
+        }
+      }
+    },
+    "cardList.twICash" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0（愛金卡）"
+          }
+        }
+      }
+    },
+    "cardList.twICash.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-ELEVEN系交通カード"
+          }
+        }
+      }
+    },
+    "cnTunion.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通聯合"
+          }
+        }
+      }
+    },
+    "currency.hkd" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港ドル"
+          }
+        }
+      }
+    },
+    "currency.jpy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "円"
+          }
+        }
+      }
+    },
+    "currency.KRW" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウォン"
+          }
+        }
+      }
+    },
+    "currency.mo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオ"
+          }
+        }
+      }
+    },
+    "currency.rmb" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "元"
+          }
+        }
+      }
+    },
+    "currency.twd" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TWD"
+          }
+        }
+      }
+    },
+    "error" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        }
+      }
+    },
+    "error.ok" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "form.birthday.day" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日"
+          }
+        }
+      }
+    },
+    "form.birthday.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "記名カードの場合、誕生日を2桁の数字で記入してください(非記名では入力不要)"
+          }
+        }
+      }
+    },
+    "form.birthday.month" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月"
+          }
+        }
+      }
+    },
+    "form.birthday.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "誕生日（記名カード）"
+          }
+        }
+      }
+    },
+    "form.captcha" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上記画像の数字を入力してください。"
+          }
+        }
+      }
+    },
+    "form.captcha.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像認証"
+          }
+        }
+      }
+    },
+    "form.card" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0123456789"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "form.card.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード裏面にある数字を入力してください。"
+          }
+        }
+      }
+    },
+    "form.card.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード番号"
+          }
+        }
+      }
+    },
+    "form.done" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
+    "form.ID" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0000"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "form.ID.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "身分証番号の下四桁を入力してください。"
+          }
+        }
+      }
+    },
+    "form.ID.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本人確認"
+          }
+        }
+      }
+    },
+    "hkOctopus.scand.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このカードは履歴データを取得できません。"
+          }
+        }
+      }
+    },
+    "hkOctopus.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
+        }
+      }
+    },
+    "info.cnTunion.caption" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像引用：WeChat「[交通联合官方订阅号](https://mp.weixin.qq.com/s/jtDHoeLoPbVnGZNJYtbMWA)」ミニプログラム"
+          }
+        }
+      }
+    },
+    "info.cnTunion.cards" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "※ 中国交通連合のマークがない旧タイプのカードでは利用できません。"
+          }
+        }
+      }
+    },
+    "info.cnTunion.logo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「中国交通連合（China T-Union）」のロゴがある交通カードで利用できます。"
+          }
+        }
+      }
+    },
+    "info.jpIC.caption" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Kitaca」は、北海道旅客鉄道株式会社の登録商標です。 \n「Suica」は、東日本旅客鉄道株式会社の登録商標です。 \n「PASMO」は、株式会社パスモの登録商標です。 \n「TOICA」は、東海旅客鉄道株式会社の登録商標です。 \n「manaca」は、株式会社名古屋交通開発機構及び株式会社エムアイシーの登録商標です。 \n「ICOCA」は、西日本旅客鉄道株式会社の登録商標です。 \n「SUGOCA」は、九州旅客鉄道株式会社の登録商標です。 \n「nimoca」は、西日本鉄道株式会社の登録商標です。 \n「はやかけん」は、福岡市交通局の登録商標です。 \n「PiTaPa」は、株式会社スルッとKANSAIの登録商標です。"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.Hayaka_ken" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "はやかけん"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.ICOCA" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.Kitaca" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kitaca"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.manaca" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.nimoca" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.PASMO" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.PiTaPa" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PiTaPa"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.SUGOCA" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.Suica" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.TOICA" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.tourist_pasmo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOURIST PASMO（観光客用）"
+          }
+        }
+      }
+    },
+    "info.jpIC.cardName.welcome_suica" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome Suica（観光客用）"
+          }
+        }
+      }
+    },
+    "info.jpIC.items" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通系ICカード全国相互利用サービス（交通系ICカード）に対応する全てのカードが利用可能。"
+          }
+        }
+      }
+    },
+    "info.jpIC.note" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "※ PiTaPaは履歴表示のみ対応"
+          }
+        }
+      }
+    },
+    "info.jpIC.note.other" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地域提携ICカードも対応しています。最新の対応カードは[こちら](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)に記載"
+          }
+        }
+      }
+    },
+    "info.krOneCard.caption" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「T-money」はTmoney Co., Ltd. の商標です。 \n「EZL」「Cashbee」はEZL Corporationの商標です。 \n「Rail+」はKORAIL networks Co., Ltd. の商標です。 \n「One pass」はiM Upay Co., Ltd. の商標です。 \n「WOWPASS」はOrange Square, Inc. の商標です。"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cardName.ezl" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL（旧Cashbee）"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cardName.onepass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cardName.reil_plus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cardName.t-money" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cardName.wowpass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
+        }
+      }
+    },
+    "info.krOneCard.cards" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主要な対応カード："
+          }
+        }
+      }
+    },
+    "info.krOneCard.logo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「One Card All Pass（전국호환 교통카드）」のロゴがある全てのカードで利用可能です。"
+          }
+        }
+      }
+    },
+    "info.twEasyCard_old.items" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台湾で発行される悠遊卡、悠遊聯名卡、超級悠遊卡が利用できます。サーバーから残高を取得します。 \n\n無記名カード：カード右下の10桁の数字 \n悠遊聯名カード：カード裏面 左下の16桁の数字 \n※ 夜間12時〜早朝6時ごろは、メンテナンスにより利用できない場合があります。"
+          }
+        }
+      }
+    },
+    "jp.hokkaido" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
+        }
+      }
+    },
+    "jp.kagawa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川県"
+          }
+        }
+      }
+    },
+    "jp.sapporo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌"
+          }
+        }
+      }
+    },
+    "jpDoCard.scand.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードから取得可能な履歴は最新の20件です。"
+          }
+        }
+      }
+    },
+    "jpDoCard.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        }
+      }
+    },
+    "jpIC_other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
+        }
+      }
+    },
+    "jpIC_other.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
+        }
+      }
+    },
+    "jpIC.scand.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードから取得可能な履歴は最新の20件です。"
+          }
+        }
+      }
+    },
+    "jpIC.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通系IC"
+          }
+        }
+      }
+    },
+    "jpNplus.scand.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードから取得可能な履歴は最新の20件です。"
+          }
+        }
+      }
+    },
+    "jpNplus.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エヌタスカード"
+          }
+        }
+      }
+    },
+    "krOneCard.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        }
+      }
+    },
+    "license.tm.and.image" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商標・出典"
+          }
+        }
+      }
+    },
+    "license.tm.and.image.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本アプリ中に表示される各項目の商標、説明用画像の出典元"
+          }
+        }
+      }
+    },
+    "moMacauPass.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオパス"
+          }
+        }
+      }
+    },
+    "Pyongyang Transit Card(Green/Blue" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平壌交通カード"
+          }
+        }
+      }
+    },
+    "result.description.common" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存済みのカードを再度スキャンすると、情報を更新できます。"
+          }
+        }
+      }
+    },
+    "result.history.amount:%@%lld_%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$lld%3$@"
+          }
+        }
+      }
+    },
+    "result.history.balance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残高"
+          }
+        }
+      }
+    },
+    "result.history.balance:%lf_%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残高:%1$lf%2$@"
+          }
+        }
+      }
+    },
+    "result.history.balance:%lld" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴（%lld件）"
+          }
+        }
+      }
+    },
+    "result.history.benefits" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特典"
+          }
+        }
+      }
+    },
+    "result.history.bus" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バス"
+          }
+        }
+      }
+    },
+    "result.history.charge" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャージ"
+          }
+        }
+      }
+    },
+    "result.history.charge_auto" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オートチャージ"
+          }
+        }
+      }
+    },
+    "result.history.charge.bus" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャージ（バス）"
+          }
+        }
+      }
+    },
+    "result.history.charge.store" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャージ（店舗）"
+          }
+        }
+      }
+    },
+    "result.history.compositeFare" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支払い（電車以外）"
+          }
+        }
+      }
+    },
+    "result.history.counter.cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入場取り消し"
+          }
+        }
+      }
+    },
+    "result.history.cycle" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自転車"
+          }
+        }
+      }
+    },
+    "result.history.empty" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴がありません"
+          }
+        }
+      }
+    },
+    "result.history.end" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "払い戻し"
+          }
+        }
+      }
+    },
+    "result.history.entry" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入場"
+          }
+        }
+      }
+    },
+    "result.history.fare" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "運賃支払い"
+          }
+        }
+      }
+    },
+    "result.history.fare_collection.jr" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乗越精算（JR）"
+          }
+        }
+      }
+    },
+    "result.history.fare_collection.other" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乗越精算（私鉄）"
+          }
+        }
+      }
+    },
+    "result.history.ferry" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フェリー"
+          }
+        }
+      }
+    },
+    "result.history.hsr" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高速鉄道"
+          }
+        }
+      }
+    },
+    "result.history.lrt" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LRT"
+          }
+        }
+      }
+    },
+    "result.history.mrt.tw.kaohsiung" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT（高雄）"
+          }
+        }
+      }
+    },
+    "result.history.mrt.tw.taipei" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT台北"
+          }
+        }
+      }
+    },
+    "result.history.mrt.tw.taizhong" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT台中"
+          }
+        }
+      }
+    },
+    "result.history.mrt.tw.taoyuan" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT桃園"
+          }
+        }
+      }
+    },
+    "result.history.new" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規発行"
+          }
+        }
+      }
+    },
+    "result.history.notHistory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このカードは履歴参照に非対応です。"
+          }
+        }
+      }
+    },
+    "result.history.other" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
+    "result.history.parking" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "駐車場"
+          }
+        }
+      }
+    },
+    "result.history.platform.other" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入場精算（私鉄）"
+          }
+        }
+      }
+    },
+    "result.history.reissue" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再発行"
+          }
+        }
+      }
+    },
+    "result.history.shinkansen" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新幹線"
+          }
+        }
+      }
+    },
+    "result.history.shopping" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ショッピング"
+          }
+        }
+      }
+    },
+    "result.history.shopping.cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "物販キャンセル"
+          }
+        }
+      }
+    },
+    "result.history.shopping.cash" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現金併用物販"
+          }
+        }
+      }
+    },
+    "result.history.shopping.platform" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ショッピング（駅構内）"
+          }
+        }
+      }
+    },
+    "result.history.shopping.platform.cash" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現金併用物販（駅構内）"
+          }
+        }
+      }
+    },
+    "result.history.stationOperation" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード利用"
+          }
+        }
+      }
+    },
+    "result.history.taiwan_railway" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台湾鉄道"
+          }
+        }
+      }
+    },
+    "result.history.ticket" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チケット購入"
+          }
+        }
+      }
+    },
+    "result.history.ticket_bus" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "回数券購入"
+          }
+        }
+      }
+    },
+    "result.history.ticket.platform" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入場券"
+          }
+        }
+      }
+    },
+    "result.info" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード情報"
+          }
+        }
+      }
+    },
+    "result.info.balance" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード残高"
+          }
+        }
+      }
+    },
+    "result.info.balance.data:%@_%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "result.info.cardCategory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "種別"
+          }
+        }
+      }
+    },
+    "result.info.cardType" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードタイプ"
+          }
+        }
+      }
+    },
+    "result.info.empty" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報が読み取れません"
+          }
+        }
+      }
+    },
+    "result.info.ID" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ID"
+          }
+        }
+      }
+    },
+    "result.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICカード"
+          }
+        }
+      }
+    },
+    "result.userData" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "記録"
+          }
+        }
+      }
+    },
+    "result.userData.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この情報はアプリ内でのみ有効です。カードには書き込まれません。"
+          }
+        }
+      }
+    },
+    "result.userData.design" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコン"
+          }
+        }
+      }
+    },
+    "result.userData.name" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示名"
+          }
+        }
+      }
+    },
+    "result.userData.name.placeholder" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード名"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.error.notfeliCa" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "対応していないカードです"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.error.notISO7816" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO7816ではありません"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.scan.message" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@“ をiPhoneの上部にかざしてください"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.scanning.done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン完了"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.scanning.error.statusFlag,s1:%lld, s2:%lld" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステータスフラグがエラーを示しています。s1:%1$lld, s2: %2$lld"
+          }
+        }
+      }
+    },
+    "scanner.coreNFC.scanning.message" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン中です。カードを動かさないでください。"
+          }
+        }
+      }
+    },
+    "scanner.scan.message.undefinedName" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "定義されていないサービスが呼び出されました"
+          }
+        }
+      }
+    },
+    "search" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索"
+          }
+        }
+      }
+    },
+    "section.camera" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "画像認識"
+          }
+        }
+      }
+    },
+    "section.nfc" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
+        }
+      }
+    },
+    "section.reader" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外部リーダー"
+          }
+        }
+      }
+    },
+    "section.scraping" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンライン取得"
+          }
+        }
+      }
+    },
+    "setting.link.license" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライセンス情報"
+          }
+        }
+      }
+    },
+    "setting.title" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "tab.history" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイカード"
+          }
+        }
+      }
+    },
+    "tab.scan" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン"
+          }
+        }
+      }
+    },
+    "tab.setting" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.audio" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試行回数の上限に達しました。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.birthday" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力した誕生日が間違っているか、無記名卡です。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.captcha" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像認証に失敗しました"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.card" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード番号が間違っています。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.code" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認コードが間違っています。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.date" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付データが不正です。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.error.server.invalid.retry" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もう一度お試しください。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.form.error.birthday.count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "誕生日は2桁ずつで入力してください。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.form.error.captcha.count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像認証の数字が異なります。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.form.error.captcha.empty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像認証が未入力です。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.form.error.card.count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード番号は10桁または16桁で入力してください。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.form.error.card.empty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード番号が未入力です。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.scand.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データは最新ではなく、昨日までの利用履歴です。過去1年間の利用が表示されます。"
+          }
+        }
+      }
+    },
+    "twEasyCard_old.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        }
+      }
+    },
+    "twEasyCard_super.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Super EasyCard"
+          }
+        }
+      }
+    },
+    "twICash.scand.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "直近の12件のみ読み取れます。"
+          }
+        }
+      }
+    },
+    "twICash.short" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
+        }
+      }
+    },
+    "unknown" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "web.cancel" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        }
+      }
+    },
+    "上海公共交通卡" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海公共交通カード"
+          }
+        }
+      }
+    },
+    "北京一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京市政交通カード"
+          }
+        }
+      }
+    },
+    "深圳通" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深圳通"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.3"
+}

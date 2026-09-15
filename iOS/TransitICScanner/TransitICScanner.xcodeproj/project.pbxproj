@@ -6,8 +6,15 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA8EA9AE3059037D00E17AC2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */; };
+		AA8EA9B03059038500E17AC2 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,6 +50,8 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				AA8EA9AD3059037D00E17AC2 /* Localizable.xcstrings */,
+				AA8EA9AF3059038500E17AC2 /* InfoPlist.xcstrings */,
 				000000000000000000000020 /* Products */,
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
 			);
@@ -93,11 +102,11 @@
 				};
 			};
 			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "TransitICScanner" */;
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ja,
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
@@ -115,6 +124,8 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				AA8EA9B03059038500E17AC2 /* InfoPlist.xcstrings in Resources */,
+				AA8EA9AE3059037D00E17AC2 /* Localizable.xcstrings in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -192,6 +203,7 @@
 				PROJECT_UNIQUE_VALUE = V56JEUML;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WATCHOS_DEPLOYMENT_TARGET = 27.0;
 				XROS_DEPLOYMENT_TARGET = 27.0;
@@ -255,6 +267,7 @@
 				PROJECT_UNIQUE_VALUE = V56JEUML;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 27.0;
 				XROS_DEPLOYMENT_TARGET = 27.0;
 			};
