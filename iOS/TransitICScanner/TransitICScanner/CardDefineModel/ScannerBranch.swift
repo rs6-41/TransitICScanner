@@ -8,7 +8,8 @@ let cardItems: [CardInfo] = [
     cnTunion,
     hkOctopus,
     krOneCard,
-    twICash
+    twICash,
+    jpNplus
 ]
 
 /// 種別で動作を切り替える定義
@@ -27,6 +28,8 @@ extension NFCScannerModel {
             self.krOneCard_scan(tag,session)
         case "twICash":
             self.twICash_scan(tag,session)
+        case "jpNplus":
+            self.jpNplus_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -42,6 +45,7 @@ enum ConverterType: String {
     case hkOctopus
     case krOneCard
     case twICash
+    case jpNplus
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -57,6 +61,8 @@ enum ConverterType: String {
             krOneCard_Converter.cardInfo(info)
         case .twICash:
             twICash_Converter.cardInfo(info)
+        case .jpNplus:
+            jpNplus_Converter.cardInfo(info)
         }
     }
 
