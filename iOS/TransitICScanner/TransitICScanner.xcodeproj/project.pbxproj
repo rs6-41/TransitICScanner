@@ -6,13 +6,8 @@
 	objectVersion = 90;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AA48C8D33057CE880052CA11 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA48C8D23057CE880052CA11 /* Localizable.xcstrings */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA48C8D23057CE880052CA11 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -48,7 +43,6 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				AA48C8D23057CE880052CA11 /* Localizable.xcstrings */,
 				000000000000000000000020 /* Products */,
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
 			);
@@ -121,7 +115,6 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				AA48C8D33057CE880052CA11 /* Localizable.xcstrings in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
