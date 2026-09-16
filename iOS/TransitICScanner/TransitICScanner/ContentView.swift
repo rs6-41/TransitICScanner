@@ -18,13 +18,13 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            /*SettingView()
+            SettingView()
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.setting"), systemImage: "info.circle.fill")
                 }
-             */
+             
         }
     }
 }
