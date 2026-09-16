@@ -53,6 +53,22 @@
     "0%@" : {
       "shouldTranslate" : false
     },
+    "appName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global IC balance checker"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "世界IC残高確認"
+          }
+        }
+      }
+    },
     "cancel" : {
       "localizations" : {
         "en" : {
@@ -3481,7 +3497,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iCloud Sync"
+            "value" : "iCloud sync"
           }
         },
         "ja" : {
@@ -3545,7 +3561,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Delete History"
+            "value" : "Delete history"
           }
         },
         "ja" : {
