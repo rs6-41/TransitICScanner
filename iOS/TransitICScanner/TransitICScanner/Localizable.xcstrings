@@ -1315,6 +1315,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "hkOctopus.scand.description" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -3158,7 +3161,6 @@
       }
     },
     "tab.setting" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

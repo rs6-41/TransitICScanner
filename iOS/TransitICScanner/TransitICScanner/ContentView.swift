@@ -5,7 +5,6 @@ struct ContentView: View {
     @State var tab: Int = 0
     var body: some View {
         TabView(selection: $tab) {
-            
             CardList()
                 .tag(0)
                 .toolbarBackground(.visible, for: .tabBar)
@@ -18,13 +17,12 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            /*SettingView()
+            InfoView()
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.setting"), systemImage: "info.circle.fill")
                 }
-             */
         }
     }
 }
