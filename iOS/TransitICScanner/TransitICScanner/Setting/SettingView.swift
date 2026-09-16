@@ -3,9 +3,6 @@ import SwiftData
 import StoreKit
 
 struct SettingView: View {
-    let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
-        ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
-        ?? "Transit IC Scanner"
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     @Environment(\.modelContext) private var modelContext
     @State var deleteAlert = false
@@ -29,7 +26,7 @@ struct SettingView: View {
                                     .resizable()
                                     .frame(width: 100, height: 100)
                                     .padding(.top,2)
-                                Text(appName)
+                                Text(LocalizedStringKey("appName"))
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                 Text(LocalizedStringKey("setting.version:\(version)"))

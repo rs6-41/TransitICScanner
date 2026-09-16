@@ -4,10 +4,16 @@
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global IC balance checker"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "世界IC残高"
+            "value" : "世界IC残高確認"
           }
         }
       }
@@ -15,10 +21,16 @@
     "CFBundleName" : {
       "comment" : "Bundle name",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global IC balance checker"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "世界IC残高"
+            "value" : "世界IC残高確認"
           }
         }
       }
