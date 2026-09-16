@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
+    "" : {
+
+    },
     "%@ %@" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -49,6 +52,16 @@
     },
     "0%@" : {
       "shouldTranslate" : false
+    },
+    "cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
     },
     "card.company.jr" : {
       "extractionState" : "manual",
@@ -3096,13 +3109,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acknowledgment"
+            "value" : "Rights information"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "謝辞"
+            "value" : "権利情報"
           }
         }
       }
@@ -3409,6 +3422,7 @@
       }
     },
     "setting.ads.delete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3456,18 +3470,96 @@
         }
       }
     },
-    "setting.data.reset" : {
+    "setting.data.cloud" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reset"
+            "value" : "iCloud Sync"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リセット"
+            "value" : "iCloud同期"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同期の無効化"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off.message" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クラウドでの同期を無効にすると、スキャンしたカードは同期されなくなります。\n過去に同期した情報は削除されません。"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off.ok" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効にする"
+          }
+        }
+      }
+    },
+    "setting.data.reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete History"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴削除"
+          }
+        }
+      }
+    },
+    "setting.data.reset.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The saved card information will be deleted. This action cannot be undone."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存したカード情報を削除します。この操作は取り消せません。"
+          }
+        }
+      }
+    },
+    "setting.data.reset.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         }
       }
