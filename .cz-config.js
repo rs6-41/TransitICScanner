@@ -36,14 +36,24 @@ module.exports = {
       title: 'テストの追加・修正'
     }
   ],
+  scopes: [],
+  allowCustomScopes: true,
+  allowBreakingChanges: false,
+
+  allowTicketNumber: true,
+  isTicketNumberRequired: true,
+  ticketNumberPrefix: '#',
+  ticketNumberRegExp: '\\d+',
+
   messages: {
-    type: '変更の種類を選択:',
-    customScope: 'Issue番号:',
-    subject: 'コミット内容:',
-    body: '詳細:',
-    footer: 'Issue:',
+    type: '変更の種類:',
+    ticketNumber: 'Issue番号:',
+    scope: 'スコープ:',
+    customScope: 'スコープ:',
+    subject: 'コミットメッセージ:',
     confirmCommit: 'この内容でコミットしますか?'
   },
-  skipQuestions: ['scope', 'body', 'footer'],
+
+  skipQuestions: ['scope', 'body', 'breaking', 'footer'],
   subjectLimit: 100
 }
