@@ -1,29 +1,82 @@
 import Foundation
 import SwiftData
 
+enum CloudSyncSettings {
+    private static let key = "cloudSyncEnabled"
+
+    static var isEnabled: Bool {
+        if UserDefaults.standard.object(forKey: key) == nil {
+            return true
+        }
+
+        return UserDefaults.standard.bool(forKey: key)
+    }
+
+    static func setEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(
+            enabled,
+            forKey: key
+        )
+    }
+}
+
+enum SavedDataModelContainer {
+    static let cloudKitContainerIdentifier =
+        "iCloud.com.rs6apps.TransitICScanner"
+
+    static func makeContainer() throws -> ModelContainer {
+        let schema = Schema([
+            SavedCard.self,
+            SavedHistory.self
+        ])
+
+        let configuration: ModelConfiguration
+
+        if CloudSyncSettings.isEnabled {
+            configuration = ModelConfiguration(
+                schema: schema,
+                cloudKitDatabase: .private(
+                    cloudKitContainerIdentifier
+                )
+            )
+        } else {
+            configuration = ModelConfiguration(
+                schema: schema
+            )
+        }
+
+        return try ModelContainer(
+            for: schema,
+            configurations: [configuration]
+        )
+    }
+}
+
 @Model
 final class SavedCard {
-    @Attribute(.unique)
-    var idm: String
+    var idm: String = ""
 
-    var name: String
-    var nameShort: String
+    var name: String = ""
+    var nameShort: String = ""
     var displayName: String?
     var iconName: String?
-    var currency: String
-    var type: String
+    var currency: String = ""
+    var type: String = ""
     var serial: String?
     var version: String?
     var validDate: String?
 
     var balance: Double?
-    var isLastHide: Bool
-    var cardDescription: String
+    var isLastHide: Bool = false
+    var cardDescription: String = ""
 
     var converterTypeRaw: String?
 
-    @Relationship(deleteRule: .cascade, inverse: \SavedHistory.card)
-    var histories: [SavedHistory]
+    @Relationship(
+        deleteRule: .cascade,
+        inverse: \SavedHistory.card
+    )
+    var histories: [SavedHistory]? = []
 
     init(
         idm: String,
@@ -69,7 +122,7 @@ final class SavedCard {
 
 @Model
 final class SavedHistory {
-    var processType: Int
+    var processType: Int = 0
 
     var dateYear: Int?
     var dateMonth: Int?
@@ -78,16 +131,16 @@ final class SavedHistory {
     var dateMinute: Int?
     var dateSecond: Int?
 
-    var balance: Double
+    var balance: Double = 0
     var amount: Double?
 
-    var lineIn: Int
-    var stationIn: Int
-    var lineOut: Int
-    var stationOut: Int
+    var lineIn: Int = 0
+    var stationIn: Int = 0
+    var lineOut: Int = 0
+    var stationOut: Int = 0
 
-    var transactionId: Int
-    var mappingID: String
+    var transactionId: Int = 0
+    var mappingID: String = ""
 
     var card: SavedCard?
 
@@ -149,7 +202,7 @@ extension SavedCard {
             validDate: validDate
         )
 
-        let history = histories.map { item in
+        let history = (histories ?? []).map { item in
             ResultHistory(
                 processType: UInt8(clamping: item.processType),
                 date: item.date,
@@ -233,11 +286,13 @@ enum ResultSave {
 
         if let histories = result.history {
             var existingTransactionIDs = Set(
-                card.histories.map(\.transactionId)
+                (card.histories ?? []).map(\.transactionId)
             )
 
             for history in histories {
-                guard !existingTransactionIDs.contains(history.transactionId) else {
+                guard !existingTransactionIDs.contains(
+                    history.transactionId
+                ) else {
                     continue
                 }
 
@@ -255,10 +310,18 @@ enum ResultSave {
                 )
 
                 savedHistory.card = card
-                card.histories.append(savedHistory)
+
+                if card.histories == nil {
+                    card.histories = []
+                }
+
+                card.histories?.append(savedHistory)
+
                 modelContext.insert(savedHistory)
 
-                existingTransactionIDs.insert(history.transactionId)
+                existingTransactionIDs.insert(
+                    history.transactionId
+                )
             }
         }
 
@@ -308,12 +371,36 @@ enum ResultSave {
     static func deleteAll(
         from modelContext: ModelContext
     ) throws {
-        let cards = try loadCards(from: modelContext)
+        let cards = try loadCards(
+            from: modelContext
+        )
 
         for card in cards {
             modelContext.delete(card)
         }
 
         try modelContext.save()
+    }
+
+    static func resetSavedData(
+        from modelContext: ModelContext
+    ) {
+        do {
+            try modelContext.delete(
+                model: SavedCard.self
+            )
+
+            try modelContext.delete(
+                model: SavedHistory.self
+            )
+
+            try modelContext.save()
+
+            print("保存データをリセットしました")
+        } catch {
+            print(
+                "保存データのリセットに失敗しました: \(error)"
+            )
+        }
     }
 }
