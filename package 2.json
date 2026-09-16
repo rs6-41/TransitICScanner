@@ -1,0 +1,24 @@
+{
+  "name": "transiticscanner",
+  "version": "1.0.0",
+  "description": "全世界の交通系ICをスキャンできるアプリ",
+  "main": ".cz-config.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rs6-41/TransitICScanner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rs6-41/TransitICScanner/issues"
+  },
+  "homepage": "https://github.com/rs6-41/TransitICScanner#readme"
+}
