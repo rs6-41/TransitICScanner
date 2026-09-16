@@ -1,25 +1,34 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
-    "CFBundleName" : {
-      "comment" : "Bundle name",
-      "extractionState" : "extracted_with_value",
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "TransitCardScanner"
+            "state" : "translated",
+            "value" : "世界IC残高"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "世界IC残高"
           }
         }
       }
     },
     "NFCReaderUsageDescription" : {
       "comment" : "Privacy - NFC Scan Usage Description",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "カード情報の読み取りに使用します"
           }
         }
@@ -27,11 +36,10 @@
     },
     "NSCameraUsageDescription" : {
       "comment" : "Privacy - Camera Usage Description",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "カード番号の読み取りに使用します"
           }
         }
@@ -39,11 +47,10 @@
     },
     "NSLocationWhenInUseUsageDescription" : {
       "comment" : "Privacy - Location When In Use Usage Description",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "現在の位置に基づいてカードを提案します"
           }
         }
