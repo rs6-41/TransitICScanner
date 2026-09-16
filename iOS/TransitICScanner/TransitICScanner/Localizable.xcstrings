@@ -2,7 +2,7 @@
   "sourceLanguage" : "ja",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "%@ %@" : {
       "extractionState" : "stale",
@@ -55,6 +55,12 @@
     },
     "cancel" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3488,6 +3494,12 @@
     },
     "setting.data.cloud.off" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivate iCloud sync"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3498,6 +3510,12 @@
     },
     "setting.data.cloud.off.message" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabling cloud sync will prevent scanned cards from being synchronized.\nPreviously synchronized information will not be deleted."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3508,6 +3526,12 @@
     },
     "setting.data.cloud.off.ok" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivate"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
