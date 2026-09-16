@@ -39,7 +39,8 @@ struct SettingView: View {
                 
                 Section(header:Text("setting.ads")) {
                     Label(LocalizedStringKey("setting.ads.delete"), systemImage: "xmark.app.fill")
-                    Label(LocalizedStringKey("setting.ads.restore"), systemImage: "arrow.trianglehead.clockwise")
+                        .bold()
+                    Label(LocalizedStringKey("setting.ads.restore"), systemImage: "arrow.counterclockwise.circle")
                 }
                 
                 Section(header:Text("setting.data")) {
