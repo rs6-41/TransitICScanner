@@ -4,13 +4,14 @@ import CoreNFC
 struct CardList: View {
     @StateObject private var getCountry = GetCountry()
     @State private var searchText = ""
+    @EnvironmentObject var store: CardItemsStore
     
     private var filteredCardItems: [CardInfo] {
         guard !searchText.isEmpty else {
-            return cardItems
+            return store.cardItems
         }
         
-        return cardItems.filter { item in
+        return store.cardItems.filter { item in
             let localizedName = String(
                 localized: String.LocalizationValue(item.name)
             )
