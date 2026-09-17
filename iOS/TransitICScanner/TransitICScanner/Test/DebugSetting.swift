@@ -23,6 +23,7 @@ struct DebugSetting: View {
     @EnvironmentObject var getCountry: GetCountry
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
+    @State var isDummyCardForm = false
     
     var body: some View {
         List {
@@ -63,6 +64,14 @@ struct DebugSetting: View {
                 }
             }
             
+            Section(header: Text(LocalizedStringKey("setting.debug.result.title"))) {
+                Button(action: {
+                    isDummyCardForm = true
+                }) {
+                    Text(LocalizedStringKey("setting.debug.result.dummyCard"))
+                }
+            }
+            
             Section(header: Text(LocalizedStringKey("setting.debug.purchase.title"))) {
                 Toggle(isOn: $deleteAds) {
                     Text(LocalizedStringKey("setting.debug.ads"))
@@ -75,5 +84,14 @@ struct DebugSetting: View {
         }
         .navigationTitle(LocalizedStringKey("setting.debug"))
         .navigationBarTitleDisplayMode(.inline)
+        
+        .sheet(isPresented: $isDummyCardForm) {
+            NavigationStack {
+                DummyCardFormView()
+            }
+        }
+        
+        
+        .contentMargins(.top, 10)
     }
 }
