@@ -7,10 +7,16 @@ struct SettingView: View {
     @Environment(\.modelContext) private var modelContext
     @State var deleteAlert = false
     @AppStorage("deleteAds") var deleteAds = false
+    @State var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+    
+    @State var isPurchaseAlert = false
+    @State var purchaseAlertTitle:String = ""
+    @State var purchaseAlertMessage:String = ""
     
     @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
     @State var isIcloud = false
     @State var iCloudAlert = false
+    
     
     var body: some View {
         NavigationStack {
@@ -48,10 +54,54 @@ struct SettingView: View {
                     Section(header:Text("setting.ads")) {
                         HStack {
                             SquareIcon(text:"", systemImage: "xmark.app.fill",color:Color.green)
-                            ProductView(id: "delete_ads")
+                            ProductView(id: deleteAdsPurchaseID)
                                 .productViewStyle(.compact)
+                                .onInAppPurchaseCompletion { product, result in
+                                    switch result {
+                                        case .success(let purchaseResult):
+                                            switch purchaseResult {
+                                                case .success(_):
+                                                    purchaseAlertTitle = String(localized:"setting.ads.purchase.done")
+                                                    purchaseAlertMessage = String(localized:"setting.ads.purchase.done.message")
+                                                    isPurchaseAlert = true
+                                                    deleteAds = true
+                                                case .userCancelled: break //キャンセル
+                                                @unknown default: break
+                                            }
+                                        case .failure(let error):
+                                            purchaseAlertTitle = String(localized:"setting.ads.purchase.error")
+                                            purchaseAlertMessage = error.localizedDescription
+                                            isPurchaseAlert = true
+                                }
+                            }
                         }
-                        SquareIcon(text:"setting.ads.restore", systemImage: "arrow.counterclockwise.circle",color:Color.orange)
+                        Button(action: {
+                            Task {
+                                do {
+                                    try await AppStore.sync()
+                                    
+                                    for await verificationResult in Transaction.currentEntitlements(for:deleteAdsPurchaseID) {
+                                            switch verificationResult {
+                                            case .verified(_):
+                                                purchaseAlertTitle = String(localized:"setting.ads.restore.done")
+                                                purchaseAlertMessage = String(localized:"setting.ads.restore.done.message")
+                                                isPurchaseAlert = true
+                                                deleteAds = true
+                                            case .unverified(_, let verificationError):
+                                                purchaseAlertTitle = String(localized:"setting.ads.restore.unverified")
+                                                purchaseAlertMessage = verificationError.localizedDescription
+                                                isPurchaseAlert = true
+                                            }
+                                        }
+                                } catch {
+                                    purchaseAlertTitle = String(localized:"setting.ads.restore.unverified")
+                                    purchaseAlertMessage = error.localizedDescription
+                                    isPurchaseAlert = true
+                                }
+                            }
+                        }) {
+                            SquareIcon(text:"setting.ads.restore", systemImage: "arrow.counterclockwise.circle",color:Color.orange)
+                        }
                     }
                 }
                 
@@ -106,6 +156,21 @@ struct SettingView: View {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
                 }
+                #if DEBUG
+                Section(header:Text(LocalizedStringKey("setting.debug"))) {
+                    HStack {
+                        Toggle(isOn: $deleteAds) {
+                            Text(LocalizedStringKey("setting.debug.ads"))
+                        }
+                        Spacer()
+                            .frame(width:10)
+                    }
+                    Picker(LocalizedStringKey("setting.debug.ads.id"), selection: $deleteAdsPurchaseID) {
+                        Text(LocalizedStringKey("setting.debug.ads.id.test")).tag("com.rs6apps.TransitICScanner.deleteAds.test")
+                        Text(LocalizedStringKey("setting.debug.ads.id.rel")).tag("com.rs6apps.TransitICScanner.deleteAds")
+                    }
+                }
+                #endif
             }
             .listSectionSpacing(.compact)
                         .contentMargins(.top, 0)
@@ -116,6 +181,21 @@ struct SettingView: View {
             .navigationTitle(LocalizedStringKey("tab.setting"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .navigationBar)
+            .onAppear() {
+                #if DEBUG
+                deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
+                #endif
+            }
+            
+            .alert(purchaseAlertTitle, isPresented: $isPurchaseAlert) {
+               Button(LocalizedStringKey("ok")) {
+                   purchaseAlertTitle = ""
+                   purchaseAlertMessage = ""
+                   isPurchaseAlert = false
+               }
+            } message: {
+                Text(purchaseAlertMessage)
+            }
         }
     }
     @MainActor
