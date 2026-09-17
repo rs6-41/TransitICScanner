@@ -22,7 +22,20 @@ let cnTunion = CardInfo(
         currency: "currency.rmb",
         converter: .cnTunion
     ),
-    infomation: nil
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:295.0,
+            idm:"03102469381485733939",
+            type:"北京一卡通",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 2: 100RMB チャージ 残高300RMB 2025/19/23 19:21
+            ResultHistory(processType: 0x02,date: sampleDay2,balance: 300,amount: 100,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            // 3: 5RMB 改札 残高295RMB 2026/1/3 12:58
+            ResultHistory(processType: 0x04,date: sampleDay3,balance: 295,amount: 15,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            ]
+        )
 )
 
 extension NFCScannerModel {

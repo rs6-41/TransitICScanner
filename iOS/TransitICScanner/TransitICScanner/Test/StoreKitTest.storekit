@@ -1,0 +1,65 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "B9BC8A95",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "100",
+      "familyShareable" : false,
+      "internalID" : "1F3FCAE0",
+      "localizations" : [
+        {
+          "description" : "Delete ads in app.",
+          "displayName" : "(Test) Delete Ads",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "アプリ内の広告を削除します。",
+          "displayName" : "(テスト) 広告削除",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.rs6apps.TransitICScanner.deleteAds.test",
+      "referenceName" : "(Test) Delete Ads",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "ja",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionBundleGroups" : [
+
+  ],
+  "subscriptionGroups" : [
+
+  ],
+  "subscriptionSuiteGroups" : [
+
+  ],
+  "version" : {
+    "major" : 6,
+    "minor" : 3
+  }
+}
