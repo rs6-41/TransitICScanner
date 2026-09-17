@@ -24,7 +24,20 @@ let krOneCard = CardInfo(
         currency: "currency.KRW",
         converter:.krOneCard
     ),
-    infomation: nil
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:10000.0,
+            idm:"1041014985038535",
+            type:"card.tmoney",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 2: チャージ  残高15000ウォン チャージ10000ウォン 2025/19/23 19:21
+            ResultHistory(processType: 0x02,date: sampleDay2,balance: 15000,amount: 10000,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            // 3: 利用 残高10000ウォン 利用5000ウォン 2026/1/3 12:58
+            ResultHistory(processType: 0x01,date: sampleDay3,balance: 10000,amount: 5000,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            ]
+        )
 )
 
 extension NFCScannerModel {

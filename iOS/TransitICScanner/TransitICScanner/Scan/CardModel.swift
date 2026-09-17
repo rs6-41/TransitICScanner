@@ -13,6 +13,7 @@ struct CardInfo {
     let searchWords: [String]
     let scanOption: ScanOption
     let infomation: AnyView?
+    let sample: ResultSample
 }
 
 struct ScanOption {
@@ -25,6 +26,18 @@ struct ScanOption {
     var historyCount: Int //履歴の取得件数
     var currency: String //通貨単位
     var converter: ConverterType
+}
+
+// サンプルデータ
+let sampleDay1 = DateComponents(year:2025,month:12,day:29,hour:10,minute:32)
+let sampleDay2 = DateComponents(year:2025,month:12,day:29,hour:19,minute:21)
+let sampleDay3 = DateComponents(year:2026,month:1,day:3,hour:12,minute:58)
+
+struct ResultSample {
+    let balance:Double
+    let idm:String
+    let type:String
+    let history:[ResultHistory]
 }
 
 enum ScanType {

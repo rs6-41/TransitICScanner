@@ -22,7 +22,22 @@ let jpNplus = CardInfo(
         currency:"currency.jpy",
         converter:.jpNplus
     ),
-    infomation: nil
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:2300.0,
+            idm:"01100A9183740114",
+            type:"",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 1: 新規発行 残高1500円 2025/19/23 19:21
+            ResultHistory(processType: 0x50,date: sampleDay2,balance: 1500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            // 2: チャージ 残高2500円 2025/19/23 19:21
+            ResultHistory(processType: 0x50,date: sampleDay2,balance: 2500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            // 3: バス 残高2300円 2026/1/3 12:58
+            ResultHistory(processType: 0x40,date: sampleDay3,balance: 2300,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 153),
+            ]
+        )
 )
 
 //カードの読み取り処理
