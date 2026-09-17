@@ -23,7 +23,7 @@ struct ContentView: View {
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
-                    Label(String(localized:"tab.setting"), systemImage: "info.circle.fill")
+                    Label(String(localized:"tab.setting"), systemImage: "gearshape")
                 }
              
         }

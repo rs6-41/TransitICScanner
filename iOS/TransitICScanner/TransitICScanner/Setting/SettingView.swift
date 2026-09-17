@@ -157,19 +157,7 @@ struct SettingView: View {
                     }
                 }
                 #if DEBUG
-                Section(header:Text(LocalizedStringKey("setting.debug"))) {
-                    HStack {
-                        Toggle(isOn: $deleteAds) {
-                            Text(LocalizedStringKey("setting.debug.ads"))
-                        }
-                        Spacer()
-                            .frame(width:10)
-                    }
-                    Picker(LocalizedStringKey("setting.debug.ads.id"), selection: $deleteAdsPurchaseID) {
-                        Text(LocalizedStringKey("setting.debug.ads.id.test")).tag("com.rs6apps.TransitICScanner.deleteAds.test")
-                        Text(LocalizedStringKey("setting.debug.ads.id.rel")).tag("com.rs6apps.TransitICScanner.deleteAds")
-                    }
-                }
+                DebugSetting(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)
                 #endif
             }
             .listSectionSpacing(.compact)

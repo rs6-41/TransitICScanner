@@ -3801,6 +3801,17 @@
         }
       }
     },
+    "setting.debug.enableTestCards" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示するカード"
+          }
+        }
+      }
+    },
     "setting.other" : {
       "localizations" : {
         "en" : {

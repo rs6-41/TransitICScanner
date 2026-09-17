@@ -21,10 +21,11 @@ struct AcknowledgmentView: View {
 //カード商標
 struct TRView: View {
     let trItems:[String] = ["apple","google","sony"]
+    @EnvironmentObject var store: CardItemsStore
     var body: some View {
         List {
             Section(header:Text("setting.acknowledgment.tr.card")) {
-                ForEach(cardItems, id: \.logo) { item in
+                ForEach(store.cardItems, id: \.logo) { item in
                     NavigationLink(destination: Acknowledgment(title:item.name,text:"setting.acknowledgment." + item.scanOption.name)) {
                         Text(LocalizedStringKey(item.name))
                     }
