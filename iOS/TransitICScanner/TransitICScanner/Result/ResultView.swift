@@ -26,7 +26,8 @@ struct ResultView: View {
                     if scandata {
                         Button(action: {
                             saveAction()
-                            dismiss()
+                            //複数階層でも戻るように
+                            UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
                         }) {
                             Image(systemName: "checkmark")
                                 .foregroundStyle(Color.white)
@@ -146,7 +147,7 @@ struct ResultView: View {
             HStack {
                 Text(LocalizedStringKey("result.info.balance"))
                 Spacer()
-                Text("\(balanceText)\(currency)")
+                Text("\(balanceText) \(currency)")
             }
             
             HStack {
@@ -302,7 +303,7 @@ struct ResultView: View {
                 let balanceText =
                     display.balance.balanceText
 
-                Text("\(balanceText)\(currency)")
+                Text("\(balanceText) \(currency)")
             }
         }
     }
@@ -313,13 +314,13 @@ struct ResultView: View {
         currency: String
     ) -> some View {
         if diff == 0 {
-            Text("0\(currency)")
+            Text("0 \(currency)")
                 .foregroundStyle(.green)
         } else {
             let sign = diff >= 0 ? "+" : "-"
             let amount = abs(diff).balanceText
 
-            Text("\(sign)\(amount)\(currency)")
+            Text("\(sign)\(amount) \(currency)")
                 .foregroundStyle(
                     diff >= 0
                         ? .green

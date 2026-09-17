@@ -21,7 +21,20 @@ let twICash = CardInfo(
         currency:  "currency.twd",
         converter: .twICash
     ),
-    infomation: nil
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:300.0,
+            idm:"7311235747421931",
+            type:"",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 2: +500TWD 高速鉄道でチャージ 残高1000RMB 2025/19/23 19:21
+            ResultHistory(processType: 0x00,date: sampleDay2,balance: 1000,amount: 500,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151,mappingID: "THR"),
+            // 3: 20TWD 台北メトロ改札 残高980RMB 2026/1/3 12:58
+            ResultHistory(processType: 0x00,date: sampleDay3,balance: 980,amount: 20,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152,mappingID: "TRT"),
+            ]
+        )
 )
 
 extension NFCScannerModel {

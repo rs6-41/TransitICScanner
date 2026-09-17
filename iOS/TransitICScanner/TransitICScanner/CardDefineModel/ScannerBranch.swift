@@ -1,8 +1,15 @@
 import SwiftUI
 import Foundation
 import CoreNFC
+import Combine
 
-let cardItems: [CardInfo] = [
+final class CardItemsStore: ObservableObject {
+    @Published var cardItems: [CardInfo] = []
+}
+let cardItemsStore = CardItemsStore()
+
+// デバッグ対象カード
+let devCards: [CardInfo] = [
     jpIC,
     jpIC_other,
     cnTunion,
@@ -11,6 +18,18 @@ let cardItems: [CardInfo] = [
     twICash,
     jpNplus
 ]
+
+// リリース可能なカード
+let relCards: [CardInfo] = [
+    jpIC,
+    jpIC_other,
+    cnTunion,
+    hkOctopus,
+    krOneCard,
+    twICash,
+    jpNplus
+]
+
 
 /// 種別で動作を切り替える定義
 extension NFCScannerModel {
@@ -30,7 +49,6 @@ extension NFCScannerModel {
             self.twICash_scan(tag,session)
         case "jpNplus":
             self.jpNplus_scan(tag,session)
-            
         case "jpNplus":
             self.jpNplus_scan(tag,session)
             
@@ -41,7 +59,7 @@ extension NFCScannerModel {
     }
 }
 
-enum ConverterType: String {
+enum ConverterType: String,CaseIterable {
     case jpIC
     case jpIC_other
     case cnTunion

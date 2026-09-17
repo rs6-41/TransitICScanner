@@ -1,23 +1,23 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    ": " : {
+      "shouldTranslate" : false
+    },
+    "/" : {
+
+    },
+    "%@" : {
+      "shouldTranslate" : false
+    },
     "%@ %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@%2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "%@%@" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
             "value" : "%1$@%2$@"
           }
         }
@@ -25,7 +25,6 @@
       "shouldTranslate" : false
     },
     "%@%@ %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -36,19 +35,40 @@
       },
       "shouldTranslate" : false
     },
-    "%@%@%@" : {
+    "0 %@" : {
+
+    },
+    "appName" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global IC Balance Checker"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@%2$@%3$@"
+            "state" : "translated",
+            "value" : "世界IC残高確認"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
-    "0%@" : {
-      "shouldTranslate" : false
+    "cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
     },
     "card.company.jr" : {
       "extractionState" : "manual",
@@ -555,6 +575,23 @@
         }
       }
     },
+    "cardList.area.kp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "North Korea"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北朝鮮"
+          }
+        }
+      }
+    },
     "cardList.area.kr" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -572,6 +609,23 @@
         }
       }
     },
+    "cardList.area.mo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオ"
+          }
+        }
+      }
+    },
     "cardList.area.tw" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -585,6 +639,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "台湾"
+          }
+        }
+      }
+    },
+    "cardList.area.us" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "United States"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アメリカ"
           }
         }
       }
@@ -864,7 +935,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Now locate"
+            "value" : "Now Locate"
           }
         },
         "ja" : {
@@ -1056,6 +1127,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TWD"
+          }
+        }
+      }
+    },
+    "DEBUG MODE" : {
+      "shouldTranslate" : false
+    },
+    "done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
           }
         }
       }
@@ -1374,14 +1458,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "*Not compatible with older cards without the China T-Union logo."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "※ 中国交通連合のマークがない旧タイプのカードでは利用できません。"
+            "value" : "※ 交通聯合のマークがない旧タイプのカードでは利用できません。"
           }
         }
       }
@@ -1391,14 +1475,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Compatible with transit cards bearing the “China T-Union”(交通联合) logo."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「中国交通連合（China T-Union）」のロゴがある交通カードで利用できます。"
+            "value" : "「交通聯合（China T-Union）」のロゴがある交通カードで利用できます。"
           }
         }
       }
@@ -1994,6 +2078,25 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
+          }
+        }
+      }
+    },
+    "Loading..." : {
+      "shouldTranslate" : false
+    },
+    "ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -2952,7 +3055,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hold “%@” near top center of your iPhone"
+            "value" : "Hold “%@” near top center of your iPhone."
           }
         },
         "ja" : {
@@ -3094,36 +3197,935 @@
         }
       }
     },
-    "setting.link.license" : {
-      "extractionState" : "stale",
+    "setting.acknowledgment" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "License"
+            "value" : "Rights Information"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ライセンス情報"
+            "value" : "権利情報"
           }
         }
       }
     },
-    "setting.title" : {
-      "extractionState" : "stale",
+    "setting.acknowledgment.apple" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Setting"
+            "value" : "iPhone, iPad, App Store and Apple Pay are registered trademarks of Apple Inc."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定"
+            "value" : "iPhone、iPad、App StoreおよびApple Payは、米国および他の国々で登録されたApple Inc.の商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.apple.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.cardtr" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trademarks"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商標等"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.cardtr.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The displayed information is based on the region of the card issuer.\nThe company names, trade names, product names, and service names mentioned above or elsewhere are registered trademarks or trademarks of their respective companies."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードの発行元地域に基づく表示です。上記以外に記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.cnTunion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“交通联合” (China T-union) is a standard specification established by Ministry of Transport of the People's Republic of China.\n\nThe company names, trade names, product names, and service names mentioned herein are registered trademarks or trademarks of their respective companies."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「交通联合」(China T-union)は、中华人民共和国交通运输部の標準規格です。\n記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.google" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Android”, “Google”, and “Google Pay” are trademarks of Google LLC."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Android、GoogleおよびGoogle Payは、Google LLCの商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.google.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.hkOctopus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Octopus” and “八達通” are trademarks of Octopus Cards Limited（八達通卡有限公司）."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Octopus」「八達通」「オクトパス」はOctopus Cards Limited（八達通卡有限公司）の商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpIC" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kitaca” is a registered trademark of Hokkaido Railway Company.\n\n“Suica” is a registered trademark of East Japan Railway Company.\n\n“PASMO” is a registered trademark of PASMO CO., LTD.\n\n“TOICA” is a registered trademark of Central Japan Railway Company.\n\n“manaca” is a registered trademark of Nagoya Transportation Development Organization and MIC CO., LTD.\n\n“ICOCA” is a registered trademark of West Japan Railway Company.\n\n“SUGOCA” is a registered trademark of Kyushu Railway Company.\n\n“nimoca” is a registered trademark of Nishi-Nippon Railroad Co., Ltd.\n\n“はやかけん” is a registered trademark of Fukuoka City Transportation Bureau.\n\n“PiTaPa” is a registered trademark of Surutto KANSAI Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Kitaca」は、北海道旅客鉄道株式会社の登録商標です。 \n「Suica」は、東日本旅客鉄道株式会社の登録商標です。 \n「PASMO」は、株式会社パスモの登録商標です。 \n「TOICA」は、東海旅客鉄道株式会社の登録商標です。 \n「manaca」は、株式会社名古屋交通開発機構及び株式会社エムアイシーの登録商標です。 \n「ICOCA」は、西日本旅客鉄道株式会社の登録商標です。 \n「SUGOCA」は、九州旅客鉄道株式会社の登録商標です。 \n「nimoca」は、西日本鉄道株式会社の登録商標です。 \n「はやかけん」は、福岡市交通局の登録商標です。 \n「PiTaPa」は、株式会社スルッとKANSAIの登録商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpIC_other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA” is a trademark of Sapporo Information Center Co., Ltd.\n\n“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。\n「IruCa」は高松琴平電気鉄道株式会社の商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpNplus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“エヌタス”, “N+”, and “長崎バス” are trademarks of 長崎自動車株式会社.\n\n“Tカード” is a trademark of カルチュア・コンビニエンス・クラブ株式会社.\n\n“Vポイントカード”, “Vポイント”, and the Vポイント logo are trademarks of V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「エヌタス」、「N+」、「長崎バス」は長崎自動車株式会社の商標です。\n「Tカード」はカルチュア・コンビニエンス・クラブ株式会社の商標です。\n「Vポイントカード」、「Vポイント」、Vポイントロゴは、Vポイントマーケティング株式会社及び三井住友カード株式会社の商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.krOneCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“One Card All Pass” (전국호환교통카드) is a standard specification established by the Ministry of Land, Infrastructure and Transport of the Republic of Korea.\n\n“T-money” and “티머니” are trademarks of Korea Smart Card Corporation.\n\n“WOWPASS” is a trademark of Orange Square, Inc.\n\n“EZL”, “이즐”, “Cashbee”, and “캐시비” are trademarks of EZL Corp.\n\n“Rail+” and “레일플러스” are trademarks of Korea Railroad Corporation.\n\n“OnePass” and “발행원패스” are trademarks of iM UPay Co., Ltd.\n\n“Hanpay” and “한페이” are trademarks of 한페이시스."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「One Card All Pass」(전국호환교통카드)は、韓国国土交通省の標準規格です。\n「T-money」、「티머니」は、株式会社韓国スマートカードの商標です。\n「WOWPASS」は、Orange Square, Inc. の商標です。\n「EZL」、「이즐」、「Cashbee」、「캐시비」は、EZL Corp.の商標です。\n「Rail+」、「레일플러스」は、Korea Railroad Corporationの商標です。\n「OnePass」、「발행원패스」は、iM UPay Co.,Ltd. の商標です。\n「Hanpay」、「한페이」は、한페이시스の商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.sony" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“FeliCa” is a registered trademark or trademark of Sony Group Corporation or its affiliates."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「FeliCa」は、ソニーグループ株式会社またはその関連会社の登録商標または商標です。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.sony.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.tr.card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.tr.other" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.twICash" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icash” and “愛金卡” are trademarks of 愛金卡股份有限公司.\n\n“7-ELEVEN” is a trademark of 統一超商股份有限公司."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icash」、「愛金卡」は、愛金卡股份有限公司の商標です。\n「7-ELEVEN」は、統一超商股份有限公司の商標です。"
+          }
+        }
+      }
+    },
+    "setting.ads" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告"
+          }
+        }
+      }
+    },
+    "setting.ads.purchase.done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入完了"
+          }
+        }
+      }
+    },
+    "setting.ads.purchase.done.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your purchase to remove ads has been completed! Thank you."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告削除の購入が完了しました！ありがとうございます。"
+          }
+        }
+      }
+    },
+    "setting.ads.purchase.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        }
+      }
+    },
+    "setting.ads.restore" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore Purchase"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入を復元"
+          }
+        }
+      }
+    },
+    "setting.ads.restore.done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "復元完了"
+          }
+        }
+      }
+    },
+    "setting.ads.restore.done.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase restoration completed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入の復元が完了しました。"
+          }
+        }
+      }
+    },
+    "setting.ads.restore.unverified" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        }
+      }
+    },
+    "setting.data" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organize Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データ管理"
+          }
+        }
+      }
+    },
+    "setting.data.cloud" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Sync"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同期"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivate iCloud sync"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同期の無効化"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabling cloud sync will prevent scanned cards from being synchronized.\nPreviously synchronized information will not be deleted."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クラウドでの同期を無効にすると、スキャンしたカードは同期されなくなります。\n過去に同期した情報は削除されません。"
+          }
+        }
+      }
+    },
+    "setting.data.cloud.off.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deactivate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効にする"
+          }
+        }
+      }
+    },
+    "setting.data.reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete History"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴削除"
+          }
+        }
+      }
+    },
+    "setting.data.reset.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The saved card information will be deleted. This action cannot be undone."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存したカード情報を削除します。この操作は取り消せません。"
+          }
+        }
+      }
+    },
+    "setting.data.reset.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
+    "setting.debug" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバッグ"
+          }
+        }
+      }
+    },
+    "setting.debug.ads" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase Status (Ads)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入状態（広告）"
+          }
+        }
+      }
+    },
+    "setting.debug.ads.id" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchases Test"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "課金テスト"
+          }
+        }
+      }
+    },
+    "setting.debug.ads.id.rel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本番"
+          }
+        }
+      }
+    },
+    "setting.debug.ads.id.test" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テスト"
+          }
+        }
+      }
+    },
+    "setting.debug.enableTestCards" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Cards"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示するカード"
+          }
+        }
+      }
+    },
+    "setting.debug.enableTestCards.count:%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)llditems"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(variableName)lld件"
+          }
+        }
+      }
+    },
+    "setting.debug.isdisplay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Debug Info"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバッグ情報の表示"
+          }
+        }
+      }
+    },
+    "setting.debug.locate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置情報"
+          }
+        }
+      }
+    },
+    "setting.debug.locate.reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Device Locate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "端末の位置"
+          }
+        }
+      }
+    },
+    "setting.debug.purchase.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In-App Purchase"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリ内課金"
+          }
+        }
+      }
+    },
+    "setting.debug.result.demoCard" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンプルカードの一括追加"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テストカードを作成"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.balance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残高"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.converter" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンバータ"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.currency" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通貨単位"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登録"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.add" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴を追加"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.amount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引額"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.balance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引後残高"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引日時"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.processType" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引種別コード"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.isHistory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴データ"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.request" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(必須)"
+          }
+        }
+      }
+    },
+    "setting.debug.result.title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン結果画面"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan List View"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン一覧画面"
+          }
+        }
+      }
+    },
+    "setting.other" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
+    "setting.version:%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver %(variableName)@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バージョン %1$(variableName)@"
           }
         }
       }
