@@ -7,26 +7,17 @@
     ": " : {
       "shouldTranslate" : false
     },
+    "/" : {
+
+    },
     "%@" : {
       "shouldTranslate" : false
     },
     "%@ %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@%2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "%@%@" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
             "value" : "%1$@%2$@"
           }
         }
@@ -34,7 +25,6 @@
       "shouldTranslate" : false
     },
     "%@%@ %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -45,19 +35,8 @@
       },
       "shouldTranslate" : false
     },
-    "%@%@%@" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@%2$@%3$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "0%@" : {
-      "shouldTranslate" : false
+    "0 %@" : {
+
     },
     "appName" : {
       "localizations" : {
@@ -3937,6 +3916,142 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アプリ内課金"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テストカードを作成"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.balance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残高"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.converter" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンバータ"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.currency" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通貨単位"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登録"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.add" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴を追加"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.amount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引額"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.balance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引後残高"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引日時"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.history.processType" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取引種別コード"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.isHistory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴データ"
+          }
+        }
+      }
+    },
+    "setting.debug.result.dummyCard.form.request" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(必須)"
+          }
+        }
+      }
+    },
+    "setting.debug.result.title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン結果画面"
           }
         }
       }

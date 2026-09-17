@@ -59,7 +59,7 @@ extension NFCScannerModel {
     }
 }
 
-enum ConverterType: String {
+enum ConverterType: String,CaseIterable {
     case jpIC
     case jpIC_other
     case cnTunion

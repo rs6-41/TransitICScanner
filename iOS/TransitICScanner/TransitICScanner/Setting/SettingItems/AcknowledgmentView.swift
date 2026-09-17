@@ -9,12 +9,7 @@ struct AcknowledgmentView: View {
         }
         .navigationTitle(LocalizedStringKey("setting.acknowledgment"))
         
-        .listSectionSpacing(.compact)
-                    .contentMargins(.top, 3)
-                    .environment(\.defaultMinListRowHeight, 1)
-                    .alignmentGuide(.listRowSeparatorLeading) { _ in
-                        .zero
-                    }
+        .contentMargins(.top, 10)
     }
 }
 
@@ -41,12 +36,7 @@ struct TRView: View {
         }
         .navigationTitle(LocalizedStringKey("setting.acknowledgment.cardtr"))
         
-        .listSectionSpacing(.compact)
-                    .contentMargins(.top, 3)
-                    .environment(\.defaultMinListRowHeight, 1)
-                    .alignmentGuide(.listRowSeparatorLeading) { _ in
-                        .zero
-                    }
+        .contentMargins(.top, 10)
     }
 }
 

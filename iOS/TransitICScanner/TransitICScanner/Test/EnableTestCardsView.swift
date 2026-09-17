@@ -11,6 +11,7 @@ struct EnableTestCardsView: View {
         }
         .navigationTitle(LocalizedStringKey("setting.debug.enableTestCards"))
         .navigationBarTitleDisplayMode(.inline)
+        .contentMargins(.top, 10)
     }
 }
 
