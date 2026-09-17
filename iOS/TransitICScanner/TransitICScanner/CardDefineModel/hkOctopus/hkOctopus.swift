@@ -22,7 +22,14 @@ let hkOctopus = CardInfo(
         currency:"currency.hkd",
         converter:.hkOctopus
     ),
-    infomation: nil
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:300.0,
+            idm:"012467574734EB05",
+            type:"",
+            history: []
+        )
     
 )
 

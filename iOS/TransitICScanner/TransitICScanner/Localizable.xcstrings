@@ -1134,6 +1134,16 @@
     "DEBUG MODE" : {
       "shouldTranslate" : false
     },
+    "done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
     "error" : {
       "localizations" : {
         "en" : {
@@ -2068,6 +2078,9 @@
           }
         }
       }
+    },
+    "Loading..." : {
+      "shouldTranslate" : false
     },
     "ok" : {
       "localizations" : {
@@ -3916,6 +3929,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アプリ内課金"
+          }
+        }
+      }
+    },
+    "setting.debug.result.demoCard" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンプルカードの一括追加"
           }
         }
       }

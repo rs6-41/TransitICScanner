@@ -28,13 +28,19 @@ struct ContentView: View {
                 }
              
         }
+        
         .onAppear() {
-            #if DEBUG
-            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
-            #else
-            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
-            #endif
+            setup()
         }
+    }
+    func setup() {
+        #if DEBUG
+            cardItemsStore.cardItems = devCards
+            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
+        #else
+            cardItemsStore.cardItems = relCards
+            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+        #endif
     }
 }
 

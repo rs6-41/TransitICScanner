@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import SwiftData
 
 final class DebugModel: ObservableObject {
     @Published var isDisplay: Bool = false
@@ -20,78 +21,136 @@ struct DebugSetting: View {
         ,("unknown", "unknown")
     ]
     @State var devLocate = ""
+    
+    @State var isLoading = false
+    
     @EnvironmentObject var getCountry: GetCountry
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
+    @Environment(\.modelContext) private var modelContext
+    
+    @State var alertTitle:String = ""
+    @State var alertMessage:String = ""
+    @State var isAlert:Bool = false
+    
     @State var isDummyCardForm = false
     
     var body: some View {
-        List {
-            Section() {
-                Toggle(isOn: $debug.isDisplay) {
-                    Text(LocalizedStringKey("setting.debug.isdisplay"))
-                }
-            }
-            
-            Section(header: Text(LocalizedStringKey("setting.debug.scanlist.title"))) {
-                NavigationLink(destination: EnableTestCardsView()) {
-                    HStack {
-                        Text(LocalizedStringKey("setting.debug.enableTestCards"))
-                        Spacer()
-                        Text(LocalizedStringKey("setting.debug.enableTestCards.count:\(store.cardItems.count)"))
-                            .foregroundStyle(Color.gray)
+        ZStack {
+            List {
+                Section() {
+                    Toggle(isOn: $debug.isDisplay) {
+                        Text(LocalizedStringKey("setting.debug.isdisplay"))
                     }
                 }
-                Picker(
-                    LocalizedStringKey("setting.debug.locate"),
-                    selection: $devLocate
-                ) {
-                    Text(LocalizedStringKey("setting.debug.locate.reset"))
-                        .tag("")
+                
+                Section(header: Text(LocalizedStringKey("setting.debug.scanlist.title"))) {
+                    NavigationLink(destination: EnableTestCardsView()) {
+                        HStack {
+                            Text(LocalizedStringKey("setting.debug.enableTestCards"))
+                            Spacer()
+                            Text(LocalizedStringKey("setting.debug.enableTestCards.count:\(store.cardItems.count)"))
+                                .foregroundStyle(Color.gray)
+                        }
+                    }
+                    Picker(
+                        LocalizedStringKey("setting.debug.locate"),
+                        selection: $devLocate
+                    ) {
+                        Text(LocalizedStringKey("setting.debug.locate.reset"))
+                            .tag("")
+                        
+                        ForEach(devLocates, id: \.code) { locate in
+                            Text(LocalizedStringKey(locate.name))
+                                .tag(locate.code)
+                        }
+                    }
+                    .onChange(of: devLocate) {
+                        if devLocate.isEmpty {
+                            getCountry.resetDebug()
+                            getCountry.start()
+                        } else {
+                            getCountry.debug(country: devLocate)
+                        }
+                    }
+                }
+                
+                Section(header: Text(LocalizedStringKey("setting.debug.result.title"))) {
+                    Button(action: {
+                        isDummyCardForm = true
+                    }) {
+                        Text(LocalizedStringKey("setting.debug.result.dummyCard"))
+                    }
                     
-                    ForEach(devLocates, id: \.code) { locate in
-                        Text(LocalizedStringKey(locate.name))
-                            .tag(locate.code)
+                    Button(action: {
+                        Task { @MainActor in
+                            isLoading = true
+                            for card in devCards {
+                                let result = getResultSample(model: card)
+                                saveAction(result: result)
+                                try? await Task.sleep(nanoseconds: 200_000_000)
+                            }
+                            alertTitle = String(localized: "setting.debug.result.demoCard")
+                            alertMessage = String(localized: "done")
+                            isAlert = true
+                            isLoading = false
+                        }
+                    }) {
+                        Text(LocalizedStringKey("setting.debug.result.demoCard"))
                     }
                 }
-                .onChange(of: devLocate) {
-                    if devLocate.isEmpty {
-                        getCountry.resetDebug()
-                        getCountry.start()
-                    } else {
-                        getCountry.debug(country: devLocate)
+                
+                Section(header: Text(LocalizedStringKey("setting.debug.purchase.title"))) {
+                    Toggle(isOn: $deleteAds) {
+                        Text(LocalizedStringKey("setting.debug.ads"))
                     }
+                    Picker(LocalizedStringKey("setting.debug.ads.id"), selection: $deleteAdsPurchaseID) {
+                        Text(LocalizedStringKey("setting.debug.ads.id.test")).tag("com.rs6apps.TransitICScanner.deleteAds.test")
+                        Text(LocalizedStringKey("setting.debug.ads.id.rel")).tag("com.rs6apps.TransitICScanner.deleteAds")
+                    }
+                }
+            }
+            .navigationTitle(LocalizedStringKey("setting.debug"))
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .sheet(isPresented: $isDummyCardForm) {
+                NavigationStack {
+                    DummyCardFormView()
                 }
             }
             
-            Section(header: Text(LocalizedStringKey("setting.debug.result.title"))) {
-                Button(action: {
-                    isDummyCardForm = true
-                }) {
-                    Text(LocalizedStringKey("setting.debug.result.dummyCard"))
+            .alert(alertTitle, isPresented: $isAlert) {
+                Button(LocalizedStringKey("ok")) {
+                    alertTitle = ""
+                    alertMessage = ""
+                    isAlert = false
                 }
+            } message: {
+                Text(alertMessage)
             }
             
-            Section(header: Text(LocalizedStringKey("setting.debug.purchase.title"))) {
-                Toggle(isOn: $deleteAds) {
-                    Text(LocalizedStringKey("setting.debug.ads"))
-                }
-                Picker(LocalizedStringKey("setting.debug.ads.id"), selection: $deleteAdsPurchaseID) {
-                    Text(LocalizedStringKey("setting.debug.ads.id.test")).tag("com.rs6apps.TransitICScanner.deleteAds.test")
-                    Text(LocalizedStringKey("setting.debug.ads.id.rel")).tag("com.rs6apps.TransitICScanner.deleteAds")
-                }
+            
+            .contentMargins(.top, 10)
+            if isLoading {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                ProgressView("Loading...")
+                    .padding()
+                    .background(.background)
+                    .cornerRadius(10)
             }
         }
-        .navigationTitle(LocalizedStringKey("setting.debug"))
-        .navigationBarTitleDisplayMode(.inline)
-        
-        .sheet(isPresented: $isDummyCardForm) {
-            NavigationStack {
-                DummyCardFormView()
-            }
+    }
+    
+    private func saveAction(result:Result) {
+        do {
+            try ResultSave.save(
+                result,
+                in: modelContext
+            )
+            print("Resultの保存に成功しました")
+        } catch {
+            print("Resultの保存に失敗しました: \(error)")
         }
-        
-        
-        .contentMargins(.top, 10)
     }
 }
