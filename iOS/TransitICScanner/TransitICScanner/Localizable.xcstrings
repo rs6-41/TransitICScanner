@@ -4,6 +4,12 @@
     "" : {
       "shouldTranslate" : false
     },
+    ": " : {
+      "shouldTranslate" : false
+    },
+    "%@" : {
+      "shouldTranslate" : false
+    },
     "%@ %@" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -58,7 +64,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Global IC balance checker"
+            "value" : "Global IC Balance Checker"
           }
         },
         "ja" : {
@@ -590,6 +596,23 @@
         }
       }
     },
+    "cardList.area.kp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "North Korea"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北朝鮮"
+          }
+        }
+      }
+    },
     "cardList.area.kr" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -607,6 +630,23 @@
         }
       }
     },
+    "cardList.area.mo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオ"
+          }
+        }
+      }
+    },
     "cardList.area.tw" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -620,6 +660,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "台湾"
+          }
+        }
+      }
+    },
+    "cardList.area.us" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "United States"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アメリカ"
           }
         }
       }
@@ -899,7 +956,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Now locate"
+            "value" : "Now Locate"
           }
         },
         "ja" : {
@@ -1094,6 +1151,9 @@
           }
         }
       }
+    },
+    "DEBUG MODE" : {
+      "shouldTranslate" : false
     },
     "error" : {
       "localizations" : {
@@ -3000,7 +3060,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hold “%@” near top center of your iPhone"
+            "value" : "Hold “%@” near top center of your iPhone."
           }
         },
         "ja" : {
@@ -3147,7 +3207,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rights information"
+            "value" : "Rights Information"
           }
         },
         "ja" : {
@@ -3164,13 +3224,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“iPhone” and “Apple Pay” are registered trademarks of Apple Inc."
+            "value" : "iPhone, iPad, App Store and Apple Pay are registered trademarks of Apple Inc."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhoneおよびApple Payは、米国および他の国々で登録されたApple Inc.の商標です。"
+            "value" : "iPhone、iPad、App StoreおよびApple Payは、米国および他の国々で登録されたApple Inc.の商標です。"
           }
         }
       }
@@ -3459,23 +3519,6 @@
         }
       }
     },
-    "setting.ads.delete" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete ads"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広告を削除"
-          }
-        }
-      }
-    },
     "setting.ads.purchase.done" : {
       "localizations" : {
         "en" : {
@@ -3529,7 +3572,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Restore"
+            "value" : "Restore Purchase"
           }
         },
         "ja" : {
@@ -3593,7 +3636,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Organize data"
+            "value" : "Organize Data"
           }
         },
         "ja" : {
@@ -3609,7 +3652,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iCloud sync"
+            "value" : "iCloud Sync"
           }
         },
         "ja" : {
@@ -3673,7 +3716,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Delete history"
+            "value" : "Delete History"
           }
         },
         "ja" : {
@@ -3739,7 +3782,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Purchase status (Ads)"
+            "value" : "Purchase Status (Ads)"
           }
         },
         "ja" : {
@@ -3756,7 +3799,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Purchases test"
+            "value" : "Purchases Test"
           }
         },
         "ja" : {
@@ -3804,10 +3847,112 @@
     "setting.debug.enableTestCards" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Cards"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "表示するカード"
+          }
+        }
+      }
+    },
+    "setting.debug.enableTestCards.count:%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)llditems"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(variableName)lld件"
+          }
+        }
+      }
+    },
+    "setting.debug.isdisplay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Debug Info"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバッグ情報の表示"
+          }
+        }
+      }
+    },
+    "setting.debug.locate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置情報"
+          }
+        }
+      }
+    },
+    "setting.debug.locate.reset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Device Locate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "端末の位置"
+          }
+        }
+      }
+    },
+    "setting.debug.purchase.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In-App Purchase"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリ内課金"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan List View"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン一覧画面"
           }
         }
       }

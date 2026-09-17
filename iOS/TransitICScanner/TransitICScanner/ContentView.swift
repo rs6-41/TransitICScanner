@@ -4,6 +4,7 @@ import Combine
 
 struct ContentView: View {
     @State var tab: Int = 0
+    @State var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
     var body: some View {
         TabView(selection: $tab) {
             
@@ -19,13 +20,20 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            SettingView()
+            SettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID)
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.setting"), systemImage: "gearshape")
                 }
              
+        }
+        .onAppear() {
+            #if DEBUG
+            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
+            #else
+            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+            #endif
         }
     }
 }

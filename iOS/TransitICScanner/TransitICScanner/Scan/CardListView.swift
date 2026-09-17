@@ -2,8 +2,9 @@ import SwiftUI
 import CoreNFC
 
 struct CardList: View {
-    @StateObject private var getCountry = GetCountry()
     @State private var searchText = ""
+    @EnvironmentObject var getCountry: GetCountry
+    @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     
     private var filteredCardItems: [CardInfo] {
@@ -53,6 +54,20 @@ struct CardList: View {
     var body: some View {
         NavigationStack {
             List {
+                if debug.isDisplay {
+                    VStack(alignment:.leading) {
+                        Text("DEBUG MODE")
+                            .bold()
+                            .foregroundStyle(Color.red)
+                        HStack(spacing:3) {
+                            Text(LocalizedStringKey("cardList.nowLocate"))
+                            Text(": ")
+                            Text("\(getCountry.countryCode ?? "nil")")
+                        }
+                    }
+                }
+                
+                
                 if !currentCountryItems.isEmpty {
                     Section {
                         ForEach(currentCountryItems, id: \.logo) { item in
