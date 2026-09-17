@@ -7,7 +7,6 @@ struct ContentView: View {
     @State var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
     var body: some View {
         TabView(selection: $tab) {
-            
             CardList()
                 .tag(0)
                 .toolbarBackground(.visible, for: .tabBar)
