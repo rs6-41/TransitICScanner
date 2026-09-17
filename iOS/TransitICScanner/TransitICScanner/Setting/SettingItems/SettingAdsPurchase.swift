@@ -10,9 +10,12 @@ struct SettingAdsPurchase: View {
     var body: some View {
         Section(header:Text("setting.ads")) {
             HStack {
-                SquareIcon(text:"", systemImage: "xmark.app.fill",color:Color.green)
-                ProductView(id: deleteAdsPurchaseID)
+                ProductView(id: deleteAdsPurchaseID) {
+                    SquareIcon(text:"", systemImage: "xmark.app.fill",color:Color.green)
+                }
+                    .buttonStyle(ProductButtonStyle())
                     .productViewStyle(.compact)
+                
                     .onInAppPurchaseCompletion { product, result in
                         switch result {
                             case .success(let purchaseResult):
@@ -60,5 +63,17 @@ struct SettingAdsPurchase: View {
                 SquareIcon(text:"setting.ads.restore", systemImage: "arrow.counterclockwise.circle",color:Color.orange)
             }
         }
+    }
+}
+
+struct ProductButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .fontWeight(.semibold)
+            .padding(.vertical,6)
+            .padding(.horizontal,20)
+            .background(Color.accentColor)
+            .foregroundColor(.white)
+            .cornerRadius(50)
     }
 }
