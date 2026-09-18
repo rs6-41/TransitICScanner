@@ -4382,14 +4382,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "EasyCard"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EasyCard"
+            "value" : "悠遊卡"
           }
         }
       }

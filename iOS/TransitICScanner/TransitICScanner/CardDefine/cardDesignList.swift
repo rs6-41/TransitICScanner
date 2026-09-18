@@ -34,5 +34,8 @@ let cardDesignList:[CardDesigin] = [
     
     
     // MARK:jpNplus
-    CardDesigin(type: .jpNplus, name: "card.jpNplus", imageName: "jpNplus", isDefault: true)
+    CardDesigin(type: .jpNplus, name: "card.jpNplus", imageName: "jpNplus", isDefault: true),
+    
+    //twEasyCard_old
+    CardDesigin(type: .twEasyCard_old, name: "card.twEasyCard_old", imageName: "twEasyCard_old", isDefault: true)
 ]
