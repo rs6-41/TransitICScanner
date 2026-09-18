@@ -17,8 +17,8 @@ iOSではMifare Classicの読み取りができない。
 | 台湾 | Super EasyCard | | Type-A | |  | | スマホで読み書きできる新世代版 |
 | 台湾 | iPass | | Type-A | Mifare Classic |  | | |
 | 台湾 | iPass Plus | | Type-A | |  | | スマホで読み書きできる新世代版 |
-| 台湾 | iCash | twIcash | Type-A | [iCash](../doc/cards/twIcash.md) | ✅ | | |
-| 韓国 | OneCard AllPass | krOneCard | NFC Type-A | [KS X 6924](../doc/cards/krOneCard.md) | ✅ | | |
+| 台湾 | iCash | twIcash | Type-A | [iCash](./doc/cards/twIcash.md) | ✅ | | |
+| 韓国 | OneCard AllPass | krOneCard | NFC Type-A | [KS X 6924](./doc/cards/krOneCard.md) | ✅ | | |
 | 北朝鮮 | 平壌交通カード（緑） | | NFC Type-A | Mifare Classic | ✖️ | | |
 | 北朝鮮 | 平壌交通カード（青） | | NFC Type-A | Mifare Classic | ✖️ | | |
 
