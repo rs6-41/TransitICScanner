@@ -8,7 +8,7 @@
       "shouldTranslate" : false
     },
     "/" : {
-
+      "shouldTranslate" : false
     },
     "%@" : {
       "shouldTranslate" : false
@@ -36,7 +36,7 @@
       "shouldTranslate" : false
     },
     "0 %@" : {
-
+      "shouldTranslate" : false
     },
     "appName" : {
       "localizations" : {
@@ -1136,6 +1136,12 @@
     },
     "done" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3927,6 +3933,12 @@
     },
     "setting.debug.result.demoCard" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add All Sample Cards"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3937,6 +3949,12 @@
     },
     "setting.debug.result.dummyCard" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add test cards"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3958,6 +3976,12 @@
     },
     "setting.debug.result.dummyCard.form.converter" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Converter"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3969,6 +3993,12 @@
     "setting.debug.result.dummyCard.form.currency" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Currency"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3979,6 +4009,12 @@
     },
     "setting.debug.result.dummyCard.form.done" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3989,6 +4025,12 @@
     },
     "setting.debug.result.dummyCard.form.history.add" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add History"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4000,6 +4042,12 @@
     "setting.debug.result.dummyCard.form.history.amount" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amount"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4011,6 +4059,12 @@
     "setting.debug.result.dummyCard.form.history.balance" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After Balance"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4022,6 +4076,12 @@
     "setting.debug.result.dummyCard.form.history.date" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4043,6 +4103,12 @@
     },
     "setting.debug.result.dummyCard.form.isHistory" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History Data"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4053,6 +4119,12 @@
     },
     "setting.debug.result.dummyCard.form.request" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(Request)"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4063,6 +4135,12 @@
     },
     "setting.debug.result.title" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Result View"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
