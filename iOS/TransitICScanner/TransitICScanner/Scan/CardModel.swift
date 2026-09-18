@@ -26,6 +26,7 @@ struct ScanOption {
     var historyCount: Int //履歴の取得件数
     var currency: String //通貨単位
     var converter: ConverterType
+    var scrapingView:(() -> AnyView)?
 }
 
 // サンプルデータ

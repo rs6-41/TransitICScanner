@@ -17,10 +17,10 @@ let jpNplus = CardInfo(
         scanType: .nfc,
         pollingOption:[.iso18092],
         felicaSystemCodes:["93EC"],
-        url: nil,
         historyCount:20,
         currency:"currency.jpy",
-        converter:.jpNplus
+        converter:.jpNplus,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:

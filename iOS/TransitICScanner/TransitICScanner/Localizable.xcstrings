@@ -1161,7 +1161,6 @@
       }
     },
     "error.ok" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1189,7 +1188,6 @@
       }
     },
     "form.birthday.day" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1206,7 +1204,6 @@
       }
     },
     "form.birthday.description" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1223,7 +1220,6 @@
       }
     },
     "form.birthday.month" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1240,7 +1236,6 @@
       }
     },
     "form.birthday.title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1257,7 +1252,6 @@
       }
     },
     "form.captcha" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1274,7 +1268,6 @@
       }
     },
     "form.captcha.title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1291,7 +1284,6 @@
       }
     },
     "form.card" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1303,7 +1295,6 @@
       "shouldTranslate" : false
     },
     "form.card.description" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1320,7 +1311,6 @@
       }
     },
     "form.card.title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1337,7 +1327,6 @@
       }
     },
     "form.done" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4179,7 +4168,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.audio" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4196,7 +4184,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.birthday" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4213,7 +4200,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.captcha" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4230,7 +4216,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.card" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4264,7 +4249,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.date" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4281,7 +4265,6 @@
       }
     },
     "twEasyCard_old.error.server.invalid.retry" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4298,7 +4281,6 @@
       }
     },
     "twEasyCard_old.form.error.birthday.count" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4315,7 +4297,6 @@
       }
     },
     "twEasyCard_old.form.error.captcha.count" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4332,7 +4313,6 @@
       }
     },
     "twEasyCard_old.form.error.captcha.empty" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4349,7 +4329,6 @@
       }
     },
     "twEasyCard_old.form.error.card.count" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4366,7 +4345,6 @@
       }
     },
     "twEasyCard_old.form.error.card.empty" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

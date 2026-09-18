@@ -16,15 +16,15 @@ let twICash = CardInfo(
         scanType: .nfc,
         pollingOption: [.iso14443],
         felicaSystemCodes: nil,
-        url: nil,
         historyCount: 20,
         currency:  "currency.twd",
-        converter: .twICash
+        converter: .twICash,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:
         ResultSample(
-            balance:300.0,
+            balance:980.0,
             idm:"7311235747421931",
             type:"",
             history: [

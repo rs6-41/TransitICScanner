@@ -17,10 +17,10 @@ let cnTunion = CardInfo(
         scanType: .nfc,
         pollingOption: [.iso14443],
         felicaSystemCodes: nil,
-        url: nil,
         historyCount: 20,
         currency: "currency.rmb",
-        converter: .cnTunion
+        converter: .cnTunion,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:
