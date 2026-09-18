@@ -19,10 +19,10 @@ let krOneCard = CardInfo(
         scanType: .nfc,
         pollingOption:[.iso14443],
         felicaSystemCodes: nil,
-        url: nil,
         historyCount: 20,
         currency: "currency.KRW",
-        converter:.krOneCard
+        converter:.krOneCard,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:

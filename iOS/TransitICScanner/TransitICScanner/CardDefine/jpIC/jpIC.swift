@@ -21,15 +21,15 @@ let jpIC = CardInfo(
         scanType: .nfc,
         pollingOption:[.iso18092],
         felicaSystemCodes:["0003"],
-        url: nil,
         historyCount:20,
         currency:"currency.jpy",
-        converter:.jpIC
+        converter:.jpIC,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:
         ResultSample(
-            balance:1000.0,
+            balance:1099.0,
             idm:"0112031212345678",
             type:"card.suica",
             history: [
@@ -60,7 +60,6 @@ let jpIC_other = CardInfo(
         felicaSystemCodes:["865E","DE80"],
         //865E：SAPICA
         //DE80：IruCa
-        url: nil,
         historyCount:20,
         currency:"currency.jpy",
         converter:.jpIC
@@ -68,9 +67,9 @@ let jpIC_other = CardInfo(
     infomation: nil,
     sample:
         ResultSample(
-            balance:1099,
+            balance:500.0,
             idm:"0112E0D1C2B35A10",
-            type:"card.IruCa",
+            type:"card.SAPICA",
             history: [
             //TODO: 駅コード例を調べる（暫定的に全て1111）
             // 2: チャージ 残高1100円 2025/19/23 19:21

@@ -18,90 +18,154 @@ let twEasyCard_old:CardInfo = CardInfo(
         scanType: .scraping,
         pollingOption:[],
         felicaSystemCodes:[],
-        url: URL(string:"https://ezweb.easycard.com.tw/search/CardSearch.php")!,
+        url: URL(string:"https://ezweb.easycard.com.tw/search/")!,
         historyCount:999,
         currency:"currency.twd",
-        converter:.twEasyCard_old
+        converter:.twEasyCard_old,
+        scrapingView: {
+            AnyView(twEasyCard_old_View())
+        }
     ),
-    infomation: AnyView(
-        twEasyCard_old_info()
-    )
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:980.0,
+            idm:"7462640446",
+            type:"",
+            history: [
+            // 2: +500TWD 台北站でチャージ 残高1000TWD 2025/19/23 19:21
+            ResultHistory(processType: 0x00,date: sampleDay2,balance: 1000,amount: 500,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 1,mappingID: "台北站"),
+            // 3: 20TWD 台北站 残高980TWD 2026/1/3 12:58
+            ResultHistory(processType: 0x00,date: sampleDay3,balance: 980,amount: 20,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 152,mappingID: "台北站"),
+            ]
+        )
 )
 
-struct twEasyCard_old_Button: View {
-    @State private var isDisplayInput = false
-    public let item: CardInfo = twEasyCard_old
-
-    var body: some View {
-        Button(action: {
-            isDisplayInput = true
-        }) {
-            ListButtonInner(item: item)
-        }
-        .sheet(isPresented: $isDisplayInput) {
-            twEasyCard_oldInputView()
-        }
-    }
-}
-
-struct twEasyCard_oldInputView: View {
+struct twEasyCard_old_View: View {
     let item: CardInfo = twEasyCard_old
     @Environment(\.dismiss) private var dismiss
     @StateObject private var controller = WebViewController()
-    @State private var card = ""
-    @State private var birthday = ""
-    @State private var birthdayMonth = ""
-    @State private var birthdayDay = ""
-    @State private var captcha = ""
     @State private var result: Result?
     @State private var navigationResult: Result?
-    @State var isLoaded = false
     @State var scannedNumber:String? = ""
     @State var error = false
     @State var errorMessage = ""
-    @State private var isLoading = false
+    
+    @State var name:String = ""
+    @State var card: String = ""
+    @State var birthday: String = ""
+    @State var birthdayMonth: String = ""
+    @State var birthdayDay: String = ""
+    @State var captcha: String = ""
+    @State var isLoaded: Bool = false
+    @State var isLoading: Bool = false
+    @State var cardLimit:Int = 16
+    @State var captchaLimit:Int = 6
 
     var body: some View {
         NavigationStack {
-            ScrapingFormView(
-                name:"twEasyCard_old",
-                isBirthday: true,
-                iscaptcha:true,
-                card: $card,
-                birthdayMonth: $birthdayMonth,
-                birthdayDay: $birthdayDay,
-                captcha: $captcha,
-                ID: .constant(""),
-                isLoaded: $isLoaded,
-                error: $error,
-                errorMessage: $errorMessage,
-                isLoading: $isLoading,
-                cardLimit: 16,
-                captchaLimit: 6,
-                controller: controller,
-                onSubmit: {
-                    birthday = birthdayMonth + birthdayDay
-                    if card == "" || card.isEmpty {
-                        errorMessage = String(localized:"twEasyCard_old.form.error.card.empty")
-                        error = true
-                    } else if card.count != 10 && card.count != 16 {
-                        errorMessage = String(localized:"twEasyCard_old.form.error.card.count")
-                        error = true
-                    } else if captcha == "" || captcha.isEmpty {
-                        errorMessage = String(localized:"twEasyCard_old.form.error.captcha.empty")
-                        error = true
-                    } else if captcha.count != 6 {
-                        errorMessage = String(localized:"twEasyCard_old.form.error.captcha.count")
-                        error = true
-                    } else if birthday.count != 0 && birthday.count == 4 {
-                        errorMessage = String(localized:"twEasyCard_old.form.error.birthday.count")
-                        error = true
-                    } else {
-                        postData()
+            Form {
+                Section(
+                    header:Text(LocalizedStringKey("form.card.title")),
+                    footer:Text(LocalizedStringKey("form.card.description"))
+                ){
+                    TextField(LocalizedStringKey("form.card"), text: $card)
+                        .keyboardType(.numberPad)
+                        .onChange(of: card) {
+                            if card.count > cardLimit {
+                                card = String(card.prefix(cardLimit))
+                            }
+                        }
+                }
+                Section(
+                    header:Text(LocalizedStringKey("form.birthday.title")),
+                    footer:Text(LocalizedStringKey("form.birthday.description"))
+                ){
+                    HStack {
+                        TextField(LocalizedStringKey("form.birthday.month"), text: $birthdayMonth)
+                            .keyboardType(.numberPad)
+                            .onChange(of: birthdayMonth) {
+                                let limit = 2
+                                if birthdayMonth.count > limit {
+                                    birthdayMonth = String(birthdayMonth.prefix(limit))
+                                }
+                            }
+                        Divider()
+                        TextField(LocalizedStringKey("form.birthday.day"), text: $birthdayDay)
+                            .keyboardType(.numberPad)
+                            .onChange(of: birthdayDay) {
+                                let limit = 2
+                                if birthdayDay.count > limit {
+                                    birthdayDay = String(birthdayDay.prefix(limit))
+                                }
+                            }
                     }
                 }
-            )
-            .navigationTitle(item.name)
+                Section(
+                    header:Text(LocalizedStringKey("form.captcha.title"))
+                ){
+                    VStack(alignment:.leading) {
+                        if let image = controller.captchaImage {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:250)
+                                .padding(.bottom,5)
+                                .onAppear() {
+                                    isLoaded = true
+                                }
+                        } else {
+                            HStack {
+                                Spacer()
+                                ProgressView()
+                                    .onAppear() {
+                                        isLoaded = false
+                                    }
+                                Spacer()
+                            }
+                        }
+                        TextField(LocalizedStringKey("form.captcha"), text: $captcha)
+                            .keyboardType(.numberPad)
+                            .onChange(of: captcha) {
+                                if captcha.count > captchaLimit {
+                                    captcha = String(captcha.prefix(captchaLimit))
+                                }
+                            }
+                    }
+                }
+                .listSectionSpacing(15)
+                
+                Section() {
+                    Button(action: {
+                        onSubmit()
+                    }) {
+                        Text(LocalizedStringKey("form.done"))
+                            .bold()
+                            .padding()
+                            .frame(maxWidth:.infinity,maxHeight:30)
+                    }
+                    .disabled(!isLoaded)
+                    .buttonStyle(GlassProminentButtonStyle())
+                    .frame(maxWidth:400,alignment:.center)
+                }
+                .listRowInsets(
+                    .init(top: .zero,leading: .zero,bottom: .zero,trailing: .zero)
+                )
+                .listRowBackground(Color.clear)
+            }
+            .overlay {
+                if isLoading {
+                    ZStack {
+                        Color.black.opacity(0.25)
+                            .ignoresSafeArea()
+                        ProgressView()
+                            .controlSize(.large)
+                            .padding(24)
+                            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
+                    }
+                }
+            }
+            .navigationTitle(item.scanOption.nameShort)
             .navigationDestination(item: $navigationResult) { result in
                 ResultView(result: result, scandata: true, saveListID: .constant(UUID()))
                     .navigationBarBackButtonHidden()
@@ -129,6 +193,27 @@ struct twEasyCard_oldInputView: View {
             } message: {
                 Text(errorMessage)
             }
+        }
+    }
+    func onSubmit() {
+        birthday = birthdayMonth + birthdayDay
+        if card == "" || card.isEmpty {
+            errorMessage = String(localized:"twEasyCard_old.form.error.card.empty")
+            error = true
+        } else if card.count != 10 && card.count != 16 {
+            errorMessage = String(localized:"twEasyCard_old.form.error.card.count")
+            error = true
+        } else if captcha == "" || captcha.isEmpty {
+            errorMessage = String(localized:"twEasyCard_old.form.error.captcha.empty")
+            error = true
+        } else if captcha.count != 6 {
+            errorMessage = String(localized:"twEasyCard_old.form.error.captcha.count")
+            error = true
+        } else if birthday.count != 0 && birthday.count == 4 {
+            errorMessage = String(localized:"twEasyCard_old.form.error.birthday.count")
+            error = true
+        } else {
+            postData()
         }
     }
     func postData() {
@@ -215,7 +300,7 @@ struct twEasyCard_oldInputView: View {
 
 
 final class WebViewController: ObservableObject {
-    private let baseURL = URL(string: "https://ezweb.easycard.com.tw/search/")!
+    private let baseURL = twEasyCard_old.scanOption.url!
     @Published var captchaImage: UIImage?
     @Published var captchaToken: String = ""
     @Published var cookies: [HTTPCookie] = []

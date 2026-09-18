@@ -51,6 +51,8 @@ struct CardList: View {
         }
     }
     
+    @State var isDisplayScrapingForm = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -115,9 +117,24 @@ struct CardList: View {
 
 struct CardListRow: View {
     let item: CardInfo
+    @State var isFormDisplay = false
     
     var body: some View {
-        ScanningButton(item: item)
+        switch item.scanOption.scanType {
+        case .nfc:
+            ScanningButton(item: item)
+        case .scraping:
+            if let view = item.scanOption.scrapingView {
+                Button(action: {
+                    isFormDisplay = true
+                }) {
+                    ListButtonInner(item: item)
+                }
+                .sheet(isPresented: $isFormDisplay) {
+                    view()
+                }
+            }
+        }
     }
 }
 

@@ -16,7 +16,8 @@ let devCards: [CardInfo] = [
     hkOctopus,
     krOneCard,
     twICash,
-    jpNplus
+    jpNplus,
+    twEasyCard_old
 ]
 
 // リリース可能なカード
@@ -35,22 +36,14 @@ let relCards: [CardInfo] = [
 extension NFCScannerModel {
     func switchCard(name:String,_ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch name {
-        case "jpIC":
-            self.jpIC_scan(tag,session)
-        case "jpIC_other":
-            self.jpIC_scan(tag,session)
-        case "cnTunion":
-            self.cnTunion_scan(tag,session)
-        case "hkOctopus":
-            await self.hkOctopus_scan(tag,session)
-        case "krOneCard":
-            self.krOneCard_scan(tag,session)
-        case "twICash":
-            self.twICash_scan(tag,session)
-        case "jpNplus":
-            self.jpNplus_scan(tag,session)
-        case "jpNplus":
-            self.jpNplus_scan(tag,session)
+        case "jpIC": self.jpIC_scan(tag,session)
+        case "jpIC_other": self.jpIC_scan(tag,session)
+        case "cnTunion": self.cnTunion_scan(tag,session)
+        case "hkOctopus": await self.hkOctopus_scan(tag,session)
+        case "krOneCard": self.krOneCard_scan(tag,session)
+        case "twICash": self.twICash_scan(tag,session)
+        case "jpNplus": self.jpNplus_scan(tag,session)
+        case "twEasyCard_old": return
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -67,6 +60,7 @@ enum ConverterType: String,CaseIterable {
     case krOneCard
     case twICash
     case jpNplus
+    case twEasyCard_old
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -84,6 +78,8 @@ enum ConverterType: String,CaseIterable {
             twICash_Converter.cardInfo(info)
         case .jpNplus:
             jpNplus_Converter.cardInfo(info)
+        case .twEasyCard_old:
+            twEasyCard_old_Converter.cardInfo(info)
         }
     }
 
@@ -103,6 +99,8 @@ enum ConverterType: String,CaseIterable {
             twICash_Converter.history(item)
         case .jpNplus:
             jpNplus_Converter.history(item)
+        case .twEasyCard_old:
+            twEasyCard_old_Converter.history(item)
         }
     }
 }

@@ -17,10 +17,10 @@ let hkOctopus = CardInfo(
         scanType: .nfc,
         pollingOption:[.iso18092],
         felicaSystemCodes:["8008"],
-        url: nil,
         historyCount:0,
         currency:"currency.hkd",
-        converter:.hkOctopus
+        converter:.hkOctopus,
+        scrapingView: nil
     ),
     infomation: nil,
     sample:
