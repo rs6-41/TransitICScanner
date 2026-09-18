@@ -12,7 +12,7 @@ iOSではMifare Classicの読み取りができない。
 | 日本 | 交通系IC | jpIC | Type-F | [サイバネ](./doc/cards/jpIC.md) | ✅ | | |
 | 中国本土 | China T-Union | cnTunion | Type-A | [交通联合](./doc/cards/cnTunion.md) | ✅ | | |
 | 香港 | Octopus | hkOctopus | Type-F | [Octopus](./doc/cards/hkOctopus.md) | ✅ | | 交通联合版も存在 |
-| マカオ | マカオパス | | Type-A | Mifare Classic | ✅ | | 交通联合版も存在 |
+| マカオ | マカオパス | | Type-A | Mifare Classic | | | 交通联合版も存在 |
 | 台湾 | EasyCard | | Type-A | Mifare Classic | | | |
 | 台湾 | Super EasyCard | | Type-A | |  | | スマホで読み書きできる新世代版 |
 | 台湾 | iPass | | Type-A | Mifare Classic |  | | |
