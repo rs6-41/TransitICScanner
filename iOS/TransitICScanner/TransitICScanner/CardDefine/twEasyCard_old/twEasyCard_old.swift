@@ -165,7 +165,7 @@ struct twEasyCard_old_View: View {
                     }
                 }
             }
-            .navigationTitle(item.scanOption.nameShort)
+            .navigationTitle(LocalizedStringKey(item.name))
             .navigationDestination(item: $navigationResult) { result in
                 ResultView(result: result, scandata: true, saveListID: .constant(UUID()))
                     .navigationBarBackButtonHidden()
