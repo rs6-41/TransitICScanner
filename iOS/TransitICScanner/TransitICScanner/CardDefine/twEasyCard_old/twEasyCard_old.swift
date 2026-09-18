@@ -44,7 +44,7 @@ let twEasyCard_old:CardInfo = CardInfo(
 struct twEasyCard_old_View: View {
     let item: CardInfo = twEasyCard_old
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var controller = WebViewController()
+    @StateObject private var controller = twEasyCard_old_scraping()
     @State private var result: Result?
     @State private var navigationResult: Result?
     @State var scannedNumber:String? = ""
@@ -299,7 +299,7 @@ struct twEasyCard_old_View: View {
 }
 
 
-final class WebViewController: ObservableObject {
+final class twEasyCard_old_scraping: ObservableObject {
     private let baseURL = twEasyCard_old.scanOption.url!
     @Published var captchaImage: UIImage?
     @Published var captchaToken: String = ""
