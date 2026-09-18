@@ -69,7 +69,7 @@ struct twEasyCard_old_View: View {
                     header:Text(LocalizedStringKey("form.card.title")),
                     footer:Text(LocalizedStringKey("form.card.description"))
                 ){
-                    TextField(LocalizedStringKey("form.card"), text: $card)
+                    TextField("0123456789", text: $card)
                         .keyboardType(.numberPad)
                         .onChange(of: card) {
                             if card.count > cardLimit {
@@ -102,7 +102,8 @@ struct twEasyCard_old_View: View {
                     }
                 }
                 Section(
-                    header:Text(LocalizedStringKey("form.captcha.title"))
+                    header:Text(LocalizedStringKey("form.captcha.title")),
+                    footer:Text(LocalizedStringKey("form.captcha"))
                 ){
                     VStack(alignment:.leading) {
                         if let image = controller.captchaImage {
@@ -124,7 +125,7 @@ struct twEasyCard_old_View: View {
                                 Spacer()
                             }
                         }
-                        TextField(LocalizedStringKey("form.captcha"), text: $captcha)
+                        TextField("012345", text: $captcha)
                             .keyboardType(.numberPad)
                             .onChange(of: captcha) {
                                 if captcha.count > captchaLimit {

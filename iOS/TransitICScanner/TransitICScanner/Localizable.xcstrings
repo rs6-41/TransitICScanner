@@ -38,6 +38,12 @@
     "0 %@" : {
       "shouldTranslate" : false
     },
+    "012345" : {
+      "shouldTranslate" : false
+    },
+    "0123456789" : {
+      "shouldTranslate" : false
+    },
     "appName" : {
       "localizations" : {
         "en" : {
@@ -498,14 +504,19 @@
     "card.web.twEasyCard_old.description" : {
       "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard / Signature Card / Super Card"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "悠遊卡/悠遊聯名卡/超級悠遊卡"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "card.web.twiPass_old" : {
       "extractionState" : "stale",
@@ -1188,7 +1199,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yitongka(e Card)"
+            "value" : "Fujian e Card"
           }
         }
       }
@@ -1246,7 +1257,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Birthday (Signature card)"
+            "value" : "Birthday (Signature Card)"
           }
         },
         "ja" : {
@@ -1262,7 +1273,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Please enter the numbers shown in the image above."
+            "value" : "Enter the numbers in the image."
           }
         },
         "ja" : {
@@ -1288,17 +1299,6 @@
           }
         }
       }
-    },
-    "form.card" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "0123456789"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "form.card.description" : {
       "localizations" : {
@@ -1393,9 +1393,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "hkOctopus.scand.description" : {
       "extractionState" : "stale",
@@ -2228,7 +2225,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auto charge"
+            "value" : "Auto Charge"
           }
         },
         "ja" : {
@@ -2244,7 +2241,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Charge(bus)"
+            "value" : "Charge (Bus)"
           }
         },
         "ja" : {
@@ -2292,7 +2289,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Entry calcel"
+            "value" : "Entry Calcel"
           }
         },
         "ja" : {
@@ -2324,7 +2321,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Empty history"
+            "value" : "Empty History"
           }
         },
         "ja" : {
@@ -2533,7 +2530,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New issue"
+            "value" : "New Issue"
           }
         },
         "ja" : {
@@ -2757,7 +2754,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy ticket"
+            "value" : "Buy Ticket"
           }
         },
         "ja" : {
@@ -3017,7 +3014,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Is not supported card"
+            "value" : "Is not supported card."
           }
         },
         "ja" : {
@@ -3476,6 +3473,23 @@
         }
       }
     },
+    "setting.acknowledgment.twEasyCard_old" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“EasyCard”, “悠遊卡”is are trademarks of 悠遊卡股份有限公司."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「EasyCard」「悠遊卡」は悠遊卡股份有限公司の商標です。"
+          }
+        }
+      }
+    },
     "setting.acknowledgment.twICash" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3658,7 +3672,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deactivate iCloud sync"
+            "value" : "Deactivate iCloud Sync"
           }
         },
         "ja" : {
@@ -3952,7 +3966,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add test cards"
+            "value" : "Add Test Cards"
           }
         },
         "ja" : {
@@ -4331,7 +4345,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invalid date"
+            "value" : "Invalid Date"
           }
         },
         "ja" : {
@@ -4618,7 +4632,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ankang transit card"
+            "value" : "Ankang Transit Card"
           }
         }
       }
