@@ -6,11 +6,12 @@ import CoreNFC
 let jpNplus = CardInfo(
     logo:"jpNplus",
     name:"cardList.jpNplus",
-    area: "cardList.area.jp",
+    sortName:"cardList.jpNplus.sortName",
+    area: .jp,
     countryCode: ["jp"],
     description:"cardList.jpNplus.description",
     scand_description: "jpNplus.scand.description",
-    searchWords: ["cardList.area.jp"],
+    searchWords: ["jp.nagasaki","jp.nagasaki.hiragana","jp.jpNplus.hiragana","jp.jpNplus.tcard","jp.tcard.hiragana"],
     scanOption:ScanOption(
         name:"jpNplus",
         nameShort:"jpNplus.short",

@@ -6,11 +6,12 @@ import SwiftUI
 let hkOctopus = CardInfo(
     logo:"hkOctopus",
     name:"cardList.hkOctopus",
-    area: "cardList.area.hk",
+    sortName:"cardList.hkOctopus.sortName",
+    area: .hk,
     countryCode: ["hk"],
     description:"cardList.hkOctopus.description",
     scand_description: "",
-    searchWords: ["cardList.area.hk"],
+    searchWords: ["cardList.area.hk","badatong","baat3daat6tung1","baatdaattung"],
     scanOption: ScanOption(
         name:"hkOctopus",
         nameShort:"hkOctopus.short",

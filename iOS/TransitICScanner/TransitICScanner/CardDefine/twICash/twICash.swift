@@ -5,11 +5,12 @@ import CoreNFC
 let twICash = CardInfo(
     logo: "twICash",
     name: "cardList.twICash",
-    area: "cardList.area.tw",
+    sortName:"cardList.twICash.sortName",
+    area: .tw,
     countryCode: ["tw"],
     description:"cardList.twICash.description",
     scand_description: "twICash.scand.description",
-    searchWords: ["cardList.area.tw"],
+    searchWords: ["cardList.area.tw","aijinka","ㄞˋㄐㄧㄣㄎㄚˇ"],
     scanOption: ScanOption(
         name: "twICash",
         nameShort:"twICash.short",

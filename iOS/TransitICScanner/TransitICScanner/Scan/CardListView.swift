@@ -7,49 +7,10 @@ struct CardList: View {
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     
-    private var filteredCardItems: [CardInfo] {
-        guard !searchText.isEmpty else {
-            return store.cardItems
-        }
-        
-        return store.cardItems.filter { item in
-            let localizedName = String(
-                localized: String.LocalizationValue(item.name)
-            )
-            
-            if localizedName.localizedCaseInsensitiveContains(searchText) {
-                return true
-            }
-            
-            return item.searchWords.contains { key in
-                let localizedWord = String(
-                    localized: String.LocalizationValue(key)
-                )
-                
-                return localizedWord.localizedCaseInsensitiveContains(searchText)
-            }
-        }
-    }
+    @State var currentCountryItems: [CardInfo] = []
+    @State var otherCountryItems: [CardInfo] = []
     
-    private var currentCountryItems: [CardInfo] {
-        guard let currentCode = getCountry.countryCode else {
-            return []
-        }
-
-        return filteredCardItems.filter {
-            $0.countryCode.contains(currentCode)
-        }
-    }
-
-    private var otherCountryItems: [CardInfo] {
-        guard let currentCode = getCountry.countryCode else {
-            return filteredCardItems
-        }
-
-        return filteredCardItems.filter {
-            !$0.countryCode.contains(currentCode)
-        }
-    }
+    @AppStorage("sort") var sort:SortType = .name_ascend
     
     @State var isDisplayScrapingForm = false
     
@@ -58,7 +19,7 @@ struct CardList: View {
             List {
                 if debug.isDisplay {
                     VStack(alignment:.leading) {
-                        Text("DEBUG MODE")
+                        Toggle("DEBUG MODE", isOn: $debug.isDisplay)
                             .bold()
                             .foregroundStyle(Color.red)
                         HStack(spacing:3) {
@@ -82,11 +43,23 @@ struct CardList: View {
                 
                 Section {
                     ForEach(otherCountryItems, id: \.logo) { item in
-                        CardListRow(item: item)
+                        VStack(alignment:.leading) {
+                            CardListRow(item: item)
+                        }
                     }
                 } header: {
-                    if !currentCountryItems.isEmpty {
-                        Text(LocalizedStringKey("cardList.otherLocate"))
+                    HStack {
+                        if !currentCountryItems.isEmpty {
+                            Text(LocalizedStringKey("cardList.otherLocate"))
+                        } else {
+                            Text(LocalizedStringKey("cardList.allCards"))
+                        }
+                        Spacer()
+                        Picker("", selection: $sort) {
+                            ForEach(SortType.allCases, id: \.self) { item in
+                                Text(LocalizedStringKey(item.rawValue))
+                            }
+                        }
                     }
                 } footer: {
                     Text(LocalizedStringKey("cardList.description"))
@@ -111,28 +84,130 @@ struct CardList: View {
         }
         .onAppear {
             getCountry.start()
+            updateList()
+        }
+        .onChange(of:getCountry.countryCode) {
+            updateList()
+        }
+        .onChange(of:sort) {
+            updateList()
+        }
+        .onChange(of:searchText) {
+            search()
         }
     }
+    
+    func updateList() {
+        getCurrentItems()
+        getOtherCountryItems(sort:sort)
+    }
+    
+    func getCurrentItems() {
+        let allItems = store.cardItems
+        if let currentCode = getCountry.countryCode {
+            currentCountryItems = allItems.filter {
+                $0.countryCode.contains(currentCode)
+            }
+        } else {
+            currentCountryItems =  []
+        }
+    }
+    
+    func getOtherCountryItems(sort:SortType) {
+        let allItems = store.cardItems
+        if let currentCode = getCountry.countryCode {
+            let items = allItems.filter {
+                !$0.countryCode.contains(currentCode)
+            }
+            otherCountryItems = sortItems(sort:sort,items:items)
+        } else {
+            otherCountryItems = sortItems(sort:sort,items:allItems)
+        }
+    }
+    
+    func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
+        items.sorted {
+            switch sort {
+            case .name_ascend:
+                Localize($0.sortName).localizedStandardCompare(
+                    Localize($1.sortName)
+                ) == .orderedAscending
+
+            case .name_descend:
+                Localize($0.sortName).localizedStandardCompare(
+                    Localize($1.sortName)
+                ) == .orderedDescending
+
+            case .locate_ascend:
+                Localize($0.area.sortName()).localizedStandardCompare(
+                    Localize($1.area.sortName())
+                ) == .orderedAscending
+
+            case .locate_descend:
+                Localize($0.area.sortName()).localizedStandardCompare(
+                    Localize($1.area.sortName())
+                ) == .orderedDescending
+            }
+        }
+    }
+    
+    func search() {
+        if searchText.isEmpty {
+            updateList()
+        } else {
+            currentCountryItems = []
+            otherCountryItems = store.cardItems.filter { item in
+                let localizedName = String(
+                    localized: String.LocalizationValue(item.name)
+                )
+                if localizedName.localizedCaseInsensitiveContains(searchText) {
+                    return true
+                }
+                return item.searchWords.contains { key in
+                    let localizedWord = String(
+                        localized: String.LocalizationValue(key)
+                    )
+                    
+                    return localizedWord.localizedCaseInsensitiveContains(searchText)
+                }
+            }
+        }
+    }
+}
+
+// リストのソート選択
+enum SortType:String,CaseIterable {
+    case name_ascend = "cardList.sort.name_ascend"
+    case name_descend = "cardList.sort.name_descend"
+    
+    case locate_ascend = "cardList.sort.locate_ascend"
+    case locate_descend = "cardList.sort.locate_descend"
 }
 
 struct CardListRow: View {
     let item: CardInfo
     @State var isFormDisplay = false
+    @EnvironmentObject var debug: DebugModel
     
     var body: some View {
-        switch item.scanOption.scanType {
-        case .nfc:
-            ScanningButton(item: item)
-        case .scraping:
-            if let view = item.scanOption.scrapingView {
-                Button(action: {
-                    isFormDisplay = true
-                }) {
-                    ListButtonInner(item: item)
+        VStack(alignment:.leading) {
+            switch item.scanOption.scanType {
+            case .nfc:
+                ScanningButton(item: item)
+            case .scraping:
+                if let view = item.scanOption.scrapingView {
+                    Button(action: {
+                        isFormDisplay = true
+                    }) {
+                        ListButtonInner(item: item)
+                    }
+                    .sheet(isPresented: $isFormDisplay) {
+                        view()
+                    }
                 }
-                .sheet(isPresented: $isFormDisplay) {
-                    view()
-                }
+            }
+            if debug.isDisplay {
+                CardListItemDebugView(item:item)
             }
         }
     }
@@ -155,7 +230,7 @@ struct ListButtonInner: View {
                         Image(systemName: "creditcard.and.numbers")
                     }
                     
-                    Text(LocalizedStringKey(item.area))
+                    Text(LocalizedStringKey(item.area.rawValue))
                         .bold()
                     
                     Spacer()

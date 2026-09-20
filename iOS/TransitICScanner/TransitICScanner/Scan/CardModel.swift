@@ -6,7 +6,8 @@ import CoreNFC
 struct CardInfo {
     let logo: String
     let name: String
-    let area: String
+    let sortName: String
+    let area: areaType
     let countryCode: [String]
     let description: String?
     let scand_description: String
@@ -41,6 +42,7 @@ struct ResultSample {
     let history:[ResultHistory]
 }
 
+//スキャン種別
 enum ScanType {
     case nfc
     case scraping

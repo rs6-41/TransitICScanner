@@ -8,7 +8,8 @@ import SwiftUI
 let krOneCard = CardInfo(
     logo: "krOneCard_tmoney",
     name: "cardList.krOneCard",
-    area: "cardList.area.kr",
+    sortName:"cardList.krOneCard.sortName",
+    area: .kr,
     countryCode: ["kr"],
     description: "cardList.krOneCard.description",
     scand_description: "",
