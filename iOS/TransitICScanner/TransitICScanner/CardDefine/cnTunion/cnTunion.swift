@@ -6,11 +6,12 @@ import CoreNFC
 let cnTunion = CardInfo(
     logo: "cnTunion_beijing",
     name: "cardList.cnTunion",
-    area: "cardList.area.cn",
+    sortName:"cardList.cnTunion.sortName",
+    area: .cn,
     countryCode: ["cn","hk","mo"],
     description: "cardList.cnTunion.description",
     scand_description: "",
-    searchWords: [],
+    searchWords: ["zhongguojiaotonglianhe"],
     scanOption: ScanOption(
         name: "cnTunion",
         nameShort: "cnTunion.short",

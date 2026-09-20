@@ -7,11 +7,12 @@ import SwiftUI
 let twEasyCard_old:CardInfo = CardInfo(
     logo:"twEasyCard_old",
     name:"card.web.twEasyCard_old",
-    area: "cardList.area.tw",
+    sortName:"cardList.twEasyCard_old.sortName",
+    area: .tw,
     countryCode: ["tw"],
     description: "card.web.twEasyCard_old.description",
     scand_description: "twEasyCard_old.scand.description",
-    searchWords: ["cardList.area.tw"],
+    searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         name:"twEasyCard_old",
         nameShort:"twEasyCard_old.short",
@@ -136,7 +137,7 @@ struct twEasyCard_old_View: View {
                 }
                 .listSectionSpacing(15)
                 
-                Section() {
+                Section(footer:Text(LocalizedStringKey("form.description.scraping.easycard"))) {
                     Button(action: {
                         onSubmit()
                     }) {
@@ -148,6 +149,7 @@ struct twEasyCard_old_View: View {
                     .disabled(!isLoaded)
                     .buttonStyle(GlassProminentButtonStyle())
                     .frame(maxWidth:400,alignment:.center)
+                    .padding(.bottom)
                 }
                 .listRowInsets(
                     .init(top: .zero,leading: .zero,bottom: .zero,trailing: .zero)

@@ -10,11 +10,12 @@ import CoreNFC
 let jpIC = CardInfo(
     logo:"jpIC_suica",
     name:"cardList.jpIC",
-    area: "cardList.area.jp",
+    sortName:"cardList.jpIC.sortName",
+    area: .jp,
     countryCode: ["jp"],
     description:"cardList.jpIC.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["info.jpIC.cardName.Kitaca","info.jpIC.cardName.Suica","info.jpIC.cardName.TOICA","info.jpIC.cardName.ICOCA","info.jpIC.cardName.SUGOCA","info.jpIC.cardName.PASMO","info.jpIC.cardName.manaca","info.jpIC.cardName.PiTaPa","info.jpIC.cardName.Hayaka_ken","info.jpIC.cardName.nimoca","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr"],
+    searchWords: ["card.suica","jpIC_suica","card.pasmo","card.icoca","card.toica","card.nimoca","card.manaca","すいか","ぱすも","いこか","といか","にもか","まなか","はやかけん","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr","じぇーあーる","にほん","スイカ","パスモ","イコカ","トイカ","ニモカ","マナカ","ハヤカケン"],
     scanOption:ScanOption(
         name:"jpIC",
         nameShort:"jpIC.short",
@@ -47,11 +48,12 @@ let jpIC = CardInfo(
 let jpIC_other = CardInfo(
     logo:"jpIC_SAPICA",
     name:"cardList.jpIC_other",
-    area: "cardList.area.jp",
+    sortName:"cardList.jpIC_other.sortName",
+    area: .jp,
     countryCode: ["jp"],
     description:"cardList.jpIC_other.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["jp.hokkaido","jp.sapporo","jp.kagawa","card.jpIC_SAPICA","card.jpIC_IruCa","card.company.kotoden"],
+    searchWords: ["jp.hokkaido","jp.sapporo","jp.kagawa","さっぽろ","かがわ","card.SAPICA","card.IruCa","さぴか","いるか","card.company.kotoden"],
     scanOption:ScanOption(
         name:"jpIC_other",
         nameShort:"jpIC_other.short",

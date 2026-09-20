@@ -7,6 +7,16 @@
     ": " : {
       "shouldTranslate" : false
     },
+    "[DEBUG] ScanType: %@\n[DEBUG] area.sortName: %@\n[DEBUG] searchWords: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "[DEBUG] ScanType: %1$@\n[DEBUG] area.sortName: %2$@\n[DEBUG] searchWords: %3$@"
+          }
+        }
+      }
+    },
     "/" : {
       "shouldTranslate" : false
     },
@@ -455,7 +465,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "EasyCard"
           }
         },
@@ -489,7 +499,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "EasyCard"
           }
         },
@@ -497,6 +507,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard（悠遊卡）"
+          }
+        }
+      }
+    },
+    "card.web.twEasyCard_old.bopomofo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ㄧㄡㄧㄡˊㄎㄚˇ"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ㄧㄡㄧㄡˊㄎㄚˇ"
           }
         }
       }
@@ -535,6 +562,22 @@
         }
       }
     },
+    "cardList.allCards" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All Cards"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全てのカード"
+          }
+        }
+      }
+    },
     "cardList.area.cn" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -548,6 +591,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "中国本土"
+          }
+        }
+      }
+    },
+    "cardList.area.cn.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "china"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "17/37/3/10/8"
           }
         }
       }
@@ -569,6 +629,23 @@
         }
       }
     },
+    "cardList.area.hk.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30/46/10/46"
+          }
+        }
+      }
+    },
     "cardList.area.jp" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -582,6 +659,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "日本"
+          }
+        }
+      }
+    },
+    "cardList.area.jp.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "22/30/46"
           }
         }
       }
@@ -620,6 +714,23 @@
         }
       }
     },
+    "cardList.area.kr.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korea"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6/46/10/8"
+          }
+        }
+      }
+    },
     "cardList.area.mo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -637,6 +748,23 @@
         }
       }
     },
+    "cardList.area.mo.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "31/6/5"
+          }
+        }
+      }
+    },
     "cardList.area.tw" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -650,6 +778,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "台湾"
+          }
+        }
+      }
+    },
+    "cardList.area.tw.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "16/2/44/46"
           }
         }
       }
@@ -676,7 +821,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "T-Union"
           }
         },
@@ -701,6 +846,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "T-Unionマークのある中国の交通カード"
+          }
+        }
+      }
+    },
+    "cardList.cnTunion.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
           }
         }
       }
@@ -742,7 +904,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Octopus Card"
           }
         },
@@ -767,6 +929,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オクトパスカード"
+          }
+        }
+      }
+    },
+    "cardList.hkOctopus.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
           }
         }
       }
@@ -856,19 +1035,53 @@
         }
       }
     },
+    "cardList.jpIC_other.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        }
+      }
+    },
     "cardList.jpIC.description" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nationwide-compatible cards in Japan. Such as Suica, PASMO, and ICOCA"
+            "value" : "Nationwide-compatible transportation IC cards in Japan. Such as Suica, PASMO, and ICOCA"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suica, PASMO, ICOCAなど全国互換カード"
+          }
+        }
+      }
+    },
+    "cardList.jpIC.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "transportationiccards"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "koutuukei"
           }
         }
       }
@@ -907,6 +1120,23 @@
         }
       }
     },
+    "cardList.jpNplus.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        }
+      }
+    },
     "cardList.krOneCard" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -937,6 +1167,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-money, EZLなど韓国の大半の交通カード"
+          }
+        }
+      }
+    },
+    "cardList.krOneCard.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
           }
         }
       }
@@ -973,6 +1220,74 @@
         }
       }
     },
+    "cardList.sort.locate_ascend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area (A to Z)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地域（昇順）"
+          }
+        }
+      }
+    },
+    "cardList.sort.locate_descend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area (Z to A)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地域（降順）"
+          }
+        }
+      }
+    },
+    "cardList.sort.name_ascend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name (A to Z)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前（昇順）"
+          }
+        }
+      }
+    },
+    "cardList.sort.name_descend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name (Z to A)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前（降順）"
+          }
+        }
+      }
+    },
     "cardList.title" : {
       "localizations" : {
         "en" : {
@@ -994,7 +1309,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "EasyCard"
           }
         },
@@ -1006,12 +1321,29 @@
         }
       }
     },
+    "cardList.twEasyCard_old.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        }
+      }
+    },
     "cardList.twICash" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "icash 2.0"
           }
         },
@@ -1036,6 +1368,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "7-ELEVEN系交通カード"
+          }
+        }
+      }
+    },
+    "cardList.twICash.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
           }
         }
       }
@@ -1328,6 +1677,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード番号"
+          }
+        }
+      }
+    },
+    "form.description.scraping.easycard" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically enters information into the [official EasyCard website](https://ezweb.easycard.com.tw/search/CardSearch.php) and retrieves the data.\n\nDue to server maintenance, data may not be available between 11:00 PM and 6:00 AM local time.\n\nThis feature may become unavailable if the website's specifications change."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCardの[公式Webサイト](https://ezweb.easycard.com.tw/search/CardSearch.php)に自動で情報を入力し、データを取得します。\n\nサーバーメンテナンスのため、現地時間の23時~6時は取得できない場合があります。\nWebサイトの仕様変更により利用できなくなる場合があります。"
           }
         }
       }
@@ -1859,13 +2224,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Taiwanese EasyCard, EasyCard Co-Branded Card, and Super EasyCard issued in Taiwan are supported. The balance is retrieved from the server.\n\nUnregistered cards: the 10-digit number at the bottom right of the card.\nEasyCard Co-Branded Cards: the 16-digit number at the bottom left on the back of the card.\n\n* Service may be unavailable due to maintenance from around midnight to approximately 6:00 AM."
+            "value" : "Taiwanese EasyCard, EasyCard Co-Branded Card, and Super EasyCard issued in Taiwan are supported. The balance is retrieved from the server.\n\nUnregistered cards: the 10-digit number at the bottom right of the card.\nEasyCard Co-Branded Cards: the 16-digit number at the bottom left on the back of the card.\n\n* Service may be unavailable due to maintenance from around 23:00 to approximately 6:00 (UTC+8)."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "台湾で発行される悠遊卡、悠遊聯名卡、超級悠遊卡が利用できます。サーバーから残高を取得します。 \n\n無記名カード：カード右下の10桁の数字 \n悠遊聯名カード：カード裏面 左下の16桁の数字 \n※ 夜間12時〜早朝6時ごろは、メンテナンスにより利用できない場合があります。"
+            "value" : "台湾で発行される悠遊卡、悠遊聯名卡、超級悠遊卡が利用できます。サーバーから残高を取得します。 \n\n無記名カード：カード右下の10桁の数字 \n悠遊聯名カード：カード裏面 左下の16桁の数字 \n※ 現地時間23時〜6時ごろは、メンテナンスにより利用できない場合があります。"
           }
         }
       }
@@ -1887,6 +2252,17 @@
         }
       }
     },
+    "jp.jpNplus.tcard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tカード"
+          }
+        }
+      }
+    },
     "jp.kagawa" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1900,6 +2276,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香川県"
+          }
+        }
+      }
+    },
+    "jp.nagasaki" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nagasaki"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎"
           }
         }
       }
@@ -3980,6 +4373,12 @@
     "setting.debug.result.dummyCard.form.balance" : {
       "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balance"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4107,6 +4506,12 @@
     "setting.debug.result.dummyCard.form.history.processType" : {
       "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Process Type Code"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
