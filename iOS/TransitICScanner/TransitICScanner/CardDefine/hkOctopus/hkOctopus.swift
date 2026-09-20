@@ -11,7 +11,7 @@ let hkOctopus = CardInfo(
     countryCode: ["hk"],
     description:"cardList.hkOctopus.description",
     scand_description: "",
-    searchWords: ["cardList.area.hk","badatong","baat3daat6tung1","baatdaattung"],
+    searchWords: ["badatong","baat3daat6tung1","baatdaattung"],
     scanOption: ScanOption(
         name:"hkOctopus",
         nameShort:"hkOctopus.short",

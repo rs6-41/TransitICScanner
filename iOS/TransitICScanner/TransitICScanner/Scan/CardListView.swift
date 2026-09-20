@@ -48,18 +48,22 @@ struct CardList: View {
                         }
                     }
                 } header: {
-                    HStack {
-                        if !currentCountryItems.isEmpty {
-                            Text(LocalizedStringKey("cardList.otherLocate"))
-                        } else {
-                            Text(LocalizedStringKey("cardList.allCards"))
-                        }
-                        Spacer()
-                        Picker("", selection: $sort) {
-                            ForEach(SortType.allCases, id: \.self) { item in
-                                Text(LocalizedStringKey(item.rawValue))
+                    if searchText.isEmpty {
+                        HStack {
+                            if !currentCountryItems.isEmpty {
+                                Text(LocalizedStringKey("cardList.otherLocate"))
+                            } else {
+                                Text(LocalizedStringKey("cardList.allCards"))
+                            }
+                            Spacer()
+                            Picker("", selection: $sort) {
+                                ForEach(SortType.allCases, id: \.self) { item in
+                                    Text(LocalizedStringKey(item.rawValue))
+                                }
                             }
                         }
+                    } else {
+                        Text(LocalizedStringKey("cardList.searchResults"))
                     }
                 } footer: {
                     Text(LocalizedStringKey("cardList.description"))
@@ -161,6 +165,12 @@ struct CardList: View {
                     localized: String.LocalizationValue(item.name)
                 )
                 if localizedName.localizedCaseInsensitiveContains(searchText) {
+                    return true
+                }
+                let localizedArea = String(
+                    localized: String.LocalizationValue(item.area.rawValue)
+                )
+                if localizedArea.localizedCaseInsensitiveContains(searchText) {
                     return true
                 }
                 return item.searchWords.contains { key in
