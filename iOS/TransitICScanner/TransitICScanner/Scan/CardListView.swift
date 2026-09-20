@@ -70,7 +70,7 @@ struct CardList: View {
                 prompt: Text(LocalizedStringKey("search"))
             )
             .alignmentGuide(.listRowSeparatorLeading) { _ in
-                .zero
+                    .zero
             }
             .navigationTitle(LocalizedStringKey("cardList.title"))
             .navigationBarTitleDisplayMode(.large)
@@ -132,17 +132,17 @@ struct CardList: View {
                 Localize($0.sortName).localizedStandardCompare(
                     Localize($1.sortName)
                 ) == .orderedAscending
-
+                
             case .name_descend:
                 Localize($0.sortName).localizedStandardCompare(
                     Localize($1.sortName)
                 ) == .orderedDescending
-
+                
             case .locate_ascend:
                 Localize($0.area.sortName()).localizedStandardCompare(
                     Localize($1.area.sortName())
                 ) == .orderedAscending
-
+                
             case .locate_descend:
                 Localize($0.area.sortName()).localizedStandardCompare(
                     Localize($1.area.sortName())
