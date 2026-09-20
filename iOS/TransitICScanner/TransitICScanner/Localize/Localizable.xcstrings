@@ -15,7 +15,8 @@
             "value" : "[DEBUG] ScanType: %1$@\n[DEBUG] area.sortName: %2$@\n[DEBUG] searchWords: %3$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "/" : {
       "shouldTranslate" : false
@@ -507,23 +508,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard（悠遊卡）"
-          }
-        }
-      }
-    },
-    "card.web.twEasyCard_old.bopomofo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "ㄧㄡㄧㄡˊㄎㄚˇ"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ㄧㄡㄧㄡˊㄎㄚˇ"
           }
         }
       }
@@ -1216,6 +1200,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "他の地域"
+          }
+        }
+      }
+    },
+    "cardList.searchResults" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Results"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索結果"
           }
         }
       }
