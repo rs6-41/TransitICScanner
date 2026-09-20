@@ -2252,17 +2252,6 @@
         }
       }
     },
-    "jp.jpNplus.tcard" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tカード"
-          }
-        }
-      }
-    },
     "jp.kagawa" : {
       "extractionState" : "manual",
       "localizations" : {

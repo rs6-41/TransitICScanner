@@ -11,7 +11,7 @@ let jpNplus = CardInfo(
     countryCode: ["jp"],
     description:"cardList.jpNplus.description",
     scand_description: "jpNplus.scand.description",
-    searchWords: ["jp.nagasaki","jp.nagasaki.hiragana","jp.jpNplus.hiragana","jp.jpNplus.tcard","jp.tcard.hiragana"],
+    searchWords: ["jp.nagasaki","ながさき","ナガサキ","nagasaki","Tカード","県営バス"],
     scanOption:ScanOption(
         name:"jpNplus",
         nameShort:"jpNplus.short",
