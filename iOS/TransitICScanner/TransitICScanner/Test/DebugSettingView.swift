@@ -6,7 +6,7 @@ final class DebugModel: ObservableObject {
     @Published var isDisplay: Bool = false
 }
 
-struct DebugSetting: View {
+struct DebugSettingView: View {
     @Binding var deleteAdsPurchaseID:String
     @Binding var deleteAds:Bool
     private let devLocates: [(name: String, code: String)] = [
@@ -29,6 +29,8 @@ struct DebugSetting: View {
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.modelContext) private var modelContext
     
+    @State var enableCardType = 0
+    
     @State var alertTitle:String = ""
     @State var alertMessage:String = ""
     @State var isAlert:Bool = false
@@ -45,6 +47,7 @@ struct DebugSetting: View {
                 }
                 
                 Section(header: Text(LocalizedStringKey("setting.debug.scanlist.title"))) {
+                    
                     NavigationLink(destination: EnableTestCardsView()) {
                         HStack {
                             Text(LocalizedStringKey("setting.debug.enableTestCards"))
@@ -53,6 +56,33 @@ struct DebugSetting: View {
                                 .foregroundStyle(Color.gray)
                         }
                     }
+                    Picker("setting.debug.scanlist.enableCardType", selection: $enableCardType) {
+                        Text("setting.debug.scanlist.enableCardType.optional").tag(0)
+                        Text("setting.debug.scanlist.enableCardType.rel").tag(1)
+                        Text("setting.debug.scanlist.enableCardType.feature").tag(2)
+                        Text("setting.debug.scanlist.enableCardType.dev").tag(3)
+                    }
+                    .onChange(of:enableCardType) {
+                        switch enableCardType {
+                            case 1:store.cardItems = relCards
+                            case 2:store.cardItems = featureCards
+                            case 3:store.cardItems = devCards
+                            default:break
+                        }
+                    }
+                    .onChange(of:store.cardItems.count) {
+                        if Set(relCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
+                            enableCardType = 1
+                        } else if Set(featureCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
+                            enableCardType = 2
+                        } else if Set(devCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
+                            enableCardType = 3
+                        } else {
+                            enableCardType = 0
+                        }
+                    }
+                }
+                Section() {
                     Picker(
                         LocalizedStringKey("setting.debug.locate"),
                         selection: $devLocate
@@ -85,7 +115,7 @@ struct DebugSetting: View {
                     Button(action: {
                         Task { @MainActor in
                             isLoading = true
-                            for card in devCards {
+                            for card in featureCards {
                                 let result = getResultSample(model: card)
                                 saveAction(result: result)
                                 try? await Task.sleep(nanoseconds: 200_000_000)

@@ -8,27 +8,19 @@ final class CardItemsStore: ObservableObject {
 }
 let cardItemsStore = CardItemsStore()
 
-// デバッグ対象カード
+// 開発対象カード
 let devCards: [CardInfo] = [
-    jpIC,
-    jpIC_other,
-    cnTunion,
-    hkOctopus,
-    krOneCard,
-    twICash,
-    jpNplus,
-    twEasyCard_old
+    jpIC,jpIC_other,cnTunion,hkOctopus,krOneCard,twICash,jpNplus,twEasyCard_old
 ]
 
-// リリース可能なカード
+// 試験的な対象カード（「試験的な機能」で有効化）
+let featureCards: [CardInfo] = [
+    jpIC,jpIC_other,cnTunion,hkOctopus,krOneCard,twICash,jpNplus,twEasyCard_old
+]
+
+// リリース済みのカード
 let relCards: [CardInfo] = [
-    jpIC,
-    jpIC_other,
-    cnTunion,
-    hkOctopus,
-    krOneCard,
-    twICash,
-    jpNplus
+    jpIC,jpIC_other,cnTunion,hkOctopus,krOneCard,twICash,jpNplus
 ]
 
 

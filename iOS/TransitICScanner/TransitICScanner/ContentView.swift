@@ -34,7 +34,7 @@ struct ContentView: View {
     }
     func setup() {
         #if DEBUG
-            cardItemsStore.cardItems = devCards
+            cardItemsStore.cardItems = featureCards
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
         #else
             cardItemsStore.cardItems = relCards

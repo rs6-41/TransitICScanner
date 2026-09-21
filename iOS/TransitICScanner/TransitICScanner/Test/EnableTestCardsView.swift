@@ -5,7 +5,7 @@ struct EnableTestCardsView: View {
 
     var body: some View {
         List {
-            ForEach(devCards, id: \.name) { card in
+            ForEach(featureCards, id: \.name) { card in
                 EnableTestCard(card: card)
             }
         }

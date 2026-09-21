@@ -10,7 +10,6 @@ struct SettingView: View {
     
     @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
     
-    
     var body: some View {
         NavigationStack {
             List {
@@ -22,12 +21,18 @@ struct SettingView: View {
                 
                 SettingData(isCloudSyncEnabled:$isCloudSyncEnabled)
                 
+                Section(header:Text(LocalizedStringKey("setting.feature"))) {
+                    NavigationLink(destination: SettingFeatureView()) {
+                        SquareIcon(text:"setting.feature", systemImage: "testtube.2",color:Color.purple)
+                    }
+                }
+                
                 Section(header:Text(LocalizedStringKey("setting.other"))) {
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
                     #if DEBUG
-                    NavigationLink(destination: DebugSetting(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
+                    NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
                         SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
                     }
                     #endif
