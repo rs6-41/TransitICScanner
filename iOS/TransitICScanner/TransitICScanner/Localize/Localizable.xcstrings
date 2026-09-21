@@ -4557,6 +4557,86 @@
         }
       }
     },
+    "setting.debug.scanlist.enableCardType" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Card Types"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示カード種別"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.enableCardType.dev" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Develop"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.enableCardType.feature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feature"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験的な機能"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.enableCardType.optional" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unselected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未選択"
+          }
+        }
+      }
+    },
+    "setting.debug.scanlist.enableCardType.rel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リリース"
+          }
+        }
+      }
+    },
     "setting.debug.scanlist.title" : {
       "localizations" : {
         "en" : {
@@ -4569,6 +4649,64 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "スキャン一覧画面"
+          }
+        }
+      }
+    },
+    "setting.feature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta Feature"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験的な機能"
+          }
+        }
+      }
+    },
+    "setting.feature.card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feature Cards"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験的な対応カード"
+          }
+        }
+      }
+    },
+    "setting.feature.card.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable beta feature cards."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "調査中のカードを表示し、スキャン可能にします。"
+          }
+        }
+      }
+    },
+    "setting.feature.description" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験的な機能は開発中のものであり、不具合が発生する場合があります。\n機能は予告なく削除・変更される可能性があります。"
           }
         }
       }
