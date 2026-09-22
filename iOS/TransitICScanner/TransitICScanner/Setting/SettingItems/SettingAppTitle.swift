@@ -20,7 +20,7 @@ struct SettingAppTitle: View {
                             .resizable()
                             .frame(width: 100, height: 100)
                             .padding(.top,2)
-                            .onTapGesture(count: 10) {
+                            .onTapGesture(count: 15) {
                                 devSettingAlert = true
                             }
                         Text(LocalizedStringKey("appName"))

@@ -4,6 +4,7 @@ import SwiftData
 
 final class DebugModel: ObservableObject {
     @Published var isDisplay: Bool = false
+    @Published var isDebugAds: Bool = false
 }
 
 struct DebugSettingView: View {

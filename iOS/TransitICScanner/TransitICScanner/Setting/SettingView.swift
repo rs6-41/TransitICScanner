@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @AppStorage("deleteAds") var deleteAds = false
+    @Binding var deleteAds:Bool
     @Binding var deleteAdsPurchaseID:String
     
     @State var isPurchaseAlert = false
@@ -81,5 +81,5 @@ struct SettingView: View {
 
 
 #Preview {
-    SettingView(deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"))
+    SettingView(deleteAds: .constant(false), deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"))
 }
