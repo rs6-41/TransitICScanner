@@ -32,7 +32,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.scan"), systemImage: "iphone.radiowaves.left.and.right")
                 }
-            SavedListView()
+            SavedListView(deleteAds: $deleteAds)
                 .tag(1)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {

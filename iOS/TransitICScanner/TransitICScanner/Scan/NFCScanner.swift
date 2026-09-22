@@ -9,10 +9,12 @@ struct ScanningButton: View {
     @StateObject private var model: NFCScannerModel
     @State private var path = NavigationPath()
     @State var nfcError = false
+    @Binding var deleteAds:Bool
 
-    init(item: CardInfo) {
+    init(item: CardInfo,deleteAds:Binding<Bool>) {
         self.item = item
         _model = StateObject(wrappedValue: NFCScannerModel(scanOption: item.scanOption))
+        self._deleteAds = deleteAds
     }
     var body: some View {
         Button(action: {
@@ -25,7 +27,7 @@ struct ScanningButton: View {
             ListButtonInner(item: item)
         }
         .navigationDestination(item: $model.result) { result in
-            ResultView(result: result, scandata: true, saveListID: .constant(UUID()))
+            ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
         }
         .alert(LocalizedStringKey("error"), isPresented: $nfcError) {
             

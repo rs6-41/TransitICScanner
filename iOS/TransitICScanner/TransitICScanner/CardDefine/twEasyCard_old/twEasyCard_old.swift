@@ -62,6 +62,8 @@ struct twEasyCard_old_View: View {
     @State var isLoading: Bool = false
     @State var cardLimit:Int = 16
     @State var captchaLimit:Int = 6
+    
+    @AppStorage("deleteAds") var deleteAds = false
 
     var body: some View {
         NavigationStack {
@@ -70,7 +72,7 @@ struct twEasyCard_old_View: View {
                     header:Text(LocalizedStringKey("form.card.title")),
                     footer:Text(LocalizedStringKey("form.card.description"))
                 ){
-                    TextField("0123456789", text: $card)
+                    TextField(String("0123456789"), text: $card)
                         .keyboardType(.numberPad)
                         .onChange(of: card) {
                             if card.count > cardLimit {
@@ -126,7 +128,7 @@ struct twEasyCard_old_View: View {
                                 Spacer()
                             }
                         }
-                        TextField("012345", text: $captcha)
+                        TextField(String("012345"), text: $captcha)
                             .keyboardType(.numberPad)
                             .onChange(of: captcha) {
                                 if captcha.count > captchaLimit {
@@ -170,7 +172,7 @@ struct twEasyCard_old_View: View {
             }
             .navigationTitle(LocalizedStringKey(item.name))
             .navigationDestination(item: $navigationResult) { result in
-                ResultView(result: result, scandata: true, saveListID: .constant(UUID()))
+                ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
                     .navigationBarBackButtonHidden()
             }
             .toolbar {

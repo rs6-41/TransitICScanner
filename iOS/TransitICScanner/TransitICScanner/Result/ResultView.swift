@@ -11,12 +11,18 @@ struct ResultView: View {
     @State var cardDesign:CardDesigin? = nil
     
     @Binding var saveListID:UUID
+    @Binding var deleteAds:Bool
 
     var body: some View {
         NavigationStack {
             List {
                 resultUserdataSection
                 resultInfoSection
+                if !deleteAds {
+                    Section(header:Text("ads")) {
+                        ListAdView(deleteAds:$deleteAds)
+                    }
+                }
                 resultHistorySection
             }
             .toolbar {
@@ -147,7 +153,7 @@ struct ResultView: View {
             HStack {
                 Text(LocalizedStringKey("result.info.balance"))
                 Spacer()
-                Text("\(balanceText) \(currency)")
+                Text(String("\(balanceText) \(currency)"))
             }
             
             HStack {
@@ -303,7 +309,7 @@ struct ResultView: View {
                 let balanceText =
                     display.balance.balanceText
 
-                Text("\(balanceText) \(currency)")
+                Text(String("\(balanceText) \(currency)"))
             }
         }
     }
@@ -314,13 +320,13 @@ struct ResultView: View {
         currency: String
     ) -> some View {
         if diff == 0 {
-            Text("0 \(currency)")
+            Text(String("0 \(currency)"))
                 .foregroundStyle(.green)
         } else {
             let sign = diff >= 0 ? "+" : "-"
             let amount = abs(diff).balanceText
 
-            Text("\(sign)\(amount) \(currency)")
+            Text(String("\(sign)\(amount) \(currency)"))
                 .foregroundStyle(
                     diff >= 0
                         ? .green

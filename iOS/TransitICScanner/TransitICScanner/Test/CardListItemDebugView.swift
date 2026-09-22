@@ -7,11 +7,11 @@ struct CardListItemDebugView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("""
+                Text(String("""
                 [DEBUG] ScanType: \(item.scanOption.scanType)
                 [DEBUG] area.sortName: \(Localize(item.area.sortName()))
                 [DEBUG] searchWords: \(searchWordsLocalized)
-                """)
+                """))
             }
             Spacer()
         }

@@ -1,33 +1,8 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
-    "" : {
-      "shouldTranslate" : false
-    },
-    ": " : {
-      "shouldTranslate" : false
-    },
-    "(%@)" : {
-      "shouldTranslate" : false
-    },
-    "[DEBUG] ScanType: %@\n[DEBUG] area.sortName: %@\n[DEBUG] searchWords: %@" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "[DEBUG] ScanType: %1$@\n[DEBUG] area.sortName: %2$@\n[DEBUG] searchWords: %3$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "/" : {
-      "shouldTranslate" : false
-    },
-    "%@" : {
-      "shouldTranslate" : false
-    },
     "%@ %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -39,6 +14,7 @@
       "shouldTranslate" : false
     },
     "%@%@ %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -47,15 +23,6 @@
           }
         }
       },
-      "shouldTranslate" : false
-    },
-    "0 %@" : {
-      "shouldTranslate" : false
-    },
-    "012345" : {
-      "shouldTranslate" : false
-    },
-    "0123456789" : {
       "shouldTranslate" : false
     },
     "ads" : {
@@ -70,6 +37,118 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "広告"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "インストール"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.IMGPiper.body" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An app for viewing images in Picture in Picture."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像をピクチャ・イン・ピクチャで表示できるアプリ"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.IMGPiper.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.Replacer.body" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Easily replace or insert text strings."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文字列の置換や挿入が簡単にできます。"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.Replacer.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replacer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スマート置換"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.webp.body" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convert images to WebP format. Supports transparent PNGs and can help reduce PNG file sizes."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像をWebP形式に変換します。透過PNGにも対応し、PNG画像の軽量化を期待できます。"
+          }
+        }
+      }
+    },
+    "ads.placeholder.myapp.webp.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WebP Converter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WebPコンバータ"
           }
         }
       }
@@ -1510,9 +1589,6 @@
         }
       }
     },
-    "DEBUG MODE" : {
-      "shouldTranslate" : false
-    },
     "done" : {
       "localizations" : {
         "en" : {
@@ -1731,18 +1807,6 @@
           }
         }
       }
-    },
-    "form.ID" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "0000"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "form.ID.description" : {
       "extractionState" : "stale",
@@ -2474,9 +2538,6 @@
           }
         }
       }
-    },
-    "Loading..." : {
-      "shouldTranslate" : false
     },
     "ok" : {
       "localizations" : {
@@ -3305,7 +3366,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ID"
           }
         }
