@@ -58,6 +58,22 @@
     "0123456789" : {
       "shouldTranslate" : false
     },
+    "ads" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告"
+          }
+        }
+      }
+    },
     "appName" : {
       "localizations" : {
         "en" : {
@@ -2458,6 +2474,9 @@
           }
         }
       }
+    },
+    "loading" : {
+
     },
     "Loading..." : {
       "shouldTranslate" : false

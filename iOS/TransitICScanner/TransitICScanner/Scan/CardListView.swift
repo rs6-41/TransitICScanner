@@ -13,10 +13,18 @@ struct CardList: View {
     @AppStorage("sort") var sort:SortType = .name_ascend
     
     @State var isDisplayScrapingForm = false
+    @Binding var deleteAds:Bool
     
     var body: some View {
         NavigationStack {
             List {
+                if !deleteAds {
+                    Section(header:Text("ads")) {
+                        //BannerAdsView()
+                        ListAdView(index:0, deleteAds:$deleteAds)
+                    }
+                }
+                
                 if debug.isDisplay {
                     VStack(alignment:.leading) {
                         Toggle("DEBUG MODE", isOn: $debug.isDisplay)
@@ -279,5 +287,5 @@ struct ListButtonInner: View {
 }
 
 #Preview {
-    CardList()
+    CardList(deleteAds: .constant(false))
 }
