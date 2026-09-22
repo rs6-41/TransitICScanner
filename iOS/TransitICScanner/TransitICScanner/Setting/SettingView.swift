@@ -13,11 +13,14 @@ struct SettingView: View {
     let appEnvironment = Bundle.main.object(
         forInfoDictionaryKey: "AppEnvironment"
     ) as? String
+    @AppStorage("devSetting") var devSetting = false
+    @State var devSettingAlert = false
+    
     
     var body: some View {
         NavigationStack {
             List {
-                SettingAppTitle()
+                SettingAppTitle(devSettingAlert:$devSettingAlert)
                 
                 if !deleteAds {
                     SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $purchaseAlertTitle, purchaseAlertMessage: $purchaseAlertMessage, isPurchaseAlert: $isPurchaseAlert, deleteAds: $deleteAds)
@@ -35,7 +38,7 @@ struct SettingView: View {
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
-                    if appEnvironment == "DEV" {
+                    if appEnvironment == "DEV" || devSetting {
                         NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
                             SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
                         }
@@ -59,6 +62,18 @@ struct SettingView: View {
                }
             } message: {
                 Text(purchaseAlertMessage)
+            }
+            
+            
+            .alert("setting.debug.enable.title", isPresented: $devSettingAlert) {
+                Button(LocalizedStringKey("cancel"), role: .cancel) {
+                    devSetting = false
+                }
+                Button(LocalizedStringKey("setting.debug.enable.ok"),role:.destructive) {
+                   devSetting = true
+               }
+            } message: {
+                Text("setting.debug.enable.description")
             }
         }
     }

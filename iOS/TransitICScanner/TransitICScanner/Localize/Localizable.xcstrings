@@ -7,6 +7,9 @@
     ": " : {
       "shouldTranslate" : false
     },
+    "(%@)" : {
+      "shouldTranslate" : false
+    },
     "[DEBUG] ScanType: %@\n[DEBUG] area.sortName: %@\n[DEBUG] searchWords: %@" : {
       "localizations" : {
         "ja" : {
@@ -4260,6 +4263,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "テスト"
+          }
+        }
+      }
+    },
+    "setting.debug.enable.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Mode will remain enabled until the app is restarted.\nIf this was not intentional, tap “Cancel.”"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリを再起動するまで開発者モードを有効にします。\nこの表示が意図したものでない場合、「キャンセル」を押してください。"
+          }
+        }
+      }
+    },
+    "setting.debug.enable.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効にする"
+          }
+        }
+      }
+    },
+    "setting.debug.enable.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Mode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発者モード"
           }
         }
       }

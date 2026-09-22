@@ -6,6 +6,7 @@ struct SettingAppTitle: View {
     let appEnvironment = Bundle.main.object(
         forInfoDictionaryKey: "AppEnvironment"
     ) as? String
+    @Binding var devSettingAlert:Bool
     
     var body: some View {
         Section {
@@ -19,10 +20,13 @@ struct SettingAppTitle: View {
                             .resizable()
                             .frame(width: 100, height: 100)
                             .padding(.top,2)
+                            .onTapGesture(count: 10) {
+                                devSettingAlert = true
+                            }
                         Text(LocalizedStringKey("appName"))
                             .font(.title2)
                             .fontWeight(.semibold)
-                        Group {
+                        VStack(alignment:.center,spacing:2) {
                             HStack(spacing:5) {
                                 Text(LocalizedStringKey("setting.version:\(version)"))
                                 if let stage = stage() {
@@ -30,7 +34,7 @@ struct SettingAppTitle: View {
                                 }
                             }
                             if appEnvironment == "DEV" {
-                                Text(LocalizedStringKey(buildNumber))
+                                Text("(\(buildNumber))")
                             }
                         }
                         .foregroundStyle(.gray)
@@ -64,5 +68,5 @@ struct SettingAppTitle: View {
 }
 
 #Preview {
-    SettingAppTitle()
+    SettingAppTitle(devSettingAlert: .constant(false))
 }
