@@ -25,7 +25,9 @@ struct NativeAdContentView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                Color(.red)
+                Color(.systemGroupedBackground)
+                    .allowsHitTesting(false)
+                    .opacity(0.001)
                     .onAppear() {
                         setting.viewSize = geometry.size.width
                         checkTextWidth()
@@ -34,42 +36,47 @@ struct NativeAdContentView: View {
                         setting.viewSize = geometry.size.width
                         checkTextWidth()
                     }
-            }
-            HStack(alignment:.center,spacing:0) {
-                if let iconView {
-                    ExistingUIView(view: iconView)
-                        .frame(width: setting.icon, height: setting.icon)
-                        .onAppear() {
-                            setting.viewUsed += setting.icon
-                            checkTextWidth()
-                        }
-                        .onDisappear() {
-                            setting.viewUsed -= setting.icon
-                        }
-                }
-                VStack(spacing: 0) {
-                    ExistingUIView(view: headlineView)
-                        .lineLimit(1)
-                        .fixedSize(horizontal: false, vertical: true)
-                    if let bodyView {
-                        ExistingUIView(view: bodyView)
-                            .lineLimit(3)
-                            .fixedSize(horizontal: false, vertical: true)
+            }.allowsHitTesting(false)
+            VStack {
+                HStack(alignment:.center,spacing:0) {
+                    
+                    if let iconView {
+                        ExistingUIView(view: iconView)
+                            .frame(width: setting.icon, height: setting.icon)
+                            .onAppear() {
+                                setting.viewUsed += setting.icon
+                                checkTextWidth()
+                            }
+                            .onDisappear() {
+                                setting.viewUsed -= setting.icon
+                            }
                     }
-                    if let advertiserView {
-                        ExistingUIView(view: advertiserView)
-                            .lineLimit(3)
+                    VStack(spacing: 0) {
+                        ExistingUIView(view: headlineView)
+                            .lineLimit(1)
                             .fixedSize(horizontal: false, vertical: true)
+                            .allowsHitTesting(false)
+                        if let bodyView {
+                            ExistingUIView(view: bodyView)
+                                .lineLimit(3)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .allowsHitTesting(false)
+                        }
+                        if let advertiserView {
+                            ExistingUIView(view: advertiserView)
+                                .lineLimit(3)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .allowsHitTesting(false)
+                        }
                     }
-                }
-                
-                if let callToActionView {
-                    ExistingUIView(view: callToActionView)
-                        .frame(width:setting.buttonWidth)
+                    
+                    if let callToActionView {
+                        ExistingUIView(view: callToActionView)
+                            .frame(width:setting.buttonWidth)
+                    }
                 }
             }
         }
-        .frame(minHeight:setting.icon)
         .environment(setting)
     }
     func checkTextWidth() {
@@ -137,10 +144,11 @@ struct NativeAdCallToActionView: View {
             .font(.system(size: 13,weight: .semibold))
             .foregroundStyle(.white)
             .frame(minHeight: 32)
-            .padding()
+            .padding(.horizontal,setting.textPadding)
             .background(
                 GeometryReader { geometry in
                     Color.blue
+                        .clipShape(.rect(cornerRadius: 30))
                         .onAppear {
                             setting.buttonWidth = geometry.size.width
                             setting.viewUsed += geometry.size.width
@@ -156,6 +164,7 @@ struct NativeAdCallToActionView: View {
                         }
                 }
             )
+         
     }
 }
 
@@ -314,6 +323,7 @@ final class NativeAdContainerView: NativeAdView {
         }
 
         controllerView.backgroundColor = UIColor.clear
+        controllerView.isUserInteractionEnabled = false
         controllerView.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(controllerView)

@@ -20,8 +20,7 @@ struct CardList: View {
             List {
                 if !deleteAds {
                     Section(header:Text("ads")) {
-                        //BannerAdsView()
-                        ListAdView(index:0, deleteAds:$deleteAds)
+                        ListAdView(deleteAds:$deleteAds)
                     }
                 }
                 
