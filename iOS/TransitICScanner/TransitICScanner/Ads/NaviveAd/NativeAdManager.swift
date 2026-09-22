@@ -4,13 +4,14 @@ import GoogleMobileAds
 
 final class NativeAdManager: NSObject, ObservableObject {
     @Published private(set) var ad: NativeAd?
+    @Published private(set) var loadCompleted = false
 
     private var adLoader: AdLoader?
 
     private let adUnitID = "ca-app-pub-3940256099942544/3986624511"
 
     func loadAd() {
-        guard ad == nil else {
+        guard ad == nil, !loadCompleted else {
             return
         }
 
@@ -37,6 +38,7 @@ extension NativeAdManager: NativeAdLoaderDelegate {
 
         DispatchQueue.main.async { [weak self] in
             self?.ad = nativeAd
+            self?.loadCompleted = true
         }
     }
 
@@ -45,6 +47,10 @@ extension NativeAdManager: NativeAdLoaderDelegate {
         didFailToReceiveAdWithError error: Error
     ) {
         print("Native Ad Load Failed: \(error.localizedDescription)")
+
+        DispatchQueue.main.async { [weak self] in
+            self?.loadCompleted = true
+        }
     }
 }
 

@@ -8,16 +8,24 @@ struct SavedListView: View {
 
     @Environment(\.modelContext) private var modelContext
     @State var saveListID:UUID = UUID() //Viewの強制更新
+    @Binding var deleteAds:Bool
 
     var body: some View {
         NavigationStack {
             List {
+                if !deleteAds {
+                    Section(header:Text("ads")) {
+                        ListAdView(deleteAds:$deleteAds)
+                    }
+                }
+                
                 ForEach(cards) { card in
                     NavigationLink {
                         ResultView(
                             result: card.result(),
                             scandata: false,
-                            saveListID: $saveListID
+                            saveListID: $saveListID,
+                            deleteAds: $deleteAds
                         )
                     } label: {
                         let result = card.result()

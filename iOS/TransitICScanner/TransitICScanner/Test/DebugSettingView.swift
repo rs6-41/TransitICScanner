@@ -135,7 +135,7 @@ struct DebugSettingView: View {
             
             .sheet(isPresented: $isDummyCardForm) {
                 NavigationStack {
-                    DummyCardFormView()
+                    DummyCardFormView(deleteAds: $deleteAds)
                 }
             }
             
@@ -154,7 +154,7 @@ struct DebugSettingView: View {
             if isLoading {
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()
-                ProgressView("Loading...")
+                ProgressView(String("Loading..."))
                     .padding()
                     .background(.background)
                     .cornerRadius(10)

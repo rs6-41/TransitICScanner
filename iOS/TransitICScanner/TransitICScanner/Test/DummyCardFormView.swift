@@ -20,6 +20,8 @@ struct DummyCardFormView: View {
     
     @State var isDone = false
     
+    @Binding var deleteAds:Bool
+    
     var body: some View {
         List {
             Section(header: Text(LocalizedStringKey("result.info"))) {
@@ -30,7 +32,7 @@ struct DummyCardFormView: View {
                 ListFormNumberView(isRequest: true, title: "result.info.balance", placeholder: "0", value: $balance)
                 Picker(LocalizedStringKey("setting.debug.result.dummyCard.form.converter"),selection: $converter) {
                     ForEach(ConverterType.allCases, id: \.self) { item in
-                        Text("\(item)").tag(item)
+                        Text(String("\(item)")).tag(item)
                     }
                 }
             }
@@ -44,9 +46,9 @@ struct DummyCardFormView: View {
                         HStack {
                             HStack(spacing:1) {
                                 Text(String(item.date.year ?? 0))
-                                Text("/")
+                                Text(String("/"))
                                 Text(String(item.date.month ?? 0))
-                                Text("/")
+                                Text(String("/"))
                                 Text(String(item.date.day ?? 0))
                             }
                             Spacer()
@@ -85,7 +87,7 @@ struct DummyCardFormView: View {
                     .foregroundStyle(Color.blue)
             }
             .navigationDestination(isPresented: $isDone) {
-                ResultView(result: result, scandata: true, saveListID: .constant(UUID()))
+                ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
             }
         }
         .navigationTitle(LocalizedStringKey("setting.debug.result.dummyCard"))
@@ -193,5 +195,5 @@ struct ListFormNumberView: View {
 
 
 #Preview {
-    DummyCardFormView()
+    DummyCardFormView(deleteAds: .constant(false))
 }

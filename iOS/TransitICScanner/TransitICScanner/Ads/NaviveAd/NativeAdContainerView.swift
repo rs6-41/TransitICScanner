@@ -37,7 +37,7 @@ struct NativeAdContentView: View {
                         checkTextWidth()
                     }
             }.allowsHitTesting(false)
-            VStack {
+            VStack(alignment:.leading) {
                 HStack(alignment:.center,spacing:0) {
                     
                     if let iconView {
@@ -51,7 +51,7 @@ struct NativeAdContentView: View {
                                 setting.viewUsed -= setting.icon
                             }
                     }
-                    VStack(spacing: 0) {
+                    VStack(alignment:.leading,spacing: 0) {
                         ExistingUIView(view: headlineView)
                             .lineLimit(1)
                             .fixedSize(horizontal: false, vertical: true)
@@ -137,34 +137,56 @@ struct NativeAdIconView: View {
 
 struct NativeAdCallToActionView: View {
     let text: String
+    @State var url: URL?
+    @Environment(adSetting.self) private var setting
+    
+    @Environment(\.openURL) var openURL
+
+    var body: some View {
+        ZStack {
+            if let url {
+                Button(action: {
+                    openURL(url)
+                }) {
+                    NativeAdCallToActionButton(text:text)
+                }
+            } else {
+                NativeAdCallToActionButton(text:text)
+            }
+        }
+    }
+}
+struct NativeAdCallToActionButton: View {
+    let text: String
     @Environment(adSetting.self) private var setting
 
     var body: some View {
-        Text(text)
-            .font(.system(size: 13,weight: .semibold))
-            .foregroundStyle(.white)
-            .frame(minHeight: 32)
-            .padding(.horizontal,setting.textPadding)
-            .background(
-                GeometryReader { geometry in
-                    Color.blue
-                        .clipShape(.rect(cornerRadius: 30))
-                        .onAppear {
-                            setting.buttonWidth = geometry.size.width
-                            setting.viewUsed += geometry.size.width
-                            setting.textWidth = setting.viewSize - setting.viewUsed
-                        }
-                        .onDisappear {
-                            setting.viewUsed -= geometry.size.width
-                        }
-                        .onChange(of:geometry.size.width) {
-                            setting.buttonWidth = geometry.size.width
-                            setting.viewUsed += geometry.size.width
-                            setting.textWidth = setting.viewSize - setting.viewUsed
-                        }
-                }
-            )
-         
+        ZStack {
+            Text(text)
+                .font(.system(size: 13,weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(minHeight: 32)
+                .padding(.horizontal,setting.textPadding)
+                .background(
+                    GeometryReader { geometry in
+                        Color.blue
+                            .clipShape(.rect(cornerRadius: 30))
+                            .onAppear {
+                                setting.buttonWidth = geometry.size.width
+                                setting.viewUsed += geometry.size.width
+                                setting.textWidth = setting.viewSize - setting.viewUsed
+                            }
+                            .onDisappear {
+                                setting.viewUsed -= geometry.size.width
+                            }
+                            .onChange(of:geometry.size.width) {
+                                setting.buttonWidth = geometry.size.width
+                                setting.viewUsed += geometry.size.width
+                                setting.textWidth = setting.viewSize - setting.viewUsed
+                            }
+                    }
+                )
+        }
     }
 }
 

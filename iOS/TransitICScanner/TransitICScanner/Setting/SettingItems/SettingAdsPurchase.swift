@@ -11,7 +11,7 @@ struct SettingAdsPurchase: View {
         Section(header:Text("setting.ads")) {
             HStack {
                 ProductView(id: deleteAdsPurchaseID) {
-                    SquareIcon(text:"", systemImage: "xmark.app.fill",color:Color.green)
+                    SquareIcon(systemImage: "xmark.app.fill",color:Color.green)
                 }
                     .buttonStyle(ProductButtonStyle())
                     .productViewStyle(.compact)

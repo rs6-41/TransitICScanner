@@ -26,13 +26,13 @@ struct CardList: View {
                 
                 if debug.isDisplay {
                     VStack(alignment:.leading) {
-                        Toggle("DEBUG MODE", isOn: $debug.isDisplay)
+                        Toggle(String("DEBUG MODE"), isOn: $debug.isDisplay)
                             .bold()
                             .foregroundStyle(Color.red)
                         HStack(spacing:3) {
                             Text(LocalizedStringKey("cardList.nowLocate"))
-                            Text(": ")
-                            Text("\(getCountry.countryCode ?? "nil")")
+                            Text(verbatim: ": ")
+                            Text(verbatim: "\(getCountry.countryCode ?? "nil")")
                         }
                     }
                 }
@@ -41,7 +41,7 @@ struct CardList: View {
                 if !currentCountryItems.isEmpty {
                     Section {
                         ForEach(currentCountryItems, id: \.logo) { item in
-                            CardListRow(item: item)
+                            CardListRow(item: item, deleteAds: $deleteAds)
                         }
                     } header: {
                         Text(LocalizedStringKey("cardList.nowLocate"))
@@ -51,7 +51,7 @@ struct CardList: View {
                 Section {
                     ForEach(otherCountryItems, id: \.logo) { item in
                         VStack(alignment:.leading) {
-                            CardListRow(item: item)
+                            CardListRow(item: item, deleteAds: $deleteAds)
                         }
                     }
                 } header: {
@@ -63,7 +63,7 @@ struct CardList: View {
                                 Text(LocalizedStringKey("cardList.allCards"))
                             }
                             Spacer()
-                            Picker("", selection: $sort) {
+                            Picker(String(""), selection: $sort) {
                                 ForEach(SortType.allCases, id: \.self) { item in
                                     Text(LocalizedStringKey(item.rawValue))
                                 }
@@ -89,7 +89,8 @@ struct CardList: View {
                 ResultView(
                     result: result,
                     scandata: true,
-                    saveListID: .constant(UUID())
+                    saveListID: .constant(UUID()),
+                    deleteAds: $deleteAds
                 )
             }
         }
@@ -205,12 +206,13 @@ struct CardListRow: View {
     let item: CardInfo
     @State var isFormDisplay = false
     @EnvironmentObject var debug: DebugModel
+    @Binding var deleteAds:Bool
     
     var body: some View {
         VStack(alignment:.leading) {
             switch item.scanOption.scanType {
             case .nfc:
-                ScanningButton(item: item)
+                ScanningButton(item: item,deleteAds:$deleteAds)
             case .scraping:
                 if let view = item.scanOption.scrapingView {
                     Button(action: {

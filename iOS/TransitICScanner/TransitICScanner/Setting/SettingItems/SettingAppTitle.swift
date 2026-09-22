@@ -34,7 +34,7 @@ struct SettingAppTitle: View {
                                 }
                             }
                             if appEnvironment == "DEV" {
-                                Text("(\(buildNumber))")
+                                Text(String("(\(buildNumber))"))
                             }
                         }
                         .foregroundStyle(.gray)
