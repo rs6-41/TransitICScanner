@@ -29,7 +29,7 @@ struct DebugSettingView: View {
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.modelContext) private var modelContext
     
-    @State var enableCardType = 0
+    @AppStorage("enableCardType") var enableCardType = 0
     
     @State var alertTitle:String = ""
     @State var alertMessage:String = ""
@@ -65,20 +65,9 @@ struct DebugSettingView: View {
                     .onChange(of:enableCardType) {
                         switch enableCardType {
                             case 1:store.cardItems = relCards
-                            case 2:store.cardItems = featureCards
-                            case 3:store.cardItems = devCards
+                            case 2:store.cardItems = featureCards + relCards
+                            case 3:store.cardItems = devCards + featureCards + relCards
                             default:break
-                        }
-                    }
-                    .onChange(of:store.cardItems.count) {
-                        if Set(relCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
-                            enableCardType = 1
-                        } else if Set(featureCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
-                            enableCardType = 2
-                        } else if Set(devCards.map(\.name)) == Set(store.cardItems.map(\.name)) {
-                            enableCardType = 3
-                        } else {
-                            enableCardType = 0
                         }
                     }
                 }
@@ -115,7 +104,7 @@ struct DebugSettingView: View {
                     Button(action: {
                         Task { @MainActor in
                             isLoading = true
-                            for card in featureCards {
+                            for card in relCards {
                                 let result = getResultSample(model: card)
                                 saveAction(result: result)
                                 try? await Task.sleep(nanoseconds: 200_000_000)

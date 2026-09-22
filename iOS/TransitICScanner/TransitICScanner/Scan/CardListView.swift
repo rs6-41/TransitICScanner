@@ -101,12 +101,12 @@ struct CardList: View {
         }
     }
     
-    func updateList() {
+    private func updateList() {
         getCurrentItems()
         getOtherCountryItems(sort:sort)
     }
     
-    func getCurrentItems() {
+    private func getCurrentItems() {
         let allItems = store.cardItems
         if let currentCode = getCountry.countryCode {
             currentCountryItems = allItems.filter {
@@ -117,7 +117,7 @@ struct CardList: View {
         }
     }
     
-    func getOtherCountryItems(sort:SortType) {
+    private func getOtherCountryItems(sort:SortType) {
         let allItems = store.cardItems
         if let currentCode = getCountry.countryCode {
             let items = allItems.filter {
@@ -129,7 +129,7 @@ struct CardList: View {
         }
     }
     
-    func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
+    private func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
         items.sorted {
             switch sort {
             case .name_ascend:
@@ -155,7 +155,7 @@ struct CardList: View {
         }
     }
     
-    func search() {
+    private func search() {
         if searchText.isEmpty {
             updateList()
         } else {

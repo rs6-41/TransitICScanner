@@ -4263,6 +4263,54 @@
         }
       }
     },
+    "setting.debug.enableTestCards.dev" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Develop"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発中"
+          }
+        }
+      }
+    },
+    "setting.debug.enableTestCards.feature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta Feature"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験的な機能"
+          }
+        }
+      }
+    },
+    "setting.debug.enableTestCards.rel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リリース"
+          }
+        }
+      }
+    },
     "setting.debug.isdisplay" : {
       "localizations" : {
         "en" : {
@@ -4674,7 +4722,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Feature Cards"
+            "value" : "Test Support Cards"
           }
         },
         "ja" : {
@@ -4690,7 +4738,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enable beta feature cards."
+            "value" : "Enable beta support cards."
           }
         },
         "ja" : {
@@ -4701,12 +4749,66 @@
         }
       }
     },
+    "setting.feature.card.description.devMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If card types are selected in the development settings, this setting cannot be changed.\nTo test the “Beta Features” screen, go to Setting > Debug > Display Card Types, select “Unselected.”"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発設定で表示カード種別を選択している場合、この設定は変更できません。\n「試験的な機能」画面をテストする場合、設定 > デバッグ > 表示カード種別 から、「未選択」を選択してください。"
+          }
+        }
+      }
+    },
     "setting.feature.description" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Experimental features are currently under development and may contain bugs or other issues.\nFeatures may be removed or changed without prior notice."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "試験的な機能は開発中のものであり、不具合が発生する場合があります。\n機能は予告なく削除・変更される可能性があります。"
+          }
+        }
+      }
+    },
+    "setting.feature.sectionTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test Beta Feature"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "試験中の機能"
+          }
+        }
+      }
+    },
+    "setting.feature.testflight" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join Beta"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベータ版に参加する"
           }
         }
       }

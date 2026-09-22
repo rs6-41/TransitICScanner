@@ -56,7 +56,7 @@ struct SettingData: View {
         }
     }
     @MainActor
-    func deleteAll() {
+    private func deleteAll() {
         do {
             try ResultSave.deleteAll(from: modelContext)
         } catch {

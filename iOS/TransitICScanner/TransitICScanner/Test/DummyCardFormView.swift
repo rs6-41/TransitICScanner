@@ -90,7 +90,7 @@ struct DummyCardFormView: View {
         }
         .navigationTitle(LocalizedStringKey("setting.debug.result.dummyCard"))
     }
-    func sendData() {
+    private func sendData() {
         if idm == "" {
             idm = String(Int.random(in: 100000000000...999999999999))
         }
@@ -113,7 +113,7 @@ struct DummyCardFormView: View {
             description: "DEBUG CARD"
         )
     }
-    func removeHistory(at offsets: IndexSet) {
+    private func removeHistory(at offsets: IndexSet) {
         history.remove(atOffsets: offsets)
     }
 }
