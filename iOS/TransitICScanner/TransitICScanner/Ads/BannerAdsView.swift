@@ -2,6 +2,9 @@ import SwiftUI
 import GoogleMobileAds
 import AppTrackingTransparency
 
+let dev_BannerUnitID = "ca-app-pub-3940256099942544/2435281174"
+var BannerUnitIDValue = bannerUnitID
+
 struct BannerAdsView: View {
     @State var adsHeight: CGFloat = 50.0
     @StateObject private var debugModel = DebugModel()
@@ -50,8 +53,12 @@ private struct BannerViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> BannerView {
         let banner = BannerView(adSize: adSize)
-
-        banner.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+        
+        
+        
+        @EnvironmentObject var debug: DebugModel
+        
+        banner.adUnitID = BannerUnitIDValue
         banner.delegate = context.coordinator
         banner.load(Request())
 

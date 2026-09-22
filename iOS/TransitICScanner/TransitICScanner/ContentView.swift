@@ -20,9 +20,10 @@ struct ContentView: View {
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     @State var versionFirstLook = false
     @AppStorage("devSetting") var devSetting = false
-    
     @AppStorage("deleteAds") var deleteAds = false
+    @AppStorage("adDebug") var adDebug = false
     
+    @EnvironmentObject var debug: DebugModel
     
     var body: some View {
         TabView(selection: $tab) {
@@ -84,6 +85,14 @@ struct ContentView: View {
             
         case .none:break
         case .some(_):break
+        }
+        
+        if adDebug {
+            NativeAdUnitIDValue = dev_NativeAdUnitID
+            BannerUnitIDValue = dev_BannerUnitID
+        } else {
+            NativeAdUnitIDValue = NativeUnitID
+            BannerUnitIDValue = bannerUnitID
         }
         
         
