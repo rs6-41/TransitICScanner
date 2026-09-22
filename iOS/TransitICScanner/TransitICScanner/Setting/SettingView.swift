@@ -10,6 +10,10 @@ struct SettingView: View {
     
     @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
     
+    let appEnvironment = Bundle.main.object(
+        forInfoDictionaryKey: "AppEnvironment"
+    ) as? String
+    
     var body: some View {
         NavigationStack {
             List {
@@ -31,11 +35,11 @@ struct SettingView: View {
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
-                    #if DEBUG
-                    NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
-                        SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
+                    if appEnvironment == "DEV" {
+                        NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
+                            SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
+                        }
                     }
-                    #endif
                 }
             }
             .listSectionSpacing(.compact)

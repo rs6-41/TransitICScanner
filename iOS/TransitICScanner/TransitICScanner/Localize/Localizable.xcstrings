@@ -4017,6 +4017,40 @@
         }
       }
     },
+    "setting.appVersion.stage.beta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベータ版"
+          }
+        }
+      }
+    },
+    "setting.appVersion.stage.dev" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Development"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発版"
+          }
+        }
+      }
+    },
     "setting.data" : {
       "localizations" : {
         "en" : {
