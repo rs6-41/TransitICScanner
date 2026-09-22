@@ -19,6 +19,8 @@ struct ContentView: View {
     
     @State var versionFirstLook = false
     
+    @AppStorage("devSetting") var devSetting = false
+    
     var body: some View {
         TabView(selection: $tab) {
             CardList()
@@ -47,6 +49,8 @@ struct ContentView: View {
         }
     }
     private func setup() {
+        devSetting = false
+        
         switch appEnvironment {
         case "DEV":
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
