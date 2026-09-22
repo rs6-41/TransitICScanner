@@ -11,7 +11,7 @@ struct SettingFeatureView: View {
     var body: some View {
         List {
             Section() {
-                Link(destination: URL(string: "https://www.example.com/TOS.html")!) {
+                Link(destination: URL(string: "https://testflight.apple.com/join/GYrHt3mb")!) {
                     SquareIcon(text:"setting.feature.testflight", systemImage: "airplane.departure",color:Color.blue)
                 }
             }
