@@ -38,6 +38,8 @@ struct DebugSettingView: View {
     
     @State var isDummyCardForm = false
     
+    @AppStorage("adDebug") var adDebug = false
+    
     var body: some View {
         ZStack {
             List {
@@ -117,6 +119,21 @@ struct DebugSettingView: View {
                         }
                     }) {
                         Text(LocalizedStringKey("setting.debug.result.demoCard"))
+                    }
+                }
+                
+                Section(header: Text(LocalizedStringKey("setting.debug.ad"))) {
+                    Toggle(isOn: $adDebug) {
+                        Text(LocalizedStringKey("setting.debug.ad.debugMode"))
+                    }
+                    .onChange(of:adDebug) {
+                        if adDebug {
+                            NativeAdUnitIDValue = dev_NativeAdUnitID
+                            BannerUnitIDValue = dev_BannerUnitID
+                        } else {
+                            NativeAdUnitIDValue = NativeUnitID
+                            BannerUnitIDValue = bannerUnitID
+                        }
                     }
                 }
                 

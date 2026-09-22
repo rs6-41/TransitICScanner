@@ -4276,6 +4276,38 @@
         }
       }
     },
+    "setting.debug.ad" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告"
+          }
+        }
+      }
+    },
+    "setting.debug.ad.debugMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug Mode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバッグモード"
+          }
+        }
+      }
+    },
     "setting.debug.ads" : {
       "extractionState" : "manual",
       "localizations" : {

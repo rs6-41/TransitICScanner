@@ -32,8 +32,7 @@ struct ResultView: View {
                     if scandata {
                         Button(action: {
                             saveAction()
-                            //複数階層でも戻るように
-                            UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
+                            dismiss()
                         }) {
                             Image(systemName: "checkmark")
                                 .foregroundStyle(Color.white)
