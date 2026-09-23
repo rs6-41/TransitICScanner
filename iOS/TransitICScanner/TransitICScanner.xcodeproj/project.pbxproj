@@ -6,12 +6,16 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AAC4A09A304B343E003B1B10 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */ = {
+		AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +28,7 @@
 		AAC4A093304B343D003B1B10 /* TransitICScanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				AAC4A09A304B343E003B1B10 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */,
+				AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */,
 			);
 			path = TransitICScanner;
 			sourceTree = "<group>";
@@ -35,6 +39,7 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -73,6 +78,9 @@
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
 			);
 			name = TransitICScanner;
+			packageProductDependencies = (
+				AA544C293062702300EFAE03 /* GoogleMobileAds */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* TransitICScanner.app */;
 			productType = "com.apple.product-type.application";
@@ -102,6 +110,9 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -131,6 +142,8 @@
 /* Begin XCBuildConfiguration section */
 		000000000000000011000000 /* Debug configuration for PBXProject "TransitICScanner" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/devConfig.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLETVOS_DEPLOYMENT_TARGET = 27.0;
@@ -202,6 +215,8 @@
 		};
 		000000000000000012000000 /* Release configuration for PBXProject "TransitICScanner" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/relConfig.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLETVOS_DEPLOYMENT_TARGET = 27.0;
@@ -265,6 +280,8 @@
 		};
 		000000000000000111000000 /* Debug configuration for PBXNativeTarget "TransitICScanner" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/devConfig.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -278,10 +295,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TransitICScanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -314,6 +333,8 @@
 		};
 		000000000000000112000000 /* Release configuration for PBXNativeTarget "TransitICScanner" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/relConfig.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -327,10 +348,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TransitICScanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -361,6 +384,132 @@
 			};
 			name = Release;
 		};
+		AA544C263062578F00EFAE03 /* Beta configuration for PBXProject "TransitICScanner" */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/betaConfig.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLETVOS_DEPLOYMENT_TARGET = 27.0;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DRIVERKIT_DEPLOYMENT_TARGET = 27.0;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROJECT_UNIQUE_VALUE = V56JEUML;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 27.0;
+				XROS_DEPLOYMENT_TARGET = 27.0;
+			};
+			name = Beta;
+		};
+		AA544C273062578F00EFAE03 /* Beta configuration for PBXNativeTarget "TransitICScanner" */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
+			baseConfigurationReferenceRelativePath = Config/betaConfig.xcconfig;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = TransitICScanner/TransitICScanner.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3W48QB4863;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TransitICScanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs6apps.TransitICScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Beta;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +517,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				000000000000000011000000 /* Debug configuration for PBXProject "TransitICScanner" */,
+				AA544C263062578F00EFAE03 /* Beta configuration for PBXProject "TransitICScanner" */,
 				000000000000000012000000 /* Release configuration for PBXProject "TransitICScanner" */,
 			);
 			defaultConfigurationName = Release;
@@ -376,11 +526,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				000000000000000111000000 /* Debug configuration for PBXNativeTarget "TransitICScanner" */,
+				AA544C273062578F00EFAE03 /* Beta configuration for PBXNativeTarget "TransitICScanner" */,
 				000000000000000112000000 /* Release configuration for PBXNativeTarget "TransitICScanner" */,
 			);
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA544C293062702300EFAE03 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }

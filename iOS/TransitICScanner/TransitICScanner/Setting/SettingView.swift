@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @AppStorage("deleteAds") var deleteAds = false
+    @Binding var deleteAds:Bool
     @Binding var deleteAdsPurchaseID:String
     
     @State var isPurchaseAlert = false
@@ -10,11 +10,17 @@ struct SettingView: View {
     
     @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
     
+    let appEnvironment = Bundle.main.object(
+        forInfoDictionaryKey: "AppEnvironment"
+    ) as? String
+    @AppStorage("devSetting") var devSetting = false
+    @State var devSettingAlert = false
+    
     
     var body: some View {
         NavigationStack {
             List {
-                SettingAppTitle()
+                SettingAppTitle(devSettingAlert:$devSettingAlert)
                 
                 if !deleteAds {
                     SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $purchaseAlertTitle, purchaseAlertMessage: $purchaseAlertMessage, isPurchaseAlert: $isPurchaseAlert, deleteAds: $deleteAds)
@@ -22,15 +28,21 @@ struct SettingView: View {
                 
                 SettingData(isCloudSyncEnabled:$isCloudSyncEnabled)
                 
+                Section(header:Text(LocalizedStringKey("setting.feature"))) {
+                    NavigationLink(destination: SettingFeatureView()) {
+                        SquareIcon(text:"setting.feature", systemImage: "testtube.2",color:Color.purple)
+                    }
+                }
+                
                 Section(header:Text(LocalizedStringKey("setting.other"))) {
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
-                    #if DEBUG
-                    NavigationLink(destination: DebugSetting(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
-                        SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
+                    if appEnvironment == "DEV" || devSetting {
+                        NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
+                            SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
+                        }
                     }
-                    #endif
                 }
             }
             .listSectionSpacing(.compact)
@@ -51,11 +63,23 @@ struct SettingView: View {
             } message: {
                 Text(purchaseAlertMessage)
             }
+            
+            
+            .alert("setting.debug.enable.title", isPresented: $devSettingAlert) {
+                Button(LocalizedStringKey("cancel"), role: .cancel) {
+                    devSetting = false
+                }
+                Button(LocalizedStringKey("setting.debug.enable.ok"),role:.destructive) {
+                   devSetting = true
+               }
+            } message: {
+                Text("setting.debug.enable.description")
+            }
         }
     }
 }
 
 
 #Preview {
-    SettingView(deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"))
+    SettingView(deleteAds: .constant(false), deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"))
 }
