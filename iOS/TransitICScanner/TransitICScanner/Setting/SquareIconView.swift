@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct SquareIcon: View {
-    @State var text: LocalizedStringKey
+    var text: LocalizedStringKey?
+    var subText: LocalizedStringKey?
     @State var systemImage: String
     @State var color:Color
     var body: some View {
@@ -14,11 +15,20 @@ struct SquareIcon: View {
                     .foregroundStyle(.white)
                     .bold()
             }
-            Text(text)
+            VStack(alignment:.leading) {
+                if let text {
+                    Text(text)
+                }
+                if let subText {
+                    Text(subText)
+                        .font(.caption)
+                        .foregroundStyle(Color.gray)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    SquareIcon(text: "Text",systemImage: "ladybug.fill",color: Color.red)
+    SquareIcon(text: "Text", subText:"subText",systemImage: "ladybug.fill",color: Color.red)
 }

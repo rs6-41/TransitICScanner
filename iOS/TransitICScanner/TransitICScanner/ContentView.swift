@@ -1,25 +1,54 @@
 import SwiftUI
 import Combine
+import GoogleMobileAds
+import AdSupport
+import AppTrackingTransparency
 
+final class AdsModel: ObservableObject {
+    @Published var isDeleteAdsSheet = false
+    @Published var purchaseAlertTitle = ""
+    @Published var purchaseAlertMessage = ""
+    @Published var isPurchaseAlert = false
+}
 
 struct ContentView: View {
     @State var tab: Int = 0
-    @State var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+    @AppStorage("deleteAdsPurchaseID") var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+    @AppStorage("enableCardType") var enableCardType = 0
+    @AppStorage("testCardEnabled") var isTestCardEnabled = false
+    
+    @AppStorage("isLaunchVersionFastBeta") var isLaunchVersionFastBeta = ""
+    @AppStorage("isLaunchVersionFastRel") var isLaunchVersionFastRel = ""
+    let appEnvironment = Bundle.main.object(
+        forInfoDictionaryKey: "AppEnvironment"
+    ) as? String
+    
+    let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+    @State var versionFirstLook = false
+    @AppStorage("devSetting") var devSetting = false
+    @AppStorage("deleteAds") var deleteAds = false
+    @AppStorage("adDebug") var adDebug = false
+    
+    @EnvironmentObject var debug: DebugModel
+    @EnvironmentObject var ads: AdsModel
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         TabView(selection: $tab) {
-            CardList()
+            CardList(deleteAds: $deleteAds)
                 .tag(0)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.scan"), systemImage: "iphone.radiowaves.left.and.right")
                 }
-            SavedListView()
+            SavedListView(deleteAds: $deleteAds)
                 .tag(1)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            SettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID)
+            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID)
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
@@ -27,19 +56,89 @@ struct ContentView: View {
                 }
              
         }
+        .sheet(isPresented: $ads.isDeleteAdsSheet) {
+            NavigationStack {
+                List {
+                    SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle, purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert, deleteAds: $deleteAds)
+                        .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
+                            Button(LocalizedStringKey("ok")) {
+                                ads.purchaseAlertTitle = ""
+                                ads.purchaseAlertMessage = ""
+                                ads.isPurchaseAlert = false
+                                ads.isDeleteAdsSheet = false
+                            }
+                        } message: {
+                            Text(ads.purchaseAlertMessage)
+                        }
+                }
+                .navigationTitle(LocalizedStringKey("ads.delete"))
+                .toolbar {
+                    ToolbarItem(placement:.cancellationAction){
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Image(systemName:"xmark")
+                        }
+                    }
+                }
+            }
+        }
         
         .onAppear() {
             setup()
         }
     }
-    func setup() {
-        #if DEBUG
-            cardItemsStore.cardItems = devCards
+    private func setup() {
+        devSetting = false
+        
+        switch appEnvironment {
+        case "DEV":
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
-        #else
-            cardItemsStore.cardItems = relCards
+            cardItemsStore.cardItems = devCards + featureCards + relCards
+            adDebug = true
+            
+        case "BETA":
+            deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
+            if version != isLaunchVersionFastBeta {
+                isTestCardEnabled = true
+                isLaunchVersionFastBeta = version
+                firstLook()
+            }
+            if isTestCardEnabled {
+                cardItemsStore.cardItems = featureCards + relCards
+            } else {
+                cardItemsStore.cardItems = relCards
+            }
+            
+        case "REL":
+            enableCardType = 0
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
-        #endif
+            if version != isLaunchVersionFastRel {
+                isTestCardEnabled = false
+                isLaunchVersionFastRel = version
+                firstLook()
+            }
+            cardItemsStore.cardItems = relCards
+            adDebug = false
+            
+        case .none:break
+        case .some(_):break
+        }
+        
+        if adDebug {
+            NativeAdUnitIDValue = dev_NativeAdUnitID
+            BannerUnitIDValue = dev_BannerUnitID
+        } else {
+            NativeAdUnitIDValue = NativeUnitID
+            BannerUnitIDValue = bannerUnitID
+        }
+        
+        
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+    }
+    
+    func firstLook() {
+        versionFirstLook = true
     }
 }
 
