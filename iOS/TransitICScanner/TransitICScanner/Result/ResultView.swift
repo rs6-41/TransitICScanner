@@ -191,8 +191,14 @@ struct ResultView: View {
                         .foregroundStyle(Color.gray)
                         .textSelection(.enabled)
                 }
-            } else {
-                Text(LocalizedStringKey("result.info.empty"))
+            }
+            if let savedAt = result.savedAt {
+                HStack {
+                    Text(LocalizedStringKey("result.info.date"))
+                    Spacer()
+                    Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                        .foregroundStyle(Color.gray)
+                }
             }
         }
         .onAppear() {

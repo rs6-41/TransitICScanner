@@ -50,7 +50,8 @@ extension NFCScannerModel {
             info: info,
             converter:hkOctopus.scanOption.converter,
             isLastHide: false,
-            description: hkOctopus.scand_description
+            description: hkOctopus.scand_description,
+            savedAt: Date.now
         )
 
         session.alertMessage = String(localized:"scanner.coreNFC.scanning.done")

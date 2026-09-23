@@ -9,6 +9,7 @@ struct Result: Hashable {
     var converter: ConverterType
     var isLastHide: Bool
     var description: String
+    var savedAt:Date? = Date.now
 }
 
 // 履歴データ
