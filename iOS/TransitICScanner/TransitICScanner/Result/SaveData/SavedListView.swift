@@ -273,6 +273,11 @@ struct SavedListView: View {
                     .frame(maxWidth: 350)
                 }
             }
+            .onChange(of: cards) {
+                if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
+                    narrow = "all"
+                }
+            }
             .navigationTitle("tab.history")
             .searchable(
                 text: $searchText,
