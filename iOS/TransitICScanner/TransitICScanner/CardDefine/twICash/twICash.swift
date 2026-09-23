@@ -102,7 +102,8 @@ extension NFCScannerModel {
                         info: info,
                         converter: twICash.scanOption.converter,
                         isLastHide: false,
-                        description: twICash.scand_description
+                        description: twICash.scand_description,
+                        savedAt: Date.now
                     )
 
                     session.invalidate()

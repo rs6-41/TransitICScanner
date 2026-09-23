@@ -43,7 +43,7 @@ struct SavedListView: View {
         switch sort {
         case "dateAscending":
             result.sort {
-                $0.savedAt < $1.savedAt
+                $0.savedAt ?? Date.now < $1.savedAt ?? Date.now
             }
 
         case "nameAscending":
@@ -58,7 +58,7 @@ struct SavedListView: View {
 
         default:
             result.sort {
-                $0.savedAt > $1.savedAt
+                $0.savedAt ?? Date.now > $1.savedAt ?? Date.now
             }
         }
 
@@ -174,9 +174,16 @@ struct SavedListView: View {
                                 Spacer()
 
                                 if let balance = card.balance {
-                                    HStack(spacing: 2) {
-                                        Text(LocalizedStringKey(balance.balanceText))
-                                        Text(LocalizedStringKey(card.currency))
+                                    VStack(alignment:.trailing) {
+                                        HStack(spacing: 2) {
+                                            Text(LocalizedStringKey(balance.balanceText))
+                                            Text(LocalizedStringKey(card.currency))
+                                        }
+                                        if let savedAt = card.savedAt {
+                                            Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
+                                                .font(.caption)
+                                                .foregroundStyle(Color.gray)
+                                        }
                                     }
                                 }
                             }

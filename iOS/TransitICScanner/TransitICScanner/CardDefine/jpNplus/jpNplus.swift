@@ -68,7 +68,8 @@ extension NFCScannerModel {
                     info: info,
                     converter: jpNplus.scanOption.converter,
                     isLastHide:true,
-                    description: jpNplus.scand_description
+                    description: jpNplus.scand_description,
+                    savedAt: Date.now
                 )
 
                 self.session?.alertMessage =
