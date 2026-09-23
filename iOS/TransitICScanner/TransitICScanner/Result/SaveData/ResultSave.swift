@@ -71,6 +71,8 @@ final class SavedCard {
     var cardDescription: String = ""
 
     var converterTypeRaw: String?
+    
+    var savedAt: Date = Date()
 
     @Relationship(
         deleteRule: .cascade,
