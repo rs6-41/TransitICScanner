@@ -1,84 +1,282 @@
 import SwiftUI
 import SwiftData
 
-
 struct SavedListView: View {
-    @Query(sort: \SavedCard.name)
+    @Query
     private var cards: [SavedCard]
 
     @Environment(\.modelContext) private var modelContext
-    @State var saveListID:UUID = UUID() //Viewの強制更新
-    @Binding var deleteAds:Bool
+    @State var saveListID: UUID = UUID()
+    @State private var searchText = ""
+    @Binding var deleteAds: Bool
+
+    @State private var narrow = "all"
+    @State private var sort = "dateDescending"
+
+    private var filteredCards: [SavedCard] {
+        var result = cards
+
+        if narrow != "all" {
+            result = result.filter { card in
+                card.converterType.rawValue == narrow
+            }
+        }
+
+        if !searchText.isEmpty {
+            result = result.filter { card in
+                let cardResult = card.result()
+
+                let name = card.name
+                let nameShort = card.nameShort
+                let displayName = cardResult.info?.displayName ?? ""
+                let type = cardResult.info.map {
+                    cardResult.converter.cardInfo($0).type
+                } ?? ""
+
+                return name.localizedCaseInsensitiveContains(searchText)
+                    || nameShort.localizedCaseInsensitiveContains(searchText)
+                    || displayName.localizedCaseInsensitiveContains(searchText)
+                    || type.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+
+        switch sort {
+        case "dateAscending":
+            result.sort {
+                $0.savedAt < $1.savedAt
+            }
+
+        case "nameAscending":
+            result.sort {
+                $0.name.localizedCompare($1.name) == .orderedAscending
+            }
+
+        case "nameDescending":
+            result.sort {
+                $0.name.localizedCompare($1.name) == .orderedDescending
+            }
+
+        default:
+            result.sort {
+                $0.savedAt > $1.savedAt
+            }
+        }
+
+        return result
+    }
+
+    private var narrowItems: [(String, String)] {
+        var items: [(String, String)] = [
+            ("all", String(localized:"tab.history.narrow.all"))
+        ]
+
+        let cardTypes = Dictionary(
+            grouping: cards,
+            by: { $0.converterType.rawValue }
+        )
+
+        for (type, cards) in cardTypes {
+            guard let card = cards.first else {
+                continue
+            }
+
+            let result = card.result()
+
+            let nameShort: String
+
+            if let info = result.info {
+                nameShort = info.nameShort
+            } else {
+                nameShort = type
+            }
+
+            items.append((type, nameShort))
+        }
+
+        return items.sorted { lhs, rhs in
+            if lhs.0 == "all" {
+                return true
+            }
+
+            if rhs.0 == "all" {
+                return false
+            }
+
+            return lhs.1.localizedCompare(rhs.1) == .orderedAscending
+        }
+    }
 
     var body: some View {
         NavigationStack {
             List {
-                ListAdView(deleteAds:$deleteAds)
-                
-                ForEach(cards) { card in
-                    NavigationLink {
-                        ResultView(
-                            result: card.result(),
-                            scandata: false,
-                            saveListID: $saveListID,
-                            deleteAds: $deleteAds
-                        )
-                    } label: {
-                        let result = card.result()
-                        HStack {
-                            let iconName = result.info?.iconName
-                            if iconName != "" {
-                                CardImage(name:iconName ?? "")
-                            } else if let info = result.info {
-                                let display = result.converter.cardInfo(info)
-                                if let cardName = getCardImageName(type: card.converterType, name: display.type) {
-                                    CardImage(name:cardName.imageName)
+                ListAdView(deleteAds: $deleteAds)
+
+                Section {
+                    ForEach(filteredCards) { card in
+                        NavigationLink {
+                            ResultView(
+                                result: card.result(),
+                                scandata: false,
+                                saveListID: $saveListID,
+                                deleteAds: $deleteAds
+                            )
+                        } label: {
+                            let result = card.result()
+
+                            HStack {
+                                let iconName = result.info?.iconName
+
+                                if iconName != "" {
+                                    CardImage(name: iconName ?? "")
+                                } else if let info = result.info {
+                                    let display = result.converter.cardInfo(info)
+
+                                    if let cardName = getCardImageName(
+                                        type: card.converterType,
+                                        name: display.type
+                                    ) {
+                                        CardImage(name: cardName.imageName)
+                                    }
+                                }
+
+                                VStack(alignment: .leading, spacing: 2) {
+                                    if result.info?.displayName ?? "" != "" {
+                                        Text(
+                                            LocalizedStringKey(
+                                                result.info?.displayName ?? ""
+                                            )
+                                        )
+                                        .font(.headline)
+
+                                        Text(LocalizedStringKey(card.name))
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+
+                                    } else if let info = result.info,
+                                              !result.converter.cardInfo(info).type.isEmpty {
+                                        Text(
+                                            LocalizedStringKey(
+                                                result.converter.cardInfo(info).type
+                                            )
+                                        )
+                                        .font(.headline)
+
+                                        Text(LocalizedStringKey(card.name))
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+
+                                    } else {
+                                        Text(LocalizedStringKey(card.nameShort))
+                                            .font(.headline)
+                                    }
+                                }
+
+                                Spacer()
+
+                                if let balance = card.balance {
+                                    HStack(spacing: 2) {
+                                        Text(LocalizedStringKey(balance.balanceText))
+                                        Text(LocalizedStringKey(card.currency))
+                                    }
                                 }
                             }
-                            VStack(alignment: .leading, spacing: 2) {
-                                if result.info?.displayName ?? "" != "" {
-                                    Text(LocalizedStringKey(result.info?.displayName ?? ""))
-                                        .font(.headline)
-                                    Text(LocalizedStringKey(card.name))
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                } else if let info = result.info,!result.converter.cardInfo(info).type.isEmpty {
-                                    Text(LocalizedStringKey(result.converter.cardInfo(info).type))
-                                        .font(.headline)
-                                    Text(LocalizedStringKey(card.name))
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                } else {
-                                    Text(LocalizedStringKey(card.nameShort))
-                                        .font(.headline)
+                            .id(saveListID)
+                        }
+                    }
+                    .onDelete(perform: deleteCards)
+                } header: {
+                    HStack {
+                        Menu {
+                            Picker(
+                                "tab.history.narrow",
+                                selection: $narrow
+                            ) {
+                                ForEach(narrowItems, id: \.0) { item in
+                                    Text(LocalizedStringKey(item.1))
+                                        .tag(item.0)
                                 }
                             }
-
-                            Spacer()
-
-                            if let balance = card.balance {
-                                HStack(spacing:2) {
-                                    Text(LocalizedStringKey(balance.balanceText))
-                                    Text(LocalizedStringKey(card.currency))
+                        } label: {
+                            if let item = narrowItems.first(where: { $0.0 == narrow }) {
+                                HStack {
+                                    Spacer()
+                                    Text(LocalizedStringKey(item.1))
+                                        .lineLimit(1)
+                                        .truncationMode(.tail)
+                                        .frame(maxWidth: .infinity,alignment:.center)
+                                        .padding(.vertical,7)
+                                    Spacer()
+                                    Image(systemName:"chevron.up.chevron.down")
                                 }
+                                .padding(.horizontal)
                             }
                         }
-                        
-                        .id(saveListID)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color(UIColor.systemBackground),
+                            in: Capsule()
+                        )
+
+                        Menu {
+                            Picker(
+                                "tab.history.sort",
+                                selection: $sort
+                            ) {
+                                Text(LocalizedStringKey("tab.history.sort.new"))
+                                    .tag("dateDescending")
+
+                                Text(LocalizedStringKey("tab.history.sort.old"))
+                                    .tag("dateAscending")
+
+                                Text(LocalizedStringKey("tab.history.sort.name"))
+                                    .tag("nameAscending")
+
+                                Text(LocalizedStringKey("tab.history.sort.name.desc"))
+                                    .tag("nameDescending")
+                            }
+                        } label: {
+                            let sortKey: String = switch sort {
+                            case "dateAscending":
+                                "tab.history.sort.old"
+                            case "nameAscending":
+                                "tab.history.sort.name"
+                            case "nameDescending":
+                                "tab.history.sort.name.desc"
+                            default:
+                                "tab.history.sort.new"
+                            }
+                            HStack {
+                                Spacer()
+                                Text(LocalizedStringKey(sortKey))
+                                    .lineLimit(1)
+                                    .truncationMode(.tail)
+                                    .frame(maxWidth: .infinity,alignment:.center)
+                                    .padding(.vertical,7)
+                                Spacer()
+                                Image(systemName:"chevron.up.chevron.down")
+                            }
+                            .padding(.horizontal)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color(UIColor.systemBackground),
+                            in: Capsule()
+                        )
                     }
+                    .frame(maxWidth: 350)
                 }
-                .onDelete(perform: deleteCards)
             }
             .navigationTitle("tab.history")
-            .onAppear() {
-                print("保存件数:\(cards.count)")
-            }
+            .searchable(
+                text: $searchText,
+                prompt: Text(LocalizedStringKey("search"))
+            )
         }
     }
 
     private func deleteCards(at offsets: IndexSet) {
         for index in offsets {
-            modelContext.delete(cards[index])
+            modelContext.delete(filteredCards[index])
         }
 
         do {

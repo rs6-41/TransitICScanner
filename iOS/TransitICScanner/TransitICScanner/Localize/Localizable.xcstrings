@@ -43,6 +43,12 @@
     },
     "ads.delete" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1345,7 +1351,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Area (A to Z)"
+            "value" : "Area (A-Z)"
           }
         },
         "ja" : {
@@ -1379,7 +1385,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name (A to Z)"
+            "value" : "Name (A-Z)"
           }
         },
         "ja" : {
@@ -5072,6 +5078,118 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "マイカード"
+          }
+        }
+      }
+    },
+    "tab.history.narrow" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Narrow"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "絞り込み"
+          }
+        }
+      }
+    },
+    "tab.history.narrow.all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全て"
+          }
+        }
+      }
+    },
+    "tab.history.sort" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "並び替え"
+          }
+        }
+      }
+    },
+    "tab.history.sort.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name (A–Z)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前順"
+          }
+        }
+      }
+    },
+    "tab.history.sort.name.desc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name (Z-A)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前逆順"
+          }
+        }
+      }
+    },
+    "tab.history.sort.new" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latest"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新日順"
+          }
+        }
+      }
+    },
+    "tab.history.sort.old" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Earliest"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新日逆順"
           }
         }
       }
