@@ -5,29 +5,57 @@ struct ListAdView: View {
 
     @Binding var deleteAds: Bool
     @State var isDisplayMyAppAdd = true
+    @EnvironmentObject var ads: AdsModel
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    @Environment(\.colorScheme) private var colorScheme
+    @State var colorSchemeID = 0
+    
+    @State var myAppsAd = myAppsAds.randomElement()
 
     var body: some View {
-        VStack() {
-            if !deleteAds {
-                if let nativeAd = nativeAdManager.ad {
-                    NativeAdRepresentable(nativeAd: nativeAd)
-                } else if nativeAdManager.loadCompleted {
-                    ZStack {
-                        BannerAdsView(loadingError: $isDisplayMyAppAdd)
-                        if isDisplayMyAppAdd {
-                            myAppsAds.randomElement()
+        if !deleteAds {
+            Section() {
+                VStack {
+                    if let nativeAd = nativeAdManager.ad {
+                        NativeAdRepresentable(nativeAd: nativeAd)
+                            .id(colorSchemeID)
+                    } else if nativeAdManager.loadCompleted {
+                        ZStack {
+                            if isDisplayMyAppAdd {
+                                myAppsAd
+                                    .id(colorSchemeID)
+                            }
+                            BannerAdsView(loadingError: $isDisplayMyAppAdd)
+                                .id(colorSchemeID)
                         }
+                    } else {
+                        PlaceholderAdsView(icon: UIImage(named:"twICash"),headline: String("Placeholder"),bodyText: String("PlaceholderPlaceholder"),callToAction:String("Placeholder"))
+                            .redacted(reason: .placeholder)
+                            .id(colorSchemeID)
                     }
-                } else {
-                    PlaceholderAdsView(icon: UIImage(named:"twICash"),headline: String("Placeholder"),bodyText: String("PlaceholderPlaceholder"),callToAction:String("Placeholder"))
-                        .redacted(reason: .placeholder)
                 }
-            }
-        }
-        .frame(height: 60)
-        .onAppear() {
-            Task {
-                nativeAdManager.loadAd()
+                .onChange(of:colorScheme) {
+                    colorSchemeID += 1
+                }
+                .frame(height: 60)
+                .onAppear() {
+                    Task {
+                        nativeAdManager.loadAd()
+                    }
+                }
+            } header: {
+                HStack {
+                    Text(LocalizedStringKey("ads"))
+                    Spacer()
+                    Button(action: {
+                        ads.isDeleteAdsSheet = true
+                    }) {
+                        Text(LocalizedStringKey("ads.delete"))
+                            .fontWeight(.regular)
+                    }
+                }
             }
         }
     }

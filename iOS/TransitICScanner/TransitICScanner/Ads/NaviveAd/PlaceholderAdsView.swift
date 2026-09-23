@@ -39,7 +39,7 @@ struct PlaceholderAdsContainerView: UIViewControllerRepresentable {
                     size: 14,
                     weight: .semibold
                 ),
-                color: .primary
+                secondary: false
             )
         )
 
@@ -50,7 +50,7 @@ struct PlaceholderAdsContainerView: UIViewControllerRepresentable {
                 rootView: NativeAdTextView(
                     text: body,
                     font: .system(size: 12),
-                    color: .secondary
+                    secondary: true
                 )
             )
         } else {
@@ -65,7 +65,7 @@ struct PlaceholderAdsContainerView: UIViewControllerRepresentable {
                 rootView: NativeAdTextView(
                     text: advertiser,
                     font: .system(size: 10),
-                    color: .secondary
+                    secondary: true
                 )
             )
         } else {

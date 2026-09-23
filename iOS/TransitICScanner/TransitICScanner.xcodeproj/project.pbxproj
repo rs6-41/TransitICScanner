@@ -295,6 +295,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TransitICScanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
@@ -347,6 +348,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TransitICScanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
@@ -472,6 +474,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TransitICScanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IC Balance";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";

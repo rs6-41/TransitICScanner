@@ -4,10 +4,16 @@ import GoogleMobileAds
 import AdSupport
 import AppTrackingTransparency
 
+final class AdsModel: ObservableObject {
+    @Published var isDeleteAdsSheet = false
+    @Published var purchaseAlertTitle = ""
+    @Published var purchaseAlertMessage = ""
+    @Published var isPurchaseAlert = false
+}
 
 struct ContentView: View {
     @State var tab: Int = 0
-    @State var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
+    @AppStorage("deleteAdsPurchaseID") var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
     @AppStorage("enableCardType") var enableCardType = 0
     @AppStorage("testCardEnabled") var isTestCardEnabled = false
     
@@ -24,6 +30,9 @@ struct ContentView: View {
     @AppStorage("adDebug") var adDebug = false
     
     @EnvironmentObject var debug: DebugModel
+    @EnvironmentObject var ads: AdsModel
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         TabView(selection: $tab) {
@@ -47,6 +56,33 @@ struct ContentView: View {
                 }
              
         }
+        .sheet(isPresented: $ads.isDeleteAdsSheet) {
+            NavigationStack {
+                List {
+                    SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle, purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert, deleteAds: $deleteAds)
+                        .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
+                            Button(LocalizedStringKey("ok")) {
+                                ads.purchaseAlertTitle = ""
+                                ads.purchaseAlertMessage = ""
+                                ads.isPurchaseAlert = false
+                                ads.isDeleteAdsSheet = false
+                            }
+                        } message: {
+                            Text(ads.purchaseAlertMessage)
+                        }
+                }
+                .navigationTitle(LocalizedStringKey("ads.delete"))
+                .toolbar {
+                    ToolbarItem(placement:.cancellationAction){
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Image(systemName:"xmark")
+                        }
+                    }
+                }
+            }
+        }
         
         .onAppear() {
             setup()
@@ -59,6 +95,7 @@ struct ContentView: View {
         case "DEV":
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             cardItemsStore.cardItems = devCards + featureCards + relCards
+            adDebug = true
             
         case "BETA":
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
@@ -82,6 +119,7 @@ struct ContentView: View {
                 firstLook()
             }
             cardItemsStore.cardItems = relCards
+            adDebug = false
             
         case .none:break
         case .some(_):break

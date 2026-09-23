@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("deleteAds") var deleteAds = false
     @StateObject private var debugModel = DebugModel()
+    @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
     
     var body: some Scene {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .environmentObject(cardItemsStore)
                 .environmentObject(debugModel)
                 .environmentObject(getCountry)
+                .environmentObject(adsModel)
         }
         .modelContainer(
             try! SavedDataModelContainer.makeContainer()

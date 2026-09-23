@@ -13,11 +13,7 @@ struct SavedListView: View {
     var body: some View {
         NavigationStack {
             List {
-                if !deleteAds {
-                    Section(header:Text("ads")) {
-                        ListAdView(deleteAds:$deleteAds)
-                    }
-                }
+                ListAdView(deleteAds:$deleteAds)
                 
                 ForEach(cards) { card in
                     NavigationLink {

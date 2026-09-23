@@ -18,11 +18,7 @@ struct ResultView: View {
             List {
                 resultUserdataSection
                 resultInfoSection
-                if !deleteAds {
-                    Section(header:Text("ads")) {
-                        ListAdView(deleteAds:$deleteAds)
-                    }
-                }
+                ListAdView(deleteAds:$deleteAds)
                 resultHistorySection
             }
             .toolbar {
