@@ -21,7 +21,6 @@ struct NativeAdContentView: View {
     
     @State var setting = adSetting()
     
-
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -101,16 +100,17 @@ struct ExistingUIView: UIViewRepresentable {
 struct NativeAdTextView: View {
     let text: String
     let font: Font
-    let color: Color
+    let secondary: Bool
+
     @Environment(adSetting.self) private var setting
 
     var body: some View {
         Text(text)
             .font(font)
-            .foregroundStyle(color)
+            .foregroundStyle(secondary ? .secondary : .primary)
             .multilineTextAlignment(.leading)
-            .padding(.vertical,0)
-            .padding(.horizontal,setting.textPadding)
+            .padding(.vertical, 0)
+            .padding(.horizontal, setting.textPadding)
             .frame(
                 width: setting.textWidth,
                 alignment: .leading
@@ -229,7 +229,7 @@ final class NativeAdContainerView: NativeAdView {
                     size: 14,
                     weight: .semibold
                 ),
-                color: .primary
+                secondary: false
             )
         )
 
@@ -241,7 +241,7 @@ final class NativeAdContainerView: NativeAdView {
                 rootView: NativeAdTextView(
                     text: body,
                     font: .system(size: 12),
-                    color: .secondary
+                    secondary: true
                 )
             )
         } else {
@@ -256,7 +256,7 @@ final class NativeAdContainerView: NativeAdView {
                 rootView: NativeAdTextView(
                     text: advertiser,
                     font: .system(size: 10),
-                    color: .secondary
+                    secondary: false
                 )
             )
         } else {

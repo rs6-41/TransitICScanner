@@ -41,12 +41,33 @@
         }
       }
     },
+    "ads.delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告削除"
+          }
+        }
+      }
+    },
+    "ads.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告は"
+          }
+        }
+      }
+    },
     "ads.placeholder.myapp.button" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Get"
+            "value" : "  Install  "
           }
         },
         "ja" : {
