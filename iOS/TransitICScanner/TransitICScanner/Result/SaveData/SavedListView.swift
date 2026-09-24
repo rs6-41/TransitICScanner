@@ -166,7 +166,7 @@ struct SavedListView: View {
                                             .foregroundStyle(.secondary)
 
                                     } else {
-                                        Text(LocalizedStringKey(card.nameShort))
+                                        Text(card.nameShort)
                                             .font(.headline)
                                     }
                                 }
@@ -177,7 +177,7 @@ struct SavedListView: View {
                                     VStack(alignment:.trailing) {
                                         HStack(spacing: 2) {
                                             Text(LocalizedStringKey(balance.balanceText))
-                                            Text(LocalizedStringKey(card.currency))
+                                            Text(card.currency)
                                         }
                                         if let savedAt = card.savedAt {
                                             Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
@@ -211,18 +211,13 @@ struct SavedListView: View {
                                         .lineLimit(1)
                                         .truncationMode(.tail)
                                         .frame(maxWidth: .infinity,alignment:.center)
-                                        .padding(.vertical,7)
                                     Spacer()
                                     Image(systemName:"chevron.up.chevron.down")
                                 }
-                                .padding(.horizontal)
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .background(
-                            Color(UIColor.systemBackground),
-                            in: Capsule()
-                        )
+                        .buttonStyle(.glass)
 
                         Menu {
                             Picker(
@@ -258,17 +253,13 @@ struct SavedListView: View {
                                     .lineLimit(1)
                                     .truncationMode(.tail)
                                     .frame(maxWidth: .infinity,alignment:.center)
-                                    .padding(.vertical,7)
                                 Spacer()
                                 Image(systemName:"chevron.up.chevron.down")
                             }
                             .padding(.horizontal)
                         }
                         .frame(maxWidth: .infinity)
-                        .background(
-                            Color(UIColor.systemBackground),
-                            in: Capsule()
-                        )
+                        .buttonStyle(.glass)
                     }
                     .frame(maxWidth: 350)
                 }

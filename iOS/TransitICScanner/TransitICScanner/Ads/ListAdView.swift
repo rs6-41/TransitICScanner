@@ -13,13 +13,15 @@ struct ListAdView: View {
     @State var colorSchemeID = 0
     
     @State var myAppsAd = myAppsAds.randomElement()
+    
+    @State private var adSize: CGSize = CGSize(width:0, height:60)
 
     var body: some View {
         if !deleteAds {
             Section() {
                 VStack {
                     if let nativeAd = nativeAdManager.ad {
-                        NativeAdRepresentable(nativeAd: nativeAd)
+                        NativeAdRepresentable(nativeAd: nativeAd, size: $adSize)
                             .id(colorSchemeID)
                     } else if nativeAdManager.loadCompleted {
                         ZStack {
@@ -39,7 +41,7 @@ struct ListAdView: View {
                 .onChange(of:colorScheme) {
                     colorSchemeID += 1
                 }
-                .frame(height: 60)
+                .frame(minHeight: adSize.height)
                 .onAppear() {
                     Task {
                         nativeAdManager.loadAd()
