@@ -23,6 +23,7 @@ struct ListAdView: View {
                     if let nativeAd = nativeAdManager.ad {
                         NativeAdRepresentable(nativeAd: nativeAd, size: $adSize)
                             .id(colorSchemeID)
+                            .allowsHitTesting(false)
                     } else if nativeAdManager.loadCompleted {
                         ZStack {
                             if isDisplayMyAppAdd {

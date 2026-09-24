@@ -166,7 +166,7 @@ struct SavedListView: View {
                                             .foregroundStyle(.secondary)
 
                                     } else {
-                                        Text(card.nameShort)
+                                        Text(LocalizedStringKey(card.nameShort))
                                             .font(.headline)
                                     }
                                 }
@@ -177,7 +177,7 @@ struct SavedListView: View {
                                     VStack(alignment:.trailing) {
                                         HStack(spacing: 2) {
                                             Text(LocalizedStringKey(balance.balanceText))
-                                            Text(card.currency)
+                                            Text(LocalizedStringKey(card.currency))
                                         }
                                         if let savedAt = card.savedAt {
                                             Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
