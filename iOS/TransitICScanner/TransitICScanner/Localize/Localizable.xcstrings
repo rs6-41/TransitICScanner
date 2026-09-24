@@ -1832,7 +1832,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "地域名(倒序)"
+            "value" : "地域(顺序)"
           }
         }
       }
@@ -1855,7 +1855,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "地域名(倒序)"
+            "value" : "地域(倒序)"
           }
         }
       }
@@ -1878,7 +1878,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "按名"
+            "value" : "按名(顺序)"
           }
         }
       }
@@ -4635,7 +4635,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ID"
+            "value" : "卡号"
           }
         }
       }
@@ -6914,7 +6914,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "版本 %1$(variableName)@"
+            "value" : "%1$(variableName)@版本"
           }
         }
       }
@@ -7024,7 +7024,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "按名"
+            "value" : "按名(顺序)"
           }
         }
       }
@@ -7068,7 +7068,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "更新时间"
+            "value" : "更新(顺序)"
           }
         }
       }
@@ -7090,7 +7090,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "更新时间(倒序)"
+            "value" : "更新(倒序)"
           }
         }
       }
