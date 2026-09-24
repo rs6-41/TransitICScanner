@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "%1$@%2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@%2$@"
+          }
         }
       },
       "shouldTranslate" : false
@@ -19,6 +25,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "%1$@%2$@%3$@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "%1$@%2$@%3$@"
           }
         }
@@ -38,6 +50,12 @@
             "state" : "translated",
             "value" : "広告"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "广告"
+          }
         }
       }
     },
@@ -52,6 +70,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "広告削除"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "広告削除"
           }
         }
@@ -70,6 +94,12 @@
             "state" : "translated",
             "value" : "インストール"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " 下载 "
+          }
         }
       }
     },
@@ -85,6 +115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "画像をピクチャ・イン・ピクチャで表示できるアプリ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持以画中画方式查看图片的应用"
           }
         }
       }
@@ -102,6 +138,12 @@
             "state" : "translated",
             "value" : "IMGPiper"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画中画"
+          }
         }
       }
     },
@@ -117,6 +159,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "文字列の置換や挿入が簡単にできます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻松替换或插入文字。"
           }
         }
       }
@@ -134,6 +182,12 @@
             "state" : "translated",
             "value" : "スマート置換"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "智能字换"
+          }
         }
       }
     },
@@ -149,6 +203,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "画像をWebP形式に変換します。透過PNGにも対応し、PNG画像の軽量化を期待できます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将图片转换为 WebP 格式。支持透明 PNG，并有助于减小 PNG 文件大小。"
           }
         }
       }
@@ -166,6 +226,12 @@
             "state" : "translated",
             "value" : "WebPコンバータ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WebP 转换器"
+          }
         }
       }
     },
@@ -181,6 +247,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "世界IC残高確認"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC余额查询"
           }
         }
       }
@@ -198,6 +270,12 @@
             "state" : "translated",
             "value" : "キャンセル"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
         }
       }
     },
@@ -211,6 +289,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR"
@@ -232,6 +316,12 @@
             "state" : "translated",
             "value" : "ことでん"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ことでん"
+          }
         }
       }
     },
@@ -248,6 +338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "デフォルト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认"
           }
         }
       }
@@ -266,6 +362,12 @@
             "state" : "translated",
             "value" : "EZL"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "EZL"
+          }
         }
       }
     },
@@ -279,6 +381,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はやかけん"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "はやかけん"
@@ -300,6 +408,12 @@
             "state" : "translated",
             "value" : "オクトパス/八達通"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -316,6 +430,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オクトパス/八達通"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
           }
         }
       }
@@ -334,6 +454,12 @@
             "state" : "translated",
             "value" : "ICOCA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ICOCA"
+          }
         }
       }
     },
@@ -347,6 +473,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -368,6 +500,12 @@
             "state" : "translated",
             "value" : "エヌタスカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N-Tasu卡(N+)"
+          }
         }
       }
     },
@@ -381,6 +519,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "K-CASH / 케이캐쉬"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "K-CASH / 케이캐쉬"
@@ -402,6 +546,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -419,6 +569,12 @@
             "state" : "translated",
             "value" : "MOIBA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "MOIBA"
+          }
         }
       }
     },
@@ -432,6 +588,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "nimoca"
@@ -453,6 +615,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -470,6 +638,12 @@
             "state" : "translated",
             "value" : "モバイル電子マネー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机电子钱包"
+          }
         }
       }
     },
@@ -483,6 +657,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -504,6 +684,12 @@
             "state" : "translated",
             "value" : "Snapper"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Snapper"
+          }
         }
       }
     },
@@ -517,6 +703,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SUGOCA"
@@ -538,6 +730,12 @@
             "state" : "translated",
             "value" : "Suica"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Suica"
+          }
         }
       }
     },
@@ -555,6 +753,12 @@
             "state" : "translated",
             "value" : "T-money / 티머니"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "T-money / 티머니"
+          }
         }
       }
     },
@@ -568,6 +772,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOICA"
@@ -589,6 +799,12 @@
             "state" : "translated",
             "value" : "EasyCard（悠遊卡）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡"
+          }
         }
       }
     },
@@ -604,6 +820,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "icash"
           }
         }
@@ -623,6 +845,12 @@
             "state" : "translated",
             "value" : "EasyCard（悠遊卡）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡"
+          }
         }
       }
     },
@@ -640,6 +868,12 @@
             "state" : "translated",
             "value" : "悠遊卡/悠遊聯名卡/超級悠遊卡"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "悠遊卡/悠遊聯名卡/超級悠遊卡"
+          }
         }
       }
     },
@@ -653,6 +887,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "iPASS（一卡通）"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "iPASS（一卡通）"
@@ -673,6 +913,12 @@
             "state" : "translated",
             "value" : "全てのカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有的卡"
+          }
         }
       }
     },
@@ -689,6 +935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "中国本土"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中国大陆"
           }
         }
       }
@@ -707,6 +959,12 @@
             "state" : "translated",
             "value" : "17/37/3/10/8"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zhongguo"
+          }
         }
       }
     },
@@ -722,6 +980,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "香港"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "香港"
           }
         }
@@ -741,6 +1005,12 @@
             "state" : "translated",
             "value" : "30/46/10/46"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
         }
       }
     },
@@ -754,6 +1024,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日本"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "日本"
@@ -775,6 +1051,12 @@
             "state" : "translated",
             "value" : "22/30/46"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "riben"
+          }
         }
       }
     },
@@ -791,6 +1073,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "北朝鮮"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "朝鲜"
           }
         }
       }
@@ -809,6 +1097,12 @@
             "state" : "translated",
             "value" : "韓国"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韩国"
+          }
         }
       }
     },
@@ -825,6 +1119,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "6/46/10/8"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hanguo"
           }
         }
       }
@@ -843,6 +1143,12 @@
             "state" : "translated",
             "value" : "マカオ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳门"
+          }
         }
       }
     },
@@ -860,6 +1166,12 @@
             "state" : "translated",
             "value" : "31/6/5"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
         }
       }
     },
@@ -875,6 +1187,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "台湾"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "台湾"
           }
         }
@@ -894,6 +1212,12 @@
             "state" : "translated",
             "value" : "16/2/44/46"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
         }
       }
     },
@@ -910,6 +1234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アメリカ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "美国"
           }
         }
       }
@@ -928,6 +1258,12 @@
             "state" : "translated",
             "value" : "T-Union（交通聯合）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中国交通联合"
+          }
         }
       }
     },
@@ -944,6 +1280,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "T-Unionマークのある中国の交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "带有交通联合标志的中国交通卡"
           }
         }
       }
@@ -962,6 +1304,12 @@
             "state" : "translated",
             "value" : "tunion"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "jiaotonglianhe"
+          }
         }
       }
     },
@@ -978,6 +1326,12 @@
             "state" : "translated",
             "value" : "各ブランドは本アプリの提携・承認関係にありません。\nスキャン結果は参考用です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "各品牌与本应用不存在合作或授权关系。\n扫描结果仅供参考。"
+          }
         }
       }
     },
@@ -993,6 +1347,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFCに非対応の端末か、NFCが無効です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "该设备不支持NFC，或者NFC功能已被禁用。"
           }
         }
       }
@@ -1011,6 +1371,12 @@
             "state" : "translated",
             "value" : "Octopus（八達通）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -1027,6 +1393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オクトパスカード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
           }
         }
       }
@@ -1045,6 +1417,12 @@
             "state" : "translated",
             "value" : "octopus"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "badatong"
+          }
         }
       }
     },
@@ -1061,6 +1439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Doカード / Asacaカード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / AsacaDoCard"
           }
         }
       }
@@ -1079,6 +1463,12 @@
             "state" : "translated",
             "value" : "旭川電気軌道および道北バス"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川電気軌道和道北バス"
+          }
         }
       }
     },
@@ -1096,6 +1486,12 @@
             "state" : "needs_review",
             "value" : "交通系ICカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本交通系IC卡"
+          }
         }
       }
     },
@@ -1109,6 +1505,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA / IruCa"
@@ -1130,6 +1532,12 @@
             "state" : "translated",
             "value" : "SAPICA(札幌)、IruCa(香川)"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA(札幌)、IruCa(香川)"
+          }
         }
       }
     },
@@ -1143,6 +1551,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sapica"
@@ -1164,6 +1578,12 @@
             "state" : "translated",
             "value" : "Suica, PASMO, ICOCAなど全国互換カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica、PASMO、ICOCA等日本全国通用卡片"
+          }
         }
       }
     },
@@ -1180,6 +1600,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "koutuukei"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ribenjiaotongka"
           }
         }
       }
@@ -1198,6 +1624,12 @@
             "state" : "translated",
             "value" : "エヌタス(N+)"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N+卡"
+          }
         }
       }
     },
@@ -1215,6 +1647,12 @@
             "state" : "translated",
             "value" : "長崎バスカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎公交卡"
+          }
         }
       }
     },
@@ -1228,6 +1666,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ntasu"
@@ -1249,6 +1693,12 @@
             "state" : "translated",
             "value" : "One Card All Pass"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "One Card All Pass"
+          }
         }
       }
     },
@@ -1266,6 +1716,12 @@
             "state" : "translated",
             "value" : "T-money, EZLなど韓国の大半の交通カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money、EZL等韩国大多数交通卡"
+          }
         }
       }
     },
@@ -1279,6 +1735,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "onecardallpass"
@@ -1299,6 +1761,12 @@
             "state" : "translated",
             "value" : "現在の地域"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前区域"
+          }
         }
       }
     },
@@ -1314,6 +1782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "他の地域"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他地方"
           }
         }
       }
@@ -1331,6 +1805,12 @@
             "state" : "translated",
             "value" : "検索結果"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜索结果"
+          }
         }
       }
     },
@@ -1346,6 +1826,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "地域（昇順）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "地域（昇順）"
           }
         }
@@ -1365,6 +1851,12 @@
             "state" : "translated",
             "value" : "地域（降順）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "地域（降順）"
+          }
         }
       }
     },
@@ -1380,6 +1872,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "名前（昇順）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "名前（昇順）"
           }
         }
@@ -1399,6 +1897,12 @@
             "state" : "translated",
             "value" : "名前（降順）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "名前（降順）"
+          }
         }
       }
     },
@@ -1414,6 +1918,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡"
           }
         }
       }
@@ -1432,6 +1942,12 @@
             "state" : "translated",
             "value" : "EasyCard（悠遊卡）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡"
+          }
         }
       }
     },
@@ -1449,6 +1965,12 @@
             "state" : "translated",
             "value" : "easycard"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "youyouka"
+          }
         }
       }
     },
@@ -1464,6 +1986,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "icash 2.0（愛金卡）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "icash 2.0（愛金卡）"
           }
         }
@@ -1483,6 +2011,12 @@
             "state" : "translated",
             "value" : "7-ELEVEN系交通カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-ELEVEN系交通卡"
+          }
         }
       }
     },
@@ -1499,6 +2033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aijinka"
           }
         }
       }
@@ -1517,6 +2057,12 @@
             "state" : "translated",
             "value" : "交通聯合"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通联合"
+          }
         }
       }
     },
@@ -1533,6 +2079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香港ドル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "港元"
           }
         }
       }
@@ -1551,6 +2103,12 @@
             "state" : "translated",
             "value" : "円"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日元"
+          }
         }
       }
     },
@@ -1568,6 +2126,12 @@
             "state" : "translated",
             "value" : "ウォン"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韩元"
+          }
         }
       }
     },
@@ -1583,6 +2147,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "元"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "元"
           }
         }
@@ -1602,6 +2172,12 @@
             "state" : "translated",
             "value" : "TWD"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台币"
+          }
         }
       }
     },
@@ -1617,6 +2193,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完了"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -1634,6 +2216,12 @@
             "state" : "translated",
             "value" : "エラー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "错误"
+          }
         }
       }
     },
@@ -1650,6 +2238,12 @@
             "state" : "translated",
             "value" : "OK"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "好"
+          }
         }
       }
     },
@@ -1660,6 +2254,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fujian e Card"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "e通卡"
           }
         }
       }
@@ -1673,6 +2273,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "日"
@@ -1693,6 +2299,12 @@
             "state" : "translated",
             "value" : "記名カードの場合、誕生日を2桁の数字で記入してください(非記名では入力不要)"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "对于记名卡，请输入生日的两位数字（非记名卡无需输入）。"
+          }
         }
       }
     },
@@ -1705,6 +2317,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "月"
@@ -1725,6 +2343,12 @@
             "state" : "translated",
             "value" : "誕生日（記名カード）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "誕生日（記名カード）"
+          }
         }
       }
     },
@@ -1739,6 +2363,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "上記画像の数字を入力してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "上記画像の数字を入力してください。"
           }
         }
@@ -1757,6 +2387,12 @@
             "state" : "translated",
             "value" : "画像認証"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码"
+          }
         }
       }
     },
@@ -1772,6 +2408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード裏面にある数字を入力してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入卡片背面的数字。"
           }
         }
       }
@@ -1789,6 +2431,12 @@
             "state" : "translated",
             "value" : "カード番号"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡号"
+          }
         }
       }
     },
@@ -1805,6 +2453,12 @@
             "state" : "translated",
             "value" : "EasyCardの[公式Webサイト](https://ezweb.easycard.com.tw/search/CardSearch.php)に自動で情報を入力し、データを取得します。\n\nサーバーメンテナンスのため、現地時間の23時~6時は取得できない場合があります。\nWebサイトの仕様変更により利用できなくなる場合があります。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动在 EasyCard 的[官方网站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填写信息并获取数据。\n\n由于服务器维护，按照当地时间，23:00～6:00期间可能无法获取数据。\n由于网站规格发生变更，可能会导致该功能无法使用。"
+          }
         }
       }
     },
@@ -1820,6 +2474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完了"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -1838,6 +2498,12 @@
             "state" : "translated",
             "value" : "身分証番号の下四桁を入力してください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入身份证号码的后四位。"
+          }
         }
       }
     },
@@ -1854,6 +2520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "本人確認"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "身份验证"
           }
         }
       }
@@ -1872,6 +2544,12 @@
             "state" : "translated",
             "value" : "このカードは履歴データを取得できません。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法获取此卡片的历史记录数据。"
+          }
         }
       }
     },
@@ -1888,6 +2566,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Octopus"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
           }
         }
       }
@@ -1906,6 +2590,12 @@
             "state" : "translated",
             "value" : "画像引用：WeChat「[交通联合官方订阅号](https://mp.weixin.qq.com/s/jtDHoeLoPbVnGZNJYtbMWA)」ミニプログラム"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图片来源：微信“⁠[交通联合官方订阅号](https://mp.weixin.qq.com/s/jtDHoeLoPbVnGZNJYtbMWA)」”小程序"
+          }
         }
       }
     },
@@ -1922,6 +2612,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "※ 交通聯合のマークがない旧タイプのカードでは利用できません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "※ 不支持使用没有交通聯合标志的旧版卡片。"
           }
         }
       }
@@ -1940,6 +2636,12 @@
             "state" : "translated",
             "value" : "「交通聯合（China T-Union）」のロゴがある交通カードで利用できます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用于带有“交通聯合（China T-Union）”标志的交通卡。"
+          }
         }
       }
     },
@@ -1953,6 +2655,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "はやかけん"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "はやかけん"
@@ -1974,6 +2682,12 @@
             "state" : "translated",
             "value" : "ICOCA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ICOCA"
+          }
         }
       }
     },
@@ -1989,6 +2703,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Kitaca"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Kitaca"
           }
         }
@@ -2008,6 +2728,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -2023,6 +2749,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "nimoca"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "nimoca"
           }
         }
@@ -2042,6 +2774,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -2057,6 +2795,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "PiTaPa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "PiTaPa"
           }
         }
@@ -2076,6 +2820,12 @@
             "state" : "translated",
             "value" : "SUGOCA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "SUGOCA"
+          }
         }
       }
     },
@@ -2091,6 +2841,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Suica"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Suica"
           }
         }
@@ -2110,6 +2866,12 @@
             "state" : "translated",
             "value" : "TOICA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "TOICA"
+          }
         }
       }
     },
@@ -2126,6 +2888,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOURIST PASMO（観光客用）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOURIST PASMO（旅客用）"
           }
         }
       }
@@ -2144,6 +2912,12 @@
             "state" : "translated",
             "value" : "Welcome Suica（観光客用）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome Suica（旅客用）"
+          }
         }
       }
     },
@@ -2160,6 +2934,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交通系ICカード全国相互利用サービス（交通系ICカード）に対応する全てのカードが利用可能。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持日本交通系IC卡全国互通服务（交通系IC卡）的所有卡片均可使用。"
           }
         }
       }
@@ -2178,6 +2958,12 @@
             "state" : "translated",
             "value" : "※ PiTaPaには残高情報が存在しません。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "※ PiTaPa没有余额信息。"
+          }
         }
       }
     },
@@ -2194,6 +2980,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "地域提携ICカードも対応しています。最新の対応カードは[こちら](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)に記載"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "也支持地区合作IC卡。最新的支持卡片请参阅⁠[此处](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)。"
           }
         }
       }
@@ -2212,6 +3004,12 @@
             "state" : "translated",
             "value" : "EZL（旧Cashbee）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL（原Cashbee）"
+          }
         }
       }
     },
@@ -2225,6 +3023,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One pass"
@@ -2246,6 +3050,12 @@
             "state" : "translated",
             "value" : "Rail+"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
         }
       }
     },
@@ -2259,6 +3069,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-money"
@@ -2280,6 +3096,12 @@
             "state" : "translated",
             "value" : "WOWPASS"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
         }
       }
     },
@@ -2296,6 +3118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "主要な対応カード："
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主要支持的卡片："
           }
         }
       }
@@ -2314,6 +3142,12 @@
             "state" : "translated",
             "value" : "「One Card All Pass（전국호환 교통카드）」のロゴがある全てのカードで利用可能です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "适用于所有带有“One Card All Pass（전국호환 교통카드）”标志的卡片。"
+          }
         }
       }
     },
@@ -2331,6 +3165,12 @@
             "state" : "translated",
             "value" : "台湾で発行される悠遊卡、悠遊聯名卡、超級悠遊卡が利用できます。サーバーから残高を取得します。 \n\n無記名カード：カード右下の10桁の数字 \n悠遊聯名カード：カード裏面 左下の16桁の数字 \n※ 現地時間23時〜6時ごろは、メンテナンスにより利用できない場合があります。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持在台湾发行的悠遊卡、悠遊聯名卡、超級悠遊卡。余额将从服务器获取。\n\n无记名卡：卡片右下角的10位数字\n悠遊聯名卡：卡片背面左下角的16位数字\n※ 当地时间23:00～6:00左右可能因服务器维护而无法使用。"
+          }
         }
       }
     },
@@ -2344,6 +3184,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "北海道"
@@ -2365,6 +3211,12 @@
             "state" : "translated",
             "value" : "香川県"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川県"
+          }
         }
       }
     },
@@ -2378,6 +3230,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "長崎"
@@ -2399,6 +3257,12 @@
             "state" : "translated",
             "value" : "札幌"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌"
+          }
         }
       }
     },
@@ -2416,6 +3280,12 @@
             "state" : "translated",
             "value" : "カードから取得可能な履歴は最新の20件です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+          }
         }
       }
     },
@@ -2429,6 +3299,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard / Asaca"
@@ -2450,6 +3326,12 @@
             "state" : "translated",
             "value" : "SAPICA / IruCa"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
         }
       }
     },
@@ -2463,6 +3345,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA / IruCa"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA / IruCa"
@@ -2484,6 +3372,12 @@
             "state" : "translated",
             "value" : "カードから取得可能な履歴は最新の20件です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+          }
         }
       }
     },
@@ -2500,6 +3394,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交通系IC"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本交通系IC"
           }
         }
       }
@@ -2518,6 +3418,12 @@
             "state" : "translated",
             "value" : "カードから取得可能な履歴は最新の20件です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+          }
         }
       }
     },
@@ -2534,6 +3440,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "エヌタスカード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N-Tasu卡(N+)"
           }
         }
       }
@@ -2552,6 +3464,12 @@
             "state" : "translated",
             "value" : "One Card All Pass"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "One Card All Pass"
+          }
         }
       }
     },
@@ -2567,6 +3485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "好"
           }
         }
       }
@@ -2584,6 +3508,12 @@
             "state" : "translated",
             "value" : "保存済みのカードを再度スキャンすると、情報を更新できます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存済みのカードを再度スキャンすると、情報を更新できます。"
+          }
         }
       }
     },
@@ -2593,6 +3523,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "%1$@%2$lld%3$@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "%1$@%2$lld%3$@"
           }
         }
@@ -2613,6 +3549,12 @@
             "state" : "translated",
             "value" : "残高"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余额"
+          }
         }
       }
     },
@@ -2630,6 +3572,12 @@
             "state" : "translated",
             "value" : "残高:%1$lf%2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余额:%1$lf%2$@"
+          }
         }
       }
     },
@@ -2645,6 +3593,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "履歴（%lld件）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "历史（%lld件）"
           }
         }
       }
@@ -2663,6 +3617,12 @@
             "state" : "translated",
             "value" : "特典"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "优惠"
+          }
         }
       }
     },
@@ -2678,6 +3638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "バス"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公交车"
           }
         }
       }
@@ -2695,6 +3661,12 @@
             "state" : "translated",
             "value" : "チャージ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "充值"
+          }
         }
       }
     },
@@ -2710,6 +3682,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オートチャージ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动充值"
           }
         }
       }
@@ -2727,6 +3705,12 @@
             "state" : "translated",
             "value" : "チャージ（バス）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "充值（公交车）"
+          }
         }
       }
     },
@@ -2743,6 +3727,12 @@
             "state" : "translated",
             "value" : "チャージ（店舗）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "充值（门店）"
+          }
         }
       }
     },
@@ -2757,6 +3747,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "支払い（電車以外）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "支払い（電車以外）"
           }
         }
@@ -2775,6 +3771,12 @@
             "state" : "translated",
             "value" : "入場取り消し"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "入場取り消し"
+          }
         }
       }
     },
@@ -2790,6 +3792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自転車"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自行车"
           }
         }
       }
@@ -2807,6 +3815,12 @@
             "state" : "translated",
             "value" : "履歴がありません"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有历史"
+          }
         }
       }
     },
@@ -2822,6 +3836,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "払い戻し"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退款"
           }
         }
       }
@@ -2840,6 +3860,12 @@
             "state" : "translated",
             "value" : "入場"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "进站"
+          }
         }
       }
     },
@@ -2855,6 +3881,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "運賃支払い"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "车费支付"
           }
         }
       }
@@ -2872,6 +3904,12 @@
             "state" : "translated",
             "value" : "乗越精算（JR）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补票（JR）"
+          }
         }
       }
     },
@@ -2887,6 +3925,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "乗越精算（私鉄）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补票（民营铁路）"
           }
         }
       }
@@ -2904,6 +3948,12 @@
             "state" : "translated",
             "value" : "フェリー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "渡轮"
+          }
         }
       }
     },
@@ -2919,6 +3969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "高速鉄道"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高速铁路"
           }
         }
       }
@@ -2936,6 +3992,12 @@
             "state" : "translated",
             "value" : "LRT"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻轨"
+          }
         }
       }
     },
@@ -2951,6 +4013,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MRT（高雄）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高雄捷運"
           }
         }
       }
@@ -2968,6 +4036,12 @@
             "state" : "translated",
             "value" : "MRT台北"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台北捷運"
+          }
         }
       }
     },
@@ -2983,6 +4057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MRT台中"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台中捷運"
           }
         }
       }
@@ -3000,6 +4080,12 @@
             "state" : "translated",
             "value" : "MRT桃園"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桃園捷運"
+          }
         }
       }
     },
@@ -3015,6 +4101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新規発行"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新发卡"
           }
         }
       }
@@ -3032,6 +4124,12 @@
             "state" : "translated",
             "value" : "このカードは履歴参照に非対応です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此卡片不支持查看历史记录。"
+          }
         }
       }
     },
@@ -3047,6 +4145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "その他"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
           }
         }
       }
@@ -3064,6 +4168,12 @@
             "state" : "translated",
             "value" : "駐車場"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停车场"
+          }
         }
       }
     },
@@ -3078,6 +4188,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "入場精算（私鉄）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "入場精算（私鉄）"
           }
         }
@@ -3096,6 +4212,12 @@
             "state" : "translated",
             "value" : "再発行"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "补办"
+          }
         }
       }
     },
@@ -3111,6 +4233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新幹線"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新干线"
           }
         }
       }
@@ -3128,6 +4256,12 @@
             "state" : "translated",
             "value" : "ショッピング"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购物"
+          }
         }
       }
     },
@@ -3142,6 +4276,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "物販キャンセル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "物販キャンセル"
           }
         }
@@ -3160,6 +4300,12 @@
             "state" : "translated",
             "value" : "現金併用物販"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现金并用支付"
+          }
         }
       }
     },
@@ -3175,6 +4321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ショッピング（駅構内）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购物（车站内）"
           }
         }
       }
@@ -3192,6 +4344,12 @@
             "state" : "translated",
             "value" : "現金併用物販（駅構内）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现金并用支付（站内）"
+          }
         }
       }
     },
@@ -3208,6 +4366,12 @@
             "state" : "translated",
             "value" : "カード利用"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片使用"
+          }
         }
       }
     },
@@ -3222,6 +4386,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "台湾鉄道"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "台湾鉄道"
           }
         }
@@ -3240,6 +4410,12 @@
             "state" : "translated",
             "value" : "チケット購入"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购买车票"
+          }
         }
       }
     },
@@ -3255,6 +4431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "回数券購入"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购买回数券"
           }
         }
       }
@@ -3272,6 +4454,12 @@
             "state" : "translated",
             "value" : "入場券"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "票"
+          }
         }
       }
     },
@@ -3288,6 +4476,12 @@
             "state" : "translated",
             "value" : "カード情報"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "信息"
+          }
         }
       }
     },
@@ -3303,6 +4497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード残高"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余额"
           }
         }
       }
@@ -3321,6 +4521,12 @@
             "state" : "translated",
             "value" : "%1$@%2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@%2$@"
+          }
         }
       }
     },
@@ -3336,6 +4542,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "種別"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "类型"
           }
         }
       }
@@ -3353,6 +4565,12 @@
             "state" : "translated",
             "value" : "カードタイプ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片类型"
+          }
         }
       }
     },
@@ -3367,6 +4585,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "最終スキャン日時"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "最終スキャン日時"
           }
         }
@@ -3385,6 +4609,12 @@
             "state" : "translated",
             "value" : "情報が読み取れません"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "情報が読み取れません"
+          }
         }
       }
     },
@@ -3397,6 +4627,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID"
@@ -3418,6 +4654,12 @@
             "state" : "translated",
             "value" : "ICカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC卡"
+          }
         }
       }
     },
@@ -3434,6 +4676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "記録"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "记录"
           }
         }
       }
@@ -3452,6 +4700,12 @@
             "state" : "translated",
             "value" : "この情報はアプリ内でのみ有効です。カードには書き込まれません。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此信息仅在应用内有效，不会写入卡片。"
+          }
         }
       }
     },
@@ -3468,6 +4722,12 @@
             "state" : "translated",
             "value" : "アイコン"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图标"
+          }
         }
       }
     },
@@ -3482,6 +4742,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "表示名"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "表示名"
           }
         }
@@ -3500,6 +4766,12 @@
             "state" : "translated",
             "value" : "カード名"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡片名称"
+          }
         }
       }
     },
@@ -3514,6 +4786,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "対応していないカードです"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "対応していないカードです"
           }
         }
@@ -3533,6 +4811,12 @@
             "state" : "translated",
             "value" : "ISO7816ではありません"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不是ISO7816"
+          }
         }
       }
     },
@@ -3548,6 +4832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“%@“ をiPhoneの上部にかざしてください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请将“%@”靠近iPhone顶部。"
           }
         }
       }
@@ -3565,6 +4855,12 @@
             "state" : "translated",
             "value" : "スキャン完了"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描完成"
+          }
         }
       }
     },
@@ -3580,6 +4876,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステータスフラグがエラーを示しています。s1:%1$lld, s2: %2$lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "状态标志显示错误。s1：%1$lld，s2：%2$lld"
           }
         }
       }
@@ -3597,6 +4899,12 @@
             "state" : "translated",
             "value" : "スキャン中です。カードを動かさないでください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在扫描。请勿移动卡片。"
+          }
         }
       }
     },
@@ -3611,6 +4919,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "定義されていないサービスが呼び出されました"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "定義されていないサービスが呼び出されました"
           }
         }
@@ -3629,6 +4943,12 @@
             "state" : "translated",
             "value" : "検索"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜索"
+          }
         }
       }
     },
@@ -3646,6 +4966,12 @@
             "state" : "needs_review",
             "value" : "画像認識"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码"
+          }
         }
       }
     },
@@ -3661,6 +4987,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "NFC"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "NFC"
           }
         }
@@ -3680,6 +5012,12 @@
             "state" : "translated",
             "value" : "オンライン取得"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在线获取"
+          }
         }
       }
     },
@@ -3695,6 +5033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "権利情報"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权利信息"
           }
         }
       }
@@ -3713,6 +5057,12 @@
             "state" : "translated",
             "value" : "iPhone、iPad、App StoreおよびApple Payは、米国および他の国々で登録されたApple Inc.の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone、iPad、App Store和Apple Pay是Apple Inc.在美国及其他国家或地区注册的商标。"
+          }
         }
       }
     },
@@ -3726,6 +5076,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple"
@@ -3746,6 +5102,12 @@
             "state" : "translated",
             "value" : "商標等"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "商標等"
+          }
         }
       }
     },
@@ -3761,6 +5123,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カードの発行元地域に基づく表示です。上記以外に記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这是根据卡片发行地区显示的内容。除上述内容外，文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。"
           }
         }
       }
@@ -3779,6 +5147,12 @@
             "state" : "translated",
             "value" : "「交通联合」(China T-union)は、中华人民共和国交通运输部の標準規格です。\n記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“交通联合”（China T-union）是中华人民共和国交通运输部的标准规范。\n文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。"
+          }
         }
       }
     },
@@ -3796,6 +5170,12 @@
             "state" : "translated",
             "value" : "Android、GoogleおよびGoogle Payは、Google LLCの商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Android、Google和Google Pay是Google LLC的商标。"
+          }
         }
       }
     },
@@ -3809,6 +5189,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google"
@@ -3830,6 +5216,12 @@
             "state" : "translated",
             "value" : "「Octopus」「八達通」「オクトパス」はOctopus Cards Limited（八達通卡有限公司）の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商标。"
+          }
         }
       }
     },
@@ -3846,6 +5238,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「Kitaca」は、北海道旅客鉄道株式会社の登録商標です。 \n「Suica」は、東日本旅客鉄道株式会社の登録商標です。 \n「PASMO」は、株式会社パスモの登録商標です。 \n「TOICA」は、東海旅客鉄道株式会社の登録商標です。 \n「manaca」は、株式会社名古屋交通開発機構及び株式会社エムアイシーの登録商標です。 \n「ICOCA」は、西日本旅客鉄道株式会社の登録商標です。 \n「SUGOCA」は、九州旅客鉄道株式会社の登録商標です。 \n「nimoca」は、西日本鉄道株式会社の登録商標です。 \n「はやかけん」は、福岡市交通局の登録商標です。 \n「PiTaPa」は、株式会社スルッとKANSAIの登録商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kitaca”是北海道旅客鉄道株式会社的注册商标。\n“Suica”是東日本旅客鉄道株式会社的注册商标。\n“PASMO”是株式会社パスモ的注册商标。\n“TOICA”是東海旅客鉄道株式会社的注册商标。\n“manaca”是株式会社名古屋交通開発機構及株式会社エムアイシー的注册商标。\n“ICOCA”是西日本旅客鉄道株式会社的注册商标。\n“SUGOCA”是九州旅客鉄道株式会社的注册商标。\n“nimoca”是西日本鉄道株式会社的注册商标。\n“はやかけん”是福岡市交通局的注册商标。\n“PiTaPa”是株式会社スルッとKANSAI的注册商标。"
           }
         }
       }
@@ -3864,6 +5262,12 @@
             "state" : "translated",
             "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。\n「IruCa」は高松琴平電気鉄道株式会社の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。\n“IruCa”是高松琴平電気鉄道株式会社的商标。"
+          }
         }
       }
     },
@@ -3880,6 +5284,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「エヌタス」、「N+」、「長崎バス」は長崎自動車株式会社の商標です。\n「Tカード」はカルチュア・コンビニエンス・クラブ株式会社の商標です。\n「Vポイントカード」、「Vポイント」、Vポイントロゴは、Vポイントマーケティング株式会社及び三井住友カード株式会社の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“エヌタス”、“N+”、“長崎バス”是長崎自動車株式会社的商标。\n“Tカード”是カルチュア・コンビニエンス・クラブ株式会社的商标。\n“Vポイントカード”、“Vポイント”及Vポイント标志是Vポイントマーケティング株式会社及三井住友カード株式会社的商标。"
           }
         }
       }
@@ -3898,6 +5308,12 @@
             "state" : "translated",
             "value" : "「One Card All Pass」(전국호환교통카드)は、韓国国土交通省の標準規格です。\n「T-money」、「티머니」は、株式会社韓国スマートカードの商標です。\n「WOWPASS」は、Orange Square, Inc. の商標です。\n「EZL」、「이즐」、「Cashbee」、「캐시비」は、EZL Corp.の商標です。\n「Rail+」、「레일플러스」は、Korea Railroad Corporationの商標です。\n「OnePass」、「발행원패스」は、iM UPay Co.,Ltd. の商標です。\n「Hanpay」、「한페이」は、한페이시스の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“One Card All Pass”（전국호환교통카드）是韩国国土交通省的标准规范。\n“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商标。\n“WOWPASS”是Orange Square, Inc.的商标。\n“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商标。\n“Rail+”和“레일플러스”是Korea Railroad Corporation的商标。\n“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商标。\n“Hanpay”和“한페이”是한페이시스的商标。"
+          }
         }
       }
     },
@@ -3915,6 +5331,12 @@
             "state" : "translated",
             "value" : "「FeliCa」は、ソニーグループ株式会社またはその関連会社の登録商標または商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“FeliCa”是ソニーグループ株式会社或其关联公司的注册商标或商标。"
+          }
         }
       }
     },
@@ -3928,6 +5350,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sony"
@@ -3948,6 +5376,12 @@
             "state" : "translated",
             "value" : "カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡"
+          }
         }
       }
     },
@@ -3963,6 +5397,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "その他"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
           }
         }
       }
@@ -3981,6 +5421,12 @@
             "state" : "translated",
             "value" : "「EasyCard」「悠遊卡」は悠遊卡股份有限公司の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“EasyCard”和“悠遊卡”是悠遊卡股份有限公司的商标。"
+          }
         }
       }
     },
@@ -3998,6 +5444,12 @@
             "state" : "translated",
             "value" : "「icash」、「愛金卡」は、愛金卡股份有限公司の商標です。\n「7-ELEVEN」は、統一超商股份有限公司の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icash”和“愛金卡”是愛金卡股份有限公司的商标。\n“7-ELEVEN”是统一超商股份有限公司的商标。"
+          }
         }
       }
     },
@@ -4014,6 +5466,12 @@
             "state" : "translated",
             "value" : "広告"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "广告"
+          }
         }
       }
     },
@@ -4028,6 +5486,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "購入完了"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "購入完了"
           }
         }
@@ -4046,6 +5510,12 @@
             "state" : "translated",
             "value" : "広告削除の購入が完了しました！ありがとうございます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "広告削除の購入が完了しました！ありがとうございます。"
+          }
         }
       }
     },
@@ -4062,6 +5532,12 @@
             "state" : "translated",
             "value" : "エラー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "错误"
+          }
         }
       }
     },
@@ -4076,6 +5552,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "購入を復元"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "購入を復元"
           }
         }
@@ -4094,6 +5576,12 @@
             "state" : "translated",
             "value" : "復元完了"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "恢复完成"
+          }
         }
       }
     },
@@ -4108,6 +5596,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "購入の復元が完了しました。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "購入の復元が完了しました。"
           }
         }
@@ -4126,6 +5620,12 @@
             "state" : "translated",
             "value" : "エラー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "错误"
+          }
         }
       }
     },
@@ -4142,6 +5642,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ベータ版"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试版"
           }
         }
       }
@@ -4160,6 +5666,12 @@
             "state" : "translated",
             "value" : "開発版"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开发版"
+          }
         }
       }
     },
@@ -4175,6 +5687,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "データ管理"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据管理"
           }
         }
       }
@@ -4192,6 +5710,12 @@
             "state" : "translated",
             "value" : "iCloud同期"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同步"
+          }
         }
       }
     },
@@ -4207,6 +5731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud同期の無効化"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停用iCloud同步"
           }
         }
       }
@@ -4224,6 +5754,12 @@
             "state" : "translated",
             "value" : "クラウドでの同期を無効にすると、スキャンしたカードは同期されなくなります。\n過去に同期した情報は削除されません。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停用云端同步后，扫描的卡片将不会再进行同步。\n之前已同步的信息不会被删除。"
+          }
         }
       }
     },
@@ -4239,6 +5775,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無効にする"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "禁用"
           }
         }
       }
@@ -4256,6 +5798,12 @@
             "state" : "translated",
             "value" : "履歴削除"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除历史"
+          }
         }
       }
     },
@@ -4270,6 +5818,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "保存したカード情報を削除します。この操作は取り消せません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "保存したカード情報を削除します。この操作は取り消せません。"
           }
         }
@@ -4288,6 +5842,12 @@
             "state" : "translated",
             "value" : "削除"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
+          }
         }
       }
     },
@@ -4303,6 +5863,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "デバッグ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "デバッグ"
           }
         }
@@ -4321,6 +5887,12 @@
             "state" : "translated",
             "value" : "広告"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "广告"
+          }
         }
       }
     },
@@ -4335,6 +5907,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "デバッグモード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "デバッグモード"
           }
         }
@@ -4354,6 +5932,12 @@
             "state" : "translated",
             "value" : "購入状態（広告）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "購入状態（広告）"
+          }
         }
       }
     },
@@ -4369,6 +5953,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "課金テスト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "課金テスト"
           }
         }
@@ -4388,6 +5978,12 @@
             "state" : "translated",
             "value" : "本番"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正式"
+          }
         }
       }
     },
@@ -4405,6 +6001,12 @@
             "state" : "translated",
             "value" : "テスト"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试"
+          }
         }
       }
     },
@@ -4420,6 +6022,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アプリを再起動するまで開発者モードを有効にします。\nこの表示が意図したものでない場合、「キャンセル」を押してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在重新启动应用之前，开发者模式将保持启用状态。\n如果此提示不是您有意触发的，请点击“取消”。"
           }
         }
       }
@@ -4437,6 +6045,12 @@
             "state" : "translated",
             "value" : "有効にする"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "激活"
+          }
         }
       }
     },
@@ -4451,6 +6065,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "開発者モード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "開発者モード"
           }
         }
@@ -4470,6 +6090,12 @@
             "state" : "translated",
             "value" : "表示するカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "表示するカード"
+          }
         }
       }
     },
@@ -4482,6 +6108,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(variableName)lld件"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$(variableName)lld件"
@@ -4502,6 +6134,12 @@
             "state" : "translated",
             "value" : "開発中"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开发中"
+          }
         }
       }
     },
@@ -4517,6 +6155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "試験的な機能"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试功能"
           }
         }
       }
@@ -4534,6 +6178,12 @@
             "state" : "translated",
             "value" : "リリース"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发布"
+          }
         }
       }
     },
@@ -4548,6 +6198,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "デバッグ情報の表示"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "デバッグ情報の表示"
           }
         }
@@ -4566,6 +6222,12 @@
             "state" : "translated",
             "value" : "位置情報"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置信息"
+          }
         }
       }
     },
@@ -4580,6 +6242,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "端末の位置"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "端末の位置"
           }
         }
@@ -4598,6 +6266,12 @@
             "state" : "translated",
             "value" : "アプリ内課金"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用购买"
+          }
         }
       }
     },
@@ -4614,6 +6288,12 @@
             "state" : "translated",
             "value" : "サンプルカードの一括追加"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "批量添加示例卡片"
+          }
         }
       }
     },
@@ -4628,6 +6308,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "テストカードを作成"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "テストカードを作成"
           }
         }
@@ -4647,6 +6333,12 @@
             "state" : "translated",
             "value" : "残高"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余额"
+          }
         }
       }
     },
@@ -4662,6 +6354,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コンバータ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "转换器"
           }
         }
       }
@@ -4680,6 +6378,12 @@
             "state" : "translated",
             "value" : "通貨単位"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "通貨単位"
+          }
         }
       }
     },
@@ -4696,6 +6400,12 @@
             "state" : "translated",
             "value" : "登録"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登录"
+          }
         }
       }
     },
@@ -4711,6 +6421,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "履歴を追加"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加历史"
           }
         }
       }
@@ -4729,6 +6445,12 @@
             "state" : "translated",
             "value" : "取引額"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "金额"
+          }
         }
       }
     },
@@ -4744,6 +6466,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "取引後残高"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "取引後残高"
           }
         }
@@ -4763,6 +6491,12 @@
             "state" : "translated",
             "value" : "取引日時"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易时间"
+          }
         }
       }
     },
@@ -4780,6 +6514,12 @@
             "state" : "translated",
             "value" : "取引種別コード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易类型代码"
+          }
         }
       }
     },
@@ -4795,6 +6535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "履歴データ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "历史数据"
           }
         }
       }
@@ -4812,6 +6558,12 @@
             "state" : "translated",
             "value" : "(必須)"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "（必填）"
+          }
         }
       }
     },
@@ -4828,6 +6580,12 @@
             "state" : "translated",
             "value" : "スキャン結果画面"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描结果界面"
+          }
         }
       }
     },
@@ -4842,6 +6600,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "表示カード種別"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "表示カード種別"
           }
         }
@@ -4860,6 +6624,12 @@
             "state" : "translated",
             "value" : "開発"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "開発"
+          }
         }
       }
     },
@@ -4875,6 +6645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "試験的な機能"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试功能"
           }
         }
       }
@@ -4892,6 +6668,12 @@
             "state" : "translated",
             "value" : "未選択"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未选择"
+          }
         }
       }
     },
@@ -4907,6 +6689,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リリース"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发布"
           }
         }
       }
@@ -4924,6 +6712,12 @@
             "state" : "translated",
             "value" : "スキャン一覧画面"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描列表界面"
+          }
         }
       }
     },
@@ -4940,6 +6734,12 @@
             "state" : "translated",
             "value" : "試験的な機能"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试功能"
+          }
         }
       }
     },
@@ -4954,6 +6754,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "試験的な対応カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "試験的な対応カード"
           }
         }
@@ -4972,6 +6778,12 @@
             "state" : "translated",
             "value" : "調査中のカードを表示し、スキャン可能にします。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "調査中のカードを表示し、スキャン可能にします。"
+          }
         }
       }
     },
@@ -4988,6 +6800,12 @@
             "state" : "translated",
             "value" : "開発設定で表示カード種別を選択している場合、この設定は変更できません。\n「試験的な機能」画面をテストする場合、設定 > デバッグ > 表示カード種別 から、「未選択」を選択してください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前已在开发设置中指定了显示卡片类型，因此无法直接修改该设置。\n如需测试“实验性功能”页面，请前往“设置 > 调试 > 显示卡片类型”，将选项更改为“未选择”。"
+          }
         }
       }
     },
@@ -5002,6 +6820,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "試験的な機能は開発中のものであり、不具合が発生する場合があります。\n機能は予告なく削除・変更される可能性があります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "試験的な機能は開発中のものであり、不具合が発生する場合があります。\n機能は予告なく削除・変更される可能性があります。"
           }
         }
@@ -5020,6 +6844,12 @@
             "state" : "translated",
             "value" : "試験中の機能"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "测试功能"
+          }
         }
       }
     },
@@ -5035,6 +6865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ベータ版に参加する"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "参加测试版"
           }
         }
       }
@@ -5052,6 +6888,12 @@
             "state" : "translated",
             "value" : "その他"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
+          }
         }
       }
     },
@@ -5067,6 +6909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "バージョン %1$(variableName)@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 %1$(variableName)@"
           }
         }
       }
@@ -5084,6 +6932,12 @@
             "state" : "translated",
             "value" : "マイカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的卡"
+          }
         }
       }
     },
@@ -5099,6 +6953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "絞り込み"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "筛选"
           }
         }
       }
@@ -5116,6 +6976,12 @@
             "state" : "translated",
             "value" : "全て"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
         }
       }
     },
@@ -5132,6 +6998,12 @@
             "state" : "translated",
             "value" : "並び替え"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "排序"
+          }
         }
       }
     },
@@ -5146,6 +7018,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "名前順"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "名前順"
           }
         }
@@ -5164,6 +7042,12 @@
             "state" : "translated",
             "value" : "名前逆順"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "名前逆順"
+          }
         }
       }
     },
@@ -5178,6 +7062,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "更新日順"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "更新日順"
           }
         }
@@ -5196,6 +7086,12 @@
             "state" : "translated",
             "value" : "更新日逆順"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "更新日逆順"
+          }
         }
       }
     },
@@ -5211,6 +7107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "スキャン"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描"
           }
         }
       }
@@ -5228,6 +7130,12 @@
             "state" : "translated",
             "value" : "設定"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
+          }
         }
       }
     },
@@ -5242,6 +7150,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "試行回数の上限に達しました。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "試行回数の上限に達しました。"
           }
         }
@@ -5260,6 +7174,12 @@
             "state" : "translated",
             "value" : "入力した誕生日が間違っているか、無記名卡です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "入力した誕生日が間違っているか、無記名卡です。"
+          }
         }
       }
     },
@@ -5276,6 +7196,12 @@
             "state" : "translated",
             "value" : "画像認証に失敗しました"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码验证失败。"
+          }
         }
       }
     },
@@ -5291,6 +7217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード番号が間違っています。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡号有误"
           }
         }
       }
@@ -5309,6 +7241,12 @@
             "state" : "translated",
             "value" : "確認コードが間違っています。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码有误"
+          }
         }
       }
     },
@@ -5323,6 +7261,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "日付データが不正です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "日付データが不正です。"
           }
         }
@@ -5341,6 +7285,12 @@
             "state" : "translated",
             "value" : "もう一度お試しください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请重试。"
+          }
         }
       }
     },
@@ -5355,6 +7305,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "誕生日は2桁ずつで入力してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "誕生日は2桁ずつで入力してください。"
           }
         }
@@ -5373,6 +7329,12 @@
             "state" : "translated",
             "value" : "画像認証の数字が異なります。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码数字不正确。"
+          }
         }
       }
     },
@@ -5388,6 +7350,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "画像認証が未入力です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未输入验证码。"
           }
         }
       }
@@ -5405,6 +7373,12 @@
             "state" : "translated",
             "value" : "カード番号は10桁または16桁で入力してください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入10位或16位卡号"
+          }
         }
       }
     },
@@ -5420,6 +7394,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード番号が未入力です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未输入卡号"
           }
         }
       }
@@ -5438,6 +7418,12 @@
             "state" : "translated",
             "value" : "データは最新ではなく、昨日までの利用履歴です。過去1年間の利用が表示されます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据并非最新数据，而是截至昨天的使用记录。显示过去一年的使用记录。"
+          }
         }
       }
     },
@@ -5453,6 +7439,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "悠遊卡"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "悠遊卡"
           }
         }
@@ -5472,6 +7464,12 @@
             "state" : "translated",
             "value" : "直近の12件のみ読み取れます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只能读取最近的12条记录。"
+          }
         }
       }
     },
@@ -5489,6 +7487,12 @@
             "state" : "translated",
             "value" : "icash 2.0"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "icash 2.0"
+          }
         }
       }
     },
@@ -5501,6 +7505,12 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "不明"
@@ -5522,6 +7532,12 @@
             "state" : "translated",
             "value" : "不明"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "不明"
+          }
         }
       }
     },
@@ -5538,6 +7554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "閉じる"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
           }
         }
       }
@@ -5556,6 +7578,12 @@
             "state" : "translated",
             "value" : "上海公共交通カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海公共交通卡"
+          }
         }
       }
     },
@@ -5566,6 +7594,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zhongshan Pass"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "中山通"
           }
         }
       }
@@ -5584,6 +7618,12 @@
             "state" : "translated",
             "value" : "北京市政交通カード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京市政交通一卡通"
+          }
         }
       }
     },
@@ -5594,6 +7634,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taizhou Pass"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "台州通"
           }
         }
       }
@@ -5606,6 +7652,12 @@
             "state" : "translated",
             "value" : "Ankang Transit Card"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安康公交卡"
+          }
         }
       }
     },
@@ -5616,6 +7668,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hainan Yikatong"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "海南一卡通"
           }
         }
       }
@@ -5632,6 +7690,12 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "深圳通"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "深圳通"
           }
         }
@@ -5651,6 +7715,12 @@
             "state" : "translated",
             "value" : "羊城通"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "羊城通"
+          }
         }
       }
     },
@@ -5661,6 +7731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Heilongjiang Yikatong"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "黑龙江一卡通"
           }
         }
       }
