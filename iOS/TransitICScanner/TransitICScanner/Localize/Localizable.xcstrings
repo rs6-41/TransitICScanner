@@ -75,8 +75,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "広告削除"
+            "state" : "translated",
+            "value" : "免广告"
           }
         }
       }
@@ -1831,8 +1831,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "地域（昇順）"
+            "state" : "translated",
+            "value" : "地域名(倒序)"
           }
         }
       }
@@ -1854,8 +1854,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "地域（降順）"
+            "state" : "translated",
+            "value" : "地域名(倒序)"
           }
         }
       }
@@ -1877,8 +1877,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "名前（昇順）"
+            "state" : "translated",
+            "value" : "按名"
           }
         }
       }
@@ -1900,8 +1900,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "名前（降順）"
+            "state" : "translated",
+            "value" : "按名(倒序)"
           }
         }
       }
@@ -3774,8 +3774,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "入場取り消し"
+            "state" : "translated",
+            "value" : "取消进站"
           }
         }
       }
@@ -4281,8 +4281,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "物販キャンセル"
+            "state" : "translated",
+            "value" : "取消购物"
           }
         }
       }
@@ -4391,8 +4391,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "台湾鉄道"
+            "state" : "translated",
+            "value" : "台湾铁路"
           }
         }
       }
@@ -4590,8 +4590,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "最終スキャン日時"
+            "state" : "translated",
+            "value" : "最后更新"
           }
         }
       }
@@ -4747,8 +4747,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "表示名"
+            "state" : "translated",
+            "value" : "显示名称"
           }
         }
       }
@@ -4791,8 +4791,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "対応していないカードです"
+            "state" : "translated",
+            "value" : "不支持卡"
           }
         }
       }
@@ -5380,7 +5380,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "卡"
+            "value" : "交通卡"
           }
         }
       }
@@ -6093,8 +6093,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "表示するカード"
+            "state" : "translated",
+            "value" : "显示卡"
           }
         }
       }
@@ -6381,8 +6381,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "通貨単位"
+            "state" : "translated",
+            "value" : "货币单位"
           }
         }
       }
@@ -6605,8 +6605,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "表示カード種別"
+            "state" : "translated",
+            "value" : "显示类别"
           }
         }
       }
@@ -7023,8 +7023,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "名前順"
+            "state" : "translated",
+            "value" : "按名"
           }
         }
       }
@@ -7045,8 +7045,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "名前逆順"
+            "state" : "translated",
+            "value" : "按名(倒序)"
           }
         }
       }
@@ -7067,8 +7067,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "更新日順"
+            "state" : "translated",
+            "value" : "更新时间"
           }
         }
       }
@@ -7089,8 +7089,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "更新日逆順"
+            "state" : "translated",
+            "value" : "更新时间(倒序)"
           }
         }
       }
