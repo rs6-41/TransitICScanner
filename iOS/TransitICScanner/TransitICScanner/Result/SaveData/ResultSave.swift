@@ -33,6 +33,8 @@ enum SavedDataModelContainer {
         let configuration: ModelConfiguration
 
         if CloudSyncSettings.isEnabled {
+            print("CloudKit ON")
+
             configuration = ModelConfiguration(
                 schema: schema,
                 cloudKitDatabase: .private(
@@ -40,15 +42,21 @@ enum SavedDataModelContainer {
                 )
             )
         } else {
+            print("CloudKit OFF")
+
             configuration = ModelConfiguration(
                 schema: schema
             )
         }
 
-        return try ModelContainer(
+        let container = try ModelContainer(
             for: schema,
             configurations: [configuration]
         )
+
+        print(container)
+
+        return container
     }
 }
 
@@ -72,7 +80,7 @@ final class SavedCard {
 
     var converterTypeRaw: String?
     
-    var savedAt: Date = Date()
+    var savedAt: Date? = Date.now
 
     @Relationship(
         deleteRule: .cascade,
@@ -94,7 +102,8 @@ final class SavedCard {
         balance: Double? = nil,
         isLastHide: Bool = false,
         cardDescription: String = "",
-        converterType: ConverterType
+        converterType: ConverterType,
+        savedAt: Date
     ) {
         self.idm = idm
         self.name = name
@@ -111,6 +120,7 @@ final class SavedCard {
         self.cardDescription = cardDescription
         self.converterTypeRaw = converterType.rawValue
         self.histories = []
+        self.savedAt = savedAt
     }
 
     var converterType: ConverterType {
@@ -226,7 +236,8 @@ extension SavedCard {
             info: info,
             converter: converterType,
             isLastHide: isLastHide,
-            description: cardDescription
+            description: cardDescription,
+            savedAt: savedAt
         )
     }
 }
@@ -266,7 +277,8 @@ enum ResultSave {
                 balance: result.balance,
                 isLastHide: result.isLastHide,
                 cardDescription: result.description,
-                converterType: result.converter
+                converterType: result.converter,
+                savedAt: result.savedAt ?? Date.now
             )
 
             modelContext.insert(card)
@@ -285,6 +297,7 @@ enum ResultSave {
         card.isLastHide = result.isLastHide
         card.cardDescription = result.description
         card.converterTypeRaw = result.converter.rawValue
+        card.savedAt = result.savedAt
 
         if let histories = result.history {
             var existingTransactionIDs = Set(

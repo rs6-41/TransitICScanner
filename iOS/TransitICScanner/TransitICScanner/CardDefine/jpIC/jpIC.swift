@@ -110,7 +110,8 @@ extension NFCScannerModel {
                     info: info,
                     converter: jpIC.scanOption.converter,
                     isLastHide:true,
-                    description: jpIC.scand_description
+                    description: jpIC.scand_description,
+                    savedAt: Date.now
                 )
 
                 self.session?.alertMessage =

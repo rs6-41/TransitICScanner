@@ -46,24 +46,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Delete"
+            "value" : "Delete Ads"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "広告削除"
-          }
-        }
-      }
-    },
-    "ads.description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広告は"
           }
         }
       }
@@ -3363,6 +3352,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カードタイプ"
+          }
+        }
+      }
+    },
+    "result.info.date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latest Scan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最終スキャン日時"
           }
         }
       }

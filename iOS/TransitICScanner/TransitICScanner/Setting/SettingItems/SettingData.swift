@@ -27,6 +27,9 @@ struct SettingData: View {
                     isCloudSyncEnabled = true
                 }
             }
+            .onChange(of:isCloudSyncEnabled) {
+                CloudSyncSettings.setEnabled(isCloudSyncEnabled)
+            }
             .alert(LocalizedStringKey("setting.data.cloud.off"), isPresented: $iCloudAlert) {
                Button(LocalizedStringKey("setting.data.cloud.off.ok"), role: .destructive) {
                    isCloudSyncEnabled = false

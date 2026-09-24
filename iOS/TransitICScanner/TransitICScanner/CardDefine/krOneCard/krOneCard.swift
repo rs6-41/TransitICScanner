@@ -125,7 +125,8 @@ extension NFCScannerModel {
                     info: info,
                     converter: krOneCard.scanOption.converter,
                     isLastHide: false,
-                    description: krOneCard.scand_description
+                    description: krOneCard.scand_description,
+                    savedAt: Date.now
                 )
                 session.invalidate()
             }
