@@ -152,7 +152,7 @@ struct ResultView: View {
             HStack {
                 Text(LocalizedStringKey("result.info.cardCategory"))
                 Spacer()
-                Text(display.nameShort)
+                Text(LocalizedStringKey(display.nameShort))
                     .foregroundStyle(Color.gray)
                     .textSelection(.enabled)
                     .onAppear() {
