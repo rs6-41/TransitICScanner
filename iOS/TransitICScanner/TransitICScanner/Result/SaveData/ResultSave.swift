@@ -33,6 +33,8 @@ enum SavedDataModelContainer {
         let configuration: ModelConfiguration
 
         if CloudSyncSettings.isEnabled {
+            print("CloudKit ON")
+
             configuration = ModelConfiguration(
                 schema: schema,
                 cloudKitDatabase: .private(
@@ -40,15 +42,21 @@ enum SavedDataModelContainer {
                 )
             )
         } else {
+            print("CloudKit OFF")
+
             configuration = ModelConfiguration(
                 schema: schema
             )
         }
 
-        return try ModelContainer(
+        let container = try ModelContainer(
             for: schema,
             configurations: [configuration]
         )
+
+        print(container)
+
+        return container
     }
 }
 

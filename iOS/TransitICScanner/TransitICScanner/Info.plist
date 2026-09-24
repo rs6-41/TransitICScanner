@@ -212,6 +212,9 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
+		<string>location</string>
+		<string>processing</string>
+		<string>fetch</string>
 	</array>
 	<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
 	<array>

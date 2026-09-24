@@ -49,6 +49,13 @@
             ReferencedContainer = "container:TransitICScanner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "com.apple.CoreData.CloudKitDebug"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <StoreKitConfigurationFileReference
          identifier = "../../TransitICScanner/Test/StoreKitTest.storekit">
       </StoreKitConfigurationFileReference>

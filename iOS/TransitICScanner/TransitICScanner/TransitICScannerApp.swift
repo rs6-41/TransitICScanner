@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
     
+    let container: ModelContainer
+
+    init() {
+        self.container = try! SavedDataModelContainer.makeContainer()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -25,9 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .environmentObject(debugModel)
                 .environmentObject(getCountry)
                 .environmentObject(adsModel)
+                .modelContainer(container)
         }
-        .modelContainer(
-            try! SavedDataModelContainer.makeContainer()
-        )
     }
 }
