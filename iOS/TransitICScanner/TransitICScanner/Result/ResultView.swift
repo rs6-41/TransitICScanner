@@ -122,9 +122,7 @@ struct ResultView: View {
             header: Text(LocalizedStringKey("result.info")),
             footer: Text(
                 String(localized: "result.description.common") +
-                String(
-                    localized: String.LocalizationValue(result.description)
-                )
+                result.description
             )
         ) {
             if let info = result.info {
@@ -154,16 +152,14 @@ struct ResultView: View {
             HStack {
                 Text(LocalizedStringKey("result.info.cardCategory"))
                 Spacer()
-                Text(
-                    String(localized: String.LocalizationValue(display.nameShort))
-                )
-                .foregroundStyle(Color.gray)
-                .textSelection(.enabled)
-                .onAppear() {
-                    if cardUserName == "" {
-                        cardUserName = String(localized: String.LocalizationValue(display.nameShort))
+                Text(display.nameShort)
+                    .foregroundStyle(Color.gray)
+                    .textSelection(.enabled)
+                    .onAppear() {
+                        if cardUserName == "" {
+                            cardUserName = String(localized: String.LocalizationValue(display.nameShort))
+                        }
                     }
-                }
             }
             
             if !display.type.isEmpty {

@@ -75,5 +75,6 @@ struct ProductButtonStyle: ButtonStyle {
             .background(Color.accentColor)
             .foregroundColor(.white)
             .cornerRadius(50)
+            .glassEffect()
     }
 }

@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 
+
 struct PlaceholderAdsView: View {
     @State var icon: UIImage?
     @State var headline: String
@@ -115,7 +116,7 @@ struct PlaceholderAdsContainerView: UIViewControllerRepresentable {
         callToActionController?.view.isUserInteractionEnabled = false
 
         let contentView = NativeAdContentView(
-            iconView: iconController?.view,
+            iconView: iconController?.view, mediaView: nil,
             headlineView: headlineController.view,
             bodyView: bodyController?.view,
             advertiserView: advertiserController?.view,
