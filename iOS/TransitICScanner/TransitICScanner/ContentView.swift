@@ -28,6 +28,7 @@ struct ContentView: View {
     @AppStorage("devSetting") var devSetting = false
     @AppStorage("deleteAds") var deleteAds = false
     @AppStorage("adDebug") var adDebug = false
+    @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
     
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var ads: AdsModel
@@ -48,7 +49,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID)
+            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID, isCloudSyncEnabled: $isCloudSyncEnabled)
                 .tag(2)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
@@ -132,6 +133,8 @@ struct ContentView: View {
             NativeAdUnitIDValue = NativeUnitID
             BannerUnitIDValue = bannerUnitID
         }
+        
+        CloudSyncSettings.setEnabled(isCloudSyncEnabled)
         
         
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })

@@ -8,7 +8,7 @@ struct SettingView: View {
     @State var purchaseAlertTitle:String = ""
     @State var purchaseAlertMessage:String = ""
     
-    @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
+    @Binding var isCloudSyncEnabled:Bool
     
     let appEnvironment = Bundle.main.object(
         forInfoDictionaryKey: "AppEnvironment"
@@ -81,5 +81,5 @@ struct SettingView: View {
 
 
 #Preview {
-    SettingView(deleteAds: .constant(false), deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"))
+    SettingView(deleteAds: .constant(false), deleteAdsPurchaseID: .constant("com.rs6apps.TransitICScanner.deleteAds.test"), isCloudSyncEnabled: .constant(false))
 }
