@@ -18,7 +18,7 @@ struct SavedListView: View {
 
         if narrow != "all" {
             result = result.filter { card in
-                card.converterType.rawValue == narrow
+                card.name == narrow
             }
         }
 
@@ -43,7 +43,7 @@ struct SavedListView: View {
         switch sort {
         case "dateAscending":
             result.sort {
-                $0.savedAt < $1.savedAt
+                $0.savedAt ?? Date.now < $1.savedAt ?? Date.now
             }
 
         case "nameAscending":
@@ -58,7 +58,7 @@ struct SavedListView: View {
 
         default:
             result.sort {
-                $0.savedAt > $1.savedAt
+                $0.savedAt ?? Date.now > $1.savedAt ?? Date.now
             }
         }
 
@@ -72,10 +72,10 @@ struct SavedListView: View {
 
         let cardTypes = Dictionary(
             grouping: cards,
-            by: { $0.converterType.rawValue }
+            by: { $0.name }
         )
 
-        for (type, cards) in cardTypes {
+        for (name, cards) in cardTypes {
             guard let card = cards.first else {
                 continue
             }
@@ -87,10 +87,10 @@ struct SavedListView: View {
             if let info = result.info {
                 nameShort = info.nameShort
             } else {
-                nameShort = type
+                nameShort = name
             }
 
-            items.append((type, nameShort))
+            items.append((name, nameShort))
         }
 
         return items.sorted { lhs, rhs in
@@ -174,9 +174,16 @@ struct SavedListView: View {
                                 Spacer()
 
                                 if let balance = card.balance {
-                                    HStack(spacing: 2) {
-                                        Text(LocalizedStringKey(balance.balanceText))
-                                        Text(LocalizedStringKey(card.currency))
+                                    VStack(alignment:.trailing) {
+                                        HStack(spacing: 2) {
+                                            Text(LocalizedStringKey(balance.balanceText))
+                                            Text(LocalizedStringKey(card.currency))
+                                        }
+                                        if let savedAt = card.savedAt {
+                                            Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
+                                                .font(.caption)
+                                                .foregroundStyle(Color.gray)
+                                        }
                                     }
                                 }
                             }
@@ -264,6 +271,11 @@ struct SavedListView: View {
                         )
                     }
                     .frame(maxWidth: 350)
+                }
+            }
+            .onChange(of: cards) {
+                if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
+                    narrow = "all"
                 }
             }
             .navigationTitle("tab.history")

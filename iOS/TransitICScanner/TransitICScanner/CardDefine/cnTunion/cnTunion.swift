@@ -330,7 +330,8 @@ extension NFCScannerModel {
                     info: info,
                     converter: cnTunion.scanOption.converter,
                     isLastHide: false,
-                    description: cnTunion.scand_description
+                    description: cnTunion.scand_description,
+                    savedAt: Date.now
                 )
 
                 session.invalidate()

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DummyCardFormView: View {
     @Environment(\.dismiss) private var dismiss
-    @State var result:Result = Result(isHistory: false, converter: .jpIC, isLastHide: false, description: "")
+    @State var result:Result = Result(isHistory: false, converter: .jpIC, isLastHide: false, description: "", savedAt: Date.now)
     @State var history:[ResultHistory] = []
     @State var info:ResultCardInfo = ResultCardInfo(idm: "", name: "", nameShort: "", currency: "", type: "")
     
@@ -112,7 +112,8 @@ struct DummyCardFormView: View {
             info: info,
             converter: converter,
             isLastHide: false,
-            description: "DEBUG CARD"
+            description: "DEBUG CARD",
+            savedAt: Date.now
         )
     }
     private func removeHistory(at offsets: IndexSet) {

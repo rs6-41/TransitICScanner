@@ -621,7 +621,8 @@ final class twEasyCard_old_scraping: ObservableObject {
                 info: cardInfo,
                 converter: .twEasyCard_old,
                 isLastHide: false,
-                description: twEasyCard_old.scand_description
+                description: twEasyCard_old.scand_description,
+                savedAt: Date.now
             )
             return result
         } catch {
