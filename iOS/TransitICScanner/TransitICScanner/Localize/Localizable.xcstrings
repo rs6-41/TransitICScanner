@@ -4429,8 +4429,7 @@
             "value" : "%1$@%2$lld%3$@"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "result.history.balance" : {
       "extractionState" : "stale",
@@ -9515,6 +9514,9 @@
           }
         }
       }
+    },
+    "widget.balance.placeholder.displayName" : {
+
     },
     "三晋通-忻州通" : {
       "localizations" : {
