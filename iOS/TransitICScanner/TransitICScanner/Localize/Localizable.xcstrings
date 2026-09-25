@@ -18,7 +18,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$@%2$@"
           }
         }
@@ -42,7 +42,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$@%2$@%3$@"
           }
         }
@@ -71,8 +71,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "广告"
+            "state" : "translated",
+            "value" : "廣告"
           }
         }
       }
@@ -99,8 +99,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "免广告"
+            "state" : "translated",
+            "value" : "免廣告"
           }
         }
       }
@@ -127,8 +127,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : " 下载 "
+            "state" : "translated",
+            "value" : " 下載 "
           }
         }
       }
@@ -155,8 +155,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "支持以画中画方式查看图片的应用"
+            "state" : "translated",
+            "value" : "支持以畫中畫方式查看圖片的應用"
           }
         }
       }
@@ -183,8 +183,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "画中画"
+            "state" : "translated",
+            "value" : "畫中畫"
           }
         }
       }
@@ -211,8 +211,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "轻松替换或插入文字。"
+            "state" : "translated",
+            "value" : "輕鬆替換或插入文字。"
           }
         }
       }
@@ -239,8 +239,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "智能字换"
+            "state" : "translated",
+            "value" : "智能字換"
           }
         }
       }
@@ -267,8 +267,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "将图片转换为 WebP 格式。支持透明 PNG，并有助于减小 PNG 文件大小。"
+            "state" : "translated",
+            "value" : "將圖片轉換為 WebP 格式。支持透明 PNG，並有助於減小 PNG 文件大小。"
           }
         }
       }
@@ -295,8 +295,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "WebP 转换器"
+            "state" : "translated",
+            "value" : "WebP 轉換器"
           }
         }
       }
@@ -323,8 +323,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "全球IC余额查询"
+            "state" : "translated",
+            "value" : "全球IC餘額查詢"
           }
         }
       }
@@ -351,7 +351,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "取消"
           }
         }
@@ -380,7 +380,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "JR"
           }
         }
@@ -409,7 +409,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ことでん"
           }
         }
@@ -438,8 +438,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "默认"
+            "state" : "translated",
+            "value" : "默認"
           }
         }
       }
@@ -467,7 +467,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "EZL"
           }
         }
@@ -496,7 +496,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "はやかけん"
           }
         }
@@ -525,7 +525,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "八達通"
           }
         }
@@ -554,7 +554,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "八達通"
           }
         }
@@ -583,7 +583,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ICOCA"
           }
         }
@@ -612,7 +612,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "IruCa"
           }
         }
@@ -641,7 +641,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "N-Tasu卡(N+)"
           }
         }
@@ -670,8 +670,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "K-CASH / 케이캐쉬"
+            "state" : "translated",
+            "value" : "K-CASH \/ 케이캐쉬"
           }
         }
       }
@@ -699,7 +699,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "manaca"
           }
         }
@@ -728,7 +728,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "nimoca"
           }
         }
@@ -757,7 +757,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "PASMO"
           }
         }
@@ -786,8 +786,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "手机电子钱包"
+            "state" : "translated",
+            "value" : "手機電子錢包"
           }
         }
       }
@@ -815,7 +815,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "SAPICA"
           }
         }
@@ -844,7 +844,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Snapper"
           }
         }
@@ -873,7 +873,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "SUGOCA"
           }
         }
@@ -902,7 +902,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Suica"
           }
         }
@@ -931,8 +931,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "T-money / 티머니"
+            "state" : "translated",
+            "value" : "T-money \/ 티머니"
           }
         }
       }
@@ -960,7 +960,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "TOICA"
           }
         }
@@ -989,7 +989,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "悠遊卡"
           }
         }
@@ -1018,7 +1018,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "icash"
           }
         }
@@ -1047,7 +1047,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "悠遊卡"
           }
         }
@@ -1075,8 +1075,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "悠遊卡/悠遊聯名卡/超級悠遊卡"
+            "state" : "translated",
+            "value" : "悠遊卡\/悠遊聯名卡\/超級悠遊卡"
           }
         }
       }
@@ -1104,7 +1104,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "iPASS（一卡通）"
           }
         }
@@ -1132,7 +1132,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "所有的卡"
           }
         }
@@ -1161,8 +1161,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "中国大陆"
+            "state" : "translated",
+            "value" : "中國大陸"
           }
         }
       }
@@ -1190,7 +1190,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "zhongguo"
           }
         }
@@ -1219,7 +1219,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "香港"
           }
         }
@@ -1248,7 +1248,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "hongkong"
           }
         }
@@ -1277,7 +1277,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日本"
           }
         }
@@ -1306,7 +1306,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "riben"
           }
         }
@@ -1335,8 +1335,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "朝鲜"
+            "state" : "translated",
+            "value" : "朝鮮"
           }
         }
       }
@@ -1364,8 +1364,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "韩国"
+            "state" : "translated",
+            "value" : "韓國"
           }
         }
       }
@@ -1393,7 +1393,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "hanguo"
           }
         }
@@ -1422,8 +1422,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "澳门"
+            "state" : "translated",
+            "value" : "澳門"
           }
         }
       }
@@ -1451,7 +1451,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "macau"
           }
         }
@@ -1480,8 +1480,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "台湾"
+            "state" : "translated",
+            "value" : "台灣"
           }
         }
       }
@@ -1509,7 +1509,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "taiwan"
           }
         }
@@ -1538,8 +1538,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "美国"
+            "state" : "translated",
+            "value" : "美國"
           }
         }
       }
@@ -1567,8 +1567,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "中国交通联合"
+            "state" : "translated",
+            "value" : "中國交通聯合"
           }
         }
       }
@@ -1595,8 +1595,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "带有交通联合标志的中国交通卡"
+            "state" : "translated",
+            "value" : "帶有交通聯合標誌的中國交通卡"
           }
         }
       }
@@ -1624,7 +1624,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "jiaotonglianhe"
           }
         }
@@ -1652,8 +1652,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "各品牌与本应用不存在合作或授权关系。\n扫描结果仅供参考。"
+            "state" : "translated",
+            "value" : "各品牌與本應用不存在合作或授權關係。\n掃描結果僅供參考。"
           }
         }
       }
@@ -1680,8 +1680,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "该设备不支持NFC，或者NFC功能已被禁用。"
+            "state" : "translated",
+            "value" : "該設備不支持NFC，或者NFC功能已被禁用。"
           }
         }
       }
@@ -1709,7 +1709,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "八達通"
           }
         }
@@ -1737,7 +1737,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "八達通"
           }
         }
@@ -1766,7 +1766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "badatong"
           }
         }
@@ -1795,8 +1795,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "DoCard / AsacaDoCard"
+            "state" : "translated",
+            "value" : "DoCard \/ AsacaDoCard"
           }
         }
       }
@@ -1824,7 +1824,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "旭川電気軌道和道北バス"
           }
         }
@@ -1853,7 +1853,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日本交通系IC卡"
           }
         }
@@ -1882,8 +1882,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "SAPICA / IruCa"
+            "state" : "translated",
+            "value" : "SAPICA \/ IruCa"
           }
         }
       }
@@ -1911,7 +1911,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "SAPICA(札幌)、IruCa(香川)"
           }
         }
@@ -1940,7 +1940,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "sapica"
           }
         }
@@ -1968,8 +1968,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Suica、PASMO、ICOCA等日本全国通用卡片"
+            "state" : "translated",
+            "value" : "Suica、PASMO、ICOCA等日本全國通用卡片"
           }
         }
       }
@@ -1997,7 +1997,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ribenjiaotongka"
           }
         }
@@ -2026,7 +2026,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "N+卡"
           }
         }
@@ -2055,7 +2055,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "長崎公交卡"
           }
         }
@@ -2084,7 +2084,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ntasu"
           }
         }
@@ -2113,7 +2113,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "One Card All Pass"
           }
         }
@@ -2141,8 +2141,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "T-money、EZL等韩国大多数交通卡"
+            "state" : "translated",
+            "value" : "T-money、EZL等韓國大多數交通卡"
           }
         }
       }
@@ -2170,7 +2170,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "onecardallpass"
           }
         }
@@ -2198,8 +2198,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "当前区域"
+            "state" : "translated",
+            "value" : "當前區域"
           }
         }
       }
@@ -2226,7 +2226,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "其他地方"
           }
         }
@@ -2254,8 +2254,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "搜索结果"
+            "state" : "translated",
+            "value" : "搜索結果"
           }
         }
       }
@@ -2283,8 +2283,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "地域顺序"
+            "state" : "translated",
+            "value" : "地域順序"
           }
         }
       }
@@ -2312,7 +2312,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "地域倒序"
           }
         }
@@ -2341,8 +2341,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "按名顺序"
+            "state" : "translated",
+            "value" : "按名順序"
           }
         }
       }
@@ -2370,7 +2370,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "按名倒序"
           }
         }
@@ -2398,7 +2398,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "交通卡"
           }
         }
@@ -2427,7 +2427,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "悠遊卡"
           }
         }
@@ -2456,7 +2456,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "youyouka"
           }
         }
@@ -2485,7 +2485,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "icash 2.0（愛金卡）"
           }
         }
@@ -2513,7 +2513,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "7-ELEVEN系交通卡"
           }
         }
@@ -2542,7 +2542,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "aijinka"
           }
         }
@@ -2570,8 +2570,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "交通联合"
+            "state" : "translated",
+            "value" : "交通聯合"
           }
         }
       }
@@ -2598,7 +2598,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "港元"
           }
         }
@@ -2626,7 +2626,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日元"
           }
         }
@@ -2654,8 +2654,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "韩元"
+            "state" : "translated",
+            "value" : "韓元"
           }
         }
       }
@@ -2682,7 +2682,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "元"
           }
         }
@@ -2710,8 +2710,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "台币"
+            "state" : "translated",
+            "value" : "台幣"
           }
         }
       }
@@ -2738,7 +2738,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "完成"
           }
         }
@@ -2766,8 +2766,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "错误"
+            "state" : "translated",
+            "value" : "錯誤"
           }
         }
       }
@@ -2794,7 +2794,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "好"
           }
         }
@@ -2822,7 +2822,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "e通卡"
           }
         }
@@ -2850,7 +2850,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日"
           }
         }
@@ -2878,8 +2878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "对于记名卡，请输入生日的两位数字（非记名卡无需输入）。"
+            "state" : "translated",
+            "value" : "對於記名卡，請輸入生日的兩位數字（非記名卡無需輸入）。"
           }
         }
       }
@@ -2906,7 +2906,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "月"
           }
         }
@@ -2934,8 +2934,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "生日（记名卡）"
+            "state" : "translated",
+            "value" : "生日（記名卡）"
           }
         }
       }
@@ -2962,8 +2962,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请输入上方图片中的数字。"
+            "state" : "translated",
+            "value" : "請輸入上方圖片中的數字。"
           }
         }
       }
@@ -2990,8 +2990,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "验证码"
+            "state" : "translated",
+            "value" : "驗證碼"
           }
         }
       }
@@ -3018,8 +3018,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请输入卡片背面的数字。"
+            "state" : "translated",
+            "value" : "請輸入卡片背面的數字。"
           }
         }
       }
@@ -3046,8 +3046,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "卡号"
+            "state" : "translated",
+            "value" : "卡號"
           }
         }
       }
@@ -3074,8 +3074,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "自动在 EasyCard 的[官方网站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填写信息并获取数据。\n\n由于服务器维护，按照当地时间，23:00～6:00期间可能无法获取数据。\n由于网站规格发生变更，可能会导致该功能无法使用。"
+            "state" : "translated",
+            "value" : "自動在 EasyCard 的[官方網站](https:\/\/ezweb.easycard.com.tw\/search\/CardSearch.php)中填寫信息並獲取數據。\n\n由於服務器維護，按照當地時間，23:00～6:00期間可能無法獲取數據。\n由於網站規格發生變更，可能會導致該功能無法使用。"
           }
         }
       }
@@ -3102,7 +3102,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "完成"
           }
         }
@@ -3131,8 +3131,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请输入身份证号码的后四位。"
+            "state" : "translated",
+            "value" : "請輸入身份證號碼的後四位。"
           }
         }
       }
@@ -3160,8 +3160,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "身份验证"
+            "state" : "translated",
+            "value" : "身份驗證"
           }
         }
       }
@@ -3189,8 +3189,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "无法获取此卡片的历史记录数据。"
+            "state" : "translated",
+            "value" : "無法獲取此卡片的歷史記錄數據。"
           }
         }
       }
@@ -3217,7 +3217,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "八達通"
           }
         }
@@ -3246,8 +3246,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "图片来源：微信“⁠[交通联合官方订阅号](https://mp.weixin.qq.com/s/jtDHoeLoPbVnGZNJYtbMWA)」”小程序"
+            "state" : "translated",
+            "value" : "圖片來源：微信“⁠[交通聯合官方訂閱號](https:\/\/mp.weixin.qq.com\/s\/jtDHoeLoPbVnGZNJYtbMWA)」”小程序"
           }
         }
       }
@@ -3275,8 +3275,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "※ 不支持使用没有交通聯合标志的旧版卡片。"
+            "state" : "translated",
+            "value" : "※ 不支持使用沒有交通聯合標誌的舊版卡片。"
           }
         }
       }
@@ -3304,8 +3304,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "可用于带有“交通聯合（China T-Union）”标志的交通卡。"
+            "state" : "translated",
+            "value" : "可用於帶有“交通聯合（China T-Union）”標誌的交通卡。"
           }
         }
       }
@@ -3333,7 +3333,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "はやかけん"
           }
         }
@@ -3362,7 +3362,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ICOCA"
           }
         }
@@ -3391,7 +3391,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Kitaca"
           }
         }
@@ -3420,7 +3420,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "manaca"
           }
         }
@@ -3449,7 +3449,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "nimoca"
           }
         }
@@ -3478,7 +3478,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "PASMO"
           }
         }
@@ -3507,7 +3507,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "PiTaPa"
           }
         }
@@ -3536,7 +3536,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "SUGOCA"
           }
         }
@@ -3565,7 +3565,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Suica"
           }
         }
@@ -3594,7 +3594,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "TOICA"
           }
         }
@@ -3623,7 +3623,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "TOURIST PASMO（旅客用）"
           }
         }
@@ -3652,7 +3652,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Welcome Suica（旅客用）"
           }
         }
@@ -3681,8 +3681,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "支持日本交通系IC卡全国互通服务（交通系IC卡）的所有卡片均可使用。"
+            "state" : "translated",
+            "value" : "支持日本交通系IC卡全國互通服務（交通系IC卡）的所有卡片均可使用。"
           }
         }
       }
@@ -3710,8 +3710,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "※ PiTaPa没有余额信息。"
+            "state" : "translated",
+            "value" : "※ PiTaPa沒有餘額信息。"
           }
         }
       }
@@ -3739,8 +3739,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "也支持地区合作IC卡。最新的支持卡片请参阅⁠[此处](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)。"
+            "state" : "translated",
+            "value" : "也支持地區合作IC卡。最新的支持卡片請參閱⁠[此處](https:\/\/www.jreast.co.jp\/suica\/corporate\/pdf\/card_issue.pdf)。"
           }
         }
       }
@@ -3768,7 +3768,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "EZL（原Cashbee）"
           }
         }
@@ -3797,7 +3797,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "One pass"
           }
         }
@@ -3826,7 +3826,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Rail+"
           }
         }
@@ -3855,7 +3855,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "T-money"
           }
         }
@@ -3884,7 +3884,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "WOWPASS"
           }
         }
@@ -3913,7 +3913,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "主要支持的卡片："
           }
         }
@@ -3942,8 +3942,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "适用于所有带有“One Card All Pass（전국호환 교통카드）”标志的卡片。"
+            "state" : "translated",
+            "value" : "適用於所有帶有“One Card All Pass（전국호환 교통카드）”標誌的卡片。"
           }
         }
       }
@@ -3971,8 +3971,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "支持在台湾发行的悠遊卡、悠遊聯名卡、超級悠遊卡。余额将从服务器获取。\n\n无记名卡：卡片右下角的10位数字\n悠遊聯名卡：卡片背面左下角的16位数字\n※ 当地时间23:00～6:00左右可能因服务器维护而无法使用。"
+            "state" : "translated",
+            "value" : "支持在台灣發行的悠遊卡、悠遊聯名卡、超級悠遊卡。餘額將從服務器獲取。\n\n無記名卡：卡片右下角的10位數字\n悠遊聯名卡：卡片背面左下角的16位數字\n※ 當地時間23:00～6:00左右可能因服務器維護而無法使用。"
           }
         }
       }
@@ -4000,7 +4000,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "北海道"
           }
         }
@@ -4029,7 +4029,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "香川県"
           }
         }
@@ -4058,7 +4058,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "長崎"
           }
         }
@@ -4087,7 +4087,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "札幌"
           }
         }
@@ -4116,8 +4116,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+            "state" : "translated",
+            "value" : "可從卡片獲取的歷史記錄最多為最新的20條。"
           }
         }
       }
@@ -4145,8 +4145,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "DoCard / Asaca"
+            "state" : "translated",
+            "value" : "DoCard \/ Asaca"
           }
         }
       }
@@ -4174,8 +4174,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "SAPICA / IruCa"
+            "state" : "translated",
+            "value" : "SAPICA \/ IruCa"
           }
         }
       }
@@ -4203,8 +4203,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "SAPICA / IruCa"
+            "state" : "translated",
+            "value" : "SAPICA \/ IruCa"
           }
         }
       }
@@ -4232,8 +4232,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+            "state" : "translated",
+            "value" : "可從卡片獲取的歷史記錄最多為最新的20條。"
           }
         }
       }
@@ -4260,7 +4260,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日本交通系IC"
           }
         }
@@ -4289,8 +4289,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "可从卡片获取的历史记录最多为最新的20条。"
+            "state" : "translated",
+            "value" : "可從卡片獲取的歷史記錄最多為最新的20條。"
           }
         }
       }
@@ -4318,7 +4318,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "N-Tasu卡(N+)"
           }
         }
@@ -4346,7 +4346,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "One Card All Pass"
           }
         }
@@ -4374,7 +4374,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "好"
           }
         }
@@ -4402,8 +4402,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "重新扫描已保存的卡片即可更新信息。"
+            "state" : "translated",
+            "value" : "重新掃描已保存的卡片即可更新信息。"
           }
         }
       }
@@ -4425,7 +4425,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$@%2$lld%3$@"
           }
         }
@@ -4455,8 +4455,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "余额"
+            "state" : "translated",
+            "value" : "餘額"
           }
         }
       }
@@ -4484,8 +4484,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "余额:%1$lf%2$@"
+            "state" : "translated",
+            "value" : "餘額:%1$lf%2$@"
           }
         }
       }
@@ -4512,8 +4512,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "历史（%lld件）"
+            "state" : "translated",
+            "value" : "歷史（%lld件）"
           }
         }
       }
@@ -4541,8 +4541,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "优惠"
+            "state" : "translated",
+            "value" : "優惠"
           }
         }
       }
@@ -4569,8 +4569,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "公交车"
+            "state" : "translated",
+            "value" : "公交車"
           }
         }
       }
@@ -4597,7 +4597,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "充值"
           }
         }
@@ -4625,8 +4625,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "自动充值"
+            "state" : "translated",
+            "value" : "自動充值"
           }
         }
       }
@@ -4653,8 +4653,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "充值（公交车）"
+            "state" : "translated",
+            "value" : "充值（公交車）"
           }
         }
       }
@@ -4681,8 +4681,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "充值（门店）"
+            "state" : "translated",
+            "value" : "充值（門店）"
           }
         }
       }
@@ -4709,8 +4709,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "支付（非铁路）"
+            "state" : "translated",
+            "value" : "支付（非鐵路）"
           }
         }
       }
@@ -4737,8 +4737,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "取消进站"
+            "state" : "translated",
+            "value" : "取消進站"
           }
         }
       }
@@ -4765,8 +4765,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "自行车"
+            "state" : "translated",
+            "value" : "自行車"
           }
         }
       }
@@ -4793,8 +4793,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "没有历史"
+            "state" : "translated",
+            "value" : "沒有歷史"
           }
         }
       }
@@ -4821,7 +4821,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "退款"
           }
         }
@@ -4850,8 +4850,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "进站"
+            "state" : "translated",
+            "value" : "進站"
           }
         }
       }
@@ -4878,8 +4878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "车费支付"
+            "state" : "translated",
+            "value" : "車費支付"
           }
         }
       }
@@ -4906,8 +4906,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "补票（JR）"
+            "state" : "translated",
+            "value" : "補票（JR）"
           }
         }
       }
@@ -4934,8 +4934,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "补票（民营铁路）"
+            "state" : "translated",
+            "value" : "補票（民營鐵路）"
           }
         }
       }
@@ -4962,8 +4962,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "渡轮"
+            "state" : "translated",
+            "value" : "渡輪"
           }
         }
       }
@@ -4990,8 +4990,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "高速铁路"
+            "state" : "translated",
+            "value" : "高速鐵路"
           }
         }
       }
@@ -5018,8 +5018,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "轻轨"
+            "state" : "translated",
+            "value" : "輕軌"
           }
         }
       }
@@ -5046,7 +5046,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "高雄捷運"
           }
         }
@@ -5074,7 +5074,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "台北捷運"
           }
         }
@@ -5102,7 +5102,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "台中捷運"
           }
         }
@@ -5130,7 +5130,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "桃園捷運"
           }
         }
@@ -5158,8 +5158,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "新发卡"
+            "state" : "translated",
+            "value" : "新發卡"
           }
         }
       }
@@ -5186,8 +5186,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "此卡片不支持查看历史记录。"
+            "state" : "translated",
+            "value" : "此卡片不支持查看歷史記錄。"
           }
         }
       }
@@ -5214,7 +5214,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "其他"
           }
         }
@@ -5242,8 +5242,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "停车场"
+            "state" : "translated",
+            "value" : "停車場"
           }
         }
       }
@@ -5270,8 +5270,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "进站结算（私铁）"
+            "state" : "translated",
+            "value" : "進站結算（私鐵）"
           }
         }
       }
@@ -5298,8 +5298,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "补办"
+            "state" : "translated",
+            "value" : "補辦"
           }
         }
       }
@@ -5326,8 +5326,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "新干线"
+            "state" : "translated",
+            "value" : "新幹線"
           }
         }
       }
@@ -5354,8 +5354,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购物"
+            "state" : "translated",
+            "value" : "購物"
           }
         }
       }
@@ -5382,8 +5382,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "取消购物"
+            "state" : "translated",
+            "value" : "取消購物"
           }
         }
       }
@@ -5410,8 +5410,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "现金并用支付"
+            "state" : "translated",
+            "value" : "現金並用支付"
           }
         }
       }
@@ -5438,8 +5438,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购物（车站内）"
+            "state" : "translated",
+            "value" : "購物（車站內）"
           }
         }
       }
@@ -5466,8 +5466,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "现金并用支付（站内）"
+            "state" : "translated",
+            "value" : "現金並用支付（站內）"
           }
         }
       }
@@ -5494,7 +5494,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "卡片使用"
           }
         }
@@ -5522,8 +5522,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "台湾铁路"
+            "state" : "translated",
+            "value" : "台灣鐵路"
           }
         }
       }
@@ -5550,8 +5550,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买车票"
+            "state" : "translated",
+            "value" : "購買車票"
           }
         }
       }
@@ -5578,8 +5578,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买回数券"
+            "state" : "translated",
+            "value" : "購買回數券"
           }
         }
       }
@@ -5606,7 +5606,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "票"
           }
         }
@@ -5634,7 +5634,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "信息"
           }
         }
@@ -5662,8 +5662,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "余额"
+            "state" : "translated",
+            "value" : "餘額"
           }
         }
       }
@@ -5691,7 +5691,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$@%2$@"
           }
         }
@@ -5719,8 +5719,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "类型"
+            "state" : "translated",
+            "value" : "類型"
           }
         }
       }
@@ -5747,8 +5747,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "卡片类型"
+            "state" : "translated",
+            "value" : "卡片類型"
           }
         }
       }
@@ -5775,8 +5775,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "最后更新"
+            "state" : "translated",
+            "value" : "最後更新"
           }
         }
       }
@@ -5803,8 +5803,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "无法读取信息"
+            "state" : "translated",
+            "value" : "無法讀取信息"
           }
         }
       }
@@ -5831,8 +5831,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "卡号"
+            "state" : "translated",
+            "value" : "卡號"
           }
         }
       }
@@ -5860,7 +5860,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "IC卡"
           }
         }
@@ -5889,8 +5889,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "记录"
+            "state" : "translated",
+            "value" : "記錄"
           }
         }
       }
@@ -5918,8 +5918,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "此信息仅在应用内有效，不会写入卡片。"
+            "state" : "translated",
+            "value" : "此信息僅在應用內有效，不會寫入卡片。"
           }
         }
       }
@@ -5946,8 +5946,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "图标"
+            "state" : "translated",
+            "value" : "圖標"
           }
         }
       }
@@ -5974,8 +5974,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "显示名称"
+            "state" : "translated",
+            "value" : "顯示名稱"
           }
         }
       }
@@ -6002,8 +6002,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "卡片名称"
+            "state" : "translated",
+            "value" : "卡片名稱"
           }
         }
       }
@@ -6030,7 +6030,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "不支持卡"
           }
         }
@@ -6058,8 +6058,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请将“%@”靠近iPhone顶部。"
+            "state" : "translated",
+            "value" : "請將“%@”靠近iPhone頂部。"
           }
         }
       }
@@ -6086,8 +6086,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "扫描完成"
+            "state" : "translated",
+            "value" : "掃描完成"
           }
         }
       }
@@ -6114,8 +6114,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "状态标志显示错误。s1：%1$lld，s2：%2$lld"
+            "state" : "translated",
+            "value" : "狀態標誌顯示錯誤。s1：%1$lld，s2：%2$lld"
           }
         }
       }
@@ -6142,8 +6142,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "正在扫描。请勿移动卡片。"
+            "state" : "translated",
+            "value" : "正在掃描。請勿移動卡片。"
           }
         }
       }
@@ -6170,8 +6170,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "调用了未定义的服务。"
+            "state" : "translated",
+            "value" : "調用了未定義的服務。"
           }
         }
       }
@@ -6198,7 +6198,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "搜索"
           }
         }
@@ -6227,8 +6227,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "验证码"
+            "state" : "translated",
+            "value" : "驗證碼"
           }
         }
       }
@@ -6256,7 +6256,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "NFC"
           }
         }
@@ -6285,8 +6285,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "在线获取"
+            "state" : "translated",
+            "value" : "在線獲取"
           }
         }
       }
@@ -6313,8 +6313,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "权利信息"
+            "state" : "translated",
+            "value" : "權利信息"
           }
         }
       }
@@ -6342,8 +6342,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "iPhone、iPad、App Store和Apple Pay是Apple Inc.在美国及其他国家或地区注册的商标。"
+            "state" : "translated",
+            "value" : "iPhone、iPad、App Store和Apple Pay是Apple Inc.在美國及其他國家或地區註冊的商標。"
           }
         }
       }
@@ -6371,7 +6371,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Apple"
           }
         }
@@ -6399,8 +6399,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "商标等"
+            "state" : "translated",
+            "value" : "商標等"
           }
         }
       }
@@ -6427,8 +6427,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "这是根据卡片发行地区显示的内容。除上述内容外，文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。"
+            "state" : "translated",
+            "value" : "這是根據卡片發行地區顯示的內容。除上述內容外，文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
           }
         }
       }
@@ -6456,8 +6456,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“交通联合”（China T-union）是中华人民共和国交通运输部的标准规范。\n文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。"
+            "state" : "translated",
+            "value" : "“交通聯合”（China T-union）是中華人民共和國交通運輸部的標準規範。\n文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
           }
         }
       }
@@ -6485,8 +6485,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Android、Google和Google Pay是Google LLC的商标。"
+            "state" : "translated",
+            "value" : "Android、Google和Google Pay是Google LLC的商標。"
           }
         }
       }
@@ -6514,7 +6514,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Google"
           }
         }
@@ -6543,8 +6543,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商标。"
+            "state" : "translated",
+            "value" : "“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商標。"
           }
         }
       }
@@ -6572,8 +6572,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“Kitaca”是北海道旅客鉄道株式会社的注册商标。\n“Suica”是東日本旅客鉄道株式会社的注册商标。\n“PASMO”是株式会社パスモ的注册商标。\n“TOICA”是東海旅客鉄道株式会社的注册商标。\n“manaca”是株式会社名古屋交通開発機構及株式会社エムアイシー的注册商标。\n“ICOCA”是西日本旅客鉄道株式会社的注册商标。\n“SUGOCA”是九州旅客鉄道株式会社的注册商标。\n“nimoca”是西日本鉄道株式会社的注册商标。\n“はやかけん”是福岡市交通局的注册商标。\n“PiTaPa”是株式会社スルッとKANSAI的注册商标。"
+            "state" : "translated",
+            "value" : "“Kitaca”是北海道旅客鉄道株式會社的註冊商標。\n“Suica”是東日本旅客鉄道株式會社的註冊商標。\n“PASMO”是株式會社パスモ的註冊商標。\n“TOICA”是東海旅客鉄道株式會社的註冊商標。\n“manaca”是株式會社名古屋交通開発機構及株式會社エムアイシー的註冊商標。\n“ICOCA”是西日本旅客鉄道株式會社的註冊商標。\n“SUGOCA”是九州旅客鉄道株式會社的註冊商標。\n“nimoca”是西日本鉄道株式會社的註冊商標。\n“はやかけん”是福岡市交通局的註冊商標。\n“PiTaPa”是株式會社スルッとKANSAI的註冊商標。"
           }
         }
       }
@@ -6601,8 +6601,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。\n“IruCa”是高松琴平電気鉄道株式会社的商标。"
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。\n“IruCa”是高松琴平電気鉄道株式會社的商標。"
           }
         }
       }
@@ -6630,8 +6630,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“エヌタス”、“N+”、“長崎バス”是長崎自動車株式会社的商标。\n“Tカード”是カルチュア・コンビニエンス・クラブ株式会社的商标。\n“Vポイントカード”、“Vポイント”及Vポイント标志是Vポイントマーケティング株式会社及三井住友カード株式会社的商标。"
+            "state" : "translated",
+            "value" : "“エヌタス”、“N+”、“長崎バス”是長崎自動車株式會社的商標。\n“Tカード”是カルチュア・コンビニエンス・クラブ株式會社的商標。\n“Vポイントカード”、“Vポイント”及Vポイント標誌是Vポイントマーケティング株式會社及三井住友カード株式會社的商標。"
           }
         }
       }
@@ -6659,8 +6659,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“One Card All Pass”（전국호환교통카드）是韩国国土交通省的标准规范。\n“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商标。\n“WOWPASS”是Orange Square, Inc.的商标。\n“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商标。\n“Rail+”和“레일플러스”是Korea Railroad Corporation的商标。\n“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商标。\n“Hanpay”和“한페이”是한페이시스的商标。"
+            "state" : "translated",
+            "value" : "“One Card All Pass”（전국호환교통카드）是韓國國土交通省的標準規範。\n“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商標。\n“WOWPASS”是Orange Square, Inc.的商標。\n“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商標。\n“Rail+”和“레일플러스”是Korea Railroad Corporation的商標。\n“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商標。\n“Hanpay”和“한페이”是한페이시스的商標。"
           }
         }
       }
@@ -6688,8 +6688,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“FeliCa”是ソニーグループ株式会社或其关联公司的注册商标或商标。"
+            "state" : "translated",
+            "value" : "“FeliCa”是ソニーグループ株式會社或其關聯公司的註冊商標或商標。"
           }
         }
       }
@@ -6717,7 +6717,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Sony"
           }
         }
@@ -6745,7 +6745,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "交通卡"
           }
         }
@@ -6773,7 +6773,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "其他"
           }
         }
@@ -6802,8 +6802,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“EasyCard”和“悠遊卡”是悠遊卡股份有限公司的商标。"
+            "state" : "translated",
+            "value" : "“EasyCard”和“悠遊卡”是悠遊卡股份有限公司的商標。"
           }
         }
       }
@@ -6831,8 +6831,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "“icash”和“愛金卡”是愛金卡股份有限公司的商标。\n“7-ELEVEN”是统一超商股份有限公司的商标。"
+            "state" : "translated",
+            "value" : "“icash”和“愛金卡”是愛金卡股份有限公司的商標。\n“7-ELEVEN”是統一超商股份有限公司的商標。"
           }
         }
       }
@@ -6859,8 +6859,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "广告"
+            "state" : "translated",
+            "value" : "廣告"
           }
         }
       }
@@ -6887,8 +6887,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买完成"
+            "state" : "translated",
+            "value" : "購買完成"
           }
         }
       }
@@ -6915,8 +6915,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "去除广告的购买已完成！感谢您的支持。"
+            "state" : "translated",
+            "value" : "去除廣告的購買已完成！感謝您的支持。"
           }
         }
       }
@@ -6943,8 +6943,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "错误"
+            "state" : "translated",
+            "value" : "錯誤"
           }
         }
       }
@@ -6971,8 +6971,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买恢复"
+            "state" : "translated",
+            "value" : "購買恢復"
           }
         }
       }
@@ -6999,8 +6999,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "恢复完成"
+            "state" : "translated",
+            "value" : "恢復完成"
           }
         }
       }
@@ -7027,8 +7027,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买恢复完成。"
+            "state" : "translated",
+            "value" : "購買恢復完成。"
           }
         }
       }
@@ -7055,8 +7055,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "错误"
+            "state" : "translated",
+            "value" : "錯誤"
           }
         }
       }
@@ -7084,8 +7084,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试版"
+            "state" : "translated",
+            "value" : "測試版"
           }
         }
       }
@@ -7113,8 +7113,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "开发版"
+            "state" : "translated",
+            "value" : "開發版"
           }
         }
       }
@@ -7141,8 +7141,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "数据管理"
+            "state" : "translated",
+            "value" : "數據管理"
           }
         }
       }
@@ -7169,7 +7169,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "iCloud同步"
           }
         }
@@ -7197,7 +7197,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "停用iCloud同步"
           }
         }
@@ -7225,8 +7225,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "停用云端同步后，扫描的卡片将不会再进行同步。\n之前已同步的信息不会被删除。"
+            "state" : "translated",
+            "value" : "停用雲端同步後，掃描的卡片將不會再進行同步。\n之前已同步的信息不會被刪除。"
           }
         }
       }
@@ -7253,7 +7253,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "禁用"
           }
         }
@@ -7281,8 +7281,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "删除历史"
+            "state" : "translated",
+            "value" : "刪除歷史"
           }
         }
       }
@@ -7309,8 +7309,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "删除已保存的卡片信息。此操作无法撤销。"
+            "state" : "translated",
+            "value" : "刪除已保存的卡片信息。此操作無法撤銷。"
           }
         }
       }
@@ -7337,8 +7337,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "删除"
+            "state" : "translated",
+            "value" : "刪除"
           }
         }
       }
@@ -7366,8 +7366,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "调试"
+            "state" : "translated",
+            "value" : "調試"
           }
         }
       }
@@ -7394,8 +7394,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "广告"
+            "state" : "translated",
+            "value" : "廣告"
           }
         }
       }
@@ -7422,8 +7422,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "调试模式"
+            "state" : "translated",
+            "value" : "調試模式"
           }
         }
       }
@@ -7451,8 +7451,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "购买状态（广告）"
+            "state" : "translated",
+            "value" : "購買狀態（廣告）"
           }
         }
       }
@@ -7480,8 +7480,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "付费测试"
+            "state" : "translated",
+            "value" : "付費測試"
           }
         }
       }
@@ -7509,7 +7509,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "正式"
           }
         }
@@ -7538,8 +7538,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试"
+            "state" : "translated",
+            "value" : "測試"
           }
         }
       }
@@ -7566,8 +7566,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "在重新启动应用之前，开发者模式将保持启用状态。\n如果此提示不是您有意触发的，请点击“取消”。"
+            "state" : "translated",
+            "value" : "在重新啓動應用之前，開發者模式將保持啓用狀態。\n如果此提示不是您有意觸發的，請點擊“取消”。"
           }
         }
       }
@@ -7594,7 +7594,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "激活"
           }
         }
@@ -7622,8 +7622,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "开发模式"
+            "state" : "translated",
+            "value" : "開發模式"
           }
         }
       }
@@ -7651,8 +7651,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "显示卡"
+            "state" : "translated",
+            "value" : "顯示卡"
           }
         }
       }
@@ -7679,7 +7679,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$(variableName)lld件"
           }
         }
@@ -7707,8 +7707,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "开发中"
+            "state" : "translated",
+            "value" : "開發中"
           }
         }
       }
@@ -7735,8 +7735,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试功能"
+            "state" : "translated",
+            "value" : "測試功能"
           }
         }
       }
@@ -7763,8 +7763,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "发布"
+            "state" : "translated",
+            "value" : "發佈"
           }
         }
       }
@@ -7791,8 +7791,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "显示调试信息"
+            "state" : "translated",
+            "value" : "顯示調試信息"
           }
         }
       }
@@ -7819,7 +7819,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "位置信息"
           }
         }
@@ -7847,8 +7847,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "设备位置"
+            "state" : "translated",
+            "value" : "設備位置"
           }
         }
       }
@@ -7875,8 +7875,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "应用购买"
+            "state" : "translated",
+            "value" : "應用購買"
           }
         }
       }
@@ -7903,7 +7903,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "批量添加示例卡片"
           }
         }
@@ -7931,8 +7931,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "创建测试卡片"
+            "state" : "translated",
+            "value" : "創建測試卡片"
           }
         }
       }
@@ -7960,8 +7960,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "余额"
+            "state" : "translated",
+            "value" : "餘額"
           }
         }
       }
@@ -7988,8 +7988,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "转换器"
+            "state" : "translated",
+            "value" : "轉換器"
           }
         }
       }
@@ -8017,8 +8017,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "货币单位"
+            "state" : "translated",
+            "value" : "貨幣單位"
           }
         }
       }
@@ -8045,8 +8045,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "登录"
+            "state" : "translated",
+            "value" : "登錄"
           }
         }
       }
@@ -8073,8 +8073,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "追加历史"
+            "state" : "translated",
+            "value" : "追加歷史"
           }
         }
       }
@@ -8102,8 +8102,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "金额"
+            "state" : "translated",
+            "value" : "金額"
           }
         }
       }
@@ -8131,8 +8131,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "交易后余额"
+            "state" : "translated",
+            "value" : "交易後餘額"
           }
         }
       }
@@ -8160,8 +8160,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "交易时间"
+            "state" : "translated",
+            "value" : "交易時間"
           }
         }
       }
@@ -8189,8 +8189,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "交易类型代码"
+            "state" : "translated",
+            "value" : "交易類型代碼"
           }
         }
       }
@@ -8217,8 +8217,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "历史数据"
+            "state" : "translated",
+            "value" : "歷史數據"
           }
         }
       }
@@ -8245,7 +8245,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "（必填）"
           }
         }
@@ -8273,8 +8273,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "扫描结果界面"
+            "state" : "translated",
+            "value" : "掃描結果界面"
           }
         }
       }
@@ -8301,8 +8301,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "显示类别"
+            "state" : "translated",
+            "value" : "顯示類別"
           }
         }
       }
@@ -8329,8 +8329,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "开发"
+            "state" : "translated",
+            "value" : "開發"
           }
         }
       }
@@ -8357,8 +8357,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试功能"
+            "state" : "translated",
+            "value" : "測試功能"
           }
         }
       }
@@ -8385,8 +8385,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "未选择"
+            "state" : "translated",
+            "value" : "未選擇"
           }
         }
       }
@@ -8413,8 +8413,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "发布"
+            "state" : "translated",
+            "value" : "發佈"
           }
         }
       }
@@ -8441,8 +8441,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "扫描列表界面"
+            "state" : "translated",
+            "value" : "掃描列表界面"
           }
         }
       }
@@ -8469,8 +8469,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试功能"
+            "state" : "translated",
+            "value" : "測試功能"
           }
         }
       }
@@ -8497,8 +8497,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试支持的卡片"
+            "state" : "translated",
+            "value" : "測試支持的卡片"
           }
         }
       }
@@ -8525,8 +8525,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "显示正在调查中的卡片，使其可以进行扫描。"
+            "state" : "translated",
+            "value" : "顯示正在調查中的卡片，使其可以進行掃描。"
           }
         }
       }
@@ -8553,8 +8553,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "当前已在开发设置中指定了显示卡片类型，因此无法直接修改该设置。\n如需测试“实验性功能”页面，请前往“设置 > 调试 > 显示卡片类型”，将选项更改为“未选择”。"
+            "state" : "translated",
+            "value" : "當前已在開發設置中指定了顯示卡片類型，因此無法直接修改該設置。\n如需測試“實驗性功能”頁面，請前往“設置 > 調試 > 顯示卡片類型”，將選項更改為“未選擇”。"
           }
         }
       }
@@ -8581,8 +8581,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试功能仍在开发中，可能会出现异常。\n可能会在不另行通知的情况下删除或更改。"
+            "state" : "translated",
+            "value" : "測試功能仍在開發中，可能會出現異常。\n可能會在不另行通知的情況下刪除或更改。"
           }
         }
       }
@@ -8609,8 +8609,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "测试功能"
+            "state" : "translated",
+            "value" : "測試功能"
           }
         }
       }
@@ -8637,8 +8637,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "参加测试版"
+            "state" : "translated",
+            "value" : "參加測試版"
           }
         }
       }
@@ -8665,7 +8665,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "其他"
           }
         }
@@ -8693,7 +8693,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%1$(variableName)@版本"
           }
         }
@@ -8721,7 +8721,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "我的卡"
           }
         }
@@ -8749,8 +8749,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "筛选"
+            "state" : "translated",
+            "value" : "篩選"
           }
         }
       }
@@ -8777,7 +8777,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全部"
           }
         }
@@ -8805,7 +8805,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "排序"
           }
         }
@@ -8833,8 +8833,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "按名顺序"
+            "state" : "translated",
+            "value" : "按名順序"
           }
         }
       }
@@ -8861,7 +8861,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "按名倒序"
           }
         }
@@ -8889,8 +8889,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "更新顺序"
+            "state" : "translated",
+            "value" : "更新順序"
           }
         }
       }
@@ -8917,7 +8917,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "更新倒序"
           }
         }
@@ -8945,8 +8945,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "扫描"
+            "state" : "translated",
+            "value" : "掃描"
           }
         }
       }
@@ -8973,8 +8973,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "设置"
+            "state" : "translated",
+            "value" : "設置"
           }
         }
       }
@@ -9001,8 +9001,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "已达到尝试次数上限。"
+            "state" : "translated",
+            "value" : "已達到嘗試次數上限。"
           }
         }
       }
@@ -9029,8 +9029,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "输入的生日有误，或者该卡为无记名卡。"
+            "state" : "translated",
+            "value" : "輸入的生日有誤，或者該卡為無記名卡。"
           }
         }
       }
@@ -9057,8 +9057,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "验证码验证失败。"
+            "state" : "translated",
+            "value" : "驗證碼驗證失敗。"
           }
         }
       }
@@ -9085,8 +9085,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "卡号有误"
+            "state" : "translated",
+            "value" : "卡號有誤"
           }
         }
       }
@@ -9114,8 +9114,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "验证码有误"
+            "state" : "translated",
+            "value" : "驗證碼有誤"
           }
         }
       }
@@ -9142,8 +9142,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "日期数据无效。"
+            "state" : "translated",
+            "value" : "日期數據無效。"
           }
         }
       }
@@ -9170,8 +9170,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请重试。"
+            "state" : "translated",
+            "value" : "請重試。"
           }
         }
       }
@@ -9198,8 +9198,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请输入两位数的生日。"
+            "state" : "translated",
+            "value" : "請輸入兩位數的生日。"
           }
         }
       }
@@ -9226,8 +9226,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "验证码数字不正确。"
+            "state" : "translated",
+            "value" : "驗證碼數字不正確。"
           }
         }
       }
@@ -9254,8 +9254,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "未输入验证码。"
+            "state" : "translated",
+            "value" : "未輸入驗證碼。"
           }
         }
       }
@@ -9282,8 +9282,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "请输入10位或16位卡号"
+            "state" : "translated",
+            "value" : "請輸入10位或16位卡號"
           }
         }
       }
@@ -9310,8 +9310,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "未输入卡号"
+            "state" : "translated",
+            "value" : "未輸入卡號"
           }
         }
       }
@@ -9339,8 +9339,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "数据并非最新数据，而是截至昨天的使用记录。显示过去一年的使用记录。"
+            "state" : "translated",
+            "value" : "數據並非最新數據，而是截至昨天的使用記錄。顯示過去一年的使用記錄。"
           }
         }
       }
@@ -9367,7 +9367,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "悠遊卡"
           }
         }
@@ -9396,8 +9396,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "只能读取最近的12条记录。"
+            "state" : "translated",
+            "value" : "只能讀取最近的12條記錄。"
           }
         }
       }
@@ -9424,7 +9424,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "icash 2.0"
           }
         }
@@ -9452,7 +9452,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "不明"
           }
         }
@@ -9481,7 +9481,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "不明"
           }
         }
@@ -9510,8 +9510,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "关闭"
+            "state" : "translated",
+            "value" : "關閉"
           }
         }
       }
@@ -9526,8 +9526,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "三晋通-忻州通"
+            "state" : "translated",
+            "value" : "三晉通-忻州通"
           }
         }
       }
@@ -9548,8 +9548,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "三门峡市公交IC卡"
+            "state" : "translated",
+            "value" : "三門峽市公交IC卡"
           }
         }
       }
@@ -9576,7 +9576,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "上海公共交通卡"
           }
         }
@@ -9598,8 +9598,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "上饶公交IC卡"
+            "state" : "translated",
+            "value" : "上饒公交IC卡"
           }
         }
       }
@@ -9626,8 +9626,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "东莞通"
+            "state" : "translated",
+            "value" : "東莞通"
           }
         }
       }
@@ -9654,8 +9654,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "东营市交通一卡通"
+            "state" : "translated",
+            "value" : "東營市交通一卡通"
           }
         }
       }
@@ -9676,7 +9676,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "中山通"
           }
         }
@@ -9698,8 +9698,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "临汾公交一卡通"
+            "state" : "translated",
+            "value" : "臨汾公交一卡通"
           }
         }
       }
@@ -9726,8 +9726,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "乐山公交IC卡"
+            "state" : "translated",
+            "value" : "樂山公交IC卡"
           }
         }
       }
@@ -9754,7 +9754,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "九江公交一卡通"
           }
         }
@@ -9782,8 +9782,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "九龙卡"
+            "state" : "translated",
+            "value" : "九龍卡"
           }
         }
       }
@@ -9798,8 +9798,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "交运通"
+            "state" : "translated",
+            "value" : "交運通"
           }
         }
       }
@@ -9814,7 +9814,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "亭城通"
           }
         }
@@ -9830,7 +9830,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "亳州交通一卡通"
           }
         }
@@ -9858,7 +9858,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "保定卡"
           }
         }
@@ -9886,8 +9886,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "八达通"
+            "state" : "translated",
+            "value" : "八達通"
           }
         }
       }
@@ -9902,8 +9902,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "公主岭万联惠民卡"
+            "state" : "translated",
+            "value" : "公主嶺萬聯惠民卡"
           }
         }
       }
@@ -9930,7 +9930,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "六安公交一卡通"
           }
         }
@@ -9952,8 +9952,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "六盘通"
+            "state" : "translated",
+            "value" : "六盤通"
           }
         }
       }
@@ -9980,8 +9980,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "兰州公交普通卡"
+            "state" : "translated",
+            "value" : "蘭州公交普通卡"
           }
         }
       }
@@ -10002,8 +10002,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "兴义卡"
+            "state" : "translated",
+            "value" : "興義卡"
           }
         }
       }
@@ -10024,8 +10024,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "农科城卡"
+            "state" : "translated",
+            "value" : "農科城卡"
           }
         }
       }
@@ -10046,8 +10046,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "凉州通"
+            "state" : "translated",
+            "value" : "涼州通"
           }
         }
       }
@@ -10062,8 +10062,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "凉都市民卡"
+            "state" : "translated",
+            "value" : "涼都市民卡"
           }
         }
       }
@@ -10084,8 +10084,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "凯里公交IC卡"
+            "state" : "translated",
+            "value" : "凱里公交IC卡"
           }
         }
       }
@@ -10112,7 +10112,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "利州通"
           }
         }
@@ -10140,7 +10140,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "北京市政交通一卡通"
           }
         }
@@ -10168,7 +10168,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "北海通"
           }
         }
@@ -10190,7 +10190,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "南充公交卡"
           }
         }
@@ -10212,7 +10212,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "南通市民卡"
           }
         }
@@ -10234,8 +10234,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "南阳交通一卡通"
+            "state" : "translated",
+            "value" : "南陽交通一卡通"
           }
         }
       }
@@ -10256,8 +10256,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "双辽市交通一卡通"
+            "state" : "translated",
+            "value" : "雙遼市交通一卡通"
           }
         }
       }
@@ -10284,7 +10284,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "台州通"
           }
         }
@@ -10312,7 +10312,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "合肥通"
           }
         }
@@ -10334,7 +10334,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "吉安通"
           }
         }
@@ -10356,7 +10356,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "吉林通"
           }
         }
@@ -10384,7 +10384,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "同心市民卡"
           }
         }
@@ -10406,8 +10406,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "吕梁交通一卡通"
+            "state" : "translated",
+            "value" : "呂梁交通一卡通"
           }
         }
       }
@@ -10428,8 +10428,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "吴忠公交IC卡"
+            "state" : "translated",
+            "value" : "吳忠公交IC卡"
           }
         }
       }
@@ -10444,7 +10444,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "周口交通一卡通"
           }
         }
@@ -10460,7 +10460,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "呼和浩特交通一卡通"
           }
         }
@@ -10482,8 +10482,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "咸宁一卡通"
+            "state" : "translated",
+            "value" : "咸寧一卡通"
           }
         }
       }
@@ -10510,8 +10510,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "哈尔滨城市卡"
+            "state" : "translated",
+            "value" : "哈爾濱城市卡"
           }
         }
       }
@@ -10532,7 +10532,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "唐山公交IC卡"
           }
         }
@@ -10554,7 +10554,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "唰唰通"
           }
         }
@@ -10570,7 +10570,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "商洛公交一卡通"
           }
         }
@@ -10592,8 +10592,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "嘉兴交通一卡通"
+            "state" : "translated",
+            "value" : "嘉興交通一卡通"
           }
         }
       }
@@ -10608,8 +10608,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "嘉应通"
+            "state" : "translated",
+            "value" : "嘉應通"
           }
         }
       }
@@ -10630,7 +10630,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "四平城市交通一卡通"
           }
         }
@@ -10658,7 +10658,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "夏都通"
           }
         }
@@ -10686,7 +10686,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "大同公交一卡通"
           }
         }
@@ -10702,8 +10702,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "大美青海-格尔木"
+            "state" : "translated",
+            "value" : "大美青海-格爾木"
           }
         }
       }
@@ -10718,8 +10718,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "大美青海-海东通"
+            "state" : "translated",
+            "value" : "大美青海-海東通"
           }
         }
       }
@@ -10734,8 +10734,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "大美青海-玉树"
+            "state" : "translated",
+            "value" : "大美青海-玉樹"
           }
         }
       }
@@ -10750,8 +10750,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "大连明珠卡"
+            "state" : "translated",
+            "value" : "大連明珠卡"
           }
         }
       }
@@ -10766,7 +10766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "天中通"
           }
         }
@@ -10794,7 +10794,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "天府通"
           }
         }
@@ -10816,8 +10816,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "天汉通"
+            "state" : "translated",
+            "value" : "天漢通"
           }
         }
       }
@@ -10844,7 +10844,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "天津城市卡"
           }
         }
@@ -10860,7 +10860,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "天涯行"
           }
         }
@@ -10882,7 +10882,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "太原公交IC卡"
           }
         }
@@ -10898,8 +10898,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "好运通"
+            "state" : "translated",
+            "value" : "好運通"
           }
         }
       }
@@ -10920,7 +10920,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "威海市民卡"
           }
         }
@@ -10948,8 +10948,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "安庆中北巴士交通一卡通"
+            "state" : "translated",
+            "value" : "安慶中北巴士交通一卡通"
           }
         }
       }
@@ -10976,7 +10976,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "安康公交卡"
           }
         }
@@ -11004,8 +11004,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "安阳公交一卡通"
+            "state" : "translated",
+            "value" : "安陽公交一卡通"
           }
         }
       }
@@ -11032,8 +11032,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "安顺全国互联互通卡"
+            "state" : "translated",
+            "value" : "安順全國互聯互通卡"
           }
         }
       }
@@ -11054,8 +11054,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "宜宾一卡通"
+            "state" : "translated",
+            "value" : "宜賓一卡通"
           }
         }
       }
@@ -11070,8 +11070,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "宜居畅通卡"
+            "state" : "translated",
+            "value" : "宜居暢通卡"
           }
         }
       }
@@ -11092,7 +11092,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "宜春公交卡"
           }
         }
@@ -11120,8 +11120,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "宝鸡公交卡"
+            "state" : "translated",
+            "value" : "寶雞公交卡"
           }
         }
       }
@@ -11136,7 +11136,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "宣城公交IC卡"
           }
         }
@@ -11152,7 +11152,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "宿州公共交通卡"
           }
         }
@@ -11174,8 +11174,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "宿迁市民卡"
+            "state" : "translated",
+            "value" : "宿遷市民卡"
           }
         }
       }
@@ -11202,7 +11202,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "山丹"
           }
         }
@@ -11230,8 +11230,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "岭云通"
+            "state" : "translated",
+            "value" : "嶺雲通"
           }
         }
       }
@@ -11252,8 +11252,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "岳阳通"
+            "state" : "translated",
+            "value" : "岳陽通"
           }
         }
       }
@@ -11268,7 +11268,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "崇左通"
           }
         }
@@ -11284,7 +11284,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "崇德包容卡"
           }
         }
@@ -11312,7 +11312,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "巴中交通一卡通"
           }
         }
@@ -11328,7 +11328,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "常州市民卡"
           }
         }
@@ -11344,7 +11344,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "常德公交卡"
           }
         }
@@ -11360,7 +11360,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "常熟一卡通"
           }
         }
@@ -11382,8 +11382,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "平潭海峡通"
+            "state" : "translated",
+            "value" : "平潭海峽通"
           }
         }
       }
@@ -11410,8 +11410,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "广佛通"
+            "state" : "translated",
+            "value" : "廣佛通"
           }
         }
       }
@@ -11426,8 +11426,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "广安全国一卡通"
+            "state" : "translated",
+            "value" : "廣安全國一卡通"
           }
         }
       }
@@ -11442,7 +11442,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "康定公交一卡通"
           }
         }
@@ -11464,7 +11464,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "延吉交通一卡通"
           }
         }
@@ -11486,7 +11486,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "延安公交一卡通"
           }
         }
@@ -11508,8 +11508,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "延边交通一卡通"
+            "state" : "translated",
+            "value" : "延邊交通一卡通"
           }
         }
       }
@@ -11530,8 +11530,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "开封交通一卡通"
+            "state" : "translated",
+            "value" : "開封交通一卡通"
           }
         }
       }
@@ -11552,8 +11552,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "张家界一卡通"
+            "state" : "translated",
+            "value" : "張家界一卡通"
           }
         }
       }
@@ -11580,7 +11580,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "德州交通一卡通"
           }
         }
@@ -11596,8 +11596,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "德阳全国交通一卡通"
+            "state" : "translated",
+            "value" : "德陽全國交通一卡通"
           }
         }
       }
@@ -11624,8 +11624,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "怀化公交IC卡"
+            "state" : "translated",
+            "value" : "懷化公交IC卡"
           }
         }
       }
@@ -11640,7 +11640,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "惠州通"
           }
         }
@@ -11662,8 +11662,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "扬州市民卡"
+            "state" : "translated",
+            "value" : "揚州市民卡"
           }
         }
       }
@@ -11690,8 +11690,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "抚州交通一卡通"
+            "state" : "translated",
+            "value" : "撫州交通一卡通"
           }
         }
       }
@@ -11718,8 +11718,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "拉萨公交IC卡"
+            "state" : "translated",
+            "value" : "拉薩公交IC卡"
           }
         }
       }
@@ -11734,7 +11734,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "攀枝花公交一卡通"
           }
         }
@@ -11750,7 +11750,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "新余交通一卡通"
           }
         }
@@ -11766,8 +11766,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "新乡公交一卡通"
+            "state" : "translated",
+            "value" : "新鄉公交一卡通"
           }
         }
       }
@@ -11788,7 +11788,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "日照交通一卡通"
           }
         }
@@ -11816,7 +11816,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "昆明智慧通"
           }
         }
@@ -11844,7 +11844,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "昆通卡"
           }
         }
@@ -11860,7 +11860,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "明通卡"
           }
         }
@@ -11876,8 +11876,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "晋中交通一卡通"
+            "state" : "translated",
+            "value" : "晉中交通一卡通"
           }
         }
       }
@@ -11892,8 +11892,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "晋城市公交IC卡"
+            "state" : "translated",
+            "value" : "晉城市公交IC卡"
           }
         }
       }
@@ -11908,8 +11908,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "曲靖市公交乘车卡"
+            "state" : "translated",
+            "value" : "曲靖市公交乘車卡"
           }
         }
       }
@@ -11930,7 +11930,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "月城一卡通"
           }
         }
@@ -11952,7 +11952,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "朔州交通一卡通"
           }
         }
@@ -11980,8 +11980,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "朝阳公交卡"
+            "state" : "translated",
+            "value" : "朝陽公交卡"
           }
         }
       }
@@ -12002,8 +12002,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "来宾通"
+            "state" : "translated",
+            "value" : "來賓通"
           }
         }
       }
@@ -12030,7 +12030,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "杭州通"
           }
         }
@@ -12046,7 +12046,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "松原通"
           }
         }
@@ -12062,8 +12062,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "枣庄同诚卡"
+            "state" : "translated",
+            "value" : "棗莊同誠卡"
           }
         }
       }
@@ -12078,8 +12078,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "枣庄汽运交通一卡通"
+            "state" : "translated",
+            "value" : "棗莊汽運交通一卡通"
           }
         }
       }
@@ -12106,7 +12106,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "柳州市民卡"
           }
         }
@@ -12128,7 +12128,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "株洲公交IC卡"
           }
         }
@@ -12156,7 +12156,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "桂林通"
           }
         }
@@ -12184,7 +12184,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "桃源卡"
           }
         }
@@ -12206,7 +12206,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "梅河口交通一卡通"
           }
         }
@@ -12228,7 +12228,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "梧州通"
           }
         }
@@ -12244,7 +12244,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "榕城通"
           }
         }
@@ -12266,7 +12266,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "榕江通"
           }
         }
@@ -12294,7 +12294,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "武夷通"
           }
         }
@@ -12310,8 +12310,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "毕节裕福交通一卡通"
+            "state" : "translated",
+            "value" : "畢節裕福交通一卡通"
           }
         }
       }
@@ -12326,7 +12326,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "水城通"
           }
         }
@@ -12342,8 +12342,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "永吉万联惠民通卡"
+            "state" : "translated",
+            "value" : "永吉萬聯惠民通卡"
           }
         }
       }
@@ -12364,7 +12364,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "永州城市一卡通"
           }
         }
@@ -12386,7 +12386,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "江淮通"
           }
         }
@@ -12402,7 +12402,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "池城交通一卡通"
           }
         }
@@ -12418,7 +12418,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "沂蒙通"
           }
         }
@@ -12446,8 +12446,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "河北一卡通(张家口)"
+            "state" : "translated",
+            "value" : "河北一卡通(張家口)"
           }
         }
       }
@@ -12474,7 +12474,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "河北一卡通卡(廊坊)"
           }
         }
@@ -12502,7 +12502,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "河北一卡通卡(承德)"
           }
         }
@@ -12530,8 +12530,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "河北一卡通卡(沧州)"
+            "state" : "translated",
+            "value" : "河北一卡通卡(滄州)"
           }
         }
       }
@@ -12558,7 +12558,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "河北一卡通卡(衡水)"
           }
         }
@@ -12586,7 +12586,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "河池通"
           }
         }
@@ -12602,7 +12602,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "泉城通"
           }
         }
@@ -12618,7 +12618,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "泉通卡"
           }
         }
@@ -12640,7 +12640,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "泰州通"
           }
         }
@@ -12656,8 +12656,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "洛阳交通一卡通"
+            "state" : "translated",
+            "value" : "洛陽交通一卡通"
           }
         }
       }
@@ -12672,7 +12672,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "洪城一卡通"
           }
         }
@@ -12694,8 +12694,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "济宁公交卡"
+            "state" : "translated",
+            "value" : "濟寧公交卡"
           }
         }
       }
@@ -12722,7 +12722,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "海南一卡通"
           }
         }
@@ -12750,7 +12750,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "淮北一卡通"
           }
         }
@@ -12766,8 +12766,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "淮南畅通卡"
+            "state" : "translated",
+            "value" : "淮南暢通卡"
           }
         }
       }
@@ -12794,7 +12794,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "淮海通"
           }
         }
@@ -12822,7 +12822,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "深圳通"
           }
         }
@@ -12844,8 +12844,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "清远市民卡"
+            "state" : "translated",
+            "value" : "清遠市民卡"
           }
         }
       }
@@ -12872,8 +12872,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "温州城市公交IC卡"
+            "state" : "translated",
+            "value" : "溫州城市公交IC卡"
           }
         }
       }
@@ -12894,7 +12894,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "渭南通"
           }
         }
@@ -12916,7 +12916,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "湖州交通一卡通"
           }
         }
@@ -12932,7 +12932,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "湘潭交通卡"
           }
         }
@@ -12960,8 +12960,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "滨州公交一卡通"
+            "state" : "translated",
+            "value" : "濱州公交一卡通"
           }
         }
       }
@@ -12982,7 +12982,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "漯河公交卡"
           }
         }
@@ -13004,8 +13004,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "潍坊通"
+            "state" : "translated",
+            "value" : "濰坊通"
           }
         }
       }
@@ -13026,8 +13026,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "潜江一卡通"
+            "state" : "translated",
+            "value" : "潛江一卡通"
           }
         }
       }
@@ -13054,7 +13054,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "潮州通"
           }
         }
@@ -13070,7 +13070,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "澄通卡"
           }
         }
@@ -13098,8 +13098,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "澳门通"
+            "state" : "translated",
+            "value" : "澳門通"
           }
         }
       }
@@ -13114,8 +13114,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "濮阳交通一卡通"
+            "state" : "translated",
+            "value" : "濮陽交通一卡通"
           }
         }
       }
@@ -13130,7 +13130,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "焦作公交一卡通"
           }
         }
@@ -13152,8 +13152,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "燕赵通"
+            "state" : "translated",
+            "value" : "燕趙通"
           }
         }
       }
@@ -13174,8 +13174,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "环县通"
+            "state" : "translated",
+            "value" : "環縣通"
           }
         }
       }
@@ -13196,7 +13196,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "珠海通"
           }
         }
@@ -13218,8 +13218,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "琴岛通"
+            "state" : "translated",
+            "value" : "琴島通"
           }
         }
       }
@@ -13234,7 +13234,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "甜城通"
           }
         }
@@ -13256,7 +13256,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "甬城通交通部卡"
           }
         }
@@ -13284,7 +13284,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "白山交通一卡通"
           }
         }
@@ -13312,7 +13312,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "百色通"
           }
         }
@@ -13334,8 +13334,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "盘锦公交卡"
+            "state" : "translated",
+            "value" : "盤錦公交卡"
           }
         }
       }
@@ -13356,7 +13356,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "盛京通交通部版"
           }
         }
@@ -13372,7 +13372,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "眉山交通一卡通"
           }
         }
@@ -13400,8 +13400,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "石家庄公交卡"
+            "state" : "translated",
+            "value" : "石家莊公交卡"
           }
         }
       }
@@ -13416,7 +13416,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "福城通"
           }
         }
@@ -13444,8 +13444,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "福宁卡"
+            "state" : "translated",
+            "value" : "福寧卡"
           }
         }
       }
@@ -13460,8 +13460,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "秦皇岛公交卡"
+            "state" : "translated",
+            "value" : "秦皇島公交卡"
           }
         }
       }
@@ -13488,8 +13488,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "红山一卡通"
+            "state" : "translated",
+            "value" : "紅山一卡通"
           }
         }
       }
@@ -13504,8 +13504,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "绍兴一卡通"
+            "state" : "translated",
+            "value" : "紹興一卡通"
           }
         }
       }
@@ -13526,8 +13526,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "绵州通"
+            "state" : "translated",
+            "value" : "綿州通"
           }
         }
       }
@@ -13542,8 +13542,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "绿城通"
+            "state" : "translated",
+            "value" : "綠城通"
           }
         }
       }
@@ -13570,7 +13570,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "羊城通"
           }
         }
@@ -13592,8 +13592,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "肇庆通"
+            "state" : "translated",
+            "value" : "肇慶通"
           }
         }
       }
@@ -13614,8 +13614,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "自贡通"
+            "state" : "translated",
+            "value" : "自貢通"
           }
         }
       }
@@ -13636,8 +13636,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "芜湖城市卡"
+            "state" : "translated",
+            "value" : "蕪湖城市卡"
           }
         }
       }
@@ -13652,7 +13652,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "茂城通"
           }
         }
@@ -13668,7 +13668,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "茶城通"
           }
         }
@@ -13684,7 +13684,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "莆田城市一卡通"
           }
         }
@@ -13700,8 +13700,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "菏泽交通一卡通"
+            "state" : "translated",
+            "value" : "菏澤交通一卡通"
           }
         }
       }
@@ -13716,8 +13716,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "萍乡交通一卡通"
+            "state" : "translated",
+            "value" : "萍鄉交通一卡通"
           }
         }
       }
@@ -13738,8 +13738,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "营口通"
+            "state" : "translated",
+            "value" : "營口通"
           }
         }
       }
@@ -13760,8 +13760,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "葫芦岛公交IC卡"
+            "state" : "translated",
+            "value" : "葫蘆島公交IC卡"
           }
         }
       }
@@ -13782,7 +13782,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "蚌埠公交一卡通"
           }
         }
@@ -13798,8 +13798,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "蛟河客运公交一卡通"
+            "state" : "translated",
+            "value" : "蛟河客運公交一卡通"
           }
         }
       }
@@ -13826,8 +13826,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "衡阳交通卡"
+            "state" : "translated",
+            "value" : "衡陽交通卡"
           }
         }
       }
@@ -13842,8 +13842,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "襄阳交通一卡通"
+            "state" : "translated",
+            "value" : "襄陽交通一卡通"
           }
         }
       }
@@ -13864,8 +13864,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "许昌万里一卡通"
+            "state" : "translated",
+            "value" : "許昌萬里一卡通"
           }
         }
       }
@@ -13886,8 +13886,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "许昌公交卡"
+            "state" : "translated",
+            "value" : "許昌公交卡"
           }
         }
       }
@@ -13902,8 +13902,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贵州黔南全国交通一卡通"
+            "state" : "translated",
+            "value" : "貴州黔南全國交通一卡通"
           }
         }
       }
@@ -13918,8 +13918,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贵港市民卡"
+            "state" : "translated",
+            "value" : "貴港市民卡"
           }
         }
       }
@@ -13946,8 +13946,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贵阳公交电子车票"
+            "state" : "translated",
+            "value" : "貴陽公交電子車票"
           }
         }
       }
@@ -13974,8 +13974,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贵阳轨道交通储值票"
+            "state" : "translated",
+            "value" : "貴陽軌道交通儲值票"
           }
         }
       }
@@ -14002,8 +14002,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贺州通"
+            "state" : "translated",
+            "value" : "賀州通"
           }
         }
       }
@@ -14030,8 +14030,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "赣州通"
+            "state" : "translated",
+            "value" : "贛州通"
           }
         }
       }
@@ -14052,8 +14052,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "车城通交通部版"
+            "state" : "translated",
+            "value" : "車城通交通部版"
           }
         }
       }
@@ -14068,8 +14068,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "轩辕通-鹤壁"
+            "state" : "translated",
+            "value" : "軒轅通-鶴壁"
           }
         }
       }
@@ -14090,8 +14090,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "辽阳公交卡"
+            "state" : "translated",
+            "value" : "遼陽公交卡"
           }
         }
       }
@@ -14118,8 +14118,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "达州通"
+            "state" : "translated",
+            "value" : "達州通"
           }
         }
       }
@@ -14134,8 +14134,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "运城交通一卡通"
+            "state" : "translated",
+            "value" : "運城交通一卡通"
           }
         }
       }
@@ -14150,8 +14150,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "连云港市民卡"
+            "state" : "translated",
+            "value" : "連雲港市民卡"
           }
         }
       }
@@ -14172,7 +14172,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "通化交通一卡通"
           }
         }
@@ -14194,7 +14194,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "通化交通一卡通(九台)"
           }
         }
@@ -14216,8 +14216,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "通化交通一卡通(农安)"
+            "state" : "translated",
+            "value" : "通化交通一卡通(農安)"
           }
         }
       }
@@ -14238,8 +14238,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "通化交通一卡通(双阳)"
+            "state" : "translated",
+            "value" : "通化交通一卡通(雙陽)"
           }
         }
       }
@@ -14260,7 +14260,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "通化交通一卡通(柳河)"
           }
         }
@@ -14282,8 +14282,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "通化交通一卡通(长岭)"
+            "state" : "translated",
+            "value" : "通化交通一卡通(長嶺)"
           }
         }
       }
@@ -14304,7 +14304,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "通化交通一卡通(集安)"
           }
         }
@@ -14326,7 +14326,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "遂州通"
           }
         }
@@ -14342,8 +14342,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "遵义交通一卡通"
+            "state" : "translated",
+            "value" : "遵義交通一卡通"
           }
         }
       }
@@ -14364,7 +14364,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "邕桂通"
           }
         }
@@ -14386,7 +14386,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "邢台卡"
           }
         }
@@ -14414,8 +14414,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "邯郸市民卡"
+            "state" : "translated",
+            "value" : "邯鄲市民卡"
           }
         }
       }
@@ -14442,7 +14442,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "鄂州交通IC卡"
           }
         }
@@ -14458,7 +14458,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "酒城一卡通"
           }
         }
@@ -14474,7 +14474,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "酒泉通"
           }
         }
@@ -14490,8 +14490,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "金华交通一卡通"
+            "state" : "translated",
+            "value" : "金華交通一卡通"
           }
         }
       }
@@ -14512,8 +14512,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "金垦卡"
+            "state" : "translated",
+            "value" : "金墾卡"
           }
         }
       }
@@ -14534,7 +14534,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "金昌通"
           }
         }
@@ -14556,7 +14556,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "金陵通"
           }
         }
@@ -14572,8 +14572,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "钦州市民卡"
+            "state" : "translated",
+            "value" : "欽州市民卡"
           }
         }
       }
@@ -14588,8 +14588,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "铁岭全国交通一卡通"
+            "state" : "translated",
+            "value" : "鐵嶺全國交通一卡通"
           }
         }
       }
@@ -14604,8 +14604,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "铜陵一卡通"
+            "state" : "translated",
+            "value" : "銅陵一卡通"
           }
         }
       }
@@ -14620,8 +14620,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "银城一卡通"
+            "state" : "translated",
+            "value" : "銀城一卡通"
           }
         }
       }
@@ -14636,8 +14636,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "银川交通一卡通"
+            "state" : "translated",
+            "value" : "銀川交通一卡通"
           }
         }
       }
@@ -14658,8 +14658,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "锦州公交卡"
+            "state" : "translated",
+            "value" : "錦州公交卡"
           }
         }
       }
@@ -14674,8 +14674,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "镇江一卡通"
+            "state" : "translated",
+            "value" : "鎮江一卡通"
           }
         }
       }
@@ -14702,8 +14702,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长安通"
+            "state" : "translated",
+            "value" : "長安通"
           }
         }
       }
@@ -14730,8 +14730,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长春公交一卡通"
+            "state" : "translated",
+            "value" : "長春公交一卡通"
           }
         }
       }
@@ -14746,8 +14746,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长春城联一卡通"
+            "state" : "translated",
+            "value" : "長春城聯一卡通"
           }
         }
       }
@@ -14774,8 +14774,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长春轨道交通一卡通"
+            "state" : "translated",
+            "value" : "長春軌道交通一卡通"
           }
         }
       }
@@ -14790,8 +14790,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长沙潇湘卡"
+            "state" : "translated",
+            "value" : "長沙瀟湘卡"
           }
         }
       }
@@ -14806,8 +14806,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "长治城市一卡通普通卡"
+            "state" : "translated",
+            "value" : "長治城市一卡通普通卡"
           }
         }
       }
@@ -14822,8 +14822,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "阜新虎跃城市公交卡"
+            "state" : "translated",
+            "value" : "阜新虎躍城市公交卡"
           }
         }
       }
@@ -14850,7 +14850,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "防城港通"
           }
         }
@@ -14872,8 +14872,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "阳泉交通一卡通"
+            "state" : "translated",
+            "value" : "陽泉交通一卡通"
           }
         }
       }
@@ -14894,8 +14894,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "随州一卡通"
+            "state" : "translated",
+            "value" : "隨州一卡通"
           }
         }
       }
@@ -14910,7 +14910,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "雄安交通一卡通"
           }
         }
@@ -14932,7 +14932,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "雅安交通一卡通"
           }
         }
@@ -14960,8 +14960,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "鞍山交运通卡"
+            "state" : "translated",
+            "value" : "鞍山交運通卡"
           }
         }
       }
@@ -14982,8 +14982,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "颍州通"
+            "state" : "translated",
+            "value" : "潁州通"
           }
         }
       }
@@ -14998,8 +14998,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "马鞍山市民卡"
+            "state" : "translated",
+            "value" : "馬鞍山市民卡"
           }
         }
       }
@@ -15020,8 +15020,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "鸭绿江通"
+            "state" : "translated",
+            "value" : "鴨綠江通"
           }
         }
       }
@@ -15036,8 +15036,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "鹤城通"
+            "state" : "translated",
+            "value" : "鶴城通"
           }
         }
       }
@@ -15058,8 +15058,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "鹰城通"
+            "state" : "translated",
+            "value" : "鷹城通"
           }
         }
       }
@@ -15074,7 +15074,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "鹿城通"
           }
         }
@@ -15102,8 +15102,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "黄冈全国公交一卡通"
+            "state" : "translated",
+            "value" : "黃岡全國公交一卡通"
           }
         }
       }
@@ -15124,8 +15124,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "黄山交通一卡通"
+            "state" : "translated",
+            "value" : "黃山交通一卡通"
           }
         }
       }
@@ -15152,8 +15152,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "黄海通"
+            "state" : "translated",
+            "value" : "黃海通"
           }
         }
       }
@@ -15174,8 +15174,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "黄石公交一卡通"
+            "state" : "translated",
+            "value" : "黃石公交一卡通"
           }
         }
       }
@@ -15202,8 +15202,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "黑龙江一卡通"
+            "state" : "translated",
+            "value" : "黑龍江一卡通"
           }
         }
       }
@@ -15218,8 +15218,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "齐联卡"
+            "state" : "translated",
+            "value" : "齊聯卡"
           }
         }
       }
@@ -15234,8 +15234,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "龙行卡"
+            "state" : "translated",
+            "value" : "龍行卡"
           }
         }
       }
