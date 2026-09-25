@@ -9,54 +9,70 @@ struct ListBalanceWidgetView: View {
     @Environment(\.widgetFamily) var widgetFamily
     @State var models:[BalanceWidgetModel] = []
     @State var maxItems = 4
+    @State var itemCount = 1
     
     var body: some View {
-        if entry.models != [] {
-            VStack(spacing:4) {
-                HStack {
-                    Text(LocalizedStringKey("widget.balance.list.title"))
-                        .fontWeight(.semibold)
-                    Spacer()
-                }
-                Divider()
-                    .overlay(Color.gray)
-                ForEach(models.indexed(), id:\.element) { index, card in
-                    
-                    VStack(spacing:4) {
-                        HStack {
-                            Text(card.DisplayName ?? "unknown")
-                                .fontWeight(.semibold)
-                            Spacer()
-                            Text(String(card.balance ?? 0))
-                        }
-                        .padding(.horizontal,6)
-                        Divider()
-                            .overlay(Color.gray)
-                    }
-                }
+        VStack(spacing:4) {
+            HStack {
+                Text(LocalizedStringKey("widget.balance.list.title"))
+                    .fontWeight(.semibold)
                 Spacer()
             }
-            .onAppear() {
-                setupItemCount()
+            Divider()
+                .overlay(Color.gray)
+            if models != [] && itemCount != 0 {
+                ForEach(models.indexed(), id:\.element) { index, card in
+                    ZStack {
+                        Spacer()
+                            .frame(width:1,height:1)
+                            .onAppear() {
+                                if card == notSelectionModel {
+                                    itemCount -= 1
+                                }
+                            }
+                        if card != notSelectionModel {
+                            VStack(spacing:4) {
+                                HStack {
+                                    Text(card.DisplayName ?? "unknown")
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    Text(String(card.balance ?? 0))
+                                }
+                                .padding(.horizontal,6)
+                                Divider()
+                                    .overlay(Color.gray)
+                            }
+                        }
+                    }
+                }
+                if models.count(where: { $0 != notSelectionModel }) != maxItems {
+                    Spacer()
+                }
+            } else {
+                Spacer()
+                Text(LocalizedStringKey("widget.balance.list.emptySelection"))
+                Spacer()
             }
-            .onChange(of:widgetFamily) {
-                setupItemCount()
-            }
-        } else {
-            Text(LocalizedStringKey("widget.balance.list.emptySelection"))
+        }
+        .onAppear() {
+            setupItemCount()
+        }
+        .onChange(of:widgetFamily) {
+            setupItemCount()
         }
     }
     func setupItemCount() {
         switch widgetFamily {
-            case .systemMedium:
-                maxItems = 4
-            case .systemLarge:
-                maxItems = 8
-            case .systemExtraLarge:
-                maxItems = 16
-            default:
-                maxItems = 4
+        case .systemMedium:
+            maxItems = 4
+        case .systemLarge:
+            maxItems = 8
+        case .systemExtraLarge:
+            maxItems = 16
+        default:
+            maxItems = 4
         }
         models = Array(entry.models.prefix(maxItems))
+        itemCount = models.count
     }
 }

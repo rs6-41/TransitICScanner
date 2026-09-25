@@ -28,5 +28,5 @@ extension SmallWidgetConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     SmallBalanceWidget()
 } timeline: {
-    SmallBalanceWidgetEntry(date: .now, configuration: .placeholder, models: placeholderModel)
+    SmallBalanceWidgetEntry(date: .now, configuration: .placeholder, model: placeholderModel)
 }

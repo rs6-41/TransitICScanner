@@ -11,7 +11,7 @@ struct ListBalanceWidgetEntry: TimelineEntry {
 struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> ListBalanceWidgetEntry {
-        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:placeholderModel)
+        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel])
     }
 
     func snapshot(for configuration: ListWidgetConfigurationAppIntent, in context: Context) async -> ListBalanceWidgetEntry {

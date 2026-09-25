@@ -13,7 +13,7 @@ struct ListBalanceWidget: Widget {
         }
         .configurationDisplayName("widget.balance.list.title")
         .description("widget.balance.list.description")
-        .supportedFamilies([.systemMedium, .systemLarge])
+        .supportedFamilies([.systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
 
@@ -28,5 +28,5 @@ extension ListWidgetConfigurationAppIntent {
 #Preview(as: .systemMedium) {
     ListBalanceWidget()
 } timeline: {
-    ListBalanceWidgetEntry(date: .now, configuration: .placeholder, models: placeholderModel)
+    ListBalanceWidgetEntry(date: .now, configuration: .placeholder, models: [placeholderModel])
 }
