@@ -9516,7 +9516,14 @@
       }
     },
     "widget.balance.placeholder.displayName" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残高"
+          }
+        }
+      }
     },
     "三晋通-忻州通" : {
       "localizations" : {

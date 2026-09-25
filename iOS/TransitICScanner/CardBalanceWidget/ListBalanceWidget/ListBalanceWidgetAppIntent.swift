@@ -11,6 +11,10 @@ struct ListWidgetConfigurationAppIntent: WidgetConfigurationIntent {
         "widget.balance.setting.list.description"
     }
 
-    @Parameter(title: "widget.balance.setting.list.card")
+    @Parameter(title: "widget.balance.setting.list.card", size: [
+        .systemMedium: 4,
+        .systemLarge: 8,
+        .systemExtraLarge: 16
+    ])
     var card: [CardBalanceModel]?
 }
