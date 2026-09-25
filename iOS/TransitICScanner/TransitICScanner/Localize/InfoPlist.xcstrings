@@ -21,6 +21,12 @@
             "state" : "translated",
             "value" : "全球IC余额查询"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC餘額查詢"
+          }
         }
       }
     },
@@ -43,6 +49,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全球IC余额查询"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC餘額查詢"
           }
         }
       }
@@ -67,6 +79,12 @@
             "state" : "translated",
             "value" : "用于读取卡片信息"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於讀取卡片信息"
+          }
         }
       }
     },
@@ -89,6 +107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用于读取卡号"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於讀取卡號"
           }
         }
       }
@@ -113,6 +137,12 @@
             "state" : "translated",
             "value" : "根据您当前的位置推荐卡片"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根據您當前的位置推薦卡片"
+          }
         }
       }
     },
@@ -129,6 +159,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "广告的展示将使用此信息。\n允许后，我们可以为您展示更相关的广告。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告的展示將使用此信息。\n允許後，我們可以為您展示更相關的廣告。"
           }
         }
       }
