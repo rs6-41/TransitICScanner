@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "ja",
+  "sourceLanguage" : "en",
   "strings" : {
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
@@ -118,18 +118,11 @@
     },
     "NSUserTrackingUsageDescription" : {
       "comment" : "Privacy - Tracking Usage Description",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。"
           }
         },
         "zh-Hans" : {

@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "ja",
+  "sourceLanguage" : "en",
   "strings" : {
     "%@ %@" : {
       "extractionState" : "stale",
@@ -2167,9 +2167,6 @@
           }
         }
       }
-    },
-    "EasyCard" : {
-
     },
     "error" : {
       "localizations" : {
@@ -7581,6 +7578,12 @@
             "value" : "Dongguan Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東莞交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7595,6 +7598,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dongying City Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東莞市交通カード"
           }
         },
         "zh-Hans" : {
@@ -7645,6 +7654,12 @@
             "value" : "Leshan Transit IC Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "楽山交通ICカード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7661,6 +7676,12 @@
             "value" : "Jiujiang Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "九江交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7675,6 +7696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jiulong Card "
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "九龍カード"
           }
         },
         "zh-Hans" : {
@@ -7721,6 +7748,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Baoding Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保定交通カード"
           }
         },
         "zh-Hans" : {
@@ -7771,6 +7804,12 @@
             "value" : "Liuan Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "六安交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7781,6 +7820,12 @@
     },
     "六盘通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liupan Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7845,6 +7890,12 @@
     },
     "凉州通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liangzhou Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7887,6 +7938,12 @@
             "value" : "Lizhou Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利州交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7923,6 +7980,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beihai Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海交通カード"
           }
         },
         "zh-Hans" : {
@@ -7983,6 +8046,12 @@
     },
     "双辽市交通一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuangliao City Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7999,6 +8068,12 @@
             "value" : "Taizhou Pass"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台州交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8013,6 +8088,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hefei Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "合肥交通カード"
           }
         },
         "zh-Hans" : {
@@ -8061,6 +8142,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tongxin Citizen Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同心市民カード"
           }
         },
         "zh-Hans" : {
@@ -8125,6 +8212,12 @@
     },
     "咸宁一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xianning Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8225,6 +8318,12 @@
     },
     "四平城市交通一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siping City Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8241,6 +8340,12 @@
             "value" : "Xiadou Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夏都交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8255,6 +8360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datong Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大同交通カード"
           }
         },
         "zh-Hans" : {
@@ -8321,6 +8432,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tianfu Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天府交通カード"
           }
         },
         "zh-Hans" : {
@@ -8429,6 +8546,12 @@
             "value" : "Anqing Zhongbei Bus Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安庆中北バス交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8467,6 +8590,12 @@
             "value" : "Anyang Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安阳交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8499,6 +8628,12 @@
     },
     "宜宾一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yibin Transit Card "
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8539,6 +8674,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Baoji Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宝鶏交通カード"
           }
         },
         "zh-Hans" : {
@@ -8591,6 +8732,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shandan "
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "山丹"
           }
         },
         "zh-Hans" : {
@@ -8667,6 +8814,12 @@
             "value" : "Bazhong Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "巴中交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8707,6 +8860,12 @@
     },
     "平潭海峡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pingtan Island Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8721,6 +8880,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guangfo Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広仏交通カード"
           }
         },
         "zh-Hans" : {
@@ -8839,6 +9004,12 @@
             "value" : "Dezhou Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "德州交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8863,6 +9034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Huaihua Transit IC Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "懐化交通ICカード"
           }
         },
         "zh-Hans" : {
@@ -8905,6 +9082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fuzhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撫州交通カード"
           }
         },
         "zh-Hans" : {
@@ -9069,6 +9252,12 @@
     },
     "月城一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yuecheng Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9079,6 +9268,12 @@
     },
     "朔州交通一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuozhou Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9111,6 +9306,12 @@
     },
     "来宾通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laibin Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9179,6 +9380,12 @@
             "value" : "Liuzhou Citizen Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "柳州市民カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9211,6 +9418,12 @@
             "value" : "Guilin Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桂林交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9225,6 +9438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taoyuan Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桃源カード"
           }
         },
         "zh-Hans" : {
@@ -9301,6 +9520,12 @@
             "value" : "Wuyi Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "武夷交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9357,6 +9582,12 @@
     },
     "江淮通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jianghua Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9415,6 +9646,12 @@
             "value" : "Hebei Transit Card (Langfang)"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "河北交通カード(廊坊市)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9431,6 +9668,12 @@
             "value" : "Hebei Transit Card (Chengde)"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "河北交通カード (承徳市)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9445,6 +9688,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hebei Transit Card (Cangzhou)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "河北交通カード (滄州市)"
           }
         },
         "zh-Hans" : {
@@ -9483,6 +9732,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hechi Transit Card "
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "河池交通カード"
           }
         },
         "zh-Hans" : {
@@ -9595,6 +9850,12 @@
             "value" : "Huaibei Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "淮北交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9619,6 +9880,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Huaihai Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "淮海交通カード"
           }
         },
         "zh-Hans" : {
@@ -9707,6 +9974,12 @@
     },
     "湖州交通一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huzhou Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9731,6 +10004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Binzhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "浜州交通カード"
           }
         },
         "zh-Hans" : {
@@ -9775,6 +10054,12 @@
     },
     "潜江一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qianjiang Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9789,6 +10074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaozhou Trasit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "潮州交通カード"
           }
         },
         "zh-Hans" : {
@@ -9949,6 +10240,12 @@
             "value" : "Baishan Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "白山交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9963,6 +10260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Baise Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "百色交通カード"
           }
         },
         "zh-Hans" : {
@@ -10055,6 +10358,12 @@
             "value" : "Funing Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "福寧交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10079,6 +10388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hongshan Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紅山交通カード"
           }
         },
         "zh-Hans" : {
@@ -10149,6 +10464,12 @@
     },
     "肇庆通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zhaoqing Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10159,6 +10480,12 @@
     },
     "自贡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zigong Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10293,6 +10620,18 @@
     },
     "衡阳交通卡" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hengyang Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "衡陽交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10368,12 +10707,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guiyang Degital Bus Ticket"
+            "value" : "Guiyang Bus Degital Ticket"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "貴陽バス電子チケット"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "贵阳公交电子车票"
           }
         }
@@ -10384,12 +10729,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guiyang Stored Value Train Ticket"
+            "value" : "Guiyang Metro Stored Value Ticket"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貴陽メトロ プリペイド式乗車券"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "贵阳轨道交通储值票"
           }
         }
@@ -10401,6 +10752,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hezhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "賀州交通カード"
           }
         },
         "zh-Hans" : {
@@ -10417,6 +10774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ganzhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贛州交通カード"
           }
         },
         "zh-Hans" : {
@@ -10475,6 +10838,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dazhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "達州交通カード"
           }
         },
         "zh-Hans" : {
@@ -10619,6 +10988,12 @@
     },
     "遂州通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suizhou Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10677,6 +11052,12 @@
             "value" : "Handan Citizen Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "邯鄲市民カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10691,6 +11072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ezhou Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鄂州交通ICカード"
           }
         },
         "zh-Hans" : {
@@ -10831,6 +11218,12 @@
     },
     "锦州公交卡" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jinzhou Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10879,6 +11272,12 @@
             "value" : "Changchun Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長春交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10902,12 +11301,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Changchun Track Transit Card"
+            "value" : "Changchun Rail Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長春軌道交通カード"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "长春轨道交通一卡通"
           }
         }
@@ -10945,6 +11350,18 @@
     },
     "防城港通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fangchenggang Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "防城港交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10997,6 +11414,12 @@
     },
     "雅安交通一卡通" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaān Transit Card"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11011,6 +11434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anshan Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鞍山交通カード"
           }
         },
         "zh-Hans" : {
@@ -11107,6 +11536,12 @@
             "value" : "Huanggang National Transit Card"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黄岡全国交通カード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11137,6 +11572,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Huanghaitong Citizen Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黄海交通カード"
           }
         },
         "zh-Hans" : {
