@@ -15,37 +15,28 @@ struct ListBalanceWidgetView: View {
         VStack(spacing:4) {
             HStack {
                 Text(LocalizedStringKey("widget.balance.list.title"))
-                    .fontWeight(.semibold)
+                    .fontWeight(.black)
                 Spacer()
             }
             Divider()
                 .overlay(Color.gray)
             if models != [] && itemCount != 0 {
                 ForEach(models.indexed(), id:\.element) { index, card in
-                    ZStack {
-                        Spacer()
-                            .frame(width:1,height:1)
-                            .onAppear() {
-                                if card == notSelectionModel {
-                                    itemCount -= 1
-                                }
+                    if card != notSelectionModel {
+                        VStack(spacing:4) {
+                            HStack {
+                                Text(card.DisplayName ?? "unknown")
+                                    .fontWeight(.semibold)
+                                Spacer()
+                                Text(String(card.balance ?? 0))
                             }
-                        if card != notSelectionModel {
-                            VStack(spacing:4) {
-                                HStack {
-                                    Text(card.DisplayName ?? "unknown")
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Text(String(card.balance ?? 0))
-                                }
-                                .padding(.horizontal,6)
-                                Divider()
-                                    .overlay(Color.gray)
-                            }
+                            .padding(.horizontal,6)
+                            Divider()
+                                .overlay(Color.gray)
                         }
                     }
                 }
-                if models.count(where: { $0 != notSelectionModel }) != maxItems {
+                if itemCount != maxItems {
                     Spacer()
                 }
             } else {
@@ -66,13 +57,20 @@ struct ListBalanceWidgetView: View {
         case .systemMedium:
             maxItems = 4
         case .systemLarge:
-            maxItems = 8
+            maxItems = 10
         case .systemExtraLarge:
             maxItems = 16
         default:
             maxItems = 4
         }
         models = Array(entry.models.prefix(maxItems))
+        
+        
         itemCount = models.count
+        for i in models {
+            if i == notSelectionModel {
+                itemCount -= 1
+            }
+        }
     }
 }
