@@ -5,6 +5,14 @@ import SwiftUI
 
 struct ListBalanceWidget: Widget {
     let kind: String = "com.rs6apps.TransitICScanner.BalanceWidget.list"
+    
+    var widgetFamilies:[WidgetFamily] {
+        if #available(iOS 27.0, *) {
+            return [.systemMedium, .systemLarge, .systemExtraLargePortrait]
+        } else {
+            return [.systemMedium, .systemLarge]
+        }
+    }
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ListWidgetConfigurationAppIntent.self, provider: ListBalanceWidgetProvider()) { entry in
@@ -13,7 +21,7 @@ struct ListBalanceWidget: Widget {
         }
         .configurationDisplayName("widget.balance.list.title")
         .description("widget.balance.list.description")
-        .supportedFamilies([.systemMedium, .systemLarge, .systemExtraLarge])
+        .supportedFamilies(widgetFamilies)
     }
 }
 
