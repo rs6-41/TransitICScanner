@@ -8,38 +8,8 @@ struct Replacement {
     let value: String
 }
 
-enum ScriptError: Error {
-    case invalidArguments
-    case fileReadFailed
-    case invalidJSON
-    case invalidStructure
-    case writeFailed
-}
-
-func jsonEncodedString(_ value: String) -> String? {
-    guard
-        let data = try? JSONSerialization.data(
-            withJSONObject: value,
-            options: [.fragmentsAllowed]
-        ),
-        let result = String(data: data, encoding: .utf8)
-    else {
-        return nil
-    }
-
-    return result
-}
-
-func decodeJSONString(_ value: String) -> String? {
-    guard let data = value.data(using: .utf8) else {
-        return nil
-    }
-
-    return try? JSONDecoder().decode(String.self, from: data)
-}
-
-func convertSimplifiedToTraditional(_ value: String) -> String {
-    let result = NSMutableString(string: value)
+func convertSimplifiedToTraditional(_ text: String) -> String {
+    let result = NSMutableString(string: text)
 
     CFStringTransform(
         result,
@@ -51,6 +21,27 @@ func convertSimplifiedToTraditional(_ value: String) -> String {
     return result as String
 }
 
+func encodeJSONString(_ value: String) -> String? {
+    guard
+        let data = try? JSONSerialization.data(
+            withJSONObject: value,
+            options: [.fragmentsAllowed]
+        )
+    else {
+        return nil
+    }
+
+    return String(data: data, encoding: .utf8)
+}
+
+func decodeJSONString(_ value: String) -> String? {
+    guard let data = value.data(using: .utf8) else {
+        return nil
+    }
+
+    return try? JSONDecoder().decode(String.self, from: data)
+}
+
 func skipWhitespace(
     _ source: String,
     _ index: String.Index,
@@ -60,7 +51,7 @@ func skipWhitespace(
 
     while index < end {
         switch source[index] {
-        case " ", "\t", "\n", "\r":
+        case " ", "\t", "\r", "\n":
             index = source.index(after: index)
         default:
             return index
@@ -70,12 +61,25 @@ func skipWhitespace(
     return index
 }
 
-func findMatchingObject(
+func findMatching(
     _ source: String,
     from start: String.Index,
-    to end: String.Index
+    end: String.Index
 ) -> String.Index? {
-    guard source[start] == "{" else {
+    guard start < end else {
+        return nil
+    }
+
+    let opening = source[start]
+
+    let closing: Character
+
+    switch opening {
+    case "{":
+        closing = "}"
+    case "[":
+        closing = "]"
+    default:
         return nil
     }
 
@@ -102,9 +106,9 @@ func findMatchingObject(
 
         if character == "\"" {
             inString = true
-        } else if character == "{" {
+        } else if character == opening {
             depth += 1
-        } else if character == "}" {
+        } else if character == closing {
             depth -= 1
 
             if depth == 0 {
@@ -120,8 +124,8 @@ func findMatchingObject(
 
 func readJSONString(
     _ source: String,
-    from start: String.Index,
-    to end: String.Index
+    start: String.Index,
+    end: String.Index
 ) -> (String, Range<String.Index>)? {
     guard start < end, source[start] == "\"" else {
         return nil
@@ -141,7 +145,11 @@ func readJSONString(
             let valueEnd = source.index(after: index)
             let range = start..<valueEnd
 
-            guard let value = decodeJSONString(String(source[range])) else {
+            guard
+                let value = decodeJSONString(
+                    String(source[range])
+                )
+            else {
                 return nil
             }
 
@@ -154,22 +162,23 @@ func readJSONString(
     return nil
 }
 
-func findObjectValue(
-    _ source: String,
-    key: String,
-    in objectRange: Range<String.Index>
+func findMember(
+    _ key: String,
+    in objectRange: Range<String.Index>,
+    source: String
 ) -> Range<String.Index>? {
-    var index = objectRange.lowerBound
+    var index = source.index(
+        after: objectRange.lowerBound
+    )
+
     let end = objectRange.upperBound
 
-    guard index < end, source[index] == "{" else {
-        return nil
-    }
-
-    index = source.index(after: index)
-
     while index < end {
-        index = skipWhitespace(source, index, end)
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         if index >= end || source[index] == "}" {
             return nil
@@ -178,68 +187,52 @@ func findObjectValue(
         guard
             let (currentKey, keyRange) = readJSONString(
                 source,
-                from: index,
-                to: end
+                start: index,
+                end: end
             )
         else {
             return nil
         }
 
         index = keyRange.upperBound
-        index = skipWhitespace(source, index, end)
+
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         guard index < end, source[index] == ":" else {
             return nil
         }
 
         index = source.index(after: index)
-        index = skipWhitespace(source, index, end)
+
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         guard index < end else {
             return nil
         }
 
-        if currentKey == key {
-            if source[index] == "\"" {
-                guard
-                    let (_, valueRange) = readJSONString(
-                        source,
-                        from: index,
-                        to: end
-                    )
-                else {
-                    return nil
-                }
+        let valueStart = index
 
-                return valueRange
-            }
-
-            if source[index] == "{" {
-                guard
-                    let valueEnd = findMatchingObject(
-                        source,
-                        from: index,
-                        to: end
-                    )
-                else {
-                    return nil
-                }
-
-                return index..<valueEnd
-            }
-
-            return nil
-        }
-
-        if source[index] == "{" {
+        if source[index] == "{" || source[index] == "[" {
             guard
-                let valueEnd = findMatchingObject(
+                let valueEnd = findMatching(
                     source,
                     from: index,
-                    to: end
+                    end: end
                 )
             else {
                 return nil
+            }
+
+            if currentKey == key {
+                return valueStart..<valueEnd
             }
 
             index = valueEnd
@@ -247,135 +240,39 @@ func findObjectValue(
             guard
                 let (_, valueRange) = readJSONString(
                     source,
-                    from: index,
-                    to: end
+                    start: index,
+                    end: end
                 )
             else {
                 return nil
+            }
+
+            if currentKey == key {
+                return valueRange
             }
 
             index = valueRange.upperBound
         } else {
             while index < end {
-                if source[index] == "," {
-                    break
-                }
+                let character = source[index]
 
-                if source[index] == "}" {
-                    break
-                }
-
-                index = source.index(after: index)
-            }
-        }
-
-        index = skipWhitespace(source, index, end)
-
-        if index < end, source[index] == "," {
-            index = source.index(after: index)
-        }
-    }
-
-    return nil
-}
-
-func findStringsObject(
-    _ source: String
-) -> Range<String.Index>? {
-    guard
-        let rootData = source.data(using: .utf8),
-        let root = try? JSONSerialization.jsonObject(
-            with: rootData,
-            options: []
-        ) as? [String: Any],
-        root["strings"] != nil
-    else {
-        return nil
-    }
-
-    var index = source.startIndex
-    let end = source.endIndex
-
-    while index < end {
-        index = skipWhitespace(source, index, end)
-
-        guard index < end else {
-            return nil
-        }
-
-        guard
-            let (key, keyRange) = readJSONString(
-                source,
-                from: index,
-                to: end
-            )
-        else {
-            return nil
-        }
-
-        index = keyRange.upperBound
-        index = skipWhitespace(source, index, end)
-
-        guard index < end, source[index] == ":" else {
-            return nil
-        }
-
-        index = source.index(after: index)
-        index = skipWhitespace(source, index, end)
-
-        if key == "strings" {
-            guard index < end, source[index] == "{" else {
-                return nil
-            }
-
-            guard
-                let objectEnd = findMatchingObject(
-                    source,
-                    from: index,
-                    to: end
-                )
-            else {
-                return nil
-            }
-
-            return index..<objectEnd
-        }
-
-        if index < end, source[index] == "{" {
-            guard
-                let objectEnd = findMatchingObject(
-                    source,
-                    from: index,
-                    to: end
-                )
-            else {
-                return nil
-            }
-
-            index = objectEnd
-        } else if index < end, source[index] == "\"" {
-            guard
-                let (_, valueRange) = readJSONString(
-                    source,
-                    from: index,
-                    to: end
-                )
-            else {
-                return nil
-            }
-
-            index = valueRange.upperBound
-        } else {
-            while index < end, source[index] != "," {
-                if source[index] == "}" {
+                if character == "," || character == "}" {
                     break
                 }
 
                 index = source.index(after: index)
             }
+
+            if currentKey == key {
+                return valueStart..<index
+            }
         }
 
-        index = skipWhitespace(source, index, end)
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         if index < end, source[index] == "," {
             index = source.index(after: index)
@@ -386,7 +283,7 @@ func findStringsObject(
 }
 
 func findTopLevelEntries(
-    _ source: String,
+    source: String,
     stringsRange: Range<String.Index>
 ) -> [(String, Range<String.Index>)] {
     var results: [(String, Range<String.Index>)] = []
@@ -398,7 +295,11 @@ func findTopLevelEntries(
     let end = stringsRange.upperBound
 
     while index < end {
-        index = skipWhitespace(source, index, end)
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         if index >= end || source[index] == "}" {
             break
@@ -407,32 +308,42 @@ func findTopLevelEntries(
         guard
             let (key, keyRange) = readJSONString(
                 source,
-                from: index,
-                to: end
+                start: index,
+                end: end
             )
         else {
             break
         }
 
         index = keyRange.upperBound
-        index = skipWhitespace(source, index, end)
+
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         guard index < end, source[index] == ":" else {
             break
         }
 
         index = source.index(after: index)
-        index = skipWhitespace(source, index, end)
+
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         guard index < end, source[index] == "{" else {
             break
         }
 
         guard
-            let objectEnd = findMatchingObject(
+            let objectEnd = findMatching(
                 source,
                 from: index,
-                to: end
+                end: end
             )
         else {
             break
@@ -446,7 +357,12 @@ func findTopLevelEntries(
         )
 
         index = objectEnd
-        index = skipWhitespace(source, index, end)
+
+        index = skipWhitespace(
+            source,
+            index,
+            end
+        )
 
         if index < end, source[index] == "," {
             index = source.index(after: index)
@@ -465,19 +381,100 @@ func process(
             with: data,
             options: []
         ) as? [String: Any],
-        root["strings"] is [String: Any]
+        let strings = root["strings"] as? [String: Any]
     else {
-        throw ScriptError.invalidJSON
+        throw NSError(
+            domain: "XCStrings",
+            code: 1,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "xcstringsのJSON構造が不正です。"
+            ]
+        )
     }
 
     guard
-        let stringsRange = findStringsObject(source)
+        let stringsKeyRange = source.range(
+            of: "\"strings\""
+        )
     else {
-        throw ScriptError.invalidStructure
+        throw NSError(
+            domain: "XCStrings",
+            code: 2,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "stringsを特定できませんでした。"
+            ]
+        )
     }
 
-    let entries = findTopLevelEntries(
+    var stringsValueStart = stringsKeyRange.upperBound
+
+    stringsValueStart = skipWhitespace(
         source,
+        stringsValueStart,
+        source.endIndex
+    )
+
+    guard
+        stringsValueStart < source.endIndex,
+        source[stringsValueStart] == ":"
+    else {
+        throw NSError(
+            domain: "XCStrings",
+            code: 3,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "stringsの値を特定できませんでした。"
+            ]
+        )
+    }
+
+    stringsValueStart = source.index(
+        after: stringsValueStart
+    )
+
+    stringsValueStart = skipWhitespace(
+        source,
+        stringsValueStart,
+        source.endIndex
+    )
+
+    guard
+        stringsValueStart < source.endIndex,
+        source[stringsValueStart] == "{"
+    else {
+        throw NSError(
+            domain: "XCStrings",
+            code: 4,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "stringsがオブジェクトではありません。"
+            ]
+        )
+    }
+
+    guard
+        let stringsValueEnd = findMatching(
+            source,
+            from: stringsValueStart,
+            end: source.endIndex
+        )
+    else {
+        throw NSError(
+            domain: "XCStrings",
+            code: 5,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "stringsの終端を特定できませんでした。"
+            ]
+        )
+    }
+
+    let stringsRange = stringsValueStart..<stringsValueEnd
+
+    let entries = findTopLevelEntries(
+        source: source,
         stringsRange: stringsRange
     )
 
@@ -485,86 +482,18 @@ func process(
     var checked = 0
     var converted = 0
 
-    for (_, entryRange) in entries {
+    for (key, entryRange) in entries {
         checked += 1
 
         guard
-            let localizationsRange = findObjectValue(
-                source,
-                key: "localizations",
-                in: entryRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHansRange = findObjectValue(
-                source,
-                key: "zh-Hans",
-                in: localizationsRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHantRange = findObjectValue(
-                source,
-                key: "zh-Hant",
-                in: localizationsRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHansUnitRange = findObjectValue(
-                source,
-                key: "stringUnit",
-                in: zhHansRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHantUnitRange = findObjectValue(
-                source,
-                key: "stringUnit",
-                in: zhHantRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHansValueRange = findObjectValue(
-                source,
-                key: "value",
-                in: zhHansUnitRange
-            ),
-            let zhHantStateRange = findObjectValue(
-                source,
-                key: "state",
-                in: zhHantUnitRange
-            ),
-            let zhHantValueRange = findObjectValue(
-                source,
-                key: "value",
-                in: zhHantUnitRange
-            )
-        else {
-            continue
-        }
-
-        guard
-            let zhHansValue = decodeJSONString(
-                String(source[zhHansValueRange])
-            ),
-            let zhHantState = decodeJSONString(
-                String(source[zhHantStateRange])
-            )
+            let entry = strings[key] as? [String: Any],
+            let localizations = entry["localizations"] as? [String: Any],
+            let zhHans = localizations["zh-Hans"] as? [String: Any],
+            let zhHant = localizations["zh-Hant"] as? [String: Any],
+            let zhHansUnit = zhHans["stringUnit"] as? [String: Any],
+            let zhHantUnit = zhHant["stringUnit"] as? [String: Any],
+            let zhHansValue = zhHansUnit["value"] as? String,
+            let zhHantState = zhHantUnit["state"] as? String
         else {
             continue
         }
@@ -573,27 +502,61 @@ func process(
             continue
         }
 
+        guard
+            let localizationsRange = findMember(
+                "localizations",
+                in: entryRange,
+                source: source
+            ),
+            let zhHantRange = findMember(
+                "zh-Hant",
+                in: localizationsRange,
+                source: source
+            ),
+            let stringUnitRange = findMember(
+                "stringUnit",
+                in: zhHantRange,
+                source: source
+            ),
+            let stateRange = findMember(
+                "state",
+                in: stringUnitRange,
+                source: source
+            ),
+            let valueRange = findMember(
+                "value",
+                in: stringUnitRange,
+                source: source
+            )
+        else {
+            continue
+        }
+
         let convertedValue = convertSimplifiedToTraditional(
             zhHansValue
         )
 
         guard
-            let encodedState = jsonEncodedString("needs_review"),
-            let encodedValue = jsonEncodedString(convertedValue)
+            let encodedState = encodeJSONString(
+                "translated"
+            ),
+            let encodedValue = encodeJSONString(
+                convertedValue
+            )
         else {
             continue
         }
 
         replacements.append(
             Replacement(
-                range: zhHantStateRange,
+                range: stateRange,
                 value: encodedState
             )
         )
 
         replacements.append(
             Replacement(
-                range: zhHantValueRange,
+                range: valueRange,
                 value: encodedValue
             )
         )
@@ -631,7 +594,9 @@ func process(
 
 func main() throws {
     guard CommandLine.arguments.count == 2 else {
-        throw ScriptError.invalidArguments
+        print("使用方法:")
+        print("swift xcstrings_chinese_simple_to_traditional.swift Localizable.xcstrings")
+        return
     }
 
     let path = CommandLine.arguments[1]
@@ -642,7 +607,8 @@ func main() throws {
             encoding: .utf8
         )
     else {
-        throw ScriptError.fileReadFailed
+        print("エラー: ファイルを読み込めませんでした。")
+        return
     }
 
     let (
@@ -667,13 +633,13 @@ func main() throws {
             options: []
         )) != nil
     else {
-        throw ScriptError.invalidJSON
+        print("エラー: 変換後のJSONが不正です。")
+        return
     }
 
+    let fileManager = FileManager.default
     let backupPath = path + ".backup"
     let temporaryPath = path + ".tmp"
-
-    let fileManager = FileManager.default
 
     if fileManager.fileExists(atPath: temporaryPath) {
         try fileManager.removeItem(
@@ -724,7 +690,7 @@ func main() throws {
             )
         }
 
-        throw ScriptError.writeFailed
+        throw error
     }
 
     print("変換完了: \(converted) 件")
