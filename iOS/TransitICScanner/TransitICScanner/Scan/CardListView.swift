@@ -64,6 +64,8 @@ struct CardList: View {
                                     Text(LocalizedStringKey(item.rawValue))
                                 }
                             }
+                            
+                            .buttonStyle(.glass)
                         }
                     } else {
                         Text(LocalizedStringKey("cardList.searchResults"))
@@ -223,61 +225,6 @@ struct CardListRow: View {
             }
             if debug.isDisplay {
                 CardListItemDebugView(item:item)
-            }
-        }
-    }
-}
-
-struct ListButtonInner: View {
-    let item: CardInfo
-    @State var isCardInfoView = false
-    
-    var body: some View {
-        HStack {
-            CardImage(name: item.logo)
-            
-            VStack(alignment: .leading) {
-                HStack(spacing: 3) {
-                    switch item.scanOption.scanType {
-                    case .nfc:
-                        Image(systemName: "wave.3.right")
-                    case .scraping:
-                        Image(systemName: "creditcard.and.numbers")
-                    }
-                    
-                    Text(LocalizedStringKey(item.area.rawValue))
-                        .bold()
-                    
-                    Spacer()
-                }
-                .foregroundStyle(Color.gray)
-                .font(.caption)
-                
-                Text(LocalizedStringKey(item.name))
-                
-                if let description = item.description {
-                    Text(LocalizedStringKey(description))
-                        .foregroundStyle(Color.gray)
-                        .font(.caption)
-                }
-            }
-            
-            Spacer()
-            
-            if item.infomation != nil {
-                Button(action: {
-                    isCardInfoView.toggle()
-                }) {
-                    Image(systemName: "questionmark.circle")
-                        .imageScale(.large)
-                }
-                .sheet(isPresented: $isCardInfoView) {
-                    NavigationStack {
-                        ScrollView {
-                            item.infomation
-                        }
-                    }
-                }
             }
         }
     }

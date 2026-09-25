@@ -3,97 +3,61 @@ import UIKit
 import GoogleMobileAds
 import Observation
 
-@Observable class adSetting {
-    let icon:CGFloat = 48.0
-    var textWidth:CGFloat = 150
-    var textPadding:CGFloat = 8
-    var buttonWidth:CGFloat = 100
-    var viewSize = 0.0
-    var viewUsed = 0.0
+@Observable
+class adSetting {
+    let icon: CGFloat = 48.0
+    var textWidth: CGFloat = 150
+    var viewSize: CGFloat = 0.0
+    var viewUsed: CGFloat = 0.0
 }
 
 struct NativeAdContentView: View {
     let iconView: UIView?
-    let headlineView: UIView
+    let mediaView: UIView?
+    let headlineView: UIView?
     let bodyView: UIView?
     let advertiserView: UIView?
     let callToActionView: UIView?
     
-    @State var setting = adSetting()
-    
+    private let setting = adSetting()
     var body: some View {
-        ZStack {
-            GeometryReader { geometry in
-                Color(.systemGroupedBackground)
-                    .allowsHitTesting(false)
-                    .opacity(0.001)
-                    .onAppear() {
-                        setting.viewSize = geometry.size.width
-                        checkTextWidth()
-                    }
-                    .onChange(of:geometry.size.width) {
-                        setting.viewSize = geometry.size.width
-                        checkTextWidth()
-                    }
-            }.allowsHitTesting(false)
-            VStack(alignment:.leading) {
-                HStack(alignment:.center,spacing:0) {
-                    
-                    if let iconView {
-                        ExistingUIView(view: iconView)
-                            .frame(width: setting.icon, height: setting.icon)
-                            .onAppear() {
-                                setting.viewUsed += setting.icon
-                                checkTextWidth()
-                            }
-                            .onDisappear() {
-                                setting.viewUsed -= setting.icon
-                            }
-                    }
-                    VStack(alignment:.leading,spacing: 0) {
-                        ExistingUIView(view: headlineView)
-                            .lineLimit(1)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .allowsHitTesting(false)
-                        if let bodyView {
-                            ExistingUIView(view: bodyView)
-                                .lineLimit(3)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .allowsHitTesting(false)
-                        }
-                        if let advertiserView {
-                            ExistingUIView(view: advertiserView)
-                                .lineLimit(3)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .allowsHitTesting(false)
-                        }
-                    }
-                    
-                    if let callToActionView {
-                        ExistingUIView(view: callToActionView)
-                            .frame(width:setting.buttonWidth)
-                    }
+        HStack(spacing: 8) {
+            if let mediaView {
+                ExistingUIView(view: mediaView)
+                    .frame(width: 120, height: 120)
+            } else if let iconView {
+                ExistingUIView(view: iconView)
+                    .frame(width: 48, height: 48)
+            }
+            VStack(alignment: .leading, spacing: 0) {
+                if let headlineView {
+                    ExistingUIView(view: headlineView)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                if let bodyView {
+                    ExistingUIView(view: bodyView)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                if let advertiserView {
+                    ExistingUIView(view: advertiserView)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                if let callToActionView {
+                    ExistingUIView(view: callToActionView)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
-        .environment(setting)
-    }
-    func checkTextWidth() {
-        setting.textWidth = setting.viewSize - setting.viewUsed - (setting.textPadding * 2)
     }
 }
 
 struct ExistingUIView: UIViewRepresentable {
     let view: UIView
-
+    
     func makeUIView(context: Context) -> UIView {
         view
     }
-
-    func updateUIView(
-        _ uiView: UIView,
-        context: Context
-    ) {
+    func updateUIView(_ uiView: UIView, context: Context) {
     }
 }
 
@@ -101,272 +65,346 @@ struct NativeAdTextView: View {
     let text: String
     let font: Font
     let secondary: Bool
-
-    @Environment(adSetting.self) private var setting
-
+    let lineLimit: Int
+    
+    init(
+        text: String,
+        font: Font = .body,
+        secondary: Bool = false,
+        lineLimit: Int = 1
+    ) {
+        self.text = text
+        self.font = font
+        self.secondary = secondary
+        self.lineLimit = lineLimit
+    }
     var body: some View {
         Text(text)
             .font(font)
             .foregroundStyle(secondary ? .secondary : .primary)
+            .lineLimit(lineLimit)
             .multilineTextAlignment(.leading)
-            .padding(.vertical, 0)
-            .padding(.horizontal, setting.textPadding)
-            .frame(
-                width: setting.textWidth,
-                alignment: .leading
-            )
+            .allowsHitTesting(false)
     }
 }
 
 struct NativeAdIconView: View {
-    let image: UIImage
-
+    let image: UIImage?
+    let size: CGFloat
+    
+    init(
+        image: UIImage?,
+        size: CGFloat = 48
+    ) {
+        self.image = image
+        self.size = size
+    }
     var body: some View {
-        Image(uiImage: image)
-            .resizable()
-            .scaledToFill()
-            .frame(
-                width: adSetting().icon,
-                height: adSetting().icon
-            )
-            .clipShape(
-                RoundedRectangle(cornerRadius: 10)
-            )
+        Group {
+            if let image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                Color.clear
+            }
+        }
+        .frame(width: size, height: size)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .allowsHitTesting(false)
     }
 }
 
 struct NativeAdCallToActionView: View {
     let text: String
-    @State var url: URL?
-    @Environment(adSetting.self) private var setting
     
-    @Environment(\.openURL) var openURL
-
+    init(
+        text: String
+    ) {
+        self.text = text
+    }
     var body: some View {
-        ZStack {
-            if let url {
-                Button(action: {
-                    openURL(url)
-                }) {
-                    NativeAdCallToActionButton(text:text)
-                }
-            } else {
-                NativeAdCallToActionButton(text:text)
-            }
-        }
+            Text(text)
+                .font(.system(size: 12))
+                .foregroundStyle(.white)
+                .padding(.vertical, 4)
+                .padding(.horizontal, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.accentColor)
+                )
     }
 }
-struct NativeAdCallToActionButton: View {
-    let text: String
-    @Environment(adSetting.self) private var setting
 
+private struct NativeAdTextHostingView: View {
+    let text: String
+    let font: Font
+    let secondary: Bool
+    let lineLimit: Int
+    
     var body: some View {
-        ZStack {
-            Text(text)
-                .font(.system(size: 13,weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(minHeight: 32)
-                .padding(.horizontal,setting.textPadding)
-                .background(
-                    GeometryReader { geometry in
-                        Color.blue
-                            .clipShape(.rect(cornerRadius: 30))
-                            .onAppear {
-                                setting.buttonWidth = geometry.size.width
-                                setting.viewUsed += geometry.size.width
-                                setting.textWidth = setting.viewSize - setting.viewUsed
-                            }
-                            .onDisappear {
-                                setting.viewUsed -= geometry.size.width
-                            }
-                            .onChange(of:geometry.size.width) {
-                                setting.buttonWidth = geometry.size.width
-                                setting.viewUsed += geometry.size.width
-                                setting.textWidth = setting.viewSize - setting.viewUsed
-                            }
-                    }
-                )
-        }
+        NativeAdTextView(
+            text: text,
+            font: font,
+            secondary: secondary,
+            lineLimit: lineLimit
+        )
+    }
+}
+
+private struct NativeAdIconHostingView: View {
+    let image: UIImage?
+    let size: CGFloat
+    
+    var body: some View {
+        NativeAdIconView(
+            image: image,
+            size: size
+        )
+    }
+}
+
+private struct NativeAdCallToActionHostingView: View {
+    let text: String
+    
+    var body: some View {
+        NativeAdCallToActionView(
+            text: text
+        )
     }
 }
 
 final class NativeAdContainerView: NativeAdView {
-    private var hostingController:
-        UIHostingController<NativeAdContentView>?
-
-    private var assetHostingControllers:
-        [UIViewController] = []
-
+    
+    var onSizeChanged: ((CGSize) -> Void)?
+    private let contentStack = UIStackView()
+    private let textStack = UIStackView()
+    private var assetHostingControllers: [UIViewController] = []
+    private var lastReportedSize: CGSize = .zero
     private var configuredAd: NativeAd?
-
+    private var sideViewHeight: CGFloat = 0
+    private var hasSideView = false
+    private let stackSpacing: CGFloat = 8
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        backgroundColor = UIColor.clear
+        setupView()
     }
-
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        backgroundColor = UIColor.clear
+        setupView()
     }
-
+    private func setupView() {
+        backgroundColor = .clear
+        contentStack.axis = .horizontal
+        contentStack.alignment = .center
+        contentStack.distribution = .fill
+        contentStack.spacing = stackSpacing
+        textStack.axis = .vertical
+        textStack.alignment = .fill
+        textStack.distribution = .fill
+        textStack.spacing = 4
+        addSubview(contentStack)
+        contentStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentStack.topAnchor.constraint(equalTo: topAnchor),
+            contentStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateReportedSize()
+    }
+    private func updateReportedSize() {
+        let width = bounds.width
+        guard width > 0 else {
+            return
+        }
+        let textWidth: CGFloat
+        if hasSideView {
+            textWidth = max(
+                0,
+                width - sideViewHeight - stackSpacing
+            )
+        } else {
+            textWidth = width
+        }
+        let textSize = textStack.systemLayoutSizeFitting(
+            CGSize(
+                width: textWidth,
+                height: UIView.layoutFittingCompressedSize.height
+            ),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        let textHeight = ceil(textSize.height)
+        let requiredHeight = ceil(
+            max(
+                sideViewHeight,
+                textHeight
+            )
+        )
+        guard requiredHeight > 0 else {
+            return
+        }
+        let newSize = CGSize(
+            width: width,
+            height: requiredHeight
+        )
+        guard abs(newSize.width - lastReportedSize.width) > 0.5 ||
+                abs(newSize.height - lastReportedSize.height) > 0.5 else {
+            return
+        }
+        lastReportedSize = newSize
+        let callback = onSizeChanged
+        DispatchQueue.main.async {
+            callback?(newSize)
+        }
+    }
     func configure(with nativeAd: NativeAd) {
         guard configuredAd !== nativeAd else {
             return
         }
-
+        clearAdViews()
         configuredAd = nativeAd
-
-        hostingController?.view.removeFromSuperview()
-        hostingController = nil
-        assetHostingControllers.removeAll()
-
+        let setting = adSetting()
         let headlineController = UIHostingController(
-            rootView: NativeAdTextView(
+            rootView: NativeAdTextHostingView(
                 text: nativeAd.headline ?? "",
-                font: .system(
-                    size: 14,
-                    weight: .semibold
-                ),
-                secondary: false
+                font: .system(size: 12),
+                secondary: false,
+                lineLimit: 1
             )
         )
-
-        let bodyController:
-            UIHostingController<NativeAdTextView>?
-
-        if let body = nativeAd.body {
-            bodyController = UIHostingController(
-                rootView: NativeAdTextView(
+        assetHostingControllers.append(headlineController)
+        let headlineView = headlineController.view!
+        headlineView.backgroundColor = .clear
+        headlineView.isUserInteractionEnabled = false
+        headlineView.translatesAutoresizingMaskIntoConstraints = false
+        textStack.addArrangedSubview(headlineView)
+        self.headlineView = headlineView
+        if let body = nativeAd.body,
+           !body.isEmpty {
+            let bodyController = UIHostingController(
+                rootView: NativeAdTextHostingView(
                     text: body,
-                    font: .system(size: 12),
-                    secondary: true
+                    font: .system(size: 11),
+                    secondary: true,
+                    lineLimit: 2
                 )
             )
-        } else {
-            bodyController = nil
+            assetHostingControllers.append(bodyController)
+            let bodyView = bodyController.view!
+            bodyView.backgroundColor = .clear
+            bodyView.isUserInteractionEnabled = false
+            bodyView.translatesAutoresizingMaskIntoConstraints = false
+            textStack.addArrangedSubview(bodyView)
+            self.bodyView = bodyView
         }
-
-        let advertiserController:
-            UIHostingController<NativeAdTextView>?
-
-        if let advertiser = nativeAd.advertiser {
-            advertiserController = UIHostingController(
-                rootView: NativeAdTextView(
+        if let advertiser = nativeAd.advertiser,
+           !advertiser.isEmpty {
+            let advertiserController = UIHostingController(
+                rootView: NativeAdTextHostingView(
                     text: advertiser,
                     font: .system(size: 10),
-                    secondary: false
+                    secondary: true,
+                    lineLimit: 1
                 )
             )
-        } else {
-            advertiserController = nil
+            assetHostingControllers.append(advertiserController)
+            let advertiserView = advertiserController.view!
+            advertiserView.backgroundColor = .clear
+            advertiserView.isUserInteractionEnabled = false
+            advertiserView.translatesAutoresizingMaskIntoConstraints = false
+            textStack.addArrangedSubview(advertiserView)
+            self.advertiserView = advertiserView
         }
-
-        let iconController:
-            UIHostingController<NativeAdIconView>?
-
-        if let image = nativeAd.icon?.image {
-            iconController = UIHostingController(
-                rootView: NativeAdIconView(
-                    image: image
-                )
-            )
-        } else {
-            iconController = nil
-        }
-
-        let callToActionController:
-            UIHostingController<NativeAdCallToActionView>?
-
-        if let callToAction = nativeAd.callToAction {
-            callToActionController = UIHostingController(
-                rootView: NativeAdCallToActionView(
+        if let callToAction = nativeAd.callToAction,
+           !callToAction.isEmpty {
+            let ctaController = UIHostingController(
+                rootView: NativeAdCallToActionHostingView(
                     text: callToAction
                 )
             )
-        } else {
-            callToActionController = nil
+            assetHostingControllers.append(ctaController)
+            let ctaView = ctaController.view!
+            ctaView.backgroundColor = .clear
+            ctaView.isUserInteractionEnabled = false
+            ctaView.translatesAutoresizingMaskIntoConstraints = false
+            textStack.addArrangedSubview(ctaView)
+            self.callToActionView = ctaView
         }
-
-        guard let headlineView = headlineController.view else {
-            return
-        }
-
-        headlineView.backgroundColor = UIColor.clear
-        headlineView.isUserInteractionEnabled = false
-
-        let bodyView = bodyController?.view
-        bodyView?.backgroundColor = UIColor.clear
-        bodyView?.isUserInteractionEnabled = false
-
-        let advertiserView = advertiserController?.view
-        advertiserView?.backgroundColor = UIColor.clear
-        advertiserView?.isUserInteractionEnabled = false
-
-        let iconView = iconController?.view
-        iconView?.backgroundColor = UIColor.clear
-        iconView?.isUserInteractionEnabled = false
-
-        let callToActionView = callToActionController?.view
-        callToActionView?.backgroundColor = UIColor.clear
-        callToActionView?.isUserInteractionEnabled = false
-
-        assetHostingControllers = [
-            headlineController,
-            bodyController,
-            advertiserController,
-            iconController,
-            callToActionController
-        ].compactMap {
-            $0
-        }
-
-        self.headlineView = headlineView
-        self.bodyView = bodyView
-        self.advertiserView = advertiserView
-        self.iconView = iconView
-        self.callToActionView = callToActionView
-
-        let contentView = NativeAdContentView(
-            iconView: iconView,
-            headlineView: headlineView,
-            bodyView: bodyView,
-            advertiserView: advertiserView,
-            callToActionView: callToActionView
-        )
-
-        let controller = UIHostingController(
-            rootView: contentView
-        )
-
-        guard let controllerView = controller.view else {
-            return
-        }
-
-        controllerView.backgroundColor = UIColor.clear
-        controllerView.isUserInteractionEnabled = false
-        controllerView.translatesAutoresizingMaskIntoConstraints = false
-
-        addSubview(controllerView)
-
-        NSLayoutConstraint.activate([
-            controllerView.leadingAnchor.constraint(
-                equalTo: leadingAnchor
-            ),
-            controllerView.trailingAnchor.constraint(
-                equalTo: trailingAnchor
-            ),
-            controllerView.topAnchor.constraint(
-                equalTo: topAnchor
-            ),
-            controllerView.bottomAnchor.constraint(
-                equalTo: bottomAnchor
+        let hasMedia =
+        nativeAd.mediaContent.hasVideoContent ||
+        nativeAd.mediaContent.mainImage != nil
+        if hasMedia {
+            let mediaView = MediaView()
+            mediaView.translatesAutoresizingMaskIntoConstraints = false
+            mediaView.contentMode = .scaleAspectFill
+            mediaView.clipsToBounds = true
+            mediaView.layer.cornerRadius = 8
+            mediaView.mediaContent = nativeAd.mediaContent
+            contentStack.addArrangedSubview(mediaView)
+            NSLayoutConstraint.activate([
+                mediaView.widthAnchor.constraint(equalToConstant: 120),
+                mediaView.heightAnchor.constraint(equalToConstant: 120)
+            ])
+            self.mediaView = mediaView
+            sideViewHeight = 120
+            hasSideView = true
+        } else if let icon = nativeAd.icon?.image {
+            let iconController = UIHostingController(
+                rootView: NativeAdIconHostingView(
+                    image: icon,
+                    size: setting.icon
+                )
             )
-        ])
-
-        hostingController = controller
-
+            assetHostingControllers.append(iconController)
+            let iconView = iconController.view!
+            iconView.backgroundColor = .clear
+            iconView.isUserInteractionEnabled = false
+            iconView.translatesAutoresizingMaskIntoConstraints = false
+            contentStack.addArrangedSubview(iconView)
+            NSLayoutConstraint.activate([
+                iconView.widthAnchor.constraint(equalToConstant: setting.icon),
+                iconView.heightAnchor.constraint(equalToConstant: setting.icon)
+            ])
+            self.iconView = iconView
+            sideViewHeight = setting.icon
+            hasSideView = true
+        }
+        textStack.translatesAutoresizingMaskIntoConstraints = false
+        contentStack.addArrangedSubview(textStack)
         self.nativeAd = nativeAd
+        setNeedsLayout()
+        layoutIfNeeded()
+        updateReportedSize()
     }
+    private func clearAdViews() {
+        nativeAd = nil
+        headlineView = nil
+        bodyView = nil
+        advertiserView = nil
+        iconView = nil
+        mediaView = nil
+        callToActionView = nil
+        for controller in assetHostingControllers {
+            controller.view.removeFromSuperview()
+            controller.removeFromParent()
+        }
+        assetHostingControllers.removeAll()
+        while let view = contentStack.arrangedSubviews.first {
+            contentStack.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        while let view = textStack.arrangedSubviews.first {
+            textStack.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        sideViewHeight = 0
+        hasSideView = false
+        lastReportedSize = .zero
+    }
+    
 }
