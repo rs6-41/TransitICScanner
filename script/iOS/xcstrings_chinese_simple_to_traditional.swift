@@ -1,9 +1,49 @@
+#!/usr/bin/env swift
+
 import Foundation
 import CoreFoundation
 
 struct Replacement {
     let range: Range<String.Index>
     let value: String
+}
+
+enum ConverterError: LocalizedError {
+    case invalidUTF8
+    case invalidJSON
+    case missingStrings
+    case keyNotFound(String)
+    case localizationsNotFound(String)
+    case zhHantNotFound(String)
+    case stringUnitNotFound(String)
+    case stateOrValueNotFound(String)
+    case invalidJSONString(String)
+    case writeFailed
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidUTF8:
+            return "ファイルをUTF-8として読み込めませんでした。"
+        case .invalidJSON:
+            return "xcstringsのJSON構造が不正です。"
+        case .missingStrings:
+            return "\"strings\" が見つかりません。"
+        case .keyNotFound(let key):
+            return "キー \"\(key)\" の位置を特定できませんでした。"
+        case .localizationsNotFound(let key):
+            return "キー \"\(key)\" の localizations を特定できませんでした。"
+        case .zhHantNotFound(let key):
+            return "キー \"\(key)\" の zh-Hant を特定できませんでした。"
+        case .stringUnitNotFound(let key):
+            return "キー \"\(key)\" の zh-Hant.stringUnit を特定できませんでした。"
+        case .stateOrValueNotFound(let key):
+            return "キー \"\(key)\" の state または value を特定できませんでした。"
+        case .invalidJSONString(let value):
+            return "JSON文字列を生成できませんでした: \(value)"
+        case .writeFailed:
+            return "ファイルの書き込みに失敗しました。"
+        }
+    }
 }
 
 func simplifiedToTraditional(_ text: String) -> String {
@@ -19,348 +59,340 @@ func simplifiedToTraditional(_ text: String) -> String {
     return mutable as String
 }
 
-func jsonString(_ value: Any) -> String? {
-    guard let value = value as? String else {
-        return nil
-    }
-
-    return value
-}
-
-func escapedJSONString(_ value: String) throws -> String {
+func makeJSONString(_ value: String) throws -> String {
     let data = try JSONSerialization.data(
         withJSONObject: [value],
         options: []
     )
 
-    guard var result = String(data: data, encoding: .utf8) else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 10,
-            userInfo: [
-                NSLocalizedDescriptionKey: "JSON文字列の生成に失敗しました"
-            ]
-        )
+    guard let json = String(data: data, encoding: .utf8),
+          json.count >= 2,
+          json.first == "[",
+          json.last == "]" else {
+        throw ConverterError.invalidJSONString(value)
     }
 
-    guard result.first == "[", result.last == "]" else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 11,
-            userInfo: [
-                NSLocalizedDescriptionKey: "JSON文字列の形式が不正です"
-            ]
-        )
-    }
-
-    result.removeFirst()
-    result.removeLast()
-
-    return result
+    return String(json.dropFirst().dropLast())
 }
 
-func findStringValueRange(
+func findJSONKey(
+    _ key: String,
     in source: String,
-    key: String,
     from start: String.Index,
     to end: String.Index
-) -> Range<String.Index>? {
-    guard start < end else {
-        return nil
+) throws -> Range<String.Index> {
+    let encodedKey = try makeJSONString(key)
+
+    guard let range = source.range(
+        of: encodedKey,
+        range: start..<end
+    ) else {
+        throw ConverterError.keyNotFound(key)
     }
 
-    let target: String
+    return range
+}
 
-    do {
-        target = try escapedJSONString(key)
-    } catch {
-        return nil
+func skipWhitespace(
+    in source: String,
+    from start: String.Index,
+    to end: String.Index
+) -> String.Index {
+    var index = start
+
+    while index < end && source[index].isWhitespace {
+        index = source.index(after: index)
     }
 
-    let searchRange = start..<end
+    return index
+}
 
-    guard let keyRange = source.range(of: target, range: searchRange) else {
-        return nil
-    }
+func findObjectRange(
+    containingKey key: String,
+    in source: String,
+    from start: String.Index,
+    to end: String.Index
+) throws -> Range<String.Index> {
+    let keyRange = try findJSONKey(
+        key,
+        in: source,
+        from: start,
+        to: end
+    )
 
     guard let colonRange = source.range(
         of: ":",
         range: keyRange.upperBound..<end
     ) else {
-        return nil
+        throw ConverterError.keyNotFound(key)
     }
 
-    var valueStart = colonRange.upperBound
+    let objectStart = skipWhitespace(
+        in: source,
+        from: colonRange.upperBound,
+        to: end
+    )
 
-    while valueStart < end,
-          source[valueStart].isWhitespace {
-        valueStart = source.index(after: valueStart)
+    guard objectStart < end,
+          source[objectStart] == "{" else {
+        throw ConverterError.keyNotFound(key)
     }
+
+    var index = objectStart
+    var depth = 0
+    var insideString = false
+    var escaped = false
+
+    while index < end {
+        let character = source[index]
+
+        if insideString {
+            if escaped {
+                escaped = false
+            } else if character == "\\" {
+                escaped = true
+            } else if character == "\"" {
+                insideString = false
+            }
+        } else {
+            switch character {
+            case "\"":
+                insideString = true
+
+            case "{":
+                depth += 1
+
+            case "}":
+                depth -= 1
+
+                if depth == 0 {
+                    let objectEnd = source.index(
+                        after: index
+                    )
+
+                    return objectStart..<objectEnd
+                }
+
+            default:
+                break
+            }
+        }
+
+        index = source.index(after: index)
+    }
+
+    throw ConverterError.keyNotFound(key)
+}
+
+func findJSONStringValueRange(
+    forKey key: String,
+    in source: String,
+    from start: String.Index,
+    to end: String.Index
+) throws -> Range<String.Index> {
+    let keyRange = try findJSONKey(
+        key,
+        in: source,
+        from: start,
+        to: end
+    )
+
+    guard let colonRange = source.range(
+        of: ":",
+        range: keyRange.upperBound..<end
+    ) else {
+        throw ConverterError.invalidJSON
+    }
+
+    let valueStart = skipWhitespace(
+        in: source,
+        from: colonRange.upperBound,
+        to: end
+    )
 
     guard valueStart < end,
           source[valueStart] == "\"" else {
-        return nil
+        throw ConverterError.invalidJSON
     }
 
-    let contentStart = source.index(after: valueStart)
-    var current = contentStart
+    let contentStart = source.index(
+        after: valueStart
+    )
+
+    var index = contentStart
     var escaped = false
 
-    while current < end {
-        let character = source[current]
+    while index < end {
+        let character = source[index]
 
         if escaped {
             escaped = false
         } else if character == "\\" {
             escaped = true
         } else if character == "\"" {
-            return contentStart..<current
+            return contentStart..<index
         }
 
-        current = source.index(after: current)
+        index = source.index(after: index)
     }
 
-    return nil
-}
-
-func findObjectRange(
-    in source: String,
-    containingKey key: String,
-    from start: String.Index
-) -> Range<String.Index>? {
-    guard let keyJSON = try? escapedJSONString(key),
-          let keyRange = source.range(of: keyJSON, range: start..<source.endIndex),
-          let colonRange = source.range(
-              of: ":",
-              range: keyRange.upperBound..<source.endIndex
-          ) else {
-        return nil
-    }
-
-    var objectStart = colonRange.upperBound
-
-    while objectStart < source.endIndex,
-          source[objectStart].isWhitespace {
-        objectStart = source.index(after: objectStart)
-    }
-
-    guard objectStart < source.endIndex,
-          source[objectStart] == "{" else {
-        return nil
-    }
-
-    var depth = 0
-    var current = objectStart
-    var inString = false
-    var escaped = false
-
-    while current < source.endIndex {
-        let character = source[current]
-
-        if inString {
-            if escaped {
-                escaped = false
-            } else if character == "\\" {
-                escaped = true
-            } else if character == "\"" {
-                inString = false
-            }
-        } else {
-            if character == "\"" {
-                inString = true
-            } else if character == "{" {
-                depth += 1
-            } else if character == "}" {
-                depth -= 1
-
-                if depth == 0 {
-                    return objectStart...current
-                }
-            }
-        }
-
-        current = source.index(after: current)
-    }
-
-    return nil
+    throw ConverterError.invalidJSON
 }
 
 func processFile(at url: URL) throws {
-    let data = try Data(contentsOf: url)
+    let originalData = try Data(contentsOf: url)
 
-    guard let source = String(data: data, encoding: .utf8) else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 1,
-            userInfo: [
-                NSLocalizedDescriptionKey: "UTF-8として読み込めませんでした"
-            ]
-        )
+    guard let source = String(
+        data: originalData,
+        encoding: .utf8
+    ) else {
+        throw ConverterError.invalidUTF8
     }
 
-    guard let jsonData = source.data(using: .utf8) else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 2,
-            userInfo: [
-                NSLocalizedDescriptionKey: "JSONデータを生成できませんでした"
-            ]
-        )
-    }
-
-    guard let root = try JSONSerialization.jsonObject(
-        with: jsonData,
-        options: []
-    ) as? [String: Any] else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 3,
-            userInfo: [
-                NSLocalizedDescriptionKey: "xcstringsのルート構造が不正です"
-            ]
-        )
+    guard let jsonData = source.data(using: .utf8),
+          let root = try JSONSerialization.jsonObject(
+              with: jsonData,
+              options: []
+          ) as? [String: Any] else {
+        throw ConverterError.invalidJSON
     }
 
     guard let strings = root["strings"] as? [String: Any] else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 4,
-            userInfo: [
-                NSLocalizedDescriptionKey: "\"strings\" が見つかりません"
-            ]
-        )
+        throw ConverterError.missingStrings
+    }
+
+    guard let stringsRange = try? findObjectRange(
+        containingKey: "strings",
+        in: source,
+        from: source.startIndex,
+        to: source.endIndex
+    ) else {
+        throw ConverterError.missingStrings
     }
 
     var replacements: [Replacement] = []
+    var convertedKeys: [String] = []
 
-    for (key, value) in strings {
-        guard let stringObject = value as? [String: Any],
+    for (key, rawStringObject) in strings {
+        guard let stringObject = rawStringObject as? [String: Any],
               let localizations = stringObject["localizations"] as? [String: Any],
               let zhHans = localizations["zh-Hans"] as? [String: Any],
               let zhHant = localizations["zh-Hant"] as? [String: Any],
               let zhHansUnit = zhHans["stringUnit"] as? [String: Any],
               let zhHantUnit = zhHant["stringUnit"] as? [String: Any],
               let sourceValue = zhHansUnit["value"] as? String,
-              let state = zhHantUnit["state"] as? String,
-              state == "needs_review" else {
+              let state = zhHantUnit["state"] as? String else {
             continue
         }
 
-        guard let stringObjectRange = findObjectRange(
-            in: source,
-            containingKey: key,
-            from: source.startIndex
-        ) else {
-            throw NSError(
-                domain: "XCStringsConverter",
-                code: 5,
-                userInfo: [
-                    NSLocalizedDescriptionKey:
-                        "キー \"\(key)\" の位置を特定できませんでした"
-                ]
-            )
+        guard state == "needs_review" else {
+            continue
         }
 
-        let stringObjectEnd = source.index(
-            after: stringObjectRange.upperBound
+        let stringObjectRange: Range<String.Index>
+
+        do {
+            stringObjectRange = try findObjectRange(
+                containingKey: key,
+                in: source,
+                from: stringsRange.lowerBound,
+                to: stringsRange.upperBound
+            )
+        } catch {
+            throw ConverterError.keyNotFound(key)
+        }
+
+        let localizationsRange: Range<String.Index>
+
+        do {
+            localizationsRange = try findObjectRange(
+                containingKey: "localizations",
+                in: source,
+                from: stringObjectRange.lowerBound,
+                to: stringObjectRange.upperBound
+            )
+        } catch {
+            throw ConverterError.localizationsNotFound(key)
+        }
+
+        let zhHantRange: Range<String.Index>
+
+        do {
+            zhHantRange = try findObjectRange(
+                containingKey: "zh-Hant",
+                in: source,
+                from: localizationsRange.lowerBound,
+                to: localizationsRange.upperBound
+            )
+        } catch {
+            throw ConverterError.zhHantNotFound(key)
+        }
+
+        let stringUnitRange: Range<String.Index>
+
+        do {
+            stringUnitRange = try findObjectRange(
+                containingKey: "stringUnit",
+                in: source,
+                from: zhHantRange.lowerBound,
+                to: zhHantRange.upperBound
+            )
+        } catch {
+            throw ConverterError.stringUnitNotFound(key)
+        }
+
+        let stateRange: Range<String.Index>
+
+        let valueRange: Range<String.Index>
+
+        do {
+            stateRange = try findJSONStringValueRange(
+                forKey: "state",
+                in: source,
+                from: stringUnitRange.lowerBound,
+                to: stringUnitRange.upperBound
+            )
+
+            valueRange = try findJSONStringValueRange(
+                forKey: "value",
+                in: source,
+                from: stringUnitRange.lowerBound,
+                to: stringUnitRange.upperBound
+            )
+        } catch {
+            throw ConverterError.stateOrValueNotFound(key)
+        }
+
+        let convertedValue = simplifiedToTraditional(
+            sourceValue
         )
 
-        guard let localizationsRange = findObjectRange(
-            in: source,
-            containingKey: "localizations",
-            from: stringObjectRange.lowerBound
-        ) else {
-            throw NSError(
-                domain: "XCStringsConverter",
-                code: 6,
-                userInfo: [
-                    NSLocalizedDescriptionKey:
-                        "キー \"\(key)\" の localizations を特定できませんでした"
-                ]
-            )
-        }
-
-        let localizationsEnd = source.index(
-            after: localizationsRange.upperBound
+        let escapedConvertedValue = try makeJSONString(
+            convertedValue
         )
 
-        guard let zhHantRange = findObjectRange(
-            in: source,
-            containingKey: "zh-Hant",
-            from: localizationsRange.lowerBound
-        ),
-        zhHantRange.upperBound < localizationsRange.upperBound else {
-            throw NSError(
-                domain: "XCStringsConverter",
-                code: 7,
-                userInfo: [
-                    NSLocalizedDescriptionKey:
-                        "キー \"\(key)\" の zh-Hant を特定できませんでした"
-                ]
-            )
-        }
-
-        let zhHantEnd = source.index(after: zhHantRange.upperBound)
-
-        guard let stringUnitRange = findObjectRange(
-            in: source,
-            containingKey: "stringUnit",
-            from: zhHantRange.lowerBound
-        ),
-        stringUnitRange.upperBound < zhHantEnd else {
-            throw NSError(
-                domain: "XCStringsConverter",
-                code: 8,
-                userInfo: [
-                    NSLocalizedDescriptionKey:
-                        "キー \"\(key)\" の zh-Hant.stringUnit を特定できませんでした"
-                ]
-            )
-        }
-
-        let stringUnitEnd = source.index(after: stringUnitRange.upperBound)
-
-        guard let stateRange = findStringValueRange(
-            in: source,
-            key: "state",
-            from: stringUnitRange.lowerBound,
-            to: stringUnitEnd
-        ),
-        let valueRange = findStringValueRange(
-            in: source,
-            key: "value",
-            from: stringUnitRange.lowerBound,
-            to: stringUnitEnd
-        ) else {
-            throw NSError(
-                domain: "XCStringsConverter",
-                code: 9,
-                userInfo: [
-                    NSLocalizedDescriptionKey:
-                        "キー \"\(key)\" の state/value を特定できませんでした"
-                ]
-            )
-        }
-
-        let converted = simplifiedToTraditional(sourceValue)
-        let escapedConverted = try escapedJSONString(converted)
+        let escapedTranslatedState = try makeJSONString(
+            "translated"
+        )
 
         replacements.append(
             Replacement(
                 range: valueRange,
-                value: escapedConverted
+                value: escapedConvertedValue
             )
         )
 
         replacements.append(
             Replacement(
                 range: stateRange,
-                value: try escapedJSONString("translated")
+                value: escapedTranslatedState
             )
         )
+
+        convertedKeys.append(key)
     }
 
-    if replacements.isEmpty {
+    guard !replacements.isEmpty else {
         print("変換対象はありませんでした。")
         return
     }
@@ -378,15 +410,17 @@ func processFile(at url: URL) throws {
         )
     }
 
-    let temporaryURL = url.appendingPathExtension("tmp")
-
     guard let outputData = result.data(using: .utf8) else {
-        throw NSError(
-            domain: "XCStringsConverter",
-            code: 12,
-            userInfo: [
-                NSLocalizedDescriptionKey: "出力データの生成に失敗しました"
-            ]
+        throw ConverterError.writeFailed
+    }
+
+    let temporaryURL = url.appendingPathExtension(
+        "tmp-\(UUID().uuidString)"
+    )
+
+    defer {
+        try? FileManager.default.removeItem(
+            at: temporaryURL
         )
     }
 
@@ -395,28 +429,47 @@ func processFile(at url: URL) throws {
         options: [.atomic]
     )
 
-    _ = try Data(contentsOf: temporaryURL)
+    let verifyData = try Data(
+        contentsOf: temporaryURL
+    )
 
-    try FileManager.default.replaceItemAt(
+    guard let verifyJSON = try? JSONSerialization.jsonObject(
+        with: verifyData,
+        options: []
+    ) else {
+        throw ConverterError.invalidJSON
+    }
+
+    _ = verifyJSON
+
+    _ = try FileManager.default.replaceItemAt(
         url,
         withItemAt: temporaryURL
     )
 
-    print("変換完了: \(replacements.count / 2) 件")
+    print("変換完了: \(convertedKeys.count) 件")
+
+    for key in convertedKeys.sorted() {
+        print("  \(key)")
+    }
 }
 
 let arguments = CommandLine.arguments
 
 guard arguments.count == 2 else {
     print("使用方法:")
-    print("  xcstrings-converter Localizable.xcstrings")
+    print("  swift xcstrings_chinese_simple_to_traditional.swift Localizable.xcstrings")
     exit(1)
 }
 
-let url = URL(fileURLWithPath: arguments[1])
+let fileURL = URL(
+    fileURLWithPath: arguments[1]
+)
 
 do {
-    try processFile(at: url)
+    try processFile(
+        at: fileURL
+    )
 } catch {
     print("エラー: \(error.localizedDescription)")
     exit(1)
