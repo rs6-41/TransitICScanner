@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "ja",
+  "sourceLanguage" : "en",
   "strings" : {
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
@@ -14,6 +14,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "世界IC残高確認"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC余额查询"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC餘額查詢"
           }
         }
       }
@@ -32,6 +44,18 @@
             "state" : "translated",
             "value" : "世界IC残高確認"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC余额查询"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球IC餘額查詢"
+          }
         }
       }
     },
@@ -48,6 +72,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "カード情報の読み取りに使用します"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于读取卡片信息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於讀取卡片信息"
           }
         }
       }
@@ -66,6 +102,18 @@
             "state" : "translated",
             "value" : "カード番号の読み取りに使用します"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于读取卡号"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於讀取卡號"
+          }
         }
       }
     },
@@ -83,12 +131,23 @@
             "state" : "translated",
             "value" : "現在の位置に基づいてカードを提案します"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根据您当前的位置推荐卡片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根據您當前的位置推薦卡片"
+          }
         }
       }
     },
     "NSUserTrackingUsageDescription" : {
       "comment" : "Privacy - Tracking Usage Description",
-      "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -96,10 +155,16 @@
             "value" : "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads."
           }
         },
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。"
+            "state" : "translated",
+            "value" : "广告的展示将使用此信息。\n允许后，我们可以为您展示更相关的广告。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告的展示將使用此信息。\n允許後，我們可以為您展示更相關的廣告。"
           }
         }
       }

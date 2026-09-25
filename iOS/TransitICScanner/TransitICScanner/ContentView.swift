@@ -77,6 +77,7 @@ struct ContentView: View {
                     ToolbarItem(placement:.cancellationAction){
                         Button(action: {
                             dismiss()
+                            ads.isDeleteAdsSheet = false
                         }) {
                             Image(systemName:"xmark")
                         }

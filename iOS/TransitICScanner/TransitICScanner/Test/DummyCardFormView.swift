@@ -69,7 +69,7 @@ struct DummyCardFormView: View {
                     .onDelete(perform: removeHistory)
                     
                     NavigationLink(LocalizedStringKey("setting.debug.result.dummyCard.form.history.add"), destination: DummyHistoryFormView(isHistoryForm:$isHistoryForm, newHistory: $newHistory))
-                        .foregroundStyle(Color.blue)
+                        .foregroundStyle(Color.accentColor)
                         .onChange(of:newHistory) {
                             if newHistory != emptyHistory {
                                 history.append(newHistory)
@@ -84,7 +84,7 @@ struct DummyCardFormView: View {
                 isDone = true
             }) {
                 Text(LocalizedStringKey("setting.debug.result.dummyCard.form.done"))
-                    .foregroundStyle(Color.blue)
+                    .foregroundStyle(Color.accentColor)
             }
             .navigationDestination(isPresented: $isDone) {
                 ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)

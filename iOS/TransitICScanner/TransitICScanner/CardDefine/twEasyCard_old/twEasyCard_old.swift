@@ -10,18 +10,18 @@ let twEasyCard_old:CardInfo = CardInfo(
     sortName:"cardList.twEasyCard_old.sortName",
     area: .tw,
     countryCode: ["tw"],
-    description: "card.web.twEasyCard_old.description",
+    description: String(localized:"card.web.twEasyCard_old.description"),
     scand_description: "twEasyCard_old.scand.description",
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         name:"twEasyCard_old",
-        nameShort:"twEasyCard_old.short",
+        nameShort:String(localized:"twEasyCard_old.short"),
         scanType: .scraping,
         pollingOption:[],
         felicaSystemCodes:[],
         url: URL(string:"https://ezweb.easycard.com.tw/search/")!,
         historyCount:999,
-        currency:"currency.twd",
+        currency:String(localized:"currency.twd"),
         converter:.twEasyCard_old,
         scrapingView: {
             AnyView(twEasyCard_old_View())
@@ -605,8 +605,8 @@ final class twEasyCard_old_scraping: ObservableObject {
 
             let cardInfo = ResultCardInfo(
                 idm: cardID,
-                name: "EasyCard",
-                nameShort: "EasyCard",
+                name: twEasyCard_old.scanOption.name,
+                nameShort: twEasyCard_old.scanOption.nameShort,
                 currency: "TWD",
                 type: "",
                 serial: nil,

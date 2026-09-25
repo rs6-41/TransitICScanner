@@ -211,18 +211,13 @@ struct SavedListView: View {
                                         .lineLimit(1)
                                         .truncationMode(.tail)
                                         .frame(maxWidth: .infinity,alignment:.center)
-                                        .padding(.vertical,7)
                                     Spacer()
                                     Image(systemName:"chevron.up.chevron.down")
                                 }
-                                .padding(.horizontal)
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .background(
-                            Color(UIColor.systemBackground),
-                            in: Capsule()
-                        )
+                        .buttonStyle(.glass)
 
                         Menu {
                             Picker(
@@ -258,17 +253,13 @@ struct SavedListView: View {
                                     .lineLimit(1)
                                     .truncationMode(.tail)
                                     .frame(maxWidth: .infinity,alignment:.center)
-                                    .padding(.vertical,7)
                                 Spacer()
                                 Image(systemName:"chevron.up.chevron.down")
                             }
                             .padding(.horizontal)
                         }
                         .frame(maxWidth: .infinity)
-                        .background(
-                            Color(UIColor.systemBackground),
-                            in: Capsule()
-                        )
+                        .buttonStyle(.glass)
                     }
                     .frame(maxWidth: 350)
                 }
