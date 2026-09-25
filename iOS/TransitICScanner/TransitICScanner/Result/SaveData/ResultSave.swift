@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import WidgetKit
 
 enum CloudSyncSettings {
     private static let key = "cloudSyncEnabled"
@@ -251,15 +252,15 @@ enum ResultSave {
         guard let info = result.info else {
             return
         }
-
+        
         let descriptor = FetchDescriptor<SavedCard>(
             predicate: #Predicate {
                 $0.idm == info.idm
             }
         )
-
+        
         let card: SavedCard
-
+        
         if let existingCard = try modelContext.fetch(descriptor).first {
             card = existingCard
         } else {
@@ -280,10 +281,10 @@ enum ResultSave {
                 converterType: result.converter,
                 savedAt: result.savedAt ?? Date.now
             )
-
+            
             modelContext.insert(card)
         }
-
+        
         card.name = info.name
         card.nameShort = info.nameShort
         card.displayName = info.displayName
@@ -298,19 +299,19 @@ enum ResultSave {
         card.cardDescription = result.description
         card.converterTypeRaw = result.converter.rawValue
         card.savedAt = result.savedAt
-
+        
         if let histories = result.history {
             var existingTransactionIDs = Set(
                 (card.histories ?? []).map(\.transactionId)
             )
-
+            
             for history in histories {
                 guard !existingTransactionIDs.contains(
                     history.transactionId
                 ) else {
                     continue
                 }
-
+                
                 let savedHistory = SavedHistory(
                     processType: Int(history.processType),
                     date: history.date,
@@ -323,24 +324,50 @@ enum ResultSave {
                     transactionId: history.transactionId,
                     mappingID: history.mappingID
                 )
-
+                
                 savedHistory.card = card
-
+                
                 if card.histories == nil {
                     card.histories = []
                 }
-
+                
                 card.histories?.append(savedHistory)
-
+                
                 modelContext.insert(savedHistory)
-
+                
                 existingTransactionIDs.insert(
                     history.transactionId
                 )
             }
         }
-
+        
         try modelContext.save()
+        
+        //ウィジェットにデータをわたす
+        var widgetModels:[BalanceWidgetModel] = []
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.rs6apps.TransitICScanner")
+        
+        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
+           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+            widgetModels = decodedUsers
+        }
+        
+        let saveData = BalanceWidgetModel(
+            DisplayName: info.displayName,
+            balance: result.balance,
+            idm: info.idm,
+            savedAt: result.savedAt
+        )
+        
+        widgetModels.removeAll { $0.idm == info.idm }
+        widgetModels.append(saveData)
+        
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+        }
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func loadCards(
@@ -381,6 +408,23 @@ enum ResultSave {
 
         modelContext.delete(card)
         try modelContext.save()
+        
+        
+        //ウィジェットデータを消す
+        var widgetModels:[BalanceWidgetModel] = []
+        let sharedDefaults = UserDefaults(suiteName: "group.rs6apps.TransitICScanner")
+        
+        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
+           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+            widgetModels = decodedUsers
+        }
+        widgetModels.removeAll { $0.idm == idm }
+        
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+        }
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func deleteAll(
@@ -395,27 +439,13 @@ enum ResultSave {
         }
 
         try modelContext.save()
-    }
-
-    static func resetSavedData(
-        from modelContext: ModelContext
-    ) {
-        do {
-            try modelContext.delete(
-                model: SavedCard.self
-            )
-
-            try modelContext.delete(
-                model: SavedHistory.self
-            )
-
-            try modelContext.save()
-
-            print("保存データをリセットしました")
-        } catch {
-            print(
-                "保存データのリセットに失敗しました: \(error)"
-            )
+        
+        //ウィジェットデータを消す
+        var widgetModels:[BalanceWidgetModel] = []
+        let sharedDefaults = UserDefaults(suiteName: "group.rs6apps.TransitICScanner")
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
