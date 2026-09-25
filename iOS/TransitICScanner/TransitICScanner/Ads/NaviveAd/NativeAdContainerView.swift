@@ -133,7 +133,6 @@ struct NativeAdCallToActionView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color.accentColor)
                 )
-                .allowsHitTesting(false)
     }
 }
 

@@ -32,6 +32,7 @@ struct PlaceholderAdsView: View {
                 .foregroundStyle(Color.gray)
                 .lineLimit(3)
             }
+            Spacer()
             if let url {
                 Button(action: {
                     openURL(url)
