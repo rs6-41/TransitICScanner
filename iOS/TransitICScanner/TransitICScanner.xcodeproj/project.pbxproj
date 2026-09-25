@@ -11,6 +11,7 @@
 		AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABAF3066867600A3D87B /* WidgetKit.framework */; };
 		AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABB13066867600A3D87B /* SwiftUI.framework */; };
 		AA87ABDD306686B800A3D87B /* CardBalanceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA87AC573066CD0700A3D87B /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = AA87AC563066CD0700A3D87B /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		AA87ABC9306686B600A3D87B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				AA87AC573066CD0700A3D87B /* Algorithms in Frameworks */,
 				AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */,
 				AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */,
 			);
@@ -195,6 +197,9 @@
 				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
 			);
 			name = CardBalanceWidgetExtension;
+			packageProductDependencies = (
+				AA87AC563066CD0700A3D87B /* Algorithms */,
+			);
 			productName = CardBalanceWidgetExtension;
 			productReference = AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -231,6 +236,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				AA87AC553066CD0700A3D87B /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
@@ -808,6 +814,14 @@
 				minimumVersion = 13.10.0;
 			};
 		};
+		AA87AC553066CD0700A3D87B /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -815,6 +829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		AA87AC563066CD0700A3D87B /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA87AC553066CD0700A3D87B /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
