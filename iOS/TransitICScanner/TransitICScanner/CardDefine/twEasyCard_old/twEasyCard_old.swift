@@ -605,8 +605,8 @@ final class twEasyCard_old_scraping: ObservableObject {
 
             let cardInfo = ResultCardInfo(
                 idm: cardID,
-                name: "EasyCard",
-                nameShort: String(localized:"EasyCard"),
+                name: twEasyCard_old.scanOption.name,
+                nameShort: twEasyCard_old.scanOption.nameShort,
                 currency: "TWD",
                 type: "",
                 serial: nil,
