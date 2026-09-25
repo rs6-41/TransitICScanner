@@ -8,10 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; };
+		AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABAF3066867600A3D87B /* WidgetKit.framework */; };
+		AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABB13066867600A3D87B /* SwiftUI.framework */; };
+		AA87ABDD306686B800A3D87B /* CardBalanceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA87ABDB306686B800A3D87B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA87ABCB306686B600A3D87B;
+			remoteInfo = CardBalanceWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA87ABC23066867800A3D87B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				AA87ABDD306686B800A3D87B /* CardBalanceWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA87ABAF3066867600A3D87B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AA87ABB13066867600A3D87B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CardBalanceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -22,9 +50,24 @@
 			);
 			target = 000000000000000100000000 /* TransitICScanner */;
 		};
+		AA87ABDE306686B800A3D87B /* Exceptions for "CardBalanceWidget" folder in "CardBalanceWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA87ABCF306686B600A3D87B /* CardBalanceWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA87ABDE306686B800A3D87B /* Exceptions for "CardBalanceWidget" folder in "CardBalanceWidgetExtension" target */,
+			);
+			path = CardBalanceWidget;
+			sourceTree = "<group>";
+		};
 		AAC4A093304B343D003B1B10 /* TransitICScanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -42,12 +85,21 @@
 				AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */,
 			);
 		};
+		AA87ABC9306686B600A3D87B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */,
+				AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */,
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
+				AA87ABAE3066867600A3D87B /* Frameworks */,
 				000000000000000000000020 /* Products */,
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
 			);
@@ -57,8 +109,18 @@
 			isa = PBXGroup;
 			children = (
 				000000000000000000000120 /* TransitICScanner.app */,
+				AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA87ABAE3066867600A3D87B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA87ABAF3066867600A3D87B /* WidgetKit.framework */,
+				AA87ABB13066867600A3D87B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,8 +133,12 @@
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
 				000000000000000140000000 /* Resources */,
+				AA87ABC23066867800A3D87B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				AA87ABDC306686B800A3D87B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
@@ -85,6 +151,24 @@
 			productReference = 000000000000000000000120 /* TransitICScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA87ABDF306686B800A3D87B /* Build configuration list for PBXNativeTarget "CardBalanceWidgetExtension" */;
+			buildPhases = (
+				AA87ABC8306686B600A3D87B /* Sources */,
+				AA87ABC9306686B600A3D87B /* Frameworks */,
+				AA87ABCA306686B600A3D87B /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
+			);
+			name = CardBalanceWidgetExtension;
+			productName = CardBalanceWidgetExtension;
+			productReference = AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,11 +176,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2630;
+				LastSwiftUpdateCheck = 2700;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					000000000000000100000000 = {
 						CreatedOnToolsVersion = 26.3;
+					};
+					AA87ABCB306686B600A3D87B = {
+						CreatedOnToolsVersion = 27.0;
 					};
 				};
 			};
@@ -121,12 +208,18 @@
 			projectRoot = "";
 			targets = (
 				000000000000000100000000 /* TransitICScanner */,
+				AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		000000000000000140000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		AA87ABCA306686B600A3D87B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -139,7 +232,20 @@
 			files = (
 			);
 		};
+		AA87ABC8306686B600A3D87B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA87ABDC306686B800A3D87B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */;
+			targetProxy = AA87ABDB306686B800A3D87B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		000000000000000011000000 /* Debug configuration for PBXProject "TransitICScanner" */ = {
@@ -515,6 +621,101 @@
 			};
 			name = Beta;
 		};
+		AA87ABE0306686B800A3D87B /* Debug configuration for PBXNativeTarget "CardBalanceWidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3W48QB4863;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardBalanceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CardBalanceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs6apps.TransitICScanner.CardBalanceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA87ABE1306686B800A3D87B /* Beta configuration for PBXNativeTarget "CardBalanceWidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3W48QB4863;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardBalanceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CardBalanceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs6apps.TransitICScanner.CardBalanceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Beta;
+		};
+		AA87ABE2306686B800A3D87B /* Release configuration for PBXNativeTarget "CardBalanceWidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3W48QB4863;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardBalanceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CardBalanceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs6apps.TransitICScanner.CardBalanceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -533,6 +734,15 @@
 				000000000000000111000000 /* Debug configuration for PBXNativeTarget "TransitICScanner" */,
 				AA544C273062578F00EFAE03 /* Beta configuration for PBXNativeTarget "TransitICScanner" */,
 				000000000000000112000000 /* Release configuration for PBXNativeTarget "TransitICScanner" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		AA87ABDF306686B800A3D87B /* Build configuration list for PBXNativeTarget "CardBalanceWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA87ABE0306686B800A3D87B /* Debug configuration for PBXNativeTarget "CardBalanceWidgetExtension" */,
+				AA87ABE1306686B800A3D87B /* Beta configuration for PBXNativeTarget "CardBalanceWidgetExtension" */,
+				AA87ABE2306686B800A3D87B /* Release configuration for PBXNativeTarget "CardBalanceWidgetExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};
