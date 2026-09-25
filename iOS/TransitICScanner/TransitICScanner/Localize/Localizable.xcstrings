@@ -9525,6 +9525,9 @@
         }
       }
     },
+    "widget.balance.placeholder.notSelection" : {
+
+    },
     "三晋通-忻州通" : {
       "localizations" : {
         "ja" : {
