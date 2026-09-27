@@ -2445,6 +2445,9 @@
         }
       }
     },
+    "cardList.usClipper.description" : {
+
+    },
     "cnTunion.short" : {
       "extractionState" : "manual",
       "localizations" : {
