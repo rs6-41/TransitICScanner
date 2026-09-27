@@ -406,7 +406,7 @@ enum ResultSave {
             widgetModels = decodedUsers
         }
         let saveData = BalanceWidgetModel(
-            DisplayName: info.displayName,
+            DisplayName: info.displayName ?? Localize(info.name),
             balance: result.balance,
             currencyType: result.info?.currencyType,
             idm: info.idm,

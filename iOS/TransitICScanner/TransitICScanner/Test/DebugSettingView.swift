@@ -122,7 +122,7 @@ struct DebugSettingView: View {
                     Button(action: {
                         Task { @MainActor in
                             isLoading = true
-                            for card in relCards {
+                            for card in cardItemsStore.cardItems {
                                 let result = getResultSample(model: card)
                                 saveAction(result: result)
                                 try? await Task.sleep(nanoseconds: 200_000_000)

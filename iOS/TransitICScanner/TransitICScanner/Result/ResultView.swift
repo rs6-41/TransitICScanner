@@ -21,6 +21,12 @@ struct ResultView: View {
                 ListAdView(deleteAds:$deleteAds)
                 resultHistorySection
             }
+            .onAppear() {
+                setDefaultDisplayName()
+            }
+            .onChange(of:cardUserName) {
+                setDefaultDisplayName()
+            }
             .toolbar {
                 ToolbarItem(
                     placement: .confirmationAction
@@ -39,7 +45,7 @@ struct ResultView: View {
                 }
             }
             .navigationTitle(
-                Text(String(localized: String.LocalizationValue(result.info?.displayName ?? String(localized:"result.title"))))
+                Text(cardUserName)
             )
             
         }
@@ -83,9 +89,7 @@ struct ResultView: View {
                         if design.type == result.converter {
                             HStack(spacing: 3) {
                                 CardImage(name: design.imageName)
-                                Text(
-                                    LocalizedStringKey(design.name)
-                                )
+                                Text(LocalizedStringKey(design.name))
                             }
                             .tag(Optional(design))
                         }
@@ -161,11 +165,6 @@ struct ResultView: View {
                 Text(LocalizedStringKey(display.nameShort))
                     .foregroundStyle(Color.gray)
                     .textSelection(.enabled)
-                    .onAppear() {
-                        if cardUserName == "" {
-                            cardUserName = String(localized: String.LocalizationValue(display.nameShort))
-                        }
-                    }
             }
             
             if !display.type.isEmpty {
@@ -175,20 +174,8 @@ struct ResultView: View {
                     Group {
                         if display.typeLocalizeTable != "" {
                             Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
-                                .onAppear() {
-                                    setCardDesigin(display.type)
-                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
-                                        cardUserName = String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
-                                    }
-                                }
                         } else {
                             Text(String(localized: String.LocalizationValue(display.type)))
-                                .onAppear() {
-                                    setCardDesigin(display.type)
-                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
-                                        cardUserName = String(localized: String.LocalizationValue(display.type))
-                                    }
-                                }
                         }
                     }
                         .foregroundStyle(Color.gray)
@@ -389,6 +376,21 @@ struct ResultView: View {
         } else if let design = (cardDesignList.first { $0.type == result.converter && $0.isDefault }) {
             cardDesign = design
         } else {
+        }
+    }
+    
+    func setDefaultDisplayName() {
+        if cardUserName == "" {
+            let displayName:String = result.info?.displayName ?? ""
+            if displayName == "" {
+                if let info = result.info {
+                    cardUserName = result.converter.cardInfo(info).nameShort
+                } else {
+                    cardUserName = String(localized:"card")
+                }
+            } else {
+                cardUserName = displayName
+            }
         }
     }
 }
