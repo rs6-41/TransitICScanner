@@ -80,15 +80,11 @@ struct ListBalanceWidgetView: View {
                             Spacer()
                             
                             HStack(spacing: 0) {
-                                Text(
-                                    String(
-                                        card.balance?.balanceText
-                                        ?? String(localized: "unknown")
-                                    )
-                                )
-                                
+                                let balance = String(card.balance?.balanceText ?? String(localized: "unknown"))
                                 if let currencyType = card.currencyType {
-                                    Text(currencyType.getLocalize())
+                                    Text(currencyType.getLocalize(balance))
+                                } else {
+                                    Text(balance)
                                 }
                             }
                         }

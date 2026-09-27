@@ -312,6 +312,35 @@
     "card" : {
 
     },
+    "card.apple" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        }
+      }
+    },
     "card.company.jr" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -724,25 +753,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mobile Pay"
+            "value" : "Phone"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "モバイル電子マネー"
+            "value" : "モバイル"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手机电子钱包"
+            "value" : "手机"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手機電子錢包"
+            "value" : "手機"
           }
         }
       }
@@ -2538,170 +2567,170 @@
         }
       }
     },
-    "currency.hkd" : {
+    "currency.hkd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HKD"
+            "value" : "HK$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "香港ドル"
+            "value" : "HK$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "港元"
+            "value" : "%@ 港元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "港幣"
+            "value" : "HK$ %@"
           }
         }
       }
     },
-    "currency.jpy" : {
+    "currency.jpy.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "JPY"
+            "value" : "%@ JPY"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "円"
+            "value" : "%@ 円"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日元"
+            "value" : "%@ 日元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日元"
+            "value" : "%@ 日元"
           }
         }
       }
     },
-    "currency.krw" : {
+    "currency.krw.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "KRW"
+            "value" : "₩ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ウォン"
+            "value" : "₩ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "韩元"
+            "value" : "%@ 韩元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "韓元"
+            "value" : "%@ 韓元"
           }
         }
       }
     },
-    "currency.ntd" : {
+    "currency.ntd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NTD"
+            "value" : "NT$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NTD"
+            "value" : "NT$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "新台币"
+            "value" : "%@ 新台币"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "新臺幣"
+            "value" : "NT$ %@"
           }
         }
       }
     },
-    "currency.rmb" : {
+    "currency.rmb.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RMB"
+            "value" : "%@ RMB"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "人民元"
+            "value" : "%@ 人民幣"
           }
         }
       }
     },
-    "currency.usd" : {
+    "currency.usd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "USD"
+            "value" : "$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ドル"
+            "value" : "$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "美元"
+            "value" : "%@ 美元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "美元"
+            "value" : "%@ 美元"
           }
         }
       }

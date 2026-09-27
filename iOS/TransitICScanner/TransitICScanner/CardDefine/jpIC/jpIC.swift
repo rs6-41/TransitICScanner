@@ -262,7 +262,7 @@ extension NFCScannerModel {
         let cardIDs:[jpICCheckID] = [
             jpICCheckID(name:"card.suica",maker:".112",card:"0312",mobile:nil),
             jpICCheckID(name:"card.suica",maker:".114",card:"0114",mobile:nil),
-            jpICCheckID(name:"card.phone",maker:".139",card:nil,mobile:"E6F5"),
+            jpICCheckID(name:"card.apple",maker:".139",card:nil,mobile:"E6F5"),
             jpICCheckID(name:"card.phone",maker:".140",card:nil,mobile:"B660"),
         ]
         
