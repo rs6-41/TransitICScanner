@@ -310,7 +310,32 @@
       }
     },
     "card" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC卡"
+          }
+        }
+      }
     },
     "card.apple" : {
       "extractionState" : "manual",
@@ -445,7 +470,7 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "EZL"
           }
         },
@@ -1844,65 +1869,108 @@
         }
       }
     },
-    "cardList.jpIC_other" : {
+    "cardList.jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         }
       }
     },
-    "cardList.jpIC_other.description" : {
+    "cardList.jpIC_IruCa.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ことでん（高松琴平電気鉄道)"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_IruCa.sortName" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(Sapporo)、IruCa(Kagawa)"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "IruCa"
           }
         }
       }
     },
-    "cardList.jpIC_other.sortName" : {
+    "cardList.jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_SAPICA.description" : {
+      "extractionState" : "manual"
+    },
+    "cardList.jpIC_SAPICA.sortName" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3650,60 +3718,118 @@
         }
       }
     },
-    "jpIC_other" : {
+    "jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         }
       }
     },
-    "jpIC_other.short" : {
+    "jpIC_IruCa.short" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
+          }
+        }
+      }
+    },
+    "jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "jpIC_SAPICA.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
           }
         }
       }
@@ -5197,35 +5323,6 @@
         }
       }
     },
-    "result.title" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ICカード"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC卡"
-          }
-        }
-      }
-    },
     "result.userData.design" : {
       "localizations" : {
         "en" : {
@@ -5880,31 +5977,60 @@
         }
       }
     },
-    "setting.acknowledgment.jpIC_other" : {
+    "setting.acknowledgment.jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA” is a trademark of Sapporo Information Center Co., Ltd.\n\n“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd."
+            "value" : "“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。\n「IruCa」は高松琴平電気鉄道株式会社の商標です。"
+            "value" : "「IruCa」は高松琴平電気鉄道株式会社の商標です。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。\n“IruCa”是高松琴平電気鉄道株式会社的商标。"
+            "value" : "“IruCa”是高松琴平電気鉄道株式会社的商标。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。\n“IruCa”是高松琴平電気鉄道株式會社的商標。"
+            "value" : "“IruCa”是高松琴平電気鉄道株式會社的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA” is a trademark of Sapporo Information Center Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。"
           }
         }
       }
