@@ -25,3 +25,23 @@ enum areaType: String,CaseIterable {
         }
     }
 }
+
+enum currencyType: String, CaseIterable,Codable {
+    case jpy
+    case rmb
+    case hkd
+    case ntd
+    case krw
+    case usd
+    
+    func getLocalize() -> LocalizedStringKey {
+        switch self {
+            case .jpy: return "currency.jpy"
+            case .rmb: return "currency.rmb"
+            case .hkd: return "currency.hkd"
+            case .ntd: return "currency.ntd"
+            case .krw: return "currency.krw"
+            case .usd: return "currency.usd"
+        }
+    }
+}

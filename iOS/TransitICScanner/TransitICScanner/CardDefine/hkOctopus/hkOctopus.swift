@@ -19,7 +19,7 @@ let hkOctopus = CardInfo(
         pollingOption:[.iso18092],
         felicaSystemCodes:["8008"],
         historyCount:0,
-        currency:String(localized:"currency.hkd"),
+        currencyType:.hkd,
         converter:.hkOctopus,
         scrapingView: nil
     ),
@@ -106,7 +106,7 @@ extension NFCScannerModel {
             idm: idm,
             name: hkOctopus.name,
             nameShort: hkOctopus.scanOption.nameShort,
-            currency: hkOctopus.scanOption.currency,
+            currencyType: hkOctopus.scanOption.currencyType,
             type: "",
             serial: nil,
             version: nil,

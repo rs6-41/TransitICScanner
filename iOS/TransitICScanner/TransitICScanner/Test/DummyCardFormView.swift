@@ -4,12 +4,13 @@ struct DummyCardFormView: View {
     @Environment(\.dismiss) private var dismiss
     @State var result:Result = Result(isHistory: false, converter: .jpIC, isLastHide: false, description: "", savedAt: Date.now)
     @State var history:[ResultHistory] = []
-    @State var info:ResultCardInfo = ResultCardInfo(idm: "", name: "", nameShort: "", currency: "", type: "")
+    @State var info:ResultCardInfo = ResultCardInfo(idm: "", name: "", nameShort: "", currencyType:
+        .usd, type: "")
     
     @State var balance: Double = 0.0
     @State var isHistory:Bool = false
     @State var nameShort: String = ""
-    @State var currency: String = ""
+    @State var currency: currencyType = .usd
     @State var type: String = ""
     @State var idm: String = String(Int.random(in: 100000000000...999999999999))
     @State var converter:ConverterType = .jpIC
@@ -27,7 +28,11 @@ struct DummyCardFormView: View {
             Section(header: Text(LocalizedStringKey("result.info"))) {
                 ListFormTextView(isRequest: true, title: "result.info.cardCategory", placeholder: "result.userData.name.placeholder", value: $nameShort)
                 ListFormTextView(isRequest: false, title: "result.info.cardType", placeholder: "result.info.cardType", value: $type)
-                ListFormTextView(isRequest: false, title: "setting.debug.result.dummyCard.form.currency", placeholder: "USD", value: $currency)
+                Picker(LocalizedStringKey("setting.debug.result.dummyCard.form.currency"),selection: $currency) {
+                    ForEach(currencyType.allCases, id: \.self) { item in
+                        Text(String("\(item)")).tag(item)
+                    }
+                }
                 ListFormTextView(isRequest: false, title: "result.info.ID", placeholder: "1A2B3C4D5", value: $idm)
                 ListFormNumberView(isRequest: true, title: "result.info.balance", placeholder: "0", value: $balance)
                 Picker(LocalizedStringKey("setting.debug.result.dummyCard.form.converter"),selection: $converter) {
@@ -99,12 +104,9 @@ struct DummyCardFormView: View {
         if nameShort == "" {
             nameShort = "DEBUG"
         }
-        if currency == "" {
-            currency = "USD"
-        }
         
         
-        info = ResultCardInfo(idm: idm, name: "DEBUG", nameShort: nameShort, currency: currency, type: type)
+        info = ResultCardInfo(idm: idm, name: "DEBUG", nameShort: nameShort, currency: currency.rawValue, type: type)
         result = Result(
             balance: balance,
             isHistory: isHistory,

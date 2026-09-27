@@ -140,13 +140,18 @@ struct ResultView: View {
         let display = result.converter.cardInfo(info)
         let balance = result.balance ?? 0
         let balanceText = balance.balanceText
-        let currency = localizedCurrency(info.currency)
+        
 
         Group {
             HStack {
                 Text(LocalizedStringKey("result.info.balance"))
                 Spacer()
-                Text(String("\(balanceText) \(currency)"))
+                HStack(spacing:0) {
+                    Text(String("\(balanceText)"))
+                    if let currency = info.currencyType?.getLocalize() {
+                        Text(currency)
+                    }
+                }
             }
             
             HStack {
@@ -255,9 +260,7 @@ struct ResultView: View {
         item: ResultHistory,
         history: [ResultHistory]
     ) -> some View {
-        let currency = localizedCurrency(
-            result.info?.currency ?? ""
-        )
+        let currency = result.info?.currencyType?.getLocalize()
 
         let display = result.converter.history(item)
 
@@ -297,7 +300,7 @@ struct ResultView: View {
                 if let diff {
                     resultHistoryAmount(
                         diff: diff,
-                        currency: currency
+                        currency: currency ?? ""
                     )
                 }
 
@@ -305,8 +308,12 @@ struct ResultView: View {
 
                 let balanceText =
                     display.balance.balanceText
-
-                Text(String("\(balanceText) \(currency)"))
+                HStack(spacing:0) {
+                    Text(String("\(balanceText)"))
+                    if let currency {
+                        Text(currency)
+                    }
+                }
             }
         }
     }
@@ -314,30 +321,28 @@ struct ResultView: View {
     @ViewBuilder
     private func resultHistoryAmount(
         diff: Double,
-        currency: String
+        currency: LocalizedStringKey
     ) -> some View {
         if diff == 0 {
-            Text(String("0 \(currency)"))
+            HStack(spacing:0) {
+                Text(String("0"))
+                Text(currency)
+            }
                 .foregroundStyle(.green)
         } else {
             let sign = diff >= 0 ? "+" : "-"
             let amount = abs(diff).balanceText
 
-            Text(String("\(sign)\(amount) \(currency)"))
-                .foregroundStyle(
-                    diff >= 0
-                        ? .green
-                        : .red
-                )
+            HStack(spacing:0) {
+                Text(String("\(sign)\(amount)"))
+                Text(currency)
+            }
+            .foregroundStyle(
+                diff >= 0
+                ? .green
+                : .red
+            )
         }
-    }
-
-    private func localizedCurrency(
-        _ currency: String,
-    ) -> String {
-        String(
-            localized: String.LocalizationValue(currency)
-        )
     }
 
     private func saveAction() {

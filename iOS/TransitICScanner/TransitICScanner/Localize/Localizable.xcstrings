@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@ %@" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2632,7 +2635,11 @@
         }
       }
     },
+    "currency.krw" : {
+
+    },
     "currency.KRW" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2659,6 +2666,9 @@
           }
         }
       }
+    },
+    "currency.ntd" : {
+
     },
     "currency.rmb" : {
       "localizations" : {
@@ -2689,6 +2699,7 @@
       }
     },
     "currency.twd" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2715,6 +2726,9 @@
           }
         }
       }
+    },
+    "currency.usd" : {
+
     },
     "done" : {
       "localizations" : {

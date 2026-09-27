@@ -19,7 +19,7 @@ let jpNplus = CardInfo(
         pollingOption:[.iso18092],
         felicaSystemCodes:["93EC"],
         historyCount:20,
-        currency:String(localized:"currency.jpy"),
+        currencyType:.jpy,
         converter:.jpNplus,
         scrapingView: nil
     ),
@@ -218,7 +218,7 @@ extension NFCScannerModel {
             idm: idm,
             name: jpNplus.name,
             nameShort: jpNplus.scanOption.nameShort,
-            currency: jpNplus.scanOption.currency,
+            currencyType: jpNplus.scanOption.currencyType,
             type: "",
             serial: nil,
             version: nil,

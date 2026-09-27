@@ -4,7 +4,8 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.rs6apps.TransitICScanner</string>
+		<string>group.com.rs6apps.TransitICScanner</string>
+		<string>group.com.rs6apps.TransitICScanner.debug</string>
 	</array>
 </dict>
 </plist>

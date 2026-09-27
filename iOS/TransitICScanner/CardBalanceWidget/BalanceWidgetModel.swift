@@ -9,7 +9,7 @@ struct BalanceWidgetModel: Hashable,Codable {
 }
 
 func getSavedWidgetData() -> [BalanceWidgetModel] {
-    let sharedDefaults = UserDefaults(suiteName: "group.rs6apps.TransitICScanner")
+    let sharedDefaults = UserDefaults(suiteName: "group.com.rs6apps.TransitICScanner")
     
     if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
        let decodedModels = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
