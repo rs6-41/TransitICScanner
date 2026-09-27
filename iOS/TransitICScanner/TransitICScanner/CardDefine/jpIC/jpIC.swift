@@ -44,24 +44,22 @@ let jpIC = CardInfo(
         )
 )
 
-//SAPICA,IruCa（システムコード以外は共通使用のカード）
-let jpIC_other = CardInfo(
+//SAPICA（システムコード以外は共通）
+let jpIC_SAPICA = CardInfo(
     logo:"jpIC_SAPICA",
-    name:"cardList.jpIC_other",
-    sortName:"cardList.jpIC_other.sortName",
+    name:"cardList.jpIC_SAPICA",
+    sortName:"cardList.jpIC_SAPICA.sortName",
     area: .jp,
     countryCode: ["jp"],
-    description:"cardList.jpIC_other.description",
+    description:"cardList.jpIC_SAPICA.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["jp.hokkaido","jp.sapporo","jp.kagawa","さっぽろ","かがわ","card.SAPICA","card.IruCa","さぴか","いるか","card.company.kotoden","サッポロ","カガワ","サピカ","イルカ","iruka","sapporo","kagawa","hokkaido","ことでん","高松琴平"],
+    searchWords: ["jp.hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
     scanOption:ScanOption(
-        name:"jpIC_other",
-        nameShort:"jpIC_other.short",
+        name:"jpIC_SAPICA",
+        nameShort:"jpIC_SAPICA.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
-        felicaSystemCodes:["865E","DE80"],
-        //865E：SAPICA
-        //DE80：IruCa
+        felicaSystemCodes:["865E"],
         historyCount:20,
         currencyType:.jpy,
         converter:.jpIC
@@ -81,12 +79,50 @@ let jpIC_other = CardInfo(
             ]
         )
 )
+
+
+
+//IruCa（システムコード以外は共通使用のカード）
+let jpIC_IruCa = CardInfo(
+    logo:"jpIC_IruCa",
+    name:"cardList.jpIC_IruCa",
+    sortName:"cardList.jpIC_IruCa.sortName",
+    area: .jp,
+    countryCode: ["jp"],
+    description:"cardList.jpIC_IruCa.description",
+    scand_description: "jpIC.scand.description",
+    searchWords: ["jp.kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
+    scanOption:ScanOption(
+        name:"jpIC_IruCa",
+        nameShort:"jpIC_IruCa.short",
+        scanType: .nfc,
+        pollingOption:[.iso18092],
+        felicaSystemCodes:["DE80"],
+        historyCount:20,
+        currencyType:.jpy,
+        converter:.jpIC
+    ),
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:500.0,
+            idm:"0112E1232B35A10",
+            type:"card.IruCa",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 2: チャージ 残高1100円 2025/19/23 19:21
+            ResultHistory(processType: 0x02,date: sampleDay2,balance: 1100,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            // 3: 自動改札 残高1099円 2026/1/3 12:58
+            ResultHistory(processType: 0x16,date: sampleDay3,balance: 500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            ]
+        )
+)
         
 
 //カードの読み取り処理
 extension NFCScannerModel {
     
-    func jpIC_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
+    func jpIC_scan(_ tag: NFCTag, _ session: NFCTagReaderSession, optionType:String = "") {
         guard case let .feliCa(felicaTag) = tag else {
             session.invalidate(errorMessage: String(localized:"scanner.coreNFC.error.notfeliCa"))
             return
@@ -100,7 +136,7 @@ extension NFCScannerModel {
                 count: self.scanOption.historyCount
             )
 
-            let info = await jpIC_info(felicaTag)
+            let info = await jpIC_info(felicaTag, optionType:optionType)
 
             await MainActor.run {
                 self.result = Result(
@@ -252,7 +288,7 @@ extension NFCScannerModel {
     }
 
     //MARK: カード情報を取得する
-    func jpIC_info(_ felicaTag: NFCFeliCaTag) async -> ResultCardInfo? {
+    func jpIC_info(_ felicaTag: NFCFeliCaTag, optionType:String) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -266,7 +302,13 @@ extension NFCScannerModel {
             jpICCheckID(name:"card.phone",maker:".140",card:nil,mobile:"B660"),
         ]
         
-        let cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
+        var cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
+        
+        switch optionType {
+            case "jpIC_SAPICA": cardType = "card.SAPICA"
+            case "jpIC_IruCa": cardType = "card.IruCa"
+            default:break
+        }
 
         return ResultCardInfo(
             idm: idm,

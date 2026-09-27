@@ -20,7 +20,7 @@ let featureCards: [CardInfo] = [
 
 // リリース済みのカード
 let relCards: [CardInfo] = [
-    jpIC,jpIC_other,cnTunion,hkOctopus,krOneCard,twICash,jpNplus
+    jpIC,jpIC_SAPICA,jpIC_IruCa,cnTunion,hkOctopus,krOneCard,twICash,jpNplus
 ]
 
 
@@ -29,7 +29,8 @@ extension NFCScannerModel {
     func switchCard(name:String,_ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch name {
         case "jpIC": self.jpIC_scan(tag,session)
-        case "jpIC_other": self.jpIC_scan(tag,session)
+        case "jpIC_SAPICA": self.jpIC_scan(tag,session,optionType: "jpIC_SAPICA")
+        case "jpIC_IruCa": self.jpIC_scan(tag,session,optionType: "jpIC_IruCa")
         case "cnTunion": self.cnTunion_scan(tag,session)
         case "hkOctopus": await self.hkOctopus_scan(tag,session)
         case "krOneCard": self.krOneCard_scan(tag,session)
@@ -47,7 +48,8 @@ extension NFCScannerModel {
 
 enum ConverterType: String,CaseIterable {
     case jpIC
-    case jpIC_other
+    case jpIC_SAPICA
+    case jpIC_IruCa
     case cnTunion
     case hkOctopus
     case krOneCard
@@ -60,7 +62,9 @@ enum ConverterType: String,CaseIterable {
         switch self {
         case .jpIC:
             jpIC_Converter.cardInfo(info)
-        case .jpIC_other:
+        case .jpIC_SAPICA:
+            jpIC_Converter.cardInfo(info)
+        case .jpIC_IruCa:
             jpIC_Converter.cardInfo(info)
         case .cnTunion:
             cnTunion_Converter.cardInfo(info)
@@ -83,7 +87,9 @@ enum ConverterType: String,CaseIterable {
         switch self {
         case .jpIC:
             jpIC_Converter.history(item)
-        case .jpIC_other:
+        case .jpIC_SAPICA:
+            jpIC_Converter.history(item)
+        case .jpIC_IruCa:
             jpIC_Converter.history(item)
         case .cnTunion:
             cnTunion_Converter.history(item)
