@@ -18,7 +18,7 @@ let twICash = CardInfo(
         pollingOption: [.iso14443],
         felicaSystemCodes: nil,
         historyCount: 20,
-        currency:String(localized:"currency.twd"),
+        currencyType:.ntd,
         converter: .twICash,
         scrapingView: nil
     ),
@@ -85,7 +85,7 @@ extension NFCScannerModel {
                     idm: readResult.cardNumber,
                     name: twICash.name,
                     nameShort: twICash.scanOption.nameShort,
-                    currency: twICash.scanOption.currency,
+                    currencyType: twICash.scanOption.currencyType,
                     type: "",
                     serial: readResult.cardNumber,
                     version: nil,

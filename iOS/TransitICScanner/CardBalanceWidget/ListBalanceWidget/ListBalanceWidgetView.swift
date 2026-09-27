@@ -23,16 +23,18 @@ struct ListBalanceWidgetView: View {
             if models != [] && itemCount != 0 {
                 ForEach(models.indexed(), id:\.element) { index, card in
                     if card != notSelectionModel {
-                        VStack(spacing:4) {
-                            HStack {
-                                Text(card.DisplayName ?? "unknown")
-                                    .fontWeight(.semibold)
-                                Spacer()
-                                Text(String(card.balance ?? 0))
+                        Group {
+                            VStack(spacing:4) {
+                                HStack {
+                                    Text(card.DisplayName ?? "unknown")
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    Text(String(card.balance ?? 0))
+                                }
+                                .padding(.horizontal,6)
+                                Divider()
+                                    .overlay(Color.gray)
                             }
-                            .padding(.horizontal,6)
-                            Divider()
-                                .overlay(Color.gray)
                         }
                     }
                 }
@@ -58,7 +60,7 @@ struct ListBalanceWidgetView: View {
             maxItems = 4
         case .systemLarge:
             maxItems = 10
-        case .systemExtraLarge:
+        case .systemExtraLargePortrait:
             maxItems = 16
         default:
             maxItems = 4

@@ -23,7 +23,7 @@ let jpIC = CardInfo(
         pollingOption:[.iso18092],
         felicaSystemCodes:["0003"],
         historyCount:20,
-        currency:String(localized:"currency.jpy"),
+        currencyType:.jpy,
         converter:.jpIC,
         scrapingView: nil
     ),
@@ -63,7 +63,7 @@ let jpIC_other = CardInfo(
         //865E：SAPICA
         //DE80：IruCa
         historyCount:20,
-        currency:String(localized:"currency.jpy"),
+        currencyType:.jpy,
         converter:.jpIC
     ),
     infomation: nil,
@@ -266,13 +266,13 @@ extension NFCScannerModel {
             jpICCheckID(name:"card.phone",maker:".140",card:nil,mobile:"B660"),
         ]
         
-        var cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
+        let cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
 
         return ResultCardInfo(
             idm: idm,
             name: jpIC.name,
             nameShort: jpIC.scanOption.nameShort,
-            currency: jpIC.scanOption.currency,
+            currencyType: jpIC.scanOption.currencyType,
             type: cardType,
             serial: nil,
             version: nil,

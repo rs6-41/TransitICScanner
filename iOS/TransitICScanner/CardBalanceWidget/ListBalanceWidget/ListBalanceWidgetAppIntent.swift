@@ -2,6 +2,7 @@ import WidgetKit
 import AppIntents
 import SwiftUI
 
+
 struct ListWidgetConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource {
         "widget.balance.setting.list.title"

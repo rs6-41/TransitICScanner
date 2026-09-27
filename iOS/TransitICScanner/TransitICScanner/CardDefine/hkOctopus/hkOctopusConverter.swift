@@ -12,7 +12,7 @@ enum hkOctopus_Converter {
             idm: info.idm,
             name: info.name,
             nameShort: info.nameShort,
-            currency: info.currency,
+            currencyType: info.currencyType ?? .hkd,
             type: info.type
         )
     }
