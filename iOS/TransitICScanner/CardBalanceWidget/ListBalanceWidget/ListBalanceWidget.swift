@@ -10,7 +10,7 @@ struct ListBalanceWidget: Widget {
         if #available(iOS 27.0, *) {
             return [.systemMedium, .systemLarge, .systemExtraLargePortrait]
         } else {
-            return [.systemSmall, .systemMedium, .systemLarge]
+            return [.systemMedium, .systemLarge]
         }
     }
 
@@ -19,8 +19,8 @@ struct ListBalanceWidget: Widget {
             ListBalanceWidgetView(entry: entry)
                 .containerBackground(.ultraThinMaterial, for: .widget)
         }
-        .configurationDisplayName("widget.balance.list.title")
-        .description("widget.balance.list.description")
+        .configurationDisplayName("widget.balance.setting.list.title")
+        .description("widget.balance.setting.list.description")
         .supportedFamilies(widgetFamilies)
     }
 }

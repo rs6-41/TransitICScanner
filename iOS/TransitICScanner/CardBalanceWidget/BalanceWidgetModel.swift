@@ -74,14 +74,8 @@ let notSelectionModel = BalanceWidgetModel(
 let placeholderModel = BalanceWidgetModel(
     DisplayName:String(localized:"widget.balance.placeholder.displayName"),
     balance:5000.0,
+    currencyType:.usd,
     idm: "PLACEHOLDER",
+    icon:"placeholder",
     savedAt:Date.now
-)
-
-//読み込みエラー時
-let snapshotModel = BalanceWidgetModel(
-    DisplayName:String(localized:"unknown"),
-    balance:0,
-    idm: "UNKWNOWN",
-    savedAt:nil
 )

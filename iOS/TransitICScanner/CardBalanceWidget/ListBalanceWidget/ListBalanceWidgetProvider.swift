@@ -15,7 +15,7 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
     }
 
     func snapshot(for configuration: ListWidgetConfigurationAppIntent, in context: Context) async -> ListBalanceWidgetEntry {
-        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[snapshotModel])
+        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel])
     }
     
     //通常のウィジェット
@@ -28,7 +28,7 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
         if let cards = configuration.card {
             for card in cards {
                 let selectCardIDm = card.idm
-                let selectCard = savedWidgetData.first(where: { $0.idm == selectCardIDm }) ?? snapshotModel
+                let selectCard = savedWidgetData.first(where: { $0.idm == selectCardIDm }) ?? placeholderModel
                 models.append(selectCard)
             }
         }
