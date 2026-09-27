@@ -309,6 +309,9 @@
         }
       }
     },
+    "card" : {
+
+    },
     "card.company.jr" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5166,6 +5169,7 @@
       }
     },
     "result.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8705,6 +8709,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper"
+          }
+        }
+      }
+    },
+    "widget.balance.list.emptySelection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードを選択してください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选取显示卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇顯示卡片"
           }
         }
       }
