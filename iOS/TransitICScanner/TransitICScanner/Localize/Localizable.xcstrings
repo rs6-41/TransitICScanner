@@ -2780,13 +2780,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "$ %@"
+            "value" : "$%@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "$ %@"
+            "value" : "$%@"
           }
         },
         "zh-Hans" : {

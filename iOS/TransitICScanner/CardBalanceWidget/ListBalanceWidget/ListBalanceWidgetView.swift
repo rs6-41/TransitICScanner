@@ -38,18 +38,26 @@ struct ListBalanceWidgetView: View {
     var body: some View {
         VStack(spacing: 4) {
             HStack(alignment:.top) {
-                HStack(spacing:5) {
-                    Image(systemName:"tram.fill")
-                    Text(LocalizedStringKey("widget.balance.list.title"))
-                        .fontWeight(.black)
-                    Spacer()
-                    HStack(spacing:2) {
-                        Image(systemName:"clock.arrow.trianglehead.counterclockwise.rotate.90")
-                        Text(entry.updateDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                GradientTextView(
+                    gradient: LinearGradient(
+                        colors: [.blue, .purple, .pink],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                ) {
+                    HStack(spacing: 5) {
+                        Image(systemName: "tram.fill")
+                        Text(LocalizedStringKey("widget.balance.list.title"))
+                            .fontWeight(.black)
                     }
-                        .font(.caption)
-                        .foregroundStyle(Color.gray)
                 }
+                Spacer()
+                HStack(spacing:2) {
+                    Image(systemName:"clock.arrow.trianglehead.counterclockwise.rotate.90")
+                    Text(entry.updateDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                }
+                .font(.caption)
+                .foregroundStyle(Color.gray)
             }
             
             Divider()
