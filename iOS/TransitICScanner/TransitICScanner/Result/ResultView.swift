@@ -39,7 +39,7 @@ struct ResultView: View {
                 }
             }
             .navigationTitle(
-                Text(String(localized: String.LocalizationValue(result.info?.displayName ?? "result.title")))
+                Text(String(localized: String.LocalizationValue(result.info?.displayName ?? String(localized:"result.title"))))
             )
             
         }
@@ -172,16 +172,27 @@ struct ResultView: View {
                 HStack {
                     Text(LocalizedStringKey("result.info.cardType"))
                     Spacer()
-                    Text(String(localized: String.LocalizationValue(display.type)))
+                    Group {
+                        if display.typeLocalizeTable != "" {
+                            Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
+                                .onAppear() {
+                                    setCardDesigin(display.type)
+                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
+                                        cardUserName = String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
+                                    }
+                                }
+                        } else {
+                            Text(String(localized: String.LocalizationValue(display.type)))
+                                .onAppear() {
+                                    setCardDesigin(display.type)
+                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
+                                        cardUserName = String(localized: String.LocalizationValue(display.type))
+                                    }
+                                }
+                        }
+                    }
                         .foregroundStyle(Color.gray)
                         .textSelection(.enabled)
-                        .onAppear() {
-                            setCardDesigin(display.type)
-                            
-                            if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
-                                cardUserName = String(localized: String.LocalizationValue(display.type))
-                            }
-                        }
                 }
             }
             
@@ -212,11 +223,7 @@ struct ResultView: View {
 
     @ViewBuilder
     private var resultHistorySection: some View {
-        Section(
-            header: Text(
-                "result.history.balance:\(result.history?.count ?? 0)"
-            )
-        ) {
+        Section {
             if result.isHistory {
                 if let history = result.history {
                     resultHistoryList(history)
@@ -231,6 +238,12 @@ struct ResultView: View {
                     LocalizedStringKey("result.history.notHistory")
                 )
                 .foregroundStyle(Color.gray)
+            }
+        } header: {
+            if let count = result.history?.count {
+                Text(LocalizedStringKey("result.history.balance:\(count)"))
+            } else {
+                Text(LocalizedStringKey("result.history.balance"))
             }
         }
     }
@@ -301,7 +314,7 @@ struct ResultView: View {
                 if let diff {
                     resultHistoryAmount(
                         diff: diff,
-                        currency: currency ?? ""
+                        currency: currency
                     )
                 }
 
@@ -322,12 +335,14 @@ struct ResultView: View {
     @ViewBuilder
     private func resultHistoryAmount(
         diff: Double,
-        currency: LocalizedStringKey
+        currency: LocalizedStringKey?
     ) -> some View {
         if diff == 0 {
             HStack(spacing:0) {
                 Text(String("0"))
-                Text(currency)
+                if let currency {
+                    Text(currency)
+                }
             }
                 .foregroundStyle(.green)
         } else {
@@ -336,7 +351,9 @@ struct ResultView: View {
 
             HStack(spacing:0) {
                 Text(String("\(sign)\(amount)"))
-                Text(currency)
+                if let currency {
+                    Text(currency)
+                }
             }
             .foregroundStyle(
                 diff >= 0

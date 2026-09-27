@@ -99,7 +99,20 @@ struct DebugSettingView: View {
                     }
                 }
                 
-                Section(header: Text(LocalizedStringKey("setting.debug.result.title"))) {
+                Section() {
+                        Toggle(isOn: $isDebugStorage) {
+                            Text(LocalizedStringKey("setting.debug.result.debugStorage"))
+                        }
+                        .onChange(of:isDebugStorage) {
+                            debugStorage(isDebugStorage)
+                        }
+                    
+                } header: {
+                    Text(LocalizedStringKey("setting.debug.result.title"))
+                } footer: {
+                    Text(LocalizedStringKey("setting.debug.result.debugStorage.description"))
+                }
+                Section {
                     Button(action: {
                         isDummyCardForm = true
                     }) {
@@ -122,16 +135,6 @@ struct DebugSettingView: View {
                     }) {
                         Text(LocalizedStringKey("setting.debug.result.demoCard"))
                     }
-                }
-                Section {
-                    Toggle(isOn: $isDebugStorage) {
-                        Text(LocalizedStringKey("setting.debug.result.debugStorage"))
-                    }
-                    .onChange(of:isDebugStorage) {
-                        debugStorage(isDebugStorage)
-                    }
-                } footer: {
-                    Text(LocalizedStringKey("setting.debug.result.debugStorage.description"))
                 }
                 
                 Section(header: Text(LocalizedStringKey("setting.debug.ad"))) {

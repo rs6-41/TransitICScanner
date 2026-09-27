@@ -13,6 +13,7 @@ struct ListWidgetConfigurationAppIntent: WidgetConfigurationIntent {
     }
 
     @Parameter(title: "widget.balance.setting.list.card", size: [
+        .systemSmall: 4,
         .systemMedium: 4,
         .systemLarge: 10,
         .systemExtraLarge: 16

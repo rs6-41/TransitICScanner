@@ -69,20 +69,16 @@
 		AA87AC59306752C900A3D87B /* Exceptions for "TransitICScanner" folder in "CardBalanceWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				CardDefine/Area.swift,
+				Result/BalanceFormat.swift,
+				Result/SaveData/Storage.swift,
 			);
 			target = AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		AA87AC30306698FB00A3D87B /* Exceptions for "CardBalanceWidget" folder in "Compile Sources" phase from "CardBalanceWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = AA87ABC8306686B600A3D87B /* Sources */;
-			membershipExceptions = (
-				Assets.xcassets,
-			);
-		};
 		AA87AC3E30669C8400A3D87B /* Exceptions for "TransitICScanner" folder in "Compile Sources" phase from "CardBalanceWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = AA87ABC8306686B600A3D87B /* Sources */;
@@ -99,7 +95,6 @@
 			exceptions = (
 				AA87AC4330669D8800A3D87B /* Exceptions for "CardBalanceWidget" folder in "TransitICScanner" target */,
 				AA87ABDE306686B800A3D87B /* Exceptions for "CardBalanceWidget" folder in "CardBalanceWidgetExtension" target */,
-				AA87AC30306698FB00A3D87B /* Exceptions for "CardBalanceWidget" folder in "Compile Sources" phase from "CardBalanceWidgetExtension" target */,
 			);
 			path = CardBalanceWidget;
 			sourceTree = "<group>";
