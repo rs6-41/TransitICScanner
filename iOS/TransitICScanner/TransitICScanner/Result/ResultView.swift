@@ -94,20 +94,27 @@ struct ResultView: View {
                 .pickerStyle(.navigationLink)
             }
             .onAppear() {
-                if cardDesign == nil {
-                    
-                    if let info = result.info {
-                        let display = result.converter.cardInfo(info)
-                        if !display.type.isEmpty {
+                if scandata {
+                    if cardDesign == nil {
+                        if let info = result.info {
+                            let display = result.converter.cardInfo(info)
+                            if !display.type.isEmpty {
+                                cardDesign = cardDesignList.first {
+                                    $0.type == result.converter && $0.name == display.type
+                                }
+                            }
+                        }
+                        
+                        if cardDesign == nil {
                             cardDesign = cardDesignList.first {
-                                $0.type == result.converter && $0.name == display.type
+                                $0.type == result.converter && $0.isDefault
                             }
                         }
                     }
-                    
-                    if cardDesign == nil {
+                } else {
+                    if let info = result.info {
                         cardDesign = cardDesignList.first {
-                            $0.type == result.converter && $0.isDefault
+                            $0.imageName == info.iconName
                         }
                     }
                 }
