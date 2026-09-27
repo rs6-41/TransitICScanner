@@ -14,7 +14,7 @@ let cnTunion = CardInfo(
     searchWords: ["zhongguojiaotonglianhe"],
     scanOption: ScanOption(
         name: "cnTunion",
-        nameShort: String(localized:"cnTunion.short"),
+        nameShort: "cnTunion.short",
         scanType: .nfc,
         pollingOption: [.iso14443],
         felicaSystemCodes: nil,

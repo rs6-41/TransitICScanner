@@ -15,7 +15,7 @@ let twEasyCard_old:CardInfo = CardInfo(
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         name:"twEasyCard_old",
-        nameShort:String(localized:"twEasyCard_old.short"),
+        nameShort:"twEasyCard_old.short",
         scanType: .scraping,
         pollingOption:[],
         felicaSystemCodes:[],
