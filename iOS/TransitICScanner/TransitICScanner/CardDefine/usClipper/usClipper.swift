@@ -47,6 +47,7 @@ let usClipper = CardInfo(
 
 
 extension NFCScannerModel {
+
     func usClipper_scan(
         _ tag: NFCTag,
         _ session: NFCTagReaderSession
@@ -514,11 +515,7 @@ extension NFCScannerModel {
 
         while position >= 0 {
 
-            let record =
-                data[
-                    position..
-                    <position + recordLength
-                ]
+            let record = data[position..<position + recordLength]
 
             let bytes =
                 Array(record)
@@ -639,11 +636,7 @@ extension NFCScannerModel {
 
         while position >= 0 {
 
-            let record =
-                data[
-                    position..
-                    <position + recordLength
-                ]
+            let record = data[position..<position + recordLength]
 
             let bytes =
                 Array(record)
@@ -898,6 +891,7 @@ extension NFCScannerModel {
                             refill.date.timeIntervalSince1970
                         )
             )
+                )
         }
 
         all.sort {
@@ -937,11 +931,11 @@ extension NFCScannerModel {
                     lineIn:
                         0,
                     stationIn:
-                        item.stationIn,
+                        UInt8(item.stationIn),
                     lineOut:
                         0,
                     stationOut:
-                        item.stationOut,
+                        UInt8(item.stationOut),
                     transactionId:
                         item.transactionID
                 )

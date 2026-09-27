@@ -10,6 +10,7 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
+    usClipper
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）
@@ -35,6 +36,7 @@ extension NFCScannerModel {
         case "twICash": self.twICash_scan(tag,session)
         case "jpNplus": self.jpNplus_scan(tag,session)
         case "twEasyCard_old": return
+        case "usClipper": self.usClipper_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -52,6 +54,7 @@ enum ConverterType: String,CaseIterable {
     case twICash
     case jpNplus
     case twEasyCard_old
+    case usClipper
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -71,6 +74,8 @@ enum ConverterType: String,CaseIterable {
             jpNplus_Converter.cardInfo(info)
         case .twEasyCard_old:
             twEasyCard_old_Converter.cardInfo(info)
+        case .usClipper:
+            usClipper_Converter.cardInfo(info)
         }
     }
 
@@ -92,6 +97,8 @@ enum ConverterType: String,CaseIterable {
             jpNplus_Converter.history(item)
         case .twEasyCard_old:
             twEasyCard_old_Converter.history(item)
+        case .usClipper:
+            usClipper_Converter.history(item)
         }
     }
 }
