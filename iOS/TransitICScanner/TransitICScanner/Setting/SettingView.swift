@@ -1,4 +1,6 @@
 import SwiftUI
+import Combine
+import SwiftData
 
 struct SettingView: View {
     @Binding var deleteAds:Bool

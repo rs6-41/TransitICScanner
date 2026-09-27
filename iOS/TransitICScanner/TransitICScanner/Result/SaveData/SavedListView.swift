@@ -177,7 +177,9 @@ struct SavedListView: View {
                                     VStack(alignment:.trailing) {
                                         HStack(spacing: 2) {
                                             Text(LocalizedStringKey(balance.balanceText))
-                                            Text(LocalizedStringKey(card.currency))
+                                            if let currencyType = card.currencyType {
+                                                Text(currencyType.getLocalize())
+                                            }
                                         }
                                         if let savedAt = card.savedAt {
                                             Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))

@@ -11,19 +11,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-@main struct TransitICScannerApp: App {
+@main
+struct TransitICScannerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("deleteAds") var deleteAds = false
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
-    
+
     let container: ModelContainer
 
     init() {
-        self.container = try! SavedDataModelContainer.makeContainer()
+        do {
+            self.container = try SavedDataModelContainer.makeContainer()
+        } catch {
+            fatalError(
+                "ModelContainerを作成できません: \(error)"
+            )
+        }
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -31,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .environmentObject(debugModel)
                 .environmentObject(getCountry)
                 .environmentObject(adsModel)
-                .modelContainer(container)
         }
+        .modelContainer(container)
     }
 }

@@ -40,6 +40,8 @@ struct DebugSettingView: View {
     
     @AppStorage("adDebug") var adDebug = false
     
+    @AppStorage("isDebugStorage") var isDebugStorage = false
+    
     var body: some View {
         ZStack {
             List {
@@ -97,7 +99,20 @@ struct DebugSettingView: View {
                     }
                 }
                 
-                Section(header: Text(LocalizedStringKey("setting.debug.result.title"))) {
+                Section() {
+                        Toggle(isOn: $isDebugStorage) {
+                            Text(LocalizedStringKey("setting.debug.result.debugStorage"))
+                        }
+                        .onChange(of:isDebugStorage) {
+                            debugStorage(isDebugStorage)
+                        }
+                    
+                } header: {
+                    Text(LocalizedStringKey("setting.debug.result.title"))
+                } footer: {
+                    Text(LocalizedStringKey("setting.debug.result.debugStorage.description"))
+                }
+                Section {
                     Button(action: {
                         isDummyCardForm = true
                     }) {

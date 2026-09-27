@@ -33,7 +33,8 @@ struct ResultCardInfo: Hashable, Codable {
     var nameShort: String
     var displayName: String?
     var iconName: String?
-    var currency: String
+    var currency: String? //廃止
+    var currencyType: currencyType?
     var type: String
     var serial: String?
     var version: String?
@@ -52,6 +53,7 @@ struct DisplayCardInfo: Hashable {
     var nameShort: String
     var displayName: String?
     var iconName: String?
-    var currency: String
+    var currencyType: currencyType
     var type: String
+    var typeLocalizeTable: String? = nil
 }
