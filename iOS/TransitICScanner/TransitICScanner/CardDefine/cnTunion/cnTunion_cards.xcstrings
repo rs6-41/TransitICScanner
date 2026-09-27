@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "e通卡" : {
-      "extractionState" : "pasted",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
