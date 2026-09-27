@@ -15,13 +15,13 @@ let twEasyCard_old:CardInfo = CardInfo(
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         name:"twEasyCard_old",
-        nameShort:String(localized:"twEasyCard_old.short"),
+        nameShort:"twEasyCard_old.short",
         scanType: .scraping,
         pollingOption:[],
         felicaSystemCodes:[],
         url: URL(string:"https://ezweb.easycard.com.tw/search/")!,
         historyCount:999,
-        currency:String(localized:"currency.twd"),
+        currencyType:.ntd,
         converter:.twEasyCard_old,
         scrapingView: {
             AnyView(twEasyCard_old_View())
@@ -607,7 +607,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                 idm: cardID,
                 name: twEasyCard_old.scanOption.name,
                 nameShort: twEasyCard_old.scanOption.nameShort,
-                currency: "TWD",
+                currencyType: twEasyCard_old.scanOption.currencyType,
                 type: "",
                 serial: nil,
                 version: nil,

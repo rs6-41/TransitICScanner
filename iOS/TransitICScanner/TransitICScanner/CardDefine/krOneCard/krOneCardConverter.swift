@@ -45,7 +45,7 @@ enum krOneCard_Converter {
             idm: info.idm,
             name: info.name,
             nameShort: info.nameShort,
-            currency: info.currency,
+            currencyType: info.currencyType ?? .krw,
             type: info.type
         )
     }
