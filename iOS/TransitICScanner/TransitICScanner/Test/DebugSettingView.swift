@@ -40,6 +40,8 @@ struct DebugSettingView: View {
     
     @AppStorage("adDebug") var adDebug = false
     
+    @AppStorage("isDebugStorage") var isDebugStorage = false
+    
     var body: some View {
         ZStack {
             List {
@@ -120,6 +122,16 @@ struct DebugSettingView: View {
                     }) {
                         Text(LocalizedStringKey("setting.debug.result.demoCard"))
                     }
+                }
+                Section {
+                    Toggle(isOn: $isDebugStorage) {
+                        Text(LocalizedStringKey("setting.debug.result.debugStorage"))
+                    }
+                    .onChange(of:isDebugStorage) {
+                        debugStorage(isDebugStorage)
+                    }
+                } footer: {
+                    Text(LocalizedStringKey("setting.debug.result.debugStorage.description"))
                 }
                 
                 Section(header: Text(LocalizedStringKey("setting.debug.ad"))) {

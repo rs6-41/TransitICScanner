@@ -35,6 +35,9 @@ struct ContentView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    
+    @AppStorage("isDebugStorage") var isDebugStorage = false
+    
     var body: some View {
         TabView(selection: $tab) {
             CardList(deleteAds: $deleteAds)
@@ -98,6 +101,7 @@ struct ContentView: View {
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             cardItemsStore.cardItems = devCards + featureCards + relCards
             adDebug = true
+            debugStorage(isDebugStorage)
             
         case "BETA":
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
@@ -111,6 +115,7 @@ struct ContentView: View {
             } else {
                 cardItemsStore.cardItems = relCards
             }
+            isDebugStorage = false
             
         case "REL":
             enableCardType = 0
@@ -122,6 +127,7 @@ struct ContentView: View {
             }
             cardItemsStore.cardItems = relCards
             adDebug = false
+            isDebugStorage = false
             
         case .none:break
         case .some(_):break

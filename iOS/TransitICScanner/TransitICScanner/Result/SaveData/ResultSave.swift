@@ -1,11 +1,33 @@
 import Foundation
+import WidgetKit
 import SwiftData
+
+
+var cloudKitContainerIdentifier =
+    "iCloud.com.rs6apps.TransitICScanner"
+var AppGroup = "group.rs6apps.TransitICScanner"
+
+func debugStorage(_ isDebug:Bool) {
+    if isDebug {
+        cloudKitContainerIdentifier =
+        "iCloud.com.rs6apps.TransitICScanner.debug"
+        AppGroup = "group.rs6apps.TransitICScanner.debug"
+    } else {
+        cloudKitContainerIdentifier =
+        "iCloud.com.rs6apps.TransitICScanner"
+        AppGroup = "group.rs6apps.TransitICScanner"
+    }
+}
 
 enum CloudSyncSettings {
     private static let key = "cloudSyncEnabled"
 
     static var isEnabled: Bool {
-        false
+        if UserDefaults.standard.object(forKey: key) == nil {
+            return true
+        }
+
+        return UserDefaults.standard.bool(forKey: key)
     }
 
     static func setEnabled(_ enabled: Bool) {
@@ -16,15 +38,12 @@ enum CloudSyncSettings {
     }
 }
 
-var cloudKitContainerIdentifier =
-    "iCloud.com.rs6apps.TransitICScanner.debug"
-
 enum SavedDataModelContainer {
     static func deleteStore() throws {
         let fileManager = FileManager.default
 
         guard let containerURL = fileManager.containerURL(
-            forSecurityApplicationGroupIdentifier: "group.com.rs6apps.TransitICScanner.debug"
+            forSecurityApplicationGroupIdentifier: cloudKitContainerIdentifier
         ) else {
             print("App GroupのURLを取得できません")
             return
@@ -395,6 +414,28 @@ enum ResultSave {
                 card.name
             )
         }
+        
+        //ウィジェットにデータをわたす
+        var widgetModels:[BalanceWidgetModel] = []
+        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
+           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+            widgetModels = decodedUsers
+        }
+        let saveData = BalanceWidgetModel(
+            DisplayName: info.displayName,
+            balance: result.balance,
+            idm: info.idm,
+            savedAt: result.savedAt
+        )
+        widgetModels.removeAll { $0.idm == info.idm }
+        widgetModels.append(saveData)
+        
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+        }
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func loadCards(
@@ -434,8 +475,23 @@ enum ResultSave {
         }
 
         modelContext.delete(card)
-
         try modelContext.save()
+        
+        //ウィジェットデータを消す
+        var widgetModels:[BalanceWidgetModel] = []
+        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        
+        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
+           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+            widgetModels = decodedUsers
+        }
+        widgetModels.removeAll { $0.idm == idm }
+        
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+        }
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func deleteAll(
@@ -450,6 +506,13 @@ enum ResultSave {
         }
 
         try modelContext.save()
+        
+        //ウィジェットデータを消す
+        var widgetModels:[BalanceWidgetModel] = []
+        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+        }
     }
 
     static func resetSavedData(

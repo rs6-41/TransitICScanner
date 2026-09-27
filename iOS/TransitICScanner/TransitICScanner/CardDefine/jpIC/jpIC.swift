@@ -13,12 +13,12 @@ let jpIC = CardInfo(
     sortName:"cardList.jpIC.sortName",
     area: .jp,
     countryCode: ["jp"],
-    description:String(localized:"cardList.jpIC.description"),
+    description:"cardList.jpIC.description",
     scand_description: "jpIC.scand.description",
     searchWords: ["card.suica","jpIC_suica","card.pasmo","card.icoca","card.toica","card.nimoca","card.manaca","すいか","ぱすも","いこか","といか","にもか","まなか","はやかけん","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr","じぇーあーる","にほん","スイカ","パスモ","イコカ","トイカ","ニモカ","マナカ","ハヤカケン","suika","pasumo","ikoka","toika","nimoka","manaka"],
     scanOption:ScanOption(
         name:"jpIC",
-        nameShort:String(localized:"jpIC.short"),
+        nameShort:"jpIC.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
         felicaSystemCodes:["0003"],
@@ -56,7 +56,7 @@ let jpIC_other = CardInfo(
     searchWords: ["jp.hokkaido","jp.sapporo","jp.kagawa","さっぽろ","かがわ","card.SAPICA","card.IruCa","さぴか","いるか","card.company.kotoden","サッポロ","カガワ","サピカ","イルカ","iruka","sapporo","kagawa","hokkaido","ことでん","高松琴平"],
     scanOption:ScanOption(
         name:"jpIC_other",
-        nameShort:String(localized:"jpIC_other.short"),
+        nameShort:"jpIC_other.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
         felicaSystemCodes:["865E","DE80"],

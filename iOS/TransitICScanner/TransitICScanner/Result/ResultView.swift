@@ -118,17 +118,18 @@ struct ResultView: View {
 
     @ViewBuilder
     private var resultInfoSection: some View {
-        Section(
-            header: Text(LocalizedStringKey("result.info")),
-            footer: Text(
-                String(localized: "result.description.common") +
-                result.description
-            )
-        ) {
+        Section {
             if let info = result.info {
                 resultInfoContent(info)
             } else {
                 Text(LocalizedStringKey("result.info.empty"))
+            }
+        } header: {
+            Text(LocalizedStringKey("result.info"))
+        } footer: {
+            VStack(alignment:.leading, spacing:0) {
+                Text(LocalizedStringKey("result.description.common"))
+                Text(LocalizedStringKey(result.description))
             }
         }
     }

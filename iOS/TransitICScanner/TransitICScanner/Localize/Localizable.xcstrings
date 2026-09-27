@@ -1719,6 +1719,7 @@
       }
     },
     "cardList.hkOctopus.description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1950,6 +1951,7 @@
       }
     },
     "cardList.jpIC.description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2495,6 +2497,7 @@
       }
     },
     "cardList.twICash.description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2552,6 +2555,7 @@
       }
     },
     "cnTunion.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3210,6 +3214,7 @@
       }
     },
     "hkOctopus.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4253,6 +4258,7 @@
       }
     },
     "jpIC.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4339,6 +4345,7 @@
       }
     },
     "krOneCard.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7894,6 +7901,12 @@
         }
       }
     },
+    "setting.debug.result.debugStorage" : {
+
+    },
+    "setting.debug.result.debugStorage.description" : {
+
+    },
     "setting.debug.result.demoCard" : {
       "localizations" : {
         "en" : {
@@ -9359,6 +9372,7 @@
       }
     },
     "twEasyCard_old.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -9416,6 +9430,7 @@
       }
     },
     "twICash.short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
