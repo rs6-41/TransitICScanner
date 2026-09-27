@@ -2,23 +2,6 @@ import Foundation
 import WidgetKit
 import SwiftData
 
-
-var cloudKitContainerIdentifier =
-    "iCloud.com.rs6apps.TransitICScanner"
-var AppGroup = "group.rs6apps.TransitICScanner"
-
-func debugStorage(_ isDebug:Bool) {
-    if isDebug {
-        cloudKitContainerIdentifier =
-        "iCloud.com.rs6apps.TransitICScanner.debug"
-        AppGroup = "group.rs6apps.TransitICScanner.debug"
-    } else {
-        cloudKitContainerIdentifier =
-        "iCloud.com.rs6apps.TransitICScanner"
-        AppGroup = "group.rs6apps.TransitICScanner"
-    }
-}
-
 enum CloudSyncSettings {
     private static let key = "cloudSyncEnabled"
 
@@ -43,7 +26,7 @@ enum SavedDataModelContainer {
         let fileManager = FileManager.default
 
         guard let containerURL = fileManager.containerURL(
-            forSecurityApplicationGroupIdentifier: cloudKitContainerIdentifier
+            forSecurityApplicationGroupIdentifier: AppGroup
         ) else {
             print("App GroupのURLを取得できません")
             return
@@ -425,16 +408,35 @@ enum ResultSave {
         let saveData = BalanceWidgetModel(
             DisplayName: info.displayName,
             balance: result.balance,
+            currencyType: result.info?.currencyType,
             idm: info.idm,
+            icon: info.iconName,
             savedAt: result.savedAt
         )
         widgetModels.removeAll { $0.idm == info.idm }
         widgetModels.append(saveData)
         
         if let encodedData = try? JSONEncoder().encode(widgetModels) {
-            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+            sharedDefaults?.set(
+                encodedData,
+                forKey: "widgetDatas"
+            )
+
+            sharedDefaults?.synchronize()
+
+            print("Widget保存:")
+            print("AppGroup:", AppGroup)
+            print("件数:", widgetModels.count)
+            print("データサイズ:", encodedData.count)
+        } else {
+            print("WidgetデータのEncodeに失敗")
         }
-        
+
+        print(
+            "Widget保存後:",
+            sharedDefaults?.data(forKey: "widgetDatas") != nil
+        )
+
         WidgetCenter.shared.reloadAllTimelines()
     }
 

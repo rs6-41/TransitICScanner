@@ -10,7 +10,7 @@ struct CardList: View {
     @State var currentCountryItems: [CardInfo] = []
     @State var otherCountryItems: [CardInfo] = []
     
-    @AppStorage("sort") var sort:SortType = .name_ascend
+    @AppStorage("sort") var sort:SortType = .locate_ascend
     
     @State var isDisplayScrapingForm = false
     @Binding var deleteAds:Bool

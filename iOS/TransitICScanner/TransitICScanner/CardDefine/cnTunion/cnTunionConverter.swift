@@ -17,7 +17,8 @@ enum cnTunion_Converter {
             name: info.name,
             nameShort: info.nameShort,
             currencyType: info.currencyType ?? .rmb,
-            type: type
+            type: type,
+            typeLocalizeTable: "cnTunion_cards"
         )
     }
 

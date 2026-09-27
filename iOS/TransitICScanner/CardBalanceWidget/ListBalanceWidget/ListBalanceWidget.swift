@@ -10,7 +10,7 @@ struct ListBalanceWidget: Widget {
         if #available(iOS 27.0, *) {
             return [.systemMedium, .systemLarge, .systemExtraLargePortrait]
         } else {
-            return [.systemMedium, .systemLarge]
+            return [.systemSmall, .systemMedium, .systemLarge]
         }
     }
 
