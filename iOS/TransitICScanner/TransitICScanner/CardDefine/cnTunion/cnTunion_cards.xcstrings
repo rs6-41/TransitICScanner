@@ -273,31 +273,13 @@
         }
       }
     },
-    "乐山公交IC卡" : {
+    "乐山交通卡" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leshan Transit IC Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "楽山交通ICカード"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "乐山公交IC卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "樂山公交IC卡"
+            "value" : "乐山交通卡"
           }
         }
       }
@@ -1004,6 +986,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "雙遼市交通一卡通"
+          }
+        }
+      }
+    },
+    "古城阆中通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "古城阆中通"
           }
         }
       }
@@ -2966,31 +2959,13 @@
         }
       }
     },
-    "攀枝花公交一卡通" : {
+    "攀枝花公交卡" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "攀枝花公交一卡通"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "攀枝花公交一卡通"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "攀枝花公交一卡通"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "攀枝花公交一卡通"
+            "value" : "攀枝花公交卡"
           }
         }
       }
