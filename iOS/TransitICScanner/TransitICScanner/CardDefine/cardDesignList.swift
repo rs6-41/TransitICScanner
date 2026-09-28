@@ -12,6 +12,7 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .jpIC, name: "card.sugoca", imageName: "jpIC_sugoca", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.SAPICA", imageName: "jpIC_SAPICA", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_IruCa", isDefault: false),
+    CardDesigin(type: .jpIC, name: "card.icsca", imageName: "jpIC_icsca", isDefault: false),
     
     
     // MARK: cnTunion

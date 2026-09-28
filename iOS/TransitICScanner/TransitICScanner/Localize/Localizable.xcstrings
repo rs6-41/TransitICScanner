@@ -656,6 +656,35 @@
         }
       }
     },
+    "card.icsca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        }
+      }
+    },
     "card.IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1952,6 +1981,81 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "日本交通系IC卡"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_icsca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_icsca.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendai City Transportation Bureau (仙台市交通局)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "仙台市交通局"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_icsca.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2/8/13/6"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
           }
         }
       }
@@ -3758,6 +3862,35 @@
         }
       }
     },
+    "jpIC_icsca.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        }
+      }
+    },
     "jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4102,6 +4235,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香川県"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Miyagi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyagi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮城県"
           }
         }
       }
@@ -6100,6 +6250,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jp.jpIC_icsca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca” is a registered trademark of Sendai-shi."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」は仙台市の商標です。"
           }
         }
       }
