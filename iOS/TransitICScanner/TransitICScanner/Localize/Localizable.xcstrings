@@ -395,6 +395,29 @@
         }
       }
     },
+    "card.beijing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beijing Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京市政交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京一卡通"
+          }
+        }
+      }
+    },
     "card.company.jr" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -587,7 +610,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "八達通"
+            "value" : "八达通"
           }
         },
         "zh-Hant" : {
@@ -616,7 +639,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "八達通"
+            "value" : "八达通"
           }
         },
         "zh-Hant" : {
@@ -743,6 +766,35 @@
         }
       }
     },
+    "card.macauPass.Tunion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau Pass (T-Union)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオパス（交通聯合）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳门通（交通联合）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳門通（交通聯合）"
+          }
+        }
+      }
+    },
     "card.manaca" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -797,6 +849,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nimoca"
+          }
+        }
+      }
+    },
+    "card.octopus.Tunion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus (T-Union)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オクトパス（交通聯合）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八达通（交通联合）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通（交通聯合）"
           }
         }
       }
@@ -884,6 +965,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "card.shanghai" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shanghai Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海交通卡"
+          }
+        }
+      }
+    },
+    "card.shenzhen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shenzhen Tong"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深圳交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深圳通"
           }
         }
       }
@@ -1800,7 +1927,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "八達通"
+            "value" : "八达通"
           }
         },
         "zh-Hant" : {
@@ -3043,35 +3170,6 @@
         }
       }
     },
-    "e通卡" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xiamen Yitongka"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e通卡"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e通卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e通卡"
-          }
-        }
-      }
-    },
     "form.birthday.day" : {
       "localizations" : {
         "en" : {
@@ -3370,7 +3468,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "八達通"
+            "value" : "八达通"
           }
         },
         "zh-Hant" : {
