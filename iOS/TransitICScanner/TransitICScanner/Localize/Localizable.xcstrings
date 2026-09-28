@@ -1901,10 +1901,28 @@
     "cardList.jpIC_IruCa.description" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden（Takamatsu Kotohira Railway)"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ことでん（高松琴平電気鉄道)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ことでん（高松琴平电气铁道)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松琴平電氣軌道"
           }
         }
       }
@@ -1968,7 +1986,33 @@
       }
     },
     "cardList.jpIC_SAPICA.description" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo area transit card."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌圏の地下鉄・路面電車・バス用カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌地区交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌地区交通卡"
+          }
+        }
+      }
     },
     "cardList.jpIC_SAPICA.sortName" : {
       "extractionState" : "manual",
@@ -2005,7 +2049,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nationwide-compatible transportation IC cards in Japan. Such as Suica, PASMO, and ICOCA"
+            "value" : "Nationwide IC cards in Japan. Such as Suica, PASMO, and ICOCA"
           }
         },
         "ja" : {
@@ -2017,7 +2061,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suica、PASMO、ICOCA等日本全国通用卡片"
+            "value" : "Suica、PASMO、ICOCA等日本全国通用卡"
           }
         },
         "zh-Hant" : {
@@ -2092,25 +2136,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nagasaki Bus Card"
+            "value" : "Nagasaki Bus / Saikai Transport"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎バスカード"
+            "value" : "長崎バス・さいかい交通"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎公交卡"
+            "value" : "长崎公交 / Saikai交通"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎公交卡"
+            "value" : "長崎公車 / Saikai交通"
           }
         }
       }
@@ -2604,7 +2648,32 @@
       }
     },
     "cardList.usClipper.description" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The BayArea’s transit card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンフランシスコ・ベイエリアの交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旧金山湾区交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "舊金山湾区交通卡"
+          }
+        }
+      }
     },
     "cnTunion.short" : {
       "extractionState" : "manual",
@@ -3904,7 +3973,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "カリフォルニア"
+            "value" : "カリフォルニア州"
           }
         },
         "zh-Hans" : {
@@ -3962,7 +4031,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "香川"
+            "value" : "香川県"
           }
         },
         "zh-Hans" : {
@@ -7368,10 +7437,28 @@
     },
     "setting.debug.result.debugStorage.description" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save data to a container different from the production environment."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "本番環境と異なるコンテナにデータを保存します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将数据保存到与生产环境不同的容器中"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將資料儲存至與正式環境不同的容器中"
           }
         }
       }
