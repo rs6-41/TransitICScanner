@@ -40,5 +40,9 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .twEasyCard_old, name: "card.twEasyCard_old", imageName: "twEasyCard_old", isDefault: true),
     
     // MARK: usClipper
-    CardDesigin(type: .usClipper, name: "card.usClipper", imageName: "usClipper", isDefault: true)
+    CardDesigin(type: .usClipper, name: "card.usClipper", imageName: "usClipper", isDefault: true),
+    
+    // MARK: twEasyCard_old
+    CardDesigin(type: .jpDoCard, name: "card.DoCard", imageName: "jpDoCard", isDefault: true),
+    CardDesigin(type: .jpDoCard, name: "card.Asaca", imageName: "jpDoCard_Asaca", isDefault: false)
 ]
