@@ -190,7 +190,7 @@ struct ResultView: View {
                     .textSelection(.enabled)
             }
             
-            if !display.type.isEmpty {
+            if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
                 HStack {
                     Text(LocalizedStringKey("result.info.cardType"))
                     Spacer()
@@ -198,7 +198,7 @@ struct ResultView: View {
                         if display.typeLocalizeTable != "" {
                             Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
                         } else {
-                            Text(String(localized: String.LocalizationValue(display.type)))
+                            Text(Localize(display.type))
                         }
                     }
                         .foregroundStyle(Color.gray)

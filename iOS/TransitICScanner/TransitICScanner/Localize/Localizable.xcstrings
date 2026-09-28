@@ -2640,25 +2640,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HK$ %@"
+            "value" : "HK$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HK$ %@"
+            "value" : "HK$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 港元"
+            "value" : "%@ 港元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HK$ %@"
+            "value" : "HK$ %@"
           }
         }
       }
@@ -2668,25 +2668,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ JPY"
+            "value" : "%@ JPY"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 円"
+            "value" : "%@ 円"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 日元"
+            "value" : "%@ 日元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 日元"
+            "value" : "%@ 日元"
           }
         }
       }
@@ -2696,25 +2696,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "₩ %@"
+            "value" : "₩ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "₩ %@"
+            "value" : "₩ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 韩元"
+            "value" : "%@ 韩元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 韓元"
+            "value" : "%@ 韓元"
           }
         }
       }
@@ -2724,25 +2724,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NT$ %@"
+            "value" : "NT$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NT$ %@"
+            "value" : "NT$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 新台币"
+            "value" : "%@ 新台币"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NT$ %@"
+            "value" : "NT$ %@"
           }
         }
       }
@@ -2752,25 +2752,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ RMB"
+            "value" : "%@ RMB"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 人民幣"
+            "value" : "%@ 人民幣"
           }
         }
       }
@@ -2780,25 +2780,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "$%@"
+            "value" : "$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "$%@"
+            "value" : "$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 美元"
+            "value" : "%@ 美元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ 美元"
+            "value" : "%@ 美元"
           }
         }
       }

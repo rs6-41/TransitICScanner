@@ -9,6 +9,7 @@ let usClipper = CardInfo(
     sortName: "cardList.usClipper.sortName",
     area: .us,
     countryCode: ["us"],
+    prefectures: ["CA"],
     description: String(localized: "cardList.usClipper.description"),
     scand_description: "",
     searchWords: ["clipper", "sanfrancisco", "bayarea"],
