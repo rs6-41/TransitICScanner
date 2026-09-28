@@ -23,8 +23,18 @@ struct ListButtonInner: View {
                 }
                 
                 VStack(alignment:.leading, spacing: 0) {
-                    Text(LocalizedStringKey(item.area.rawValue))
-                        .fontWeight(.semibold)
+                    HStack(spacing: 2) {
+                        Text(LocalizedStringKey(item.area.rawValue))
+                            .fontWeight(.semibold)
+                        if let prefectures = item.prefectures {
+                            ForEach(prefectures, id: \.self) { prefecture in
+                                Text(LocalizedStringKey("locate.prefecture." + prefecture))
+                                if prefecture != prefectures.last {
+                                    Text(String(", "))
+                                }
+                            }
+                        }
+                    }
                     
                     if let description = item.description {
                         Text(LocalizedStringKey(description))
