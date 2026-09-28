@@ -331,6 +331,17 @@
         }
       }
     },
+    "九驿通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "九驿通"
+          }
+        }
+      }
+    },
     "九龙卡" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1972,31 +1983,13 @@
         }
       }
     },
-    "安顺全国互联互通卡" : {
+    "安顺公交一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anshun National Transit Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "安順全国相互カード"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安顺全国互联互通卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "安順全國互聯互通卡"
+            "value" : "安顺公交一卡通"
           }
         }
       }

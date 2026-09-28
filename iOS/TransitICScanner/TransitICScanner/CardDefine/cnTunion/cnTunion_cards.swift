@@ -36,13 +36,13 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047400": card = cnTunion_Info(name:"贵阳公交电子车票",prefecture:"贵州省",city:"贵阳市")
     case "031047401": card = cnTunion_Info(name:"遵义交通一卡通",prefecture:"贵州省",city:"遵义市")
     case "031047402": card = cnTunion_Info(name:"凉都市民卡",prefecture:"贵州省",city:"六盘水市")
+    case "031047403": card = cnTunion_Info(name:"安顺公交一卡通",prefecture:"贵州省",city:"安顺")
+    case "031047404": card = cnTunion_Info(name:"九驿通",prefecture:"贵州省",city:"毕节市大方县")
+    case "031047405": card = cnTunion_Info(name:"桃源卡",prefecture:"贵州省",city:"铜仁市")
+    case "031047406": card = cnTunion_Info(name:"兴义卡",prefecture:"贵州省",city:"黔西南布依族苗族自治州")
+    case "031047407": card = cnTunion_Info(name:"凯里公交IC卡",prefecture:"贵州省",city:"黔东南苗族侗族自治州")
         
     /*
-    case "031047403": card = "安顺全国互联互通卡"
-    case "031047404": card = "毕节裕福交通一卡通"
-    case "031047405": card = "桃源卡"
-    case "031047406": card = "兴义卡"
-    case "031047407": card = "凯里公交IC卡"
     case "031047408": card = "贵州黔南全国交通一卡通"
     case "031047409": card = "贵阳轨道交通储值票"
     case "031047500": card = "拉萨公交IC卡"
