@@ -9,6 +9,7 @@ let cnTunion = CardInfo(
     sortName:"cardList.cnTunion.sortName",
     area: .cn,
     countryCode: ["cn","hk","mo"],
+    prefectures: nil,
     description: String(localized:"cardList.cnTunion.description"),
     scand_description: "",
     searchWords: ["zhongguojiaotonglianhe"],
