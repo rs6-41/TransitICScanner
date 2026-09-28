@@ -1881,19 +1881,19 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Doカード / Asacaカード"
+            "value" : "DoCard / Asaca"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DoCard / AsacaDoCard"
+            "value" : "DoCard / Asaca"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DoCard / AsacaDoCard"
+            "value" : "DoCard / Asaca"
           }
         }
       }
