@@ -1,5 +1,3 @@
-usClipper
-
 アメリカ・サンフランシスコ湾岸地域の交通系ICカード「Clipper」で使用されるICカードフォーマット。  
 ClipperはMIFARE DESFireを使用した交通ICカードシステムで、複数の交通事業者で利用されている。
 
