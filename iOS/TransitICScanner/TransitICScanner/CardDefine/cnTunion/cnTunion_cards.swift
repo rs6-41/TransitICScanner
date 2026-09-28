@@ -61,27 +61,30 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047604": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"黄南藏族自治州")
     case "031047606": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"玉树藏族自治州")
     case "031047607": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"海西蒙古族藏族自治州")
-        
+       
+    // MARK: 四川省 - 0310476
+    case "031047800": card = cnTunion_Info(name:"天府通",prefecture:"四川省",city:"成都市")
+    case "031047801": card = cnTunion_Info(name:"甜城通",prefecture:"四川省",city:"内江市")
+    case "031047802": card = cnTunion_Info(name:"月城一卡通",prefecture:"四川省",city:"内江市")
+    case "031047803": card = cnTunion_Info(name:"乐山交通卡",prefecture:"四川省",city:"乐山市")
+    case "031047804": card = cnTunion_Info(name:"自贡通",prefecture:"四川省",city:"自贡市")
+    case "031047805": card = cnTunion_Info(name:"攀枝花公交卡",prefecture:"四川省",city:"攀枝花市")
+    case "031047806": card = cnTunion_Info(name:"酒城一卡通",prefecture:"四川省",city:"泸州市")
+    case "031047807": card = cnTunion_Info(name:"德阳全国交通一卡通",prefecture:"四川省",city:"德阳市")
+    case "031047808": card = cnTunion_Info(name:"绵州通",prefecture:"四川省",city:"绵阳市")
+    case "031047809": card = cnTunion_Info(name:"利州通",prefecture:"四川省",city:"广元市")
+    case "031047810": card = cnTunion_Info(name:"遂州通",prefecture:"四川省",city:"遂宁市")
+    case "031047811": card = cnTunion_Info(name:"宜宾一卡通",prefecture:"四川省",city:"宜宾市")
+    case "031047812": card = cnTunion_Info(name:"南充公交卡",prefecture:"四川省",city:"南充市")
+    case "031047813": card = cnTunion_Info(name:"达州通",prefecture:"四川省",city:"达州市")
+    case "031047814": card = cnTunion_Info(name:"雅安交通一卡通",prefecture:"四川省",city:"雅安市")
+    case "031047816": card = cnTunion_Info(name:"康定公交一卡通",prefecture:"四川省",city:"甘孜藏族自治州")
+    case "031047817": card = cnTunion_Info(name:"眉山交通一卡通",prefecture:"四川省",city:"眉山市")
+    case "031047818": card = cnTunion_Info(name:"广安全国一卡通",prefecture:"四川省",city:"广安市")
+    case "031047819": card = cnTunion_Info(name:"巴中交通一卡通",prefecture:"四川省",city:"巴中市")
+    case "031047821": card = cnTunion_Info(name:"古城阆中通",prefecture:"四川省",city:"南充市")
         
     /*
-    case "031047800": card = "天府通"
-    case "031047802": card = "月城一卡通"
-    case "031047803": card = "乐山公交IC卡"
-    case "031047804": card = "自贡通"
-    case "031047805": card = "攀枝花公交一卡通"
-    case "031047806": card = "酒城一卡通"
-    case "031047807": card = "德阳全国交通一卡通"
-    case "031047808": card = "绵州通"
-    case "031047809": card = "利州通"
-    case "031047810": card = "遂州通"
-    case "031047811": card = "宜宾一卡通"
-    case "031047812": card = "南充公交卡"
-    case "031047813": card = "达州通"
-    case "031047814": card = "雅安交通一卡通"
-    case "031047816": card = "康定公交一卡通"
-    case "031047817": card = "眉山交通一卡通"
-    case "031047818": card = "广安全国一卡通"
-    case "031047819": card = "巴中交通一卡通"
     case "031047900": card = "红山一卡通"
     case "031047911": card = "金垦卡"
     case "031048000": card = "长安通"
@@ -116,6 +119,7 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031048309": card = "淮海通"
     case "031048311": card = "泰州通"
     case "031048312": card = "澄通卡"
+     case "031048315": card = "昆通卡"
     case "031048401": card = "柳州市民卡"
     case "031048402": card = "桂林通"
     case "031048403": card = "梧州通"
@@ -301,8 +305,7 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031058400": card = "邕桂通"
     case "031058404": card = "北海通"
     case "031058408": card = "钦州市民卡"
-    case "31948315": card = "昆通卡"
-    case "34047410": card = "同心市民卡"
+    case "034047410": card = "同心市民卡"
      */
     
     // MARK: 特別行政区
