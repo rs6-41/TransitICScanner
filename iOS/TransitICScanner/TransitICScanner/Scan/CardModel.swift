@@ -9,6 +9,7 @@ struct CardInfo {
     let sortName: String
     let area: areaType
     let countryCode: [String]
+    let prefectures: [String]?
     let description: String?
     let scand_description: String
     let searchWords: [String]

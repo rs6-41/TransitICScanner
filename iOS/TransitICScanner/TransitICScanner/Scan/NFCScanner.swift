@@ -88,7 +88,7 @@ final class NFCScannerModel: NSObject,ObservableObject, NFCTagReaderSessionDeleg
         let cardName = scanOption.nameShort
         self.session?.alertMessage = String(
             format: String(localized: "scanner.coreNFC.scan.message"),
-            cardName
+            Localize(cardName)
         )
         self.session?.begin()
     }

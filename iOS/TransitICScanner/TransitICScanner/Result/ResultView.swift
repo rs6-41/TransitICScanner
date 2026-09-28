@@ -21,6 +21,12 @@ struct ResultView: View {
                 ListAdView(deleteAds:$deleteAds)
                 resultHistorySection
             }
+            .onAppear() {
+                setDefaultDisplayName()
+            }
+            .onChange(of:cardUserName) {
+                setDefaultDisplayName()
+            }
             .toolbar {
                 ToolbarItem(
                     placement: .confirmationAction
@@ -39,7 +45,7 @@ struct ResultView: View {
                 }
             }
             .navigationTitle(
-                Text(String(localized: String.LocalizationValue(result.info?.displayName ?? String(localized:"result.title"))))
+                Text(cardUserName)
             )
             
         }
@@ -57,20 +63,16 @@ struct ResultView: View {
                 )
                 .multilineTextAlignment(.trailing)
             }
-            .onAppear {
-                if let name = result.info?.displayName, !name.isEmpty {
-                    cardUserName = name
-                }
-            }
-            .onChange(of: cardUserName) { _, newValue in
+            .onChange(of: cardUserName) {
                 guard var info = result.info else {
                     return
                 }
-
-                info.displayName = newValue
-                result.info = info
-                if !scandata {
-                    saveAction()
+                if cardUserName != "" {
+                    info.displayName = cardUserName
+                    result.info = info
+                    if !scandata {
+                        saveAction()
+                    }
                 }
             }
 
@@ -83,15 +85,39 @@ struct ResultView: View {
                         if design.type == result.converter {
                             HStack(spacing: 3) {
                                 CardImage(name: design.imageName)
-                                Text(
-                                    LocalizedStringKey(design.name)
-                                )
+                                Text(LocalizedStringKey(design.name))
                             }
                             .tag(Optional(design))
                         }
                     }
                 }
                 .pickerStyle(.navigationLink)
+            }
+            .onAppear() {
+                if scandata {
+                    if cardDesign == nil {
+                        if let info = result.info {
+                            let display = result.converter.cardInfo(info)
+                            if !display.type.isEmpty {
+                                cardDesign = cardDesignList.first {
+                                    $0.type == result.converter && $0.name == display.type
+                                }
+                            }
+                        }
+                        
+                        if cardDesign == nil {
+                            cardDesign = cardDesignList.first {
+                                $0.type == result.converter && $0.isDefault
+                            }
+                        }
+                    }
+                } else {
+                    if let info = result.info {
+                        cardDesign = cardDesignList.first {
+                            $0.imageName == info.iconName
+                        }
+                    }
+                }
             }
             .onChange(of: cardDesign) { _, newValue in
                 guard var info = result.info else {
@@ -148,9 +174,10 @@ struct ResultView: View {
                 Text(LocalizedStringKey("result.info.balance"))
                 Spacer()
                 HStack(spacing:0) {
-                    Text(String("\(balanceText)"))
-                    if let currency = info.currencyType?.getLocalize() {
+                    if let currency = info.currencyType?.getLocalize(balanceText) {
                         Text(currency)
+                    } else {
+                        Text(balanceText)
                     }
                 }
             }
@@ -161,34 +188,17 @@ struct ResultView: View {
                 Text(LocalizedStringKey(display.nameShort))
                     .foregroundStyle(Color.gray)
                     .textSelection(.enabled)
-                    .onAppear() {
-                        if cardUserName == "" {
-                            cardUserName = String(localized: String.LocalizationValue(display.nameShort))
-                        }
-                    }
             }
             
-            if !display.type.isEmpty {
+            if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
                 HStack {
                     Text(LocalizedStringKey("result.info.cardType"))
                     Spacer()
                     Group {
                         if display.typeLocalizeTable != "" {
                             Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
-                                .onAppear() {
-                                    setCardDesigin(display.type)
-                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
-                                        cardUserName = String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
-                                    }
-                                }
                         } else {
-                            Text(String(localized: String.LocalizationValue(display.type)))
-                                .onAppear() {
-                                    setCardDesigin(display.type)
-                                    if cardUserName == "" || (cardUserName == String(localized: String.LocalizationValue(display.nameShort))) {
-                                        cardUserName = String(localized: String.LocalizationValue(display.type))
-                                    }
-                                }
+                            Text(Localize(display.type))
                         }
                     }
                         .foregroundStyle(Color.gray)
@@ -274,12 +284,8 @@ struct ResultView: View {
         item: ResultHistory,
         history: [ResultHistory]
     ) -> some View {
-        let currency = result.info?.currencyType?.getLocalize()
-
         let display = result.converter.history(item)
-
         let hasNext = index + 1 < history.count
-
         let nextBalance: Double =
             hasNext
                 ? history[index + 1].balance
@@ -312,9 +318,13 @@ struct ResultView: View {
 
             HStack(spacing: 2) {
                 if let diff {
-                    resultHistoryAmount(
-                        diff: diff,
-                        currency: currency
+                    let amount = resultHistoryAmount(diff: diff)
+                    let currency = result.info?.currencyType?.getLocalize(amount)
+                    Text(currency ?? LocalizedStringKey(amount))
+                    .foregroundStyle(
+                        diff >= 0
+                        ? .green
+                        : .red
                     )
                 }
 
@@ -322,44 +332,19 @@ struct ResultView: View {
 
                 let balanceText =
                     display.balance.balanceText
-                HStack(spacing:0) {
-                    Text(String("\(balanceText)"))
-                    if let currency {
-                        Text(currency)
-                    }
-                }
+                let currency = result.info?.currencyType?.getLocalize(balanceText)
+                Text(currency ?? LocalizedStringKey(balanceText))
             }
         }
     }
 
-    @ViewBuilder
-    private func resultHistoryAmount(
-        diff: Double,
-        currency: LocalizedStringKey?
-    ) -> some View {
+    private func resultHistoryAmount(diff: Double) -> String {
         if diff == 0 {
-            HStack(spacing:0) {
-                Text(String("0"))
-                if let currency {
-                    Text(currency)
-                }
-            }
-                .foregroundStyle(.green)
+            return "0"
         } else {
             let sign = diff >= 0 ? "+" : "-"
             let amount = abs(diff).balanceText
-
-            HStack(spacing:0) {
-                Text(String("\(sign)\(amount)"))
-                if let currency {
-                    Text(currency)
-                }
-            }
-            .foregroundStyle(
-                diff >= 0
-                ? .green
-                : .red
-            )
+            return String("\(sign)\(amount)")
         }
     }
 
@@ -389,6 +374,30 @@ struct ResultView: View {
         } else if let design = (cardDesignList.first { $0.type == result.converter && $0.isDefault }) {
             cardDesign = design
         } else {
+        }
+    }
+    
+    func setDefaultDisplayName() {
+        if cardUserName == "" {
+            let displayName:String = result.info?.displayName ?? ""
+            if displayName == "" {
+                if let info = result.info {
+                    let display = result.converter.cardInfo(info)
+                    if !display.type.isEmpty {
+                        if display.typeLocalizeTable != "" {
+                            cardUserName = String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
+                        } else {
+                            cardUserName = Localize(display.type)
+                        }
+                    } else {
+                        cardUserName = Localize(display.nameShort)
+                    }
+                } else {
+                    cardUserName = String(localized:"card")
+                }
+            } else {
+                cardUserName = displayName
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ let hkOctopus = CardInfo(
     sortName:"cardList.hkOctopus.sortName",
     area: .hk,
     countryCode: ["hk"],
+    prefectures: nil,
     description:"cardList.hkOctopus.description",
     scand_description: "",
     searchWords: ["badatong","baat3daat6tung1","baatdaattung"],

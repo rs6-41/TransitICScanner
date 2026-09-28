@@ -76,6 +76,6 @@ let placeholderModel = BalanceWidgetModel(
     balance:5000.0,
     currencyType:.usd,
     idm: "PLACEHOLDER",
-    icon:"placeholder",
+    icon:"placeholderCard",
     savedAt:Date.now
 )

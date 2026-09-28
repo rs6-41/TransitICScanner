@@ -175,11 +175,8 @@ struct SavedListView: View {
 
                                 if let balance = card.balance {
                                     VStack(alignment:.trailing) {
-                                        HStack(spacing: 2) {
-                                            Text(LocalizedStringKey(balance.balanceText))
-                                            if let currencyType = card.currencyType {
-                                                Text(currencyType.getLocalize())
-                                            }
+                                        if let currencyType = card.currencyType {
+                                            Text(currencyType.getLocalize(balance.balanceText))
                                         }
                                         if let savedAt = card.savedAt {
                                             Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
