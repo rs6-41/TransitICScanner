@@ -9,6 +9,7 @@ let cnTunion = CardInfo(
     sortName:"cardList.cnTunion.sortName",
     area: .cn,
     countryCode: ["cn","hk","mo"],
+    prefectures: nil,
     description: String(localized:"cardList.cnTunion.description"),
     scand_description: "",
     searchWords: ["zhongguojiaotonglianhe"],
@@ -27,8 +28,8 @@ let cnTunion = CardInfo(
     sample:
         ResultSample(
             balance:295.0,
-            idm:"03102469381485733939",
-            type:"北京一卡通",
+            idm:"03104770012345678901",
+            type:"上海公共交通卡",
             history: [
             //TODO: 駅コード例を調べる（暫定的に全て1111）
             // 2: 100RMB チャージ 残高300RMB 2025/19/23 19:21

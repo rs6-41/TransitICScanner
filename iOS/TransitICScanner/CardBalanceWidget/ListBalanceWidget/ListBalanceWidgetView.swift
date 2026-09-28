@@ -14,9 +14,9 @@ struct ListBalanceWidgetView: View {
         case .systemMedium:
             return 4
         case .systemLarge:
-            return 10
+            return 12
         case .systemExtraLargePortrait:
-            return 16
+            return 19
         default:
             return 4
         }
@@ -37,10 +37,27 @@ struct ListBalanceWidgetView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            HStack {
-                Text(LocalizedStringKey("widget.balance.list.title"))
-                    .fontWeight(.black)
+            HStack(alignment:.top) {
+                GradientTextView(
+                    gradient: LinearGradient(
+                        colors: [.blue, .purple, .pink],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                ) {
+                    HStack(spacing: 5) {
+                        Image(systemName: "tram.fill")
+                        Text(LocalizedStringKey("widget.balance.list.title"))
+                            .fontWeight(.black)
+                    }
+                }
                 Spacer()
+                HStack(spacing:2) {
+                    Image(systemName:"clock.arrow.trianglehead.counterclockwise.rotate.90")
+                    Text(entry.updateDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                }
+                .font(.caption)
+                .foregroundStyle(Color.gray)
             }
             
             Divider()
@@ -48,9 +65,11 @@ struct ListBalanceWidgetView: View {
             
             if models.isEmpty {
                 Spacer()
-                
-                Text(LocalizedStringKey("widget.balance.list.emptySelection"))
-                
+                HStack(spacing:5) {
+                    Image(systemName:"widget.large.badge.plus")
+                        .imageScale(.small)
+                    Text(LocalizedStringKey("widget.balance.list.emptySelection"))
+                }
                 Spacer()
             } else {
                 ForEach(models, id: \.idm) { card in
@@ -69,15 +88,11 @@ struct ListBalanceWidgetView: View {
                             Spacer()
                             
                             HStack(spacing: 0) {
-                                Text(
-                                    String(
-                                        card.balance?.balanceText
-                                        ?? String(localized: "unknown")
-                                    )
-                                )
-                                
+                                let balance = String(card.balance?.balanceText ?? String(localized: "unknown"))
                                 if let currencyType = card.currencyType {
-                                    Text(currencyType.getLocalize())
+                                    Text(currencyType.getLocalize(balance))
+                                } else {
+                                    Text(balance)
                                 }
                             }
                         }

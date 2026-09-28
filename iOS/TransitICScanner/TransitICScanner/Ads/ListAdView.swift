@@ -1,5 +1,7 @@
 import SwiftUI
 
+//TODO: カスタム広告を検証後に有効化（コメントアウトしている）
+
 struct ListAdView: View {
     @StateObject private var nativeAdManager = NativeAdManager()
 
@@ -20,11 +22,14 @@ struct ListAdView: View {
         if !deleteAds {
             Section() {
                 VStack {
+                    /*
                     if let nativeAd = nativeAdManager.ad {
                         NativeAdRepresentable(nativeAd: nativeAd, size: $adSize)
                             .id(colorSchemeID)
                             .allowsHitTesting(false)
-                    } else if nativeAdManager.loadCompleted {
+                    } else
+                     */
+                    if nativeAdManager.loadCompleted {
                         ZStack {
                             if isDisplayMyAppAdd {
                                 myAppsAd
@@ -45,7 +50,7 @@ struct ListAdView: View {
                 .frame(minHeight: adSize.height)
                 .onAppear() {
                     Task {
-                        nativeAdManager.loadAd()
+                        //nativeAdManager.loadAd()
                     }
                 }
             } header: {

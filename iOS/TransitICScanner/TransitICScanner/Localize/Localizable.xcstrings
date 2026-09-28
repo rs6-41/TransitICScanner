@@ -309,6 +309,63 @@
         }
       }
     },
+    "card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC卡"
+          }
+        }
+      }
+    },
+    "card.apple" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        }
+      }
+    },
     "card.company.jr" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -413,7 +470,7 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "EZL"
           }
         },
@@ -721,25 +778,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mobile Pay"
+            "value" : "Phone"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "モバイル電子マネー"
+            "value" : "モバイル"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手机电子钱包"
+            "value" : "手机"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手機電子錢包"
+            "value" : "手機"
           }
         }
       }
@@ -964,7 +1021,7 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "icash"
           }
         },
@@ -972,6 +1029,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
+          }
+        }
+      }
+    },
+    "card.usClipper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
           }
         }
       }
@@ -1409,6 +1495,35 @@
         }
       }
     },
+    "cardList.area.tw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taiwan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台湾"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台湾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "臺灣"
+          }
+        }
+      }
+    },
     "cardList.area.tw.sortName" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1783,65 +1898,152 @@
         }
       }
     },
-    "cardList.jpIC_other" : {
+    "cardList.jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         }
       }
     },
-    "cardList.jpIC_other.description" : {
+    "cardList.jpIC_IruCa.description" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(Sapporo)、IruCa(Kagawa)"
+            "value" : "Kotoden（Takamatsu Kotohira Railway)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "ことでん（高松琴平電気鉄道)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "ことでん（高松琴平电气铁道)"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA(札幌)、IruCa(香川)"
+            "value" : "高松琴平電氣軌道"
           }
         }
       }
     },
-    "cardList.jpIC_other.sortName" : {
+    "cardList.jpIC_IruCa.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_SAPICA.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo area transit card."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌圏の地下鉄・路面電車・バス用カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌地区交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌地区交通卡"
+          }
+        }
+      }
+    },
+    "cardList.jpIC_SAPICA.sortName" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1876,7 +2078,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nationwide-compatible transportation IC cards in Japan. Such as Suica, PASMO, and ICOCA"
+            "value" : "Nationwide IC cards in Japan. Such as Suica, PASMO, and ICOCA"
           }
         },
         "ja" : {
@@ -1888,7 +2090,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suica、PASMO、ICOCA等日本全国通用卡片"
+            "value" : "Suica、PASMO、ICOCA等日本全国通用卡"
           }
         },
         "zh-Hant" : {
@@ -1963,25 +2165,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nagasaki Bus Card"
+            "value" : "Nagasaki Bus / Saikai Transport"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎バスカード"
+            "value" : "長崎バス・さいかい交通"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎公交卡"
+            "value" : "长崎公交 / Saikai交通"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎公交卡"
+            "value" : "長崎公車 / Saikai交通"
           }
         }
       }
@@ -2445,6 +2647,63 @@
         }
       }
     },
+    "cardList.usClipper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        }
+      }
+    },
+    "cardList.usClipper.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The BayArea’s transit card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンフランシスコ・ベイエリアの交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旧金山湾区交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "舊金山湾区交通卡"
+          }
+        }
+      }
+    },
     "cnTunion.short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2474,170 +2733,170 @@
         }
       }
     },
-    "currency.hkd" : {
+    "currency.hkd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HKD"
+            "value" : "HK$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "香港ドル"
+            "value" : "HK$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "港元"
+            "value" : "%@ 港元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "港幣"
+            "value" : "HK$ %@"
           }
         }
       }
     },
-    "currency.jpy" : {
+    "currency.jpy.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "JPY"
+            "value" : "%@ JPY"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "円"
+            "value" : "%@ 円"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日元"
+            "value" : "%@ 日元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日元"
+            "value" : "%@ 日元"
           }
         }
       }
     },
-    "currency.krw" : {
+    "currency.krw.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "KRW"
+            "value" : "₩ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ウォン"
+            "value" : "₩ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "韩元"
+            "value" : "%@ 韩元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "韓元"
+            "value" : "%@ 韓元"
           }
         }
       }
     },
-    "currency.ntd" : {
+    "currency.ntd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NTD"
+            "value" : "NT$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NTD"
+            "value" : "NT$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "新台币"
+            "value" : "%@ 新台币"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "新臺幣"
+            "value" : "NT$ %@"
           }
         }
       }
     },
-    "currency.rmb" : {
+    "currency.rmb.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RMB"
+            "value" : "%@ RMB"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "元"
+            "value" : "%@ 元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "人民元"
+            "value" : "%@ 人民幣"
           }
         }
       }
     },
-    "currency.usd" : {
+    "currency.usd.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "USD"
+            "value" : "$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ドル"
+            "value" : "$ %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "美元"
+            "value" : "%@ 美元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "美元"
+            "value" : "%@ 美元"
           }
         }
       }
@@ -3383,93 +3642,6 @@
         }
       }
     },
-    "jp.hokkaido" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hokkaido"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "北海道"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "北海道"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "北海道"
-          }
-        }
-      }
-    },
-    "jp.kagawa" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kagawa"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "香川県"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "香川県"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "香川県"
-          }
-        }
-      }
-    },
-    "jp.nagasaki" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "nagasaki"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "長崎"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "長崎"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "長崎"
-          }
-        }
-      }
-    },
     "jp.sapporo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3557,60 +3729,118 @@
         }
       }
     },
-    "jpIC_other" : {
+    "jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         }
       }
     },
-    "jpIC_other.short" : {
+    "jpIC_IruCa.short" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAPICA / IruCa"
+            "value" : "IruCa"
+          }
+        }
+      }
+    },
+    "jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        }
+      }
+    },
+    "jpIC_SAPICA.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
           }
         }
       }
@@ -3756,6 +3986,122 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
+          }
+        }
+      }
+    },
+    "locate.prefecture.CA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "California"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カリフォルニア州"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加州"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加州"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Hokkaido" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hokkaido"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Kagawa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagawa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川県"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川県"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Nagasaki" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎県"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长崎"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎県"
           }
         }
       }
@@ -5104,34 +5450,6 @@
         }
       }
     },
-    "result.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ICカード"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IC卡"
-          }
-        }
-      }
-    },
     "result.userData.design" : {
       "localizations" : {
         "en" : {
@@ -5786,31 +6104,60 @@
         }
       }
     },
-    "setting.acknowledgment.jpIC_other" : {
+    "setting.acknowledgment.jpIC_IruCa" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA” is a trademark of Sapporo Information Center Co., Ltd.\n\n“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd."
+            "value" : "“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。\n「IruCa」は高松琴平電気鉄道株式会社の商標です。"
+            "value" : "「IruCa」は高松琴平電気鉄道株式会社の商標です。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。\n“IruCa”是高松琴平電気鉄道株式会社的商标。"
+            "value" : "“IruCa”是高松琴平電気鉄道株式会社的商标。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。\n“IruCa”是高松琴平電気鉄道株式會社的商標。"
+            "value" : "“IruCa”是高松琴平電気鉄道株式會社的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpIC_SAPICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA” is a trademark of Sapporo Information Center Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「SAPICA」は札幌総合情報センター株式会社の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式会社的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。"
           }
         }
       }
@@ -7119,10 +7466,28 @@
     },
     "setting.debug.result.debugStorage.description" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save data to a container different from the production environment."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "本番環境と異なるコンテナにデータを保存します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将数据保存到与生产环境不同的容器中"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將資料儲存至與正式環境不同的容器中"
           }
         }
       }
@@ -8615,6 +8980,64 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "不明"
+          }
+        }
+      }
+    },
+    "usClipper.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        }
+      }
+    },
+    "widget.balance.list.emptySelection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードを選択してください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选取显示卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇顯示卡片"
           }
         }
       }

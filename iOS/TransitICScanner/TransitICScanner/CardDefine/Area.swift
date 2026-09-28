@@ -34,14 +34,14 @@ enum currencyType: String, CaseIterable,Codable {
     case krw
     case usd
     
-    func getLocalize() -> LocalizedStringKey {
+    func getLocalize(_ price:String) -> LocalizedStringKey {
         switch self {
-            case .jpy: return "currency.jpy"
-            case .rmb: return "currency.rmb"
-            case .hkd: return "currency.hkd"
-            case .ntd: return "currency.ntd"
-            case .krw: return "currency.krw"
-            case .usd: return "currency.usd"
+            case .jpy: return "currency.jpy.\(price)"
+            case .rmb: return "currency.rmb.\(price)"
+            case .hkd: return "currency.hkd.\(price)"
+            case .ntd: return "currency.ntd.\(price)"
+            case .krw: return "currency.krw.\(price)"
+            case .usd: return "currency.usd.\(price)"
         }
     }
 }

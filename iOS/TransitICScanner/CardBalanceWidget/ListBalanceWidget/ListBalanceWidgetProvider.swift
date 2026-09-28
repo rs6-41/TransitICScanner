@@ -6,16 +6,17 @@ struct ListBalanceWidgetEntry: TimelineEntry {
     let configuration: ListWidgetConfigurationAppIntent
     
     let models: [BalanceWidgetModel]
+    let updateDate: Date
 }
 
 struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> ListBalanceWidgetEntry {
-        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel])
+        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel],updateDate:Date.now)
     }
 
     func snapshot(for configuration: ListWidgetConfigurationAppIntent, in context: Context) async -> ListBalanceWidgetEntry {
-        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel])
+        ListBalanceWidgetEntry(date: Date(), configuration: ListWidgetConfigurationAppIntent(),models:[placeholderModel],updateDate:Date.now)
     }
     
     //通常のウィジェット
@@ -34,7 +35,7 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
         }
         
         let entryDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
-        entries = [ListBalanceWidgetEntry(date: entryDate, configuration: configuration,models:models)]
+        entries = [ListBalanceWidgetEntry(date: entryDate, configuration: configuration,models:models, updateDate: Date.now)]
 
         return Timeline(entries: entries, policy: .atEnd)
     }
