@@ -24,7 +24,7 @@ let jpDoCard = CardInfo(
         felicaSystemCodes: ["8DB6"],
         historyCount: 20,
         currencyType: .jpy,
-        converter: .jpIC
+        converter: .jpDoCard
     ),
     infomation: nil,
     sample:
@@ -33,11 +33,11 @@ let jpDoCard = CardInfo(
             idm:"0112E09999B35A10",
             type:"card.DoCard",
             history: [
-            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            //TODO: processTypeが適当なため実際の値に修正
             // 2: チャージ 残高1100円 2025/19/23 19:21
-            ResultHistory(processType: 0x02,date: sampleDay2,balance: 1100,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            ResultHistory(processType: 0x01,date: sampleDay2,balance: 1100,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
             // 3: 自動改札 残高1099円 2026/1/3 12:58
-            ResultHistory(processType: 0x16,date: sampleDay3,balance: 500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            ResultHistory(processType: 0x02,date: sampleDay3,balance: 500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
             ]
         )
 )
