@@ -8,8 +8,6 @@ func cnTunion_idCheck(iin:String) -> String {
     case "031047403": card = "安顺全国互联互通卡"
     case "031050707": card = "安阳公交一卡通"
     case "031051203": card = "鞍山交运通卡"
-    case "031049600": card = "澳门通"
-    case "031048500": card = "八达通"
     case "031047819": card = "巴中交通一卡通"
     case "031048905": card = "白山交通一卡通"
     case "031049900": card = "蚌埠公交一卡通"
@@ -269,6 +267,8 @@ func cnTunion_idCheck(iin:String) -> String {
     case "031048202": card = "株洲公交IC卡"
     case "031047804": card = "自贡通"
     case "031047401": card = "遵义交通一卡通"
+    case "031048500": card = "八达通"
+    case "031049600": card = "澳门通"
     default: card = ""
     }
     return card
