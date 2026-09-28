@@ -55,7 +55,7 @@ let jpIC_SAPICA = CardInfo(
     prefectures: ["Hokkaido"],
     description:"cardList.jpIC_SAPICA.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["jp.hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
+    searchWords: ["locate.prefecture.Hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
     scanOption:ScanOption(
         name:"jpIC_SAPICA",
         nameShort:"jpIC_SAPICA.short",
@@ -94,7 +94,7 @@ let jpIC_IruCa = CardInfo(
     prefectures: ["Kagawa"],
     description:"cardList.jpIC_IruCa.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["jp.kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
+    searchWords: ["locate.prefecture.Kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
     scanOption:ScanOption(
         name:"jpIC_IruCa",
         nameShort:"jpIC_IruCa.short",

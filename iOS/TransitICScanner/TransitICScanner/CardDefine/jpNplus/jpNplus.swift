@@ -12,7 +12,7 @@ let jpNplus = CardInfo(
     prefectures: ["Nagasaki"],
     description:"cardList.jpNplus.description",
     scand_description: "jpNplus.scand.description",
-    searchWords: ["jp.nagasaki","ながさき","ナガサキ","nagasaki","Tカード","県営バス"],
+    searchWords: ["locate.prefecture.Nagasaki","ながさき","ナガサキ","nagasaki","Tカード","県営バス"],
     scanOption:ScanOption(
         name:"jpNplus",
         nameShort:"jpNplus.short",
