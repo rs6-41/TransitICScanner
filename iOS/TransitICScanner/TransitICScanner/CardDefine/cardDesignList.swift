@@ -16,13 +16,13 @@ let cardDesignList:[CardDesigin] = [
     
     // MARK: cnTunion
     CardDesigin(type: .cnTunion, name: "card.default", imageName: "cnTunion_dummy",  isDefault: true),
-    CardDesigin(type: .cnTunion, name: "card.beijing", imageName: "cnTunion_beijing",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.shanghai", imageName: "cnTunion_shanghai",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.shenzhen", imageName: "cnTunion_shenzhen",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.yangchengtong", imageName: "cnTunion_yangchengtong",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.hangzhou", imageName: "cnTunion_hangzhou",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.octopus.Tunion", imageName: "cnTunion_hkOctopus",  isDefault: false),
-    CardDesigin(type: .cnTunion, name: "card.macauPass.Tunion", imageName: "cnTunion_macauPass",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "北京一卡通", imageName: "cnTunion_beijing",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "上海公共交通卡", imageName: "cnTunion_shanghai",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "深圳通", imageName: "cnTunion_shenzhen",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "羊城通", imageName: "cnTunion_yangchengtong",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "杭州通", imageName: "cnTunion_hangzhou",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "八达通", imageName: "cnTunion_hkOctopus",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "澳门通", imageName: "cnTunion_macauPass",  isDefault: false),
     
     
     // MARK: hkOctopus
