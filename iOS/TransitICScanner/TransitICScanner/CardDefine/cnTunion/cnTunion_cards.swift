@@ -16,7 +16,7 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     //MARK: 上海 - 0310477
     case "031047700": card = cnTunion_Info(name:"上海公共交通卡",prefecture:nil,city:"上海")
         
-    //天津
+    //MARK: 天津 - 0310491
     case "031049102": card = cnTunion_Info(name:"天津城市卡",prefecture:nil,city:"天津")
         
     // MARK: 江西省 - 0310473
@@ -41,15 +41,29 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047405": card = cnTunion_Info(name:"桃源卡",prefecture:"贵州省",city:"铜仁市")
     case "031047406": card = cnTunion_Info(name:"兴义卡",prefecture:"贵州省",city:"黔西南布依族苗族自治州")
     case "031047407": card = cnTunion_Info(name:"凯里公交IC卡",prefecture:"贵州省",city:"黔东南苗族侗族自治州")
+    case "031047408": card = cnTunion_Info(name:"贵州黔南全国交通一卡通",prefecture:"贵州省",city:"黔南布依族苗族自治州")
+    case "031047409": card = cnTunion_Info(name:"一应黔行",prefecture:"贵州省",city:"贵阳市")
+    case "031047410": card = cnTunion_Info(name:"同心市民卡",prefecture:"贵州省",city:"毕节市")
+        
+    // MARK: 西藏自治区 - 0310475
+    case "031047500": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"拉萨市")
+    case "031047501": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"昌都市")
+    case "031047502": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"山南市")
+    case "031047503": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"日喀则市")
+    case "031047504": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"那曲市")
+    case "031047505": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"阿里地区")
+    case "031047506": card = cnTunion_Info(name:"西藏交通一卡通",prefecture:"西藏自治区",city:"林芝市")
+        
+    // MARK: 青海省 - 0310476
+    case "031047600": card = cnTunion_Info(name:"夏都通",prefecture:"青海省",city:"西宁市")
+    case "031047601": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"海东市")
+    case "031047603": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"黄南藏族自治州")
+    case "031047604": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"黄南藏族自治州")
+    case "031047606": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"玉树藏族自治州")
+    case "031047607": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"海西蒙古族藏族自治州")
+        
         
     /*
-    case "031047408": card = "贵州黔南全国交通一卡通"
-    case "031047409": card = "贵阳轨道交通储值票"
-    case "031047500": card = "拉萨公交IC卡"
-    case "031047600": card = "夏都通"
-    case "031047601": card = "大美青海-海东通"
-    case "031047606": card = "大美青海-玉树"
-    case "031047607": card = "大美青海-格尔木"
     case "031047800": card = "天府通"
     case "031047802": card = "月城一卡通"
     case "031047803": card = "乐山公交IC卡"

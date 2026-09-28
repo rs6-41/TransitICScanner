@@ -30,6 +30,17 @@
         }
       }
     },
+    "一应黔行" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一应黔行"
+          }
+        }
+      }
+    },
     "三晋通-忻州通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1631,6 +1642,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "大美青海-玉樹"
+          }
+        }
+      }
+    },
+    "大美青海行" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大美青海行"
           }
         }
       }
@@ -5911,6 +5933,29 @@
         }
       }
     },
+    "西藏交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tibet Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "チベット交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "西藏交通一卡通"
+          }
+        }
+      }
+    },
     "许昌万里一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5973,12 +6018,6 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "贵州黔南全国交通一卡通"
-          }
-        },
-        "ja" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "贵州黔南全国交通一卡通"
