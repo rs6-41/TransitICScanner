@@ -562,45 +562,19 @@ extension NFCScannerModel {
         fullLog: JpDoCardFullLog? = nil
     ) -> DateComponents {
 
-        let currentYear = calendar.component(
-            .year,
-            from: currentDate
+        fullLog?.append(
+            String(
+                format: "Date decode: DateRaw = %04X",
+                dateRaw
+            )
         )
-
-        let currentMonth = calendar.component(
-            .month,
-            from: currentDate
-        )
-
-        var year = currentYear
-
-        if month > currentMonth {
-            year -= 1
-        }
-
-        let encodedYear = dateRaw >> 7
 
         fullLog?.append(
-            "Date decode: DateRaw >> 7 = \(encodedYear)"
+            "Date year: unknown -> 0"
         )
 
-        if encodedYear > 0 {
-
-            let candidateYear = 2022 + encodedYear
-
-            if candidateYear >= 2000,
-               candidateYear <= currentYear + 1 {
-
-                year = candidateYear
-
-                fullLog?.append(
-                    "Date year candidate: \(candidateYear)"
-                )
-            }
-        }
-
         return DateComponents(
-            year: year,
+            year: 0,
             month: month,
             day: day
         )

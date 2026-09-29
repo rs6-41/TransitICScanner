@@ -312,8 +312,18 @@ struct ResultView: View {
 
                 Spacer()
 
-                Text(display.date)
-                    .foregroundStyle(Color.gray)
+                ZStack {
+                    if item.date.month != 0 && item.date.day != 0 {
+                        if let date = Calendar.current.date(from: item.date) {
+                            if item.date.year != 0 {
+                                Text(date, format: .dateTime.year().month().day())
+                            } else {
+                                Text(date, format: .dateTime.month().day())
+                            }
+                        }
+                    }
+                }
+                .foregroundStyle(Color.gray)
             }
 
             HStack(spacing: 2) {
