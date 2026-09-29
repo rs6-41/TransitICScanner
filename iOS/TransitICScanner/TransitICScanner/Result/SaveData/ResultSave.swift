@@ -170,6 +170,7 @@ final class SavedCard {
 @Model
 final class SavedHistory {
     var processType: Int = 0
+    var processType4: Int? = 0
 
     var dateYear: Int?
     var dateMonth: Int?
@@ -193,6 +194,7 @@ final class SavedHistory {
 
     init(
         processType: Int,
+        processType4: Int?,
         date: DateComponents,
         balance: Double,
         amount: Double?,
@@ -204,6 +206,7 @@ final class SavedHistory {
         mappingID: String
     ) {
         self.processType = processType
+        self.processType4 = processType4
         self.dateYear = date.year
         self.dateMonth = date.month
         self.dateDay = date.day
@@ -253,6 +256,7 @@ extension SavedCard {
         let history = (histories ?? []).map { item in
             ResultHistory(
                 processType: UInt8(clamping: item.processType),
+                processType4: UInt32(clamping: item.processType4 ?? 0),
                 date: item.date,
                 balance: item.balance,
                 amount: item.amount,
@@ -362,6 +366,7 @@ enum ResultSave {
 
                 let savedHistory = SavedHistory(
                     processType: Int(history.processType ?? 0),
+                    processType4: Int(history.processType4 ?? 0),
                     date: history.date,
                     balance: history.balance,
                     amount: history.amount,
