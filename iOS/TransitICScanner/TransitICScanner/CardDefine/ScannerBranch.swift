@@ -10,17 +10,17 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
-    usClipper,jpIC_icsca,jpOKICA
+    usClipper,jpOKICA
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）
 let featureCards: [CardInfo] = [
-    twEasyCard_old,jpDoCard
+    jpDoCard
 ]
 
 // リリース済みのカード
 let relCards: [CardInfo] = [
-    jpIC,jpIC_SAPICA,jpIC_IruCa,cnTunion,hkOctopus,krOneCard,twICash,jpNplus
+    jpIC,jpIC_SAPICA,jpIC_IruCa,cnTunion,hkOctopus,krOneCard,twICash,jpNplus,jpIC_icsca,twEasyCard_old
 ]
 
 
@@ -40,6 +40,7 @@ extension NFCScannerModel {
         case "usClipper": self.usClipper_scan(tag,session)
         case "jpDoCard": self.jpDoCard_scan(tag,session)
         case "jpIC_icsca": self.jpIC_scan(tag,session,optionType: "jpIC_icsca")
+        case "jpOKICA": self.jpOKICA_scan(tag,session)
             
         default:
             self.scanError = ScanError(message:String(localized:"scanner.scan.message.undefinedName"))
@@ -61,6 +62,7 @@ enum ConverterType: String,CaseIterable {
     case usClipper
     case jpDoCard
     case jpIC_icsca
+    case jpOKICA
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -88,6 +90,8 @@ enum ConverterType: String,CaseIterable {
             jpDoCard_Converter.cardInfo(info)
         case .jpIC_icsca:
             jpIC_Converter.cardInfo(info)
+        case .jpOKICA:
+            jpOKICA_Converter.cardInfo(info)
         }
     }
 
@@ -117,6 +121,8 @@ enum ConverterType: String,CaseIterable {
             jpDoCard_Converter.history(item)
         case .jpIC_icsca:
             jpIC_Converter.history(item)
+        case .jpOKICA:
+            jpOKICA_Converter.history(item)
         }
     }
 }

@@ -361,7 +361,7 @@ enum ResultSave {
                 }
 
                 let savedHistory = SavedHistory(
-                    processType: Int(history.processType),
+                    processType: Int(history.processType ?? 0),
                     date: history.date,
                     balance: history.balance,
                     amount: history.amount,

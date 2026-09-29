@@ -830,6 +830,35 @@
         }
       }
     },
+    "card.OKICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        }
+      }
+    },
     "card.pasmo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3936,17 +3965,6 @@
         }
       }
     },
-    "jpIC_icsca" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "icsca"
-          }
-        }
-      }
-    },
     "jpIC_icsca.short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4873,6 +4891,23 @@
         }
       }
     },
+    "result.history.counter" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Counter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窓口"
+          }
+        }
+      }
+    },
     "result.history.counter.cancel" : {
       "localizations" : {
         "en" : {
@@ -4897,6 +4932,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消進站"
+          }
+        }
+      }
+    },
+    "result.history.counter.green" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Counter (JR)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "みどりの窓口"
           }
         }
       }
@@ -5149,6 +5201,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "輕軌"
+          }
+        }
+      }
+    },
+    "result.history.monorail" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorail"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モノレール"
           }
         }
       }
@@ -5597,6 +5666,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "現金並用支付（站內）"
+          }
+        }
+      }
+    },
+    "result.history.shopping.vendingMachine" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vending Machine"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動販売機"
           }
         }
       }

@@ -17,7 +17,7 @@ enum jpDoCard_Converter {
         DisplayHistory(
             date: formatDate(history.date),
             processType: convertProcessType(
-                Int(history.processType), amount: Int(history.amount ?? 0)
+                Int(history.processType ?? 0), amount: Int(history.amount ?? 0)
             ),
             balance: Double(history.balance)
         )

@@ -6,7 +6,7 @@ enum jpNplus_Converter {
     ) -> DisplayHistory {
         DisplayHistory(
             date: formatDate(history.date),
-            processType: convertProcessType(history.processType),
+            processType: convertProcessType(history.processType ?? 0),
             balance: Double(history.balance)
         )
     }
