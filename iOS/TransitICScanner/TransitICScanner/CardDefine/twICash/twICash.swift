@@ -9,6 +9,7 @@ let twICash = CardInfo(
     area: .tw,
     countryCode: ["tw"],
     prefectures: nil,
+    regionOption: nil,
     description:"cardList.twICash.description",
     scand_description: "twICash.scand.description",
     searchWords: ["cardList.area.tw","aijinka","ㄞˋㄐㄧㄣㄎㄚˇ"],
