@@ -1324,6 +1324,17 @@
         }
       }
     },
+    "咸阳城市公交一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "咸阳城市公交一卡通"
+          }
+        }
+      }
+    },
     "哈尔滨城市卡" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3725,6 +3736,17 @@
         }
       }
     },
+    "榆林驼城通交通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "榆林驼城通交通卡"
+          }
+        }
+      }
+    },
     "榕城通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5974,6 +5996,17 @@
         }
       }
     },
+    "西咸一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "西咸一卡通"
+          }
+        }
+      }
+    },
     "西藏交通一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7019,6 +7052,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鐵嶺全國交通一卡通"
+          }
+        }
+      }
+    },
+    "铜川交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "铜川交通一卡通"
           }
         }
       }

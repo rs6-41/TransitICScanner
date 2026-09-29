@@ -85,7 +85,7 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047819": card = cnTunion_Info(name:"巴中交通一卡通",prefecture:"四川省",city:"巴中市")
     case "031047821": card = cnTunion_Info(name:"古城阆中通",prefecture:"四川省",city:"南充市")
         
-    //新疆维吾尔自治区 - 0310479
+    // MARK: 新疆维吾尔自治区 - 0310479
     case "031047900": card = cnTunion_Info(name:"红山一卡通",prefecture:"新疆维吾尔自治区",city:"乌鲁木齐市")
     case "031047901": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"阿拉尔市")
     case "031047902": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"铁门关市")
@@ -108,16 +108,23 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047923": card = cnTunion_Info(name:"和田地区公交卡",prefecture:"新疆维吾尔自治区",city:"和田地区")
     case "031047924": card = cnTunion_Info(name:"伊宁公交卡",prefecture:"新疆维吾尔自治区",city:"伊犁哈萨克自治州 伊宁市")
     case "031047926": card = cnTunion_Info(name:"阿勒泰智慧城市一卡通",prefecture:"新疆维吾尔自治区",city:"阿勒泰地区")
+        
+    // MARK: 陕西省 - 0310479
+    case "031048000": card = cnTunion_Info(name:"长安通",prefecture:"陕西省",city:"西安市")
+    case "031048001": card = cnTunion_Info(name:"咸阳城市公交一卡通",prefecture:"陕西省",city:"咸阳市")
+    case "031048002": card = cnTunion_Info(name:"宝鸡公交卡",prefecture:"陕西省",city:"宝鸡市")
+    case "031048003": card = cnTunion_Info(name:"渭南通",prefecture:"陕西省",city:"渭南市")
+    case "031048004": card = cnTunion_Info(name:"铜川交通一卡通",prefecture:"陕西省",city:"铜川市")
+    case "031048006": card = cnTunion_Info(name:"延安公交一卡通",prefecture:"陕西省",city:"延安市")
+    case "031048007": card = cnTunion_Info(name:"天汉通",prefecture:"陕西省",city:"汉中市")
+    case "031048008": card = cnTunion_Info(name:"安康公交卡",prefecture:"陕西省",city:"安康市")
+    case "031048009": card = cnTunion_Info(name:"商洛公交一卡通",prefecture:"陕西省",city:"商洛市")
+    case "031048011": card = cnTunion_Info(name:"榆林驼城通交通卡",prefecture:"陕西省",city:"榆林市")
+    case "031048013": card = cnTunion_Info(name:"农科城卡",prefecture:"陕西省",city:"杨凌农业高新技术产业示范区")
+    case "031048014": card = cnTunion_Info(name:"西咸一卡通",prefecture:"陕西省",city:"西安市")
+        
+    
     /*
-    case "031048000": card = "长安通"
-    case "031048001": card = "崇德包容卡"
-    case "031048002": card = "宝鸡公交卡"
-    case "031048003": card = "渭南通"
-    case "031048006": card = "延安公交一卡通"
-    case "031048007": card = "天汉通"
-    case "031048008": card = "安康公交卡"
-    case "031048009": card = "商洛公交一卡通"
-    case "031048013": card = "农科城卡"
     case "031048200": card = "长沙潇湘卡"
     case "031048202": card = "株洲公交IC卡"
     case "031048203": card = "湘潭交通卡"
