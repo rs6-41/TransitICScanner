@@ -30,28 +30,11 @@ let jpDoCard = CardInfo(
             idm: "0112E09999B35A10",
             type: "card.DoCard",
             history: [
-                ResultHistory(
-                    processType: 0x01,
-                    date: sampleDay2,
-                    balance: 1100,
-                    amount: nil,
-                    lineIn: 0x11,
-                    stationIn: 0x11,
-                    lineOut: 0x11,
-                    stationOut: 0x11,
-                    transactionId: 151
-                ),
-                ResultHistory(
-                    processType: 0x02,
-                    date: sampleDay3,
-                    balance: 500,
-                    amount: nil,
-                    lineIn: 0x11,
-                    stationIn: 0x11,
-                    lineOut: 0x11,
-                    stationOut: 0x11,
-                    transactionId: 152
-                )
+                //TODO: 駅コード例を調べる（暫定的に全て1111）
+                // 2: チャージ 残高1100円 2025/19/23 19:21
+                ResultHistory(processType: 0x08,date: sampleDay2,balance: 1100,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+                // 3: 支払い 残高500円 2026/1/3 12:58
+                ResultHistory(processType: 0x02,date: sampleDay3,balance: 500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
             ]
         )
 )

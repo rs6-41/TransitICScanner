@@ -52,13 +52,9 @@ enum jpDoCard_Converter {
         _ value: Int, amount: Int
     ) -> String {
         switch value {
-        case 0x02, 0x03, 0x07:
+        case 0x02, 0x03, 0x07, 0x12:
             return String(localized: "result.history.fare")
-        case 0x08:
-            return String(localized: "result.history.charge")
-        case 0x12:
-            return String(localized: "result.history.fare")
-        case 0x15, 0x1F, 0x20:
+        case 0x08, 0x15, 0x1F, 0x20:
             return String(localized: "result.history.charge")
         case 0x1E, 0x14, 0x2D:
             return String(localized: "result.history.new")
