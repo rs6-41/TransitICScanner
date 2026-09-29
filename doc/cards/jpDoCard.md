@@ -4,8 +4,6 @@
 
 DoCardは道北バス、Asacaは旭川電気軌道が発行している。いずれもFeliCaをベースとした独自規格で、全国交通系ICカードのサイバネ規格とは異なる。
 
-DoCardはFeliCaのPollingおよびRead Without Encryptionでデータを取得でき、SystemCodeは`0x8DB6`、履歴および残高取得に使用するServiceCodeは`0x010F`である。
-
 ## カード内容
 
 |||
@@ -14,8 +12,6 @@ DoCardはFeliCaのPollingおよびRead Without Encryptionでデータを取得�
 |SystemCode|0x8DB6|
 
 ### 残高データ
-
-現在の実装では、残高専用のServiceCodeではなく、履歴データと同じServiceCode `0x010F` から残高を取得する。
 
 |||
 |--|--|
@@ -27,7 +23,7 @@ DoCardはFeliCaのPollingおよびRead Without Encryptionでデータを取得�
 |-|-|-|-|-|-|
 |-|利用金額|連番|処理種別|残高|-|
 
-実装ではBlock `0`を読み取り、`bytes[14]`～`bytes[15]`を残高として使用する。
+Block `0`を読み取り、`bytes[14]`～`bytes[15]`を残高として使用する。
 
 例えば、以下のデータの場合、
 
@@ -79,37 +75,6 @@ Suica等のサイバネ規格とは異なり、履歴には年が保存されな
 ```
 
 の場合、2月15日の利用履歴となる。
-
-現在の実装では、カード内部に年が存在しないため、年を現在年やDateRawから推定しない。
-
-`DateComponents`には、
-
-```text
-year = 0
-month = 読み取った月
-day = 読み取った日
-```
-
-として保存する。
-
-`year = 0`は年不明を表す。
-
-そのため、例えば、
-
-```text
-year = 0
-month = 2
-day = 15
-```
-
-という履歴は、画面上では、
-
-```text
-2/15
-```
-
-と表示する。
-
 
 ## 利用金額
 
