@@ -10,12 +10,12 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
-    usClipper,jpDoCard,jpIC_icsca
+    usClipper,jpIC_icsca,jpOKICA
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）
 let featureCards: [CardInfo] = [
-    twEasyCard_old
+    twEasyCard_old,jpDoCard
 ]
 
 // リリース済みのカード
