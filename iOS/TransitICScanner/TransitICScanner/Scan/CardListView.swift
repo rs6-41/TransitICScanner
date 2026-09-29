@@ -8,10 +8,9 @@ struct CardList: View {
     @EnvironmentObject var store: CardItemsStore
     
     @State var currentCountryItems: [CardInfo] = []
-    @State var otherCountryItems: [CardInfo] = []
+    @State var searchItems: [CardInfo] = []
     @State private var administrativeArea: String?
     
-    @AppStorage("sort") var sort: SortType = .locate_ascend
     
     @State var isDisplayScrapingForm = false
     @Binding var deleteAds: Bool
@@ -45,41 +44,63 @@ struct CardList: View {
                             CardListRow(item: item, deleteAds: $deleteAds)
                         }
                     } header: {
-                        HStack(spacing: 4) {
-                            Text(LocalizedStringKey("cardList.nowLocate"))
-                        }
+                        Text(LocalizedStringKey("cardList.nowLocate"))
                     }
                 }
                 
-                Section {
-                    ForEach(otherCountryItems, id: \.logo) { item in
-                        VStack(alignment: .leading) {
-                            CardListRow(item: item, deleteAds: $deleteAds)
-                        }
-                    }
-                } header: {
-                    if searchText.isEmpty {
-                        HStack {
-                            if !currentCountryItems.isEmpty {
-                                Text(LocalizedStringKey("cardList.otherLocate"))
-                            } else {
-                                Text(LocalizedStringKey("cardList.allCards"))
+                
+                if searchText == "" {
+                    Section {
+                        ForEach(regionLists, id: \.self) { list in
+                            let filtFirstItem = store.cardItems.filter {
+                                $0.regionOption == nil &&
+                                $0.area.region() == list.first
+                            } +
+                            store.cardItems.filter {
+                                $0.regionOption == list.first
                             }
                             
-                            Spacer()
-                            
-                            Picker(String(""), selection: $sort) {
-                                ForEach(SortType.allCases, id: \.self) { item in
-                                    Text(LocalizedStringKey(item.rawValue))
+                            if filtFirstItem.count != 0 {
+                                if let second = list.second {
+                                    NavigationLink(destination: CardRegionView(
+                                        items: filtFirstItem,
+                                        subItems: store.cardItems.filter {
+                                            $0.regionOption == nil &&
+                                            $0.area.region() == second
+                                        },
+                                        deleteAds: $deleteAds
+                                    )) {
+                                        Text(LocalizedStringKey(list.first.name()))
+                                    }
+                                } else {
+                                    NavigationLink(destination: CardRegionView(
+                                        items: filtFirstItem,
+                                        deleteAds: $deleteAds
+                                    )) {
+                                        Text(LocalizedStringKey(list.first.name()))
+                                    }
                                 }
                             }
-                            .buttonStyle(.glass)
                         }
-                    } else {
-                        Text(LocalizedStringKey("cardList.searchResults"))
+                    } header: {
+                        Text(LocalizedStringKey("cardList.otherLocate"))
                     }
-                } footer: {
-                    Text(LocalizedStringKey("cardList.description"))
+                } else {
+                    Section() {
+                        ForEach(searchItems, id: \.logo) { item in
+                            CardListRow(item: item, deleteAds: $deleteAds)
+                        }
+                    } header: {
+                        if searchText.isEmpty {
+                            HStack {
+                                Text(LocalizedStringKey("cardList.allCards"))
+                            }
+                        } else {
+                            Text(LocalizedStringKey("cardList.searchResults"))
+                        }
+                    } footer: {
+                        Text(LocalizedStringKey("cardList.description"))
+                    }
                 }
             }
             .searchable(
@@ -117,9 +138,6 @@ struct CardList: View {
                 updateList()
             }
         }
-        .onChange(of: sort) {
-            updateList()
-        }
         .onChange(of: searchText) {
             search()
         }
@@ -127,21 +145,12 @@ struct CardList: View {
     
     private func updateList() {
         getCurrentItems()
-        getOtherCountryItems(sort: sort)
     }
     
     private func getCurrentItems() {
         currentCountryItems = store.cardItems.filter {
             isCurrentLocation(item: $0)
         }
-    }
-    
-    private func getOtherCountryItems(sort: SortType) {
-        let items = store.cardItems.filter {
-            !isCurrentLocation(item: $0)
-        }
-        
-        otherCountryItems = sortItems(sort: sort, items: items)
     }
     
     private func isCurrentLocation(item: CardInfo) -> Bool {
@@ -164,39 +173,13 @@ struct CardList: View {
         return prefectures.contains(administrativeArea)
     }
     
-    private func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
-        items.sorted {
-            switch sort {
-            case .name_ascend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
-                ) == .orderedAscending
-                
-            case .name_descend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
-                ) == .orderedDescending
-                
-            case .locate_ascend:
-                Localize($0.area.sortName()).localizedStandardCompare(
-                    Localize($1.area.sortName())
-                ) == .orderedAscending
-                
-            case .locate_descend:
-                Localize($0.area.sortName()).localizedStandardCompare(
-                    Localize($1.area.sortName())
-                ) == .orderedDescending
-            }
-        }
-    }
-    
     private func search() {
         if searchText.isEmpty {
             updateList()
         } else {
             currentCountryItems = []
             
-            otherCountryItems = store.cardItems.filter { item in
+            searchItems = store.cardItems.filter { item in
                 let localizedName = String(
                     localized: String.LocalizationValue(item.name)
                 )
@@ -264,6 +247,81 @@ struct CardListRow: View {
                 CardListItemDebugView(item: item)
             }
         }
+    }
+}
+
+struct CardRegionView: View {
+    @State var items: [CardInfo]
+    @State var subItems: [CardInfo]?
+    @Binding var deleteAds:Bool
+    @State var sort: SortType = .locate_ascend
+    @State var sort2: SortType = .locate_ascend
+    var body: some View {
+        List {
+            Section() {
+                ForEach(sortItems(sort:sort,items:items), id: \.logo) { item in
+                    CardListRow(item: item, deleteAds: $deleteAds)
+                }
+            } header: {
+                HStack {
+                    Spacer()
+                    CardSortPicker(sort:$sort)
+                }
+            }
+            if let subItems {
+                if !subItems.isEmpty {
+                    Section() {
+                        ForEach(sortItems(sort:sort,items:subItems), id: \.logo) { item in
+                            CardListRow(item: item, deleteAds: $deleteAds)
+                        }
+                    } header: {
+                        HStack {
+                            Text(LocalizedStringKey(subItems.first?.area.region().name() ?? ""))
+                            Spacer()
+                            CardSortPicker(sort:$sort2)
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle(LocalizedStringKey(items.first?.area.region().name() ?? ""))
+    }
+    
+    func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
+        items.sorted {
+            switch sort {
+            case .name_ascend:
+                Localize($0.sortName).localizedStandardCompare(
+                    Localize($1.sortName)
+                ) == .orderedAscending
+                
+            case .name_descend:
+                Localize($0.sortName).localizedStandardCompare(
+                    Localize($1.sortName)
+                ) == .orderedDescending
+                
+            case .locate_ascend:
+                Localize($0.area.sortName()).localizedStandardCompare(
+                    Localize($1.area.sortName())
+                ) == .orderedAscending
+                
+            case .locate_descend:
+                Localize($0.area.sortName()).localizedStandardCompare(
+                    Localize($1.area.sortName())
+                ) == .orderedDescending
+            }
+        }
+    }
+}
+struct CardSortPicker: View {
+    @Binding var sort:SortType
+    var body: some View {
+        Picker(String(""), selection: $sort) {
+            ForEach(SortType.allCases, id: \.self) { item in
+                Text(LocalizedStringKey(item.rawValue))
+            }
+        }
+        .buttonStyle(.glass)
     }
 }
 

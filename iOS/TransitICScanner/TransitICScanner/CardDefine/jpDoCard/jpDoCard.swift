@@ -13,6 +13,7 @@ let jpDoCard = CardInfo(
     area: .jp,
     countryCode: ["jp"],
     prefectures: ["Hokkaido"],
+    regionOption: nil,
     description: "cardList.jpDoCard.description",
     scand_description: "jpDoCard.scand.description",
     searchWords: ["locate.prefecture.Hokkaido"],
