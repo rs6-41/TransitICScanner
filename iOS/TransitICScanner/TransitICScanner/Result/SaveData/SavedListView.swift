@@ -112,84 +112,91 @@ struct SavedListView: View {
                 ListAdView(deleteAds: $deleteAds)
 
                 Section {
-                    ForEach(filteredCards) { card in
-                        NavigationLink {
-                            ResultView(
-                                result: card.result(),
-                                scandata: false,
-                                saveListID: $saveListID,
-                                deleteAds: $deleteAds
-                            )
-                        } label: {
-                            let result = card.result()
-
-                            HStack {
-                                let iconName = result.info?.iconName
-
-                                if iconName != "" {
-                                    CardImage(name: iconName ?? "")
-                                } else if let info = result.info {
-                                    let display = result.converter.cardInfo(info)
-
-                                    if let cardName = getCardImageName(
-                                        type: card.converterType,
-                                        name: display.type
-                                    ) {
-                                        CardImage(name: cardName.imageName)
+                    if filteredCards.isEmpty {
+                        ContentUnavailableView(
+                            LocalizedStringKey("history.empty"),
+                            systemImage: "tram.card.fill"
+                        )
+                    } else {
+                        ForEach(filteredCards) { card in
+                            NavigationLink {
+                                ResultView(
+                                    result: card.result(),
+                                    scandata: false,
+                                    saveListID: $saveListID,
+                                    deleteAds: $deleteAds
+                                )
+                            } label: {
+                                let result = card.result()
+                                
+                                HStack {
+                                    let iconName = result.info?.iconName
+                                    
+                                    if iconName != "" {
+                                        CardImage(name: iconName ?? "")
+                                    } else if let info = result.info {
+                                        let display = result.converter.cardInfo(info)
+                                        
+                                        if let cardName = getCardImageName(
+                                            type: card.converterType,
+                                            name: display.type
+                                        ) {
+                                            CardImage(name: cardName.imageName)
+                                        }
                                     }
-                                }
-
-                                VStack(alignment: .leading, spacing: 2) {
-                                    if result.info?.displayName ?? "" != "" {
-                                        Text(
-                                            LocalizedStringKey(
-                                                result.info?.displayName ?? ""
+                                    
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        if result.info?.displayName ?? "" != "" {
+                                            Text(
+                                                LocalizedStringKey(
+                                                    result.info?.displayName ?? ""
+                                                )
                                             )
-                                        )
-                                        .font(.headline)
-
-                                        Text(LocalizedStringKey(card.name))
-                                            .font(.subheadline)
-                                            .foregroundStyle(.secondary)
-
-                                    } else if let info = result.info,
-                                              !result.converter.cardInfo(info).type.isEmpty {
-                                        Text(
-                                            LocalizedStringKey(
-                                                result.converter.cardInfo(info).type
-                                            )
-                                        )
-                                        .font(.headline)
-
-                                        Text(LocalizedStringKey(card.name))
-                                            .font(.subheadline)
-                                            .foregroundStyle(.secondary)
-
-                                    } else {
-                                        Text(LocalizedStringKey(card.nameShort))
                                             .font(.headline)
+                                            
+                                            Text(LocalizedStringKey(card.name))
+                                                .font(.subheadline)
+                                                .foregroundStyle(.secondary)
+                                            
+                                        } else if let info = result.info,
+                                                  !result.converter.cardInfo(info).type.isEmpty {
+                                            Text(
+                                                LocalizedStringKey(
+                                                    result.converter.cardInfo(info).type
+                                                )
+                                            )
+                                            .font(.headline)
+                                            
+                                            Text(LocalizedStringKey(card.name))
+                                                .font(.subheadline)
+                                                .foregroundStyle(.secondary)
+                                            
+                                        } else {
+                                            Text(LocalizedStringKey(card.nameShort))
+                                                .font(.headline)
+                                        }
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    if let balance = card.balance {
+                                        VStack(alignment:.trailing) {
+                                            if let currencyType = card.currencyType {
+                                                Text(currencyType.getLocalize(balance.balanceText))
+                                            }
+                                            if let savedAt = card.savedAt {
+                                                Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
+                                                    .font(.caption)
+                                                    .foregroundStyle(Color.gray)
+                                            }
+                                        }
                                     }
                                 }
-
-                                Spacer()
-
-                                if let balance = card.balance {
-                                    VStack(alignment:.trailing) {
-                                        if let currencyType = card.currencyType {
-                                            Text(currencyType.getLocalize(balance.balanceText))
-                                        }
-                                        if let savedAt = card.savedAt {
-                                            Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
-                                                .font(.caption)
-                                                .foregroundStyle(Color.gray)
-                                        }
-                                    }
-                                }
+                                .id(saveListID)
                             }
-                            .id(saveListID)
                         }
+                        .onDelete(perform: deleteCards)
                     }
-                    .onDelete(perform: deleteCards)
                 } header: {
                     HStack {
                         Menu {

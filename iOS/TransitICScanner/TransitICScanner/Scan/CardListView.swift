@@ -70,14 +70,14 @@ struct CardList: View {
                                         },
                                         deleteAds: $deleteAds
                                     )) {
-                                        Text(LocalizedStringKey(list.first.name()))
+                                        SquareIcon(text:LocalizedStringKey(list.first.name()),systemImage:list.first.icon(),color:Color.blue)
                                     }
                                 } else {
                                     NavigationLink(destination: CardRegionView(
                                         items: filtFirstItem,
                                         deleteAds: $deleteAds
                                     )) {
-                                        Text(LocalizedStringKey(list.first.name()))
+                                        SquareIcon(text:LocalizedStringKey(list.first.name()),systemImage:list.first.icon(),color:Color.blue)
                                     }
                                 }
                             }

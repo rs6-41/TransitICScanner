@@ -10,6 +10,7 @@ struct Result: Hashable {
     var isLastHide: Bool
     var description: String
     var savedAt:Date? = Date.now
+    var fullLog:String? = ""
 }
 
 // 履歴データ
