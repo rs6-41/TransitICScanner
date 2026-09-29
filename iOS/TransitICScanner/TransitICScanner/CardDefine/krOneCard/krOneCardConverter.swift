@@ -26,7 +26,7 @@ enum krOneCard_Converter {
         if history.processType == 0x01 && history.balance == 0 && history.amount == 0 {
             return String(localized:"result.history.new")
         }
-        return convertProcessType(history.processType)
+        return convertProcessType(history.processType ?? 0)
     }
 
     private static func convertProcessType(_ value: UInt8) -> String {
