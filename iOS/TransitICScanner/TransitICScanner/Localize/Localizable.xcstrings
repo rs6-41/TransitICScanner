@@ -2438,7 +2438,21 @@
       }
     },
     "cardList.jpOKICA.description" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa monorail & bus."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄モノレールとバス"
+          }
+        }
+      }
     },
     "cardList.jpOKICA.sortName" : {
       "extractionState" : "manual",
@@ -4226,8 +4240,22 @@
         }
       }
     },
-    "jpOKICA.scand.description" : {
-      "extractionState" : "manual"
+    "jpOKICA.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        }
+      }
     },
     "krOneCard.short" : {
       "extractionState" : "manual",

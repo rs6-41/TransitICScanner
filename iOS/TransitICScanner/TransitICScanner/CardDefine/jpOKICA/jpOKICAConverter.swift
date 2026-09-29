@@ -9,7 +9,7 @@ enum jpOKICA_Converter {
         DisplayHistory(
             date: formatDate(history.date),
             processType: convertProcessType(
-                history.processType ?? 0
+                history.processType4 ?? 0
             ),
             balance: Double(history.balance)
         )
@@ -22,7 +22,6 @@ enum jpOKICA_Converter {
         guard let year = date.year,
               let month = date.month,
               let day = date.day else {
-
             return String(localized: "unknown")
         }
 
@@ -30,16 +29,35 @@ enum jpOKICA_Converter {
     }
 
     private static func convertProcessType(
-        _ value: UInt8
+        _ value: UInt32
     ) -> String {
 
         switch value {
 
-        case 0x16: return String(localized: "result.history.fare")
-        case 0x08:return String(localized: "result.history.charge")
-        case 0x05: return String(localized: "result.history.bus")
-        case 0x1F: return String(localized: "result.history.charge")
-        default: return String(localized: "result.history.other")
+        case 0x16010002:
+            return String(localized: "result.history.fare")
+
+        case 0x08020000:
+            return String(localized: "result.history.charge")
+
+        case 0x08480000,
+             0x08480400:
+            return String(localized: "result.history.charge")
+
+        case 0x051F0000:
+            return String(localized: "result.history.charge.bus")
+
+        case 0x050F000F:
+            return String(localized: "result.history.bus")
+
+        case 0x08070000:
+            return String(localized: "result.history.new")
+
+        case 0x1F1F0000:
+            return String(localized: "result.history.charge")
+
+        default:
+            return String(localized: "result.history.other")
         }
     }
 
