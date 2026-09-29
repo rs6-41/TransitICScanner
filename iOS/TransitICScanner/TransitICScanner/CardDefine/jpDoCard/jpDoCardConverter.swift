@@ -1,14 +1,32 @@
 import Foundation
 
-//TODO: 暫定的に未変換のため、調査後に変換実装を行う
-
 enum jpDoCard_Converter {
 
-    static func balance(_ value: Int) -> String {
-        return String(format: "%.2f", value)
+    static func balance(
+        _ value: Int
+    ) -> String {
+        return String(
+            format: "%.2f",
+            value
+        )
     }
 
-    static func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
+    static func history(
+        _ history: ResultHistory
+    ) -> DisplayHistory {
+        DisplayHistory(
+            date: formatDate(history.date),
+            processType: convertProcessType(
+                Int(history.processType), amount: Int(history.amount ?? 0)
+            ),
+            balance: Double(history.balance)
+        )
+    }
+
+    static func cardInfo(
+        _ info: ResultCardInfo
+    ) -> DisplayCardInfo {
+
         DisplayCardInfo(
             idm: info.idm,
             name: info.name,
@@ -17,25 +35,34 @@ enum jpDoCard_Converter {
             type: info.type
         )
     }
-    
-    static func history(
-        _ history: ResultHistory
-    ) -> DisplayHistory {
-        DisplayHistory(
-            date: formatDate(history.date),
-            processType: String(history.processType),
-            balance: Double(history.balance)
-        )
-    }
-    
-    
-    private static func formatDate(_ date: DateComponents) -> String {
+
+    private static func formatDate(
+        _ date: DateComponents
+    ) -> String {
+
         guard let year = date.year,
               let month = date.month,
               let day = date.day else {
-            return String(localized:"unknown")
+            return String(localized: "unknown")
         }
 
         return "\(year)/\(month)/\(day)"
+    }
+
+    private static func convertProcessType(
+        _ value: Int, amount: Int
+    ) -> String {
+        switch value {
+            
+        // コード判明後に追記
+        case 0x1E:
+            return String(localized: "result.history.new")
+        default:
+            if amount < 0 {
+                return String(localized: "result.history.fare")
+            } else {
+                return String(localized: "result.history.charge")
+            }
+        }
     }
 }
