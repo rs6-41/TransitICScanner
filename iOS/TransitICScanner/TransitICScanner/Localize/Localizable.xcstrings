@@ -2025,7 +2025,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "仙台市交通局"
           }
         }
@@ -2379,6 +2379,61 @@
         }
       }
     },
+    "cardList.jpOKICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        }
+      }
+    },
+    "cardList.jpOKICA.description" : {
+      "extractionState" : "manual"
+    },
+    "cardList.jpOKICA.sortName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        }
+      }
+    },
     "cardList.krOneCard" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2413,25 +2468,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Most Korean transit cards, such as T-money and EZL"
+            "value" : "Most Korean transit cards, such as T-money, EZL, and WOWPASS."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "T-money, EZLなど韓国の大半の交通カード"
+            "value" : "T-money, EZL, WOWPASSなど韓国の大半の交通カード"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "T-money、EZL等韩国大多数交通卡"
+            "value" : "T-money、EZL、WOWPASS等韩国大多数交通卡"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "T-money、EZL等韓國大多數交通卡"
+            "value" : "T-money、EZL、WOWPASS等韓國大多數交通卡"
           }
         }
       }
@@ -2613,13 +2668,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name (A-Z)"
+            "value" : "Card Name (A-Z)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名前（昇順）"
+            "value" : "カード名（昇順）"
           }
         },
         "zh-Hans" : {
@@ -2642,13 +2697,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name (Z to A)"
+            "value" : "Card Name (Z to A)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名前（降順）"
+            "value" : "カード名（降順）"
           }
         },
         "zh-Hans" : {
@@ -4142,6 +4197,9 @@
         }
       }
     },
+    "jpOKICA.scand.description" : {
+      "extractionState" : "manual"
+    },
     "krOneCard.short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4300,6 +4358,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長崎県"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Okinawa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄"
           }
         }
       }
@@ -8787,7 +8862,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name (A–Z)"
+            "value" : "Card Name (A–Z)"
           }
         },
         "ja" : {
@@ -8815,7 +8890,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name (Z-A)"
+            "value" : "Card Name (Z-A)"
           }
         },
         "ja" : {

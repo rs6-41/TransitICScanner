@@ -124,7 +124,7 @@ let jpIC_SAPICA = CardInfo(
 
 //IruCa（システムコード以外は共通使用のカード）
 let jpIC_IruCa = CardInfo(
-    logo:"jpIC_IruCa",
+    logo:"jpIC_iruca",
     name:"cardList.jpIC_IruCa",
     sortName:"cardList.jpIC_IruCa.sortName",
     area: .jp,
