@@ -217,35 +217,58 @@
 	<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
 	<array>
 		<string>0003</string>
-		<string>FE00</string>
+		<string>040F</string>
+		<string>04A6</string>
+		<string>04C0</string>
+		<string>04C1</string>
+		<string>04C7</string>
+		<string>12FC</string>
+		<string>8005</string>
 		<string>8008</string>
-		<string>86a7</string>
-		<string>927a</string>
-		<string>fe00</string>
-		<string>040f</string>
-		<string>80de</string>
+		<string>800D</string>
+		<string>8016</string>
+		<string>802B</string>
+		<string>804C</string>
 		<string>8074</string>
-		<string>80e0</string>
+		<string>8074</string>
+		<string>80BB</string>
+		<string>80DE</string>
+		<string>80E0</string>
+		<string>80EF</string>
+		<string>811D</string>
+		<string>8157</string>
 		<string>8157</string>
 		<string>8194</string>
+		<string>81D0</string>
 		<string>8287</string>
-		<string>832c</string>
-		<string>862c</string>
-		<string>865e</string>
-		<string>8b43</string>
-		<string>8b98</string>
-		<string>90b7</string>
-		<string>927a</string>
-		<string>9373</string>
+		<string>832C</string>
+		<string>83CC</string>
+		<string>83EE</string>
 		<string>8592</string>
-		<string>DE80</string>
-		<string>8FC1</string>
+		<string>852B</string>
+		<string>854C</string>
+		<string>8592</string>
+		<string>8620</string>
+		<string>862C</string>
+		<string>865E</string>
+		<string>86A7</string>
+		<string>8760</string>
+		<string>88B4</string>
+		<string>8B43</string>
 		<string>8B5D</string>
-		<string>93EC</string>
+		<string>8B61</string>
+		<string>8B98</string>
 		<string>8DB6</string>
-		<string>8592</string>
-		<string>8B5D</string>
+		<string>8E4B</string>
 		<string>8FC1</string>
+		<string>90B7</string>
+		<string>927A</string>
+		<string>9373</string>
+		<string>93EC</string>
+		<string>957A</string>
+		<string>DE80</string>
+		<string>FE00</string>
+		<string>FEE1</string>
 	</array>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 	<array>

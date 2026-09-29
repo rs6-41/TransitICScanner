@@ -12,7 +12,7 @@ let jpOKICA = CardInfo(
     regionOption: nil,
     description: "cardList.jpOKICA.description",
     scand_description: "jpIC.scand.description",
-    searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球",],
+    searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
     scanOption: ScanOption(
         name: "jpOKICA",
         nameShort: "jpOKICA.short",
@@ -26,14 +26,13 @@ let jpOKICA = CardInfo(
     ),
     infomation: nil,
     sample: ResultSample(
-        balance: 1099.0,
-        idm: "0123456789ABCDEF",
+        balance: 1200.0,
+        idm: "0405820A9A93CDEF",
         type: "card.OKICA",
         history: [
-            ResultHistory(processType: 0x16, processType4: nil,date: DateComponents(
-                    year: 2026,month: 1,day: 3),balance: 1099,amount: nil,lineIn: 0xDC,stationIn: 0x01,lineOut: 0xDC,stationOut: 0x0D,transactionId: 152
+            ResultHistory(processType: 0x01, processType4: UInt32(0x16010002),date: sampleDay2,balance: 1200,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 152
             ),
-            ResultHistory(processType: 0x08, processType4: nil,date: DateComponents(year: 2025,month: 12,day: 29),balance: 1500,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 151
+            ResultHistory(processType: 0x01, processType4: UInt32(0x08020000),date: sampleDay1,balance: 1500,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 151
             )
         ]
     )
