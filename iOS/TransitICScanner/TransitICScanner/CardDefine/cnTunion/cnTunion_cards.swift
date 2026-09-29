@@ -122,20 +122,25 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031048011": card = cnTunion_Info(name:"榆林驼城通交通卡",prefecture:"陕西省",city:"榆林市")
     case "031048013": card = cnTunion_Info(name:"农科城卡",prefecture:"陕西省",city:"杨凌农业高新技术产业示范区")
     case "031048014": card = cnTunion_Info(name:"西咸一卡通",prefecture:"陕西省",city:"西安市")
+    
+    // MARK: 湖南省 - 0310482
+    case "031048200": card = cnTunion_Info(name:"长沙潇湘卡",prefecture:"湖南省",city:"长沙市")
+    case "031048202": card = cnTunion_Info(name:"株洲公交IC卡",prefecture:"湖南省",city:"株洲市")
+    case "031048203": card = cnTunion_Info(name:"湘潭交通卡",prefecture:"湖南省",city:"湘潭市")
+    case "031048204": card = cnTunion_Info(name:"衡阳交通卡",prefecture:"湖南省",city:"衡阳市")
+    case "031048205": card = cnTunion_Info(name:"宝庆一卡通",prefecture:"湖南省",city:"邵阳市")
+    case "031048206": card = cnTunion_Info(name:"岳阳通",prefecture:"湖南省",city:"岳阳市")
+    case "031048207": card = cnTunion_Info(name:"常德公交卡",prefecture:"湖南省",city:"常德市")
+    case "031048208": card = cnTunion_Info(name:"张家界一卡通",prefecture:"湖南省",city:"张家界市")
+    case "031048209": card = cnTunion_Info(name:"银城一卡通",prefecture:"湖南省",city:"益阳市")
+    case "031048210": card = cnTunion_Info(name:"娄底公交卡",prefecture:"湖南省",city:"娄底市")
+    case "031048211": card = cnTunion_Info(name:"福城通",prefecture:"湖南省",city:"郴州市")
+    case "031048212": card = cnTunion_Info(name:"永州城市一卡通",prefecture:"湖南省",city:"永州市")
+    case "031048213": card = cnTunion_Info(name:"怀化公交IC卡",prefecture:"湖南省",city:"怀化市")
+    case "031048214": card = cnTunion_Info(name:"湘西州交通一卡通",prefecture:"湖南省",city:"湘西土家族苗族自治州 吉首市")
         
     
     /*
-    case "031048200": card = "长沙潇湘卡"
-    case "031048202": card = "株洲公交IC卡"
-    case "031048203": card = "湘潭交通卡"
-    case "031048204": card = "衡阳交通卡"
-    case "031048206": card = "岳阳通"
-    case "031048207": card = "常德公交卡"
-    case "031048208": card = "张家界一卡通"
-    case "031048209": card = "银城一卡通"
-    case "031048211": card = "福城通"
-    case "031048212": card = "永州城市一卡通"
-    case "031048213": card = "怀化公交IC卡"
     case "031048300": card = "金陵通"
     case "031048301": card = "扬州市民卡"
     case "031048302": card = "镇江一卡通"

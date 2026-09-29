@@ -2162,6 +2162,17 @@
         }
       }
     },
+    "宝庆一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宝庆一卡通"
+          }
+        }
+      }
+    },
     "宝鸡公交卡" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4704,6 +4715,17 @@
         }
       }
     },
+    "湘西州交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "湘西州交通一卡通"
+          }
+        }
+      }
+    },
     "滨州公交一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5396,6 +5418,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "秦皇島公交卡"
+          }
+        }
+      }
+    },
+    "娄底公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "娄底公交卡"
           }
         }
       }
