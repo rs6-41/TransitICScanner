@@ -1,7 +1,6 @@
 import Foundation
 
 enum jpDoCard_Converter {
-
     static func balance(
         _ value: Int
     ) -> String {
@@ -53,16 +52,18 @@ enum jpDoCard_Converter {
         _ value: Int, amount: Int
     ) -> String {
         switch value {
-            
-        // コード判明後に追記
-        case 0x1E:
+        case 0x02, 0x03, 0x07:
+            return String(localized: "result.history.fare")
+        case 0x08:
+            return String(localized: "result.history.charge")
+        case 0x12:
+            return String(localized: "result.history.fare")
+        case 0x15, 0x1F, 0x20:
+            return String(localized: "result.history.charge")
+        case 0x1E, 0x14, 0x2D:
             return String(localized: "result.history.new")
         default:
-            if amount < 0 {
-                return String(localized: "result.history.fare")
-            } else {
-                return String(localized: "result.history.charge")
-            }
+            return String(localized: "result.history.other")
         }
     }
 }
