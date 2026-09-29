@@ -11,7 +11,7 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .jpIC, name: "card.hayakaken", imageName: "jpIC_hayakaken", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.sugoca", imageName: "jpIC_sugoca", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.SAPICA", imageName: "jpIC_SAPICA", isDefault: false),
-    CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_IruCa", isDefault: false),
+    CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_iruca", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.icsca", imageName: "jpIC_icsca", isDefault: false),
     
     
@@ -46,7 +46,10 @@ let cardDesignList:[CardDesigin] = [
     // MARK: usClipper
     CardDesigin(type: .usClipper, name: "card.usClipper", imageName: "usClipper", isDefault: true),
     
-    // MARK: twEasyCard_old
+    // MARK: jpDoCard
     CardDesigin(type: .jpDoCard, name: "card.DoCard", imageName: "jpDoCard", isDefault: true),
-    CardDesigin(type: .jpDoCard, name: "card.Asaca", imageName: "jpDoCard_Asaca", isDefault: false)
+    CardDesigin(type: .jpDoCard, name: "card.Asaca", imageName: "jpDoCard_Asaca", isDefault: false),
+    
+    // MARK: jpOKICA
+    CardDesigin(type: .jpOKICA, name: "card.OKICA", imageName: "jpOKICA", isDefault: true)
 ]

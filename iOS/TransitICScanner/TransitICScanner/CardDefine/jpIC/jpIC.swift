@@ -124,7 +124,7 @@ let jpIC_SAPICA = CardInfo(
 
 //IruCa（システムコード以外は共通使用のカード）
 let jpIC_IruCa = CardInfo(
-    logo:"jpIC_IruCa",
+    logo:"jpIC_iruca",
     name:"cardList.jpIC_IruCa",
     sortName:"cardList.jpIC_IruCa.sortName",
     area: .jp,
@@ -349,7 +349,7 @@ extension NFCScannerModel {
         switch optionType {
             case "jpIC_SAPICA": cardType = "card.SAPICA"
             case "jpIC_IruCa": cardType = "card.IruCa"
-            case "jpIC_icsca": cardType = "jpIC_icsca"
+            case "jpIC_icsca": cardType = "card.icsca"
             default:break
         }
 

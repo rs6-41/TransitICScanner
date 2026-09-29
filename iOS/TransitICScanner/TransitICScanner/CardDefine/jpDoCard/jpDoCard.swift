@@ -11,7 +11,7 @@ let jpDoCard = CardInfo(
     prefectures: ["Hokkaido"],
     regionOption: nil,
     description: "cardList.jpDoCard.description",
-    scand_description: "jpDoCard.scand.description",
+    scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido"],
     scanOption: ScanOption(
         name: "jpDoCard",
