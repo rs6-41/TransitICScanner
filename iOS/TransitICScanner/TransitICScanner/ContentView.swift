@@ -52,8 +52,14 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID, isCloudSyncEnabled: $isCloudSyncEnabled)
+            NFCToolView(deleteAds: $deleteAds)
                 .tag(2)
+                .toolbarBackground(.visible, for: .tabBar)
+                .tabItem {
+                    Label(String(localized:"tab.tool"), systemImage: "latch.2.case.fill")
+                }
+            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID, isCloudSyncEnabled: $isCloudSyncEnabled)
+                .tag(3)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.setting"), systemImage: "gearshape")

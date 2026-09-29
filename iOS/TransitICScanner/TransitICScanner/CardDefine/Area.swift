@@ -69,6 +69,22 @@ enum regionType: String, CaseIterable,Codable {
             case .africa: return "region.africa"
         }
     }
+    
+    func icon() -> String {
+        switch self {
+            case .eastAsia: return "globe.asia.australia"
+            case .japanLocal: return "globe.asia.australia"
+            case .southEastAsia: return "globe.asia.australia"
+            case .centralAsia: return "globe.central.south.asia"
+            case .southAsia: return "globe.central.south.asia"
+            case .middleEastAsia: return "globe.asia.australia"
+            case .europa: return "globe.europe.africa"
+            case .northAmerica: return "globe.americas"
+            case .latinAmerica: return "globe.americas"
+            case .oceania: return "globe.asia.australia"
+            case .africa: return "globe.europe.africa"
+        }
+    }
 }
 
 struct regionList:Hashable {

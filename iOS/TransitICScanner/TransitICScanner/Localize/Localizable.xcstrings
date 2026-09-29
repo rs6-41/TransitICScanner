@@ -3430,6 +3430,22 @@
         }
       }
     },
+    "history.empty" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Scanned Card."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン済みのカードがありません"
+          }
+        }
+      }
+    },
     "hkOctopus.short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4284,6 +4300,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長崎県"
+          }
+        }
+      }
+    },
+    "nfc.log.empty" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Scanned Card with Log."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログ付きのスキャン履歴がありません"
           }
         }
       }
@@ -8914,6 +8946,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定"
+          }
+        }
+      }
+    },
+    "tab.tool" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tool"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ツール"
+          }
+        }
+      }
+    },
+    "tool.fullLog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan Log"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャンログ"
           }
         }
       }

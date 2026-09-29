@@ -6,6 +6,7 @@ struct cnTunion_Info: Hashable, Codable {
     let city: String?
 }
 
+// https://ipt.kopisee.com/canton/zh-cn/t-union
 func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     let card:cnTunion_Info
     
@@ -62,7 +63,7 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047606": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"玉树藏族自治州")
     case "031047607": card = cnTunion_Info(name:"大美青海行",prefecture:"青海省",city:"海西蒙古族藏族自治州")
        
-    // MARK: 四川省 - 0310476
+    // MARK: 四川省 - 0310478
     case "031047800": card = cnTunion_Info(name:"天府通",prefecture:"四川省",city:"成都市")
     case "031047801": card = cnTunion_Info(name:"甜城通",prefecture:"四川省",city:"内江市")
     case "031047802": card = cnTunion_Info(name:"月城一卡通",prefecture:"四川省",city:"内江市")
@@ -84,8 +85,9 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
     case "031047819": card = cnTunion_Info(name:"巴中交通一卡通",prefecture:"四川省",city:"巴中市")
     case "031047821": card = cnTunion_Info(name:"古城阆中通",prefecture:"四川省",city:"南充市")
         
+    //新疆维吾尔自治区 - 0310479
+    case "031047900": card = cnTunion_Info(name:"红山一卡通",prefecture:"新疆维吾尔自治区",city:"乌鲁木齐市")
     /*
-    case "031047900": card = "红山一卡通"
     case "031047911": card = "金垦卡"
     case "031048000": card = "长安通"
     case "031048001": card = "崇德包容卡"
