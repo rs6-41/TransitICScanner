@@ -259,7 +259,7 @@ struct CardRegionView: View {
     var body: some View {
         List {
             Section() {
-                ForEach(sortItems(sort:sort,items:items), id: \.logo) { item in
+                ForEach(sortItems(sort:sort,items:items,pref:false), id: \.logo) { item in
                     CardListRow(item: item, deleteAds: $deleteAds)
                 }
             } header: {
@@ -271,7 +271,7 @@ struct CardRegionView: View {
             if let subItems {
                 if !subItems.isEmpty {
                     Section() {
-                        ForEach(sortItems(sort:sort,items:subItems), id: \.logo) { item in
+                        ForEach(sortItems(sort:sort2,items:subItems,pref:true), id: \.logo) { item in
                             CardListRow(item: item, deleteAds: $deleteAds)
                         }
                     } header: {
@@ -287,28 +287,40 @@ struct CardRegionView: View {
         .navigationTitle(LocalizedStringKey(items.first?.area.region().name() ?? ""))
     }
     
-    func sortItems(sort: SortType, items: [CardInfo]) -> [CardInfo] {
+    func sortItems(sort: SortType, items: [CardInfo], pref: Bool) -> [CardInfo] {
         items.sorted {
             switch sort {
             case .name_ascend:
                 Localize($0.sortName).localizedStandardCompare(
                     Localize($1.sortName)
                 ) == .orderedAscending
-                
+
             case .name_descend:
                 Localize($0.sortName).localizedStandardCompare(
                     Localize($1.sortName)
                 ) == .orderedDescending
-                
+
             case .locate_ascend:
-                Localize($0.area.sortName()).localizedStandardCompare(
-                    Localize($1.area.sortName())
-                ) == .orderedAscending
-                
+                if pref {
+                    String(prefSort($0.prefectures?.first ?? "")).localizedStandardCompare(
+                        String(prefSort($1.prefectures?.first ?? ""))
+                    ) == .orderedAscending
+                } else {
+                    Localize($0.area.sortName()).localizedStandardCompare(
+                        Localize($1.area.sortName())
+                    ) == .orderedAscending
+                }
+
             case .locate_descend:
-                Localize($0.area.sortName()).localizedStandardCompare(
-                    Localize($1.area.sortName())
-                ) == .orderedDescending
+                if pref {
+                    String(prefSort($0.prefectures?.first ?? "")).localizedStandardCompare(
+                        String(prefSort($1.prefectures?.first ?? ""))
+                    ) == .orderedDescending
+                } else {
+                    Localize($0.area.sortName()).localizedStandardCompare(
+                        Localize($1.area.sortName())
+                    ) == .orderedDescending
+                }
             }
         }
     }
