@@ -12,6 +12,7 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .jpIC, name: "card.sugoca", imageName: "jpIC_sugoca", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.SAPICA", imageName: "jpIC_SAPICA", isDefault: false),
     CardDesigin(type: .jpIC, name: "card.IruCa", imageName: "jpIC_IruCa", isDefault: false),
+    CardDesigin(type: .jpIC, name: "card.icsca", imageName: "jpIC_icsca", isDefault: false),
     
     
     // MARK: cnTunion
@@ -20,7 +21,10 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .cnTunion, name: "上海公共交通卡", imageName: "cnTunion_shanghai",  isDefault: false),
     CardDesigin(type: .cnTunion, name: "深圳通", imageName: "cnTunion_shenzhen",  isDefault: false),
     CardDesigin(type: .cnTunion, name: "羊城通", imageName: "cnTunion_yangchengtong",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "杭州通", imageName: "cnTunion_hangzhou",  isDefault: false),
     CardDesigin(type: .cnTunion, name: "八达通", imageName: "cnTunion_hkOctopus",  isDefault: false),
+    CardDesigin(type: .cnTunion, name: "澳门通", imageName: "cnTunion_macauPass",  isDefault: false),
+    
     
     // MARK: hkOctopus
     CardDesigin(type: .hkOctopus, name: "card.hkOctopus", imageName: "hkOctopus",  isDefault: true),
@@ -40,5 +44,9 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .twEasyCard_old, name: "card.twEasyCard_old", imageName: "twEasyCard_old", isDefault: true),
     
     // MARK: usClipper
-    CardDesigin(type: .usClipper, name: "card.usClipper", imageName: "usClipper", isDefault: true)
+    CardDesigin(type: .usClipper, name: "card.usClipper", imageName: "usClipper", isDefault: true),
+    
+    // MARK: twEasyCard_old
+    CardDesigin(type: .jpDoCard, name: "card.DoCard", imageName: "jpDoCard", isDefault: true),
+    CardDesigin(type: .jpDoCard, name: "card.Asaca", imageName: "jpDoCard_Asaca", isDefault: false)
 ]

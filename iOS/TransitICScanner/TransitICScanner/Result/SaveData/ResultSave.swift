@@ -107,6 +107,8 @@ final class SavedCard {
 
     var savedAt: Date? = Date.now
 
+    var fullLog: String?
+
     @Relationship(
         deleteRule: .cascade,
         inverse: \SavedHistory.card
@@ -134,7 +136,8 @@ final class SavedCard {
         isLastHide: Bool = false,
         cardDescription: String = "",
         converterType: ConverterType,
-        savedAt: Date
+        savedAt: Date,
+        fullLog: String? = nil
     ) {
         self.idm = idm
         self.name = name
@@ -152,6 +155,7 @@ final class SavedCard {
         self.converterTypeRaw = converterType.rawValue
         self.histories = []
         self.savedAt = savedAt
+        self.fullLog = fullLog
     }
 
     var converterType: ConverterType {
@@ -269,7 +273,8 @@ extension SavedCard {
             converter: converterType,
             isLastHide: isLastHide,
             description: cardDescription,
-            savedAt: savedAt
+            savedAt: savedAt,
+            fullLog: fullLog
         )
     }
 }
@@ -310,7 +315,8 @@ enum ResultSave {
                 isLastHide: result.isLastHide,
                 cardDescription: result.description,
                 converterType: result.converter,
-                savedAt: result.savedAt ?? Date.now
+                savedAt: result.savedAt ?? Date.now,
+                fullLog: result.fullLog
             )
 
             modelContext.insert(card)
@@ -340,6 +346,7 @@ enum ResultSave {
         card.cardDescription = result.description
         card.converterTypeRaw = result.converter.rawValue
         card.savedAt = result.savedAt
+        card.fullLog = result.fullLog
 
         if let histories = result.history {
             var existingTransactionIDs = Set(
@@ -397,14 +404,20 @@ enum ResultSave {
                 card.name
             )
         }
-        
-        //ウィジェットにデータをわたす
-        var widgetModels:[BalanceWidgetModel] = []
+
+        var widgetModels: [BalanceWidgetModel] = []
         let sharedDefaults = UserDefaults(suiteName: AppGroup)
-        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
-           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+
+        if let savedData = sharedDefaults?.data(
+            forKey: "widgetDatas"
+        ),
+           let decodedUsers = try? JSONDecoder().decode(
+            [BalanceWidgetModel].self,
+            from: savedData
+           ) {
             widgetModels = decodedUsers
         }
+
         let saveData = BalanceWidgetModel(
             DisplayName: info.displayName ?? Localize(info.name),
             balance: result.balance,
@@ -413,10 +426,16 @@ enum ResultSave {
             icon: info.iconName,
             savedAt: result.savedAt
         )
-        widgetModels.removeAll { $0.idm == info.idm }
+
+        widgetModels.removeAll {
+            $0.idm == info.idm
+        }
+
         widgetModels.append(saveData)
-        
-        if let encodedData = try? JSONEncoder().encode(widgetModels) {
+
+        if let encodedData = try? JSONEncoder().encode(
+            widgetModels
+        ) {
             sharedDefaults?.set(
                 encodedData,
                 forKey: "widgetDatas"
@@ -478,21 +497,33 @@ enum ResultSave {
 
         modelContext.delete(card)
         try modelContext.save()
-        
-        //ウィジェットデータを消す
-        var widgetModels:[BalanceWidgetModel] = []
+
+        var widgetModels: [BalanceWidgetModel] = []
         let sharedDefaults = UserDefaults(suiteName: AppGroup)
-        
-        if let savedData = sharedDefaults?.data(forKey: "widgetDatas"),
-           let decodedUsers = try? JSONDecoder().decode([BalanceWidgetModel].self, from: savedData) {
+
+        if let savedData = sharedDefaults?.data(
+            forKey: "widgetDatas"
+        ),
+           let decodedUsers = try? JSONDecoder().decode(
+            [BalanceWidgetModel].self,
+            from: savedData
+           ) {
             widgetModels = decodedUsers
         }
-        widgetModels.removeAll { $0.idm == idm }
-        
-        if let encodedData = try? JSONEncoder().encode(widgetModels) {
-            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+
+        widgetModels.removeAll {
+            $0.idm == idm
         }
-        
+
+        if let encodedData = try? JSONEncoder().encode(
+            widgetModels
+        ) {
+            sharedDefaults?.set(
+                encodedData,
+                forKey: "widgetDatas"
+            )
+        }
+
         WidgetCenter.shared.reloadAllTimelines()
     }
 
@@ -508,12 +539,17 @@ enum ResultSave {
         }
 
         try modelContext.save()
-        
-        //ウィジェットデータを消す
-        var widgetModels:[BalanceWidgetModel] = []
+
+        var widgetModels: [BalanceWidgetModel] = []
         let sharedDefaults = UserDefaults(suiteName: AppGroup)
-        if let encodedData = try? JSONEncoder().encode(widgetModels) {
-            sharedDefaults?.set(encodedData, forKey: "widgetDatas")
+
+        if let encodedData = try? JSONEncoder().encode(
+            widgetModels
+        ) {
+            sharedDefaults?.set(
+                encodedData,
+                forKey: "widgetDatas"
+            )
         }
     }
 

@@ -14,6 +14,7 @@ let jpIC = CardInfo(
     area: .jp,
     countryCode: ["jp"],
     prefectures: nil,
+    regionOption: .eastAsia,
     description:"cardList.jpIC.description",
     scand_description: "jpIC.scand.description",
     searchWords: ["card.suica","jpIC_suica","card.pasmo","card.icoca","card.toica","card.nimoca","card.manaca","すいか","ぱすも","いこか","といか","にもか","まなか","はやかけん","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr","じぇーあーる","にほん","スイカ","パスモ","イコカ","トイカ","ニモカ","マナカ","ハヤカケン","suika","pasumo","ikoka","toika","nimoka","manaka"],
@@ -45,6 +46,44 @@ let jpIC = CardInfo(
         )
 )
 
+//icsca（駅コード以外は共通使用のカード）
+let jpIC_icsca = CardInfo(
+    logo:"jpIC_icsca",
+    name:"cardList.jpIC_icsca",
+    sortName:"cardList.jpIC_icsca.sortName",
+    area: .jp,
+    countryCode: ["jp"],
+    prefectures: ["Miyagi"],
+    regionOption: nil,
+    description:"cardList.jpIC_icsca.description",
+    scand_description: "jpIC.scand.description",
+    searchWords: ["locate.prefecture.Miyagi","いくすか","card.icsca","いくすか","仙台","sendai","せんだい"],
+    scanOption:ScanOption(
+        name:"jpIC_icsca",
+        nameShort:"jpIC_icsca.short",
+        scanType: .nfc,
+        pollingOption:[.iso18092],
+        felicaSystemCodes:["0003"],
+        historyCount:20,
+        currencyType:.jpy,
+        converter:.jpIC
+    ),
+    infomation: nil,
+    sample:
+        ResultSample(
+            balance:500.0,
+            idm:"0112E0D1C4B93A10",
+            type:"card.icsca",
+            history: [
+            //TODO: 駅コード例を調べる（暫定的に全て1111）
+            // 2: チャージ 残高1100円 2025/19/23 19:21
+            ResultHistory(processType: 0x02,date: sampleDay2,balance: 1100,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
+            // 3: 自動改札 残高1099円 2026/1/3 12:58
+            ResultHistory(processType: 0x16,date: sampleDay3,balance: 500,amount: nil,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+            ]
+        )
+)
+
 //SAPICA（システムコード以外は共通）
 let jpIC_SAPICA = CardInfo(
     logo:"jpIC_SAPICA",
@@ -53,6 +92,7 @@ let jpIC_SAPICA = CardInfo(
     area: .jp,
     countryCode: ["jp"],
     prefectures: ["Hokkaido"],
+    regionOption: nil,
     description:"cardList.jpIC_SAPICA.description",
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
@@ -82,8 +122,6 @@ let jpIC_SAPICA = CardInfo(
         )
 )
 
-
-
 //IruCa（システムコード以外は共通使用のカード）
 let jpIC_IruCa = CardInfo(
     logo:"jpIC_IruCa",
@@ -92,6 +130,7 @@ let jpIC_IruCa = CardInfo(
     area: .jp,
     countryCode: ["jp"],
     prefectures: ["Kagawa"],
+    regionOption: nil,
     description:"cardList.jpIC_IruCa.description",
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
@@ -310,6 +349,7 @@ extension NFCScannerModel {
         switch optionType {
             case "jpIC_SAPICA": cardType = "card.SAPICA"
             case "jpIC_IruCa": cardType = "card.IruCa"
+            case "jpIC_icsca": cardType = "jpIC_icsca"
             default:break
         }
 
