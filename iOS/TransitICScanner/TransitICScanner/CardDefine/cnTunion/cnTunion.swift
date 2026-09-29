@@ -6,11 +6,12 @@ import CoreNFC
 let cnTunion = CardInfo(
     logo: "cnTunion_beijing",
     name: "cardList.cnTunion",
-    sortName:"cardList.cnTunion.sortName",
+    sortName: "cardList.cnTunion.sortName",
     area: .cn,
-    countryCode: ["cn","hk","mo"],
+    countryCode: ["cn", "hk", "mo"],
     prefectures: nil,
-    description: String(localized:"cardList.cnTunion.description"),
+    regionOption: nil,
+    description: String(localized: "cardList.cnTunion.description"),
     scand_description: "",
     searchWords: ["zhongguojiaotonglianhe"],
     scanOption: ScanOption(
@@ -27,18 +28,77 @@ let cnTunion = CardInfo(
     infomation: nil,
     sample:
         ResultSample(
-            balance:295.0,
-            idm:"03104770012345678901",
-            type:"上海公共交通卡",
+            balance: 295.0,
+            idm: "03104770012345678901",
+            type: "上海公共交通卡",
             history: [
-            //TODO: 駅コード例を調べる（暫定的に全て1111）
-            // 2: 100RMB チャージ 残高300RMB 2025/19/23 19:21
-            ResultHistory(processType: 0x02,date: sampleDay2,balance: 300,amount: 100,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151),
-            // 3: 5RMB 改札 残高295RMB 2026/1/3 12:58
-            ResultHistory(processType: 0x04,date: sampleDay3,balance: 295,amount: 15,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152),
+                ResultHistory(
+                    processType: 0x02,
+                    date: sampleDay2,
+                    balance: 300,
+                    amount: 100,
+                    lineIn: 0x11,
+                    stationIn: 0x11,
+                    lineOut: 0x11,
+                    stationOut: 0x11,
+                    transactionId: 151
+                ),
+                ResultHistory(
+                    processType: 0x04,
+                    date: sampleDay3,
+                    balance: 295,
+                    amount: 15,
+                    lineIn: 0x11,
+                    stationIn: 0x11,
+                    lineOut: 0x11,
+                    stationOut: 0x11,
+                    transactionId: 152
+                )
             ]
         )
 )
+
+
+final class CNTRunionFullLog {
+
+    private(set) var text = ""
+
+    func append(_ value: String) {
+        text += value
+        text += "\n"
+    }
+
+    func appendData(
+        _ title: String,
+        _ data: Data
+    ) {
+        let hex = data
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined(separator: " ")
+
+        append(
+            "\(title) [\(data.count) bytes]: \(hex)"
+        )
+    }
+
+    func appendBytes(
+        _ title: String,
+        _ bytes: [UInt8]
+    ) {
+        let hex = bytes
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined(separator: " ")
+
+        append(
+            "\(title) [\(bytes.count) bytes]: \(hex)"
+        )
+    }
+}
+
 
 extension NFCScannerModel {
 
@@ -46,128 +106,189 @@ extension NFCScannerModel {
         _ tag: NFCTag,
         _ session: NFCTagReaderSession
     ) {
+
         guard case let .iso7816(isoTag) = tag else {
-            session.invalidate(errorMessage: "Not ISO7816 tag")
+            session.invalidate(
+                errorMessage: "Not ISO7816 tag"
+            )
             return
         }
 
+        let fullLog = CNTRunionFullLog()
+
+        fullLog.append(
+            "===== T-UNION FULL LOG START ====="
+        )
+
+        fullLog.append(
+            "Scan Date: \(Date.now)"
+        )
+
         print("T-Union scan started")
+
+        fullLog.append(
+            "T-Union scan started"
+        )
+
+        let identifierHex = isoTag.identifier
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined(separator: " ")
 
         print(
             "ISO7816 identifier:",
-            isoTag.identifier
-                .map { String(format: "%02X", $0) }
-                .joined()
+            identifierHex
+        )
+
+        fullLog.append(
+            "ISO7816 identifier [\(isoTag.identifier.count) bytes]: \(identifierHex)"
         )
 
         let aid = isoTag.initialSelectedAID
 
         if aid.isEmpty {
-            print("Initial Selected AID: empty")
+
+            print(
+                "Initial Selected AID: empty"
+            )
+
+            fullLog.append(
+                "Initial Selected AID: empty"
+            )
+
         } else {
+
+            let aidHex = aid.utf8
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
+
             print(
                 "Initial Selected AID:",
-                aid.utf8
-                    .map { String(format: "%02X", $0) }
-                    .joined()
+                aidHex
+            )
+
+            fullLog.append(
+                "Initial Selected AID [\(aid.utf8.count) bytes]: \(aidHex)"
             )
         }
 
-        print(
-            "Historical Bytes:",
-            isoTag.historicalBytes?
-                .map { String(format: "%02X", $0) }
-                .joined() ?? "nil"
-        )
+        if let historicalBytes = isoTag.historicalBytes {
 
-        print(
-            "Application Data:",
-            isoTag.applicationData?
-                .map { String(format: "%02X", $0) }
-                .joined() ?? "nil"
-        )
-
-        Task {
-            let aids: [Data] = [
-                Data([
-                    0xA0, 0x00, 0x00, 0x06,
-                    0x32, 0x01, 0x01, 0x05
-                ]),
-                Data([
-                    0xA0, 0x00, 0x00, 0x06,
-                    0x32, 0x01, 0x01, 0x06
-                ]),
-                Data([
-                    0x32, 0x50, 0x41, 0x59,
-                    0x2E, 0x53, 0x59, 0x53,
-                    0x2E, 0x44, 0x44, 0x46,
-                    0x30, 0x31
-                ])
-            ]
-
-            var fciData: Data? = nil
-
-            for aid in aids {
-                print(
-                    "Selecting AID:",
-                    aid
-                        .map { String(format: "%02X", $0) }
-                        .joined()
-                )
-
-                if let (
-                    response,
-                    sw1,
-                    sw2
-                ) = await cnTunion_sendAPDU(
-                    isoTag,
-                    ins: 0xA4,
-                    p1: 0x04,
-                    p2: 0x00,
-                    data: aid,
-                    le: 256,
-                    cla: 0x00
-                ),
-                sw1 == 0x90,
-                sw2 == 0x00 {
-                    fciData = response
-
-                    print(
-                        "Selected AID:",
-                        aid
-                            .map { String(format: "%02X", $0) }
-                            .joined()
-                    )
-
-                    break
-                } else {
-                    print(
-                        "Failed to select AID:",
-                        aid
-                            .map { String(format: "%02X", $0) }
-                            .joined()
-                    )
-                }
-            }
-
-            guard let fci = fciData else {
-                session.invalidate(
-                    errorMessage: "T-Union application not found"
-                )
-                return
-            }
-
-            print("===== T-Union RAW DUMP START =====")
-
-            let managementP1 =
-                UInt8(0x80 | 0x17)
+            fullLog.appendData(
+                "Historical Bytes",
+                historicalBytes
+            )
 
             print(
-                String(
-                    format:
-                        "--- SFI17_MANAGEMENT READ BINARY P1=%02X P2=00 ---",
-                    managementP1
-                )
+                "Historical Bytes:",
+                historicalBytes
+                    .map {
+                        String(format: "%02X", $0)
+                    }
+                    .joined(separator: " ")
+            )
+
+        } else {
+
+            fullLog.append(
+                "Historical Bytes: nil"
+            )
+
+            print(
+                "Historical Bytes: nil"
+            )
+        }
+
+        if let applicationData = isoTag.applicationData {
+
+            fullLog.appendData(
+                "Application Data",
+                applicationData
+            )
+
+            print(
+                "Application Data:",
+                applicationData
+                    .map {
+                        String(format: "%02X", $0)
+                    }
+                    .joined(separator: " ")
+            )
+
+        } else {
+
+            fullLog.append(
+                "Application Data: nil"
+            )
+
+            print(
+                "Application Data: nil"
+            )
+        }
+        
+        fullLog.append("")
+        fullLog.append(
+            "===== ASYNC SCAN START ====="
+        )
+
+        Task { @MainActor [self] in
+            await cnTunion_scanAsync(
+                isoTag,
+                session: session,
+                fullLog: fullLog
+            )
+        }
+    }
+
+    @MainActor
+    private func cnTunion_scanAsync(
+        _ isoTag: NFCISO7816Tag,
+        session: NFCTagReaderSession,
+        fullLog: CNTRunionFullLog
+    ) async {
+
+        let aids: [Data] = [
+            Data([
+                0xA0, 0x00, 0x00, 0x06,
+                0x32, 0x01, 0x01, 0x05
+            ]),
+            Data([
+                0xA0, 0x00, 0x00, 0x06,
+                0x32, 0x01, 0x01, 0x06
+            ]),
+            Data([
+                0x32, 0x50, 0x41, 0x59,
+                0x2E, 0x53, 0x59, 0x53,
+                0x2E, 0x44, 0x44, 0x46,
+                0x30, 0x31
+            ])
+        ]
+
+        fullLog.append(
+            "===== AID SELECTION ====="
+        )
+
+        var fciData: Data? = nil
+
+        for aid in aids {
+
+            let aidHex = aid
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
+
+            print(
+                "Selecting AID:",
+                aidHex
+            )
+
+            fullLog.appendData(
+                "SELECT AID",
+                aid
             )
 
             if let (
@@ -176,169 +297,397 @@ extension NFCScannerModel {
                 sw2
             ) = await cnTunion_sendAPDU(
                 isoTag,
-                ins: 0xB0,
-                p1: managementP1,
+                ins: 0xA4,
+                p1: 0x04,
                 p2: 0x00,
-                data: Data(),
-                le: 0x3C,
-                cla: 0x00
-            ) {
-                let hex = response
-                    .map { String(format: "%02X", $0) }
-                    .joined(separator: " ")
+                data: aid,
+                le: 256,
+                cla: 0x00,
+                fullLog: fullLog
+            ),
+            sw1 == 0x90,
+            sw2 == 0x00 {
+
+                fciData = response
 
                 print(
-                    String(
-                        format:
-                            "SFI17 SW=%02X%02X LEN=%d EXPECTED=%d RAW=%@",
-                        sw1,
-                        sw2,
-                        response.count,
-                        0x3C,
-                        hex
-                    )
+                    "Selected AID:",
+                    aidHex
                 )
-            }
 
-            let transactionP2 =
-                UInt8((0x18 << 3) | 0x04)
-
-            print(
-                String(
-                    format:
-                        "--- SFI18_TRANSACTION P2=%02X ---",
-                    transactionP2
+                fullLog.append(
+                    "Selected AID: \(aidHex)"
                 )
-            )
 
-            for record in 1...20 {
-                guard let (
-                    response,
-                    sw1,
-                    sw2
-                ) = await cnTunion_sendAPDU(
-                    isoTag,
-                    ins: 0xB2,
-                    p1: UInt8(record),
-                    p2: transactionP2,
-                    le: 256,
-                    cla: 0x00
-                ) else {
-                    print(
-                        "SFI18 record=\(record) APDU_FAILED"
-                    )
-                    continue
-                }
+                fullLog.appendData(
+                    "FCI",
+                    response
+                )
 
-                let hex = response
-                    .map { String(format: "%02X", $0) }
-                    .joined(separator: " ")
+                break
+
+            } else {
 
                 print(
-                    "SFI18 record=\(record) " +
-                    "SW=\(String(format: "%02X%02X", sw1, sw2)) " +
-                    "LEN=\(response.count) " +
-                    "EXPECTED=23 " +
-                    "RAW=\(hex)"
+                    "Failed to select AID:",
+                    aidHex
                 )
 
-                if sw1 == 0x6A && sw2 == 0x83 {
-                    break
-                }
-            }
-
-            let tripP2 =
-                UInt8((0x1E << 3) | 0x04)
-
-            print(
-                String(
-                    format:
-                        "--- SFI1E_TRIP P2=%02X ---",
-                    tripP2
+                fullLog.append(
+                    "Failed to select AID: \(aidHex)"
                 )
-            )
-
-            for record in 1...20 {
-                guard let (
-                    response,
-                    sw1,
-                    sw2
-                ) = await cnTunion_sendAPDU(
-                    isoTag,
-                    ins: 0xB2,
-                    p1: UInt8(record),
-                    p2: tripP2,
-                    le: 256,
-                    cla: 0x00
-                ) else {
-                    print(
-                        "SFI1E record=\(record) APDU_FAILED"
-                    )
-                    continue
-                }
-
-                let hex = response
-                    .map { String(format: "%02X", $0) }
-                    .joined(separator: " ")
-
-                print(
-                    "SFI1E record=\(record) " +
-                    "SW=\(String(format: "%02X%02X", sw1, sw2)) " +
-                    "LEN=\(response.count) " +
-                    "EXPECTED=48 " +
-                    "RAW=\(hex)"
-                )
-
-                if sw1 == 0x6A && sw2 == 0x83 {
-                    break
-                }
-            }
-
-            print("===== T-Union RAW DUMP END =====")
-
-            _ = cnTunion_parseFCI(fci)
-
-            let rawBalance =
-                await cnTunion_getBalanceFallback(isoTag)
-
-            let info =
-                await cnTunion_getInfoFromFCI(
-                    fci,
-                    tag: isoTag
-                )
-
-            let (
-                history,
-                computedBalance
-            ) = await cnTunion_readKnownRecords(
-                isoTag
-            )
-
-            let balance =
-                computedBalance ??
-                history?.first(
-                    where: {
-                        $0.balance != 0
-                    }
-                )?.balance ??
-                rawBalance
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: balance,
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: cnTunion.scanOption.converter,
-                    isLastHide: false,
-                    description: cnTunion.scand_description,
-                    savedAt: Date.now
-                )
-
-                session.invalidate()
             }
         }
+
+        guard let fci = fciData else {
+
+            fullLog.append(
+                "T-Union application not found"
+            )
+
+            fullLog.append(
+                "===== T-UNION FULL LOG END ====="
+            )
+
+            session.invalidate(
+                errorMessage:
+                    "T-Union application not found"
+            )
+
+            return
+        }
+
+        fullLog.append("")
+        fullLog.append(
+            "===== FCI PARSE ====="
+        )
+
+        fullLog.appendData(
+            "FCI",
+            fci
+        )
+
+        _ = cnTunion_parseFCI(
+            fci,
+            fullLog: fullLog
+        )
+
+        fullLog.append("")
+        fullLog.append(
+            "===== RAW DUMP ====="
+        )
+
+        let managementP1 =
+            UInt8(0x80 | 0x17)
+
+        print(
+            String(
+                format:
+                    "--- SFI17_MANAGEMENT READ BINARY P1=%02X P2=00 ---",
+                managementP1
+            )
+        )
+
+        fullLog.append(
+            String(
+                format:
+                    "--- SFI17_MANAGEMENT READ BINARY P1=%02X P2=00 ---",
+                managementP1
+            )
+        )
+
+        if let (
+            response,
+            sw1,
+            sw2
+        ) = await cnTunion_sendAPDU(
+            isoTag,
+            ins: 0xB0,
+            p1: managementP1,
+            p2: 0x00,
+            data: Data(),
+            le: 0x3C,
+            cla: 0x00,
+            fullLog: fullLog
+        ) {
+
+            let hex = response
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
+
+            let log = String(
+                format:
+                    "SFI17 SW=%02X%02X LEN=%d EXPECTED=%d RAW=%@",
+                sw1,
+                sw2,
+                response.count,
+                0x3C,
+                hex
+            )
+
+            print(log)
+            fullLog.append(log)
+        }
+
+        let transactionP2 =
+            UInt8((0x18 << 3) | 0x04)
+
+        print(
+            String(
+                format:
+                    "--- SFI18_TRANSACTION P2=%02X ---",
+                transactionP2
+            )
+        )
+
+        fullLog.append(
+            String(
+                format:
+                    "--- SFI18_TRANSACTION P2=%02X ---",
+                transactionP2
+            )
+        )
+
+        for record in 1...20 {
+
+            guard let (
+                response,
+                sw1,
+                sw2
+            ) = await cnTunion_sendAPDU(
+                isoTag,
+                ins: 0xB2,
+                p1: UInt8(record),
+                p2: transactionP2,
+                le: 256,
+                cla: 0x00,
+                fullLog: fullLog
+            ) else {
+
+                print(
+                    "SFI18 record=\(record) APDU_FAILED"
+                )
+
+                fullLog.append(
+                    "SFI18 record=\(record) APDU_FAILED"
+                )
+
+                continue
+            }
+
+            let hex = response
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
+
+            let log = String(
+                format:
+                    "SFI18 record=%d SW=%02X%02X LEN=%d EXPECTED=23 RAW=%@",
+                record,
+                sw1,
+                sw2,
+                response.count,
+                hex
+            )
+
+            print(log)
+            fullLog.append(log)
+
+            if sw1 == 0x6A &&
+                sw2 == 0x83 {
+                break
+            }
+        }
+
+        let tripP2 =
+            UInt8((0x1E << 3) | 0x04)
+
+        print(
+            String(
+                format:
+                    "--- SFI1E_TRIP P2=%02X ---",
+                tripP2
+            )
+        )
+
+        fullLog.append(
+            String(
+                format:
+                    "--- SFI1E_TRIP P2=%02X ---",
+                tripP2
+            )
+        )
+
+        for record in 1...20 {
+
+            guard let (
+                response,
+                sw1,
+                sw2
+            ) = await cnTunion_sendAPDU(
+                isoTag,
+                ins: 0xB2,
+                p1: UInt8(record),
+                p2: tripP2,
+                le: 256,
+                cla: 0x00,
+                fullLog: fullLog
+            ) else {
+
+                print(
+                    "SFI1E record=\(record) APDU_FAILED"
+                )
+
+                fullLog.append(
+                    "SFI1E record=\(record) APDU_FAILED"
+                )
+
+                continue
+            }
+
+            let hex = response
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
+
+            let log = String(
+                format:
+                    "SFI1E record=%d SW=%02X%02X LEN=%d EXPECTED=48 RAW=%@",
+                record,
+                sw1,
+                sw2,
+                response.count,
+                hex
+            )
+
+            print(log)
+            fullLog.append(log)
+
+            if sw1 == 0x6A &&
+                sw2 == 0x83 {
+                break
+            }
+        }
+
+        fullLog.append(
+            "===== RAW DUMP END ====="
+        )
+
+        fullLog.append("")
+        fullLog.append(
+            "===== BALANCE ====="
+        )
+
+        let rawBalance =
+            await cnTunion_getBalanceFallback(
+                isoTag,
+                fullLog: fullLog
+            )
+
+        let rawBalanceText: String
+
+        if let rawBalance {
+            rawBalanceText = String(rawBalance)
+        } else {
+            rawBalanceText = "nil"
+        }
+
+        fullLog.append(
+            "Raw balance: \(rawBalanceText)"
+        )
+
+        fullLog.append("")
+        fullLog.append(
+            "===== CARD INFO ====="
+        )
+        let info =
+            await cnTunion_getInfoFromFCI(
+                fci,
+                tag: isoTag,
+                fullLog: fullLog
+            )
+
+        fullLog.append("")
+        fullLog.append(
+            "===== HISTORY PARSE ====="
+        )
+
+        let (
+            history,
+            computedBalance
+        ) = await cnTunion_readKnownRecords(
+            isoTag,
+            fullLog: fullLog
+        )
+
+        let balance =
+            computedBalance ??
+            history?.first(
+                where: {
+                    $0.balance != 0
+                }
+            )?.balance ??
+            rawBalance
+
+        fullLog.append("")
+        fullLog.append(
+            "===== FINAL RESULT ====="
+        )
+
+        let computedBalanceText: String
+
+        if let computedBalance {
+            computedBalanceText = String(computedBalance)
+        } else {
+            computedBalanceText = "nil"
+        }
+
+        let finalBalanceText: String
+        if let balance {
+            finalBalanceText = String(balance)
+        } else {
+            finalBalanceText = "nil"
+        }
+
+        fullLog.append(
+            "Computed Balance: \(computedBalanceText)"
+        )
+
+        fullLog.append(
+            "Final Balance: \(finalBalanceText)"
+        )
+
+        fullLog.append(
+            "History Count: \(history?.count ?? 0)"
+        )
+
+        fullLog.append("")
+        fullLog.append(
+            "===== T-UNION FULL LOG END ====="
+        )
+
+        await MainActor.run {
+
+            self.result = Result(
+                balance: balance,
+                isHistory: true,
+                history: history,
+                info: info,
+                converter: cnTunion.scanOption.converter,
+                isLastHide: false,
+                description: cnTunion.scand_description,
+                savedAt: Date.now,
+                fullLog: fullLog.text
+            )
+
+            session.invalidate()
+        }
     }
+
 
     private func cnTunion_sendAPDU(
         _ tag: NFCISO7816Tag,
@@ -347,8 +696,13 @@ extension NFCScannerModel {
         p2: UInt8,
         data: Data = Data(),
         le: Int = 256,
-        cla: UInt8 = 0x00
-    ) async -> (Data, UInt8, UInt8)? {
+        cla: UInt8 = 0x00,
+        fullLog: CNTRunionFullLog? = nil
+    ) async -> (
+        Data,
+        UInt8,
+        UInt8
+    )? {
 
         let apdu = NFCISO7816APDU(
             instructionClass: cla,
@@ -359,22 +713,28 @@ extension NFCScannerModel {
             expectedResponseLength: le
         )
 
-        do {
-            let dataHex = data
-                .map { String(format: "%02X", $0) }
-                .joined()
+        let commandHex = data
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined(separator: " ")
 
-            print(
-                String(
-                    format:
-                        "APDU Command: CLA:%02X INS:%02X P1:%02X P2:%02X Data:%@",
-                    cla,
-                    ins,
-                    p1,
-                    p2,
-                    dataHex
-                )
-            )
+        let commandLog = String(
+            format:
+                "APDU Command: CLA:%02X INS:%02X P1:%02X P2:%02X Le:%d Data:%@",
+            cla,
+            ins,
+            p1,
+            p2,
+            le,
+            commandHex
+        )
+
+        print(commandLog)
+
+        fullLog?.append(commandLog)
+
+        do {
 
             let (
                 response,
@@ -385,40 +745,56 @@ extension NFCScannerModel {
             )
 
             let responseHex = response
-                .map { String(format: "%02X", $0) }
-                .joined()
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined(separator: " ")
 
-            print(
-                String(
-                    format:
-                        "APDU Response: SW1:%02X SW2:%02X Data:%@",
-                    sw1,
-                    sw2,
-                    responseHex
-                )
+            let responseLog = String(
+                format:
+                    "APDU Response: SW1:%02X SW2:%02X Data:%@",
+                sw1,
+                sw2,
+                responseHex
             )
+
+            print(responseLog)
+
+            fullLog?.append(responseLog)
 
             return (
                 response,
                 sw1,
                 sw2
             )
+
         } catch {
-            print(
-                "APDU error:",
-                error.localizedDescription
-            )
+
+            let errorLog =
+                "APDU error: \(error.localizedDescription)"
+
+            print(errorLog)
+
+            fullLog?.append(errorLog)
 
             return nil
         }
     }
 
+
     private func cnTunion_parseFCI(
-        _ data: Data
+        _ data: Data,
+        fullLog: CNTRunionFullLog? = nil
     ) -> [UInt8] {
 
         var sfiList: [UInt8] = []
+
         let bytes = [UInt8](data)
+
+        fullLog?.appendData(
+            "FCI Parse Input",
+            data
+        )
 
         func parseLength(
             _ offset: Int
@@ -475,6 +851,7 @@ extension NFCScannerModel {
                 var tagLength = 1
 
                 if bytes[index] & 0x1F == 0x1F {
+
                     index += 1
 
                     while index < end {
@@ -482,13 +859,16 @@ extension NFCScannerModel {
                         tagLength += 1
 
                         let byte = bytes[index]
+
                         index += 1
 
                         if byte & 0x80 == 0 {
                             break
                         }
                     }
+
                 } else {
+
                     index += 1
                 }
 
@@ -570,15 +950,25 @@ extension NFCScannerModel {
             bytes.count
         )
 
+        let result =
+            sfiList
+                .map {
+                    String($0)
+                }
+                .joined(separator: ", ")
+
         print(
             "Parsed SFIs from FCI:",
-            sfiList
-                .map { String($0) }
-                .joined(separator: ", ")
+            result
+        )
+
+        fullLog?.append(
+            "Parsed SFIs from FCI: \(result)"
         )
 
         return sfiList
     }
+
 
     private func cnTunion_parseFCITag(
         _ data: Data,
@@ -602,6 +992,7 @@ extension NFCScannerModel {
             let first = bytes[offset]
 
             if first & 0x80 == 0 {
+
                 return (
                     Int(first),
                     1
@@ -619,6 +1010,7 @@ extension NFCScannerModel {
             var length = 0
 
             for i in 1...numberOfBytes {
+
                 length =
                     (length << 8) |
                     Int(bytes[offset + i])
@@ -651,13 +1043,16 @@ extension NFCScannerModel {
                         tagLength += 1
 
                         let byte = bytes[index]
+
                         index += 1
 
                         if byte & 0x80 == 0 {
                             break
                         }
                     }
+
                 } else {
+
                     index += 1
                 }
 
@@ -730,28 +1125,30 @@ extension NFCScannerModel {
         )
     }
 
+
     private func cnTunion_readManagementInfo(
-        _ tag: NFCISO7816Tag
+        _ tag: NFCISO7816Tag,
+        fullLog: CNTRunionFullLog? = nil
     ) async -> Data? {
 
         let sfi: UInt8 = 0x17
 
         let p1 =
-            UInt8(
-                0x80 | sfi
-            )
+            UInt8(0x80 | sfi)
 
         let p2: UInt8 = 0x00
 
-        print(
+        let title =
             String(
                 format:
-                    "T-Union SFI 0x17 READ BINARY: " +
-                    "CLA=00 INS=B0 P1=%02X P2=%02X Le=3C",
+                    "T-Union SFI 0x17 READ BINARY: CLA=00 INS=B0 P1=%02X P2=%02X Le=3C",
                 p1,
                 p2
             )
-        )
+
+        print(title)
+
+        fullLog?.append(title)
 
         guard let (
             response,
@@ -764,74 +1161,69 @@ extension NFCScannerModel {
             p2: p2,
             data: Data(),
             le: 0x3C,
-            cla: 0x00
+            cla: 0x00,
+            fullLog: fullLog
         ) else {
 
             print(
                 "T-Union SFI 0x17 READ BINARY APDU failed"
             )
 
+            fullLog?.append(
+                "T-Union SFI 0x17 READ BINARY APDU failed"
+            )
+
             return nil
         }
 
-        print(
+        let statusLog =
             String(
                 format:
-                    "T-Union SFI 0x17 READ BINARY: " +
-                    "SW=%02X%02X LEN=%d",
+                    "T-Union SFI 0x17 READ BINARY: SW=%02X%02X LEN=%d",
                 sw1,
                 sw2,
                 response.count
             )
-        )
 
-        print(
-            "T-Union SFI 0x17 RAW:",
+        print(statusLog)
+
+        fullLog?.append(statusLog)
+
+        fullLog?.appendData(
+            "T-Union SFI 0x17 RAW",
             response
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined(separator: " ")
         )
 
         guard sw1 == 0x90,
               sw2 == 0x00 else {
 
-            print(
-                String(
-                    format:
-                        "T-Union SFI 0x17 READ BINARY failed: SW=%02X%02X",
-                    sw1,
-                    sw2
-                )
-            )
-
             return nil
         }
 
         guard response.count >= 8 else {
-
-            print(
-                "T-Union SFI 0x17 data too short:",
-                response.count
-            )
-
             return nil
         }
 
         return response
     }
 
+
     private func cnTunion_getCityCode(
-        _ tag: NFCISO7816Tag
+        _ tag: NFCISO7816Tag,
+        fullLog: CNTRunionFullLog? = nil
     ) async -> String? {
 
         guard let data =
             await cnTunion_readManagementInfo(
-                tag
+                tag,
+                fullLog: fullLog
             ) else {
 
             print(
+                "T-Union city code: SFI 0x17 could not be read"
+            )
+
+            fullLog?.append(
                 "T-Union city code: SFI 0x17 could not be read"
             )
 
@@ -841,11 +1233,6 @@ extension NFCScannerModel {
         let bytes = [UInt8](data)
 
         guard bytes.count >= 8 else {
-
-            print(
-                "T-Union city code: invalid SFI 0x17 length"
-            )
-
             return nil
         }
 
@@ -893,6 +1280,18 @@ extension NFCScannerModel {
             )
         )
 
+        fullLog?.append(
+            "International Code: \(internationalCode)"
+        )
+
+        fullLog?.append(
+            "Province Code: \(provinceCode)"
+        )
+
+        fullLog?.append(
+            "City Code: \(cityCode)"
+        )
+
         if bytes.count >= 10 {
 
             let unionCardType =
@@ -903,6 +1302,14 @@ extension NFCScannerModel {
                 String(
                     format:
                         "T-Union SFI 0x17 union card type: %04X",
+                    unionCardType
+                )
+            )
+
+            fullLog?.append(
+                String(
+                    format:
+                        "Union Card Type: %04X",
                     unionCardType
                 )
             )
@@ -917,18 +1324,35 @@ extension NFCScannerModel {
                     bytes[10]
                 )
             )
+
+            fullLog?.append(
+                String(
+                    format:
+                        "Card Type: %02X",
+                    bytes[10]
+                )
+            )
         }
 
         return cityCode
     }
 
+
     private func cnTunion_getInfoFromFCI(
         _ fci: Data,
-        tag: NFCISO7816Tag
+        tag: NFCISO7816Tag,
+        fullLog: CNTRunionFullLog? = nil
     ) async -> ResultCardInfo? {
 
         let cityCode =
-            await cnTunion_getCityCode(tag) ?? ""
+            await cnTunion_getCityCode(
+                tag,
+                fullLog: fullLog
+            ) ?? ""
+
+        fullLog?.append(
+            "City Code: \(cityCode)"
+        )
 
         guard let metadata =
             cnTunion_parseFCITag(
@@ -937,6 +1361,10 @@ extension NFCScannerModel {
             ) else {
 
             print(
+                "9F0C not found in FCI"
+            )
+
+            fullLog?.append(
                 "9F0C not found in FCI"
             )
 
@@ -954,20 +1382,15 @@ extension NFCScannerModel {
 
         let bytes = [UInt8](metadata)
 
-        print(
-            "T-Union 9F0C:",
-            bytes
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined(separator: " ")
+        fullLog?.appendData(
+            "9F0C",
+            metadata
         )
 
         guard bytes.count >= 28 else {
 
-            print(
-                "9F0C metadata too short:",
-                bytes.count
+            fullLog?.append(
+                "9F0C metadata too short: \(bytes.count)"
             )
 
             return ResultCardInfo(
@@ -1026,6 +1449,16 @@ extension NFCScannerModel {
                         String(format: "%02X", $0)
                     }
                     .joined()
+
+            fullLog?.appendData(
+                "9F08 Version",
+                versionData
+            )
+        } else {
+
+            fullLog?.append(
+                "9F08 Version: not found"
+            )
         }
 
         print(
@@ -1053,6 +1486,22 @@ extension NFCScannerModel {
             cityCode
         )
 
+        fullLog?.append(
+            "Card Number: \(cardNumber)"
+        )
+
+        fullLog?.append(
+            "Version: \(version)"
+        )
+
+        fullLog?.append(
+            "Issue Date: \(issueDate)"
+        )
+
+        fullLog?.append(
+            "Expiry Date: \(expiryDate)"
+        )
+
         return ResultCardInfo(
             idm: cardNumber,
             name: cnTunion.name,
@@ -1066,9 +1515,15 @@ extension NFCScannerModel {
         )
     }
 
+
     private func cnTunion_getBalanceFallback(
-        _ tag: NFCISO7816Tag
+        _ tag: NFCISO7816Tag,
+        fullLog: CNTRunionFullLog? = nil
     ) async -> Double? {
+
+        fullLog?.append(
+            "GET BALANCE"
+        )
 
         guard let (
             resp,
@@ -1081,11 +1536,30 @@ extension NFCScannerModel {
             p2: 0x02,
             data: Data(),
             le: 4,
-            cla: 0x80
-        ),
-        sw1 == 0x90,
-        sw2 == 0x00,
-        resp.count >= 4 else {
+            cla: 0x80,
+            fullLog: fullLog
+        ) else {
+
+            fullLog?.append(
+                "GET BALANCE: APDU failed"
+            )
+
+            return nil
+        }
+
+        guard sw1 == 0x90,
+              sw2 == 0x00,
+              resp.count >= 4 else {
+
+            fullLog?.append(
+                String(
+                    format:
+                        "GET BALANCE failed: SW=%02X%02X LEN=%d",
+                    sw1,
+                    sw2,
+                    resp.count
+                )
+            )
 
             return nil
         }
@@ -1096,6 +1570,9 @@ extension NFCScannerModel {
             (UInt32(resp[2]) << 8) |
             UInt32(resp[3])
 
+        let balance =
+            Double(value) / 100.0
+
         print(
             String(
                 format:
@@ -1105,15 +1582,30 @@ extension NFCScannerModel {
                 resp[2],
                 resp[3],
                 value,
-                Double(value) / 100.0
+                balance
             )
         )
 
-        return Double(value) / 100.0
+        fullLog?.append(
+            String(
+                format:
+                    "Balance decode: %02X %02X %02X %02X -> %u / 100 = %.2f",
+                resp[0],
+                resp[1],
+                resp[2],
+                resp[3],
+                value,
+                balance
+            )
+        )
+
+        return balance
     }
 
+
     private func cnTunion_readKnownRecords(
-        _ tag: NFCISO7816Tag
+        _ tag: NFCISO7816Tag,
+        fullLog: CNTRunionFullLog? = nil
     ) async -> (
         history: [ResultHistory]?,
         computedBalance: Double?
@@ -1130,6 +1622,10 @@ extension NFCScannerModel {
                 (0x18 << 3) | 0x04
             )
 
+        fullLog?.append(
+            "===== PARSE SFI18 ====="
+        )
+
         for record in 1...20 {
 
             guard let (
@@ -1142,7 +1638,8 @@ extension NFCScannerModel {
                 p1: UInt8(record),
                 p2: p2,
                 le: 256,
-                cla: 0x00
+                cla: 0x00,
+                fullLog: fullLog
             ) else {
                 continue
             }
@@ -1152,11 +1649,14 @@ extension NFCScannerModel {
                 resp.count >= 23 &&
                 !resp.allSatisfy({ $0 == 0 }) {
 
+                let parsed =
+                    cnTunion_parseTransactionRecord(
+                        resp,
+                        fullLog: fullLog
+                    )
+
                 transactionLogs.append(
-                    contentsOf:
-                        cnTunion_parseTransactionRecord(
-                            resp
-                        )
+                    contentsOf: parsed
                 )
             }
         }
@@ -1165,6 +1665,10 @@ extension NFCScannerModel {
             UInt8(
                 (0x1E << 3) | 0x04
             )
+
+        fullLog?.append(
+            "===== PARSE SFI1E ====="
+        )
 
         for record in 1...20 {
 
@@ -1178,7 +1682,8 @@ extension NFCScannerModel {
                 p1: UInt8(record),
                 p2: tripP2,
                 le: 256,
-                cla: 0x00
+                cla: 0x00,
+                fullLog: fullLog
             ) else {
                 continue
             }
@@ -1188,11 +1693,14 @@ extension NFCScannerModel {
                 resp.count >= 48 &&
                 !resp.allSatisfy({ $0 == 0 }) {
 
+                let parsed =
+                    cnTunion_parseTripRecord(
+                        resp,
+                        fullLog: fullLog
+                    )
+
                 tripLogs.append(
-                    contentsOf:
-                        cnTunion_parseTripRecord(
-                            resp
-                        )
+                    contentsOf: parsed
                 )
             }
         }
@@ -1337,14 +1845,40 @@ extension NFCScannerModel {
                 $1.transactionId
         }
 
+        fullLog?.append(
+            "Parsed transaction records: \(transactionLogs.count)"
+        )
+
+        fullLog?.append(
+            "Parsed trip records: \(tripLogs.count)"
+        )
+
+        fullLog?.append(
+            "Final history count: \(logs.count)"
+        )
+
+        let computedBalanceText: String
+
+        if let computedBalance {
+            computedBalanceText = String(computedBalance)
+        } else {
+            computedBalanceText = "nil"
+        }
+
+        fullLog?.append(
+            "Computed balance: \(computedBalanceText)"
+        )
+
         return (
             logs.isEmpty ? nil : logs,
             computedBalance
         )
     }
 
+
     private func cnTunion_parseTransactionRecord(
-        _ data: Data
+        _ data: Data,
+        fullLog: CNTRunionFullLog? = nil
     ) -> [ResultHistory] {
 
         let bytes = [UInt8](data)
@@ -1356,6 +1890,11 @@ extension NFCScannerModel {
         if bytes.allSatisfy({ $0 == 0 }) {
             return []
         }
+
+        fullLog?.appendData(
+            "SFI18 Transaction Record",
+            data
+        )
 
         print(
             "Transaction Record Raw:",
@@ -1384,10 +1923,12 @@ extension NFCScannerModel {
         switch processType {
 
         case 0x01, 0x02:
+
             amount =
                 Double(amountRaw) / 100.0
 
         case 0x06, 0x09:
+
             amount =
                 -Double(amountRaw) / 100.0
 
@@ -1413,6 +1954,12 @@ extension NFCScannerModel {
             "T-Union Transaction: " +
             "seq=\(transactionSeq), " +
             "type=\(String(format: "%02X", processType)), " +
+            "amount=\(amount)"
+        )
+
+        fullLog?.append(
+            "Transaction seq=\(transactionSeq) " +
+            "type=\(String(format: "%02X", processType)) " +
             "amount=\(amount)"
         )
 
@@ -1446,8 +1993,10 @@ extension NFCScannerModel {
         ]
     }
 
+
     private func cnTunion_parseTripRecord(
-        _ data: Data
+        _ data: Data,
+        fullLog: CNTRunionFullLog? = nil
     ) -> [ResultHistory] {
 
         let bytes = [UInt8](data)
@@ -1459,6 +2008,11 @@ extension NFCScannerModel {
         if bytes.allSatisfy({ $0 == 0 }) {
             return []
         }
+
+        fullLog?.appendData(
+            "SFI1E Trip Record",
+            data
+        )
 
         print(
             "Trip Record Raw:",
@@ -1524,6 +2078,14 @@ extension NFCScannerModel {
                 )
             )
 
+            fullLog?.append(
+                String(
+                    format:
+                        "Unknown T-Union trip record type: %02X",
+                    processType
+                )
+            )
+
             return []
         }
 
@@ -1536,6 +2098,12 @@ extension NFCScannerModel {
             "T-Union Trip: " +
             "type=\(String(format: "%02X", processType)), " +
             "amount=\(amount), " +
+            "balance=\(balance)"
+        )
+
+        fullLog?.append(
+            "Trip type=\(String(format: "%02X", processType)) " +
+            "amount=\(amount) " +
             "balance=\(balance)"
         )
 
@@ -1571,6 +2139,7 @@ extension NFCScannerModel {
             )
         ]
     }
+
 
     private func cnTunion_decodeBCDDate(
         _ bytes: ArraySlice<UInt8>

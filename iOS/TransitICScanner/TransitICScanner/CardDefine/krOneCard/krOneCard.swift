@@ -12,6 +12,7 @@ let krOneCard = CardInfo(
     area: .kr,
     countryCode: ["kr"],
     prefectures: nil,
+    regionOption: nil,
     description: String(localized:"cardList.krOneCard.description"),
     scand_description: "",
     searchWords: ["info.krOneCard.cardName.t-money","info.krOneCard.cardName.ezl","info.krOneCard.cardName.reil_plus","info.krOneCard.cardName.onepass","info.krOneCard.cardName.wowpass","cardList.krOneCard"],

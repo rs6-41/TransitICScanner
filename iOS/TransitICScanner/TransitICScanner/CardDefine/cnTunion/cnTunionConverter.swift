@@ -10,7 +10,7 @@ enum cnTunion_Converter {
     static func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         var type: String
 
-        type = cnTunion_idCheck(iin: String(info.idm.prefix(9)))
+        type = cnTunion_idCheck(iin: String(info.idm)).name
 
         return DisplayCardInfo(
             idm: info.idm,

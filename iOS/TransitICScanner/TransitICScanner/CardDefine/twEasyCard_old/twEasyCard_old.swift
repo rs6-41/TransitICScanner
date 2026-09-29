@@ -11,6 +11,7 @@ let twEasyCard_old:CardInfo = CardInfo(
     area: .tw,
     countryCode: ["tw"],
     prefectures: nil,
+    regionOption: nil,
     description: String(localized:"card.web.twEasyCard_old.description"),
     scand_description: "twEasyCard_old.scand.description",
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],

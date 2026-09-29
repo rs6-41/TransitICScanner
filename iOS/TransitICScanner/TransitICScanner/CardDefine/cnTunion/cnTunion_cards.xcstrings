@@ -13,7 +13,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "e通卡"
+            "value" : "e通カード"
           }
         },
         "zh-Hans" : {
@@ -30,12 +30,29 @@
         }
       }
     },
-    "三晋通-忻州通" : {
-      "extractionState" : "stale",
+    "一应黔行" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "一应黔行"
+          }
+        }
+      }
+    },
+    "三晋通-忻州通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "三晋通-忻州通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "三晋通-忻州通"
           }
         },
@@ -54,7 +71,7 @@
       }
     },
     "三门峡市公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -83,7 +100,7 @@
       }
     },
     "上海公共交通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -112,7 +129,7 @@
       }
     },
     "上饶公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -141,7 +158,7 @@
       }
     },
     "东莞通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -170,7 +187,7 @@
       }
     },
     "东营市交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -199,7 +216,7 @@
       }
     },
     "中山通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -228,7 +245,7 @@
       }
     },
     "临汾公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -256,37 +273,30 @@
         }
       }
     },
-    "乐山公交IC卡" : {
-      "extractionState" : "stale",
+    "乐山交通卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leshan Transit IC Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "楽山交通ICカード"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "乐山公交IC卡"
+            "value" : "乐山交通卡"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "九江交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "樂山公交IC卡"
+            "value" : "九江交通一卡通"
           }
         }
       }
     },
     "九江公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -314,8 +324,19 @@
         }
       }
     },
+    "九驿通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "九驿通"
+          }
+        }
+      }
+    },
     "九龙卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -344,11 +365,17 @@
       }
     },
     "交运通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "交运通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "交运通"
           }
         },
@@ -367,11 +394,17 @@
       }
     },
     "亭城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "亭城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "亭城通"
           }
         },
@@ -390,11 +423,17 @@
       }
     },
     "亳州交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "亳州交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "亳州交通一卡通"
           }
         },
@@ -413,7 +452,7 @@
       }
     },
     "保定卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -441,8 +480,36 @@
         }
       }
     },
+    "克拉玛依公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "克拉玛依公交卡"
+          }
+        }
+      }
+    },
+    "全国一卡通・湖北宜昌" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全国一卡通・湖北宜昌"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全国一卡通・湖北宜昌"
+          }
+        }
+      }
+    },
     "八达通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -471,11 +538,17 @@
       }
     },
     "公主岭万联惠民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "公主岭万联惠民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "公主岭万联惠民卡"
           }
         },
@@ -494,7 +567,7 @@
       }
     },
     "六安公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -523,7 +596,7 @@
       }
     },
     "六盘通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -552,7 +625,7 @@
       }
     },
     "兰州公交普通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -581,7 +654,7 @@
       }
     },
     "兴义卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -610,7 +683,7 @@
       }
     },
     "农科城卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -639,7 +712,7 @@
       }
     },
     "凉州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -668,11 +741,17 @@
       }
     },
     "凉都市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "凉都市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "凉都市民卡"
           }
         },
@@ -691,7 +770,7 @@
       }
     },
     "凯里公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -720,7 +799,7 @@
       }
     },
     "利州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -749,7 +828,7 @@
       }
     },
     "北京一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -778,7 +857,7 @@
       }
     },
     "北海通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -807,7 +886,7 @@
       }
     },
     "南充公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -836,7 +915,7 @@
       }
     },
     "南通市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -865,7 +944,7 @@
       }
     },
     "南阳交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -893,8 +972,19 @@
         }
       }
     },
+    "博乐互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "博乐互通卡"
+          }
+        }
+      }
+    },
     "双辽市交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -922,8 +1012,19 @@
         }
       }
     },
+    "古城阆中通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "古城阆中通"
+          }
+        }
+      }
+    },
     "台州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -952,7 +1053,7 @@
       }
     },
     "合肥通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -981,7 +1082,7 @@
       }
     },
     "吉安通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1010,7 +1111,7 @@
       }
     },
     "吉林通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1039,7 +1140,7 @@
       }
     },
     "同心市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1067,8 +1168,19 @@
         }
       }
     },
+    "吐鲁番公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "吐鲁番公交卡"
+          }
+        }
+      }
+    },
     "吕梁交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1097,7 +1209,7 @@
       }
     },
     "吴忠公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1126,11 +1238,17 @@
       }
     },
     "周口交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "周口交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "周口交通一卡通"
           }
         },
@@ -1149,11 +1267,17 @@
       }
     },
     "呼和浩特交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "呼和浩特交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "呼和浩特交通一卡通"
           }
         },
@@ -1172,7 +1296,7 @@
       }
     },
     "咸宁一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1200,8 +1324,19 @@
         }
       }
     },
+    "咸阳城市公交一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "咸阳城市公交一卡通"
+          }
+        }
+      }
+    },
     "哈尔滨城市卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1230,7 +1365,7 @@
       }
     },
     "唐山公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1259,7 +1394,7 @@
       }
     },
     "唰唰通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1288,11 +1423,17 @@
       }
     },
     "商洛公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "商洛公交一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "商洛公交一卡通"
           }
         },
@@ -1310,8 +1451,19 @@
         }
       }
     },
+    "喀什智慧城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喀什智慧城市一卡通"
+          }
+        }
+      }
+    },
     "嘉兴交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1340,11 +1492,17 @@
       }
     },
     "嘉应通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "嘉应通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "嘉应通"
           }
         },
@@ -1363,7 +1521,7 @@
       }
     },
     "四平城市交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1392,7 +1550,7 @@
       }
     },
     "夏都通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1421,7 +1579,7 @@
       }
     },
     "大同公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1450,11 +1608,17 @@
       }
     },
     "大美青海-格尔木" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "大美青海-格尔木"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "大美青海-格尔木"
           }
         },
@@ -1473,11 +1637,17 @@
       }
     },
     "大美青海-海东通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "大美青海-海东通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "大美青海-海东通"
           }
         },
@@ -1496,11 +1666,17 @@
       }
     },
     "大美青海-玉树" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "大美青海-玉树"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "大美青海-玉树"
           }
         },
@@ -1518,12 +1694,29 @@
         }
       }
     },
-    "大连明珠卡" : {
-      "extractionState" : "stale",
+    "大美青海行" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "大美青海行"
+          }
+        }
+      }
+    },
+    "大连明珠卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "大连明珠卡"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "大连明珠卡"
           }
         },
@@ -1542,11 +1735,17 @@
       }
     },
     "天中通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "天中通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "天中通"
           }
         },
@@ -1565,7 +1764,7 @@
       }
     },
     "天府通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1594,7 +1793,7 @@
       }
     },
     "天汉通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1623,7 +1822,7 @@
       }
     },
     "天津城市卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1652,11 +1851,17 @@
       }
     },
     "天涯行" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "天涯行"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "天涯行"
           }
         },
@@ -1675,7 +1880,7 @@
       }
     },
     "太原公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1704,11 +1909,17 @@
       }
     },
     "好运通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "好运通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "好运通"
           }
         },
@@ -1727,7 +1938,7 @@
       }
     },
     "威海市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1756,7 +1967,7 @@
       }
     },
     "安庆中北巴士交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1785,7 +1996,7 @@
       }
     },
     "安康公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1814,7 +2025,7 @@
       }
     },
     "安阳公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1842,37 +2053,19 @@
         }
       }
     },
-    "安顺全国互联互通卡" : {
-      "extractionState" : "stale",
+    "安顺公交一卡通" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anshun National Transit Card"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "安順全国相互カード"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安顺全国互联互通卡"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "安順全國互聯互通卡"
+            "value" : "安顺公交一卡通"
           }
         }
       }
     },
     "宜宾一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1901,11 +2094,17 @@
       }
     },
     "宜居畅通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "宜居畅通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "宜居畅通卡"
           }
         },
@@ -1924,7 +2123,7 @@
       }
     },
     "宜春公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1952,8 +2151,30 @@
         }
       }
     },
+    "宜春公交明月通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宜春公交明月通"
+          }
+        }
+      }
+    },
+    "宝庆一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宝庆一卡通"
+          }
+        }
+      }
+    },
     "宝鸡公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1982,11 +2203,17 @@
       }
     },
     "宣城公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "宣城公交IC卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "宣城公交IC卡"
           }
         },
@@ -2005,11 +2232,17 @@
       }
     },
     "宿州公共交通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "宿州公共交通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "宿州公共交通卡"
           }
         },
@@ -2028,7 +2261,7 @@
       }
     },
     "宿迁市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2057,7 +2290,7 @@
       }
     },
     "山丹" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2085,8 +2318,19 @@
         }
       }
     },
+    "山西交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "山西交通一卡通"
+          }
+        }
+      }
+    },
     "岭云通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2115,7 +2359,7 @@
       }
     },
     "岳阳通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2144,11 +2388,17 @@
       }
     },
     "崇左通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "崇左通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "崇左通"
           }
         },
@@ -2167,11 +2417,17 @@
       }
     },
     "崇德包容卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "崇德包容卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "崇德包容卡"
           }
         },
@@ -2189,8 +2445,19 @@
         }
       }
     },
+    "崑玉交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "崑玉交通一卡通"
+          }
+        }
+      }
+    },
     "巴中交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2219,11 +2486,17 @@
       }
     },
     "常州市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "常州市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "常州市民卡"
           }
         },
@@ -2242,11 +2515,17 @@
       }
     },
     "常德公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "常德公交卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "常德公交卡"
           }
         },
@@ -2265,11 +2544,17 @@
       }
     },
     "常熟一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "常熟一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "常熟一卡通"
           }
         },
@@ -2288,7 +2573,7 @@
       }
     },
     "平潭海峡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2317,7 +2602,7 @@
       }
     },
     "广佛通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2346,11 +2631,17 @@
       }
     },
     "广安全国一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "广安全国一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "广安全国一卡通"
           }
         },
@@ -2369,11 +2660,17 @@
       }
     },
     "康定公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "康定公交一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "康定公交一卡通"
           }
         },
@@ -2392,7 +2689,7 @@
       }
     },
     "延吉交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2421,7 +2718,7 @@
       }
     },
     "延安公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2450,7 +2747,7 @@
       }
     },
     "延边交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2479,7 +2776,7 @@
       }
     },
     "开封交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2508,7 +2805,7 @@
       }
     },
     "张家界一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2537,7 +2834,7 @@
       }
     },
     "德州交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2566,11 +2863,17 @@
       }
     },
     "德阳全国交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "德阳全国交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "德阳全国交通一卡通"
           }
         },
@@ -2589,7 +2892,7 @@
       }
     },
     "怀化公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2618,11 +2921,17 @@
       }
     },
     "惠州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "惠州通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "惠州通"
           }
         },
@@ -2641,7 +2950,7 @@
       }
     },
     "扬州市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2670,7 +2979,7 @@
       }
     },
     "抚州交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2699,7 +3008,7 @@
       }
     },
     "拉萨公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2727,35 +3036,29 @@
         }
       }
     },
-    "攀枝花公交一卡通" : {
-      "extractionState" : "stale",
+    "攀枝花公交卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "攀枝花公交一卡通"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "攀枝花公交一卡通"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "攀枝花公交一卡通"
+            "value" : "攀枝花公交卡"
           }
         }
       }
     },
     "新余交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新余交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "新余交通一卡通"
           }
         },
@@ -2773,12 +3076,29 @@
         }
       }
     },
-    "新乡公交一卡通" : {
-      "extractionState" : "stale",
+    "新余公交一卡通" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "新余公交一卡通"
+          }
+        }
+      }
+    },
+    "新乡公交一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新乡公交一卡通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "新乡公交一卡通"
           }
         },
@@ -2797,7 +3117,7 @@
       }
     },
     "日照交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2826,7 +3146,7 @@
       }
     },
     "昆明智慧通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2855,7 +3175,7 @@
       }
     },
     "昆通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2883,12 +3203,29 @@
         }
       }
     },
-    "明通卡" : {
-      "extractionState" : "stale",
+    "昌吉智慧城市一卡通" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "昌吉智慧城市一卡通"
+          }
+        }
+      }
+    },
+    "明通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "明通卡"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "明通卡"
           }
         },
@@ -2907,11 +3244,17 @@
       }
     },
     "晋中交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "晋中交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "晋中交通一卡通"
           }
         },
@@ -2930,11 +3273,17 @@
       }
     },
     "晋城市公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "晋城市公交IC卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "晋城市公交IC卡"
           }
         },
@@ -2952,12 +3301,29 @@
         }
       }
     },
-    "曲靖市公交乘车卡" : {
-      "extractionState" : "stale",
+    "景德镇公交卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "景德镇公交卡"
+          }
+        }
+      }
+    },
+    "曲靖市公交乘车卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "曲靖市公交乘车卡"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "曲靖市公交乘车卡"
           }
         },
@@ -2976,7 +3342,7 @@
       }
     },
     "月城一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3005,7 +3371,7 @@
       }
     },
     "朔州交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3034,7 +3400,7 @@
       }
     },
     "朝阳公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3063,7 +3429,7 @@
       }
     },
     "来宾通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3092,7 +3458,7 @@
       }
     },
     "杭州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3121,11 +3487,17 @@
       }
     },
     "松原通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "松原通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "松原通"
           }
         },
@@ -3144,11 +3516,17 @@
       }
     },
     "枣庄同诚卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "枣庄同诚卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "枣庄同诚卡"
           }
         },
@@ -3167,11 +3545,17 @@
       }
     },
     "枣庄汽运交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "枣庄汽运交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "枣庄汽运交通一卡通"
           }
         },
@@ -3190,7 +3574,7 @@
       }
     },
     "柳州市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3219,7 +3603,7 @@
       }
     },
     "株洲公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3248,7 +3632,7 @@
       }
     },
     "桂林通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3277,7 +3661,7 @@
       }
     },
     "桃源卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3306,7 +3690,7 @@
       }
     },
     "梅河口交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3335,7 +3719,7 @@
       }
     },
     "梧州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3363,12 +3747,29 @@
         }
       }
     },
-    "榕城通" : {
-      "extractionState" : "stale",
+    "榆林驼城通交通卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "榆林驼城通交通卡"
+          }
+        }
+      }
+    },
+    "榕城通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "榕城通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "榕城通"
           }
         },
@@ -3387,7 +3788,7 @@
       }
     },
     "榕江通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3416,7 +3817,7 @@
       }
     },
     "武夷通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3444,12 +3845,47 @@
         }
       }
     },
-    "毕节裕福交通一卡通" : {
-      "extractionState" : "stale",
+    "武汉通" : {
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WuHan Transit Card"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "武漢交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "武汉通"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "武汉通"
+          }
+        }
+      }
+    },
+    "毕节裕福交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "毕节裕福交通一卡通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "毕节裕福交通一卡通"
           }
         },
@@ -3468,11 +3904,17 @@
       }
     },
     "水城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "水城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "水城通"
           }
         },
@@ -3491,11 +3933,17 @@
       }
     },
     "永吉万联惠民通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "永吉万联惠民通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "永吉万联惠民通卡"
           }
         },
@@ -3514,7 +3962,7 @@
       }
     },
     "永州城市一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3543,7 +3991,7 @@
       }
     },
     "江淮通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3572,11 +4020,17 @@
       }
     },
     "池城交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "池城交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "池城交通一卡通"
           }
         },
@@ -3595,11 +4049,17 @@
       }
     },
     "沂蒙通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "沂蒙通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "沂蒙通"
           }
         },
@@ -3618,7 +4078,7 @@
       }
     },
     "河北一卡通(张家口)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3647,7 +4107,7 @@
       }
     },
     "河北一卡通卡(廊坊)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3676,7 +4136,7 @@
       }
     },
     "河北一卡通卡(承德)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3705,7 +4165,7 @@
       }
     },
     "河北一卡通卡(沧州)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3734,7 +4194,7 @@
       }
     },
     "河北一卡通卡(衡水)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3763,7 +4223,7 @@
       }
     },
     "河池通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3792,11 +4252,17 @@
       }
     },
     "泉城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "泉城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "泉城通"
           }
         },
@@ -3815,11 +4281,17 @@
       }
     },
     "泉通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "泉通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "泉通卡"
           }
         },
@@ -3838,7 +4310,7 @@
       }
     },
     "泰州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3867,11 +4339,17 @@
       }
     },
     "洛阳交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "洛阳交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "洛阳交通一卡通"
           }
         },
@@ -3890,11 +4368,17 @@
       }
     },
     "洪城一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "洪城一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "洪城一卡通"
           }
         },
@@ -3913,7 +4397,7 @@
       }
     },
     "济宁公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3942,7 +4426,7 @@
       }
     },
     "海南一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3971,7 +4455,7 @@
       }
     },
     "淮北一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4000,11 +4484,17 @@
       }
     },
     "淮南畅通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "淮南畅通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "淮南畅通卡"
           }
         },
@@ -4023,7 +4513,7 @@
       }
     },
     "淮海通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4052,7 +4542,7 @@
       }
     },
     "深圳通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4081,7 +4571,7 @@
       }
     },
     "清远市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4110,7 +4600,7 @@
       }
     },
     "温州城市公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4139,7 +4629,7 @@
       }
     },
     "渭南通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4168,7 +4658,7 @@
       }
     },
     "湖州交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4197,11 +4687,17 @@
       }
     },
     "湘潭交通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "湘潭交通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "湘潭交通卡"
           }
         },
@@ -4219,8 +4715,19 @@
         }
       }
     },
+    "湘西州交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "湘西州交通一卡通"
+          }
+        }
+      }
+    },
     "滨州公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4249,7 +4756,7 @@
       }
     },
     "漯河公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4278,7 +4785,7 @@
       }
     },
     "潍坊通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4307,7 +4814,7 @@
       }
     },
     "潜江一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4336,7 +4843,7 @@
       }
     },
     "潮州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4365,11 +4872,17 @@
       }
     },
     "澄通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "澄通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "澄通卡"
           }
         },
@@ -4388,7 +4901,7 @@
       }
     },
     "澳门通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4417,11 +4930,17 @@
       }
     },
     "濮阳交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "濮阳交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "濮阳交通一卡通"
           }
         },
@@ -4440,11 +4959,17 @@
       }
     },
     "焦作公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "焦作公交一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "焦作公交一卡通"
           }
         },
@@ -4463,7 +4988,7 @@
       }
     },
     "燕赵通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4492,7 +5017,7 @@
       }
     },
     "环县通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4521,7 +5046,7 @@
       }
     },
     "珠海通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4550,7 +5075,7 @@
       }
     },
     "琴岛通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4579,11 +5104,17 @@
       }
     },
     "甜城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "甜城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "甜城通"
           }
         },
@@ -4602,7 +5133,7 @@
       }
     },
     "甬城通交通部卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4631,7 +5162,7 @@
       }
     },
     "白山交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4660,7 +5191,7 @@
       }
     },
     "百色通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4689,7 +5220,7 @@
       }
     },
     "盘锦公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4718,7 +5249,7 @@
       }
     },
     "盛京通交通部版" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4747,11 +5278,17 @@
       }
     },
     "眉山交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "眉山交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "眉山交通一卡通"
           }
         },
@@ -4770,7 +5307,7 @@
       }
     },
     "石家庄公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4799,11 +5336,17 @@
       }
     },
     "福城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "福城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "福城通"
           }
         },
@@ -4822,7 +5365,7 @@
       }
     },
     "福宁卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4851,11 +5394,17 @@
       }
     },
     "秦皇岛公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "秦皇岛公交卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "秦皇岛公交卡"
           }
         },
@@ -4873,8 +5422,19 @@
         }
       }
     },
+    "娄底公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "娄底公交卡"
+          }
+        }
+      }
+    },
     "红山一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4903,11 +5463,17 @@
       }
     },
     "绍兴一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "绍兴一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "绍兴一卡通"
           }
         },
@@ -4926,7 +5492,7 @@
       }
     },
     "绵州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4955,11 +5521,17 @@
       }
     },
     "绿城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "绿城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "绿城通"
           }
         },
@@ -4978,7 +5550,7 @@
       }
     },
     "羊城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5007,7 +5579,7 @@
       }
     },
     "肇庆通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5036,7 +5608,7 @@
       }
     },
     "自贡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5065,7 +5637,7 @@
       }
     },
     "芜湖城市卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5093,12 +5665,35 @@
         }
       }
     },
-    "茂城通" : {
-      "extractionState" : "stale",
+    "苏州市民卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "苏州市民卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "苏州市民卡"
+          }
+        }
+      }
+    },
+    "茂城通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "茂城通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "茂城通"
           }
         },
@@ -5117,11 +5712,17 @@
       }
     },
     "茶城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "茶城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "茶城通"
           }
         },
@@ -5139,12 +5740,46 @@
         }
       }
     },
-    "莆田城市一卡通" : {
-      "extractionState" : "stale",
+    "荆州版全国一卡通" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "荆州版全国一卡通"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "荆州版全国一卡通"
+          }
+        }
+      }
+    },
+    "荆门市民卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "荆门市民卡"
+          }
+        }
+      }
+    },
+    "莆田城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "莆田城市一卡通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "莆田城市一卡通"
           }
         },
@@ -5163,11 +5798,17 @@
       }
     },
     "菏泽交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "菏泽交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "菏泽交通一卡通"
           }
         },
@@ -5186,11 +5827,17 @@
       }
     },
     "萍乡交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "萍乡交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "萍乡交通一卡通"
           }
         },
@@ -5209,7 +5856,7 @@
       }
     },
     "营口通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5238,7 +5885,7 @@
       }
     },
     "葫芦岛公交IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5267,7 +5914,7 @@
       }
     },
     "蚌埠公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5296,11 +5943,17 @@
       }
     },
     "蛟河客运公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "蛟河客运公交一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "蛟河客运公交一卡通"
           }
         },
@@ -5319,7 +5972,7 @@
       }
     },
     "衡阳交通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5348,11 +6001,17 @@
       }
     },
     "襄阳交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "襄阳交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "襄阳交通一卡通"
           }
         },
@@ -5370,8 +6029,42 @@
         }
       }
     },
+    "西咸一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "西咸一卡通"
+          }
+        }
+      }
+    },
+    "西藏交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tibet Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "チベット交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "西藏交通一卡通"
+          }
+        }
+      }
+    },
     "许昌万里一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5400,7 +6093,7 @@
       }
     },
     "许昌公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5429,11 +6122,11 @@
       }
     },
     "贵州黔南全国交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "贵州黔南全国交通一卡通"
           }
         },
@@ -5452,11 +6145,17 @@
       }
     },
     "贵港市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "贵港市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "贵港市民卡"
           }
         },
@@ -5475,7 +6174,7 @@
       }
     },
     "贵阳公交电子车票" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5504,7 +6203,7 @@
       }
     },
     "贵阳轨道交通储值票" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5533,7 +6232,7 @@
       }
     },
     "贺州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5562,7 +6261,7 @@
       }
     },
     "赣州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5591,7 +6290,7 @@
       }
     },
     "车城通交通部版" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5620,11 +6319,17 @@
       }
     },
     "轩辕通-鹤壁" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "轩辕通-鹤壁"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "轩辕通-鹤壁"
           }
         },
@@ -5643,7 +6348,7 @@
       }
     },
     "辽阳公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5672,7 +6377,7 @@
       }
     },
     "达州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5701,11 +6406,17 @@
       }
     },
     "运城交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "运城交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "运城交通一卡通"
           }
         },
@@ -5724,11 +6435,17 @@
       }
     },
     "连云港市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "连云港市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "连云港市民卡"
           }
         },
@@ -5747,7 +6464,7 @@
       }
     },
     "通化交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5776,7 +6493,7 @@
       }
     },
     "通化交通一卡通(九台)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5805,7 +6522,7 @@
       }
     },
     "通化交通一卡通(农安)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5834,7 +6551,7 @@
       }
     },
     "通化交通一卡通(双阳)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5863,7 +6580,7 @@
       }
     },
     "通化交通一卡通(柳河)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5892,7 +6609,7 @@
       }
     },
     "通化交通一卡通(长岭)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5921,7 +6638,7 @@
       }
     },
     "通化交通一卡通(集安)" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5950,7 +6667,7 @@
       }
     },
     "遂州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5979,11 +6696,17 @@
       }
     },
     "遵义交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "遵义交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "遵义交通一卡通"
           }
         },
@@ -6002,7 +6725,7 @@
       }
     },
     "邕桂通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6031,7 +6754,7 @@
       }
     },
     "邢台卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6060,7 +6783,7 @@
       }
     },
     "邯郸市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6089,7 +6812,7 @@
       }
     },
     "鄂州交通IC卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6118,11 +6841,17 @@
       }
     },
     "酒城一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "酒城一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "酒城一卡通"
           }
         },
@@ -6141,11 +6870,17 @@
       }
     },
     "酒泉通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "酒泉通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "酒泉通"
           }
         },
@@ -6163,12 +6898,35 @@
         }
       }
     },
-    "金华交通一卡通" : {
-      "extractionState" : "stale",
+    "重庆城市通卡" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "重慶市交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重庆城市通卡"
+          }
+        }
+      }
+    },
+    "金华交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "金华交通一卡通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "金华交通一卡通"
           }
         },
@@ -6187,7 +6945,7 @@
       }
     },
     "金垦卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6216,7 +6974,7 @@
       }
     },
     "金昌通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6245,7 +7003,7 @@
       }
     },
     "金陵通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6274,11 +7032,17 @@
       }
     },
     "钦州市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "钦州市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "钦州市民卡"
           }
         },
@@ -6297,11 +7061,17 @@
       }
     },
     "铁岭全国交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "铁岭全国交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "铁岭全国交通一卡通"
           }
         },
@@ -6319,12 +7089,29 @@
         }
       }
     },
-    "铜陵一卡通" : {
-      "extractionState" : "stale",
+    "铜川交通一卡通" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "铜川交通一卡通"
+          }
+        }
+      }
+    },
+    "铜陵一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "铜陵一卡通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "铜陵一卡通"
           }
         },
@@ -6343,11 +7130,17 @@
       }
     },
     "银城一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "银城一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "银城一卡通"
           }
         },
@@ -6366,11 +7159,17 @@
       }
     },
     "银川交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "银川交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "银川交通一卡通"
           }
         },
@@ -6389,7 +7188,7 @@
       }
     },
     "锦州公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6418,11 +7217,17 @@
       }
     },
     "镇江一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "镇江一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "镇江一卡通"
           }
         },
@@ -6441,7 +7246,7 @@
       }
     },
     "长安通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6470,7 +7275,7 @@
       }
     },
     "长春公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6499,11 +7304,17 @@
       }
     },
     "长春城联一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "长春城联一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "长春城联一卡通"
           }
         },
@@ -6522,7 +7333,7 @@
       }
     },
     "长春轨道交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6551,11 +7362,17 @@
       }
     },
     "长沙潇湘卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "长沙潇湘卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "长沙潇湘卡"
           }
         },
@@ -6574,11 +7391,17 @@
       }
     },
     "长治城市一卡通普通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "长治城市一卡通普通卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "长治城市一卡通普通卡"
           }
         },
@@ -6597,11 +7420,17 @@
       }
     },
     "阜新虎跃城市公交卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "阜新虎跃城市公交卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "阜新虎跃城市公交卡"
           }
         },
@@ -6620,7 +7449,7 @@
       }
     },
     "防城港通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6649,7 +7478,7 @@
       }
     },
     "阳泉交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6677,8 +7506,41 @@
         }
       }
     },
+    "阿克苏互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿克苏互通卡"
+          }
+        }
+      }
+    },
+    "阿勒泰智慧城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿勒泰智慧城市一卡通"
+          }
+        }
+      }
+    },
+    "阿图什互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿图什互通卡"
+          }
+        }
+      }
+    },
     "随州一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6707,11 +7569,17 @@
       }
     },
     "雄安交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "雄安交通一卡通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "雄安交通一卡通"
           }
         },
@@ -6730,7 +7598,7 @@
       }
     },
     "雅安交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6759,7 +7627,7 @@
       }
     },
     "鞍山交运通卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6788,7 +7656,7 @@
       }
     },
     "颍州通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6817,11 +7685,17 @@
       }
     },
     "马鞍山市民卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "马鞍山市民卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "马鞍山市民卡"
           }
         },
@@ -6840,7 +7714,7 @@
       }
     },
     "鸭绿江通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6869,11 +7743,17 @@
       }
     },
     "鹤城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "鹤城通"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "鹤城通"
           }
         },
@@ -6892,7 +7772,7 @@
       }
     },
     "鹰城通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6920,12 +7800,29 @@
         }
       }
     },
-    "鹿城通" : {
-      "extractionState" : "stale",
+    "鹰潭互联互通卡" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "ja" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "鹰潭互联互通卡"
+          }
+        }
+      }
+    },
+    "鹿城通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "鹿城通"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "鹿城通"
           }
         },
@@ -6944,7 +7841,7 @@
       }
     },
     "黄冈全国公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6973,7 +7870,7 @@
       }
     },
     "黄山交通一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7002,7 +7899,7 @@
       }
     },
     "黄海通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7031,7 +7928,7 @@
       }
     },
     "黄石公交一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7060,7 +7957,7 @@
       }
     },
     "黑龙江一卡通" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7089,11 +7986,17 @@
       }
     },
     "齐联卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "齐联卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "齐联卡"
           }
         },
@@ -7112,11 +8015,17 @@
       }
     },
     "龙行卡" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "龙行卡"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "龙行卡"
           }
         },
