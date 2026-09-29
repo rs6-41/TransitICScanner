@@ -3936,6 +3936,17 @@
         }
       }
     },
+    "jpIC_icsca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        }
+      }
+    },
     "jpIC_icsca.short" : {
       "extractionState" : "manual",
       "localizations" : {

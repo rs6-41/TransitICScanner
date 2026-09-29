@@ -349,7 +349,7 @@ extension NFCScannerModel {
         switch optionType {
             case "jpIC_SAPICA": cardType = "card.SAPICA"
             case "jpIC_IruCa": cardType = "card.IruCa"
-            case "jpIC_icsca": cardType = "jpIC_icsca"
+            case "jpIC_icsca": cardType = "card.icsca"
             default:break
         }
 
