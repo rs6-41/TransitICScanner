@@ -11,7 +11,7 @@ let jpOKICA = CardInfo(
     prefectures: ["Okinawa"],
     regionOption: nil,
     description: "cardList.jpOKICA.description",
-    scand_description: "jpOKICA.scand.description",
+    scand_description: "jpIC.scand.description",
     searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球",],
     scanOption: ScanOption(
         name: "jpOKICA",
@@ -303,7 +303,7 @@ extension NFCScannerModel {
             name: jpOKICA.name,
             nameShort: jpOKICA.scanOption.nameShort,
             currencyType: jpOKICA.scanOption.currencyType,
-            type: "card.okica",
+            type: "",
             serial: nil,
             version: nil,
             validDate: nil
