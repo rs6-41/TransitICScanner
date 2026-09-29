@@ -15,7 +15,8 @@ struct Result: Hashable {
 
 // 履歴データ
 struct ResultHistory: Hashable, Codable {
-    var processType: UInt8
+    var processType: UInt8? = nil
+    var processType4: UInt32? = nil
     var date: DateComponents
     var balance: Double
     var amount: Double?

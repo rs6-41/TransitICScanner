@@ -6,7 +6,7 @@ enum jpIC_Converter {
     ) -> DisplayHistory {
         DisplayHistory(
             date: formatDate(history.date),
-            processType: convertProcessType(history.processType),
+            processType: convertProcessType(history.processType ?? 0),
             balance: Double(history.balance)
         )
     }
@@ -26,7 +26,6 @@ enum jpIC_Converter {
         switch value {
         case 0x01: return String(localized:"result.history.fare") // 支払い
         case 0x02: return String(localized:"result.history.charge") //チャージ
-        case 0x48: return String(localized:"result.history.charge") //特典?→nimocaチャージ
         case 0x03: return String(localized:"result.history.ticket") //券購入
         case 0x04: return String(localized:"result.history.fare_collection.jr") //乗越精算(JR)
         case 0x05: return String(localized:"result.history.ticket.platform") //入場券(同駅のみ)
