@@ -480,6 +480,17 @@
         }
       }
     },
+    "克拉玛依公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "克拉玛依公交卡"
+          }
+        }
+      }
+    },
     "全国一卡通・湖北宜昌" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -961,6 +972,17 @@
         }
       }
     },
+    "博乐互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "博乐互通卡"
+          }
+        }
+      }
+    },
     "双辽市交通一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1142,6 +1164,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "同心市民卡"
+          }
+        }
+      }
+    },
+    "吐鲁番公交卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "吐鲁番公交卡"
           }
         }
       }
@@ -1403,6 +1436,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "商洛公交一卡通"
+          }
+        }
+      }
+    },
+    "喀什智慧城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喀什智慧城市一卡通"
           }
         }
       }
@@ -2379,6 +2423,17 @@
         }
       }
     },
+    "崑玉交通一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "崑玉交通一卡通"
+          }
+        }
+      }
+    },
     "巴中交通一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3122,6 +3177,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "昆通卡"
+          }
+        }
+      }
+    },
+    "昌吉智慧城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "昌吉智慧城市一卡通"
           }
         }
       }
@@ -7359,6 +7425,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "陽泉交通一卡通"
+          }
+        }
+      }
+    },
+    "阿克苏互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿克苏互通卡"
+          }
+        }
+      }
+    },
+    "阿勒泰智慧城市一卡通" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿勒泰智慧城市一卡通"
+          }
+        }
+      }
+    },
+    "阿图什互通卡" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "阿图什互通卡"
           }
         }
       }

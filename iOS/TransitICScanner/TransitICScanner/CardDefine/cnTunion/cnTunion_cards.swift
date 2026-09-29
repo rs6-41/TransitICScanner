@@ -87,8 +87,28 @@ func cnTunion_idCheck(iin:String) -> cnTunion_Info {
         
     //新疆维吾尔自治区 - 0310479
     case "031047900": card = cnTunion_Info(name:"红山一卡通",prefecture:"新疆维吾尔自治区",city:"乌鲁木齐市")
+    case "031047901": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"阿拉尔市")
+    case "031047902": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"铁门关市")
+    case "031047903": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"图木舒克市")
+    case "031047906": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"五家渠市")
+    case "031047908": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"石河子市")
+    case "031047910": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"北屯市")
+    case "031047911": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"乌鲁木齐市")
+    case "031047912": card = cnTunion_Info(name:"金垦卡",prefecture:"新疆维吾尔自治区",city:"新星市")
+    case "031047913": card = cnTunion_Info(name:"崑玉交通一卡通",prefecture:"新疆维吾尔自治区",city:"昆玉市")
+    case "031047914": card = cnTunion_Info(name:"克拉玛依公交卡",prefecture:"新疆维吾尔自治区",city:"克拉玛依市")
+    case "031047915": card = cnTunion_Info(name:"吐鲁番公交卡",prefecture:"新疆维吾尔自治区",city:"吐鲁番市")
+    case "031047916": card = cnTunion_Info(name:"哈密市公交卡",prefecture:"新疆维吾尔自治区",city:"哈密市")
+    case "031047917": card = cnTunion_Info(name:"昌吉智慧城市一卡通",prefecture:"新疆维吾尔自治区",city:"昌吉回族自治州 昌吉市")
+    case "031047918": card = cnTunion_Info(name:"博乐互通卡",prefecture:"新疆维吾尔自治区",city:"博尔塔拉蒙古自治州 博乐市")
+    case "031047919": card = cnTunion_Info(name:"库尔勒市公交卡",prefecture:"新疆维吾尔自治区",city:"巴音郭楞蒙古自治州 库尔勒市")
+    case "031047920": card = cnTunion_Info(name:"阿克苏互通卡",prefecture:"新疆维吾尔自治区",city:"阿克苏地区 阿克苏市")
+    case "031047921": card = cnTunion_Info(name:"阿图什互通卡",prefecture:"新疆维吾尔自治区",city:"克孜勒苏柯尔克孜自治州 阿图什市")
+    case "031047922": card = cnTunion_Info(name:"喀什智慧城市一卡通",prefecture:"新疆维吾尔自治区",city:"喀什地区")
+    case "031047923": card = cnTunion_Info(name:"和田地区公交卡",prefecture:"新疆维吾尔自治区",city:"和田地区")
+    case "031047924": card = cnTunion_Info(name:"伊宁公交卡",prefecture:"新疆维吾尔自治区",city:"伊犁哈萨克自治州 伊宁市")
+    case "031047926": card = cnTunion_Info(name:"阿勒泰智慧城市一卡通",prefecture:"新疆维吾尔自治区",city:"阿勒泰地区")
     /*
-    case "031047911": card = "金垦卡"
     case "031048000": card = "长安通"
     case "031048001": card = "崇德包容卡"
     case "031048002": card = "宝鸡公交卡"
