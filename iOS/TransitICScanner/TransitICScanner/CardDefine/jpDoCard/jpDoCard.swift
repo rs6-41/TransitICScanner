@@ -599,7 +599,8 @@ extension NFCScannerModel {
                 type: "card.DoCard",
                 serial: nil,
                 version: nil,
-                validDate: nil
+                validDate: nil,
+                issueInfo: setIssueInfo(nil)
             )
         }
 
@@ -617,7 +618,8 @@ extension NFCScannerModel {
                 type: "card.DoCard",
                 serial: nil,
                 version: nil,
-                validDate: nil
+                validDate: nil,
+                issueInfo: setIssueInfo(nil)
             )
         }
 
@@ -654,20 +656,22 @@ extension NFCScannerModel {
             )
 
         let cardType: String
+        var issuer:String? = nil
 
         switch cardCode {
-
         case 0x0102:
             cardType = "card.Asaca"
             fullLog?.append(
                 "Detected Card: Asaca"
             )
+            issuer = "issue.jp.hokkaido.issuer.asahikawa_railway"
 
         case 0x0103:
             cardType = "card.DoCard"
             fullLog?.append(
                 "Detected Card: DoCARD"
             )
+            issuer = "issue.jp.hokkaido.issuer.douhoku_bus"
 
         default:
             cardType = ""
@@ -702,8 +706,13 @@ extension NFCScannerModel {
             type: cardType,
             serial: nil,
             version: nil,
-            validDate: validDate
+            validDate: validDate,
+            issueInfo: setIssueInfo(issuer)
         )
+    }
+    
+    private func setIssueInfo(_ issuer:String?) -> issueInfo {
+        return issueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Hokkaido",city:"issue.jp.hokkaido.city.asahikawa",issuer:issuer)
     }
 
     private func jpDoCard_decodeCreationDate(

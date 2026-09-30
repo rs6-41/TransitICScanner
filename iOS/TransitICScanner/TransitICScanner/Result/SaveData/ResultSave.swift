@@ -6,11 +6,7 @@ enum CloudSyncSettings {
     private static let key = "cloudSyncEnabled"
 
     static var isEnabled: Bool {
-        if UserDefaults.standard.object(forKey: key) == nil {
-            return true
-        }
-
-        return UserDefaults.standard.bool(forKey: key)
+        return false
     }
 
     static func setEnabled(_ enabled: Bool) {
@@ -108,6 +104,8 @@ final class SavedCard {
     var savedAt: Date? = Date.now
 
     var fullLog: String?
+    
+    var issueInfo: issueInfo?
 
     @Relationship(
         deleteRule: .cascade,
@@ -137,7 +135,8 @@ final class SavedCard {
         cardDescription: String = "",
         converterType: ConverterType,
         savedAt: Date,
-        fullLog: String? = nil
+        fullLog: String? = nil,
+        issueInfo: issueInfo? = nil
     ) {
         self.idm = idm
         self.name = name
@@ -156,6 +155,7 @@ final class SavedCard {
         self.histories = []
         self.savedAt = savedAt
         self.fullLog = fullLog
+        self.issueInfo = issueInfo
     }
 
     var converterType: ConverterType {
@@ -170,7 +170,7 @@ final class SavedCard {
 @Model
 final class SavedHistory {
     var processType: Int = 0
-    var processType4: Int? = 0
+    var processType4: Int = 0
 
     var dateYear: Int?
     var dateMonth: Int?
@@ -194,7 +194,7 @@ final class SavedHistory {
 
     init(
         processType: Int,
-        processType4: Int?,
+        processType4: Int,
         date: DateComponents,
         balance: Double,
         amount: Double?,
@@ -245,18 +245,18 @@ extension SavedCard {
             nameShort: nameShort,
             displayName: displayName,
             iconName: iconName,
-            currency: currency,
             currencyType: currencyType,
             type: type,
             serial: serial,
             version: version,
-            validDate: validDate
+            validDate: validDate,
+            issueInfo: issueInfo
         )
 
         let history = (histories ?? []).map { item in
             ResultHistory(
                 processType: UInt8(clamping: item.processType),
-                processType4: UInt32(clamping: item.processType4 ?? 0),
+                processType4: UInt32(clamping: item.processType4),
                 date: item.date,
                 balance: item.balance,
                 amount: item.amount,
@@ -310,7 +310,7 @@ enum ResultSave {
                 nameShort: info.nameShort,
                 displayName: info.displayName ?? "",
                 iconName: info.iconName ?? "",
-                currency: info.currency ?? info.currencyType?.rawValue ?? "",
+                currency: info.currencyType?.rawValue ?? "",
                 type: info.type,
                 serial: info.serial,
                 version: info.version,
@@ -320,7 +320,8 @@ enum ResultSave {
                 cardDescription: result.description,
                 converterType: result.converter,
                 savedAt: result.savedAt ?? Date.now,
-                fullLog: result.fullLog
+                fullLog: result.fullLog,
+                issueInfo: info.issueInfo ?? nil
             )
 
             modelContext.insert(card)
@@ -340,7 +341,7 @@ enum ResultSave {
         card.nameShort = info.nameShort
         card.displayName = info.displayName
         card.iconName = info.iconName
-        card.currency = info.currency ?? info.currencyType?.rawValue ?? ""
+        card.currency = info.currencyType?.rawValue ?? ""
         card.type = info.type
         card.serial = info.serial
         card.version = info.version
@@ -351,6 +352,7 @@ enum ResultSave {
         card.converterTypeRaw = result.converter.rawValue
         card.savedAt = result.savedAt
         card.fullLog = result.fullLog
+        card.issueInfo = info.issueInfo ?? nil
 
         if let histories = result.history {
             var existingTransactionIDs = Set(

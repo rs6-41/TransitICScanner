@@ -106,7 +106,7 @@ struct DummyCardFormView: View {
         }
         
         
-        info = ResultCardInfo(idm: idm, name: "DEBUG", nameShort: nameShort, currency: currency.rawValue, type: type)
+        info = ResultCardInfo(idm: idm, name: "DEBUG", nameShort: nameShort, type: type)
         result = Result(
             balance: balance,
             isHistory: isHistory,

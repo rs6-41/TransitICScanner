@@ -224,7 +224,8 @@ extension NFCScannerModel {
             type: "",
             serial: nil,
             version: nil,
-            validDate: nil
+            validDate: nil,
+            issueInfo: issueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Nagasaki",issuer:"issue.jp.nagasaki.issuer.ntasu")
         )
     }
     
