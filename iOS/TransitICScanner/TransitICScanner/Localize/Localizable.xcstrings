@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
     "ads" : {
       "localizations" : {
         "en" : {
@@ -253,6 +256,9 @@
         }
       }
     },
+    "AID: %@" : {
+      "shouldTranslate" : false
+    },
     "appName" : {
       "localizations" : {
         "en" : {
@@ -280,6 +286,9 @@
           }
         }
       }
+    },
+    "Balance candidate: %lld" : {
+      "shouldTranslate" : false
     },
     "cancel" : {
       "localizations" : {
@@ -336,6 +345,9 @@
           }
         }
       }
+    },
+    "Card" : {
+      "shouldTranslate" : false
     },
     "card.apple" : {
       "extractionState" : "manual",
@@ -3192,6 +3204,9 @@
         }
       }
     },
+    "EasyCard Super Test" : {
+      "shouldTranslate" : false
+    },
     "error" : {
       "localizations" : {
         "en" : {
@@ -3527,6 +3542,9 @@
           }
         }
       }
+    },
+    "Historical Bytes: %@" : {
+      "shouldTranslate" : false
     },
     "history.empty" : {
       "localizations" : {
@@ -3888,6 +3906,255 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "適用於所有帶有“One Card All Pass（전국호환 교통카드）”標誌的卡片。"
+          }
+        }
+      }
+    },
+    "issue.cityNameLocalize:%@,%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@, %1$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "issue.jp.hokkaido.city.asahikawa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "旭川市"
+          }
+        }
+      }
+    },
+    "issue.jp.hokkaido.city.sapporo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌市"
+          }
+        }
+      }
+    },
+    "issue.jp.hokkaido.issuer.asahikawa_railway" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "旭川電気軌道"
+          }
+        }
+      }
+    },
+    "issue.jp.hokkaido.issuer.douhoku_bus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "道北バス"
+          }
+        }
+      }
+    },
+    "issue.jp.hokkaido.issuer.sapporo_information_network" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo Information Network Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌総合情報センター株式会社"
+          }
+        }
+      }
+    },
+    "issue.jp.kagawa.city.takamatsu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松市"
+          }
+        }
+      }
+    },
+    "issue.jp.kagawa.issuer.kotoden" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "高松琴平電気鉄道株式会社"
+          }
+        }
+      }
+    },
+    "issue.jp.miyazaki.city.sendai" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendai"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市"
+          }
+        }
+      }
+    },
+    "issue.jp.miyazaki.issuer.sendai_transport" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transportation Bureau City of Sendai"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "仙台市交通局"
+          }
+        }
+      }
+    },
+    "issue.jp.nagasaki.issuer.ntasu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "株式会社エヌタス"
+          }
+        }
+      }
+    },
+    "issue.jp.okinawa.issuer.okica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄ICカード株式会社"
+          }
+        }
+      }
+    },
+    "issue.tw.issuer.easycard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
+        }
+      }
+    },
+    "issue.tw.issuer.icash" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
           }
         }
       }
@@ -4286,6 +4553,23 @@
         }
       }
     },
+    "locate.city.okinawa.mainIsland" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa MainIsland"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄本島"
+          }
+        }
+      }
+    },
     "locate.prefecture.CA" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4390,6 +4674,23 @@
         }
       }
     },
+    "locate.prefecture.Miyazaki" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮崎県"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyazaki"
+          }
+        }
+      }
+    },
     "locate.prefecture.Nagasaki" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4436,6 +4737,9 @@
         }
       }
     },
+    "Log" : {
+      "shouldTranslate" : false
+    },
     "nfc.log.empty" : {
       "localizations" : {
         "en" : {
@@ -4451,6 +4755,9 @@
           }
         }
       }
+    },
+    "No response" : {
+      "shouldTranslate" : false
     },
     "ok" : {
       "localizations" : {
@@ -4479,6 +4786,12 @@
           }
         }
       }
+    },
+    "READ PURSE" : {
+      "shouldTranslate" : false
+    },
+    "READ RECORD" : {
+      "shouldTranslate" : false
     },
     "region.africa" : {
       "extractionState" : "manual",
@@ -6051,6 +6364,84 @@
         }
       }
     },
+    "result.info.issueInfo" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "発行情報"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.date" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "発行日"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.issuer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Issuer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "発行者"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.otherAreaInfo" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.prefecture" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "エリア"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.region" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Region"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地域"
+          }
+        }
+      }
+    },
     "result.userData.design" : {
       "localizations" : {
         "en" : {
@@ -6134,6 +6525,9 @@
           }
         }
       }
+    },
+    "Scan SuperCard" : {
+      "shouldTranslate" : false
     },
     "scanner.coreNFC.error.notfeliCa" : {
       "localizations" : {
@@ -6417,6 +6811,9 @@
           }
         }
       }
+    },
+    "SELECT" : {
+      "shouldTranslate" : false
     },
     "setting.acknowledgment" : {
       "localizations" : {
@@ -8870,6 +9267,17 @@
         }
       }
     },
+    "SFI %lld / REC %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "SFI %1$lld / REC %2$lld"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "tab.history" : {
       "localizations" : {
         "en" : {
@@ -9548,6 +9956,9 @@
         }
       }
     },
+    "twEasyCard_super_TestView" : {
+      "shouldTranslate" : false
+    },
     "twICash.scand.description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9605,6 +10016,9 @@
           }
         }
       }
+    },
+    "UID: %@" : {
+      "shouldTranslate" : false
     },
     "unknown" : {
       "localizations" : {
