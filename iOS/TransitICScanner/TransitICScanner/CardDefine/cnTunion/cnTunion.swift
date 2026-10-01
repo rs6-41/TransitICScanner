@@ -1502,9 +1502,7 @@ extension NFCScannerModel {
             "Expiry Date: \(expiryDate)"
         )
         
-        var issueArea:String? = nil
-        var issueCity:String? = nil
-        var issuer:String? = nil
+        let getIssueInfo = cnTunion_getIssueInfo(iin: String(cardNumber))
 
         return ResultCardInfo(
             idm: cardNumber,
@@ -1516,7 +1514,7 @@ extension NFCScannerModel {
             version: version,
             validDate:
                 "\(issueDate)-\(expiryDate)",
-            issueInfo: issueInfo(region:cnTunion.area.rawValue,area:issueArea,city:issueCity,issuer:issuer)
+            issueInfo: issueInfo(region:cnTunion.area.rawValue,area:getIssueInfo.area,city:getIssueInfo.city,issuer:getIssueInfo.issuer)
         )
     }
 
