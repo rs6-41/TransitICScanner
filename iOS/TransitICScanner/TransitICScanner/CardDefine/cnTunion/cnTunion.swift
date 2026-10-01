@@ -1501,6 +1501,10 @@ extension NFCScannerModel {
         fullLog?.append(
             "Expiry Date: \(expiryDate)"
         )
+        
+        var issueArea:String? = nil
+        var issueCity:String? = nil
+        var issuer:String? = nil
 
         return ResultCardInfo(
             idm: cardNumber,
@@ -1511,7 +1515,8 @@ extension NFCScannerModel {
             serial: cardNumber,
             version: version,
             validDate:
-                "\(issueDate)-\(expiryDate)"
+                "\(issueDate)-\(expiryDate)",
+            issueInfo: issueInfo(region:cnTunion.area.rawValue,area:issueArea,city:issueCity,issuer:issuer)
         )
     }
 

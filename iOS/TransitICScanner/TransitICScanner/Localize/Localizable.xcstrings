@@ -813,6 +813,23 @@
         }
       }
     },
+    "card.moiba" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        }
+      }
+    },
     "card.nimoca" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -925,6 +942,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "手機"
+          }
+        }
+      }
+    },
+    "card.railplus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
           }
         }
       }
@@ -4124,6 +4158,21 @@
           }
         }
       }
+    },
+    "issue.kr.issuer.ezl" : {
+      "extractionState" : "manual"
+    },
+    "issue.kr.issuer.kcash" : {
+      "extractionState" : "manual"
+    },
+    "issue.kr.issuer.moiba" : {
+      "extractionState" : "manual"
+    },
+    "issue.kr.issuer.railplus" : {
+      "extractionState" : "manual"
+    },
+    "issue.kr.issuer.tmoney" : {
+      "extractionState" : "manual"
     },
     "issue.tw.issuer.easycard" : {
       "extractionState" : "manual",
