@@ -12,13 +12,15 @@ struct ResultView: View {
     
     @Binding var saveListID:UUID
     @Binding var deleteAds:Bool
+    
+    @State var areaText:LocalizedStringKey = ""
 
     var body: some View {
         NavigationStack {
             List {
+                ListAdView(deleteAds:$deleteAds)
                 resultUserdataSection
                 resultInfoSection
-                ListAdView(deleteAds:$deleteAds)
                 resultHistorySection
             }
             .onAppear() {
@@ -158,6 +160,12 @@ struct ResultView: View {
                 Text(LocalizedStringKey(result.description))
             }
         }
+        
+        if let info = result.info {
+            if let issueInfos = info.issueInfo {
+                resultIssueContent(issueInfos)
+            }
+        }
     }
 
     @ViewBuilder
@@ -167,8 +175,6 @@ struct ResultView: View {
         let display = result.converter.cardInfo(info)
         let balance = result.balance ?? 0
         let balanceText = balance.balanceText
-        
-
         Group {
             HStack {
                 Text(LocalizedStringKey("result.info.balance"))
@@ -182,13 +188,7 @@ struct ResultView: View {
                 }
             }
             
-            HStack {
-                Text(LocalizedStringKey("result.info.cardCategory"))
-                Spacer()
-                Text(LocalizedStringKey(display.nameShort))
-                    .foregroundStyle(Color.gray)
-                    .textSelection(.enabled)
-            }
+            ListInfoContent(title:"result.info.cardCategory",value:LocalizedStringKey(display.nameShort))
             
             if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
                 HStack {
@@ -207,26 +207,50 @@ struct ResultView: View {
             }
             
             if !display.idm.isEmpty {
-                HStack {
-                    Text(LocalizedStringKey("result.info.ID"))
-                    Spacer()
-                    Text(display.idm)
-                        .foregroundStyle(Color.gray)
-                        .textSelection(.enabled)
-                }
+                ListInfoContent(title:"result.info.ID",rawValue:display.idm)
             }
             if let savedAt = result.savedAt {
-                HStack {
-                    Text(LocalizedStringKey("result.info.date"))
-                    Spacer()
-                    Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .shortened))
-                        .foregroundStyle(Color.gray)
-                }
+                ListInfoContent(title:"result.info.date",rawValue:savedAt.formatted(date: .numeric, time: .shortened))
             }
         }
         .onAppear() {
             if display.type.isEmpty {
                 setCardDesigin("")
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func resultIssueContent(
+        _ issueInfo: issueInfo
+    ) -> some View {
+        
+        Section() {
+            ListInfoContent(title:"result.info.issueInfo.region",value:LocalizedStringKey(issueInfo.region))
+            if areaText != "" {
+                ListInfoContent(title:"result.info.issueInfo.prefecture",value:areaText)
+            }
+            if let otherAreaInfo = issueInfo.otherAreaInfo {
+                ListInfoContent(title:"result.info.issueInfo.otherAreaInfo",value:LocalizedStringKey(otherAreaInfo))
+            }
+            if let issuer = issueInfo.issuer {
+                ListInfoContent(title:"result.info.issueInfo.issuer",value:LocalizedStringKey(issuer))
+            }
+            if let date = issueInfo.date {
+                ListInfoContent(title:"result.info.issueInfo.date",rawValue:date.formatted(date: .numeric, time: .shortened))
+            }
+        } header: {
+            Text(LocalizedStringKey("result.info.issueInfo"))
+        }
+        .onAppear() {
+            if let area = issueInfo.area {
+                if let city = issueInfo.city {
+                    areaText = LocalizedStringKey("issue.cityNameLocalize:\(Localize(area)),\(Localize(city))")
+                } else {
+                    areaText = LocalizedStringKey(area)
+                }
+            } else if let city = issueInfo.city {
+                areaText = LocalizedStringKey(city)
             }
         }
     }
@@ -408,6 +432,28 @@ struct ResultView: View {
             } else {
                 cardUserName = displayName
             }
+        }
+    }
+}
+
+struct ListInfoContent: View {
+    @State var title:LocalizedStringKey
+    @State var value:LocalizedStringKey?
+    @State var rawValue:String?
+    
+    var body: some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Group {
+                if let value {
+                    Text(value)
+                } else if let rawValue {
+                    Text(rawValue)
+                }
+            }
+            .foregroundStyle(Color.gray)
+            .textSelection(.enabled)
         }
     }
 }

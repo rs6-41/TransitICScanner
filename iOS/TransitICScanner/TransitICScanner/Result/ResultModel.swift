@@ -35,17 +35,28 @@ struct ResultCardInfo: Hashable, Codable {
     var nameShort: String
     var displayName: String?
     var iconName: String?
-    var currency: String? //廃止
     var currencyType: currencyType?
     var type: String
     var serial: String?
     var version: String?
     var validDate: String?
+    var issueInfo: issueInfo?
+}
+
+//発行情報
+struct issueInfo: Hashable, Codable {
+    var region: String //発行地域
+    var area: String? //発行都市
+    var city: String? //発行エリア
+    var otherAreaInfo: String? //その他の情報
+    var issuer: String? //発行者
+    var date: Date? //発行日
 }
 
 struct DisplayHistory: Hashable {
     var date: String
     var processType: String
+    var processType4: String?
     var balance: Double
 }
 

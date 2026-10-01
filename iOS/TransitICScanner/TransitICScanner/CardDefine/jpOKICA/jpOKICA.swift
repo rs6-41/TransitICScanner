@@ -305,7 +305,8 @@ extension NFCScannerModel {
             type: "",
             serial: nil,
             version: nil,
-            validDate: nil
+            validDate: nil,
+            issueInfo: issueInfo(region:jpOKICA.area.rawValue,area:"locate.prefecture.Okinawa",issuer:"issue.jp.okinawa.issuer.okica")
         )
     }
 

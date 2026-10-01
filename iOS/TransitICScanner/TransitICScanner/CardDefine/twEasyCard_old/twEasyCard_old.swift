@@ -613,7 +613,8 @@ final class twEasyCard_old_scraping: ObservableObject {
                 type: "",
                 serial: nil,
                 version: nil,
-                validDate: nil
+                validDate: nil,
+                issueInfo: issueInfo(region:twEasyCard_old.area.rawValue,issuer:"issue.tw.issuer.easycard")
             )
             let balance = histories.last?.balance ?? 0.0
             let result = Result(

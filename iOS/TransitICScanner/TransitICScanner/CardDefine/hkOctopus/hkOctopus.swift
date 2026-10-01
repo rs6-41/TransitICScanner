@@ -112,7 +112,8 @@ extension NFCScannerModel {
             type: "",
             serial: nil,
             version: nil,
-            validDate: nil
+            validDate: nil,
+            issueInfo: issueInfo(region:hkOctopus.area.rawValue)
         )
     }
 }
