@@ -256,9 +256,6 @@
         }
       }
     },
-    "AID: %@" : {
-      "shouldTranslate" : false
-    },
     "appName" : {
       "localizations" : {
         "en" : {
@@ -286,9 +283,6 @@
           }
         }
       }
-    },
-    "Balance candidate: %lld" : {
-      "shouldTranslate" : false
     },
     "cancel" : {
       "localizations" : {
@@ -345,9 +339,6 @@
           }
         }
       }
-    },
-    "Card" : {
-      "shouldTranslate" : false
     },
     "card.apple" : {
       "extractionState" : "manual",
@@ -3238,9 +3229,6 @@
         }
       }
     },
-    "EasyCard Super Test" : {
-      "shouldTranslate" : false
-    },
     "error" : {
       "localizations" : {
         "en" : {
@@ -3576,9 +3564,6 @@
           }
         }
       }
-    },
-    "Historical Bytes: %@" : {
-      "shouldTranslate" : false
     },
     "history.empty" : {
       "localizations" : {
@@ -4786,9 +4771,6 @@
         }
       }
     },
-    "Log" : {
-      "shouldTranslate" : false
-    },
     "nfc.log.empty" : {
       "localizations" : {
         "en" : {
@@ -4804,9 +4786,6 @@
           }
         }
       }
-    },
-    "No response" : {
-      "shouldTranslate" : false
     },
     "ok" : {
       "localizations" : {
@@ -4835,12 +4814,6 @@
           }
         }
       }
-    },
-    "READ PURSE" : {
-      "shouldTranslate" : false
-    },
-    "READ RECORD" : {
-      "shouldTranslate" : false
     },
     "region.africa" : {
       "extractionState" : "manual",
@@ -6575,9 +6548,6 @@
         }
       }
     },
-    "Scan SuperCard" : {
-      "shouldTranslate" : false
-    },
     "scanner.coreNFC.error.notfeliCa" : {
       "localizations" : {
         "en" : {
@@ -6860,9 +6830,6 @@
           }
         }
       }
-    },
-    "SELECT" : {
-      "shouldTranslate" : false
     },
     "setting.acknowledgment" : {
       "localizations" : {
@@ -9316,17 +9283,6 @@
         }
       }
     },
-    "SFI %lld / REC %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "SFI %1$lld / REC %2$lld"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "tab.history" : {
       "localizations" : {
         "en" : {
@@ -10005,9 +9961,6 @@
         }
       }
     },
-    "twEasyCard_super_TestView" : {
-      "shouldTranslate" : false
-    },
     "twICash.scand.description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10065,9 +10018,6 @@
           }
         }
       }
-    },
-    "UID: %@" : {
-      "shouldTranslate" : false
     },
     "unknown" : {
       "localizations" : {
@@ -10327,6 +10277,17 @@
         }
       }
     },
+    "上海" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shanghai"
+          }
+        }
+      }
+    },
     "上海公共交通卡" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10385,6 +10346,17 @@
         }
       }
     },
+    "北京" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beijing"
+          }
+        }
+      }
+    },
     "北京一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10410,6 +10382,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "北京一卡通"
+          }
+        }
+      }
+    },
+    "四川省" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichuan"
+          }
+        }
+      }
+    },
+    "成都市" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chengdu"
           }
         }
       }
@@ -10472,6 +10466,17 @@
         }
       }
     },
+    "澳门特别行政区" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau"
+          }
+        }
+      }
+    },
     "澳门通" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10526,6 +10531,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "羊城通"
+          }
+        }
+      }
+    },
+    "香港特别行政区" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HongKong"
           }
         }
       }

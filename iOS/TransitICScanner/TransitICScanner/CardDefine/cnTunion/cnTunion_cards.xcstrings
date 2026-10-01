@@ -4031,6 +4031,9 @@
         }
       }
     },
+    "江苏交通一卡通" : {
+      "extractionState" : "manual"
+    },
     "池城交通一卡通" : {
       "extractionState" : "manual",
       "localizations" : {
