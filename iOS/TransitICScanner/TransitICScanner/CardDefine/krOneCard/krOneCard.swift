@@ -94,7 +94,9 @@ extension NFCScannerModel {
 
             // Step 3: Select main ADF
             let adfAID: Data = mainAID ?? defaultOneCardADFAID
-            selectedCardType = krOneCard_cardTypeName(for: adfAID)
+            var krOneCard_cardTypeName = krOneCard_cardTypeName(for: adfAID)
+            selectedCardType = krOneCard_cardTypeName.0
+            var issuer:String? = krOneCard_cardTypeName.1
             print("Korea OneCard detected type: \(selectedCardType)")
             print("Selecting main ADF AID: \(adfAID.map { String(format: "%02X", $0) }.joined())")
             guard let (adfFCI, sw1b, sw2b) = await krOneCard_sendAPDU(isoTag, ins: 0xA4, p1: 0x04, p2: 0x00, data: adfAID, le: 256, cla: 0x00),
@@ -109,7 +111,7 @@ extension NFCScannerModel {
 
 
             // Info/history using the selected ADF context and file descriptors
-            let info = await krOneCard_getInfoWithSFI(adfFCI, cardTypeName: selectedCardType)
+            let info = await krOneCard_getInfoWithSFI(adfFCI, cardTypeName: selectedCardType, issuer: issuer)
             let history = await krOneCard_readKnownRecords(isoTag, fileDescriptors: fileDescriptors)
 
             print("===== Korea OneCard Result Debug =====")
@@ -298,23 +300,27 @@ extension NFCScannerModel {
     }
 
     // MARK: - Card type name mapping
-    private func krOneCard_cardTypeName(for aid: Data) -> String {
+    private func krOneCard_cardTypeName(for aid: Data) -> (String,String?) {
         let hex = aid.map { String(format: "%02X", $0) }.joined()
 
         switch hex {
-        case "D4100000030001":
-            return "card.tmoney"
-        case "D4100000140001":
-            return "card.ezl"
+        case "D4100000030001","D4100000030002","D4100000031010":
+            return ("card.tmoney","issue.kr.issuer.tmoney")
+        case "D4100000140001","D4100000031310","D4100000031210":
+            return ("card.ezl","issue.kr.issuer.ezl")
+        case "D4100000060001":
+            return ("card.railplus","issue.kr.issuer.railplus")
         case "D4106509900020":
-            return "card.kcash"
+            return ("card.kcash","issue.kr.issuer.kcash")
+        case "D4100000300001":
+            return ("card.moiba","issue.kr.issuer.moiba")
         default:
-            return ""
+            return ("",nil)
         }
     }
 
     // MARK: - Get Info from T-money ADF FCI (parse tag B0 after SELECT)
-    private func krOneCard_getInfoWithSFI(_ adfFCI: Data, cardTypeName: String) async -> ResultCardInfo? {
+    private func krOneCard_getInfoWithSFI(_ adfFCI: Data, cardTypeName: String, issuer:String?) async -> ResultCardInfo? {
         print("===== Korea OneCard ADF FCI raw =====")
         print(adfFCI.map { String(format: "%02X", $0) }.joined(separator: " "))
         print("===============================")
@@ -328,7 +334,8 @@ extension NFCScannerModel {
                 type: "",
                 serial: nil,
                 version: nil,
-                validDate: nil
+                validDate: nil,
+                issueInfo: issueInfo(region:krOneCard.area.rawValue,issuer:issuer)
             )
         }
         // Published Korea OneCard B0 layout:
@@ -372,7 +379,8 @@ extension NFCScannerModel {
             type: cardTypeName,
             serial: csn.isEmpty ? nil : csn,
             version: cardType.isEmpty ? nil : cardType,
-            validDate: validity.isEmpty ? nil : validity
+            validDate: validity.isEmpty ? nil : validity,
+            issueInfo: issueInfo(region:krOneCard.area.rawValue,issuer:issuer)
         )
     }
 

@@ -91,7 +91,8 @@ extension NFCScannerModel {
                     type: "",
                     serial: readResult.cardNumber,
                     version: nil,
-                    validDate: nil
+                    validDate: nil,
+                    issueInfo: issueInfo(region:twICash.area.rawValue,issuer:"issue.tw.issuer.icash")
                 )
 
                 let balance = Double(readResult.balance)

@@ -345,11 +345,26 @@ extension NFCScannerModel {
         ]
         
         var cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
+        var issueArea:String?
+        var issueCity:String?
+        var issuer:String?
         
         switch optionType {
-            case "jpIC_SAPICA": cardType = "card.SAPICA"
-            case "jpIC_IruCa": cardType = "card.IruCa"
-            case "jpIC_icsca": cardType = "card.icsca"
+            case "jpIC_SAPICA":
+                cardType = "card.SAPICA"
+                issueArea = "locate.prefecture.Hokkaido"
+                issueCity = "issue.jp.hokkaido.city.sapporo"
+                issuer = "issue.jp.hokkaido.issuer.sapporo_information_network"
+            case "jpIC_IruCa":
+                cardType = "card.IruCa"
+                issueArea = "locate.prefecture.Kagawa"
+                issueCity = "issue.jp.kagawa.city.takamatsu"
+                issuer = "issue.jp.kagawa.issuer.kotoden"
+            case "jpIC_icsca":
+                cardType = "card.icsca"
+                issueArea = "locate.prefecture.Miyazaki"
+                issueCity = "issue.jp.miyazaki.city.sendai"
+                issuer = "issue.jp.miyazaki.issuer.sendai_transport"
             default:break
         }
 
@@ -361,7 +376,8 @@ extension NFCScannerModel {
             type: cardType,
             serial: nil,
             version: nil,
-            validDate: nil
+            validDate: nil,
+            issueInfo: issueInfo(region:jpIC.area.rawValue,area:issueArea,city:issueCity,issuer:issuer)
         )
     }
     
