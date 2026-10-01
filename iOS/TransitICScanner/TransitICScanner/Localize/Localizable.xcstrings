@@ -717,6 +717,23 @@
         }
       }
     },
+    "card.iwasaki" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki IC Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "いわさきICカード"
+          }
+        }
+      }
+    },
     "card.jpNplus" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -950,6 +967,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
+          }
+        }
+      }
+    },
+    "card.rapica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
           }
         }
       }
@@ -2510,6 +2544,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
+          }
+        }
+      }
+    },
+    "cardList.jpRapica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / いわさきICカード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rapica"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rapica"
+          }
+        }
+      }
+    },
+    "cardList.jpRapica.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima common transit IC Card."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "かごしま共通乗車カード"
           }
         }
       }
@@ -4076,6 +4156,57 @@
         }
       }
     },
+    "issue.jp.kagoshima.issuer.iwasaki" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "いわさきコーポレーション"
+          }
+        }
+      }
+    },
+    "issue.jp.kagoshima.issuer.kagoshimaCity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿児島市交通局"
+          }
+        }
+      }
+    },
+    "issue.jp.kagoshima.issuer.nangoku" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南国交通株式会社"
+          }
+        }
+      }
+    },
     "issue.jp.miyazaki.city.sendai" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4558,6 +4689,52 @@
         }
       }
     },
+    "jpRapica.scand.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The latest 16 transactions can be retrieved from the card."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードから取得可能な履歴は最新の16件です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可从卡片获取的历史记录最多为最新的16条。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可從卡片取得的歷史紀錄最多為最新的16條。"
+          }
+        }
+      }
+    },
+    "jpRapica.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima common IC Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かごしま共通乗車カード"
+          }
+        }
+      }
+    },
     "krOneCard.short" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4687,6 +4864,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香川県"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Kagoshima" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿児島県"
           }
         }
       }
@@ -5082,6 +5276,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "歷史（%lld件）"
+          }
+        }
+      }
+    },
+    "result.history.boarding" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boarding"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入場"
           }
         }
       }
@@ -6631,6 +6842,9 @@
           }
         }
       }
+    },
+    "scanner.coreNFC.scanning.error.read" : {
+
     },
     "scanner.coreNFC.scanning.error.statusFlag,s1:%lld, s2:%lld" : {
       "localizations" : {
