@@ -164,37 +164,46 @@ func cnTunion_getIssueInfo(iin:String) -> cnTunion_Info {
     case "48315": card = cnTunion_Info(name:"泰州通",area:"江苏省",city:"昆山市",issuer:"昆通卡")
         
         
-    // MARK: 江苏省 - 0310484
+    // MARK: 广西壮族自治区 - 0310484
+    case "48401": card = cnTunion_Info(name:"柳州市民卡",area:"广西壮族自治区",city:"柳州市",issuer:"柳州银行股份有限公司")
+    case "48402": card = cnTunion_Info(name:"桂林市",area:"广西壮族自治区",city:"桂林市",issuer:"桂林市鼎睿交通一卡通有限公司")
+    case "48403": card = cnTunion_Info(name:"梧州通",area:"广西壮族自治区",city:"梧州市",issuer:"广西交通一卡通有限公司")
+    case "48404": card = cnTunion_Info(name:"北海通",area:"广西壮族自治区",city:"北海市",issuer:"广西交通一卡通有限公司")
+    case "48405": card = cnTunion_Info(name:"玉林市民卡",area:"广西壮族自治区",city:"玉林市",issuer:"玉林智慧城市建设有限公司")
+    case "48406": card = cnTunion_Info(name:"百色通",area:"广西壮族自治区",city:"百色市",issuer:"广西交通一卡通有限公司")
+    case "48407": card = cnTunion_Info(name:"河池通",area:"广西壮族自治区",city:"河池市",issuer:"广西交通一卡通有限公司")
+    case "48408": card = cnTunion_Info(name:"钦州市民卡",area:"广西壮族自治区",city:"钦州市",issuer:"广西交通一卡通有限公司")
+    case "48409": card = cnTunion_Info(name:"防城港通",area:"广西壮族自治区",city:"防城港市",issuer:"广西交通一卡通有限公司")
+    case "48410": card = cnTunion_Info(name:"贵港市民卡",area:"广西壮族自治区",city:"贵港市",issuer:"广西交通一卡通有限公司")
+    case "48411": card = cnTunion_Info(name:"贺州通",area:"广西壮族自治区",city:"贺州市",issuer:"广西交通一卡通有限公司")
+    case "48412": card = cnTunion_Info(name:"来宾通",area:"广西壮族自治区",city:"来宾市",issuer:"广西交通一卡通有限公司")
+    case "48413": card = cnTunion_Info(name:"崇左通",area:"广西壮族自治区",city:"崇左市",issuer:"广西交通一卡通有限公司")
+        
+        
+    // MARK: 广东省 - 031048701
+    case "48702": card = cnTunion_Info(name:"东莞通",area:"广东省",city:"东莞市",issuer:"东莞市东莞通股份有限公司")
+    case "48703": card = cnTunion_Info(name:"羊城通",area:"广东省",city:"广州市",issuer:"广州羊城通有限公司")
+    case "48704": card = cnTunion_Info(name:"深圳通",area:"广东省",city:"深圳市",issuer:"深圳市深圳通有限公司")
+    case "48705": card = cnTunion_Info(name:"中山通",area:"广东省",city:"中山市",issuer:"中山市中山通智能卡有限公司")
+    case "48707": card = cnTunion_Info(name:"广佛通全国交通一卡通",area:"广东省",city:"佛山市",issuer:"佛山市广佛通电子收费营运有限公司")
+    case "48708": card = cnTunion_Info(name:"惠州通",area:"广东省",city:"惠州市",issuer:"惠州市惠州通智能卡有限公司")
+    case "48709": card = cnTunion_Info(name:"惠州通",area:"广东省",city:"汕头市",issuer:"惠州市惠州通智能卡有限公司")
+    case "487010": card = cnTunion_Info(name:"五邑通",area:"广东省",city:"江门市",issuer:"江门市五邑通智能卡有限公司")
+    case "487011": card = cnTunion_Info(name:"茂城通",area:"广东省",city:"茂名市",issuer:"广东信浓信息技术有限公司")
+    case "487012": card = cnTunion_Info(name:"肇庆通",area:"广东省",city:"肇庆市",issuer:"肇庆市肇庆通智能卡有限公司")
+    case "487013": card = cnTunion_Info(name:"湛江通",area:"广东省",city:"湛江市",issuer:"湛江市公共交通集团有限公司")
+    case "487014": card = cnTunion_Info(name:"嘉应通",area:"广东省",city:"梅州市",issuer:"梅州城市公共汽车有限公司")
+    case "487015": card = cnTunion_Info(name:"红海通",area:"广东省",city:"汕尾市",issuer:"汕尾市红海通信息科技有限公司")
+    case "487016": card = cnTunion_Info(name:"河源粤支付",area:"广东省",city:"河源市",issuer:"河源市粤运汽车运输有限公司粤支付分公司")
+    case "487017": card = cnTunion_Info(name:"清远市民卡",area:"广东省",city:"清远市",issuer:"清远市民卡有限公司")
+    case "487018": card = cnTunion_Info(name:"韶州通",area:"广东省",city:"韶关市",issuer:"韶关市金迪金融网络有限公司")
+    case "487019": card = cnTunion_Info(name:"榕江通",area:"广东省",city:"揭阳市",issuer:"广东华讯网络有限公司")
+    case "487020": card = cnTunion_Info(name:"漠江通",area:"广东省",city:"阳江市",issuer:"阳江市交投朗日公共汽车有限公司")
+    case "487021": card = cnTunion_Info(name:"漠江通",area:"广东省",city:"潮州通",issuer:"潮州市粤运公共交通有限公司")
+    case "487022": card = cnTunion_Info(name:"岭云通",area:"广东省",city:"云浮市",issuer:"云浮市岭云一卡通科技有限公司")
+    case "487024": card = cnTunion_Info(name:"珠海通",area:"广东省",city:"珠海市",issuer:"珠海市珠海通科技有限公司")
         
     /*
-    case "48401": card = "柳州市民卡"
-    case "48402": card = "桂林通"
-    case "48403": card = "梧州通"
-    case "48406": card = "百色通"
-    case "48407": card = "河池通"
-    case "48408": card = "钦州市民卡"
-    case "48409": card = "防城港通"
-    case "48410": card = "贵港市民卡"
-    case "48411": card = "贺州通"
-    case "48412": card = "来宾通"
-    case "48413": card = "崇左通"
-     
-    case "48701": card = "甜城通"
-    case "48702": card = "东莞通"
-    case "48703": card = "羊城通"
-    case "48704": card = "深圳通"
-    case "48705": card = "中山通"
-    case "48707": card = "广佛通"
-    case "48708": card = "惠州通"
-    case "48711": card = "茂城通"
-    case "48712": card = "肇庆通"
-    case "48714": card = "嘉应通"
-    case "48717": card = "清远市民卡"
-    case "48719": card = "榕江通"
-    case "48721": card = "潮州通"
-    case "48722": card = "岭云通"
-    case "48724": card = "珠海通"
-     
     case "48800": card = "温州城市公交IC卡"
     case "48801": card = "杭州通"
     case "48802": card = "甬城通交通部卡"

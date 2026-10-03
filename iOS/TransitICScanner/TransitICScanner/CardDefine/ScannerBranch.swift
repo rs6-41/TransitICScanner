@@ -10,12 +10,12 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
-    usClipper,jpRapica
+    spFlashPay
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）
 let featureCards: [CardInfo] = [
-    
+    usClipper,jpRapica
 ]
 
 // リリース済みのカード

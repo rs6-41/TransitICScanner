@@ -4266,6 +4266,9 @@
         }
       }
     },
+    "河源粤支付" : {
+      "extractionState" : "manual"
+    },
     "泉城通" : {
       "extractionState" : "manual",
       "localizations" : {
