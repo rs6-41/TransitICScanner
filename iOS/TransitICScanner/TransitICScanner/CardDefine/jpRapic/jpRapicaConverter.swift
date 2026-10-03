@@ -31,12 +31,13 @@ enum jpRapica_Converter {
     // 利用種別 (履歴 byte12)
     private static func convertProcessType(_ value: UInt8) -> String {
         switch value {
-            case 0x10, 0x20: return String(localized:"result.history.new") //新規発行
-            case 0x30: return String(localized:"result.history.boarding") //乗車
-            case 0x41,0x44: return String(localized:"result.history.fare") //降車
-            case 0x40: return String(localized:"result.history.charge") //チャージ
-            default: return String(localized:"result.history.other") //不明
-                }
+        case 0x00...0x0F: return String(localized:"result.history.new") //新規発行
+        case 0x10...0x1F: return String(localized:"result.history.register") //登録
+        case 0x20,0x40: return String(localized:"result.history.charge") //チャージ
+        case 0x30...0x3F: return String(localized:"result.history.boarding") //乗車
+        case 0x22,0x41...0x4F: return String(localized:"result.history.fare") //降車
+        default: return String(localized:"result.history.other") //不明
+        }
     }
 
     static func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {

@@ -6048,6 +6048,23 @@
         }
       }
     },
+    "result.history.register" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登録"
+          }
+        }
+      }
+    },
     "result.history.reissue" : {
       "localizations" : {
         "en" : {
