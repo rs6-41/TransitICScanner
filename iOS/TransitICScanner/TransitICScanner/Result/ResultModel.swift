@@ -51,6 +51,7 @@ struct issueInfo: Hashable, Codable {
     var otherAreaInfo: String? //その他の情報
     var issuer: String? //発行者
     var date: Date? //発行日
+    var expiry: Date? //有効期限
 }
 
 struct DisplayHistory: Hashable {

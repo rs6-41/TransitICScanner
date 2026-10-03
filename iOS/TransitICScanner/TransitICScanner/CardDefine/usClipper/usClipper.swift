@@ -1,7 +1,7 @@
+//MARK: Clipper (San Francisco Bay Area)
 import Foundation
 import SwiftUI
 import CoreNFC
-
 
 let usClipper = CardInfo(
     logo: "usClipper",
@@ -11,9 +11,10 @@ let usClipper = CardInfo(
     countryCode: ["us"],
     prefectures: ["CA"],
     regionOption: nil,
-    description: String(localized: "cardList.usClipper.description"),
+    description: "cardList.usClipper.description",
     scand_description: "",
-    searchWords: ["clipper", "sanfrancisco", "bayarea"],
+    searchWords: ["clipper", "くりっぱー", "クリッパー", "サンフランシスコ", "san francisco",
+                  "bay area", "california", "BART", "Muni", "Caltrain"],
     scanOption: ScanOption(
         name: "usClipper",
         nameShort: "usClipper.short",
@@ -26,176 +27,115 @@ let usClipper = CardInfo(
         scrapingView: nil
     ),
     infomation: nil,
-    sample:
-        ResultSample(
-            balance: 25.00,
-            idm: "1234567890",
-            type: "Clipper",
-            history: [
-                ResultHistory(
-                    processType: 0x01,
-                    date: sampleDay2,
-                    balance: 25.00,
-                    amount: 2.50,
-                    lineIn: 0,
-                    stationIn: 0,
-                    lineOut: 0,
-                    stationOut: 0,
-                    transactionId: 1
-                )
-            ]
-        )
+    sample: ResultSample(
+        balance: 12.5,
+        idm: "04A1B2C3D4E5F6",
+        type: "",
+        history: [
+            // 乗車: processType4 = 事業者(16bit) << 16 | 交通種別(16bit)
+            ResultHistory(processType: 0x02, processType4: 0x00040061, date: sampleDay3, balance: 12.5, amount: -2.85,
+                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 2),
+            // チャージ
+            ResultHistory(processType: 0x01, processType4: 0x00040000, date: sampleDay2, balance: 15.35, amount: 20.0,
+                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 1),
+        ]
+    )
 )
 
+/// DESFire ISO7816ラップ(CLA=0x90)のAPDU送信クロージャ。
+/// .miFare(DESFire) でも .iso7816 でも同じ処理で読めるようにするための抽象化
+typealias ClipperSend = (NFCISO7816APDU) async throws -> (Data, UInt8, UInt8)
+
+/// 履歴の中間表現
+struct ClipperEvent {
+    let time: UInt32       // 1900-01-01 からの秒数
+    let kind: UInt8        // 0x01 = チャージ, 0x02 = 乗車(トリップ)
+    let amountCents: Int   // チャージ: +, 運賃: -
+    let agency: UInt16
+    let transport: UInt16
+    let route: UInt16
+    let stationIn: UInt16
+    let stationOut: UInt16
+    let seq: Int
+}
+
+private let clipperEpochOffset: TimeInterval = 2_208_988_800   // 1900-01-01 -> 1970-01-01
+private let clipperAID = Data([0x90, 0x11, 0xF2])              // 0x9011F2 (実機ログ: GetApplicationIDs は 90 11 F2 の順)
+
+private func clipper_be16(_ b: [UInt8], _ o: Int) -> UInt16 {
+    (UInt16(b[o]) << 8) | UInt16(b[o + 1])
+}
+
+private func clipper_be32(_ b: [UInt8], _ o: Int) -> UInt32 {
+    (UInt32(b[o]) << 24) | (UInt32(b[o + 1]) << 16) | (UInt32(b[o + 2]) << 8) | UInt32(b[o + 3])
+}
+
+private func clipper_calendar() -> Calendar {
+    var cal = Calendar(identifier: .gregorian)
+    cal.timeZone = TimeZone(identifier: "America/Los_Angeles") ?? .current
+    return cal
+}
+
+private func clipper_components(_ seconds: UInt32) -> DateComponents {
+    let date = Date(timeIntervalSince1970: TimeInterval(seconds) - clipperEpochOffset)
+    return clipper_calendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+}
 
 extension NFCScannerModel {
 
-    func usClipper_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession
-    ) {
+    //MARK: スキャン
+    func usClipper_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
 
-        guard case let .miFare(mifareTag) = tag else {
-            session.invalidate(errorMessage: "Not MIFARE tag")
+        let send: ClipperSend
+        let identifier: Data
+
+        switch tag {
+        case .miFare(let t):
+            print("Clipper: using NFCMiFareTag path")
+            guard t.mifareFamily == .desfire else {
+                session.invalidate(errorMessage: "Not DESFire tag")
+                return
+            }
+            send = { try await t.sendMiFareISO7816Command($0) }
+            identifier = t.identifier
+
+        case .iso7816(let t):
+            print("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
+            send = { try await t.sendCommand(apdu: $0) }
+            identifier = t.identifier
+
+        default:
+            session.invalidate(errorMessage: "Not DESFire tag")
             return
         }
 
-        print("Clipper scan started")
-
-        print(
-            "MIFARE family:",
-            mifareTag.mifareFamily.rawValue
-        )
-
-        print(
-            "Identifier:",
-            mifareTag.identifier
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
-        )
-
         Task {
-
-            guard
-                mifareTag.mifareFamily == .desfire
-            else {
-                session.invalidate(
-                    errorMessage: "Not DESFire tag"
-                )
+            // アプリケーション選択
+            guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil else {
+                session.invalidate(errorMessage: "Clipper application not found")
                 return
             }
 
-            guard
-                await usClipper_selectApplication(
-                    mifareTag
-                )
-            else {
-                session.invalidate(
-                    errorMessage: "Clipper application not found"
-                )
+            // 残額 (File 0x2: [18-19] セント, 符号付き。マイナス残高になり得る。実機で -$0.15 = FF F1 を確認)
+            guard let balanceData = await clipper_readFile(send, file: 0x02),
+                  balanceData.count >= 20 else {
+                session.invalidate(errorMessage: "Clipper balance read failed")
                 return
             }
+            let bb = [UInt8](balanceData)
+            let balanceCents = Int(Int16(bitPattern: clipper_be16(bb, 18)))
 
-            print(
-                "Clipper application selected: 9011F2"
+            let history = await clipper_history(
+                send,
+                currentBalanceCents: balanceCents,
+                limit: self.scanOption.historyCount
             )
 
-            print(
-                "===== Clipper RAW DUMP START ====="
-            )
-
-            let file1 =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x01
-                )
-
-            let file2 =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x02
-                )
-
-            let file4 =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x04
-                )
-
-            let file8 =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x08
-                )
-
-            let file0E =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x0E
-                )
-
-            let file0F =
-                await usClipper_readFile(
-                    mifareTag,
-                    fileID: 0x0F
-                )
-
-            print("===== Clipper RAW DUMP END =====")
-
-            let serial =
-                usClipper_parseSerial(
-                    file8
-                )
-
-            let balance =
-                usClipper_parseBalance(
-                    file2
-                )
-
-            let expiryDate =
-                usClipper_parseExpiryDate(
-                    file1
-                )
-
-            let refills =
-                usClipper_parseRefills(
-                    file4
-                )
-
-            let trips =
-                usClipper_parseTrips(
-                    file0E
-                )
-
-            let history =
-                usClipper_makeHistory(
-                    trips: trips,
-                    refills: refills,
-                    currentBalance: balance
-                )
-
-            let info =
-                ResultCardInfo(
-                    idm: serial ?? "",
-                    name: usClipper.name,
-                    nameShort: usClipper.scanOption.nameShort,
-                    currencyType: usClipper.scanOption.currencyType,
-                    type: "Clipper",
-                    serial: serial,
-                    version: nil,
-                    validDate: expiryDate
-                )
-
-            let finalBalance =
-                balance ??
-                history?.first?.balance
+            let info = await clipper_info(send, identifier: identifier)
 
             await MainActor.run {
-
                 self.result = Result(
-                    balance: finalBalance,
+                    balance: Double(balanceCents) / 100.0,
                     isHistory: true,
                     history: history,
                     info: info,
@@ -205,748 +145,257 @@ extension NFCScannerModel {
                     savedAt: Date.now
                 )
 
+                self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
                 session.invalidate()
             }
         }
     }
 
+    //MARK: 履歴
+    // File 0x4 (チャージ) / File 0xE (トリップ): 32byteレコード
+    func clipper_history(
+        _ send: ClipperSend,
+        currentBalanceCents: Int,
+        limit: Int
+    ) async -> [ResultHistory]? {
 
-    private func usClipper_sendCommand(
-        _ tag: NFCMiFareTag,
-        _ command: Data
-    ) async -> Data? {
+        var events: [ClipperEvent] = []
 
-        do {
+        // チャージ: [2-3]事業者 [4-7]時刻 [8-11]機械ID [14-15]金額(セント)
+        if let data = await clipper_readFile(send, file: 0x04) {
+            for (i, r) in clipper_records(data).enumerated() {
+                let time = clipper_be32(r, 4)
+                guard time != 0 else { continue }
+                events.append(ClipperEvent(
+                    time: time,
+                    kind: 0x01,
+                    amountCents: Int(clipper_be16(r, 14)),
+                    agency: clipper_be16(r, 2),
+                    transport: 0,
+                    route: 0,
+                    stationIn: 0,
+                    stationOut: 0,
+                    seq: 100_000 + i
+                ))
+            }
+        }
 
-            print(
-                "DESFire Command:",
-                command
-                    .map {
-                        String(format: "%02X", $0)
+        // トリップ: [2-3]事業者 [6-7]運賃(セント) [12-15]入場時刻 [16-19]出場時刻 [30-31]交通種別
+        // File 0xE は標準ファイル(512byte = 32byte x 16件)。未使用枠は先頭が 0x10 で時刻 0
+        // タップオフ有りの交通機関は「入場のみ(仮運賃=最大運賃)」と「出場あり(確定運賃)」の
+        // 2レコードが同じ入場時刻で残るため、確定済みがある場合は入場のみ側を除外する
+        // トリップ: File 0x0E
+        if let data = await clipper_readFile(send, file: 0x0E) {
+            var parsed: [(event: ClipperEvent, hasExit: Bool)] = []
+
+            let records = clipper_records(data).reversed()
+
+            for (i, r) in records.enumerated() {
+                guard r.count >= 32 else { continue }
+
+                let entry = clipper_be32(r, 12)
+                let exit = clipper_be32(r, 16)
+
+                guard entry != 0 else { continue }
+
+                let agency = clipper_be16(r, 2)
+
+                guard agency != 0 else { continue }
+
+                let event = ClipperEvent(
+                    time: entry,
+                    kind: 0x02,
+                    amountCents: -Int(clipper_be16(r, 6)),
+                    agency: agency,
+                    transport: clipper_be16(r, 30),
+                    route: clipper_be16(r, 28),
+                    stationIn: clipper_be16(r, 20),
+                    stationOut: clipper_be16(r, 22),
+                    seq: 200_000 + i
+                )
+
+                if let index = parsed.firstIndex(where: {
+                    $0.event.time == event.time
+                }) {
+                    if parsed[index].hasExit {
+                        continue
                     }
-                    .joined(separator: " ")
-            )
 
-            let response =
-                try await withCheckedThrowingContinuation {
-                    (
-                        continuation:
-                            CheckedContinuation<Data, Error>
-                    ) in
-
-                    tag.sendMiFareCommand(
-                        commandPacket: command
-                    ) { result in
-
-                        switch result {
-
-                        case .success(let data):
-                            continuation.resume(
-                                returning: data
-                            )
-
-                        case .failure(let error):
-                            continuation.resume(
-                                throwing: error
-                            )
-                        }
-                    }
+                    parsed.remove(at: index)
                 }
 
-            print(
-                "DESFire Response:",
-                response
-                    .map {
-                        String(format: "%02X", $0)
-                    }
-                    .joined(separator: " ")
-            )
-
-            return response
-
-        } catch {
-
-            print(
-                "DESFire command error:",
-                error.localizedDescription
-            )
-
-            return nil
-        }
-    }
-
-
-    private func usClipper_selectApplication(
-        _ tag: NFCMiFareTag
-    ) async -> Bool {
-
-        let command =
-            Data([
-                0x5A,
-                0xF2,
-                0x11,
-                0x90
-            ])
-
-        guard
-            let response =
-                await usClipper_sendCommand(
-                    tag,
-                    command
-                ),
-            response.last == 0x00
-        else {
-            return false
-        }
-
-        return true
-    }
-
-
-    private func usClipper_readFile(
-        _ tag: NFCMiFareTag,
-        fileID: UInt8
-    ) async -> Data? {
-
-        let command =
-            Data([
-                0xBD,
-                fileID,
-                0x00,
-                0x00,
-                0x00,
-                0xFF,
-                0xFF,
-                0xFF
-            ])
-
-        guard
-            let response =
-                await usClipper_sendCommand(
-                    tag,
-                    command
-                )
-        else {
-            return nil
-        }
-
-        guard
-            response.last == 0x00
-        else {
-            print(
-                String(
-                    format:
-                        "Clipper File %02X read failed: status=%02X",
-                    fileID,
-                    response.last ?? 0
-                )
-            )
-
-            return nil
-        }
-
-        let data =
-            Data(
-                response.dropLast()
-            )
-
-        print(
-            String(
-                format:
-                    "Clipper File %02X:",
-                fileID
-            ),
-            data
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined(separator: " ")
-        )
-
-        return data
-    }
-
-
-    private func usClipper_parseSerial(
-        _ data: Data?
-    ) -> String? {
-
-        guard
-            let data,
-            data.count >= 5
-        else {
-            return nil
-        }
-
-        let serial =
-            data[1...4]
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
-
-        print(
-            "Clipper serial:",
-            serial
-        )
-
-        return serial
-    }
-
-
-    private func usClipper_parseBalance(
-        _ data: Data?
-    ) -> Double? {
-
-        guard
-            let data,
-            data.count >= 20
-        else {
-            return nil
-        }
-
-        let raw =
-            (UInt16(data[18]) << 8) |
-            UInt16(data[19])
-
-        let signed =
-            Int16(bitPattern: raw)
-
-        let balance =
-            Double(signed) / 100.0
-
-        print(
-            String(
-                format:
-                    "Clipper balance: %02X %02X -> %d -> %.2f",
-                data[18],
-                data[19],
-                signed,
-                balance
-            )
-        )
-
-        return balance
-    }
-
-
-    private func usClipper_parseExpiryDate(
-        _ data: Data?
-    ) -> String? {
-
-        guard
-            let data,
-            data.count >= 10
-        else {
-            return nil
-        }
-
-        let days =
-            (UInt16(data[8]) << 8) |
-            UInt16(data[9])
-
-        let date =
-            Date(
-                timeIntervalSince1970:
-                    Double(days) * 86400.0 -
-                    2208988800.0
-            )
-
-        let formatter =
-            DateFormatter()
-
-        formatter.dateFormat =
-            "yyyy-MM-dd"
-
-        formatter.locale =
-            Locale(identifier: "en_US_POSIX")
-
-        let result =
-            formatter.string(
-                from: date
-            )
-
-        print(
-            "Clipper expiry date:",
-            result
-        )
-
-        return result
-    }
-
-
-    private func usClipper_parseRefills(
-        _ data: Data?
-    ) -> [
-        (
-            date: Date,
-            amount: Double,
-            agency: Int,
-            machineID: Int
-        )
-    ] {
-
-        guard
-            let data
-        else {
-            return []
-        }
-
-        let recordLength =
-            32
-
-        guard
-            data.count >= recordLength
-        else {
-            return []
-        }
-
-        var result:
-            [
-                (
-                    date: Date,
-                    amount: Double,
-                    agency: Int,
-                    machineID: Int
-                )
-            ] = []
-
-        var position =
-            data.count -
-            recordLength
-
-        while position >= 0 {
-
-            let record = data[position..<position + recordLength]
-
-            let bytes =
-                Array(record)
-
-            let agency =
-                (Int(bytes[2]) << 8) |
-                Int(bytes[3])
-
-            let timestampRaw =
-                (UInt32(bytes[4]) << 24) |
-                (UInt32(bytes[5]) << 16) |
-                (UInt32(bytes[6]) << 8) |
-                UInt32(bytes[7])
-
-            let machineID =
-                (Int(bytes[8]) << 24) |
-                (Int(bytes[9]) << 16) |
-                (Int(bytes[10]) << 8) |
-                Int(bytes[11])
-
-            let amountRaw =
-                (Int(bytes[14]) << 8) |
-                Int(bytes[15])
-
-            if timestampRaw != 0 {
-
-                let timestamp =
-                    Double(timestampRaw) -
-                    2208988800.0
-
-                let date =
-                    Date(
-                        timeIntervalSince1970:
-                            timestamp
-                    )
-
-                let amount =
-                    Double(amountRaw) /
-                    100.0
-
-                result.append(
-                    (
-                        date:
-                            date,
-                        amount:
-                            amount,
-                        agency:
-                            agency,
-                        machineID:
-                            machineID
-                    )
-                )
+                parsed.append((
+                    event: event,
+                    hasExit: exit != 0
+                ))
             }
 
-            if position < recordLength {
-                break
-            }
-
-            position -= recordLength
+            events.append(contentsOf: parsed.map { $0.event })
         }
 
-        result.sort {
-            $0.date >
-            $1.date
-        }
+        guard !events.isEmpty else { return nil }
 
-        return result
-    }
+        // 新しい順
+        events.sort { $0.time != $1.time ? $0.time > $1.time : $0.seq < $1.seq }
 
+        // 現在残額から遡って各時点の残額(そのイベント後)を算出
+        var running = currentBalanceCents
+        var logs: [ResultHistory] = []
 
-    private func usClipper_parseTrips(
-        _ data: Data?
-    ) -> [
-        (
-            date: Date,
-            exitDate: Date?,
-            fare: Double,
-            agency: Int,
-            stationIn: Int,
-            stationOut: Int,
-            route: Int,
-            transport: Int
-        )
-    ] {
-
-        guard
-            let data
-        else {
-            return []
-        }
-
-        let recordLength =
-            32
-
-        guard
-            data.count >= recordLength
-        else {
-            return []
-        }
-
-        var result:
-            [
-                (
-                    date: Date,
-                    exitDate: Date?,
-                    fare: Double,
-                    agency: Int,
-                    stationIn: Int,
-                    stationOut: Int,
-                    route: Int,
-                    transport: Int
-                )
-            ] = []
-
-        var position =
-            data.count -
-            recordLength
-
-        while position >= 0 {
-
-            let record = data[position..<position + recordLength]
-
-            let bytes =
-                Array(record)
-
-            let agency =
-                (Int(bytes[2]) << 8) |
-                Int(bytes[3])
-
-            guard agency != 0 else {
-
-                if position < recordLength {
-                    break
-                }
-
-                position -= recordLength
-                continue
-            }
-
-            let fareRaw =
-                (Int(bytes[6]) << 8) |
-                Int(bytes[7])
-
-            let timestampRaw =
-                (UInt32(bytes[12]) << 24) |
-                (UInt32(bytes[13]) << 16) |
-                (UInt32(bytes[14]) << 8) |
-                UInt32(bytes[15])
-
-            let exitTimestampRaw =
-                (UInt32(bytes[16]) << 24) |
-                (UInt32(bytes[17]) << 16) |
-                (UInt32(bytes[18]) << 8) |
-                UInt32(bytes[19])
-
-            let stationIn =
-                (Int(bytes[20]) << 8) |
-                Int(bytes[21])
-
-            let stationOut =
-                (Int(bytes[22]) << 8) |
-                Int(bytes[23])
-
-            let route =
-                (Int(bytes[28]) << 8) |
-                Int(bytes[29])
-
-            let transport =
-                (Int(bytes[30]) << 8) |
-                Int(bytes[31])
-
-            guard
-                timestampRaw >= 2208988800
-            else {
-
-                if position < recordLength {
-                    break
-                }
-
-                position -= recordLength
-                continue
-            }
-
-            let timestamp =
-                Double(timestampRaw) -
-                2208988800.0
-
-            let date =
-                Date(
-                    timeIntervalSince1970:
-                        timestamp
-                )
-
-            let exitDate:
-                Date?
-
-            if exitTimestampRaw != 0 {
-
-                let exitTimestamp =
-                    Double(exitTimestampRaw) -
-                    2208988800.0
-
-                exitDate =
-                    Date(
-                        timeIntervalSince1970:
-                            exitTimestamp
-                    )
-
-            } else {
-
-                exitDate = nil
-            }
-
-            result.append(
-                (
-                    date:
-                        date,
-                    exitDate:
-                        exitDate,
-                    fare:
-                        Double(fareRaw) / 100.0,
-                    agency:
-                        agency,
-                    stationIn:
-                        stationIn,
-                    stationOut:
-                        stationOut,
-                    route:
-                        route,
-                    transport:
-                        transport
-                )
-            )
-
-            if position < recordLength {
-                break
-            }
-
-            position -= recordLength
-        }
-
-        result.sort {
-            $0.date >
-            $1.date
-        }
-
-        var merged:
-            [
-                (
-                    date: Date,
-                    exitDate: Date?,
-                    fare: Double,
-                    agency: Int,
-                    stationIn: Int,
-                    stationOut: Int,
-                    route: Int,
-                    transport: Int
-                )
-            ] = []
-
-        for trip in result {
-
-            if let index =
-                merged.firstIndex(
-                    where: {
-                        $0.date == trip.date
-                    }
-                ) {
-
-                if
-                    merged[index].exitDate == nil,
-                    trip.exitDate != nil
-                {
-                    merged[index] =
-                        trip
-                }
-
-            } else {
-
-                merged.append(
-                    trip
-                )
-            }
-        }
-
-        return merged
-    }
-
-
-    private func usClipper_makeHistory(
-        trips:
-            [
-                (
-                    date: Date,
-                    exitDate: Date?,
-                    fare: Double,
-                    agency: Int,
-                    stationIn: Int,
-                    stationOut: Int,
-                    route: Int,
-                    transport: Int
-                )
-            ],
-        refills:
-            [
-                (
-                    date: Date,
-                    amount: Double,
-                    agency: Int,
-                    machineID: Int
-                )
-            ],
-        currentBalance: Double?
-    ) -> [ResultHistory]? {
-
-        guard
-            !trips.isEmpty ||
-            !refills.isEmpty
-        else {
-            return nil
-        }
-
-        var all:
-            [
-                (
-                    date: Date,
-                    amount: Double,
-                    type: UInt8,
-                    stationIn: Int,
-                    stationOut: Int,
-                    transactionID: Int
-                )
-            ] = []
-
-        for trip in trips {
-
-            all.append(
-                (
-                    date:
-                        trip.date,
-                    amount:
-                        -trip.fare,
-                    type:
-                        0x04,
-                    stationIn:
-                        trip.stationIn,
-                    stationOut:
-                        trip.stationOut,
-                    transactionID:
-                        Int(
-                            trip.date.timeIntervalSince1970
-                        )
-                )
-            )
-        }
-
-        for refill in refills {
-
-            all.append(
-                (
-                    date:
-                        refill.date,
-                    amount:
-                        refill.amount,
-                    type:
-                        0x02,
-                    stationIn:
-                        0,
-                    stationOut:
-                        0,
-                    transactionID:
-                        Int(
-                            refill.date.timeIntervalSince1970
-                        )
-            )
-                )
-        }
-
-        all.sort {
-            $0.date >
-            $1.date
-        }
-
-        var balance =
-            currentBalance ?? 0.0
-
-        var history:
-            [ResultHistory] = []
-
-        for item in all {
-
-            history.append(
+        for e in events {
+            logs.append(
                 ResultHistory(
-                    processType:
-                        item.type,
-                    date:
-                        Calendar.current.dateComponents(
-                            [
-                                .year,
-                                .month,
-                                .day,
-                                .hour,
-                                .minute,
-                                .second
-                            ],
-                            from:
-                                item.date
-                        ),
-                    balance:
-                        balance,
-                    amount:
-                        item.amount,
-                    lineIn:
-                        0,
-                    stationIn:
-                        UInt8(item.stationIn),
-                    lineOut:
-                        0,
-                    stationOut:
-                        UInt8(item.stationOut),
-                    transactionId:
-                        item.transactionID
+                    processType: e.kind,
+                    processType4: (UInt32(e.agency) << 16) | UInt32(e.transport),
+                    date: clipper_components(e.time),
+                    balance: Double(running) / 100.0,
+                    amount: Double(e.amountCents) / 100.0,
+                    // 路線ID(16bit) は lineIn=上位8bit / lineOut=下位8bit に分けて渡す
+                    // 駅ID(16bit) は下位8bitのみ (BARTなど実在の駅IDは8bitに収まる)
+                    lineIn: UInt8(e.route >> 8),
+                    stationIn: UInt8(truncatingIfNeeded: e.stationIn),
+                    lineOut: UInt8(truncatingIfNeeded: e.route),
+                    stationOut: UInt8(truncatingIfNeeded: e.stationOut),
+                    transactionId: e.seq
                 )
             )
-
-            balance -=
-                item.amount
+            running -= e.amountCents
         }
 
-        return history
+        return Array(logs.prefix(max(limit, 1)))
+    }
+
+    //MARK: カード情報
+    // File 0x8: [1-4]シリアル / File 0x1: [8-9]有効期限(1900-01-01からの日数)
+    func clipper_info(
+        _ send: ClipperSend,
+        identifier: Data
+    ) async -> ResultCardInfo? {
+
+        let uid = identifier.map { String(format: "%02X", $0) }.joined()
+
+        var serial: String? = nil
+        if let d = await clipper_readFile(send, file: 0x08), d.count >= 5 {
+            serial = String(clipper_be32([UInt8](d), 1))
+        }
+
+        // 日数は暦日そのもの(タイムゾーンなし)なので、UTCで年月日に直してから
+        // 端末のタイムゾーンの 0:00 にして Date 化する (日付がずれないように)
+        var expiry: Date? = nil
+        if let d = await clipper_readFile(send, file: 0x01), d.count >= 10 {
+            let days = clipper_be16([UInt8](d), 8)
+            let utcDate = Date(timeIntervalSince1970: TimeInterval(days) * 86_400 - clipperEpochOffset)
+            var utc = Calendar(identifier: .gregorian)
+            utc.timeZone = TimeZone(identifier: "UTC") ?? .current
+            let ymd = utc.dateComponents([.year, .month, .day], from: utcDate)
+            expiry = Calendar(identifier: .gregorian).date(from: ymd)
+        }
+
+        return ResultCardInfo(
+            idm: uid,
+            name: usClipper.name,
+            nameShort: usClipper.scanOption.nameShort,
+            currencyType: usClipper.scanOption.currencyType,
+            type: "",
+            serial: serial,
+            version: nil,
+            validDate: nil,
+            issueInfo: issueInfo(
+                region: usClipper.area.rawValue,
+                area: "locate.prefecture.CA",
+                city: "locate.city.CA.SF",
+                issuer: "issue.us.california.issuer.clipper",
+                expiry: expiry
+            )
+        )
+    }
+
+    //MARK: DESFire共通処理
+    /// 32byteごとのレコードに分割 (空/全FFは除外)
+    private func clipper_records(_ data: Data) -> [[UInt8]] {
+        let bytes = [UInt8](data)
+        return stride(from: 0, to: bytes.count - 31, by: 32)
+            .map { Array(bytes[$0..<$0 + 32]) }
+            .filter { r in
+                !r.allSatisfy { $0 == 0x00 } && !r.allSatisfy { $0 == 0xFF }
+            }
+    }
+
+    /// ファイル全体を読む。GetFileSettings(0xF5) で種別を調べ、種別に合ったコマンドを使う
+    /// (実機: 0x1/0x2/0x5/0x6/0x8/0xE/0xF = 標準・バックアップ, 0x4 = サイクリックレコード)
+    private func clipper_readFile(
+        _ send: ClipperSend,
+        file: UInt8
+    ) async -> Data? {
+        // [ファイル番号][オフセット 3byte][長さ 3byte] (0 = 全体)
+        let params = Data([file, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+
+        var order: [UInt8] = [0xBD, 0xBB]
+        if let settings = await clipper_command(send, ins: 0xF5, data: Data([file])),
+           let type = settings.first {
+            switch type {
+            case 0x00, 0x01: order = [0xBD]
+            case 0x03, 0x04: order = [0xBB]
+            case 0x02: return await clipper_command(send, ins: 0x6C, data: Data([file]))
+            default: break
+            }
+        }
+
+        for ins in order {
+            if let d = await clipper_command(send, ins: ins, data: params) {
+                return d
+            }
+        }
+        return nil
+    }
+
+    /// DESFireネイティブコマンドをISOラップ(CLA 0x90)で送信。0xAF(続きあり)は自動で連結する
+    private func clipper_command(
+        _ send: ClipperSend,
+        ins: UInt8,
+        data: Data = Data()
+    ) async -> Data? {
+
+        var out = Data()
+        var code = ins
+        var payload = data
+
+        for _ in 0..<32 {
+            let apdu = NFCISO7816APDU(
+                instructionClass: 0x90,
+                instructionCode: code,
+                p1Parameter: 0x00,
+                p2Parameter: 0x00,
+                data: payload,
+                expectedResponseLength: 256
+            )
+
+            let result: (Data, UInt8, UInt8)
+            do {
+                result = try await send(apdu)
+            } catch {
+                print(String(format: "Clipper APDU INS=%02X error:", code), error)
+                return nil
+            }
+
+            let (resp, sw1, sw2) = result
+            print(String(format: "Clipper APDU INS=%02X SW=%02X%02X LEN=%d", code, sw1, sw2, resp.count))
+
+            guard sw1 == 0x91 else {
+                return nil
+            }
+
+            out.append(resp)
+
+            if sw2 == 0xAF {
+                code = 0xAF
+                payload = Data()
+                continue
+            }
+
+            return sw2 == 0x00 ? out : nil
+        }
+
+        return nil
     }
 }
