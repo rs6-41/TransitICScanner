@@ -1,202 +1,415 @@
-アメリカ・サンフランシスコ湾岸地域の交通系ICカード「Clipper」で使用されるICカードフォーマット。  
-ClipperはMIFARE DESFireを使用した交通ICカードシステムで、複数の交通事業者で利用されている。
+# Clipper
 
-## カード内容
+アメリカ・サンフランシスコ湾岸地域で使用される交通系ICカード「Clipper」のICカードフォーマットおよび、現在の `TransitICScanner` における読み取り実装。
 
-|||
-|--|--|
-|**NFC種別**|NFC Type-A / ISO 14443|
-|通信方式|MIFARE DESFire|
-|アプリケーション|Clipper|
-|AID|`0x9011F2`|
-|データ形式|DESFire Application / File|
-|履歴形式|32バイト固定長データ|
-|通貨|米ドル(USD)|
+ClipperはMIFARE DESFireを使用する交通ICカードシステムで、BART、Muni、Caltrain、AC Transit、VTA、SamTransなど、サンフランシスコ湾岸地域の複数の交通事業者で利用されている。
 
-ClipperのデータはすべてApplication ID `0x9011F2`に格納されている。
+現在の実装では、CoreNFCから取得したDESFireカードに対してISO 7816ラップされたDESFireコマンドを送信し、Clipper Applicationおよび各Fileを読み取る。
 
-カード内の数値はビッグエンディアンで保存されている。
+---
 
-日時データは1900年1月1日00:00:00 UTCを基準とした秒数で表現される。
+# カード内容
 
-
-### AID
-
-Clipperアプリケーションとして以下のAIDを使用する。
-
-|優先順位|AID|内容|
-|---|---|---|
-|1|`90 11 F2`|Clipper Application|
-
-DESFireのApplication IDは3バイトで構成される。
-
-内部実装ではApplication IDを`0x9011F2`として扱う。
-
-
-### Application
-
-Clipper Applicationには以下のFileが存在する。
-
-|File ID|内容|
+| 項目 | 値 |
 |---|---|
-|`0x01`|カードメタデータ|
-|`0x02`|残高・最終利用時刻|
-|`0x04`|チャージ履歴|
-|`0x05`|ポインタ情報|
-|`0x06`|ポインタ情報|
-|`0x08`|カードシリアル番号|
-|`0x0E`|乗車履歴|
-|`0x0F`|Validation / Subscription情報|
+| NFC種別 | NFC Type-A / ISO 14443 |
+| カード種別 | MIFARE DESFire |
+| アプリケーション | Clipper |
+| Application ID | `0x9011F2` |
+| データ形式 | DESFire Application / File |
+| 履歴形式 | 32バイト単位 |
+| 通貨 | 米ドル (USD) |
+
+Clipper Application IDは `0x9011F2`。
+
+実装では以下の3バイトとして指定する。
+
+```text
+90 11 F2
+```
 
 ---
 
 # Application選択
 
-DESFireカードを検出した後、Application ID `0x9011F2`を選択する。
+Clipperカードを検出した後、DESFireの `SelectApplication` コマンドを使用してApplication `0x9011F2` を直接選択する。
 
-T-UnionのISO 7816-4 APDUとは異なり、ClipperではMIFARE DESFireのApplication / File構造を使用する。
-
-Applicationの存在を確認することでClipperカードとして判定する。
+使用するDESFireコマンドは以下。
 
 ```text
-Application ID = 0x9011F2
+INS = 0x5A
 ```
 
-Clipperとして判定する条件は、Application `0x9011F2`が存在すること。
-
----
-
-# カード情報
-
-## File 0x08
-
-カードシリアル番号およびカード種別に関する情報を取得する。
-
-|項目|値|
-|---|---|
-|File ID|`0x08`|
-|レコード形式|固定長データ|
-|データ長|32B|
-
-### データ構造
-
-|バイト|内容|
-|---|---|
-|`0`|固定値 `0x01`|
-|`1 ~ 4`|カードシリアル番号|
-|`5`|固定値 `0x01`|
-|`6 ~ 7`|`0x00`|
-|`8`|`0x0F`|
-|`9 ~ 31`|`0x00`|
-
-### カードシリアル番号
-
-`1 ~ 4`の4バイトをビッグエンディアンとして結合する。
+Application ID：
 
 ```text
-serial = byte[1] × 256³
-       + byte[2] × 256²
-       + byte[3] × 256
-       + byte[4]
+90 11 F2
 ```
 
-この値をカード識別子として使用する。
-
-|ResultCardInfo|値|
-|---|---|
-|`idm`|カードシリアル番号|
-|`serial`|カードシリアル番号|
-
----
-
-## File 0x01
-
-カードメタデータを取得する。
-
-|項目|値|
-|---|---|
-|File ID|`0x01`|
-|内容|カード有効期限|
-|形式|通常データファイル|
-
-### データ構造
-
-|バイト|内容|
-|---|---|
-|`8 ~ 9`|カード有効期限|
-|その他|未確認|
-
-### 有効期限
-
-`8 ~ 9`の2バイトをビッグエンディアンとして整数化する。
+したがって、実装上は以下の処理となる。
 
 ```text
-expiryDays = byte[8] × 256 + byte[9]
+NFC Type-A / DESFire
+        ↓
+SelectApplication
+INS = 0x5A
+Data = 90 11 F2
+        ↓
+成功
+        ↓
+Clipper Applicationとして処理
 ```
 
-1900年1月1日を基準として日数を加算する。
+現在の実装では `GetApplicationIDs` によってApplication一覧を取得してから `0x9011F2` を検索する方式ではない。
 
-```text
-expiryDate = 1900-01-01 + expiryDays
+`0x5A` によるApplication選択が成功することを、Clipper Applicationの存在確認として使用する。
+
+実装：
+
+```swift
+guard await clipper_command(
+    send,
+    ins: 0x5A,
+    data: clipperAID
+) != nil else {
+    session.invalidate(errorMessage: "Clipper application not found")
+    return
+}
+```
+
+Application IDは以下の定数として定義されている。
+
+```swift
+private let clipperAID = Data([
+    0x90,
+    0x11,
+    0xF2
+])
 ```
 
 ---
 
-# 残高データ
+# DESFire APDU
 
-## File 0x02
+CoreNFCからは `NFCISO7816APDU` を使用し、DESFire Native CommandをISO 7816形式でラップして送信する。
 
-現在の残高および最終利用時刻を取得する。
+CLAは `0x90`。
 
-|項目|値|
+```text
+CLA = 0x90
+INS = DESFire Native Command
+P1  = 0x00
+P2  = 0x00
+```
+
+例えばApplication選択の場合：
+
+```text
+CLA = 90
+INS = 5A
+P1  = 00
+P2  = 00
+DATA = 90 11 F2
+```
+
+DESFireのレスポンスでは、
+
+```text
+SW1 = 0x91
+```
+
+を正常なDESFireレスポンスとして扱う。
+
+`SW2 = 0xAF` の場合は追加データが存在するため、次のコマンドとして `0xAF` を送信し、レスポンスを連結する。
+
+```text
+DESFire Command
+        ↓
+SW = 91 AF
+        ↓
+追加レスポンスあり
+        ↓
+INS = AF
+        ↓
+SW = 91 00
+        ↓
+レスポンスを連結
+```
+
+実装では最大32回まで `0xAF` による継続レスポンスを取得する。
+
+---
+
+# File構成
+
+現在の実装で参照しているFileは以下。
+
+| File ID | 内容 | 現在の用途 |
+|---|---|---|
+| `0x01` | カードメタデータ / 有効期限 | カード有効期限 |
+| `0x02` | 残高・最終利用情報 | 現在残高 |
+| `0x04` | チャージ履歴 | チャージ履歴 |
+| `0x08` | カードシリアル情報 | Clipper内部シリアル |
+| `0x0E` | 乗車履歴 | トリップ履歴 |
+
+以下のFileについては現在の実装では解析していない。
+
+| File ID | 状態 |
 |---|---|
-|File ID|`0x02`|
-|内容|残高・最終利用時刻|
-|形式|通常データファイル|
+| `0x05` | 現在未使用 |
+| `0x06` | 現在未使用 |
+| `0x0F` | 現在未使用 |
 
-### データ構造
+したがって、これらのFileについて具体的なデータ構造を確定したものとして扱わない。
 
-|バイト|内容|
+---
+
+# File読み取り
+
+Fileの読み取り前に `GetFileSettings` を使用してFile種別を取得する。
+
+DESFireコマンド：
+
+```text
+INS = 0xF5
+DATA = File ID
+```
+
+取得したFile種別に応じて読み取りコマンドを切り替える。
+
+| File Type | 内容 | 使用コマンド |
+|---|---|---|
+| `0x00` | Standard Data File | `0xBD` |
+| `0x01` | Backup Data File | `0xBD` |
+| `0x02` | Value File | `0x6C` |
+| `0x03` | Linear Record File | `0xBB` |
+| `0x04` | Cyclic Record File | `0xBB` |
+
+現在の実装では以下のように処理する。
+
+```text
+GetFileSettings
+        ↓
+File Type取得
+        ↓
+0x00 / 0x01
+        → ReadData (0xBD)
+
+0x03 / 0x04
+        → ReadRecords (0xBB)
+
+0x02
+        → Value File読み取り (0x6C)
+```
+
+読み取りパラメータはStandard Data Fileの場合、
+
+```text
+[File ID]
+[Offset 3 byte]
+[Length 3 byte]
+```
+
+として構成する。
+
+全体読み取りではOffsetとLengthをすべて `0x00` とする。
+
+```text
+File ID
+00 00 00
+00 00 00
+```
+
+---
+
+# エンディアン
+
+Clipperの数値データは基本的にビッグエンディアンで保存される。
+
+16bit：
+
+```text
+value =
+    byte[0] << 8
+    | byte[1]
+```
+
+32bit：
+
+```text
+value =
+    byte[0] << 24
+    | byte[1] << 16
+    | byte[2] << 8
+    | byte[3]
+```
+
+実装：
+
+```swift
+private func clipper_be16(
+    _ b: [UInt8],
+    _ o: Int
+) -> UInt16 {
+    (UInt16(b[o]) << 8)
+    | UInt16(b[o + 1])
+}
+
+private func clipper_be32(
+    _ b: [UInt8],
+    _ o: Int
+) -> UInt32 {
+    (UInt32(b[o]) << 24)
+    | (UInt32(b[o + 1]) << 16)
+    | (UInt32(b[o + 2]) << 8)
+    | UInt32(b[o + 3])
+}
+```
+
+---
+
+# 日時データ
+
+Clipperの日時は、1900年1月1日00:00:00 UTCを基準とした秒数として保存される。
+
+```text
+timestamp =
+    1900-01-01 00:00:00 UTCからの経過秒数
+```
+
+UNIX Epochとの差は、
+
+```text
+2,208,988,800秒
+```
+
+である。
+
+したがって、Swiftの `Date` へ変換する場合：
+
+```text
+unixTime =
+    timestamp - 2,208,988,800
+```
+
+実装：
+
+```swift
+private let clipperEpochOffset: TimeInterval =
+    2_208_988_800
+
+let date = Date(
+    timeIntervalSince1970:
+        TimeInterval(seconds) - clipperEpochOffset
+)
+```
+
+---
+
+# 日時表示
+
+内部データ自体は1900年Epoch基準だが、現在の実装では表示用の `DateComponents` を `America/Los_Angeles` タイムゾーンで生成する。
+
+```swift
+private func clipper_calendar() -> Calendar {
+    var cal = Calendar(identifier: .gregorian)
+    cal.timeZone =
+        TimeZone(identifier: "America/Los_Angeles")
+        ?? .current
+    return cal
+}
+```
+
+したがって、
+
+```text
+カード内 timestamp
+        ↓
+1900-01-01 UTC基準の秒数
+        ↓
+Swift Date
+        ↓
+America/Los_Angeles
+        ↓
+DateComponents
+```
+
+という変換になる。
+
+---
+
+# File 0x02 — 残高
+
+File `0x02` から現在残高を取得する。
+
+| バイト | 内容 |
 |---|---|
-|`4 ~ 7`|最終利用時刻|
-|`18 ~ 19`|残高|
-|その他|未確認|
+| `4 ~ 7` | 最終利用時刻 |
+| `18 ~ 19` | 現在残高 |
+| その他 | 現在の実装では未使用 |
 
-### 最終利用時刻
+## 残高
 
-`4 ~ 7`の4バイトをビッグエンディアンとして取得する。
+`18 ~ 19` を16bit整数として取得する。
+
+ただし、残高は符号付き16bit値として扱う。
 
 ```text
-timestamp = byte[4] × 256³
-          + byte[5] × 256²
-          + byte[6] × 256
-          + byte[7]
+raw = byte[18] << 8
+    | byte[19]
+
+balanceCents =
+    Int16(bitPattern: raw)
 ```
 
-Clipperの日時は1900年1月1日00:00:00 UTCからの秒数として保存される。
+実装：
 
-```text
-date = 1900-01-01 00:00:00 UTC + timestamp秒
+```swift
+let balanceCents =
+    Int(
+        Int16(
+            bitPattern:
+                clipper_be16(bb, 18)
+        )
+    )
 ```
 
-### 残高
+このため、マイナス残高にも対応する。
 
-`18 ~ 19`の2バイトをビッグエンディアンとして取得する。
+例えば、
 
 ```text
-balanceRaw = byte[18] × 256 + byte[19]
+FF F1
 ```
 
-残高はセント単位で保存されている。
+は符号付き16bitでは、
 
 ```text
-balance = balanceRaw / 100
+-15
+```
+
+となる。
+
+したがって、
+
+```text
+balance = -15 cents
+        = -$0.15
+```
+
+となる。
+
+通常の残高表示はセントを100で割る。
+
+```text
+balance =
+    balanceCents / 100
 ```
 
 例えば、
 
 ```text
-0x04D2
+04 D2
 ```
 
 の場合、
@@ -205,687 +418,1375 @@ balance = balanceRaw / 100
 0x04D2 = 1234
 ```
 
-となるため、
+なので、
 
 ```text
-balance = $12.34
+$12.34
 ```
 
 となる。
 
 ---
 
-# チャージ履歴
+# File 0x02 — 最終利用時刻
 
-## File 0x04
-
-チャージ履歴を取得する。
-
-|項目|値|
-|---|---|
-|File ID|`0x04`|
-|内容|チャージ履歴|
-|レコード長|32B|
-|形式|通常データファイル|
-
-File `0x04`はDESFireのRecord Fileではなく通常データファイルとして扱われる。
-
-そのため、データ全体を取得した後、32バイト単位で分割してレコードとして解析する。
-
-### データ構造
-
-|バイト|内容|
-|---|---|
-|`2 ~ 3`|交通事業者ID|
-|`4 ~ 7`|チャージ日時|
-|`8 ~ 11`|端末ID|
-|`14 ~ 15`|チャージ金額|
-|その他|未確認|
-
-### 交通事業者ID
-
-`2 ~ 3`の2バイトをビッグエンディアンとして取得する。
+`4 ~ 7` の4バイトをビッグエンディアンとして取得する。
 
 ```text
-agency = byte[2] × 256 + byte[3]
+timestamp =
+    byte[4] << 24
+    | byte[5] << 16
+    | byte[6] << 8
+    | byte[7]
 ```
 
-### チャージ日時
-
-`4 ~ 7`の4バイトをビッグエンディアンとして取得する。
+変換：
 
 ```text
-timestamp = byte[4] × 256³
-          + byte[5] × 256²
-          + byte[6] × 256
-          + byte[7]
+1900-01-01 00:00:00 UTC
+        +
+timestamp秒
 ```
 
-日時は1900年1月1日を基準とする。
+ただし、現在の実装ではこのFileから取得した最終利用時刻を `ResultCardInfo` の `validDate` などへ格納してはいない。
 
-```text
-date = 1900-01-01 00:00:00 UTC + timestamp秒
-```
-
-### 端末ID
-
-`8 ~ 11`の4バイトをビッグエンディアンとして取得する。
-
-```text
-machineId = byte[8] × 256³
-          + byte[9] × 256²
-          + byte[10] × 256
-          + byte[11]
-```
-
-端末IDは16進数で表示することもできる。
-
-### チャージ金額
-
-`14 ~ 15`の2バイトをビッグエンディアンとして取得する。
-
-```text
-amountRaw = byte[14] × 256 + byte[15]
-```
-
-単位はセント。
-
-```text
-amount = amountRaw / 100
-```
-
-### レコード取得
-
-File全体を取得した後、末尾から32バイトずつ逆方向に解析する。
-
-```text
-position = data.count - 32
-
-while position > 0
-    record = data[position ..< position + 32]
-    position -= 32
-```
-
-タイムスタンプが`0`のレコードは無効なレコードとして除外する。
-
-解析後、日時の新しい順に並べる。
+現在の `Result` では、履歴の日時は `File 0x04` / `File 0x0E` から取得している。
 
 ---
 
-# 乗車履歴
+# File 0x08 — Clipper内部シリアル
 
-## File 0x0E
+File `0x08` からClipper内部のカードシリアル番号を取得する。
 
-乗車履歴を取得する。
-
-|項目|値|
+| バイト | 内容 |
 |---|---|
-|File ID|`0x0E`|
-|内容|乗車履歴|
-|レコード長|32B|
-|形式|通常データファイル|
+| `1 ~ 4` | シリアル番号 |
+| その他 | 現在の実装では未使用 |
 
-File `0x0E`もDESFireのRecord Fileではなく通常データファイルとして扱われる。
-
-そのため、File全体を取得した後、32バイト単位でレコードを解析する。
-
-### データ構造
-
-|バイト|内容|
-|---|---|
-|`1`|乗換カウンタ|
-|`2 ~ 3`|交通事業者ID|
-|`4 ~ 5`|乗換関連情報|
-|`6 ~ 7`|運賃|
-|`8 ~ 9`|Validation / Subscriptionへのポインタ|
-|`10 ~ 11`|車両番号|
-|`12 ~ 15`|乗車日時|
-|`16 ~ 19`|降車日時|
-|`20 ~ 21`|乗車駅ID|
-|`22 ~ 23`|降車駅ID|
-|`24 ~ 27`|未確認|
-|`28 ~ 29`|路線ID|
-|`30 ~ 31`|交通手段コード|
-
-### 乗換カウンタ
+`1 ~ 4` をビッグエンディアンの32bit整数として取得する。
 
 ```text
-transferCounter = byte[1]
+serial =
+    byte[1] << 24
+    | byte[2] << 16
+    | byte[3] << 8
+    | byte[4]
 ```
 
-### 交通事業者ID
+現在の実装では10進数文字列として `ResultCardInfo.serial` に格納する。
 
-`2 ~ 3`の2バイトをビッグエンディアンとして取得する。
-
-```text
-agency = byte[2] × 256 + byte[3]
+```swift
+serial =
+    String(
+        clipper_be32(
+            [UInt8](d),
+            1
+        )
+    )
 ```
 
-交通事業者IDが`0`の場合、そのレコードは無効として除外する。
+---
 
-### 運賃
+# NFC UID
 
-`6 ~ 7`の2バイトをビッグエンディアンとして取得する。
+Clipper内部シリアルとは別に、CoreNFCから取得したカードUIDを `ResultCardInfo.idm` に使用する。
+
+UIDはバイト列を2桁の16進数文字列として連結する。
+
+```swift
+let uid =
+    identifier
+        .map {
+            String(
+                format: "%02X",
+                $0
+            )
+        }
+        .joined()
+```
+
+例えば、
 
 ```text
-fareRaw = byte[6] × 256 + byte[7]
+04 A1 B2 C3 D4 E5 F6
+```
+
+の場合、
+
+```text
+04A1B2C3D4E5F6
+```
+
+となる。
+
+したがって、
+
+| ResultCardInfo | 内容 |
+|---|---|
+| `idm` | NFCカードUID |
+| `serial` | File `0x08` の内部シリアル番号 |
+
+となる。
+
+---
+
+# File 0x01 — 有効期限
+
+File `0x01` からカード有効期限を取得する。
+
+| バイト | 内容 |
+|---|---|
+| `8 ~ 9` | 基準日からの日数 |
+| その他 | 現在の実装では未使用 |
+
+`8 ~ 9` をビッグエンディアンの16bit整数として取得する。
+
+```text
+days =
+    byte[8] << 8
+    | byte[9]
+```
+
+この値を1900年1月1日からの日数としてDateへ変換する。
+
+```text
+date =
+    1900-01-01
+    +
+    days日
+```
+
+実装ではまずUTCとして年月日を取得し、その年月日だけを使って端末側のCalendarで `Date` を生成する。
+
+これは「暦日」として保存されている値によるタイムゾーン起因の日付ずれを避けるためである。
+
+```swift
+let days =
+    clipper_be16(
+        [UInt8](d),
+        8
+    )
+
+let utcDate =
+    Date(
+        timeIntervalSince1970:
+            TimeInterval(days) * 86_400
+            - clipperEpochOffset
+    )
+
+var utc =
+    Calendar(identifier: .gregorian)
+
+utc.timeZone =
+    TimeZone(identifier: "UTC")
+    ?? .current
+
+let ymd =
+    utc.dateComponents(
+        [.year, .month, .day],
+        from: utcDate
+    )
+
+expiry =
+    Calendar(
+        identifier: .gregorian
+    ).date(
+        from: ymd
+    )
+```
+
+取得した有効期限は `issueInfo(... expiry:)` に渡される。
+
+---
+
+# File 0x04 — チャージ履歴
+
+File `0x04` は現在の実機実装では **Cyclic Record File** として扱われる。
+
+そのため、GetFileSettingsでFile Type `0x04` を検出した場合、`ReadRecords (0xBB)` を使用する。
+
+```text
+File 0x04
+        ↓
+GetFileSettings (0xF5)
+        ↓
+File Type = 0x04
+        ↓
+ReadRecords (0xBB)
+```
+
+チャージ履歴は32バイト単位のレコードとして解析する。
+
+---
+
+# File 0x04 — チャージレコード構造
+
+| バイト | 内容 |
+|---|---|
+| `2 ~ 3` | 交通事業者ID |
+| `4 ~ 7` | チャージ日時 |
+| `8 ~ 11` | 端末ID |
+| `14 ~ 15` | チャージ金額 |
+| その他 | 現在の実装では未使用 |
+
+---
+
+# File 0x04 — 交通事業者ID
+
+`2 ~ 3` の2バイトをビッグエンディアンとして取得する。
+
+```text
+agency =
+    byte[2] << 8
+    | byte[3]
+```
+
+---
+
+# File 0x04 — チャージ日時
+
+`4 ~ 7` の4バイトをビッグエンディアンとして取得する。
+
+```text
+timestamp =
+    byte[4] << 24
+    | byte[5] << 16
+    | byte[6] << 8
+    | byte[7]
+```
+
+`timestamp == 0` のレコードは無効として除外する。
+
+```swift
+let time =
+    clipper_be32(r, 4)
+
+guard time != 0 else {
+    continue
+}
+```
+
+---
+
+# File 0x04 — 端末ID
+
+`8 ~ 11` の4バイトをビッグエンディアンとして取得する。
+
+```text
+machineId =
+    byte[8] << 24
+    | byte[9] << 16
+    | byte[10] << 8
+    | byte[11]
+```
+
+現在の `ClipperEvent` には端末IDを保持するフィールドが存在しないため、読み取り後の `ResultHistory` には格納していない。
+
+---
+
+# File 0x04 — チャージ金額
+
+`14 ~ 15` の2バイトをビッグエンディアンとして取得する。
+
+```text
+amountCents =
+    byte[14] << 8
+    | byte[15]
 ```
 
 単位はセント。
 
 ```text
-fare = fareRaw / 100
+amount =
+    amountCents / 100
 ```
 
-### 乗車日時
+チャージは履歴上の金額を正数として扱う。
 
-`12 ~ 15`の4バイトをビッグエンディアンとして取得する。
+```swift
+amountCents:
+    +amount
+```
+
+---
+
+# File 0x0E — 乗車履歴
+
+File `0x0E` はStandard Data Fileとして扱う。
+
+実機では512バイトのFileとして取得され、32バイト単位で16レコードに分割する。
 
 ```text
-entryTimestamp = byte[12] × 256³
-               + byte[13] × 256²
-               + byte[14] × 256
-               + byte[15]
+512 bytes
+    ↓
+32 bytes × 16 records
 ```
 
-Clipperの時間形式へ変換する。
+読み取り：
 
 ```text
-entryDate = 1900-01-01 00:00:00 UTC + entryTimestamp秒
+GetFileSettings
+        ↓
+File Type = Standard / Backup
+        ↓
+ReadData (0xBD)
+        ↓
+File全体
+        ↓
+32byte単位に分割
 ```
 
-### 降車日時
+---
 
-`16 ~ 19`の4バイトをビッグエンディアンとして取得する。
+# File 0x0E — レコード構造
+
+| バイト | 内容 |
+|---|---|
+| `1` | 乗換カウンタ |
+| `2 ~ 3` | 交通事業者ID |
+| `4 ~ 5` | 乗換関連情報 |
+| `6 ~ 7` | 運賃 |
+| `8 ~ 9` | Validation / Subscription関連ポインタ |
+| `10 ~ 11` | 車両番号 |
+| `12 ~ 15` | 入場日時 |
+| `16 ~ 19` | 出場日時 |
+| `20 ~ 21` | 乗車駅ID |
+| `22 ~ 23` | 降車駅ID |
+| `24 ~ 27` | 未使用 / 未確認 |
+| `28 ~ 29` | 路線ID |
+| `30 ~ 31` | 交通種別 |
+
+現在の実装で `ResultHistory` に利用しているのは主に以下。
 
 ```text
-exitTimestamp = byte[16] × 256³
-              + byte[17] × 256²
-              + byte[18] × 256
-              + byte[19]
+2 ~ 3    交通事業者
+6 ~ 7    運賃
+12 ~ 15  入場日時
+16 ~ 19  出場日時
+20 ~ 21  乗車駅
+22 ~ 23  降車駅
+28 ~ 29  路線
+30 ~ 31  交通種別
 ```
 
-降車データが存在しない場合もある。
+---
 
-その場合は降車日時を未設定として扱う。
+# File 0x0E — 交通事業者ID
 
-### 乗車駅
-
-`20 ~ 21`の2バイトをビッグエンディアンとして取得する。
+`2 ~ 3` をビッグエンディアンとして取得する。
 
 ```text
-from = byte[20] × 256 + byte[21]
+agency =
+    byte[2] << 8
+    | byte[3]
 ```
 
-### 降車駅
+交通事業者IDが `0` のレコードは無効として除外する。
 
-`22 ~ 23`の2バイトをビッグエンディアンとして取得する。
+```swift
+let agency =
+    clipper_be16(r, 2)
+
+guard agency != 0 else {
+    continue
+}
+```
+
+---
+
+# File 0x0E — 運賃
+
+`6 ~ 7` をビッグエンディアンとして取得する。
 
 ```text
-to = byte[22] × 256 + byte[23]
+fareCents =
+    byte[6] << 8
+    | byte[7]
 ```
 
-降車処理を必要としない交通機関では、降車駅が存在しない場合がある。
+履歴上では運賃を支出として扱うため、`ClipperEvent.amountCents` には負数で格納する。
 
-### 路線ID
+```swift
+amountCents:
+    -Int(clipper_be16(r, 6))
+```
 
-`28 ~ 29`の2バイトをビッグエンディアンとして取得する。
+例えば、
 
 ```text
-route = byte[28] × 256 + byte[29]
+0x011D
 ```
 
-### 交通手段コード
-
-`30 ~ 31`の2バイトをビッグエンディアンとして取得する。
+なら、
 
 ```text
-transportCode = byte[30] × 256 + byte[31]
+285 cents
 ```
 
-現在、具体的なコード一覧は未確認。
+なので、
+
+```text
+amountCents = -285
+amount = -$2.85
+```
+
+となる。
+
+---
+
+# File 0x0E — 入場日時
+
+`12 ~ 15` の4バイトをビッグエンディアンとして取得する。
+
+```text
+entryTimestamp =
+    byte[12] << 24
+    | byte[13] << 16
+    | byte[14] << 8
+    | byte[15]
+```
+
+`entryTimestamp == 0` のレコードは無効として除外する。
+
+```swift
+let entry =
+    clipper_be32(r, 12)
+
+guard entry != 0 else {
+    continue
+}
+```
+
+---
+
+# File 0x0E — 出場日時
+
+`16 ~ 19` の4バイトをビッグエンディアンとして取得する。
+
+```text
+exitTimestamp =
+    byte[16] << 24
+    | byte[17] << 16
+    | byte[18] << 8
+    | byte[19]
+```
+
+出場日時が `0` の場合がある。
+
+現在の重複排除処理では、
+
+```text
+exit != 0
+```
+
+を「出場情報を持つ確定済みレコード」として扱う。
+
+---
+
+# File 0x0E — 乗車駅
+
+`20 ~ 21` をビッグエンディアンとして取得する。
+
+```text
+stationIn =
+    byte[20] << 8
+    | byte[21]
+```
+
+---
+
+# File 0x0E — 降車駅
+
+`22 ~ 23` をビッグエンディアンとして取得する。
+
+```text
+stationOut =
+    byte[22] << 8
+    | byte[23]
+```
+
+---
+
+# File 0x0E — 路線ID
+
+`28 ~ 29` をビッグエンディアンとして取得する。
+
+```text
+route =
+    byte[28] << 8
+    | byte[29]
+```
+
+内部的には16bitの `route` として保持する。
+
+`ResultHistory` は路線情報を8bitずつに分けて格納するため、現在の実装では、
+
+```text
+lineIn  = routeの上位8bit
+lineOut = routeの下位8bit
+```
+
+としている。
+
+```swift
+lineIn =
+    UInt8(e.route >> 8)
+
+lineOut =
+    UInt8(truncatingIfNeeded: e.route)
+```
+
+---
+
+# File 0x0E — 交通種別
+
+`30 ~ 31` をビッグエンディアンとして取得する。
+
+```text
+transport =
+    byte[30] << 8
+    | byte[31]
+```
+
+`ClipperEvent.transport` にそのまま16bit値として保持する。
+
+```swift
+transport:
+    clipper_be16(r, 30)
+```
+
+---
+
+# processType / processType4
+
+`ResultHistory` では、Clipper固有の情報を以下の形式で格納する。
+
+```text
+processType
+    0x01 = チャージ
+    0x02 = 乗車 / トリップ
+
+processType4
+    上位16bit = 交通事業者ID
+    下位16bit = 交通種別
+```
+
+生成：
+
+```swift
+processType4 =
+    (UInt32(e.agency) << 16)
+    | UInt32(e.transport)
+```
+
+したがって、
+
+```text
+processType4
+    = [agency: 16bit][transport: 16bit]
+```
+
+という構造になる。
+
+---
+
+# 交通事業者コード
+
+現在のConverterで名称表示に対応している事業者コードは以下。
+
+| コード | 事業者 |
+|---|---|
+| `0x01` | AC Transit |
+| `0x04` | BART |
+| `0x06` | Caltrain |
+| `0x08` | County Connection |
+| `0x0B` | Golden Gate Transit |
+| `0x0F` | SamTrans |
+| `0x11` | VTA |
+| `0x12` | Muni |
+| `0x19` | Golden Gate Ferry |
+| `0x1B` | SF Bay Ferry |
+
+未対応のコードは空文字列として扱う。
+
+---
+
+# 交通種別コード
+
+現在のConverterでは以下の交通種別を表示対象としている。
+
+| コード | 表示分類 | 備考 |
+|---|---|---|
+| `0x6F` | 鉄道 | BART / Muni Metroで実機確認 |
+| `0x62` | 鉄道 | 現在のConverterで鉄道として処理 |
+| `0x61` | バス | 現在のConverterでバスとして処理 |
+| `0x75` | バス | 現在のConverterでバスとして処理 |
+| `0x77` | バス | Muni / Golden Gate Transitで実機確認 |
+| `0x73` | フェリー | 現在のConverterでフェリーとして処理 |
+
+その他のコードは未分類として扱う。
 
 ---
 
 # 乗車履歴の重複排除
 
-同一の乗車について、入場時の一時的なレコードと、降車情報を含む更新後のレコードが存在する場合がある。
+Clipperでは、タップオン時点の暫定レコードと、タップオフ後に確定したレコードが同じ入場時刻を持って存在する場合がある。
 
-同一の乗車時刻を持つレコードが複数存在する場合、降車日時を持つレコードを優先する。
+そのため、現在の実装では `entryTimestamp` が同じレコードを重複候補として扱う。
 
-### 処理
+処理順序はFile内の最新側から行う。
 
 ```text
-同一timestampのレコードを検索
-        ↓
+File 0x0E
+    ↓
+32byteレコードへ分割
+    ↓
+reversed()
+    ↓
+新しいレコードから解析
+```
+
+同一 `entryTimestamp` が存在する場合：
+
+```text
 既存レコードなし
         ↓
-新しいレコードを追加
+追加
 
 既存レコードあり
         ↓
-既存レコードに降車日時あり？
+既存レコードに出場日時あり？
         ↓
-はい → 新しいレコードを破棄
-        ↓
-いいえ
-        ↓
+YES
+    ↓
+新しいレコードを破棄
+
+NO
+    ↓
 既存レコードを削除
-        ↓
+    ↓
 新しいレコードを追加
 ```
 
-最後に日時の順番でソートする。
+実装：
+
+```swift
+if let index = parsed.firstIndex(where: {
+    $0.event.time == event.time
+}) {
+    if parsed[index].hasExit {
+        continue
+    }
+
+    parsed.remove(at: index)
+}
+
+parsed.append((
+    event: event,
+    hasExit: exit != 0
+))
+```
+
+ここで、
+
+```text
+hasExit = exit != 0
+```
+
+である。
 
 ---
 
-# Validation / Subscription
+# 履歴の統合
 
-## File 0x0F
+チャージ履歴と乗車履歴は一度 `ClipperEvent` に変換する。
 
-ValidationおよびSubscriptionに関する情報を取得する。
+```text
+File 0x04
+    ↓
+チャージイベント
 
-|項目|値|
-|---|---|
-|File ID|`0x0F`|
-|内容|Validation / Subscription|
-|レコード長|32B|
-|形式|通常データファイル|
+File 0x0E
+    ↓
+乗車イベント
 
-Validationレコードは32バイト単位で保存される。
+        ↓
 
-`2 ~ 3`バイトによってレコード形式を判定する。
+ClipperEvent[]
+
+        ↓
+
+日時でソート
+
+        ↓
+
+ResultHistory[]
+```
+
+`ClipperEvent` の構造：
+
+```swift
+struct ClipperEvent {
+    let time: UInt32
+    let kind: UInt8
+    let amountCents: Int
+    let agency: UInt16
+    let transport: UInt16
+    let route: UInt16
+    let stationIn: UInt16
+    let stationOut: UInt16
+    let seq: Int
+}
+```
+
+`kind` は、
+
+```text
+0x01 = チャージ
+0x02 = 乗車
+```
+
+である。
 
 ---
 
-## Format 0x7000
+# 履歴の並び順
 
-|バイト|内容|
-|---|---|
-|`0 ~ 1`|`0x2000`または`0x20F0`|
-|`2 ~ 3`|`0x7000`|
-|`4 ~ 5`|日付|
-|`6 ~ 7`|`0xFF`|
-|`8 ~ 11`|乗車日時|
-|`12 ~ 13`|乗車駅ID|
-|`14 ~ 31`|`0xFF`|
+すべてのイベントを日時の新しい順に並べる。
 
-### 有効期限
-
-`4 ~ 5`の2バイトは1900年1月1日を基準とした日数。
-
-この値に1806日を加えた値が有効期限に相当する。
-
-```text
-expiryDate = 1900-01-01 + date + 1806日
+```swift
+events.sort {
+    $0.time != $1.time
+        ? $0.time > $1.time
+        : $0.seq < $1.seq
+}
 ```
 
-### 乗車日時
-
-`8 ~ 11`の4バイトをビッグエンディアンとして取得する。
+したがって、
 
 ```text
-timestamp = byte[8] × 256³
-          + byte[9] × 256²
-          + byte[10] × 256
-          + byte[11]
+新しいイベント
+        ↓
+古いイベント
 ```
 
-### 乗車駅
+の順になる。
 
-`12 ~ 13`の2バイトをビッグエンディアンとして取得する。
-
-```text
-station = byte[12] × 256 + byte[13]
-```
+同一時刻の場合は `seq` によって順序を決定する。
 
 ---
-
-## Format 0x8000
-
-|バイト|内容|
-|---|---|
-|`0 ~ 1`|`0x2000`|
-|`2 ~ 3`|`0x3000`|
-|`4 ~ 5`|将来の日付|
-|`14 ~ 15`|過去の日付|
-|その他|未確認|
-
-`4 ~ 5`および`14 ~ 15`は1900年1月1日を基準とした日数として保存されている。
-
-その他のフィールドについては、現時点では具体的な意味を確定しない。
-
-
-# File 0x05
-
-File `0x05`はポインタ情報を保持していると考えられる。
-
-|File ID|内容|
-|---|---|
-|`0x05`|ポインタ情報|
-
-具体的なデータ構造は未確認。
-
-現時点ではカード残高・カード番号・履歴の解析には使用しない。
-
-
-# File 0x06
-
-File `0x06`もポインタ情報を保持していると考えられる。
-
-|File ID|内容|
-|---|---|
-|`0x06`|ポインタ情報|
-
-具体的なデータ構造は未確認。
-
-現時点ではカード残高・カード番号・履歴の解析には使用しない。
-
-
-# 日時データ
-
-Clipperでは日時を1900年1月1日00:00:00 UTCからの秒数として保存する。
-
-```text
-timestamp = 1900-01-01 00:00:00 UTCからの秒数
-```
-
-日時への変換：
-
-```text
-date = 1900-01-01 00:00:00 UTC + timestamp秒
-```
-
-カード内の数値はビッグエンディアンで保存される。
-
 
 # 残高計算
 
-File `0x02`には現在のカード残高が保存されている。
+現在残高はFile `0x02` から取得する。
 
-File `0x0E`の乗車履歴には運賃が保存されている。
+履歴については現在残高から過去方向へ処理する。
 
-File `0x04`にはチャージ履歴が保存されている。
+各イベントには「そのイベント後の残高」を設定する。
 
-そのため、履歴ごとの残高を表示する場合は、現在残高から過去方向へ運賃・チャージを逆算する。
+初期値：
 
-### 計算方法
+```text
+running =
+    現在残高
+```
 
-1. File `0x02`から現在残高を取得
-2. File `0x0E`から乗車履歴を取得
-3. File `0x04`からチャージ履歴を取得
-4. 両方を日時順に並べる
-5. 最新の履歴から過去方向へ処理する
-6. チャージを過去方向へ戻す場合は残高からチャージ額を減算
-7. 乗車を過去方向へ戻す場合は残高に運賃を加算
-8. 各乗車履歴の残高を保存する
+最新イベントから順に処理：
 
 ```text
 現在残高
     ↓
-最新の乗車履歴
+最新イベント
     ↓
-乗車前残高を保存
+そのイベント後の残高として保存
     ↓
-運賃を加算して過去へ戻る
+イベント金額を逆算
     ↓
-チャージ履歴があればチャージ額を減算
-    ↓
-次の乗車履歴
-    ↓
-繰り返し
+次のイベント
 ```
 
-実装上は、日時の新しい順に並んだ乗車履歴とチャージ履歴を使用する。
+実装：
 
+```swift
+var running = currentBalanceCents
 
-# 履歴データ
+for e in events {
+    logs.append(
+        ResultHistory(
+            processType: e.kind,
+            processType4:
+                (UInt32(e.agency) << 16)
+                | UInt32(e.transport),
+            date: clipper_components(e.time),
+            balance:
+                Double(running) / 100.0,
+            amount:
+                Double(e.amountCents) / 100.0,
+            lineIn:
+                UInt8(e.route >> 8),
+            stationIn:
+                UInt8(
+                    truncatingIfNeeded:
+                        e.stationIn
+                ),
+            lineOut:
+                UInt8(
+                    truncatingIfNeeded:
+                        e.route
+                ),
+            stationOut:
+                UInt8(
+                    truncatingIfNeeded:
+                        e.stationOut
+                ),
+            transactionId:
+                e.seq
+        )
+    )
 
-Clipperの履歴は主に以下の2種類に分類される。
+    running -= e.amountCents
+}
+```
 
-|File ID|内容|
+重要なのは、チャージは正数、乗車は負数として `amountCents` に格納されていることである。
+
+したがって、
+
+```text
+チャージ
+amountCents = +2000
+
+乗車
+amountCents = -285
+```
+
+の場合、
+
+```text
+running -= amountCents
+```
+
+によって、
+
+```text
+チャージ
+    → 過去方向へ2000セント減算
+
+乗車
+    → 過去方向へ285セント加算
+```
+
+となり、過去の残高を逆算できる。
+
+---
+
+# 履歴件数
+
+スキャン設定ではClipperの履歴件数を20件としている。
+
+```swift
+historyCount: 20
+```
+
+履歴解析後、最終的に最大 `historyCount` 件を返す。
+
+```swift
+return Array(
+    logs.prefix(
+        max(limit, 1)
+    )
+)
+```
+
+したがって通常は20件が上限となる。
+
+---
+
+# ResultHistoryへの変換
+
+チャージ：
+
+```text
+processType = 0x01
+processType4 =
+    agency << 16
+amount =
+    +チャージ額
+```
+
+乗車：
+
+```text
+processType = 0x02
+processType4 =
+    agency << 16 | transport
+amount =
+    -運賃
+```
+
+駅・路線については、
+
+```text
+route 16bit
+    ↓
+lineIn  = 上位8bit
+lineOut = 下位8bit
+
+stationIn 16bit
+    ↓
+stationIn = 下位8bit
+
+stationOut 16bit
+    ↓
+stationOut = 下位8bit
+```
+
+として `ResultHistory` に格納する。
+
+---
+
+# Converter
+
+Clipperの `ResultHistory` は `usClipper_Converter` によって表示用の文字列へ変換される。
+
+```swift
+static func history(
+    _ history: ResultHistory
+) -> DisplayHistory {
+    DisplayHistory(
+        date: formatDate(history.date),
+        processType: convertProcessType(
+            history.processType ?? 0,
+            UInt32(history.processType4 ?? 0)
+        ),
+        balance: Double(history.balance)
+    )
+}
+```
+
+日時は、
+
+```text
+YYYY/M/D HH:mm
+```
+
+形式で表示する。
+
+---
+
+# チャージ表示
+
+`processType == 0x01` の場合はチャージとして表示する。
+
+`processType4` の上位16bitから事業者IDを取得する。
+
+```text
+agency =
+    (processType4 >> 16) & 0xFFFF
+```
+
+表示例：
+
+```text
+Charge (BART)
+```
+
+---
+
+# 乗車表示
+
+`processType == 0x02` の場合は交通種別と事業者を組み合わせて表示する。
+
+```text
+processType4
+        ↓
+上位16bit
+        ↓
+agency
+
+下位16bit
+        ↓
+transport
+```
+
+交通種別が判明している場合：
+
+```text
+鉄道 (BART)
+バス (Muni)
+フェリー (SF Bay Ferry)
+```
+
+などとして表示する。
+
+交通種別が未分類の場合は、対応する事業者名のみを使用する。
+
+---
+
+# カード情報
+
+スキャン完了時には以下を `Result` に格納する。
+
+```text
+balance
+isHistory
+history
+info
+converter
+isLastHide
+description
+savedAt
+```
+
+現在の実装：
+
+```swift
+self.result = Result(
+    balance:
+        Double(balanceCents) / 100.0,
+    isHistory: true,
+    history: history,
+    info: info,
+    converter:
+        usClipper.scanOption.converter,
+    isLastHide: false,
+    description:
+        usClipper.scand_description,
+    savedAt: Date.now
+)
+```
+
+---
+
+# カード情報取得フロー
+
+```text
+Clipper Application
+        ↓
+File 0x08
+        ↓
+Clipper内部シリアル取得
+
+File 0x01
+        ↓
+カード有効期限取得
+
+File 0x02
+        ↓
+現在残高取得
+
+NFC UID
+        ↓
+ResultCardInfo.idm
+```
+
+---
+
+# 履歴取得フロー
+
+```text
+Clipper Application
+        ↓
+File 0x04
+        ↓
+チャージ履歴
+        ↓
+ClipperEvent
+
+Clipper Application
+        ↓
+File 0x0E
+        ↓
+乗車履歴
+        ↓
+重複排除
+        ↓
+ClipperEvent
+
+        ↓
+
+両方を統合
+
+        ↓
+
+新しい順にソート
+
+        ↓
+
+現在残高から過去方向へ残高を逆算
+
+        ↓
+
+ResultHistory[]
+```
+
+---
+
+# カード読み取りフロー
+
+```mermaid
+graph LR;
+    A["NFC Type-Aカード"] --> B{"DESFire?"};
+    B -- "いいえ" --> Z["読み取り失敗"];
+    B -- "はい" --> C["SelectApplication 0x5A"];
+    C --> D["AID 90 11 F2"];
+    D --> E{"Application選択成功?"};
+    E -- "いいえ" --> Z;
+    E -- "はい" --> F["Clipper Application"];
+    F --> G["File 0x02"];
+    G --> H["現在残高"];
+    F --> I["File 0x08"];
+    I --> J["内部シリアル"];
+    F --> K["File 0x01"];
+    K --> L["有効期限"];
+    F --> M["File 0x04"];
+    M --> N["チャージ履歴"];
+    F --> O["File 0x0E"];
+    O --> P["乗車履歴"];
+    N --> Q["履歴統合"];
+    P --> Q;
+    Q --> R["残高逆算"];
+    R --> S["Result"];
+```
+
+---
+
+# Application選択
+
+```mermaid
+graph LR;
+    A["DESFire検出"] --> B["INS 0x5A"];
+    B --> C["Data = 90 11 F2"];
+    C --> D{"SW = 91 00?"};
+    D -- "はい" --> E["Clipper Application選択成功"];
+    D -- "いいえ" --> F["Clipperではない / 読み取り失敗"];
+```
+
+---
+
+# File読み取り
+
+```mermaid
+graph LR;
+    A["File ID"] --> B["GetFileSettings 0xF5"];
+    B --> C{"File Type"};
+    C -- "0x00 / 0x01" --> D["ReadData 0xBD"];
+    C -- "0x02" --> E["Value File読み取り"];
+    C -- "0x03 / 0x04" --> F["ReadRecords 0xBB"];
+```
+
+---
+
+# チャージ履歴取得
+
+```mermaid
+graph LR;
+    A["File 0x04"] --> B["Cyclic Record File"];
+    B --> C["ReadRecords 0xBB"];
+    C --> D["32byteレコード"];
+    D --> E["timestamp = byte 4~7"];
+    E --> F{"timestamp = 0?"};
+    F -- "はい" --> G["破棄"];
+    F -- "いいえ" --> H["agency / amountを解析"];
+    H --> I["ClipperEvent"];
+```
+
+---
+
+# 乗車履歴取得
+
+```mermaid
+graph LR;
+    A["File 0x0E"] --> B["ReadData 0xBD"];
+    B --> C["32byte単位に分割"];
+    C --> D["最新側から解析"];
+    D --> E["entry = byte 12~15"];
+    E --> F{"entry = 0?"};
+    F -- "はい" --> G["破棄"];
+    F -- "いいえ" --> H["agency = byte 2~3"];
+    H --> I{"agency = 0?"};
+    I -- "はい" --> G;
+    I -- "いいえ" --> J["運賃・駅・路線・交通種別取得"];
+    J --> K["同一entry timestamp確認"];
+    K --> L["確定レコードを優先"];
+    L --> M["ClipperEvent"];
+```
+
+---
+
+# 履歴統合
+
+```mermaid
+graph LR;
+    A["File 0x04 チャージ"] --> C["ClipperEvent[]"];
+    B["File 0x0E 乗車"] --> C;
+    C --> D["timeで新しい順にソート"];
+    D --> E["現在残高から逆算"];
+    E --> F["ResultHistory[]"];
+```
+
+---
+
+# 残高逆算
+
+```mermaid
+graph LR;
+    A["現在残高"] --> B["最新イベント"];
+    B --> C["イベント後残高として保存"];
+    C --> D["running -= amountCents"];
+    D --> E{"次のイベントあり?"};
+    E -- "はい" --> B;
+    E -- "いいえ" --> F["終了"];
+```
+
+---
+
+# 最終結果
+
+```mermaid
+graph LR;
+    A["Clipper Application"] --> B["File 0x08"];
+    A --> C["File 0x01"];
+    A --> D["File 0x02"];
+    A --> E["File 0x04"];
+    A --> F["File 0x0E"];
+
+    B --> G["内部シリアル"];
+    C --> H["有効期限"];
+    D --> I["現在残高"];
+    E --> J["チャージ履歴"];
+    F --> K["乗車履歴"];
+
+    J --> L["履歴統合"];
+    K --> L;
+    I --> L;
+    L --> M["残高逆算"];
+    G --> N["Result"];
+    H --> N;
+    M --> N;
+```
+
+---
+
+# 実装上のFile対応まとめ
+
+| File | File Type | 読み取り | 主なデータ |
+|---|---|---|---|
+| `0x01` | Standard / Backup | `0xBD` | 有効期限 |
+| `0x02` | Standard / Backup等 | `0xBD`等 | 現在残高 |
+| `0x04` | Cyclic Record | `0x6C` / `0xBB`系処理 | チャージ履歴 |
+| `0x05` | 未使用 | 未使用 | 未解析 |
+| `0x06` | 未使用 | 未使用 | 未解析 |
+| `0x08` | Standard / Backup | `0xBD` | 内部シリアル |
+| `0x0E` | Standard / Backup | `0xBD` | 乗車履歴 |
+| `0x0F` | 未使用 | 未使用 | 未解析 |
+
+なお、`clipper_readFile()` はGetFileSettingsのFile Typeに応じて実際の読み取りコマンドを選択するため、上表は現在の実装での論理的な対応を示す。
+
+---
+
+# Clipperスキャン全体
+
+```text
+NFC Type-A
+    ↓
+MIFARE DESFire判定
+    ↓
+SelectApplication
+    INS = 0x5A
+    AID = 90 11 F2
+    ↓
+Clipper Application
+    │
+    ├── File 0x08
+    │      └── Clipper内部シリアル
+    │
+    ├── File 0x01
+    │      └── 有効期限
+    │
+    ├── File 0x02
+    │      └── 現在残高
+    │
+    ├── File 0x04
+    │      └── チャージ履歴
+    │
+    └── File 0x0E
+           └── 乗車履歴
+                  ↓
+             重複排除
+                  ↓
+             履歴統合
+                  ↓
+             残高逆算
+                  ↓
+             ResultHistory
+                  ↓
+                 Result
+```
+
+---
+
+# ResultCardInfo
+
+現在のClipper実装では以下のようにカード情報を格納する。
+
+| ResultCardInfo | 内容 |
 |---|---|
-|`0x0E`|乗車履歴|
-|`0x04`|チャージ履歴|
+| `idm` | CoreNFCから取得したNFC UID |
+| `name` | Clipper |
+| `nameShort` | Clipper短縮名 |
+| `currencyType` | USD |
+| `type` | 空文字列 |
+| `serial` | File `0x08` byte `1 ~ 4` の32bit値を10進数化 |
+| `version` | `nil` |
+| `validDate` | `nil` |
+| `issueInfo.expiry` | File `0x01`から取得した有効期限 |
 
-乗車履歴は32バイト単位、チャージ履歴も32バイト単位で保存される。
+---
 
-### 乗車履歴
+# ResultHistory
 
-|項目|データ|
-|---|---|
-|日時|`0x0C ~ 0x0F`|
-|降車日時|`0x10 ~ 0x13`|
-|運賃|`0x06 ~ 0x07`|
-|事業者|`0x02 ~ 0x03`|
-|乗車駅|`0x14 ~ 0x15`|
-|降車駅|`0x16 ~ 0x17`|
-|路線|`0x1C ~ 0x1D`|
+現在の実装では以下の情報をResultHistoryへ格納する。
 
-### チャージ履歴
+| ResultHistory | チャージ | 乗車 |
+|---|---|---|
+| `processType` | `0x01` | `0x02` |
+| `processType4` 上位16bit | 事業者ID | 事業者ID |
+| `processType4` 下位16bit | `0` | 交通種別 |
+| `date` | チャージ日時 | 入場日時 |
+| `balance` | イベント後残高 | イベント後残高 |
+| `amount` | 正のチャージ額 | 負の運賃 |
+| `lineIn` | `0` | 路線上位8bit |
+| `stationIn` | `0` | 乗車駅下位8bit |
+| `lineOut` | `0` | 路線下位8bit |
+| `stationOut` | `0` | 降車駅下位8bit |
+| `transactionId` | `100000 + index` | `200000 + index` |
 
-|項目|データ|
-|---|---|
-|日時|`0x04 ~ 0x07`|
-|事業者|`0x02 ~ 0x03`|
-|端末ID|`0x08 ~ 0x0B`|
-|チャージ額|`0x0E ~ 0x0F`|
+---
 
+# 参考
 
-# フロー
+- metrodroid / Clipper
+  https://github.com/metrodroid/metrodroid/wiki/Clipper
 
-## カード読み取り
+実装上の一次資料としては、現在の `TransitICScanner` における以下の処理を基準とする。
 
-```mermaid
-graph LR;
-    A[開始] --> B["NFC Type-Aカード取得"];
-    B --> C{"DESFireカード？"};
-    C -- いいえ --> Z["読み取り失敗"];
-    C -- はい --> D["Application一覧取得"];
-    D --> E["Application 0x9011F2を検索"];
-    E --> F{"Application存在？"};
-    F -- いいえ --> Z;
-    F -- はい --> G["Clipper Application選択"];
-    G --> H["File一覧取得"];
-    H --> I["File 0x08取得"];
-    I --> J["カードシリアル番号取得"];
-    J --> K["File 0x02取得"];
-    K --> L["残高・最終利用日時取得"];
-    L --> M["File 0x04取得"];
-    M --> N["チャージ履歴解析"];
-    N --> O["File 0x0E取得"];
-    O --> P["乗車履歴解析"];
-    P --> Q["File 0x0F取得"];
-    Q --> R["Validation / Subscription解析"];
-    R --> S["履歴統合"];
-    S --> T["残高計算"];
-    T --> U["カード情報・残高・履歴をResultへ格納"];
-    U --> V[終了];
+```text
+SelectApplication
+    INS = 0x5A
+    AID = 90 11 F2
+
+GetFileSettings
+    INS = 0xF5
+
+ReadData
+    INS = 0xBD
+
+ReadRecords
+    INS = 0xBB
+
+Value File read
+    INS = 0x6C
 ```
 
-***
-
-## Application選択
-
-```mermaid
-graph LR;
-    A[開始] --> B["Application一覧取得"];
-    B --> C["AID 0x9011F2を検索"];
-    C --> D{"存在する？"};
-    D -- はい --> E["Application 0x9011F2を選択"];
-    E --> F["Clipperカードとして認識"];
-    D -- いいえ --> G["Clipperではない"];
-```
-
-***
-
-## カード情報取得
-
-```mermaid
-graph LR;
-    A[Application 0x9011F2] --> B["File 0x08"];
-    B --> C["byte 1~4"];
-    C --> D["カードシリアル番号"];
-
-    A --> E["File 0x01"];
-    E --> F["byte 8~9"];
-    F --> G["カード有効期限"];
-
-    A --> H["File 0x02"];
-    H --> I["byte 4~7"];
-    I --> J["最終利用日時"];
-
-    H --> K["byte 18~19"];
-    K --> L["現在残高"];
-```
-
-***
-
-## 乗車履歴取得
-
-```mermaid
-graph LR;
-    A[File 0x0E] --> B["File全体を取得"];
-    B --> C["32バイト単位に分割"];
-    C --> D["最新レコードから解析"];
-    D --> E{"事業者ID = 0？"};
-    E -- はい --> F["レコードを破棄"];
-    E -- いいえ --> G["乗車履歴を作成"];
-    F --> H["次のレコード"];
-    G --> H;
-    H --> I{"未処理レコードあり？"};
-    I -- はい --> D;
-    I -- いいえ --> J["同一timestampを確認"];
-    J --> K["降車情報ありのレコードを優先"];
-    K --> L["日時順にソート"];
-    L --> M[終了];
-```
-
-***
-
-## チャージ履歴取得
-
-```mermaid
-graph LR;
-    A[File 0x04] --> B["File全体を取得"];
-    B --> C["末尾から32バイト単位で取得"];
-    C --> D["チャージレコード解析"];
-    D --> E{"timestamp = 0？"};
-    E -- はい --> F["レコードを破棄"];
-    E -- いいえ --> G["チャージ履歴を作成"];
-    F --> H["次のレコード"];
-    G --> H;
-    H --> I{"未処理レコードあり？"};
-    I -- はい --> C;
-    I -- いいえ --> J["日時の新しい順にソート"];
-    J --> K[終了];
-```
-
-***
-
-## 乗車履歴解析
-
-```mermaid
-graph LR;
-    A[32バイトレコード] --> B["byte 2~3"];
-    B --> C["交通事業者ID"];
-    C --> D["byte 6~7"];
-    D --> E["運賃"];
-    E --> F["byte 12~15"];
-    F --> G["乗車日時"];
-    G --> H["byte 16~19"];
-    H --> I["降車日時"];
-    I --> J["byte 20~21"];
-    J --> K["乗車駅"];
-    K --> L["byte 22~23"];
-    L --> M["降車駅"];
-    M --> N["byte 28~29"];
-    N --> O["路線ID"];
-    O --> P["ResultHistory作成"];
-```
-
-***
-
-## チャージ履歴解析
-
-```mermaid
-graph LR;
-    A[32バイトレコード] --> B["byte 2~3"];
-    B --> C["交通事業者ID"];
-    C --> D["byte 4~7"];
-    D --> E["チャージ日時"];
-    E --> F["byte 8~11"];
-    F --> G["端末ID"];
-    G --> H["byte 14~15"];
-    H --> I["チャージ金額"];
-    I --> J["ResultRefill作成"];
-```
-
-***
-
-## 履歴統合
-
-```mermaid
-graph LR;
-    A[乗車履歴] --> C["履歴統合"];
-    B[チャージ履歴] --> C;
-    C --> D["日時を比較"];
-    D --> E["新しい順にソート"];
-    E --> F["履歴を統合"];
-    F --> G[終了];
-```
-
-***
-
-## 残高計算
-
-```mermaid
-graph LR;
-    A[現在残高] --> B["最新の乗車履歴"];
-    B --> C["乗車前残高を保存"];
-    C --> D["運賃を加算"];
-    D --> E{"過去にチャージあり？"};
-    E -- はい --> F["チャージ額を減算"];
-    E -- いいえ --> G["次の乗車履歴"];
-    F --> G;
-    G --> H{"未処理の乗車履歴あり？"};
-    H -- はい --> B;
-    H -- いいえ --> I[終了];
-```
-
-***
-
-## 最終結果
-
-```mermaid
-graph LR;
-    A[Clipper Application] --> B["File 0x08"];
-    B --> C["カードシリアル番号"];
-
-    A --> D["File 0x01"];
-    D --> E["有効期限"];
-
-    A --> F["File 0x02"];
-    F --> G["現在残高"];
-    F --> H["最終利用日時"];
-
-    A --> I["File 0x0E"];
-    I --> J["乗車履歴"];
-
-    A --> K["File 0x04"];
-    K --> L["チャージ履歴"];
-
-    A --> M["File 0x0F"];
-    M --> N["Validation / Subscription"];
-
-    C --> O["Result"];
-    E --> O;
-    G --> O;
-    H --> O;
-    J --> O;
-    L --> O;
-    N --> O;
-```
-
-## 参考文献
-- [metrodroid](https://github.com/metrodroid/metrodroid/wiki/Clipper)
+特にFile `0x04` については、現在の実装で実機のFile SettingsからCyclic Record Fileとして判定し、レコード読み取りを行っている点に注意する。
