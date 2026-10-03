@@ -6,7 +6,11 @@ enum CloudSyncSettings {
     private static let key = "cloudSyncEnabled"
 
     static var isEnabled: Bool {
-        return false
+        if UserDefaults.standard.object(forKey: key) == nil {
+            return true
+        }
+
+        return UserDefaults.standard.bool(forKey: key)
     }
 
     static func setEnabled(_ enabled: Bool) {

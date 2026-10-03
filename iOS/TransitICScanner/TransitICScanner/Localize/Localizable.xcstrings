@@ -3054,6 +3054,7 @@
       }
     },
     "cardList.usClipper.description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4324,6 +4325,23 @@
         }
       }
     },
+    "issue.us.california.issuer.clipper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        }
+      }
+    },
     "jp.sapporo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4760,6 +4778,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
+          }
+        }
+      }
+    },
+    "locate.city.CA.SF" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "San Francisco"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンフランシスコ"
           }
         }
       }
@@ -6048,6 +6083,22 @@
         }
       }
     },
+    "result.history.rail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Railway"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鉄道"
+          }
+        }
+      }
+    },
     "result.history.register" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6630,6 +6681,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "発行日"
+          }
+        }
+      }
+    },
+    "result.info.issueInfo.expiry" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiry"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効期限"
           }
         }
       }
