@@ -124,74 +124,156 @@ extension NFCScannerModel {
     }
 
     //MARK: 履歴
-    // [0-2] 日付12bit(月*100+日) + 時刻12bit(時*100+分)
-    // [3]事業者 [4-6]停留所 [7-8]系統 [9-11]装置 (いわさき系は桁割りが異なるため生データも保持)
-    // [12]利用種別 [13]不明 [14-15]残額(BE, プレミア込み)
-    // 履歴に年は無いので date.year は 0 で返す (属性情報の直近処理日時は並べ替えにのみ使用)
+    // 取引番号がないため、mappingIDを日付と取引日時から生成
+    //
     func rapica_history(
         _ felicaTag: NFCFeliCaTag,
         count: Int = 16,
         reference: DateComponents
     ) async -> [ResultHistory]? {
-
         let blockCount = min(max(count, 1), 16)
-        guard let blocks = await rapica_read(felicaTag, service: rapicaService_history, blockCount: blockCount) else {
+
+        guard let blocks = await rapica_read(
+            felicaTag,
+            service: rapicaService_history,
+            blockCount: blockCount
+        ) else {
             return nil
         }
 
-        let refYear = reference.year ?? Calendar.current.component(.year, from: Date())
-        let refMD = (reference.month ?? 12) * 100 + (reference.day ?? 31)
+        let refYear = reference.year
+            ?? Calendar.current.component(.year, from: Date())
+
+        let refMD =
+            (reference.month ?? 12) * 100
+            + (reference.day ?? 31)
 
         var parsed: [(key: Int, index: Int, item: ResultHistory)] = []
 
         for (index, data) in blocks.enumerated() {
             let bytes = [UInt8](data)
-            guard bytes.count == 16 else { continue }
-            if bytes.allSatisfy({ $0 == 0x00 }) || bytes.allSatisfy({ $0 == 0xFF }) { continue }
 
-            let dateField = (Int(bytes[0]) << 4) | Int(bytes[1] >> 4)
-            let timeField = (Int(bytes[1] & 0x0F) << 8) | Int(bytes[2])
+            guard bytes.count == 16 else {
+                continue
+            }
+
+            if bytes.allSatisfy({ $0 == 0x00 })
+                || bytes.allSatisfy({ $0 == 0xFF }) {
+                continue
+            }
+
+            let dateField =
+                (Int(bytes[0]) << 4)
+                | Int(bytes[1] >> 4)
+
+            let timeField =
+                (Int(bytes[1] & 0x0F) << 8)
+                | Int(bytes[2])
+
             let month = dateField / 100
             let day = dateField % 100
+
             let hour = timeField / 100
             let minute = timeField % 100
 
-            guard (1...12).contains(month), (1...31).contains(day),
-                  (0...23).contains(hour), (0...59).contains(minute) else { continue }
+            guard
+                (1...12).contains(month),
+                (1...31).contains(day),
+                (0...23).contains(hour),
+                (0...59).contains(minute)
+            else {
+                continue
+            }
 
-            // 履歴に年は無いので、表示用の年は 0 (年情報なし) とする。
-            // 並べ替え専用に、直近処理日より未来の月日なら前年として扱う (出力には含めない)
-            let sortYear = (month * 100 + day) > refMD ? refYear - 1 : refYear
+            let processType = bytes[12]
+
+            let balance = Double(
+                Int(bytes[14]) << 8
+                | Int(bytes[15])
+            )
+
+            let sortYear =
+                (month * 100 + day) > refMD
+                ? refYear - 1
+                : refYear
+
+            // 0円の入場履歴を除外
+            if processType == 0x30 && balance == 0 {
+                continue
+            }
 
             let operatorAndStop =
-                (UInt32(bytes[3]) << 24) |
-                (UInt32(bytes[4]) << 16) |
-                (UInt32(bytes[5]) << 8)  |
-                UInt32(bytes[6])
+                (UInt32(bytes[3]) << 24)
+                | (UInt32(bytes[4]) << 16)
+                | (UInt32(bytes[5]) << 8)
+                | UInt32(bytes[6])
 
-            let balance = Double(Int(bytes[14]) << 8 | Int(bytes[15]))
+            let date = DateComponents(
+                year: sortYear,
+                month: month,
+                day: day,
+                hour: hour,
+                minute: minute
+            )
+
+            // YYYYMMDDHHmm
+            let transactionId =
+                sortYear * 100_000_000
+                + month * 1_000_000
+                + day * 10_000
+                + hour * 100
+                + minute
+
+            let mappingID = String(
+                format: "%04d%02d%02d%02d%02d",
+                sortYear,
+                month,
+                day,
+                hour,
+                minute
+            )
 
             let item = ResultHistory(
-                processType: bytes[12],              // 利用種別 (解釈はコンバータ側)
-                processType4: operatorAndStop,       // 事業者(8bit) + 停留所(24bit)
-                date: DateComponents(year: 0, month: month, day: day, hour: hour, minute: minute),
+                processType: processType,
+                processType4: operatorAndStop,
+                date: date,
                 balance: balance,
                 amount: nil,
                 lineIn: 0,
                 stationIn: 0,
                 lineOut: 0,
                 stationOut: 0,
-                transactionId: 0
+                transactionId: transactionId,
+                mappingID: mappingID
             )
 
-            let key = sortYear * 100_000_000 + month * 1_000_000 + day * 10_000 + hour * 100 + minute
-            parsed.append((key, index, item))
+            let key =
+                sortYear * 100_000_000
+                + month * 1_000_000
+                + day * 10_000
+                + hour * 100
+                + minute
+
+            parsed.append(
+                (
+                    key: key,
+                    index: index,
+                    item: item
+                )
+            )
         }
 
-        // 新しい順 (同時刻はブロック順)
         return parsed
-            .sorted { $0.key != $1.key ? $0.key > $1.key : $0.index < $1.index }
-            .map { $0.item }
+            .sorted {
+                if $0.key != $1.key {
+                    return $0.key > $1.key
+                }
+
+                return $0.index < $1.index
+            }
+            .map {
+                $0.item
+            }
     }
 
     //MARK: カード情報
