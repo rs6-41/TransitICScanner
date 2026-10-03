@@ -8,6 +8,7 @@ struct NFCToolView: View {
                 NavigationLink(destination: NFCLogView()) {
                     Text(LocalizedStringKey("tool.fullLog"))
                 }
+                
             }
             .navigationTitle(LocalizedStringKey("tab.tool"))
         }

@@ -239,6 +239,9 @@ struct ResultView: View {
             if let date = issueInfo.date {
                 ListInfoContent(title:"result.info.issueInfo.date",rawValue:date.formatted(date: .numeric, time: .shortened))
             }
+            if let expiry = issueInfo.expiry {
+                ListInfoContent(title:"result.info.issueInfo.expiry",rawValue:expiry.formatted(date: .numeric, time: .shortened))
+            }
         } header: {
             Text(LocalizedStringKey("result.info.issueInfo"))
         }

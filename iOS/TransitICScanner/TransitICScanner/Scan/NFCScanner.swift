@@ -140,8 +140,50 @@ final class NFCScannerModel: NSObject,ObservableObject, NFCTagReaderSessionDeleg
             if let historical = miFareTag.historicalBytes {
                 print("Historical: \(historical.map { String(format: "%02X", $0) }.joined(separator: " "))")
             }
-        case .iso7816:
+        case .iso7816(let tag):
+
             print("Detected ISO7816")
+
+            print(
+                "initialSelectedAID:",
+                tag.initialSelectedAID
+            )
+
+            print(
+                "identifier:",
+                tag.identifier
+                    .map {
+                        String(format: "%02X", $0)
+                    }
+                    .joined()
+            )
+
+            if let historicalBytes = tag.historicalBytes {
+                print(
+                    "historicalBytes:",
+                    historicalBytes
+                        .map {
+                            String(format: "%02X", $0)
+                        }
+                        .joined(separator: " ")
+                )
+            }
+
+            if let applicationData = tag.applicationData {
+                print(
+                    "applicationData:",
+                    applicationData
+                        .map {
+                            String(format: "%02X", $0)
+                        }
+                        .joined(separator: " ")
+                )
+            }
+
+            print(
+                "proprietaryApplicationDataCoding:",
+                tag.proprietaryApplicationDataCoding
+            )
         case .feliCa:
             print("Detected FeliCa")
         case .iso15693:
