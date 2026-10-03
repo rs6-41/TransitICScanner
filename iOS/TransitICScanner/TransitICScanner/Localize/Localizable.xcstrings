@@ -10583,6 +10583,12 @@
             "state" : "translated",
             "value" : "Shanghai"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海"
+          }
         }
       }
     },
@@ -10652,6 +10658,12 @@
             "state" : "translated",
             "value" : "Beijing"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京"
+          }
         }
       }
     },
@@ -10692,6 +10704,12 @@
             "state" : "translated",
             "value" : "Sichuan"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "四川省"
+          }
         }
       }
     },
@@ -10702,6 +10720,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chengdu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成都市"
           }
         }
       }
@@ -10772,6 +10796,12 @@
             "state" : "translated",
             "value" : "Macau"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マカオ特別行政区"
+          }
         }
       }
     },
@@ -10840,6 +10870,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "HongKong"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港特別行政区"
           }
         }
       }
