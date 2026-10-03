@@ -266,8 +266,6 @@
 		<string>9481</string>
 		<string>957A</string>
 		<string>DE80</string>
-		<string>FE00</string>
-		<string>FEE1</string>
 	</array>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 	<array>
