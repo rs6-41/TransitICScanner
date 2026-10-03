@@ -22,11 +22,18 @@ iOSではMifare Classicの読み取りができない。
 | 北朝鮮 | 平壌交通カード（緑） | | NFC Type-A | Mifare Classic | ✖️ | | |
 | 北朝鮮 | 平壌交通カード（青） | | NFC Type-A | Mifare Classic | ✖️ | | |
 
-#### 日本（地域限定）
+#### 日本（地方）
 🈹サイバネ = サイバネ規格との互換性はないが、サービスコード以外はサイバネ規格と共通仕様であることを指す
 | 地域 | 名称 | 実装名 | NFC | 規格 | iOS | Android | 備考 |
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | 北海道 | DoCard/Asaca | | Type-F | 独自 | | | |
-| 札幌 | SAPICA | jpIC_other | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | | |
-| 香川 | IruCa | jpIC_other | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | | |
+| 札幌 | SAPICA | jpIC_SAPICA | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | | |
+| 香川 | IruCa | jpIC_IruCa | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | | |
 | 長崎 | エヌタス | jpNplus | Type-F | [エヌタス](./doc/cards/jpNplus.md) | ✅ | | |
+| 宮崎 | icsca | jpIC_icsca_ | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | | |
+| 鹿児島 | Rapica/いわさきICカード | jpRapica | Type-F | [Rapica](./doc/cards/jpRapica.md) | ✅ | | |
+
+### 北アメリカ
+| 地域 | 名称 | 実装名 | NFC | 規格 | iOS | Android | 備考 |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| 米国(サンフランシスコ) | Clipper | usClipper | Type-A | [Clipper](./doc/cards/usClipper.md) | ✅ | | |
