@@ -4235,7 +4235,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "仙台市交通局"
           }
         }
@@ -4908,13 +4908,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "宮崎県"
+            "value" : "Miyazaki"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Miyazaki"
+            "value" : "宮崎県"
           }
         }
       }
