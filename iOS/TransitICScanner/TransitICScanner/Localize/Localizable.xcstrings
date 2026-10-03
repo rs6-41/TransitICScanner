@@ -7404,6 +7404,9 @@
         }
       }
     },
+    "setting.acknowledgment.jpDoCard" : {
+      "extractionState" : "manual"
+    },
     "setting.acknowledgment.jpIC" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7432,6 +7435,9 @@
           }
         }
       }
+    },
+    "setting.acknowledgment.jpIC_icsca" : {
+      "extractionState" : "manual"
     },
     "setting.acknowledgment.jpIC_IruCa" : {
       "extractionState" : "manual",
@@ -7519,6 +7525,12 @@
           }
         }
       }
+    },
+    "setting.acknowledgment.jpOKICA" : {
+      "extractionState" : "manual"
+    },
+    "setting.acknowledgment.jpRapica" : {
+      "extractionState" : "manual"
     },
     "setting.acknowledgment.krOneCard" : {
       "extractionState" : "manual",
@@ -7720,6 +7732,9 @@
           }
         }
       }
+    },
+    "setting.acknowledgment.usClipper" : {
+      "extractionState" : "manual"
     },
     "setting.ads" : {
       "localizations" : {

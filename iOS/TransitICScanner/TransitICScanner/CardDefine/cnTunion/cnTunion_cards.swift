@@ -371,7 +371,7 @@ func cnTunion_getIssueInfo(iin:String) -> cnTunion_Info {
     case "48500": card = cnTunion_Info(name:"八达通",area:"香港特别行政区",city:nil, issuer: "八达通卡有限公司")
     case "49600": card = cnTunion_Info(name:"澳门通",area:"澳门特别行政区",city:nil, issuer: "澳门通股份有限公司")
         
-    default: card = cnTunion_Info(name:"",area:nil,city:nil, issuer: "")
+    default: card = cnTunion_Info(name:"",area:nil,city:nil, issuer: nil)
     }
     return card
 }
