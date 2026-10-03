@@ -51,5 +51,9 @@ let cardDesignList:[CardDesigin] = [
     CardDesigin(type: .jpDoCard, name: "card.Asaca", imageName: "jpDoCard_Asaca", isDefault: false),
     
     // MARK: jpOKICA
-    CardDesigin(type: .jpOKICA, name: "card.OKICA", imageName: "jpOKICA", isDefault: true)
+    CardDesigin(type: .jpOKICA, name: "card.OKICA", imageName: "jpOKICA", isDefault: true),
+    
+    // MARK: jpRapica
+    CardDesigin(type: .jpRapica, name: "card.rapica", imageName: "jpRapica", isDefault: true),
+    CardDesigin(type: .jpRapica, name: "card.iwasaki", imageName: "jpRapica_iwasaki", isDefault: false)
 ]
