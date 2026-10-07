@@ -9,7 +9,7 @@ enum areaType: String,CaseIterable {
     case mo = "cardList.area.mo"
     case kp = "cardList.area.kp"
     case us = "cardList.area.us"
-    case sg = "cardList.area.sg" //シンガポール
+    case sg = "cardList.area.sg"
     
     //ソート名（doc/sortName.md参照）
     func sortName() -> String {
@@ -93,7 +93,6 @@ struct regionList:Hashable {
 }
 let regionLists = [
     regionList(first:.eastAsia,second:.japanLocal),
-    regionList(first:.southEastAsia),
     regionList(first:.southEastAsia),
     regionList(first:.centralAsia),
     regionList(first:.southAsia),

@@ -59,37 +59,25 @@ struct CardList: View {
                             store.cardItems.filter {
                                 $0.regionOption == list.first
                             }
-
-                            if !filtFirstItem.isEmpty {
+                            
+                            if filtFirstItem.count != 0 {
                                 if let second = list.second {
-                                    NavigationLink(
-                                        destination: CardRegionView(
-                                            items: filtFirstItem,
-                                            subItems: store.cardItems.filter {
-                                                $0.regionOption == nil &&
-                                                $0.area.region() == second
-                                            },
-                                            deleteAds: $deleteAds
-                                        )
-                                    ) {
-                                        SquareIcon(
-                                            text: LocalizedStringKey(list.first.name()),
-                                            systemImage: list.first.icon(),
-                                            color: .blue
-                                        )
+                                    NavigationLink(destination: CardRegionView(
+                                        items: filtFirstItem,
+                                        subItems: store.cardItems.filter {
+                                            $0.regionOption == nil &&
+                                            $0.area.region() == second
+                                        },
+                                        deleteAds: $deleteAds
+                                    )) {
+                                        SquareIcon(text:LocalizedStringKey(list.first.name()),systemImage:list.first.icon(),color:Color.blue)
                                     }
                                 } else {
-                                    NavigationLink(
-                                        destination: CardRegionView(
-                                            items: filtFirstItem,
-                                            deleteAds: $deleteAds
-                                        )
-                                    ) {
-                                        SquareIcon(
-                                            text: LocalizedStringKey(list.first.name()),
-                                            systemImage: list.first.icon(),
-                                            color: .blue
-                                        )
+                                    NavigationLink(destination: CardRegionView(
+                                        items: filtFirstItem,
+                                        deleteAds: $deleteAds
+                                    )) {
+                                        SquareIcon(text:LocalizedStringKey(list.first.name()),systemImage:list.first.icon(),color:Color.blue)
                                     }
                                 }
                             }
