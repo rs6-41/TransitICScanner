@@ -10,24 +10,8 @@
       "blur-material" : 0.5,
       "layers" : [
         {
-          "blend-mode" : "normal",
-          "image-name" : "パス 3.png",
-          "name" : "Train"
-        },
-        {
-          "blend-mode" : "hard-light",
-          "image-name" : "パス コピー 2.png",
-          "name" : "Card"
-        },
-        {
-          "blend-mode" : "hard-light",
-          "image-name" : "パス 2.png",
-          "name" : "Card"
-        },
-        {
-          "blend-mode" : "hard-light",
-          "image-name" : "パス コピー.png",
-          "name" : "Card"
+          "image-name" : "グループ化.png",
+          "name" : "グループ化"
         }
       ],
       "lighting" : "combined",
@@ -49,8 +33,8 @@
     {
       "layers" : [
         {
-          "image-name" : "パス.png",
-          "name" : "Map"
+          "image-name" : "パス 4.png",
+          "name" : "パス 4"
         }
       ],
       "name" : "Background",

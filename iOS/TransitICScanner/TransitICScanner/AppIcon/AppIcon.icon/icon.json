@@ -6,11 +6,11 @@
     {
       "layers" : [
         {
-          "image-name" : "グループ化 2.png",
-          "name" : "Icon"
+          "image-name" : "Cards.png",
+          "name" : "Cards"
         },
         {
-          "image-name" : "パス.png",
+          "image-name" : "Map.png",
           "name" : "Map"
         }
       ],
