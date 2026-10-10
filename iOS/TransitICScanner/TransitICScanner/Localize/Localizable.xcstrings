@@ -1940,6 +1940,32 @@
         }
       }
     },
+    "cardList.external.description" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外付けリーダーを接続して、このカードをスキャンします。\nハードウェアの制約によりiPhoneでは読み取れません。"
+          }
+        }
+      }
+    },
+    "cardList.external.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External Reader Only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外部リーダー専用"
+          }
+        }
+      }
+    },
     "cardList.hkOctopus" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3394,6 +3420,9 @@
           }
         }
       }
+    },
+    "error.smartCardReader.notDetectionCard" : {
+
     },
     "form.birthday.day" : {
       "localizations" : {

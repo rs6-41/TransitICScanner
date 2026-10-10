@@ -1,0 +1,73 @@
+{
+  "features" : [
+    "refractivity"
+  ],
+  "fill" : {
+    "automatic-gradient" : "display-p3:0.96783,0.93910,0.92240,1.00000"
+  },
+  "groups" : [
+    {
+      "blur-material" : 0.5,
+      "layers" : [
+        {
+          "blend-mode" : "normal",
+          "image-name" : "パス 3.png",
+          "name" : "Train"
+        },
+        {
+          "blend-mode" : "hard-light",
+          "image-name" : "パス コピー 2.png",
+          "name" : "Card"
+        },
+        {
+          "blend-mode" : "hard-light",
+          "image-name" : "パス 2.png",
+          "name" : "Card"
+        },
+        {
+          "blend-mode" : "hard-light",
+          "image-name" : "パス コピー.png",
+          "name" : "Card"
+        }
+      ],
+      "lighting" : "combined",
+      "name" : "Main",
+      "refractivity" : {
+        "depth" : 0.5155078125,
+        "enabled" : true,
+        "strength" : 0.2744140625
+      },
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.3
+      }
+    },
+    {
+      "layers" : [
+        {
+          "image-name" : "パス.png",
+          "name" : "Map"
+        }
+      ],
+      "name" : "Background",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.3
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
