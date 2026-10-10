@@ -34,13 +34,14 @@ struct ContentView: View {
     @EnvironmentObject var ads: AdsModel
     
     @Environment(\.dismiss) private var dismiss
+    @StateObject var smartCardManager = SmartCardManager()
     
     
     @AppStorage("isDebugStorage") var isDebugStorage = false
     
     var body: some View {
         TabView(selection: $tab) {
-            CardList(deleteAds: $deleteAds)
+            CardList(deleteAds: $deleteAds,smartCardManager: smartCardManager)
                 .tag(0)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
@@ -65,6 +66,10 @@ struct ContentView: View {
                     Label(String(localized:"tab.setting"), systemImage: "gearshape")
                 }
              
+        }
+        
+        .task {
+            smartCardManager.start()
         }
         .sheet(isPresented: $ads.isDeleteAdsSheet) {
             NavigationStack {

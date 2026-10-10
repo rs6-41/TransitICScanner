@@ -1950,6 +1950,38 @@
         }
       }
     },
+    "cardList.external.disable" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "未接続"
+          }
+        }
+      }
+    },
+    "cardList.external.enable" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "接続済"
+          }
+        }
+      }
+    },
     "cardList.external.title" : {
       "localizations" : {
         "en" : {
@@ -3222,6 +3254,16 @@
         }
       }
     },
+    "currency.kpw.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
+        }
+      }
+    },
     "currency.krw.%@" : {
       "localizations" : {
         "en" : {
@@ -3307,7 +3349,14 @@
       }
     },
     "currency.sgd.%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ SG$"
+          }
+        }
+      }
     },
     "currency.usd.%@" : {
       "localizations" : {
@@ -6986,7 +7035,14 @@
       }
     },
     "scanner.coreNFC.scanning.error.read" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み取りエラー"
+          }
+        }
+      }
     },
     "scanner.coreNFC.scanning.error.statusFlag,s1:%lld, s2:%lld" : {
       "localizations" : {
