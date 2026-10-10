@@ -10,7 +10,7 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
-    spFlashPay
+    spFlashPay,externalViewDebug,externalViewDebug
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）

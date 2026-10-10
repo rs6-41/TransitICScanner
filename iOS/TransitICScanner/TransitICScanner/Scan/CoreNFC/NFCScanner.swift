@@ -3,45 +3,6 @@ import SwiftUI
 @preconcurrency import CoreNFC
 public import Combine
 
-/// NFCスキャンボタン
-struct ScanningButton: View {
-    let item: CardInfo
-    @StateObject private var model: NFCScannerModel
-    @State private var path = NavigationPath()
-    @State var nfcError = false
-    @Binding var deleteAds:Bool
-
-    init(item: CardInfo,deleteAds:Binding<Bool>) {
-        self.item = item
-        _model = StateObject(wrappedValue: NFCScannerModel(scanOption: item.scanOption))
-        self._deleteAds = deleteAds
-    }
-    var body: some View {
-        Button(action: {
-            if checkDevice() {
-                model.readerSetup()
-            } else {
-                nfcError = true
-            }
-        }) {
-            ListButtonInner(item: item)
-        }
-        .navigationDestination(item: $model.result) { result in
-            ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
-        }
-        .alert(LocalizedStringKey("error"), isPresented: $nfcError) {
-            
-        } message: {
-            Text(LocalizedStringKey("cardList.error.nfc"))
-        }
-    }
-    
-    // デバイスのNFC有効性チェック
-    func checkDevice() -> Bool {
-        return NFCTagReaderSession.readingAvailable
-    }
-}
-
 // 参考：https://qiita.com/treastrain/items/d54ef2c2abbcd40fb9f1
 // 参考：https://github.com/metrodroid/metrodroid/wiki/FeliCa
 
