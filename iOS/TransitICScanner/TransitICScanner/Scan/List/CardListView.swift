@@ -17,9 +17,32 @@ struct CardList: View {
     @Binding var deleteAds: Bool
     @ObservedObject var smartCardManager: SmartCardManager
     
+    @State private var scrollOffsetY: CGFloat = 0
+    @State private var searchBarOffsetY: CGFloat = 0
+    @State var searchBarHight: CGFloat = 0
+    @State var isSearchFocused:Bool = false
+    
     var body: some View {
         NavigationStack {
             List {
+                Section() {
+                    HStack {
+                        Color.white.opacity(0.000001)
+                            .onTapGesture {
+                                isSearchFocused = true
+                            }
+                        if isSearchFocused {
+                            Color.white.opacity(0.000001)
+                                .onTapGesture {
+                                    isSearchFocused = false
+                                }
+                                .frame(width:searchBarHight + 10,height: searchBarHight + 10)
+                        }
+                    }
+                }
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .listRowBackground(Color.clear)
+                
                 ListAdView(deleteAds: $deleteAds)
                 
                 if debug.isDisplay {
@@ -121,11 +144,40 @@ struct CardList: View {
                 }
             }
             .navigationTitle(LocalizedStringKey("cardList.title"))
-            .searchable(
-                text: $searchText,
-                placement: .toolbar,
-                prompt: Text(LocalizedStringKey("search"))
-            )
+            .toolbarTitleDisplayMode(.inlineLarge)
+            
+            .toolbar {
+                ToolbarItem(placement: .title) {
+                    Text("")
+                }
+                
+                ToolbarItem(placement: .subtitle) {
+                    HStack {
+                        SearchBar(text:$searchText,isFocused: $isSearchFocused,placeholder:String(localized:"search"))
+                        if isSearchFocused {
+                            Button(action: {
+                                withAnimation(.linear(duration: 0.3)) {
+                                    isSearchFocused = false
+                                }
+                            }) {
+                                Image(systemName:"xmark")
+                                    .frame(width:searchBarHight,height:searchBarHight)
+                            }
+                            .buttonStyle(.glass)
+                            .transition(.opacity)
+                        }
+                    }
+                    .offset(y: max(0, searchBarOffsetY))
+                    .zIndex(1)
+                    .onGeometryChange(for: CGFloat.self, of: { proxy in
+                        proxy.size.height
+                    }, action: { newHeight in
+                        searchBarHight = newHeight
+                    })
+                }
+                 
+            }
+             
             .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
             }
@@ -136,6 +188,16 @@ struct CardList: View {
                     saveListID: .constant(UUID()),
                     deleteAds: $deleteAds
                 )
+            }
+        }
+        .onScrollGeometryChange(for: CGFloat.self) { geometry in
+            geometry.contentOffset.y
+        } action: { oldVal, newVal in
+            scrollOffsetY = newVal
+            if scrollOffsetY < searchBarHight {
+                searchBarOffsetY = -(scrollOffsetY + searchBarHight)
+            } else {
+                searchBarOffsetY = -scrollOffsetY
             }
         }
         .onAppear {
