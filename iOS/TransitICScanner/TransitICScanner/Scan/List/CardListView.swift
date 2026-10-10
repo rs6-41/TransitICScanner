@@ -15,6 +15,7 @@ struct CardList: View {
     
     @State var isDisplayScrapingForm = false
     @Binding var deleteAds: Bool
+    @ObservedObject var smartCardManager: SmartCardManager
     
     var body: some View {
         NavigationStack {
@@ -64,6 +65,7 @@ struct CardList: View {
                             if filtFirstItem.count != 0 {
                                 if let second = list.second {
                                     NavigationLink(destination: CardRegionView(
+                                        smartCardManager:smartCardManager,
                                         items: filtFirstItem.filter {
                                             $0.scanOption.scanType != .external
                                         },
@@ -81,6 +83,7 @@ struct CardList: View {
                                     }
                                 } else {
                                     NavigationLink(destination: CardRegionView(
+                                        smartCardManager:smartCardManager,
                                         items: filtFirstItem.filter {
                                             $0.scanOption.scanType != .external
                                         },
@@ -117,15 +120,15 @@ struct CardList: View {
                     }
                 }
             }
+            .navigationTitle(LocalizedStringKey("cardList.title"))
             .searchable(
                 text: $searchText,
+                placement: .toolbar,
                 prompt: Text(LocalizedStringKey("search"))
             )
             .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
             }
-            .navigationTitle(LocalizedStringKey("cardList.title"))
-            .navigationBarTitleDisplayMode(.large)
             .navigationDestination(for: Result.self) { result in
                 ResultView(
                     result: result,
@@ -233,6 +236,7 @@ enum SortType: String, CaseIterable {
 }
 
 struct CardRegionView: View {
+    @ObservedObject var smartCardManager: SmartCardManager
     @State var items: [CardInfo]
     @State var subItems: [CardInfo]?
     @State var externalItems: [CardInfo]?
@@ -270,13 +274,28 @@ struct CardRegionView: View {
                 if !externalItems.isEmpty {
                     Section() {
                         ForEach(sortItems(sort:sort2,items:externalItems,pref:true), id: \.logo) { item in
-                            CardListRow(item: item, deleteAds: $deleteAds)
+                            CardListRow(item: item, deleteAds: $deleteAds, externalDevice:!smartCardManager.readers.isEmpty)
                         }
                     } header: {
                         VStack(alignment:.leading, spacing:5) {
                             HStack {
                                 Text(LocalizedStringKey("cardList.external.title"))
                                 Spacer()
+                                HStack(spacing:4) {
+                                    if smartCardManager.readers.isEmpty {
+                                        Circle()
+                                            .fill(Color.red)
+                                            .stroke(Color.gray, lineWidth: 1.5)
+                                            .frame(width:15,height:15)
+                                        Text(LocalizedStringKey("cardList.external.disable"))
+                                    } else {
+                                        Circle()
+                                            .fill(Color.green)
+                                            .stroke(Color.gray, lineWidth: 1.5)
+                                            .frame(width:15,height:15)
+                                        Text(LocalizedStringKey("cardList.external.enable"))
+                                    }
+                                }
                             }
                             Text(LocalizedStringKey("cardList.external.description"))
                                 .font(.caption)
@@ -348,5 +367,5 @@ struct CardSortPicker: View {
 }
 
 #Preview {
-    CardList(deleteAds: .constant(false))
+    CardList(deleteAds: .constant(false), smartCardManager: SmartCardManager())
 }

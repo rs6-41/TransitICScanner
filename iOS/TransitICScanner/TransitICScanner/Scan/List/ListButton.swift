@@ -2,10 +2,17 @@ import SwiftUI
 import CoreNFC
 
 struct CardListRow: View {
-    let item: CardInfo
     @State var isFormDisplay = false
     @EnvironmentObject var debug: DebugModel
+    let item: CardInfo
     @Binding var deleteAds: Bool
+    var externalDevice: Bool
+        
+    init(item: CardInfo, deleteAds: Binding<Bool>,externalDevice: Bool = false) {
+        self.item = item
+        self._deleteAds = deleteAds
+        self.externalDevice = externalDevice
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,7 +33,14 @@ struct CardListRow: View {
                 }
             case .external:
                 //TODO: 外部リーダー専用ボタンを実装
-                ListButtonInner(item: item)
+                Button(action: {
+                    if externalDevice {
+                    } else {
+                    }
+                }) {
+                    ListButtonInner(item: item)
+                        .opacity(!externalDevice ? 0.5 : 1.0)
+                }
             }
             
             if debug.isDisplay {
@@ -37,8 +51,8 @@ struct CardListRow: View {
 }
 
 struct ListButtonInner: View {
-    let item: CardInfo
     @State var isCardInfoView = false
+    let item: CardInfo
     
     var body: some View {
         HStack {

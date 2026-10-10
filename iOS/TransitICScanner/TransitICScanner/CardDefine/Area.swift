@@ -111,6 +111,7 @@ enum currencyType: String, CaseIterable,Codable {
     case hkd
     case ntd
     case krw
+    case kpw
     case usd
     case sgd // シンガポールドル
     
@@ -121,6 +122,7 @@ enum currencyType: String, CaseIterable,Codable {
             case .hkd: return "currency.hkd.\(price)"
             case .ntd: return "currency.ntd.\(price)"
             case .krw: return "currency.krw.\(price)"
+            case .kpw: return "currency.kpw.\(price)"
             case .usd: return "currency.usd.\(price)"
             case .sgd: return "currency.sgd.\(price)"
         }
