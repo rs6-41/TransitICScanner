@@ -35,8 +35,9 @@ struct CardList: View {
                             Color.white.opacity(0.000001)
                                 .onTapGesture {
                                     isSearchFocused = false
+                                    searchText = ""
                                 }
-                                .frame(width:searchBarHight + 10,height: searchBarHight + 10)
+                                .frame(width:40,height: 40)
                         }
                     }
                 }
@@ -154,19 +155,21 @@ struct CardList: View {
                 ToolbarItem(placement: .subtitle) {
                     HStack {
                         SearchBar(text:$searchText,isFocused: $isSearchFocused,placeholder:String(localized:"search"))
-                        if isSearchFocused {
-                            Button(action: {
-                                withAnimation(.linear(duration: 0.3)) {
-                                    isSearchFocused = false
-                                }
-                            }) {
-                                Image(systemName:"xmark")
-                                    .frame(width:searchBarHight,height:searchBarHight)
+                        Button(action: {
+                            withAnimation(.linear(duration: 0.3)) {
+                                isSearchFocused = false
+                                searchText = ""
                             }
-                            .buttonStyle(.glass)
-                            .transition(.opacity)
+                        }) {
+                            Image(systemName:"xmark")
+                                .frame(width:30,height:30)
                         }
+                        .buttonStyle(.glass)
+                        .buttonBorderShape(.circle)
+                        .opacity(isSearchFocused ? 1 : 0)
+                        .frame(width: isSearchFocused ? 40 : 0)
                     }
+                    .animation(.easeInOut(duration: 0.2), value: isSearchFocused)
                     .offset(y: max(0, searchBarOffsetY))
                     .zIndex(1)
                     .onGeometryChange(for: CGFloat.self, of: { proxy in

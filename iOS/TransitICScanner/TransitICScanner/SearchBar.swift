@@ -13,6 +13,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.searchBarStyle = .minimal
         searchBar.autocapitalizationType = .none
         searchBar.autocorrectionType = .no
+        searchBar.searchTextField.clearButtonMode = .never
         return searchBar
     }
     func updateUIView(_ uiView: UISearchBar, context: Context) {
