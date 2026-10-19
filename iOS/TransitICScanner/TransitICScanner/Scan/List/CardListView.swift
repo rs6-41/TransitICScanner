@@ -23,7 +23,7 @@ struct CardList: View {
     @State var isSearchFocused:Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section() {
                     HStack {
@@ -154,7 +154,7 @@ struct CardList: View {
                 
                 ToolbarItem(placement: .subtitle) {
                     HStack {
-                        SearchBar(text:$searchText,isFocused: $isSearchFocused,placeholder:String(localized:"search"))
+                        SearchBar(text:$searchText,isFocused: $isSearchFocused,placeholder:String(localized:"cardList.search"))
                         Button(action: {
                             withAnimation(.linear(duration: 0.3)) {
                                 isSearchFocused = false

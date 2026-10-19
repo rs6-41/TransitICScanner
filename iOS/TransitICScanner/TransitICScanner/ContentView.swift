@@ -4,6 +4,9 @@ import GoogleMobileAds
 import AdSupport
 import AppTrackingTransparency
 
+// 現時点では購入オプションを非表示
+var adDeleteDisplay = false
+
 final class AdsModel: ObservableObject {
     @Published var isDeleteAdsSheet = false
     @Published var purchaseAlertTitle = ""
@@ -39,6 +42,8 @@ struct ContentView: View {
     
     @AppStorage("isDebugStorage") var isDebugStorage = false
     
+    @AppStorage("firstPermission") var firstPermission = true
+    
     var body: some View {
         TabView(selection: $tab) {
             CardList(deleteAds: $deleteAds,smartCardManager: smartCardManager)
@@ -71,6 +76,10 @@ struct ContentView: View {
         
         .task {
             smartCardManager.start()
+        }
+        .sheet(isPresented: $firstPermission) {
+            PermissionModalView(isPresented: $firstPermission)
+                .interactiveDismissDisabled(true)
         }
         .sheet(isPresented: $ads.isDeleteAdsSheet) {
             NavigationStack {
