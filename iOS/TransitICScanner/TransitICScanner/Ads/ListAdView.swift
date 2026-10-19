@@ -57,11 +57,13 @@ struct ListAdView: View {
                 HStack {
                     Text(LocalizedStringKey("ads"))
                     Spacer()
-                    Button(action: {
-                        ads.isDeleteAdsSheet = true
-                    }) {
-                        Text(LocalizedStringKey("ads.delete"))
-                            .fontWeight(.regular)
+                    if adDeleteDisplay {
+                        Button(action: {
+                            ads.isDeleteAdsSheet = true
+                        }) {
+                            Text(LocalizedStringKey("ads.delete"))
+                                .fontWeight(.regular)
+                        }
                     }
                 }
             }

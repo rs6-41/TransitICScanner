@@ -36,9 +36,6 @@ final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
         case .authorizedWhenInUse, .authorizedAlways:
             locationManager.requestLocation()
 
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-
         case .denied, .restricted:
             countryCode = nil
             administrativeArea = nil
@@ -94,7 +91,6 @@ final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
             break
 
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
             return
 
         case .denied, .restricted:
@@ -148,8 +144,6 @@ final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
         case .authorizedWhenInUse, .authorizedAlways:
             manager.requestLocation()
 
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
 
         case .denied, .restricted:
             countryCode = nil
