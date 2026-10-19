@@ -10,7 +10,7 @@ let cardItemsStore = CardItemsStore()
 
 // 開発中カード
 let devCards: [CardInfo] = [
-    usClipper,jpRapica
+    spFlashPay,externalViewDebug,externalViewDebug
 ]
 
 // 試験的な対象カード（「試験的な機能」で有効化）
@@ -20,7 +20,7 @@ let featureCards: [CardInfo] = [
 
 // リリース済みのカード
 let relCards: [CardInfo] = [
-    jpIC,jpIC_SAPICA,jpIC_IruCa,cnTunion,hkOctopus,krOneCard,twICash,jpNplus,jpIC_icsca,twEasyCard_old,jpDoCard,jpOKICA
+    jpIC,jpIC_SAPICA,jpIC_IruCa,cnTunion,hkOctopus,krOneCard,twICash,jpNplus,jpIC_icsca,twEasyCard_old,jpDoCard,jpOKICA,usClipper,jpRapica
 ]
 
 

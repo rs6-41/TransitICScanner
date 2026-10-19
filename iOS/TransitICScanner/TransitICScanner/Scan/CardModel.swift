@@ -48,6 +48,7 @@ struct ResultSample {
 enum ScanType {
     case nfc
     case scraping
+    case external
 }
 
 protocol CardConverter {

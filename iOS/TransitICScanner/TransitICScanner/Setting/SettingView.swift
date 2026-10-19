@@ -24,8 +24,10 @@ struct SettingView: View {
             List {
                 SettingAppTitle(devSettingAlert:$devSettingAlert)
                 
-                if !deleteAds {
-                    SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $purchaseAlertTitle, purchaseAlertMessage: $purchaseAlertMessage, isPurchaseAlert: $isPurchaseAlert, deleteAds: $deleteAds)
+                if adDeleteDisplay {
+                    if !deleteAds {
+                        SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $purchaseAlertTitle, purchaseAlertMessage: $purchaseAlertMessage, isPurchaseAlert: $isPurchaseAlert, deleteAds: $deleteAds)
+                    }
                 }
                 
                 SettingData(isCloudSyncEnabled:$isCloudSyncEnabled)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; };
+		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABAF3066867600A3D87B /* WidgetKit.framework */; };
 		AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABB13066867600A3D87B /* SwiftUI.framework */; };
 		AA87ABDD306686B800A3D87B /* CardBalanceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -41,7 +41,6 @@
 		AA87ABAF3066867600A3D87B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AA87ABB13066867600A3D87B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CardBalanceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA87AC3F30669D1F00A3D87B /* CardBalanceWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardBalanceWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -69,6 +68,8 @@
 		AA87AC59306752C900A3D87B /* Exceptions for "TransitICScanner" folder in "CardBalanceWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppIcon/AppIcon_Beta.icon,
+				AppIcon/AppIcon.icon,
 				Assets.xcassets,
 				CardDefine/Area.swift,
 				Result/BalanceFormat.swift,
@@ -132,7 +133,6 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				AA87AC3F30669D1F00A3D87B /* CardBalanceWidgetExtension.entitlements */,
 				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
 				AA87ABAE3066867600A3D87B /* Frameworks */,
 				000000000000000000000020 /* Products */,
@@ -430,7 +430,7 @@
 			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
 			baseConfigurationReferenceRelativePath = Config/devConfig.xcconfig;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Beta;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = TransitICScanner/TransitICScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,13 +447,14 @@
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = nfc;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -501,13 +502,14 @@
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = nfc;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -611,7 +613,7 @@
 			baseConfigurationReferenceAnchor = AAC4A093304B343D003B1B10 /* TransitICScanner */;
 			baseConfigurationReferenceRelativePath = Config/betaConfig.xcconfig;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Beta;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = TransitICScanner/TransitICScanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,13 +630,14 @@
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Used to read card information.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to read the card number.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Suggests cards based on your current location.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Google広告の表示に使用します。\n許可することで、より適切な広告を表示できます。";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = nfc;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -665,7 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CardBalanceWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CardBalanceWidget/CardBalanceWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
@@ -703,7 +706,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CardBalanceWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CardBalanceWidget/CardBalanceWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
@@ -742,7 +745,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CardBalanceWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CardBalanceWidget/CardBalanceWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
