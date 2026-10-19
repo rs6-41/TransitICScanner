@@ -9,7 +9,7 @@ enum areaType: String,CaseIterable {
     case mo = "cardList.area.mo"
     case kp = "cardList.area.kp"
     case us = "cardList.area.us"
-    case sg = "cardList.area.sg" //シンガポール
+    case sg = "cardList.area.sg"
     
     //ソート名（doc/sortName.md参照）
     func sortName() -> String {
@@ -94,7 +94,6 @@ struct regionList:Hashable {
 let regionLists = [
     regionList(first:.eastAsia,second:.japanLocal),
     regionList(first:.southEastAsia),
-    regionList(first:.southEastAsia),
     regionList(first:.centralAsia),
     regionList(first:.southAsia),
     regionList(first:.middleEastAsia),
@@ -112,6 +111,7 @@ enum currencyType: String, CaseIterable,Codable {
     case hkd
     case ntd
     case krw
+    case kpw
     case usd
     case sgd // シンガポールドル
     
@@ -122,6 +122,7 @@ enum currencyType: String, CaseIterable,Codable {
             case .hkd: return "currency.hkd.\(price)"
             case .ntd: return "currency.ntd.\(price)"
             case .krw: return "currency.krw.\(price)"
+            case .kpw: return "currency.kpw.\(price)"
             case .usd: return "currency.usd.\(price)"
             case .sgd: return "currency.sgd.\(price)"
         }

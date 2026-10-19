@@ -731,6 +731,18 @@
             "state" : "translated",
             "value" : "いわさきICカード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki IC 卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki IC 卡"
+          }
         }
       }
     },
@@ -831,6 +843,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MOIBA"
@@ -968,6 +992,18 @@
             "state" : "translated",
             "value" : "Rail+"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
         }
       }
     },
@@ -981,6 +1017,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rapica"
@@ -1682,6 +1730,35 @@
         }
       }
     },
+    "cardList.area.sg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シンガポール"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新加坡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新加坡"
+          }
+        }
+      }
+    },
     "cardList.area.tw" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1911,6 +1988,112 @@
         }
       }
     },
+    "cardList.external.description" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外付けリーダーを接続して、このカードをスキャンします。\nハードウェアの制約によりiPhoneでは読み取れません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连接外部读卡器以扫描此卡。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連接外接讀卡器以掃描此卡。"
+          }
+        }
+      }
+    },
+    "cardList.external.disable" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未接続"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已断开连接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已中斷連線"
+          }
+        }
+      }
+    },
+    "cardList.external.enable" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続済み"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已连接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已連線"
+          }
+        }
+      }
+    },
+    "cardList.external.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External Reader Only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外部リーダー専用"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅使用外部读卡器"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅使用外接讀卡器"
+          }
+        }
+      }
+    },
     "cardList.hkOctopus" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2124,6 +2307,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市交通局"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市交通局"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "仙台市交通局"
@@ -2522,6 +2717,18 @@
             "state" : "translated",
             "value" : "沖縄モノレールとバス"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "冲绳单轨电车及巴士。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩單軌電車及巴士。"
+          }
         }
       }
     },
@@ -2532,6 +2739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
           }
         },
         "zh-Hans" : {
@@ -2565,14 +2778,14 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rapica"
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rapica"
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
           }
         }
       }
@@ -2588,8 +2801,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "かごしま共通乗車カード"
+            "state" : "translated",
+            "value" : "鹿児島の共通交通系ICカードです。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿儿岛通用交通 IC 卡。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島通用交通 IC 卡。"
           }
         }
       }
@@ -2732,6 +2957,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "其他地方"
+          }
+        }
+      }
+    },
+    "cardList.search" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search of card name, location and more..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード名、地域などで検索…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜索卡片名称、地区等…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋卡片名稱、地區等…"
           }
         }
       }
@@ -3167,6 +3420,34 @@
         }
       }
     },
+    "currency.kpw.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
+        }
+      }
+    },
     "currency.krw.%@" : {
       "localizations" : {
         "en" : {
@@ -3252,7 +3533,32 @@
       }
     },
     "currency.sgd.%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ SG$"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ SG$"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ SG$"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ SG$"
+          }
+        }
+      }
     },
     "currency.usd.%@" : {
       "localizations" : {
@@ -3362,6 +3668,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "好"
+          }
+        }
+      }
+    },
+    "error.smartCardReader.notDetectionCard" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードが検出されませんでした。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未检测到卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未偵測到卡片。"
           }
         }
       }
@@ -3658,6 +3986,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "スキャン済みのカードがありません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚未扫描卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚未掃描卡片。"
           }
         }
       }
@@ -4049,7 +4389,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
+            "value" : "旭川市"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川市"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "旭川市"
           }
         }
@@ -4069,6 +4421,18 @@
             "state" : "translated",
             "value" : "札幌市"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌市"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌市"
+          }
         }
       }
     },
@@ -4083,8 +4447,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "旭川電気軌道"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川電氣軌道"
           }
         }
       }
@@ -4100,8 +4476,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "道北バス"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "道北巴士"
           }
         }
       }
@@ -4120,6 +4508,18 @@
             "state" : "translated",
             "value" : "札幌総合情報センター株式会社"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌信息网络株式会社"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌資訊網路股份有限公司"
+          }
         }
       }
     },
@@ -4133,6 +4533,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松市"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松市"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "高松市"
@@ -4151,8 +4563,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "高松琴平電気鉄道株式会社"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松琴平電氣鐵道股份有限公司"
           }
         }
       }
@@ -4171,6 +4595,18 @@
             "state" : "translated",
             "value" : "いわさきコーポレーション"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "岩崎集團"
+          }
         }
       }
     },
@@ -4187,6 +4623,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鹿児島市交通局"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島市交通局"
           }
         }
       }
@@ -4205,6 +4653,18 @@
             "state" : "translated",
             "value" : "南国交通株式会社"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南國交通"
+          }
         }
       }
     },
@@ -4218,6 +4678,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "仙台市"
@@ -4239,6 +4711,18 @@
             "state" : "translated",
             "value" : "仙台市交通局"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市交通局"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市交通局"
+          }
         }
       }
     },
@@ -4253,8 +4737,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "株式会社エヌタス"
+            "state" : "translated",
+            "value" : "株式会社NTASU"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU 股份有限公司"
           }
         }
       }
@@ -4273,23 +4769,136 @@
             "state" : "translated",
             "value" : "沖縄ICカード株式会社"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩 IC 卡股份有限公司"
+          }
         }
       }
     },
     "issue.kr.issuer.ezl" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL 公司"
+          }
+        }
+      }
     },
     "issue.kr.issuer.kcash" : {
-      "extractionState" : "manual"
-    },
-    "issue.kr.issuer.moiba" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓国金融決済院"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓國金融電信清算院（KFTC）"
+          }
+        }
+      }
     },
     "issue.kr.issuer.railplus" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓國鐵道公社（KORAIL）"
+          }
+        }
+      }
     },
     "issue.kr.issuer.tmoney" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓国スマートカード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "韓國智慧卡公司"
+          }
+        }
+      }
     },
     "issue.tw.issuer.easycard" : {
       "extractionState" : "manual",
@@ -4304,6 +4913,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard Co., Ltd."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠游卡股份有限公司"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡股份有限公司"
           }
         }
       }
@@ -4322,6 +4943,18 @@
             "state" : "translated",
             "value" : "icash Corp."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "愛金卡股份有限公司"
+          }
         }
       }
     },
@@ -4338,6 +4971,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MTC"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "灣區交通局（MTC）"
           }
         }
       }
@@ -4704,6 +5349,18 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -4749,6 +5406,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "かごしま共通乗車カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿儿岛通用 IC 卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島通用 IC 卡"
           }
         }
       }
@@ -4796,6 +5465,18 @@
             "state" : "translated",
             "value" : "サンフランシスコ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旧金山"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "舊金山"
+          }
         }
       }
     },
@@ -4812,6 +5493,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "沖縄本島"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩本島"
           }
         }
       }
@@ -4917,6 +5610,18 @@
             "state" : "translated",
             "value" : "鹿児島県"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿児島县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島縣"
+          }
         }
       }
     },
@@ -4934,6 +5639,18 @@
             "state" : "translated",
             "value" : "宮城県"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮城县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮城縣"
+          }
         }
       }
     },
@@ -4950,6 +5667,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "宮崎県"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮崎县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮崎縣"
           }
         }
       }
@@ -4997,6 +5726,18 @@
             "state" : "translated",
             "value" : "沖縄"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖縄县"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩縣"
+          }
         }
       }
     },
@@ -5012,6 +5753,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ログ付きのスキャン履歴がありません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚无带日志的扫描卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚無包含日誌的掃描卡片。"
           }
         }
       }
@@ -5044,6 +5797,370 @@
         }
       }
     },
+    "permission.after" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後で"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等一下"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等一下"
+          }
+        }
+      }
+    },
+    "permission.att.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We display ads to support the ongoing development and maintenance of this app.\nAllowing tracking helps us show you more relevant ads and measure ad performance.\nPlease tap “Allow” to help us continue maintaining the app.\nThank you for support."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このアプリを開発・運営を継続するために、広告を掲載しています。\nトラッキングを許可すると、あなたに関連性の高い広告の表示や、広告の効果測定に役立てられます。\nアプリの継続的運営のために「許可」をお願いします。\nご協力いただく皆様に感謝いたします。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "为了持续开发和维护这款应用，我们会展示广告。\n允许跟踪有助于我们向您展示更符合您兴趣的广告，并衡量广告效果。\n为了支持应用的持续运营，恳请您选择“允许”。\n谢谢您的合作。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本 App 可讓您使用智慧型手機查詢並儲存全球各地 IC 卡的餘額。\n為了提供個人化的使用體驗，請確認是否授予所需的權限。"
+          }
+        }
+      }
+    },
+    "permission.att.description.ifDenied" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you don’t allow tracking, you will still see ads, but they may be less relevant to you."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "許可しない場合でも、関連性の低い広告が引き続き表示されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使您不允许跟踪，仍然会看到广告，但这些广告可能与您的兴趣关联较低。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使您不允許跟蹤，仍然會看到廣告，但這些廣告可能與您的興趣關聯較低。"
+          }
+        }
+      }
+    },
+    "permission.att.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relevant Ads"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "関連性の高い広告"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您兴趣的广告"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您興趣的廣告"
+          }
+        }
+      }
+    },
+    "permission.authorized" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authorized"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "許可する"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "允许"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "許可"
+          }
+        }
+      }
+    },
+    "permission.continue" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続ける"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "继续"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繼續"
+          }
+        }
+      }
+    },
+    "permission.done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All Done!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて完了です！"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成了！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成了！"
+          }
+        }
+      }
+    },
+    "permission.done.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All set! You can start using the app right away."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全ての設定が完了しました！すぐにアプリを利用できます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有设置均已完成！现在即可开始使用应用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有設定皆已完成！現在即可開始使用 App。"
+          }
+        }
+      }
+    },
+    "permission.first.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app lets you check and save the balances of IC cards from around the world using your smartphone.\nPlease review the required permissions to personalize your experience."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このアプリでは、世界中のICカード残高をスマートフォンで照会・保存できます。\n体験をパーソナライズするため、必要な権限へのアクセスを確認してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本应用支持使用智能手机查询并保存全球各地 IC 卡的余额。\n为了提供个性化的使用体验，请确认是否授予所需的权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本應用支持使用智能手機查詢並保存全球各地 IC 卡的餘額。 爲了提供個性化的使用體驗，請確認是否授予所需的權限。"
+          }
+        }
+      }
+    },
+    "permission.gps.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggests cards available for use in your current region based on your device’s location."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "端末の位置を参照し、現在位置の地域で利用できるカードを提案します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根据设备的位置信息，推荐您所在地区可使用的卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根據裝置的位置資訊，推薦您所在區域可使用的卡片。"
+          }
+        }
+      }
+    },
+    "permission.gps.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置情報"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置信息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置信息"
+          }
+        }
+      }
+    },
+    "permission.notifications.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifies you about cards available in your current region while traveling or on the move."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旅行や移動中、現在の地域で利用可能なカードを通知します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旅行或出行途中，向您通知当前所在地区可使用的卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旅行或移動途中，通知您目前所在區域可使用的卡片。"
+          }
+        }
+      }
+    },
+    "permission.notifications.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifications"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        }
+      }
+    },
     "region.africa" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5057,6 +6174,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アフリカ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非洲"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非洲"
           }
         }
       }
@@ -5075,6 +6204,18 @@
             "state" : "translated",
             "value" : "中央アジア"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中亚"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中亞"
+          }
         }
       }
     },
@@ -5091,6 +6232,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "東アジア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "东亚"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東亞"
           }
         }
       }
@@ -5109,6 +6262,18 @@
             "state" : "translated",
             "value" : "ヨーロッパ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欧洲"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歐洲"
+          }
         }
       }
     },
@@ -5125,6 +6290,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "日本（地方）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本地方地区"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本地方地區"
           }
         }
       }
@@ -5143,6 +6320,18 @@
             "state" : "translated",
             "value" : "中南米"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拉丁美洲"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拉丁美洲"
+          }
         }
       }
     },
@@ -5156,6 +6345,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中東"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中东"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "中東"
@@ -5177,6 +6378,18 @@
             "state" : "translated",
             "value" : "北アメリカ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北美洲"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北美洲"
+          }
         }
       }
     },
@@ -5193,6 +6406,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オセアニア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大洋洲"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大洋洲"
           }
         }
       }
@@ -5211,6 +6436,18 @@
             "state" : "translated",
             "value" : "南アジア"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南亚"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南亞"
+          }
         }
       }
     },
@@ -5227,6 +6464,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "東南アジア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "东南亚"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東南亞"
           }
         }
       }
@@ -5328,6 +6577,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "入場"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上车"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上車"
           }
         }
       }
@@ -5514,6 +6775,18 @@
             "state" : "translated",
             "value" : "窓口"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窗口"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窗口"
+          }
         }
       }
     },
@@ -5558,6 +6831,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "みどりの窓口"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窗口（JR）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窗口（JR）"
           }
         }
       }
@@ -5828,6 +7113,18 @@
             "state" : "translated",
             "value" : "モノレール"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "单轨电车"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "單軌電車"
+          }
         }
       }
     },
@@ -6096,6 +7393,18 @@
             "state" : "translated",
             "value" : "鉄道"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "铁轨"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鐵路"
+          }
         }
       }
     },
@@ -6112,6 +7421,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "登録"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "注册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收銀台"
           }
         }
       }
@@ -6325,6 +7646,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自動販売機"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动售货机"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動販賣機"
           }
         }
       }
@@ -6667,20 +8000,56 @@
     },
     "result.info.issueInfo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Issue Info"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "発行情報"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发行信息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發行資訊"
           }
         }
       }
     },
     "result.info.issueInfo.date" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Issue Date"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "発行日"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "签发日期"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發行日期"
           }
         }
       }
@@ -6698,6 +8067,18 @@
             "state" : "translated",
             "value" : "有効期限"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有效日期"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有效期限"
+          }
         }
       }
     },
@@ -6714,15 +8095,45 @@
             "state" : "translated",
             "value" : "発行者"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发行人"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發行機構"
+          }
         }
       }
     },
     "result.info.issueInfo.otherAreaInfo" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "その他"
+            "value" : "エリア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "区域"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "區域"
           }
         }
       }
@@ -6737,8 +8148,20 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "エリア"
+            "state" : "translated",
+            "value" : "地域"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "区域"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區"
           }
         }
       }
@@ -6755,6 +8178,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "地域"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地区"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區"
           }
         }
       }
@@ -6928,7 +8363,32 @@
       }
     },
     "scanner.coreNFC.scanning.error.read" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanning Error"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み取りエラー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描错误"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "掃描錯誤"
+          }
+        }
+      }
     },
     "scanner.coreNFC.scanning.error.statusFlag,s1:%lld, s2:%lld" : {
       "localizations" : {
@@ -7401,6 +8861,47 @@
             "state" : "translated",
             "value" : "「icsca」は仙台市の商標です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca”是仙台市的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」是仙台市的註冊商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpDoCard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“DoCard” are trademarks of 道北バス.\n“Asaca” are trademarks of 旭川電気軌道株式会社"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「DoCard」は道北バスの商標です。\n「Asaca」は旭川電気軌道株式会社の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“DoCard”是道北バス的商标。\n“Asaca”是旭川電気軌道株式会社的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「DoCard」是道北巴士的商標。\n「Asaca」是旭川電氣軌道株式會社的商標。"
+          }
         }
       }
     },
@@ -7429,6 +8930,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“Kitaca”是北海道旅客鉄道株式會社的註冊商標。\n“Suica”是東日本旅客鉄道株式會社的註冊商標。\n“PASMO”是株式會社パスモ的註冊商標。\n“TOICA”是東海旅客鉄道株式會社的註冊商標。\n“manaca”是株式會社名古屋交通開発機構及株式會社エムアイシー的註冊商標。\n“ICOCA”是西日本旅客鉄道株式會社的註冊商標。\n“SUGOCA”是九州旅客鉄道株式會社的註冊商標。\n“nimoca”是西日本鉄道株式會社的註冊商標。\n“はやかけん”是福岡市交通局的註冊商標。\n“PiTaPa”是株式會社スルッとKANSAI的註冊商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpIC_icsca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca” are trademarks of 仙台市."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」は仙台市の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca”是仙台市的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」是仙台市的註冊商標。"
           }
         }
       }
@@ -7516,6 +9046,64 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“エヌタス”、“N+”、“長崎バス”是長崎自動車株式會社的商標。\n“Tカード”是カルチュア・コンビニエンス・クラブ株式會社的商標。\n“Vポイントカード”、“Vポイント”及Vポイント標誌是Vポイントマーケティング株式會社及三井住友カード株式會社的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpOKICA" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“OKICA” are trademarks of 沖縄ICカード株式会社."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「OKICA」は沖縄ICカード株式会社の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“OKICA”是沖縄ICカード株式会社的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「OKICA」是沖繩 IC 卡股份有限公司的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.jpRapica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Rapica” are trademarks of 鹿児島市交通局"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Rapica」は鹿児島市交通局の商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Rapica”是鹿児島市交通局的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Rapica」是鹿兒島市交通局的商標。"
           }
         }
       }
@@ -7717,6 +9305,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“icash”和“愛金卡”是愛金卡股份有限公司的商標。\n“7-ELEVEN”是統一超商股份有限公司的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.usClipper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Clipper” are trademarks of MTC"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Clipper」はMTCの商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Clipper”是MTC的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Clipper」是灣區交通局（MTC）的商標。"
           }
         }
       }
@@ -8737,6 +10354,62 @@
         }
       }
     },
+    "setting.debug.permission" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permission"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセス権限"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "權限"
+          }
+        }
+      }
+    },
+    "setting.debug.permission.isDisplay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Permission Request View"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "権限要求Viewの表示"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示需要权限View"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示需要權限View"
+          }
+        }
+      }
+    },
     "setting.debug.purchase.title" : {
       "localizations" : {
         "en" : {
@@ -9581,6 +11254,23 @@
         }
       }
     },
+    "splitview.empty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Item"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目を選択"
+          }
+        }
+      }
+    },
     "tab.history" : {
       "localizations" : {
         "en" : {
@@ -9874,6 +11564,18 @@
             "state" : "translated",
             "value" : "ツール"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工具"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工具"
+          }
         }
       }
     },
@@ -9889,6 +11591,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "スキャンログ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描日志"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "掃描日誌"
           }
         }
       }
@@ -10589,6 +12303,18 @@
             "state" : "translated",
             "value" : "上海"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海"
+          }
         }
       }
     },
@@ -10664,6 +12390,18 @@
             "state" : "translated",
             "value" : "北京"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京"
+          }
         }
       }
     },
@@ -10710,6 +12448,18 @@
             "state" : "translated",
             "value" : "四川省"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "四川省"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "四川省"
+          }
         }
       }
     },
@@ -10723,6 +12473,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成都市"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成都市"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "成都市"
@@ -10802,6 +12564,18 @@
             "state" : "translated",
             "value" : "マカオ特別行政区"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳门特别行政区"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳門特別行政區"
+          }
         }
       }
     },
@@ -10876,6 +12650,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香港特別行政区"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港特别行政区"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港特別行政區"
           }
         }
       }

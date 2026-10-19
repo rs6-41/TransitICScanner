@@ -4,6 +4,9 @@ import GoogleMobileAds
 import AdSupport
 import AppTrackingTransparency
 
+// 現時点では購入オプションを非表示
+var adDeleteDisplay = false
+
 final class AdsModel: ObservableObject {
     @Published var isDeleteAdsSheet = false
     @Published var purchaseAlertTitle = ""
@@ -34,13 +37,16 @@ struct ContentView: View {
     @EnvironmentObject var ads: AdsModel
     
     @Environment(\.dismiss) private var dismiss
+    @StateObject var smartCardManager = SmartCardManager()
     
     
     @AppStorage("isDebugStorage") var isDebugStorage = false
     
+    @AppStorage("firstPermission") var firstPermission = true
+    
     var body: some View {
         TabView(selection: $tab) {
-            CardList(deleteAds: $deleteAds)
+            CardList(deleteAds: $deleteAds,smartCardManager: smartCardManager)
                 .tag(0)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
@@ -52,19 +58,28 @@ struct ContentView: View {
                 .tabItem {
                     Label(String(localized:"tab.history"), systemImage: "tram.card")
                 }
-            NFCToolView(deleteAds: $deleteAds)
-                .tag(2)
-                .toolbarBackground(.visible, for: .tabBar)
-                .tabItem {
-                    Label(String(localized:"tab.tool"), systemImage: "latch.2.case.fill")
-                }
+            if appEnvironment == "DEV" {
+                NFCToolView(deleteAds: $deleteAds)
+                    .tag(2)
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .tabItem {
+                        Label(String(localized:"tab.tool"), systemImage: "latch.2.case.fill")
+                    }
+            }
             SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID, isCloudSyncEnabled: $isCloudSyncEnabled)
                 .tag(3)
                 .toolbarBackground(.visible, for: .tabBar)
                 .tabItem {
                     Label(String(localized:"tab.setting"), systemImage: "gearshape")
                 }
-             
+        }
+        
+        .task {
+            smartCardManager.start()
+        }
+        .sheet(isPresented: $firstPermission) {
+            PermissionModalView(isPresented: $firstPermission)
+                .interactiveDismissDisabled(true)
         }
         .sheet(isPresented: $ads.isDeleteAdsSheet) {
             NavigationStack {

@@ -41,6 +41,7 @@ struct DebugSettingView: View {
     @AppStorage("adDebug") var adDebug = false
     
     @AppStorage("isDebugStorage") var isDebugStorage = false
+    @AppStorage("firstPermission") var firstPermission = true
     
     var body: some View {
         ZStack {
@@ -134,6 +135,12 @@ struct DebugSettingView: View {
                         }
                     }) {
                         Text(LocalizedStringKey("setting.debug.result.demoCard"))
+                    }
+                }
+                
+                Section(header: Text(LocalizedStringKey("setting.debug.permission"))) {
+                    Toggle(isOn: $firstPermission) {
+                        Text(LocalizedStringKey("setting.debug.permission.isDisplay"))
                     }
                 }
                 
