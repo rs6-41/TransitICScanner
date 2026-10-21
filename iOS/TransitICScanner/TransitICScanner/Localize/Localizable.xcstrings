@@ -5798,6 +5798,7 @@
       }
     },
     "permission.after" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5910,6 +5911,7 @@
       }
     },
     "permission.authorized" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -11578,6 +11580,12 @@
           }
         }
       }
+    },
+    "tip.widget.message" : {
+
+    },
+    "tip.widget.title" : {
+
     },
     "tool.fullLog" : {
       "localizations" : {
