@@ -20,6 +20,11 @@ struct CardList: View {
     @State private var searchBarOffsetY: CGFloat = 0
     @State var searchBarHight: CGFloat = 0
     @State var isSearchFocused: Bool = false
+    @State private var searchBarIsBelowToolbar = true
+
+    // Toolbar layout reserves less space than the visible gap at the trailing
+    // edge, so include the additional list inset in the expansion width.
+    private let trailingToolbarWidth: CGFloat = 60
 
     var body: some View {
         NavigationStack {
@@ -198,6 +203,18 @@ struct CardList: View {
                         .easeInOut(duration: 0.2),
                         value: isSearchFocused
                     )
+                    .animation(
+                        .easeInOut(duration: 0.18),
+                        value: searchBarIsBelowToolbar
+                    )
+                    // At the top, the search field sits below the trailing
+                    // toolbar button, so it can extend through that button's
+                    // reserved horizontal slot. As it scrolls upward, restore
+                    // the slot to keep the controls from overlapping.
+                    .padding(
+                        .trailing,
+                        searchBarIsBelowToolbar ? -trailingToolbarWidth : 0
+                    )
                     .offset(y: max(0, searchBarOffsetY))
                     .zIndex(1)
                     .onGeometryChange(
@@ -231,10 +248,21 @@ struct CardList: View {
         } action: { oldVal, newVal in
             scrollOffsetY = newVal
 
+            let nextOffset: CGFloat
             if scrollOffsetY < searchBarHight {
-                searchBarOffsetY = -(scrollOffsetY + searchBarHight)
+                nextOffset = -(scrollOffsetY + searchBarHight)
             } else {
-                searchBarOffsetY = -scrollOffsetY
+                nextOffset = -scrollOffsetY
+            }
+
+            searchBarOffsetY = nextOffset
+
+            // Keep the expanded width while the bar is visually below the
+            // toolbar button. A small dead band prevents flicker at the edge.
+            if nextOffset < -2, searchBarIsBelowToolbar {
+                searchBarIsBelowToolbar = false
+            } else if nextOffset > 2, !searchBarIsBelowToolbar {
+                searchBarIsBelowToolbar = true
             }
         }
         .onAppear {
