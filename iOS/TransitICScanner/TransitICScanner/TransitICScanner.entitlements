@@ -22,5 +22,7 @@
 		<string>group.com.rs6apps.TransitICScanner</string>
 		<string>group.com.rs6apps.TransitICScanner.debug</string>
 	</array>
+	<key>com.apple.security.smartcard</key>
+	<true/>
 </dict>
 </plist>

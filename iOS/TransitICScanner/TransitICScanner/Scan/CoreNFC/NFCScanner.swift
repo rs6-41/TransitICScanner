@@ -177,6 +177,27 @@ final class NFCScannerModel: NSObject,ObservableObject, NFCTagReaderSessionDeleg
     
 }
 
+extension NFCScannerModel {
+    /// Dispatches scans to a reader-specific transport while keeping the
+    /// card parser and result model owned by the scanner.
+    func scanWithExternalReader(using manager: SmartCardManager) async throws {
+        switch scanOption.name {
+        case "usClipper":
+            try await usClipper_scanExternal(using: manager)
+        case "krOneCard":
+            try await krOneCard_scanExternal(using: manager)
+        case "cnTunion":
+            try await cnTunion_scanExternal(using: manager)
+        case "twICash":
+            try await twICash_scanExternal(using: manager)
+        default:
+            throw ReaderError.message(
+                String(localized: "cardList.reader.unsupported")
+            )
+        }
+    }
+}
+
 extension Data {
     func toIntReversed(_ startIndex: Int, _ endIndex: Int) -> Int {
         var s = 0
