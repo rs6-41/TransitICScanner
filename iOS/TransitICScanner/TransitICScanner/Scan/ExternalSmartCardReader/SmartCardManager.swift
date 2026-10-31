@@ -11,13 +11,21 @@ struct SmartCardReader: Identifiable,Hashable {
     let state: TKSmartCardSlot.State
 }
 
-enum ReaderError: Error {
+enum ReaderError: LocalizedError {
     case message(String)
+
+    var errorDescription: String? {
+        switch self {
+        case .message(let message): message
+        }
+    }
 }
 
 @MainActor
 final class SmartCardManager: ObservableObject {
     @Published private(set) var readers: [SmartCardReader] = []
+    @Published var selectedSource: ScanReaderSource = .builtIn
+    @Published private(set) var isAvailable = false
     
     private var slotManager: TKSmartCardSlotManager?
     
@@ -31,10 +39,12 @@ final class SmartCardManager: ObservableObject {
         // Smart Card Slot Managerを取得
         guard let manager = TKSmartCardSlotManager.default else {
             readers = []
+            isAvailable = false
             return
         }
 
         slotManager = manager
+        isAvailable = true
 
         updateReaders()
         startMonitoring()
@@ -51,7 +61,7 @@ final class SmartCardManager: ObservableObject {
         let slotNames = slotManager.slotNames
 
         /// 各Slotの情報を返す
-        readers = slotNames.compactMap { name in
+        let updatedReaders = slotNames.compactMap { name in
             if let slot = slotManager.slotNamed(name) {
                 return SmartCardReader(
                     id: name,
@@ -62,7 +72,25 @@ final class SmartCardManager: ObservableObject {
                 return nil
             }
         }
+
+        if readers != updatedReaders {
+            readers = updatedReaders
+        }
+        if updatedReaders.isEmpty {
+            if selectedSource != .builtIn {
+                selectedSource = .builtIn
+            }
+        }
+        if let selectedReaderID, !updatedReaders.contains(where: { $0.id == selectedReaderID }) {
+            self.selectedReaderID = updatedReaders.first?.id
+        } else if selectedReaderID == nil {
+            selectedReaderID = updatedReaders.first?.id
+        }
     }
+
+    @Published private(set) var selectedReaderID: String?
+
+    var hasConnectedReader: Bool { !readers.isEmpty }
     
     // MARK: - セッション
     func makeSession(name:String,command:String) async throws -> [String] {
@@ -95,6 +123,55 @@ final class SmartCardManager: ObservableObject {
         }
         throw ReaderError.message(String(localized:"error.smartCardReader.notDetectionCard"))
     }
+
+    /// Holds one exclusive external-card session for a complete card scan.
+    func withCard<T>(readerID: String? = nil, operation: (TKSmartCard) async throws -> T) async throws -> T {
+        guard let slotManager else {
+            throw ReaderError.message("External smart card access is unavailable")
+        }
+
+        let slotName = readerID ?? selectedReaderID
+        guard let slotName,
+              let slot = await slotManager.getSlot(withName: slotName),
+              let card = slot.makeSmartCard() else {
+            throw ReaderError.message(String(localized: "error.smartCardReader.notDetectionCard"))
+        }
+
+        let didBegin = try await card.beginSession()
+        guard didBegin else {
+            throw ReaderError.message("Could not start an external smart card session")
+        }
+        defer { card.endSession() }
+
+        return try await operation(card)
+    }
+
+    func apduSender(for card: TKSmartCard) -> APDUSend {
+        { cla, ins, p1, p2, data, le in
+            guard data.count <= 255 else {
+                throw ReaderError.message("APDU data is too long")
+            }
+
+            var command = Data([cla, ins, p1, p2])
+            if !data.isEmpty {
+                command.append(UInt8(data.count))
+                command.append(data)
+            }
+            if le > 0 {
+                command.append(le == 256 ? 0 : UInt8(le))
+            }
+
+            let response = try await card.transmit(command)
+            guard response.count >= 2 else {
+                throw ReaderError.message("External reader returned an incomplete APDU response")
+            }
+            return (
+                Data(response.dropLast(2)),
+                response[response.count - 2],
+                response[response.count - 1]
+            )
+        }
+    }
     
     
     /// 返答を1バイトごとの16進数配列として返却
@@ -112,7 +189,7 @@ final class SmartCardManager: ObservableObject {
     private func startMonitoring() {
         monitoringTask = Task {
             while !Task.isCancelled {
-                try? await Task.sleep(for: .milliseconds(250))
+                try? await Task.sleep(for: .milliseconds(500))
 
                 if Task.isCancelled {
                     break
@@ -151,37 +228,3 @@ extension Data {
         self = data
     }
 }
-
-
-
-let externalViewDebug = CardInfo(
-    logo: "placeholderCard",
-    name: "ExternalReaderViewDebug",
-    sortName:"ExternalReaderViewDebug",
-    area: .kr,
-    countryCode: ["kr"],
-    prefectures: nil,
-    regionOption: nil,
-    description:"ExternalReaderViewDebug",
-    scand_description: "ExternalReaderViewDebug",
-    searchWords: [],
-    scanOption: ScanOption(
-        name: "ExternalReaderViewDebug",
-        nameShort:"ExternalReaderViewDebug",
-        scanType: .external,
-        pollingOption: [],
-        felicaSystemCodes: nil,
-        historyCount: 0,
-        currencyType:.krw,
-        converter: .jpIC,
-        scrapingView: nil
-    ),
-    infomation: nil,
-    sample:
-        ResultSample(
-            balance:0,
-            idm:"01928374656",
-            type:"",
-            history: []
-        )
-)
