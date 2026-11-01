@@ -51,7 +51,9 @@ struct CardList: View {
                 )
                 .listRowBackground(Color.clear)
 
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
+                #endif
 
                 if debug.isDisplay {
                     VStack(alignment: .leading) {
@@ -185,6 +187,7 @@ struct CardList: View {
                             placeholder: String(localized: "cardList.search")
                         )
 
+                        #if !targetEnvironment(macCatalyst)
                         Button {
                             withAnimation(.linear(duration: 0.3)) {
                                 isSearchFocused = false
@@ -198,6 +201,7 @@ struct CardList: View {
                         .buttonBorderShape(.circle)
                         .opacity(isSearchFocused ? 1 : 0)
                         .frame(width: isSearchFocused ? 40 : 0)
+                        #endif
                     }
                     .animation(
                         .easeInOut(duration: 0.2),
@@ -375,7 +379,9 @@ struct CardRegionView: View {
 
     var body: some View {
         List {
+            #if !targetEnvironment(macCatalyst)
             ListAdView(deleteAds: $deleteAds)
+            #endif
 
             Section {
                 ForEach(

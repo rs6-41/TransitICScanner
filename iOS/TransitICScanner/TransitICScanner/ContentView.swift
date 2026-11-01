@@ -1,6 +1,8 @@
 import SwiftUI
 import Combine
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
 import AdSupport
 import AppTrackingTransparency
 
@@ -154,6 +156,7 @@ struct ContentView: View {
         case .some(_):break
         }
         
+        #if !targetEnvironment(macCatalyst)
         if adDebug {
             NativeAdUnitIDValue = dev_NativeAdUnitID
             BannerUnitIDValue = dev_BannerUnitID
@@ -161,6 +164,7 @@ struct ContentView: View {
             NativeAdUnitIDValue = NativeUnitID
             BannerUnitIDValue = bannerUnitID
         }
+        #endif
         
         CloudSyncSettings.setEnabled(isCloudSyncEnabled)
         

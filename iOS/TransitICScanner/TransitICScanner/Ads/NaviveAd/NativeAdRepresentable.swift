@@ -1,5 +1,7 @@
 import SwiftUI
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
 
 struct NativeAdRepresentable: UIViewRepresentable {
     

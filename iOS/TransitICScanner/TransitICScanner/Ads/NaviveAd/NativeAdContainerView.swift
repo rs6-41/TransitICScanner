@@ -1,6 +1,8 @@
 import SwiftUI
 import UIKit
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
 import Observation
 
 @Observable
