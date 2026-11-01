@@ -39,7 +39,7 @@
 | 札幌 | SAPICA | jpIC_SAPICA | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | |
 | 香川 | IruCa | jpIC_IruCa | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | |
 | 長崎 | エヌタス | jpNplus | Type-F | [エヌタス](./doc/cards/jpNplus.md) | ✅ | |
-| 宮崎 | icsca | jpIC_icsca_ | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | |
+| 宮崎 | icsca | jpIC_icsca | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | |
 | 鹿児島 | Rapica/いわさきICカード | jpRapica | Type-F | [Rapica](./doc/cards/jpRapica.md) | ✅ | |
 
 ### 北アメリカ
