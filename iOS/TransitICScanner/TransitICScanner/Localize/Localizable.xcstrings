@@ -3983,6 +3983,7 @@
       }
     },
     "error.smartCardReader.felicaHistoryService" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4039,6 +4040,7 @@
       }
     },
     "error.smartCardReader.felicaInfoService" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
