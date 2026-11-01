@@ -3,6 +3,7 @@ import CoreNFC
 
 struct ScanReaderPicker: View {
     @ObservedObject var manager: SmartCardManager
+    var showsIconAndText = false
 
     private static let builtInSelectionID = "__builtInReader__"
 
@@ -46,50 +47,80 @@ struct ScanReaderPicker: View {
                 .pickerStyle(.inline)
                 .labelsHidden()
             } header: {
-                HStack {
-                    Circle()
-                        .fill(
-                            !manager.isAvailable
-                                ? Color.red
-                                : manager.hasConnectedReader
-                                    ? Color.green
-                                    : Color.gray
-                        )
-                        .frame(width: 9, height: 9)
-                    Text(
-                        !manager.isAvailable
-                        ? String(localized: "cardList.reader.unavailable")
-                        : manager.hasConnectedReader
-                        ? String(localized: "cardList.reader.connected")
-                        : String(localized: "cardList.reader.disconnected")
-                    )
-                }
+                Text(
+                    !manager.isAvailable
+                    ? String(localized: "cardList.reader.unavailable")
+                    : manager.hasConnectedReader
+                    ? String(localized: "cardList.reader.connected")
+                    : String(localized: "cardList.reader.disconnected")
+                )
             }
             .tint(Color(.label))
 
         } label: {
-            switch manager.selectedSource {
-            case .builtIn:
-                if NFCReaderSession.readingAvailable {
-                    Image(systemName: "iphone.radiowaves.left.and.right")
-                } else {
-                    Image(systemName: "exclamationmark.triangle.fill")
+            if showsIconAndText {
+                VStack(alignment:.leading) {
+                    Text(LocalizedStringKey("navigation.readerSelection"))
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.gray)
+                    Label {
+                        switch manager.selectedSource {
+                        case .builtIn:
+                            if NFCNDEFReaderSession.readingAvailable {
+                                Text(LocalizedStringKey("cardList.reader.builtIn"))
+                            } else {
+                                Text(LocalizedStringKey("cardList.reader.enptyReader"))
+                            }
+                        case .external:
+                            if let selectedReader = manager.readers.first(where: {
+                                $0.id == manager.selectedReaderID
+                            }) {
+                                Text(verbatim: selectedReader.name)
+                            } else {
+                                Text(LocalizedStringKey("cardList.external.title"))
+                            }
+                        }
+                    } icon: {
+                        Image(systemName: selectedReaderSymbol)
+                    }
                 }
-
-            case .external:
-                if manager.hasConnectedReader {
-                    Image(systemName: "mediastick")
-                } else {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                }
+            } else {
+                Image(systemName: selectedReaderSymbol)
             }
         }
-        .connectedReaderBackground(manager)
-        .connectedReaderLabelColor(manager)
+        .readerPickerStyle(manager, showsIconAndText: showsIconAndText)
+    }
+
+    private var selectedReaderSymbol: String {
+        switch manager.selectedSource {
+        case .builtIn:
+            NFCReaderSession.readingAvailable
+                ? "iphone.radiowaves.left.and.right"
+                : "exclamationmark.triangle.fill"
+        case .external:
+            manager.hasConnectedReader
+                ? "mediastick"
+                : "exclamationmark.triangle.fill"
+        }
     }
 }
 
 extension View {
+    @ViewBuilder
+    func readerPickerStyle(
+        _ manager: SmartCardManager,
+        showsIconAndText: Bool
+    ) -> some View {
+        if showsIconAndText {
+            self.buttonStyle(.plain)
+        } else {
+            self
+                .connectedReaderBackground(manager)
+                .connectedReaderLabelColor(manager)
+        }
+    }
+
     @ViewBuilder
     func connectedReaderBackground(_ manager: SmartCardManager) -> some View {
         if !manager.isAvailable {

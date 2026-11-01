@@ -21,13 +21,13 @@ struct ContentView: View {
     @AppStorage("deleteAdsPurchaseID") var deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
     @AppStorage("enableCardType") var enableCardType = 0
     @AppStorage("testCardEnabled") var isTestCardEnabled = false
-    
+
     @AppStorage("isLaunchVersionFastBeta") var isLaunchVersionFastBeta = ""
     @AppStorage("isLaunchVersionFastRel") var isLaunchVersionFastRel = ""
     let appEnvironment = Bundle.main.object(
         forInfoDictionaryKey: "AppEnvironment"
     ) as? String
-    
+
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     @State var versionFirstLook = false
     @AppStorage("devSetting") var devSetting = false
@@ -39,79 +39,103 @@ struct ContentView: View {
     @EnvironmentObject var ads: AdsModel
     
     @Environment(\.dismiss) private var dismiss
-    @StateObject var smartCardManager = SmartCardManager()
+
+    @ObservedObject var smartCardManager: SmartCardManager
     
     
     @AppStorage("isDebugStorage") var isDebugStorage = false
     
     @AppStorage("firstPermission") var firstPermission = true
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    private var showsSidebar: Bool {
+        #if targetEnvironment(macCatalyst)
+        true
+        #else
+        horizontalSizeClass == .regular
+        #endif
+    }
+    
     var body: some View {
         TabView(selection: $tab) {
-            CardList(deleteAds: $deleteAds,smartCardManager: smartCardManager)
-                .tag(0)
-                .toolbarBackground(.visible, for: .tabBar)
-                .tabItem {
-                    Label(String(localized:"tab.scan"), systemImage: "iphone.radiowaves.left.and.right")
+            Tab(LocalizedStringKey("tab.scan"), systemImage: "iphone.radiowaves.left.and.right", value: 0) {
+                CardList(deleteAds: $deleteAds, smartCardManager: smartCardManager)
+            }
+            Tab(LocalizedStringKey("tab.history"), systemImage: "tram.card", value: 1) {
+                NavigationStack {
+                    SavedListView(deleteAds: $deleteAds)
                 }
-            SavedListView(deleteAds: $deleteAds)
-                .tag(1)
-                .toolbarBackground(.visible, for: .tabBar)
-                .tabItem {
-                    Label(String(localized:"tab.history"), systemImage: "tram.card")
-                }
+            }
+
             if appEnvironment == "DEV" {
-                NFCToolView(deleteAds: $deleteAds)
-                    .tag(2)
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .tabItem {
-                        Label(String(localized:"tab.tool"), systemImage: "latch.2.case.fill")
+                Tab(LocalizedStringKey("tab.tool"), systemImage: "latch.2.case.fill", value: 2) {
+                    NavigationStack {
+                        NFCToolView(deleteAds: $deleteAds)
                     }
-            }
-            SettingView(deleteAds: $deleteAds, deleteAdsPurchaseID: $deleteAdsPurchaseID, isCloudSyncEnabled: $isCloudSyncEnabled)
-                .tag(3)
-                .toolbarBackground(.visible, for: .tabBar)
-                .tabItem {
-                    Label(String(localized:"tab.setting"), systemImage: "gearshape")
                 }
+            }
+
+            Tab(LocalizedStringKey("tab.setting"), systemImage: "gearshape", value: 3) {
+                NavigationStack {
+                    SettingView(
+                        deleteAds: $deleteAds,
+                        deleteAdsPurchaseID: $deleteAdsPurchaseID,
+                        isCloudSyncEnabled: $isCloudSyncEnabled
+                    )
+                }
+            }
         }
-        
+        .navigationTitle(LocalizedStringKey("appName"))
+        .tabViewSidebarBottomBar {
+            if showsSidebar {
+                    HStack {
+                        ScanReaderPicker(
+                            manager: smartCardManager,
+                            showsIconAndText: true
+                        )
+                        .lineLimit(1)
+                        Spacer()
+                    }
+                .padding(.horizontal)
+            }
+        }
+        .tabViewStyle(.sidebarAdaptable)
         .task {
-            smartCardManager.start()
-        }
+                smartCardManager.start()
+            }
         .sheet(isPresented: $firstPermission) {
-            PermissionModalView(isPresented: $firstPermission)
-                .interactiveDismissDisabled(true)
-        }
+                PermissionModalView(isPresented: $firstPermission)
+                    .interactiveDismissDisabled(true)
+            }
         .sheet(isPresented: $ads.isDeleteAdsSheet) {
-            NavigationStack {
-                List {
-                    SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle, purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert, deleteAds: $deleteAds)
-                        .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
-                            Button(LocalizedStringKey("ok")) {
-                                ads.purchaseAlertTitle = ""
-                                ads.purchaseAlertMessage = ""
-                                ads.isPurchaseAlert = false
-                                ads.isDeleteAdsSheet = false
+                NavigationStack {
+                    List {
+                        SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle, purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert, deleteAds: $deleteAds)
+                            .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
+                                Button(LocalizedStringKey("ok")) {
+                                    ads.purchaseAlertTitle = ""
+                                    ads.purchaseAlertMessage = ""
+                                    ads.isPurchaseAlert = false
+                                    ads.isDeleteAdsSheet = false
+                                }
+                            } message: {
+                                Text(ads.purchaseAlertMessage)
                             }
-                        } message: {
-                            Text(ads.purchaseAlertMessage)
-                        }
-                }
-                .navigationTitle(LocalizedStringKey("ads.delete"))
-                .toolbar {
-                    ToolbarItem(placement:.cancellationAction){
-                        Button(action: {
-                            dismiss()
-                            ads.isDeleteAdsSheet = false
-                        }) {
-                            Image(systemName:"xmark")
+                    }
+                    .navigationTitle(LocalizedStringKey("ads.delete"))
+                    .toolbar {
+                        ToolbarItem(placement:.cancellationAction){
+                            Button(action: {
+                                dismiss()
+                                ads.isDeleteAdsSheet = false
+                            }) {
+                                Image(systemName:"xmark")
+                            }
                         }
                     }
                 }
             }
-        }
-        
+
         .onAppear() {
             setup()
         }
@@ -178,5 +202,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(smartCardManager: SmartCardManager())
 }

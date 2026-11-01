@@ -12,47 +12,60 @@ struct ResultView: View {
     
     @Binding var saveListID:UUID
     @Binding var deleteAds:Bool
+    var onDone: (() -> Void)? = nil
+    var embedsNavigationStack = true
     
     @State var areaText:LocalizedStringKey = ""
 
     var body: some View {
-        NavigationStack {
-            List {
-                #if !targetEnvironment(macCatalyst)
-                ListAdView(deleteAds:$deleteAds)
-                #endif
-                resultUserdataSection
-                resultInfoSection
-                resultHistorySection
+        Group {
+            if embedsNavigationStack {
+                NavigationStack {
+                    resultContent
+                }
+            } else {
+                resultContent
             }
-            .onAppear() {
-                setDefaultDisplayName()
-            }
-            .onChange(of:cardUserName) {
-                setDefaultDisplayName()
-            }
-            .toolbar {
-                ToolbarItem(
-                    placement: .confirmationAction
-                ) {
-                    if scandata {
-                        Button(action: {
-                            saveAction()
+        }
+    }
+
+    private var resultContent: some View {
+        List {
+            #if !targetEnvironment(macCatalyst)
+            ListAdView(deleteAds:$deleteAds)
+            #endif
+            resultUserdataSection
+            resultInfoSection
+            resultHistorySection
+        }
+        .onAppear() {
+            setDefaultDisplayName()
+        }
+        .onChange(of:cardUserName) {
+            setDefaultDisplayName()
+        }
+        .toolbar {
+            ToolbarItem(
+                placement: .confirmationAction
+            ) {
+                if scandata {
+                    Button(action: {
+                        saveAction()
+                        if let onDone {
+                            onDone()
+                        } else {
                             dismiss()
-                        }) {
-                            Image(systemName: "checkmark")
-                                .foregroundStyle(Color.white)
                         }
-                        .tint(Color.accentColor)
-                        .buttonStyle(.glassProminent)
+                    }) {
+                        Image(systemName: "checkmark")
+                            .foregroundStyle(Color.white)
                     }
+                    .tint(Color.accentColor)
+                    .buttonStyle(.glassProminent)
                 }
             }
-            .navigationTitle(
-                Text(cardUserName)
-            )
-            
         }
+        .navigationTitle(Text(cardUserName))
     }
     
     @ViewBuilder

@@ -23,6 +23,8 @@ struct TransitICScannerApp: App {
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
+    
+    @StateObject var smartCardManager = SmartCardManager()
 
     let container: ModelContainer
 
@@ -38,11 +40,12 @@ struct TransitICScannerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(smartCardManager: smartCardManager)
                 .environmentObject(cardItemsStore)
                 .environmentObject(debugModel)
                 .environmentObject(getCountry)
                 .environmentObject(adsModel)
+                .navigationTitle(" ")
         }
         .modelContainer(container)
     }
