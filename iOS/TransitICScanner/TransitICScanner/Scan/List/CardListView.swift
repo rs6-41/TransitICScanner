@@ -39,6 +39,10 @@ struct CardList: View {
         #endif
     }
 
+    private var sidebarSelection: Binding<regionList?>? {
+        showsSidebar ? nil : $selection
+    }
+
     var body: some View {
         Group {
             if showsSidebar {
@@ -182,7 +186,7 @@ struct CardList: View {
     }
 
     private var sidebarList: some View {
-            List(selection: $selection) {
+            List(selection: sidebarSelection) {
                 if !showsSidebar {
                 Section {
                     HStack {
@@ -256,23 +260,34 @@ struct CardList: View {
                             }
 
                             if !filtFirstItem.isEmpty {
-                                Button {
-                                    selection = list
-                                    selectedResult = nil
-                                    if showsSidebar {
+                                if showsSidebar {
+                                    Button {
+                                        selectedResult = nil
                                         regionPath = [list]
-                                    } else {
-                                        preferredCompactColumn = .content
+                                    } label: {
+                                        SquareIcon(
+                                            text: LocalizedStringKey(list.first.name()),
+                                            systemImage: list.first.icon(),
+                                            color: Color.blue
+                                        )
                                     }
-                                } label: {
-                                    SquareIcon(
-                                        text: LocalizedStringKey(list.first.name()),
-                                        systemImage: list.first.icon(),
-                                        color: Color.blue
-                                    )
+                                    .buttonStyle(.plain)
+                                    .contentShape(Rectangle())
+                                } else {
+                                    Button {
+                                        selection = list
+                                        selectedResult = nil
+                                        preferredCompactColumn = .content
+                                    } label: {
+                                        SquareIcon(
+                                            text: LocalizedStringKey(list.first.name()),
+                                            systemImage: list.first.icon(),
+                                            color: Color.blue
+                                        )
+                                    }
+                                    .buttonStyle(.plain)
+                                    .tag(list)
                                 }
-                                .buttonStyle(.plain)
-                                .tag(list)
                             }
                         }
                     } header: {
