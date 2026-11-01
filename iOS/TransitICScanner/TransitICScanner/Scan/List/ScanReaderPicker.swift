@@ -64,6 +64,7 @@ struct ScanReaderPicker: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.gray)
+                        .padding(.bottom,1)
                     Label {
                         switch manager.selectedSource {
                         case .builtIn:

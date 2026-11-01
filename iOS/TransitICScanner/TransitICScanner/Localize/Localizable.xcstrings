@@ -6403,25 +6403,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select a region or card to get started."
+            "value" : "Select a card to get started."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "地域またはカードを選択してください。"
+            "value" : "カードを選択してください。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请选择一个地区或卡片。"
+            "value" : "请选择一个卡片。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請選擇一個地區或卡片。"
+            "value" : "請選擇一個卡片。"
           }
         }
       }
