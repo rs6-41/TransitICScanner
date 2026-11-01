@@ -4,6 +4,9 @@
     "" : {
       "shouldTranslate" : false
     },
+    " " : {
+
+    },
     "ads" : {
       "localizations" : {
         "en" : {
@@ -1965,25 +1968,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFC is unsupported or unavailable."
+            "value" : "Card reader disconnected."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFCに非対応の端末か、NFCが無効です。"
+            "value" : "カードリーダーが接続されていません。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "该设备不支持NFC，或者NFC功能已被禁用。"
+            "value" : "读卡器未连接"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此裝置不支援 NFC，或 NFC 功能已停用。"
+            "value" : "讀卡器未連線"
           }
         }
       }
@@ -3041,6 +3044,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "外接讀卡器未連線"
+          }
+        }
+      }
+    },
+    "cardList.reader.enptyReader" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not Connected."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リーダー未接続"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读卡器未连接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器未連線"
           }
         }
       }
@@ -6335,6 +6366,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "沖繩縣"
+          }
+        }
+      }
+    },
+    "navigation.readerSelection" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card Reader"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードリーダー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读卡器"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器"
+          }
+        }
+      }
+    },
+    "navigation.split.notselection" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a region or card to get started."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地域またはカードを選択してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择一个地区或卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇一個地區或卡片。"
           }
         }
       }
