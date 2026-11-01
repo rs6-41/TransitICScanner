@@ -46,21 +46,46 @@ let krOneCard = CardInfo(
 extension NFCScannerModel {
     func krOneCard_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
         guard case let .iso7816(isoTag) = tag else {
-            session.invalidate(errorMessage: "Not ISO7816 tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
             return
         }
-        print("Korea OneCard scan started")
-        print("ISO7816 identifier:", isoTag.identifier.map { String(format: "%02X", $0) }.joined())
-        let aid = isoTag.initialSelectedAID
-        if aid.isEmpty {
-        print("Initial Selected AID: empty")
-    } else {
-        print("Initial Selected AID:", aid.utf8.map { String(format: "%02X", $0) }.joined())
-    }
-    print("Historical Bytes: \(isoTag.historicalBytes?.map { String(format: "%02X", $0) }.joined() ?? "nil")")
-    print("Application Data: \(isoTag.applicationData?.map { String(format: "%02X", $0) }.joined() ?? "nil")")
+        let send: APDUSend = { cla, ins, p1, p2, data, le in
+            let apdu = NFCISO7816APDU(
+                instructionClass: cla,
+                instructionCode: ins,
+                p1Parameter: p1,
+                p2Parameter: p2,
+                data: data,
+                expectedResponseLength: le
+            )
+            return try await isoTag.sendCommand(apdu: apdu)
+        }
 
         Task {
+            guard let result = await krOneCard_result(send) else {
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.oneCardRead"))
+                return
+            }
+            await MainActor.run {
+                self.result = result
+                session.invalidate()
+            }
+        }
+    }
+
+    func krOneCard_scanExternal(using manager: SmartCardManager) async throws {
+        let result = try await manager.withCard { card in
+            let send = manager.apduSender(for: card)
+            guard let result = await krOneCard_result(send) else {
+                throw ReaderError.message(String(localized: "error.smartCardReader.oneCardRead"))
+            }
+            return result
+        }
+        await MainActor.run { self.result = result }
+    }
+
+    private func krOneCard_result(_ send: APDUSend) async -> Result? {
+        print("Korea OneCard scan started")
             // New Korea OneCard documented AID flow:
             // 1. Select Config DF: A0000004520001
             // 2. Parse FCI for tag 0x4F (main ADF AID) and tag 0x11 (balance APDU descriptor)
@@ -73,10 +98,9 @@ extension NFCScannerModel {
 
             // Step 1: Select Config DF
             print("Selecting Config DF AID: \(configDFAID.map { String(format: "%02X", $0) }.joined())")
-            guard let (configFCI, sw1, sw2) = await krOneCard_sendAPDU(isoTag, ins: 0xA4, p1: 0x04, p2: 0x00, data: configDFAID, le: 256, cla: 0x00),
+            guard let (configFCI, sw1, sw2) = await krOneCard_sendAPDU(send, ins: 0xA4, p1: 0x04, p2: 0x00, data: configDFAID, le: 256, cla: 0x00),
                   sw1 == 0x90 && sw2 == 0x00 else {
-                session.invalidate(errorMessage: "Korea OneCard Config DF not found")
-                return
+                return nil
             }
 
             // Step 2: Parse Config DF FCI for main ADF AID, balance APDU descriptor, and file descriptors
@@ -99,20 +123,19 @@ extension NFCScannerModel {
             var issuer:String? = krOneCard_cardTypeName.1
             print("Korea OneCard detected type: \(selectedCardType)")
             print("Selecting main ADF AID: \(adfAID.map { String(format: "%02X", $0) }.joined())")
-            guard let (adfFCI, sw1b, sw2b) = await krOneCard_sendAPDU(isoTag, ins: 0xA4, p1: 0x04, p2: 0x00, data: adfAID, le: 256, cla: 0x00),
+            guard let (adfFCI, sw1b, sw2b) = await krOneCard_sendAPDU(send, ins: 0xA4, p1: 0x04, p2: 0x00, data: adfAID, le: 256, cla: 0x00),
                   sw1b == 0x90 && sw2b == 0x00 else {
-                session.invalidate(errorMessage: "Korea OneCard ADF not found")
-                return
+                return nil
             }
 
             // Step 4: Get balance using descriptor if present, else default
-            let balance = await krOneCard_getBalance(isoTag, balanceAPDU)
+            let balance = await krOneCard_getBalance(send, balanceAPDU)
             print("Final Korea OneCard balance value:", balance ?? -1)
 
 
             // Info/history using the selected ADF context and file descriptors
             let info = await krOneCard_getInfoWithSFI(adfFCI, cardTypeName: selectedCardType, issuer: issuer)
-            let history = await krOneCard_readKnownRecords(isoTag, fileDescriptors: fileDescriptors)
+            let history = await krOneCard_readKnownRecords(send, fileDescriptors: fileDescriptors)
 
             print("===== Korea OneCard Result Debug =====")
             print("balance:", balance as Any)
@@ -121,37 +144,25 @@ extension NFCScannerModel {
             print("converter:", krOneCard.scanOption.converter as Any)
             print("================================")
 
-            await MainActor.run {
-                self.result = Result(
-                    balance: balance ?? 0,
-                    isHistory: true,
-                    history: history ?? [],
-                    info: info,
-                    converter: krOneCard.scanOption.converter,
-                    isLastHide: false,
-                    description: krOneCard.scand_description,
-                    savedAt: Date.now
-                )
-                session.invalidate()
-            }
-        }
+            return Result(
+                balance: balance ?? 0,
+                isHistory: true,
+                history: history ?? [],
+                info: info,
+                converter: krOneCard.scanOption.converter,
+                isLastHide: false,
+                description: krOneCard.scand_description,
+                savedAt: Date.now
+            )
     }
 
     // MARK: - APDU helpers
 
-    private func krOneCard_sendAPDU(_ tag: NFCISO7816Tag, ins: UInt8, p1: UInt8, p2: UInt8, data: Data = Data(), le: Int = 256, cla: UInt8 = 0x00) async -> (Data, UInt8, UInt8)? {
-        let apdu = NFCISO7816APDU(
-            instructionClass: cla,
-            instructionCode: ins,
-            p1Parameter: p1,
-            p2Parameter: p2,
-            data: data,
-            expectedResponseLength: le
-        )
+    private func krOneCard_sendAPDU(_ send: APDUSend, ins: UInt8, p1: UInt8, p2: UInt8, data: Data = Data(), le: Int = 256, cla: UInt8 = 0x00) async -> (Data, UInt8, UInt8)? {
         do {
             let dataHex = data.map { String(format: "%02X", $0) }.joined()
             print(String(format: "APDU Command: CLA:%02X INS:%02X P1:%02X P2:%02X Data:%@", cla, ins, p1, p2, dataHex))
-            let (response, sw1, sw2) = try await tag.sendCommand(apdu: apdu)
+            let (response, sw1, sw2) = try await send(cla, ins, p1, p2, data, le)
             let responseHex = response.map { String(format: "%02X", $0) }.joined()
             print(String(format: "APDU Response: SW1:%02X SW2:%02X Data:%@", sw1, sw2, responseHex))
             return (response, sw1, sw2)
@@ -241,12 +252,12 @@ extension NFCScannerModel {
 
     /// If apduDesc present, send exactly that APDU (cla, ins, p1, p2, le). Otherwise use default (CLA=0x90, INS=0x4C, P1=0x00, P2=0x00, Le=4).
     /// Returns balance as UInt32 (KRW, no division).
-    private func krOneCard_getBalance(_ tag: NFCISO7816Tag, _ apduDesc: (UInt8, UInt8, UInt8, UInt8, Int)?) async -> Double? {
+    private func krOneCard_getBalance(_ send: APDUSend, _ apduDesc: (UInt8, UInt8, UInt8, UInt8, Int)?) async -> Double? {
         let command = apduDesc ?? (0x90, 0x4C, 0x00, 0x00, 4)
         let (cla, ins, p1, p2, le) = command
 
         guard let (response, sw1, sw2) = await krOneCard_sendAPDU(
-            tag,
+            send,
             ins: ins,
             p1: p1,
             p2: p2,
@@ -440,7 +451,7 @@ extension NFCScannerModel {
     }
 
     // MARK: - Read T-money Transaction Records (proprietary GET RECORD and fallback SFI)
-    private func krOneCard_readKnownRecords(_ tag: NFCISO7816Tag, fileDescriptors: [(fileType: UInt8, sfi: UInt8, maxLength: UInt16)]) async -> [ResultHistory]? {
+    private func krOneCard_readKnownRecords(_ send: APDUSend, fileDescriptors: [(fileType: UInt8, sfi: UInt8, maxLength: UInt16)]) async -> [ResultHistory]? {
         var logs: [ResultHistory] = []
 
         let recordLength = 52
@@ -454,7 +465,7 @@ extension NFCScannerModel {
             if sfi == 4 {
                 let efTrans = Data([0x00, 0x03])
                 _ = await krOneCard_sendAPDU(
-                    tag,
+                    send,
                     ins: 0xA4,
                     p1: 0x00,
                     p2: 0x0C,
@@ -468,7 +479,7 @@ extension NFCScannerModel {
                 let p2 = (sfi << 3) | 0x04
 
                 var readResult = await krOneCard_sendAPDU(
-                    tag,
+                    send,
                     ins: 0xB2,
                     p1: UInt8(record),
                     p2: p2,
@@ -479,7 +490,7 @@ extension NFCScannerModel {
 
                 if let (_, sw1, sw2) = readResult, sw1 == 0x6C {
                     readResult = await krOneCard_sendAPDU(
-                        tag,
+                        send,
                         ins: 0xB2,
                         p1: UInt8(record),
                         p2: p2,

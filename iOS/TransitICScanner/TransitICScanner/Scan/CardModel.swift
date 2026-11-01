@@ -51,6 +51,23 @@ enum ScanType {
     case external
 }
 
+enum ScanReaderSource: String, CaseIterable, Identifiable {
+    case builtIn
+    case external
+
+    var id: String { rawValue }
+}
+
+/// Reader-independent APDU exchange used by card parsers that support ISO 7816.
+typealias APDUSend = (
+    _ cla: UInt8,
+    _ ins: UInt8,
+    _ p1: UInt8,
+    _ p2: UInt8,
+    _ data: Data,
+    _ le: Int
+) async throws -> (Data, UInt8, UInt8)
+
 protocol CardConverter {
     func convertCardInfo(_ data: Any) -> Any
     func convertHistory(_ data: Any) -> Any

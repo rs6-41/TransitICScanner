@@ -67,7 +67,6 @@ struct PermissionModalView: View {
                         isPresented: $isPresented
                     )
                 } else {
-
                     if let content = getPermissionContent(value: lastPath) {
                         PermissionView(
                             content: content,
@@ -93,8 +92,7 @@ struct PermissionModalView: View {
                 descriptionRed: nil,
                 action: { completion in
                     completion()
-                },
-                first:true
+                }
             )
         }
 
@@ -199,8 +197,7 @@ struct PermissionModalView: View {
                 action: { completion in
                     isPresented = false
                     completion()
-                },
-                first:true
+                }
                 )
             }
 
@@ -217,7 +214,6 @@ struct PermissionModel {
     var fill: Color?
     var color: Color?
     var action: (@escaping () -> Void) -> Void
-    var first: Bool?
 }
 
 struct PermissionView: View {
@@ -267,11 +263,15 @@ struct PermissionView: View {
                             }
                         }
                     }
-
-                    Image(content.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity)
+                    ZStack {
+                        Color.white
+                            .opacity(0.00001)
+                            .frame(maxWidth: .infinity)
+                        Image(content.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+                    }
                 }
 
 
@@ -297,29 +297,14 @@ struct PermissionView: View {
                     }
                 }
             }) {
-                Group {
-                    if content.first ?? false {
-                        Text(LocalizedStringKey("permission.continue"))
-                    } else {
-                        Text(LocalizedStringKey("permission.authorized"))
-                    }
-                }
-                .bold()
-                .frame(maxWidth: .infinity)
-                .frame(height: 40)
+                Text(LocalizedStringKey("permission.continue"))
+                    .bold()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 40)
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.roundedRectangle)
             .padding(10)
-
-            if !(content.first ?? false) {
-                Button(action: {
-                    move()
-                }) {
-                    Text(LocalizedStringKey("permission.after"))
-                }
-                .padding(10)
-            }
         }
         .toolbar(.hidden, for: .navigationBar)
         .frame(maxWidth: 500)
