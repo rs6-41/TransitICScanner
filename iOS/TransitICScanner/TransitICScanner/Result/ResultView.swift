@@ -18,7 +18,9 @@ struct ResultView: View {
     var body: some View {
         NavigationStack {
             List {
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds:$deleteAds)
+                #endif
                 resultUserdataSection
                 resultInfoSection
                 resultHistorySection

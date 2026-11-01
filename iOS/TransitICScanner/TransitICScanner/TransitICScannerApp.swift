@@ -1,14 +1,19 @@
 import SwiftUI
 import SwiftData
 import Combine
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
+
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
+#if !targetEnvironment(macCatalyst)
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         MobileAds.shared.start(completionHandler: nil)
         return true
     }
+    #endif
 }
 
 @main

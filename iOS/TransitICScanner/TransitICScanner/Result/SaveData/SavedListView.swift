@@ -110,7 +110,9 @@ struct SavedListView: View {
     var body: some View {
         NavigationStack {
             List {
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
+                #endif
                 
                 Section {
                     if filteredCards.isEmpty {

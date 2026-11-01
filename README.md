@@ -4,7 +4,7 @@
  - [開発環境・規程](./doc/dev/README.md)
  
 ## プラットフォーム
-| OS | 実装状況 | 要件 | 外部リーダー |
+| OS | リンク | 要件 | 外部リーダー |
 | -- | -- | -- | -- |
 | iOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | iOS 26.4+ | 対応 |
 | macOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | macOS 26.4+ | 必須 |
