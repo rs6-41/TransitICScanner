@@ -92,7 +92,7 @@ extension NFCScannerModel {
         case .miFare(let t):
             print("Clipper: using NFCMiFareTag path")
             guard t.mifareFamily == .desfire else {
-                session.invalidate(errorMessage: "Not DESFire tag")
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
                 return
             }
             send = { cla, ins, p1, p2, data, le in
@@ -124,13 +124,13 @@ extension NFCScannerModel {
             identifier = t.identifier
 
         default:
-            session.invalidate(errorMessage: "Not DESFire tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
             return
         }
 
         Task {
             guard let result = await usClipper_result(send, identifier: identifier) else {
-                session.invalidate(errorMessage: "Clipper card could not be read")
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.clipperRead"))
                 return
             }
 
@@ -146,7 +146,7 @@ extension NFCScannerModel {
         let result = try await manager.withCard { card in
             let send = manager.apduSender(for: card)
             guard let result = await usClipper_result(send, identifier: Data()) else {
-                throw ReaderError.message("Clipper card could not be read")
+                throw ReaderError.message(String(localized: "error.smartCardReader.clipperRead"))
             }
             return result
         }

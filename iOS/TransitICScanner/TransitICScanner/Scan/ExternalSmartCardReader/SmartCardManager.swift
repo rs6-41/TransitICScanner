@@ -24,12 +24,13 @@ enum ReaderError: LocalizedError {
 @MainActor
 final class SmartCardManager: ObservableObject {
     @Published private(set) var readers: [SmartCardReader] = []
-    @Published var selectedSource: ScanReaderSource = .builtIn
+    @Published private(set) var selectedSource: ScanReaderSource = .builtIn
     @Published private(set) var isAvailable = false
     
     private var slotManager: TKSmartCardSlotManager?
     
     private var monitoringTask: Task<Void, Never>?
+    private var hasUserSelectedReader = false
 
     // MARK: - 開始
     /// CryptoTokenKitを初期化
@@ -40,6 +41,8 @@ final class SmartCardManager: ObservableObject {
         guard let manager = TKSmartCardSlotManager.default else {
             readers = []
             isAvailable = false
+            selectedReaderID = nil
+            selectedSource = .builtIn
             return
         }
 
@@ -77,20 +80,37 @@ final class SmartCardManager: ObservableObject {
             readers = updatedReaders
         }
         if updatedReaders.isEmpty {
+            if selectedReaderID != nil {
+                selectedReaderID = nil
+            }
             if selectedSource != .builtIn {
                 selectedSource = .builtIn
             }
         }
-        if let selectedReaderID, !updatedReaders.contains(where: { $0.id == selectedReaderID }) {
-            self.selectedReaderID = updatedReaders.first?.id
-        } else if selectedReaderID == nil {
-            selectedReaderID = updatedReaders.first?.id
+        else {
+            if let selectedReaderID, !updatedReaders.contains(where: { $0.id == selectedReaderID }) {
+                self.selectedReaderID = updatedReaders.first?.id
+            } else if selectedReaderID == nil {
+                selectedReaderID = updatedReaders.first?.id
+            }
+
+            if !hasUserSelectedReader, selectedSource != .external {
+                selectedSource = .external
+            }
         }
     }
 
     @Published private(set) var selectedReaderID: String?
 
     var hasConnectedReader: Bool { !readers.isEmpty }
+
+    func selectReader(source: ScanReaderSource, readerID: String? = nil) {
+        hasUserSelectedReader = true
+        selectedSource = source
+        if source == .external, let readerID {
+            selectedReaderID = readerID
+        }
+    }
     
     // MARK: - セッション
     func makeSession(name:String,command:String) async throws -> [String] {
@@ -127,19 +147,42 @@ final class SmartCardManager: ObservableObject {
     /// Holds one exclusive external-card session for a complete card scan.
     func withCard<T>(readerID: String? = nil, operation: (TKSmartCard) async throws -> T) async throws -> T {
         guard let slotManager else {
-            throw ReaderError.message("External smart card access is unavailable")
+            throw ReaderError.message(String(localized: "error.smartCardReader.unavailable"))
         }
 
         let slotName = readerID ?? selectedReaderID
         guard let slotName,
               let slot = await slotManager.getSlot(withName: slotName),
-              let card = slot.makeSmartCard() else {
+              slot.state != .missing else {
+            throw ReaderError.message(String(localized: "error.smartCardReader.unavailable"))
+        }
+
+        switch slot.state {
+        case .empty, .probing:
+            throw ReaderError.message(String(localized: "error.smartCardReader.notDetectionCard"))
+        case .muteCard:
+            throw ReaderError.message(String(localized: "error.smartCardReader.unreadableCard"))
+        case .validCard:
+            break
+        @unknown default:
+            throw ReaderError.message(String(localized: "error.smartCardReader.unavailable"))
+        }
+
+        guard let card = slot.makeSmartCard() else {
             throw ReaderError.message(String(localized: "error.smartCardReader.notDetectionCard"))
         }
 
-        let didBegin = try await card.beginSession()
+        let didBegin: Bool
+        do {
+            didBegin = try await card.beginSession()
+        } catch {
+            if !card.isValid || slot.state == .empty {
+                throw ReaderError.message(String(localized: "error.smartCardReader.notDetectionCard"))
+            }
+            throw error
+        }
         guard didBegin else {
-            throw ReaderError.message("Could not start an external smart card session")
+            throw ReaderError.message(String(localized: "error.smartCardReader.sessionStart"))
         }
         defer { card.endSession() }
 
@@ -149,7 +192,7 @@ final class SmartCardManager: ObservableObject {
     func apduSender(for card: TKSmartCard) -> APDUSend {
         { cla, ins, p1, p2, data, le in
             guard data.count <= 255 else {
-                throw ReaderError.message("APDU data is too long")
+                throw ReaderError.message(String(localized: "error.smartCardReader.apduDataTooLong"))
             }
 
             var command = Data([cla, ins, p1, p2])
@@ -163,7 +206,7 @@ final class SmartCardManager: ObservableObject {
 
             let response = try await card.transmit(command)
             guard response.count >= 2 else {
-                throw ReaderError.message("External reader returned an incomplete APDU response")
+                throw ReaderError.message(String(localized: "error.smartCardReader.incompleteResponse"))
             }
             return (
                 Data(response.dropLast(2)),

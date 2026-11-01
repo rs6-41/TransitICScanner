@@ -4,40 +4,47 @@ import CoreNFC
 struct ScanReaderPicker: View {
     @ObservedObject var manager: SmartCardManager
 
+    private static let builtInSelectionID = "__builtInReader__"
+
+    private var readerSelection: Binding<String> {
+        Binding(
+            get: {
+                if manager.selectedSource == .builtIn {
+                    return Self.builtInSelectionID
+                }
+                return manager.selectedReaderID
+                    ?? manager.readers.first?.id
+                    ?? Self.builtInSelectionID
+            },
+            set: { selection in
+                if selection == Self.builtInSelectionID {
+                    manager.selectReader(source: .builtIn)
+                } else {
+                    manager.selectReader(source: .external, readerID: selection)
+                }
+            }
+        )
+    }
+
     var body: some View {
         Menu {
             Section {
-                Picker("",selection: $manager.selectedSource) {
+                Picker("", selection: readerSelection) {
                     if NFCReaderSession.readingAvailable {
-                        Label(LocalizedStringKey("cardList.reader.builtIn"),systemImage: "iphone.radiowaves.left.and.right")
-                            .tag(ScanReaderSource.builtIn)
+                        Label(
+                            LocalizedStringKey("cardList.reader.builtIn"),
+                            systemImage: "iphone.radiowaves.left.and.right"
+                        )
+                        .tag(Self.builtInSelectionID)
                     }
-                    
-                    if manager.hasConnectedReader {
-                        Label(LocalizedStringKey("cardList.reader.external"),systemImage: "mediastick")
-                            .tag(ScanReaderSource.external)
+
+                    ForEach(manager.readers) { reader in
+                        Label(reader.name, systemImage: "mediastick")
+                            .tag(reader.id)
                     }
                 }
                 .pickerStyle(.inline)
                 .labelsHidden()
-                .onAppear() {
-                    if !manager.hasConnectedReader {
-                        manager.selectedSource = ScanReaderSource.builtIn
-                    }
-                    if !NFCReaderSession.readingAvailable {
-                        manager.selectedSource = ScanReaderSource.external
-                    }
-                }
-                .onChange(of:manager.hasConnectedReader) {
-                    // iPhoneで外部リーダーが切断されたら内蔵リーダーに切り替える
-                    if !manager.hasConnectedReader && NFCReaderSession.readingAvailable {
-                        manager.selectedSource = ScanReaderSource.builtIn
-                    }
-                    // 外部リーダーが接続されたら切り替える
-                    if manager.hasConnectedReader {
-                        manager.selectedSource = ScanReaderSource.external
-                    }
-                }
             } header: {
                 HStack {
                     Circle()
@@ -58,9 +65,8 @@ struct ScanReaderPicker: View {
                     )
                 }
             }
-            
             .tint(Color(.label))
-            
+
         } label: {
             switch manager.selectedSource {
             case .builtIn:
@@ -98,7 +104,7 @@ extension View {
             }
         }
     }
-    
+
     @ViewBuilder
     func connectedReaderLabelColor(_ manager: SmartCardManager) -> some View {
         if manager.selectedSource == .builtIn && NFCReaderSession.readingAvailable {
