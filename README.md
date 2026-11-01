@@ -6,8 +6,8 @@
 ## プラットフォーム
 | OS | 実装状況 | 要件 | 外部リーダー |
 | -- | -- | -- | -- |
-| iOS | ✅ | iOS 26.4+ | 対応 |
-| macOS | ✅ | macOS 26.4+ | 必須 |
+| iOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | iOS 26.4+ | 対応 |
+| macOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | macOS 26.4+ | 必須 |
 | Android | 未実装 | Windows 11 | 未定 |
 | HarmonyOS | 未実装 | HarmonyOS NEXT | 未定 |
 | Windows | 未実装 | 未定 | 必須 |
