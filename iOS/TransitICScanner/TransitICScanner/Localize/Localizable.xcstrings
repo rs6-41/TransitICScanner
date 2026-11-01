@@ -2966,25 +2966,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Built-in reader"
+            "value" : "iPhone"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "内蔵リーダー"
+            "value" : "iPhone"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "内置读卡器"
+            "value" : "iPhone"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "內建讀卡器"
+            "value" : "iPhone"
           }
         }
       }
