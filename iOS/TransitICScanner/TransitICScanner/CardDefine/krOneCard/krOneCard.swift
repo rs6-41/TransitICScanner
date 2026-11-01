@@ -46,7 +46,7 @@ let krOneCard = CardInfo(
 extension NFCScannerModel {
     func krOneCard_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
         guard case let .iso7816(isoTag) = tag else {
-            session.invalidate(errorMessage: "Not ISO7816 tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
             return
         }
         let send: APDUSend = { cla, ins, p1, p2, data, le in
@@ -63,7 +63,7 @@ extension NFCScannerModel {
 
         Task {
             guard let result = await krOneCard_result(send) else {
-                session.invalidate(errorMessage: "Korea OneCard could not be read")
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.oneCardRead"))
                 return
             }
             await MainActor.run {
@@ -77,7 +77,7 @@ extension NFCScannerModel {
         let result = try await manager.withCard { card in
             let send = manager.apduSender(for: card)
             guard let result = await krOneCard_result(send) else {
-                throw ReaderError.message("Korea OneCard could not be read")
+                throw ReaderError.message(String(localized: "error.smartCardReader.oneCardRead"))
             }
             return result
         }
