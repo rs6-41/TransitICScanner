@@ -8,9 +8,9 @@
 | -- | -- | -- | -- |
 | iOS | ✅ | iOS 26.4+ | 対応 |
 | macOS | ✅ | macOS 26.4+ | 必須 |
-| Android | 未実装 | Windows 11 | 必須 |
+| Android | 未実装 | Windows 11 | 未定 |
 | HarmonyOS | 未実装 | HarmonyOS NEXT | 未定 |
-| Windows | 未実装 | 未定 | 未定 |
+| Windows | 未実装 | 未定 | 必須 |
 
 ## 対応状況
 注：iPhone内蔵リーダーではMifare Classicの読み取りができない。
