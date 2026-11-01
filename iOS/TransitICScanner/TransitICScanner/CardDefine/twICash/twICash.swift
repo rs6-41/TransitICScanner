@@ -50,65 +50,24 @@ extension NFCScannerModel {
             return
         }
 
+        let send: APDUSend = { cla, ins, p1, p2, data, le in
+            let apdu = NFCISO7816APDU(
+                instructionClass: cla,
+                instructionCode: ins,
+                p1Parameter: p1,
+                p2Parameter: p2,
+                data: data,
+                expectedResponseLength: le
+            )
+            return try await isoTag.sendCommand(apdu: apdu)
+        }
+
         Task {
             do {
-                let reader = ICash2Reader(tag: isoTag)
-                let readResult = try await reader.readCard()
-
-                print("===== iCash 2.0 =====")
-                print("Card Number:", readResult.cardNumber)
-                print("Balance:", readResult.balance)
-                print("Record Count:", readResult.records.count)
-
-                for record in readResult.records {
-                    print(
-                        "iCash Record:",
-                        "date=\(String(describing: record.date))",
-                        "mappingID=\(record.mappingID)",
-                        "dealer=\(record.dealerName ?? "")",
-                        "amount=\(record.amount)",
-                        "code=\(String(format: "%02X", record.transactionCode))"
-                    )
-
-                    print(
-                        "RAW:",
-                        record.rawData.map {
-                            String(format: "%02X", $0)
-                        }.joined(separator: " ")
-                    )
-                }
-
-                let history = twICash_makeHistory(
-                    records: readResult.records,
-                    currentBalance: Double(readResult.balance)
-                )
-
-                let info = ResultCardInfo(
-                    idm: readResult.cardNumber,
-                    name: twICash.name,
-                    nameShort: twICash.scanOption.nameShort,
-                    currencyType: twICash.scanOption.currencyType,
-                    type: "",
-                    serial: readResult.cardNumber,
-                    version: nil,
-                    validDate: nil,
-                    issueInfo: issueInfo(region:twICash.area.rawValue,issuer:"issue.tw.issuer.icash")
-                )
-
-                let balance = Double(readResult.balance)
+                let result = try await twICash_result(using: send)
 
                 await MainActor.run {
-                    self.result = Result(
-                        balance: balance,
-                        isHistory: !history.isEmpty,
-                        history: history,
-                        info: info,
-                        converter: twICash.scanOption.converter,
-                        isLastHide: false,
-                        description: twICash.scand_description,
-                        savedAt: Date.now
-                    )
-
+                    self.result = result
                     session.invalidate()
                 }
             } catch {
@@ -124,6 +83,61 @@ extension NFCScannerModel {
                 }
             }
         }
+    }
+
+    func twICash_scanExternal(using manager: SmartCardManager) async throws {
+        let result = try await manager.withCard { card in
+            try await twICash_result(using: manager.apduSender(for: card))
+        }
+        await MainActor.run { self.result = result }
+    }
+
+    private func twICash_result(using send: @escaping APDUSend) async throws -> Result {
+        let reader = ICash2Reader(send: send)
+        let readResult = try await reader.readCard()
+
+        print("===== iCash 2.0 =====")
+        print("Card Number:", readResult.cardNumber)
+        print("Balance:", readResult.balance)
+        print("Record Count:", readResult.records.count)
+
+        for record in readResult.records {
+            print(
+                "iCash Record:",
+                "date=\(String(describing: record.date))",
+                "mappingID=\(record.mappingID)",
+                "dealer=\(record.dealerName ?? "")",
+                "amount=\(record.amount)",
+                "code=\(String(format: "%02X", record.transactionCode))"
+            )
+        }
+
+        let history = twICash_makeHistory(
+            records: readResult.records,
+            currentBalance: Double(readResult.balance)
+        )
+        let info = ResultCardInfo(
+            idm: readResult.cardNumber,
+            name: twICash.name,
+            nameShort: twICash.scanOption.nameShort,
+            currencyType: twICash.scanOption.currencyType,
+            type: "",
+            serial: readResult.cardNumber,
+            version: nil,
+            validDate: nil,
+            issueInfo: issueInfo(region: twICash.area.rawValue, issuer: "issue.tw.issuer.icash")
+        )
+
+        return Result(
+            balance: Double(readResult.balance),
+            isHistory: !history.isEmpty,
+            history: history,
+            info: info,
+            converter: twICash.scanOption.converter,
+            isLastHide: false,
+            description: twICash.scand_description,
+            savedAt: Date.now
+        )
     }
 
     private func twICash_makeHistory(
@@ -274,10 +288,10 @@ enum ICash2ReaderError: LocalizedError {
 }
 
 final class ICash2Reader {
-    private weak var tag: NFCISO7816Tag?
+    private let send: APDUSend
 
-    init(tag: NFCISO7816Tag) {
-        self.tag = tag
+    init(send: @escaping APDUSend) {
+        self.send = send
     }
 
     func readCard() async throws -> ICash2ReadResult {
@@ -454,71 +468,26 @@ final class ICash2Reader {
         data: Data,
         expectedResponseLength: Int
     ) async throws -> Response {
-        guard let tag else {
-            throw ICash2ReaderError.invalidData
-        }
-
-        let apdu = NFCISO7816APDU(
-            instructionClass: instructionClass,
-            instructionCode: instructionCode,
-            p1Parameter: p1,
-            p2Parameter: p2,
-            data: data,
-            expectedResponseLength: expectedResponseLength
-        )
-
-        let response: Data
-
+        let response: (Data, UInt8, UInt8)
         do {
-            response = try await withCheckedThrowingContinuation {
-                continuation in
-
-                tag.sendCommand(apdu: apdu) {
-                    data,
-                    sw1,
-                    sw2,
-                    error in
-
-                    if let error {
-                        continuation.resume(
-                            throwing:
-                                ICash2ReaderError.communicationError(
-                                    error
-                                )
-                        )
-                        return
-                    }
-
-                    var result = Data(data)
-                    result.append(sw1)
-                    result.append(sw2)
-
-                    continuation.resume(
-                        returning: result
-                    )
-                }
-            }
+            response = try await send(
+                instructionClass,
+                instructionCode,
+                p1,
+                p2,
+                data,
+                expectedResponseLength
+            )
         } catch let error as ICash2ReaderError {
             throw error
         } catch {
             throw ICash2ReaderError.communicationError(error)
         }
 
-        guard response.count >= 2 else {
-            throw ICash2ReaderError.invalidResponse
-        }
-
-        let sw1 = response[response.count - 2]
-        let sw2 = response[response.count - 1]
-
-        let body = Data(
-            response.dropLast(2)
-        )
-
         return Response(
-            data: body,
-            statusWord1: sw1,
-            statusWord2: sw2
+            data: response.0,
+            statusWord1: response.1,
+            statusWord2: response.2
         )
     }
 

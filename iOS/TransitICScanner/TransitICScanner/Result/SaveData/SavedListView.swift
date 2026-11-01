@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 struct SavedListView: View {
     @Query
@@ -110,7 +111,7 @@ struct SavedListView: View {
         NavigationStack {
             List {
                 ListAdView(deleteAds: $deleteAds)
-
+                
                 Section {
                     if filteredCards.isEmpty {
                         ContentUnavailableView(

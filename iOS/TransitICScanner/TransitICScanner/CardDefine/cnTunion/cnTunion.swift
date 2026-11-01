@@ -114,6 +114,18 @@ extension NFCScannerModel {
             return
         }
 
+        let send: APDUSend = { cla, ins, p1, p2, data, le in
+            let apdu = NFCISO7816APDU(
+                instructionClass: cla,
+                instructionCode: ins,
+                p1Parameter: p1,
+                p2Parameter: p2,
+                data: data,
+                expectedResponseLength: le
+            )
+            return try await isoTag.sendCommand(apdu: apdu)
+        }
+
         let fullLog = CNTRunionFullLog()
 
         fullLog.append(
@@ -236,8 +248,23 @@ extension NFCScannerModel {
 
         Task { @MainActor [self] in
             await cnTunion_scanAsync(
-                isoTag,
+                send,
                 session: session,
+                fullLog: fullLog
+            )
+        }
+    }
+
+    func cnTunion_scanExternal(using manager: SmartCardManager) async throws {
+        try await manager.withCard { card in
+            let fullLog = CNTRunionFullLog()
+            fullLog.append("===== T-UNION FULL LOG START =====")
+            fullLog.append("Scan Date: \(Date.now)")
+            fullLog.append("T-Union scan started with external reader")
+
+            await cnTunion_scanAsync(
+                manager.apduSender(for: card),
+                session: nil,
                 fullLog: fullLog
             )
         }
@@ -245,8 +272,8 @@ extension NFCScannerModel {
 
     @MainActor
     private func cnTunion_scanAsync(
-        _ isoTag: NFCISO7816Tag,
-        session: NFCTagReaderSession,
+        _ send: APDUSend,
+        session: NFCTagReaderSession?,
         fullLog: CNTRunionFullLog
     ) async {
 
@@ -296,7 +323,7 @@ extension NFCScannerModel {
                 sw1,
                 sw2
             ) = await cnTunion_sendAPDU(
-                isoTag,
+                send,
                 ins: 0xA4,
                 p1: 0x04,
                 p2: 0x00,
@@ -349,7 +376,7 @@ extension NFCScannerModel {
                 "===== T-UNION FULL LOG END ====="
             )
 
-            session.invalidate(
+            session?.invalidate(
                 errorMessage:
                     "T-Union application not found"
             )
@@ -401,7 +428,7 @@ extension NFCScannerModel {
             sw1,
             sw2
         ) = await cnTunion_sendAPDU(
-            isoTag,
+            send,
             ins: 0xB0,
             p1: managementP1,
             p2: 0x00,
@@ -457,7 +484,7 @@ extension NFCScannerModel {
                 sw1,
                 sw2
             ) = await cnTunion_sendAPDU(
-                isoTag,
+                send,
                 ins: 0xB2,
                 p1: UInt8(record),
                 p2: transactionP2,
@@ -528,7 +555,7 @@ extension NFCScannerModel {
                 sw1,
                 sw2
             ) = await cnTunion_sendAPDU(
-                isoTag,
+                send,
                 ins: 0xB2,
                 p1: UInt8(record),
                 p2: tripP2,
@@ -584,7 +611,7 @@ extension NFCScannerModel {
 
         let rawBalance =
             await cnTunion_getBalanceFallback(
-                isoTag,
+                send,
                 fullLog: fullLog
             )
 
@@ -607,7 +634,7 @@ extension NFCScannerModel {
         let info =
             await cnTunion_getInfoFromFCI(
                 fci,
-                tag: isoTag,
+                tag: send,
                 fullLog: fullLog
             )
 
@@ -620,7 +647,7 @@ extension NFCScannerModel {
             history,
             computedBalance
         ) = await cnTunion_readKnownRecords(
-            isoTag,
+            send,
             fullLog: fullLog
         )
 
@@ -684,13 +711,13 @@ extension NFCScannerModel {
                 fullLog: fullLog.text
             )
 
-            session.invalidate()
+            session?.invalidate()
         }
     }
 
 
     private func cnTunion_sendAPDU(
-        _ tag: NFCISO7816Tag,
+        _ tag: APDUSend,
         ins: UInt8,
         p1: UInt8,
         p2: UInt8,
@@ -703,15 +730,6 @@ extension NFCScannerModel {
         UInt8,
         UInt8
     )? {
-
-        let apdu = NFCISO7816APDU(
-            instructionClass: cla,
-            instructionCode: ins,
-            p1Parameter: p1,
-            p2Parameter: p2,
-            data: data,
-            expectedResponseLength: le
-        )
 
         let commandHex = data
             .map {
@@ -740,9 +758,7 @@ extension NFCScannerModel {
                 response,
                 sw1,
                 sw2
-            ) = try await tag.sendCommand(
-                apdu: apdu
-            )
+            ) = try await tag(cla, ins, p1, p2, data, le)
 
             let responseHex = response
                 .map {
@@ -1127,7 +1143,7 @@ extension NFCScannerModel {
 
 
     private func cnTunion_readManagementInfo(
-        _ tag: NFCISO7816Tag,
+        _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> Data? {
 
@@ -1209,7 +1225,7 @@ extension NFCScannerModel {
 
 
     private func cnTunion_getCityCode(
-        _ tag: NFCISO7816Tag,
+        _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> String? {
 
@@ -1340,7 +1356,7 @@ extension NFCScannerModel {
 
     private func cnTunion_getInfoFromFCI(
         _ fci: Data,
-        tag: NFCISO7816Tag,
+        tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> ResultCardInfo? {
 
@@ -1520,7 +1536,7 @@ extension NFCScannerModel {
 
 
     private func cnTunion_getBalanceFallback(
-        _ tag: NFCISO7816Tag,
+        _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> Double? {
 
@@ -1607,7 +1623,7 @@ extension NFCScannerModel {
 
 
     private func cnTunion_readKnownRecords(
-        _ tag: NFCISO7816Tag,
+        _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> (
         history: [ResultHistory]?,

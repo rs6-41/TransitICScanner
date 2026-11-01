@@ -44,7 +44,6 @@ let usClipper = CardInfo(
 
 /// DESFire ISO7816ラップ(CLA=0x90)のAPDU送信クロージャ。
 /// .miFare(DESFire) でも .iso7816 でも同じ処理で読めるようにするための抽象化
-typealias ClipperSend = (NFCISO7816APDU) async throws -> (Data, UInt8, UInt8)
 
 /// 履歴の中間表現
 struct ClipperEvent {
@@ -86,75 +85,108 @@ extension NFCScannerModel {
     //MARK: スキャン
     func usClipper_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
 
-        let send: ClipperSend
+        let send: APDUSend
         let identifier: Data
 
         switch tag {
         case .miFare(let t):
             print("Clipper: using NFCMiFareTag path")
             guard t.mifareFamily == .desfire else {
-                session.invalidate(errorMessage: "Not DESFire tag")
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
                 return
             }
-            send = { try await t.sendMiFareISO7816Command($0) }
+            send = { cla, ins, p1, p2, data, le in
+                let apdu = NFCISO7816APDU(
+                    instructionClass: cla,
+                    instructionCode: ins,
+                    p1Parameter: p1,
+                    p2Parameter: p2,
+                    data: data,
+                    expectedResponseLength: le
+                )
+                return try await t.sendMiFareISO7816Command(apdu)
+            }
             identifier = t.identifier
 
         case .iso7816(let t):
             print("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
-            send = { try await t.sendCommand(apdu: $0) }
+            send = { cla, ins, p1, p2, data, le in
+                let apdu = NFCISO7816APDU(
+                    instructionClass: cla,
+                    instructionCode: ins,
+                    p1Parameter: p1,
+                    p2Parameter: p2,
+                    data: data,
+                    expectedResponseLength: le
+                )
+                return try await t.sendCommand(apdu: apdu)
+            }
             identifier = t.identifier
 
         default:
-            session.invalidate(errorMessage: "Not DESFire tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
             return
         }
 
         Task {
-            // アプリケーション選択
-            guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil else {
-                session.invalidate(errorMessage: "Clipper application not found")
+            guard let result = await usClipper_result(send, identifier: identifier) else {
+                session.invalidate(errorMessage: String(localized: "error.smartCardReader.clipperRead"))
                 return
             }
-
-            // 残額 (File 0x2: [18-19] セント, 符号付き。マイナス残高になり得る。実機で -$0.15 = FF F1 を確認)
-            guard let balanceData = await clipper_readFile(send, file: 0x02),
-                  balanceData.count >= 20 else {
-                session.invalidate(errorMessage: "Clipper balance read failed")
-                return
-            }
-            let bb = [UInt8](balanceData)
-            let balanceCents = Int(Int16(bitPattern: clipper_be16(bb, 18)))
-
-            let history = await clipper_history(
-                send,
-                currentBalanceCents: balanceCents,
-                limit: self.scanOption.historyCount
-            )
-
-            let info = await clipper_info(send, identifier: identifier)
 
             await MainActor.run {
-                self.result = Result(
-                    balance: Double(balanceCents) / 100.0,
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: usClipper.scanOption.converter,
-                    isLastHide: false,
-                    description: usClipper.scand_description,
-                    savedAt: Date.now
-                )
-
+                self.result = result
                 self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
                 session.invalidate()
             }
         }
     }
 
+    func usClipper_scanExternal(using manager: SmartCardManager) async throws {
+        let result = try await manager.withCard { card in
+            let send = manager.apduSender(for: card)
+            guard let result = await usClipper_result(send, identifier: Data()) else {
+                throw ReaderError.message(String(localized: "error.smartCardReader.clipperRead"))
+            }
+            return result
+        }
+
+        await MainActor.run { self.result = result }
+    }
+
+    private func usClipper_result(
+        _ send: APDUSend,
+        identifier: Data
+    ) async -> Result? {
+        guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil,
+              let balanceData = await clipper_readFile(send, file: 0x02),
+              balanceData.count >= 20 else {
+            return nil
+        }
+
+        let balanceCents = Int(Int16(bitPattern: clipper_be16([UInt8](balanceData), 18)))
+        let history = await clipper_history(
+            send,
+            currentBalanceCents: balanceCents,
+            limit: scanOption.historyCount
+        )
+        let info = await clipper_info(send, identifier: identifier)
+        return Result(
+            balance: Double(balanceCents) / 100.0,
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: usClipper.scanOption.converter,
+            isLastHide: false,
+            description: usClipper.scand_description,
+            savedAt: Date.now
+        )
+    }
+
     //MARK: 履歴
     // File 0x4 (チャージ) / File 0xE (トリップ): 32byteレコード
     func clipper_history(
-        _ send: ClipperSend,
+        _ send: APDUSend,
         currentBalanceCents: Int,
         limit: Int
     ) async -> [ResultHistory]? {
@@ -268,7 +300,7 @@ extension NFCScannerModel {
     //MARK: カード情報
     // File 0x8: [1-4]シリアル / File 0x1: [8-9]有効期限(1900-01-01からの日数)
     func clipper_info(
-        _ send: ClipperSend,
+        _ send: APDUSend,
         identifier: Data
     ) async -> ResultCardInfo? {
 
@@ -324,7 +356,7 @@ extension NFCScannerModel {
     /// ファイル全体を読む。GetFileSettings(0xF5) で種別を調べ、種別に合ったコマンドを使う
     /// (実機: 0x1/0x2/0x5/0x6/0x8/0xE/0xF = 標準・バックアップ, 0x4 = サイクリックレコード)
     private func clipper_readFile(
-        _ send: ClipperSend,
+        _ send: APDUSend,
         file: UInt8
     ) async -> Data? {
         // [ファイル番号][オフセット 3byte][長さ 3byte] (0 = 全体)
@@ -351,7 +383,7 @@ extension NFCScannerModel {
 
     /// DESFireネイティブコマンドをISOラップ(CLA 0x90)で送信。0xAF(続きあり)は自動で連結する
     private func clipper_command(
-        _ send: ClipperSend,
+        _ send: APDUSend,
         ins: UInt8,
         data: Data = Data()
     ) async -> Data? {
@@ -361,18 +393,16 @@ extension NFCScannerModel {
         var payload = data
 
         for _ in 0..<32 {
-            let apdu = NFCISO7816APDU(
-                instructionClass: 0x90,
-                instructionCode: code,
-                p1Parameter: 0x00,
-                p2Parameter: 0x00,
-                data: payload,
-                expectedResponseLength: 256
-            )
-
             let result: (Data, UInt8, UInt8)
             do {
-                result = try await send(apdu)
+                result = try await send(
+                    0x90,
+                    code,
+                    0x00,
+                    0x00,
+                    payload,
+                    256
+                )
             } catch {
                 print(String(format: "Clipper APDU INS=%02X error:", code), error)
                 return nil
