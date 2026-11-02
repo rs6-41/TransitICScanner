@@ -38,6 +38,9 @@ struct ResultView: View {
             resultInfoSection
             resultHistorySection
         }
+        .onDisappear() {
+            saveAction()
+        }
         .onAppear() {
             setDefaultDisplayName()
         }

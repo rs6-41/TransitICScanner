@@ -48,11 +48,20 @@ struct ContentView: View {
     @AppStorage("firstPermission") var firstPermission = true
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var isDuoOpen = false
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
         true
         #else
         horizontalSizeClass == .regular
+        #endif
+    }
+
+    private var usesPhoneNavigationBarPicker: Bool {
+        #if targetEnvironment(macCatalyst)
+        false
+        #else
+        isDuoOpen
         #endif
     }
     
@@ -87,7 +96,7 @@ struct ContentView: View {
         }
         .navigationTitle(LocalizedStringKey("appName"))
         .tabViewSidebarBottomBar {
-            if showsSidebar {
+            if showsSidebar && !usesPhoneNavigationBarPicker {
                     HStack {
                         ScanReaderPicker(
                             manager: smartCardManager,
@@ -100,6 +109,7 @@ struct ContentView: View {
             }
         }
         .tabViewStyle(.sidebarAdaptable)
+        .iPhoneDuoHinge(value: $isDuoOpen)
         .task {
                 smartCardManager.start()
             }

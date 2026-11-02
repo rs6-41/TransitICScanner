@@ -29,59 +29,17 @@ struct ScanReaderPicker: View {
 
     var body: some View {
         Menu {
-            Section {
-                Picker("", selection: readerSelection) {
-                    if NFCReaderSession.readingAvailable {
-                        Label(
-                            LocalizedStringKey("cardList.reader.builtIn"),
-                            systemImage: "iphone.radiowaves.left.and.right"
-                        )
-                        .tag(Self.builtInSelectionID)
-                    }
-
-                    ForEach(manager.readers) { reader in
-                        Label(reader.name, systemImage: "mediastick")
-                            .tag(reader.id)
-                    }
-                }
-                .pickerStyle(.inline)
-                .labelsHidden()
-            } header: {
-                Text(
-                    !manager.isAvailable
-                    ? String(localized: "cardList.reader.unavailable")
-                    : manager.hasConnectedReader
-                    ? String(localized: "cardList.reader.connected")
-                    : String(localized: "cardList.reader.disconnected")
-                )
-            }
-            .tint(Color(.label))
-
+            readerMenuContent
         } label: {
             if showsIconAndText {
-                VStack(alignment:.leading) {
+                VStack(alignment: .leading) {
                     Text(LocalizedStringKey("navigation.readerSelection"))
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.gray)
-                        .padding(.bottom,1)
+                        .padding(.bottom, 1)
                     Label {
-                        switch manager.selectedSource {
-                        case .builtIn:
-                            if NFCNDEFReaderSession.readingAvailable {
-                                Text(LocalizedStringKey("cardList.reader.builtIn"))
-                            } else {
-                                Text(LocalizedStringKey("cardList.reader.enptyReader"))
-                            }
-                        case .external:
-                            if let selectedReader = manager.readers.first(where: {
-                                $0.id == manager.selectedReaderID
-                            }) {
-                                Text(verbatim: selectedReader.name)
-                            } else {
-                                Text(LocalizedStringKey("cardList.external.title"))
-                            }
-                        }
+                        Text(readerName)
                     } icon: {
                         Image(systemName: selectedReaderSymbol)
                     }
@@ -91,6 +49,65 @@ struct ScanReaderPicker: View {
             }
         }
         .readerPickerStyle(manager, showsIconAndText: showsIconAndText)
+    }
+
+    // Use this Menu directly inside ToolbarItem so SwiftUI can adapt its
+    // semantic Label into iPhone Duo's vertical toolbar.
+    var toolbarMenu: some View {
+        Menu {
+            readerMenuContent
+        } label: {
+            Label(readerName, systemImage: selectedReaderSymbol)
+        }
+        .readerPickerStyle(manager, showsIconAndText: false)
+    }
+
+    @ViewBuilder
+    private var readerMenuContent: some View {
+        Section {
+            Picker("", selection: readerSelection) {
+                if NFCReaderSession.readingAvailable {
+                    Label(
+                        LocalizedStringKey("cardList.reader.builtIn"),
+                        systemImage: "iphone.radiowaves.left.and.right"
+                    )
+                    .tag(Self.builtInSelectionID)
+                }
+
+                ForEach(manager.readers) { reader in
+                    Label(reader.name, systemImage: "mediastick")
+                        .tag(reader.id)
+                }
+            }
+            .pickerStyle(.inline)
+            .labelsHidden()
+        } header: {
+            Text(
+                !manager.isAvailable
+                ? String(localized: "cardList.reader.unavailable")
+                : manager.hasConnectedReader
+                ? String(localized: "cardList.reader.connected")
+                : String(localized: "cardList.reader.disconnected")
+            )
+        }
+        .tint(Color.primary)
+    }
+
+    private var readerName: String {
+        switch manager.selectedSource {
+        case .builtIn:
+            if NFCNDEFReaderSession.readingAvailable {
+                return String(localized: "cardList.reader.builtIn")
+            }
+            return String(localized: "cardList.reader.enptyReader")
+        case .external:
+            if let selectedReader = manager.readers.first(where: {
+                $0.id == manager.selectedReaderID
+            }) {
+                return selectedReader.name
+            }
+            return String(localized: "cardList.external.title")
+        }
     }
 
     private var selectedReaderSymbol: String {
@@ -114,7 +131,9 @@ extension View {
         showsIconAndText: Bool
     ) -> some View {
         if showsIconAndText {
-            self.buttonStyle(.plain)
+            self
+                .buttonStyle(.borderless)
+                .accentColor(Color.primary)
         } else {
             self
                 .connectedReaderBackground(manager)
