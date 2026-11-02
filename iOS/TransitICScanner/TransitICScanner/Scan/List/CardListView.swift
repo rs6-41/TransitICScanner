@@ -8,6 +8,7 @@ struct CardList: View {
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var isDuoOpen = false
 
     @State var currentCountryItems: [CardInfo] = []
     @State var searchItems: [CardInfo] = []
@@ -39,6 +40,14 @@ struct CardList: View {
         #endif
     }
 
+    private var usesPhoneNavigationBarPicker: Bool {
+        #if targetEnvironment(macCatalyst)
+        false
+        #else
+        isDuoOpen
+        #endif
+    }
+
     private var sidebarSelection: Binding<regionList?>? {
         showsSidebar ? nil : $selection
     }
@@ -55,37 +64,51 @@ struct CardList: View {
                     }
                 } detail: {
                     detailColumn
+                        .toolbar {
+                            if usesPhoneNavigationBarPicker {
+                                if #available(iOS 27.0, *) {
+                                    ToolbarItem(placement: .topBarPinnedTrailing) {
+                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
+                                    }
+                                } else {
+                                    ToolbarItem(placement: .topBarTrailing) {
+                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
+                                    }
+                                }
+                            }
+                        }
                 }
             } else if selection == nil {
                 NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
                     sidebar
-                } detail: {
-                    detailColumn
                         .toolbar {
                             if !showsSidebar {
-                                ToolbarItem(placement: .navigation) {
+                                ToolbarItem(placement: .topBarTrailing) {
                                     ScanReaderPicker(manager: smartCardManager)
                                 }
                             }
                         }
+                } detail: {
+                    detailColumn
                 }
             } else {
                 NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
                     sidebar
-                } content: {
-                    regionContent
-                } detail: {
-                    detailColumn
                         .toolbar {
                             if !showsSidebar {
-                                ToolbarItem(placement: .navigation) {
+                                ToolbarItem(placement: .topBarTrailing) {
                                     ScanReaderPicker(manager: smartCardManager)
                                 }
                             }
                         }
+                } content: {
+                    regionContent
+                } detail: {
                 }
             }
         }
+
+        .iPhoneDuoHinge(value: $isDuoOpen)
         .onAppear {
             getCountry.start()
             updateList()
@@ -318,6 +341,8 @@ struct CardList: View {
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .listStyle(.insetGrouped)
             .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
             }
@@ -472,6 +497,32 @@ struct CardList: View {
         }
     }
 }
+
+struct iPhoneDuoHingeModifier: ViewModifier {
+    @Binding var value: Bool
+
+    func body(content: Content) -> some View {
+        if #available(iOS 27.1, *) {
+            content
+                .onHingeChange { _, duo in
+                    guard let hinge = duo.hinge else {
+                        value = false
+                        return
+                    }
+                    value = hinge.status == .partiallyOpen || hinge.status == .fullyOpen
+                }
+        } else {
+            content
+        }
+    }
+}
+
+extension View {
+    func iPhoneDuoHinge(value: Binding<Bool>) -> some View {
+        self.modifier(iPhoneDuoHingeModifier(value: value))
+    }
+}
+
 
 enum SortType: String, CaseIterable {
     case name_ascend = "cardList.sort.name_ascend"
