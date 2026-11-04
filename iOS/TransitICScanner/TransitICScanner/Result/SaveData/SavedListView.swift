@@ -108,9 +108,10 @@ struct SavedListView: View {
     }
 
     var body: some View {
-        NavigationStack {
             List {
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
+                #endif
                 
                 Section {
                     if filteredCards.isEmpty {
@@ -125,7 +126,8 @@ struct SavedListView: View {
                                     result: card.result(),
                                     scandata: false,
                                     saveListID: $saveListID,
-                                    deleteAds: $deleteAds
+                                    deleteAds: $deleteAds,
+                                    embedsNavigationStack: false
                                 )
                             } label: {
                                 let result = card.result()
@@ -281,7 +283,6 @@ struct SavedListView: View {
                 text: $searchText,
                 prompt: Text(LocalizedStringKey("search"))
             )
-        }
     }
 
     private func deleteCards(at offsets: IndexSet) {

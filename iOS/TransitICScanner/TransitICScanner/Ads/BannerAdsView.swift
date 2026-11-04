@@ -1,5 +1,7 @@
 import SwiftUI
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
 import AppTrackingTransparency
 
 let dev_BannerUnitID = "ca-app-pub-3940256099942544/2435281174"

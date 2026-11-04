@@ -2,6 +2,7 @@ import SwiftUI
 
 //TODO: カスタム広告を検証後に有効化（コメントアウトしている）
 
+#if !targetEnvironment(macCatalyst)
 struct ListAdView: View {
     @StateObject private var nativeAdManager = NativeAdManager()
 
@@ -78,3 +79,5 @@ struct ListAdView: View {
         }
     }
 }
+
+#endif

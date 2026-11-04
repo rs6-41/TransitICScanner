@@ -144,6 +144,7 @@ struct DebugSettingView: View {
                     }
                 }
                 
+                #if !targetEnvironment(macCatalyst)
                 Section(header: Text(LocalizedStringKey("setting.debug.ad"))) {
                     Toggle(isOn: $adDebug) {
                         Text(LocalizedStringKey("setting.debug.ad.debugMode"))
@@ -158,6 +159,7 @@ struct DebugSettingView: View {
                         }
                     }
                 }
+                #endif
                 
                 Section(header: Text(LocalizedStringKey("setting.debug.purchase.title"))) {
                     Toggle(isOn: $deleteAds) {

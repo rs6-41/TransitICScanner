@@ -1,14 +1,19 @@
 import SwiftUI
 import SwiftData
 import Combine
+#if !targetEnvironment(macCatalyst)
 import GoogleMobileAds
+#endif
+
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
+#if !targetEnvironment(macCatalyst)
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         MobileAds.shared.start(completionHandler: nil)
         return true
     }
+    #endif
 }
 
 @main
@@ -18,6 +23,8 @@ struct TransitICScannerApp: App {
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
+    
+    @StateObject var smartCardManager = SmartCardManager()
 
     let container: ModelContainer
 
@@ -33,11 +40,12 @@ struct TransitICScannerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(smartCardManager: smartCardManager)
                 .environmentObject(cardItemsStore)
                 .environmentObject(debugModel)
                 .environmentObject(getCountry)
                 .environmentObject(adsModel)
+                .navigationTitle(" ")
         }
         .modelContainer(container)
     }
