@@ -6,6 +6,7 @@ struct CardListRow: View {
     @EnvironmentObject var debug: DebugModel
 
     let item: CardInfo
+    var onResult: ((Result) -> Void)?
 
     @Binding var deleteAds: Bool
     var externalDevice: Bool
@@ -15,12 +16,14 @@ struct CardListRow: View {
         item: CardInfo,
         deleteAds: Binding<Bool>,
         smartCardManager: SmartCardManager,
-        externalDevice: Bool = false
+        externalDevice: Bool = false,
+        onResult: ((Result) -> Void)? = nil
     ) {
         self.item = item
         self._deleteAds = deleteAds
         self.smartCardManager = smartCardManager
         self.externalDevice = externalDevice
+        self.onResult = onResult
     }
 
     var body: some View {
@@ -30,7 +33,8 @@ struct CardListRow: View {
                 ScanningButton(
                     item: item,
                     deleteAds: $deleteAds,
-                    smartCardManager: smartCardManager
+                    smartCardManager: smartCardManager,
+                    onResult: onResult
                 )
 
             case .scraping:
@@ -138,6 +142,7 @@ struct ListButtonInner: View {
 
 struct ScanningButton: View {
     let item: CardInfo
+    var onResult: ((Result) -> Void)?
 
     @StateObject private var model: NFCScannerModel
     @State var nfcError = false
@@ -148,9 +153,11 @@ struct ScanningButton: View {
     init(
         item: CardInfo,
         deleteAds: Binding<Bool>,
-        smartCardManager: SmartCardManager
+        smartCardManager: SmartCardManager,
+        onResult: ((Result) -> Void)? = nil
     ) {
         self.item = item
+        self.onResult = onResult
         self._deleteAds = deleteAds
         self.smartCardManager = smartCardManager
         _model = StateObject(
@@ -187,13 +194,21 @@ struct ScanningButton: View {
         } label: {
             ListButtonInner(item: item)
         }
-        .navigationDestination(item: $model.result) { result in
+        .navigationDestination(item: Binding(
+            get: { onResult == nil ? model.result : nil },
+            set: { model.result = $0 }
+        )) { result in
             ResultView(
                 result: result,
                 scandata: true,
                 saveListID: .constant(UUID()),
                 deleteAds: $deleteAds
             )
+        }
+        .onChange(of: model.result) {
+            if let result = model.result {
+                onResult?(result)
+            }
         }
         .alert(
             LocalizedStringKey("error"),

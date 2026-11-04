@@ -20,7 +20,6 @@ struct SettingView: View {
     
     
     var body: some View {
-        NavigationStack {
             List {
                 SettingAppTitle(devSettingAlert:$devSettingAlert)
                 
@@ -57,7 +56,7 @@ struct SettingView: View {
             }
             .navigationTitle(LocalizedStringKey("tab.setting"))
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar(.hidden, for: .navigationBar)
+            //.toolbar(.hidden, for: .navigationBar)
             .alert(purchaseAlertTitle, isPresented: $isPurchaseAlert) {
                Button(LocalizedStringKey("ok")) {
                    purchaseAlertTitle = ""
@@ -79,7 +78,6 @@ struct SettingView: View {
             } message: {
                 Text("setting.debug.enable.description")
             }
-        }
     }
 }
 

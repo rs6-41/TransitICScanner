@@ -7,10 +7,16 @@ struct CardList: View {
     @EnvironmentObject var getCountry: GetCountry
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var isDuoOpen = false
 
     @State var currentCountryItems: [CardInfo] = []
     @State var searchItems: [CardInfo] = []
     @State private var administrativeArea: String?
+    @State private var selection: regionList?
+    @State private var regionPath: [regionList] = []
+    @State private var selectedResult: Result?
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
     @State var isDisplayScrapingForm = false
     @Binding var deleteAds: Bool
@@ -26,9 +32,185 @@ struct CardList: View {
     // edge, so include the additional list inset in the expansion width.
     private let trailingToolbarWidth: CGFloat = 60
 
+    private var showsSidebar: Bool {
+        #if targetEnvironment(macCatalyst)
+        true
+        #else
+        horizontalSizeClass == .regular
+        #endif
+    }
+
+    private var usesPhoneNavigationBarPicker: Bool {
+        #if targetEnvironment(macCatalyst)
+        false
+        #else
+        isDuoOpen
+        #endif
+    }
+
+    private var sidebarSelection: Binding<regionList?>? {
+        showsSidebar ? nil : $selection
+    }
+
     var body: some View {
-        NavigationStack {
-            List {
+        Group {
+            if showsSidebar {
+                NavigationSplitView {
+                    NavigationStack(path: $regionPath) {
+                        sidebar
+                            .navigationDestination(for: regionList.self) { region in
+                                regionCards(for: region)
+                            }
+                    }
+                } detail: {
+                    detailColumn
+                        .toolbar {
+                            if usesPhoneNavigationBarPicker {
+                                if #available(iOS 27.0, *) {
+                                    ToolbarItem(placement: .topBarPinnedTrailing) {
+                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
+                                    }
+                                } else {
+                                    ToolbarItem(placement: .topBarTrailing) {
+                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
+                                    }
+                                }
+                            }
+                        }
+                }
+            } else if selection == nil {
+                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+                    sidebar
+                        .toolbar {
+                            if !showsSidebar {
+                                ToolbarItem(placement: .topBarTrailing) {
+                                    ScanReaderPicker(manager: smartCardManager)
+                                }
+                            }
+                        }
+                } detail: {
+                    detailColumn
+                }
+            } else {
+                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+                    sidebar
+                        .toolbar {
+                            if !showsSidebar {
+                                ToolbarItem(placement: .topBarTrailing) {
+                                    ScanReaderPicker(manager: smartCardManager)
+                                }
+                            }
+                        }
+                } content: {
+                    regionContent
+                } detail: {
+                }
+            }
+        }
+
+        .iPhoneDuoHinge(value: $isDuoOpen)
+        .onAppear {
+            getCountry.start()
+            updateList()
+
+            Task {
+                administrativeArea = await getCountry.fetchAdministrativeArea()
+                updateList()
+            }
+        }
+        .onChange(of: getCountry.countryCode) {
+            updateList()
+
+            Task {
+                administrativeArea = await getCountry.fetchAdministrativeArea()
+                updateList()
+            }
+        }
+        .onChange(of: searchText) {
+            search()
+            if !searchText.isEmpty {
+                regionPath.removeAll()
+                selection = nil
+                selectedResult = nil
+                preferredCompactColumn = .sidebar
+            }
+        }
+        .onChange(of: selection) {
+            selectedResult = nil
+            preferredCompactColumn = selection == nil ? .sidebar : .content
+        }
+        .onChange(of: regionPath) {
+            if regionPath.isEmpty {
+                selection = nil
+                selectedResult = nil
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var sidebar: some View {
+        if showsSidebar {
+            sidebarList
+                .searchable(
+                    text: $searchText,
+                    placement: .sidebar,
+                    prompt: String(localized: "cardList.search")
+                )
+                .navigationTitle(LocalizedStringKey("cardList.title"))
+        } else {
+            sidebarList
+                .navigationTitle(LocalizedStringKey("cardList.title"))
+                .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbar {
+                    ToolbarItem(placement: .title) {
+                        Text("")
+                    }
+
+                    ToolbarItem(placement: .subtitle) {
+                        HStack {
+                            SearchBar(
+                                text: $searchText,
+                                isFocused: $isSearchFocused,
+                                placeholder: String(localized: "cardList.search")
+                            )
+
+                            #if !targetEnvironment(macCatalyst)
+                            Button {
+                                withAnimation(.linear(duration: 0.3)) {
+                                    isSearchFocused = false
+                                    searchText = ""
+                                }
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .frame(width: 30, height: 30)
+                            }
+                            .buttonStyle(.glass)
+                            .buttonBorderShape(.circle)
+                            .opacity(isSearchFocused ? 1 : 0)
+                            .frame(width: isSearchFocused ? 40 : 0)
+                            #endif
+                        }
+                        .animation(.easeInOut(duration: 0.2), value: isSearchFocused)
+                        .animation(.easeInOut(duration: 0.18), value: searchBarIsBelowToolbar)
+                        .padding(
+                            .trailing,
+                            searchBarIsBelowToolbar ? -trailingToolbarWidth : 0
+                        )
+                        .offset(y: max(0, searchBarOffsetY))
+                        .zIndex(1)
+                        .onGeometryChange(
+                            for: CGFloat.self,
+                            of: { $0.size.height },
+                            action: { searchBarHight = $0 }
+                        )
+                    }
+                }
+        }
+    }
+
+    private var sidebarList: some View {
+            List(selection: sidebarSelection) {
+                if !showsSidebar {
                 Section {
                     HStack {
                         Color.white.opacity(0.000001)
@@ -50,8 +232,11 @@ struct CardList: View {
                     EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 )
                 .listRowBackground(Color.clear)
+                }
 
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
+                #endif
 
                 if debug.isDisplay {
                     VStack(alignment: .leading) {
@@ -77,7 +262,8 @@ struct CardList: View {
                             CardListRow(
                                 item: item,
                                 deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager
+                                smartCardManager: smartCardManager,
+                                onResult: showResult
                             )
                         }
                     } header: {
@@ -97,49 +283,33 @@ struct CardList: View {
                             }
 
                             if !filtFirstItem.isEmpty {
-                                if let second = list.second {
-                                    NavigationLink(
-                                        destination: CardRegionView(
-                                            smartCardManager: smartCardManager,
-                                            items: filtFirstItem.filter {
-                                                $0.scanOption.scanType != .external
-                                            },
-                                            subItems: store.cardItems.filter {
-                                                $0.regionOption == nil &&
-                                                $0.area.region() == second &&
-                                                $0.scanOption.scanType != .external
-                                            },
-                                            externalItems: filtFirstItem.filter {
-                                                $0.scanOption.scanType == .external
-                                            },
-                                            deleteAds: $deleteAds
-                                        )
-                                    ) {
+                                if showsSidebar {
+                                    Button {
+                                        selectedResult = nil
+                                        regionPath = [list]
+                                    } label: {
                                         SquareIcon(
                                             text: LocalizedStringKey(list.first.name()),
                                             systemImage: list.first.icon(),
                                             color: Color.blue
                                         )
                                     }
+                                    .buttonStyle(.plain)
+                                    .contentShape(Rectangle())
                                 } else {
-                                    NavigationLink(
-                                        destination: CardRegionView(
-                                            smartCardManager: smartCardManager,
-                                            items: filtFirstItem.filter {
-                                                $0.scanOption.scanType != .external
-                                            },
-                                            externalItems: filtFirstItem.filter {
-                                                $0.scanOption.scanType == .external
-                                            },
-                                            deleteAds: $deleteAds
-                                        )
-                                    ) {
+                                    Button {
+                                        selection = list
+                                        selectedResult = nil
+                                        preferredCompactColumn = .content
+                                    } label: {
                                         SquareIcon(
                                             text: LocalizedStringKey(list.first.name()),
                                             systemImage: list.first.icon(),
                                             color: Color.blue
                                         )
                                     }
+                                    .buttonStyle(.plain)
+                                    .tag(list)
                                 }
                             }
                         }
@@ -154,7 +324,8 @@ struct CardList: View {
                             CardListRow(
                                 item: item,
                                 deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager
+                                smartCardManager: smartCardManager,
+                                onResult: showResult
                             )
                         }
                     } header: {
@@ -170,79 +341,11 @@ struct CardList: View {
                     }
                 }
             }
-            .navigationTitle(LocalizedStringKey("cardList.title"))
-            .toolbarTitleDisplayMode(.inlineLarge)
-            .toolbar {
-                ToolbarItem(placement: .title) {
-                    Text("")
-                }
-
-                ToolbarItem(placement: .subtitle) {
-                    HStack {
-                        SearchBar(
-                            text: $searchText,
-                            isFocused: $isSearchFocused,
-                            placeholder: String(localized: "cardList.search")
-                        )
-
-                        Button {
-                            withAnimation(.linear(duration: 0.3)) {
-                                isSearchFocused = false
-                                searchText = ""
-                            }
-                        } label: {
-                            Image(systemName: "xmark")
-                                .frame(width: 30, height: 30)
-                        }
-                        .buttonStyle(.glass)
-                        .buttonBorderShape(.circle)
-                        .opacity(isSearchFocused ? 1 : 0)
-                        .frame(width: isSearchFocused ? 40 : 0)
-                    }
-                    .animation(
-                        .easeInOut(duration: 0.2),
-                        value: isSearchFocused
-                    )
-                    .animation(
-                        .easeInOut(duration: 0.18),
-                        value: searchBarIsBelowToolbar
-                    )
-                    // At the top, the search field sits below the trailing
-                    // toolbar button, so it can extend through that button's
-                    // reserved horizontal slot. As it scrolls upward, restore
-                    // the slot to keep the controls from overlapping.
-                    .padding(
-                        .trailing,
-                        searchBarIsBelowToolbar ? -trailingToolbarWidth : 0
-                    )
-                    .offset(y: max(0, searchBarOffsetY))
-                    .zIndex(1)
-                    .onGeometryChange(
-                        for: CGFloat.self,
-                        of: { proxy in
-                            proxy.size.height
-                        },
-                        action: { newHeight in
-                            searchBarHight = newHeight
-                        }
-                    )
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    ScanReaderPicker(manager: smartCardManager)
-                }
-            }
+            .scrollContentBackground(.hidden)
+            .listStyle(.insetGrouped)
             .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
             }
-            .navigationDestination(for: Result.self) { result in
-                ResultView(
-                    result: result,
-                    scandata: true,
-                    saveListID: .constant(UUID()),
-                    deleteAds: $deleteAds
-                )
-            }
-        }
         .onScrollGeometryChange(for: CGFloat.self) { geometry in
             geometry.contentOffset.y
         } action: { oldVal, newVal in
@@ -265,26 +368,69 @@ struct CardList: View {
                 searchBarIsBelowToolbar = true
             }
         }
-        .onAppear {
-            getCountry.start()
-            updateList()
+    }
 
-            Task {
-                administrativeArea = await getCountry.fetchAdministrativeArea()
-                updateList()
+    @ViewBuilder
+    private var regionContent: some View {
+        if let selection {
+            regionCards(for: selection)
+        }
+    }
+
+    private func regionCards(for region: regionList) -> some View {
+        let regionItems = items(for: region)
+        return CardRegionView(
+            smartCardManager: smartCardManager,
+            items: regionItems.items,
+            subItems: regionItems.subItems,
+            externalItems: regionItems.externalItems,
+            deleteAds: $deleteAds,
+            navigationTitle: region.first.name(),
+            showsSortToolbar: !showsSidebar,
+            onResult: showResult
+        )
+        .id(region)
+    }
+
+    @ViewBuilder
+    private var detailColumn: some View {
+        if let resultToDisplay = selectedResult {
+            ResultView(
+                result: resultToDisplay,
+                scandata: true,
+                saveListID: .constant(UUID()),
+                deleteAds: $deleteAds,
+                onDone: {
+                    selectedResult = nil
+                    preferredCompactColumn = selection == nil ? .sidebar : .content
+                },
+                embedsNavigationStack: false
+            )
+        } else {
+            Text("navigation.split.notselection")
+        }
+    }
+
+    private func showResult(_ result: Result) {
+        selectedResult = result
+        preferredCompactColumn = .detail
+    }
+
+    private func items(for region: regionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?) {
+        let firstRegionItems = store.cardItems.filter {
+            ($0.regionOption == nil && $0.area.region() == region.first)
+                || $0.regionOption == region.first
+        }
+        let regularItems = firstRegionItems.filter { $0.scanOption.scanType != .external }
+        let externalItems = firstRegionItems.filter { $0.scanOption.scanType == .external }
+        let subItems = region.second.map { second in
+            store.cardItems.filter {
+                $0.regionOption == nil
+                    && $0.area.region() == second
+                    && $0.scanOption.scanType != .external
             }
         }
-        .onChange(of: getCountry.countryCode) {
-            updateList()
-
-            Task {
-                administrativeArea = await getCountry.fetchAdministrativeArea()
-                updateList()
-            }
-        }
-        .onChange(of: searchText) {
-            search()
-        }
+        return (regularItems, subItems, externalItems)
     }
 
     private func updateList() {
@@ -352,6 +498,32 @@ struct CardList: View {
     }
 }
 
+struct iPhoneDuoHingeModifier: ViewModifier {
+    @Binding var value: Bool
+
+    func body(content: Content) -> some View {
+        if #available(iOS 27.1, *) {
+            content
+                .onHingeChange { _, duo in
+                    guard let hinge = duo.hinge else {
+                        value = false
+                        return
+                    }
+                    value = hinge.status == .partiallyOpen || hinge.status == .fullyOpen
+                }
+        } else {
+            content
+        }
+    }
+}
+
+extension View {
+    func iPhoneDuoHinge(value: Binding<Bool>) -> some View {
+        self.modifier(iPhoneDuoHingeModifier(value: value))
+    }
+}
+
+
 enum SortType: String, CaseIterable {
     case name_ascend = "cardList.sort.name_ascend"
     case name_descend = "cardList.sort.name_descend"
@@ -368,6 +540,9 @@ struct CardRegionView: View {
     @State var externalItems: [CardInfo]?
 
     @Binding var deleteAds: Bool
+    var navigationTitle: String
+    var showsSortToolbar = true
+    var onResult: ((Result) -> Void)? = nil
 
     @State var sort: SortType = .locate_ascend
     @State var sort2: SortType = .locate_ascend
@@ -375,7 +550,9 @@ struct CardRegionView: View {
 
     var body: some View {
         List {
+            #if !targetEnvironment(macCatalyst)
             ListAdView(deleteAds: $deleteAds)
+            #endif
 
             Section {
                 ForEach(
@@ -385,7 +562,8 @@ struct CardRegionView: View {
                     CardListRow(
                         item: item,
                         deleteAds: $deleteAds,
-                        smartCardManager: smartCardManager
+                        smartCardManager: smartCardManager,
+                        onResult: onResult
                     )
                 }
             } footer: {
@@ -402,7 +580,8 @@ struct CardRegionView: View {
                             CardListRow(
                                 item: item,
                                 deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager
+                                smartCardManager: smartCardManager,
+                                onResult: onResult
                             )
                         }
                     } header: {
@@ -434,7 +613,9 @@ struct CardRegionView: View {
                             CardListRow(
                                 item: item,
                                 deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager, externalDevice: !smartCardManager.readers.isEmpty
+                                smartCardManager: smartCardManager,
+                                externalDevice: !smartCardManager.readers.isEmpty,
+                                onResult: onResult
                             )
                         }
                     } header: {
@@ -472,16 +653,13 @@ struct CardRegionView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                ScanReaderPicker(manager: smartCardManager)
-            }
-        }
         .navigationTitle(
-            LocalizedStringKey(items.first?.area.region().name() ?? "")
+            LocalizedStringKey(navigationTitle)
         )
         .toolbar {
-            CardSortPicker(sort: $sort)
+            if showsSortToolbar {
+                CardSortPicker(sort: $sort)
+            }
         }
     }
 
