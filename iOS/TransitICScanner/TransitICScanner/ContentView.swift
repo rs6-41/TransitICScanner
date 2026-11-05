@@ -65,15 +65,22 @@ struct ContentView: View {
         #endif
     }
     
+    
+    private var scanTabIcon: String {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            "iphone.radiowaves.left.and.right"
+        } else {
+            "wave.3.right.circle"
+        }
+    }
+    
     var body: some View {
         TabView(selection: $tab) {
-            Tab(LocalizedStringKey("tab.scan"), systemImage: "iphone.radiowaves.left.and.right", value: 0) {
+            Tab(LocalizedStringKey("tab.scan"), systemImage: scanTabIcon, value: 0) {
                 CardList(deleteAds: $deleteAds, smartCardManager: smartCardManager)
             }
             Tab(LocalizedStringKey("tab.history"), systemImage: "tram.card", value: 1) {
-                NavigationStack {
-                    SavedListView(deleteAds: $deleteAds)
-                }
+                SavedListView(deleteAds: $deleteAds)
             }
 
             if appEnvironment == "DEV" {
@@ -97,15 +104,21 @@ struct ContentView: View {
         .navigationTitle(LocalizedStringKey("appName"))
         .tabViewSidebarBottomBar {
             if showsSidebar && !usesPhoneNavigationBarPicker {
-                    HStack {
-                        ScanReaderPicker(
-                            manager: smartCardManager,
-                            showsIconAndText: true
-                        )
-                        .lineLimit(1)
-                        Spacer()
-                    }
-                .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 10) {
+#if targetEnvironment(macCatalyst)
+                    Rectangle()
+                        .fill(Color.secondary.opacity(0.2))
+                        .frame(height: 1)
+#endif
+                    ScanReaderPicker(
+                        manager: smartCardManager,
+                        showsIconAndText: true
+                    )
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
             }
         }
         .tabViewStyle(.sidebarAdaptable)

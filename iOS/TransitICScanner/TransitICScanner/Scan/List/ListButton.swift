@@ -27,7 +27,7 @@ struct CardListRow: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
             switch item.scanOption.scanType {
             case .nfc:
                 ScanningButton(
@@ -93,7 +93,7 @@ struct ListButtonInner: View {
                         .fontWeight(.semibold)
                 }
 
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 3) {
                     HStack(spacing: 2) {
                         Text(LocalizedStringKey(item.area.rawValue))
                             .fontWeight(.semibold)
@@ -137,6 +137,10 @@ struct ListButtonInner: View {
             }
         }
         .foregroundStyle(Color.primary)
+#if targetEnvironment(macCatalyst)
+        .padding(.horizontal, 6)
+        .padding(.vertical, 6)
+#endif
     }
 }
 

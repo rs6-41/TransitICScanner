@@ -3076,6 +3076,34 @@
         }
       }
     },
+    "cardList.reader.enptyReader.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supported CCID-compliant readers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CCID互換リーダに対応"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持符合 CCID 标准的读卡器"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持符合 CCID 標準的讀卡器"
+          }
+        }
+      }
+    },
     "cardList.reader.external" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -6403,25 +6431,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select a card to get started."
+            "value" : "Select a card"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "カードを選択してください。"
+            "state" : "needs_review",
+            "value" : "カードを選択"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请选择一个卡片。"
+            "value" : "请选择卡片"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請選擇一個卡片。"
+            "value" : "請選擇卡片"
           }
         }
       }
@@ -6788,6 +6816,90 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "位置信息"
+          }
+        }
+      }
+    },
+    "permission.nfc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card Reader"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードリーダー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读卡器"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器"
+          }
+        }
+      }
+    },
+    "permission.nfc.corenfc.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can scan cards using the iPhone's built-in NFC reader.\n\nHold your card near the camera area on the back of your device.\n\nYou can also connect a CCID-compatible smart card reader to scan cards. Some cards can only be scanned using an external reader. For more information, please visit [our website](https://rs6apps.com/transit/nfc_reader?lang=en)."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。\n\nデバイス外側のカメラ付近にカードをかざしてください。\n\nCCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外図形リーダー専用です。詳細はWebサイトをご確認ください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您可以使用 iPhone 内置的 NFC 读卡器扫描卡片。\n请将卡片靠近设备背面的摄像头区域。\n\n您也可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。部分卡片只能使用外接读卡器进行扫描。详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您可以使用 iPhone 內建的 NFC 讀卡機掃描卡片。\n\n請將卡片靠近裝置背面的相機區域。\n\n您也可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。部分卡片僅能使用外接讀卡機進行掃描。詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
+          }
+        }
+      }
+    },
+    "permission.nfc.external.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device does not have a built-in NFC reader. You can connect a CCID-compatible smart card reader to scan cards. You can also view the history of cards scanned using an iPhone.\n\nFor more information, please visit [our website](https://rs6apps.com/transit/nfc_reader?lang=en)."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このデバイスにはNFCリーダーが内蔵されていません。 CCID互換のICカードリーダーを接続してスキャンすることができます。iPhoneでスキャンしたカードの履歴を見ることも可能です。\n\n詳細はWebサイトをご確認ください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此设备不支持内置 NFC 读卡器。您可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。您也可以查看使用 iPhone 扫描的卡片记录。\n\n详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此裝置未內建 NFC 讀卡機。您可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。您也可以查看使用 iPhone 掃描的卡片紀錄。\n\n詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
           }
         }
       }

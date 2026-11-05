@@ -22,16 +22,6 @@ struct CardList: View {
     @Binding var deleteAds: Bool
     @ObservedObject var smartCardManager: SmartCardManager
 
-    @State private var scrollOffsetY: CGFloat = 0
-    @State private var searchBarOffsetY: CGFloat = 0
-    @State var searchBarHight: CGFloat = 0
-    @State var isSearchFocused: Bool = false
-    @State private var searchBarIsBelowToolbar = true
-
-    // Toolbar layout reserves less space than the visible gap at the trailing
-    // edge, so include the additional list inset in the expansion width.
-    private let trailingToolbarWidth: CGFloat = 60
-
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
         true
@@ -149,231 +139,153 @@ struct CardList: View {
 
     @ViewBuilder
     private var sidebar: some View {
-        if showsSidebar {
-            sidebarList
-                .searchable(
-                    text: $searchText,
-                    placement: .sidebar,
-                    prompt: String(localized: "cardList.search")
-                )
-                .navigationTitle(LocalizedStringKey("cardList.title"))
-        } else {
-            sidebarList
-                .navigationTitle(LocalizedStringKey("cardList.title"))
-                .toolbarTitleDisplayMode(.inlineLarge)
-                .toolbar {
-                    ToolbarItem(placement: .title) {
-                        Text("")
-                    }
-
-                    ToolbarItem(placement: .subtitle) {
-                        HStack {
-                            SearchBar(
-                                text: $searchText,
-                                isFocused: $isSearchFocused,
-                                placeholder: String(localized: "cardList.search")
-                            )
-
-                            #if !targetEnvironment(macCatalyst)
-                            Button {
-                                withAnimation(.linear(duration: 0.3)) {
-                                    isSearchFocused = false
-                                    searchText = ""
-                                }
-                            } label: {
-                                Image(systemName: "xmark")
-                                    .frame(width: 30, height: 30)
-                            }
-                            .buttonStyle(.glass)
-                            .buttonBorderShape(.circle)
-                            .opacity(isSearchFocused ? 1 : 0)
-                            .frame(width: isSearchFocused ? 40 : 0)
-                            #endif
-                        }
-                        .animation(.easeInOut(duration: 0.2), value: isSearchFocused)
-                        .animation(.easeInOut(duration: 0.18), value: searchBarIsBelowToolbar)
-                        .padding(
-                            .trailing,
-                            searchBarIsBelowToolbar ? -trailingToolbarWidth : 0
-                        )
-                        .offset(y: max(0, searchBarOffsetY))
-                        .zIndex(1)
-                        .onGeometryChange(
-                            for: CGFloat.self,
-                            of: { $0.size.height },
-                            action: { searchBarHight = $0 }
-                        )
-                    }
-                }
+        Group {
+            if showsSidebar {
+                sidebarList
+                    .searchable(
+                        text: $searchText,
+                        placement: .sidebar,
+                        prompt: String(localized: "cardList.search")
+                    )
+                    .navigationTitle(LocalizedStringKey("cardList.title"))
+            } else {
+                sidebarList
+                    .searchable(
+                        text: $searchText,
+                        prompt: Text(LocalizedStringKey("cardList.search"))
+                    )
+                    .navigationTitle(LocalizedStringKey("cardList.title"))
+            }
         }
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor:.quaternarySystemFill))
     }
 
     private var sidebarList: some View {
             List(selection: sidebarSelection) {
-                if !showsSidebar {
-                Section {
-                    HStack {
-                        Color.white.opacity(0.000001)
-                            .onTapGesture {
-                                isSearchFocused = true
-                            }
-
-                        if isSearchFocused {
-                            Color.white.opacity(0.000001)
-                                .onTapGesture {
-                                    isSearchFocused = false
-                                    searchText = ""
+                Group {
+#if !targetEnvironment(macCatalyst)
+                    ListAdView(deleteAds: $deleteAds)
+#endif
+                    
+                    if debug.isDisplay {
+                        VStack(alignment: .leading) {
+                            Toggle(String("DEBUG MODE"), isOn: $debug.isDisplay)
+                                .bold()
+                                .foregroundStyle(Color.red)
+                            
+                            HStack(spacing: 3) {
+                                Text(LocalizedStringKey("cardList.nowLocate"))
+                                Text(verbatim: ": ")
+                                Text(verbatim: getCountry.countryCode ?? "nil")
+                                
+                                if let administrativeArea {
+                                    Text(verbatim: " \(administrativeArea)")
                                 }
-                                .frame(width: 40, height: 40)
+                            }
                         }
                     }
-                }
-                .listRowInsets(
-                    EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                )
-                .listRowBackground(Color.clear)
-                }
-
-                #if !targetEnvironment(macCatalyst)
-                ListAdView(deleteAds: $deleteAds)
-                #endif
-
-                if debug.isDisplay {
-                    VStack(alignment: .leading) {
-                        Toggle(String("DEBUG MODE"), isOn: $debug.isDisplay)
-                            .bold()
-                            .foregroundStyle(Color.red)
-
-                        HStack(spacing: 3) {
+                    
+                    if !currentCountryItems.isEmpty {
+                        Section {
+                            ForEach(currentCountryItems, id: \.logo) { item in
+                                CardListRow(
+                                    item: item,
+                                    deleteAds: $deleteAds,
+                                    smartCardManager: smartCardManager,
+                                    onResult: showResult
+                                )
+                            }
+                        } header: {
                             Text(LocalizedStringKey("cardList.nowLocate"))
-                            Text(verbatim: ": ")
-                            Text(verbatim: getCountry.countryCode ?? "nil")
-
-                            if let administrativeArea {
-                                Text(verbatim: " \(administrativeArea)")
-                            }
                         }
                     }
-                }
-
-                if !currentCountryItems.isEmpty {
-                    Section {
-                        ForEach(currentCountryItems, id: \.logo) { item in
-                            CardListRow(
-                                item: item,
-                                deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager,
-                                onResult: showResult
-                            )
-                        }
-                    } header: {
-                        Text(LocalizedStringKey("cardList.nowLocate"))
-                    }
-                }
-
-                if searchText == "" {
-                    Section {
-                        ForEach(regionLists, id: \.self) { list in
-                            let filtFirstItem = store.cardItems.filter {
-                                $0.regionOption == nil &&
-                                $0.area.region() == list.first
-                            } +
-                            store.cardItems.filter {
-                                $0.regionOption == list.first
-                            }
-
-                            if !filtFirstItem.isEmpty {
-                                if showsSidebar {
-                                    Button {
-                                        selectedResult = nil
-                                        regionPath = [list]
-                                    } label: {
-                                        SquareIcon(
-                                            text: LocalizedStringKey(list.first.name()),
-                                            systemImage: list.first.icon(),
-                                            color: Color.blue
-                                        )
+                    
+                    if searchText == "" {
+                        Section {
+                            ForEach(regionLists, id: \.self) { list in
+                                let filtFirstItem = store.cardItems.filter {
+                                    $0.regionOption == nil &&
+                                    $0.area.region() == list.first
+                                } +
+                                store.cardItems.filter {
+                                    $0.regionOption == list.first
+                                }
+                                
+                                if !filtFirstItem.isEmpty {
+                                    if showsSidebar {
+                                        Button {
+                                            selectedResult = nil
+                                            regionPath = [list]
+                                        } label: {
+                                            SquareIcon(
+                                                text: LocalizedStringKey(list.first.name()),
+                                                systemImage: list.first.icon(),
+                                                color: Color.blue
+                                            )
+                                        }
+                                        .buttonStyle(.plain)
+                                        .contentShape(Rectangle())
+                                    } else {
+                                        Button {
+                                            selection = list
+                                            selectedResult = nil
+                                            preferredCompactColumn = .content
+                                        } label: {
+                                            SquareIcon(
+                                                text: LocalizedStringKey(list.first.name()),
+                                                systemImage: list.first.icon(),
+                                                color: Color.blue
+                                            )
+                                        }
+                                        .buttonStyle(.plain)
+                                        .tag(list)
                                     }
-                                    .buttonStyle(.plain)
-                                    .contentShape(Rectangle())
-                                } else {
-                                    Button {
-                                        selection = list
-                                        selectedResult = nil
-                                        preferredCompactColumn = .content
-                                    } label: {
-                                        SquareIcon(
-                                            text: LocalizedStringKey(list.first.name()),
-                                            systemImage: list.first.icon(),
-                                            color: Color.blue
-                                        )
-                                    }
-                                    .buttonStyle(.plain)
-                                    .tag(list)
                                 }
                             }
+                        } header: {
+                            Text(LocalizedStringKey("cardList.otherLocate"))
+                        } footer: {
+                            Text(LocalizedStringKey("cardList.description"))
                         }
-                    } header: {
-                        Text(LocalizedStringKey("cardList.otherLocate"))
-                    } footer: {
-                        Text(LocalizedStringKey("cardList.description"))
-                    }
-                } else {
-                    Section {
-                        ForEach(searchItems, id: \.logo) { item in
-                            CardListRow(
-                                item: item,
-                                deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager,
-                                onResult: showResult
-                            )
-                        }
-                    } header: {
-                        if searchText.isEmpty {
-                            HStack {
-                                Text(LocalizedStringKey("cardList.allCards"))
+                    } else {
+                        Section {
+                            ForEach(searchItems, id: \.logo) { item in
+                                CardListRow(
+                                    item: item,
+                                    deleteAds: $deleteAds,
+                                    smartCardManager: smartCardManager,
+                                    onResult: showResult
+                                )
                             }
-                        } else {
-                            Text(LocalizedStringKey("cardList.searchResults"))
+                        } header: {
+                            if searchText.isEmpty {
+                                HStack {
+                                    Text(LocalizedStringKey("cardList.allCards"))
+                                }
+                            } else {
+                                Text(LocalizedStringKey("cardList.searchResults"))
+                            }
+                        } footer: {
+                            Text(LocalizedStringKey("cardList.description"))
                         }
-                    } footer: {
-                        Text(LocalizedStringKey("cardList.description"))
                     }
                 }
+                .listRowBackground(Color(uiColor:.secondarySystemFill))
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
             .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
             }
-        .onScrollGeometryChange(for: CGFloat.self) { geometry in
-            geometry.contentOffset.y
-        } action: { oldVal, newVal in
-            scrollOffsetY = newVal
-
-            let nextOffset: CGFloat
-            if scrollOffsetY < searchBarHight {
-                nextOffset = -(scrollOffsetY + searchBarHight)
-            } else {
-                nextOffset = -scrollOffsetY
-            }
-
-            searchBarOffsetY = nextOffset
-
-            // Keep the expanded width while the bar is visually below the
-            // toolbar button. A small dead band prevents flicker at the edge.
-            if nextOffset < -2, searchBarIsBelowToolbar {
-                searchBarIsBelowToolbar = false
-            } else if nextOffset > 2, !searchBarIsBelowToolbar {
-                searchBarIsBelowToolbar = true
-            }
-        }
     }
 
     @ViewBuilder
     private var regionContent: some View {
         if let selection {
             regionCards(for: selection)
+                .scrollContentBackground(.hidden)
+                .background(Color(uiColor:.quaternarySystemFill))
         }
     }
 
@@ -407,7 +319,31 @@ struct CardList: View {
                 embedsNavigationStack: false
             )
         } else {
-            Text("navigation.split.notselection")
+            switch smartCardManager.selectedSource {
+            case .builtIn:
+                if NFCNDEFReaderSession.readingAvailable {
+                    DisplayEmptyView(isEnptyReader:false)
+                } else {
+                    DisplayEmptyView(isEnptyReader:true)
+                }
+            case .external:
+                if let selectedReader = smartCardManager.readers.first(where: {
+                    $0.id == smartCardManager.selectedReaderID
+                }) {
+                    DisplayEmptyView(isEnptyReader:false)
+                } else {
+                    DisplayEmptyView(isEnptyReader:true)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func DisplayEmptyView(isEnptyReader:Bool) -> some View {
+        if isEnptyReader {
+            EmptyViewSideBar(title: "cardList.reader.enptyReader", icon: "mediastick", description: "cardList.reader.enptyReader.description")
+        } else {
+            EmptyViewSideBar(title: "navigation.split.notselection", icon: "tram.card", description:nil)
         }
     }
 
@@ -522,6 +458,28 @@ extension View {
         self.modifier(iPhoneDuoHingeModifier(value: value))
     }
 }
+struct EmptyViewSideBar: View {
+    var title:String
+    var icon:String
+    var description:String?
+    
+    var body: some View {
+        ContentUnavailableView {
+            Label {
+                Text(LocalizedStringKey(title))
+                    .font(.title2)
+            } icon: {
+                Image(systemName: icon)
+                    .imageScale(.large)
+            }
+        } description: {
+            if let description {
+                Text(LocalizedStringKey(description))
+                    .font(.body)
+            }
+        }
+    }
+}
 
 
 enum SortType: String, CaseIterable {
@@ -550,109 +508,114 @@ struct CardRegionView: View {
 
     var body: some View {
         List {
-            #if !targetEnvironment(macCatalyst)
-            ListAdView(deleteAds: $deleteAds)
-            #endif
-
-            Section {
-                ForEach(
-                    sortItems(sort: sort, items: items, pref: false),
-                    id: \.logo
-                ) { item in
-                    CardListRow(
-                        item: item,
-                        deleteAds: $deleteAds,
-                        smartCardManager: smartCardManager,
-                        onResult: onResult
-                    )
+            Group {
+#if !targetEnvironment(macCatalyst)
+                ListAdView(deleteAds: $deleteAds)
+#endif
+                
+                Section {
+                    ForEach(
+                        sortItems(sort: sort, items: items, pref: false),
+                        id: \.logo
+                    ) { item in
+                        CardListRow(
+                            item: item,
+                            deleteAds: $deleteAds,
+                            smartCardManager: smartCardManager,
+                            onResult: onResult
+                        )
+                    }
+                } footer: {
+                    Text(LocalizedStringKey("cardList.description"))
                 }
-            } footer: {
-                Text(LocalizedStringKey("cardList.description"))
-            }
-
-            if let subItems {
-                if !subItems.isEmpty {
-                    Section {
-                        ForEach(
-                            sortItems(sort: sort2, items: subItems, pref: true),
-                            id: \.logo
-                        ) { item in
-                            CardListRow(
-                                item: item,
-                                deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager,
-                                onResult: onResult
-                            )
-                        }
-                    } header: {
-                        HStack {
-                            Text(
-                                LocalizedStringKey(
-                                    subItems.first?.area.region().name() ?? ""
+                
+                if let subItems {
+                    if !subItems.isEmpty {
+                        Section {
+                            ForEach(
+                                sortItems(sort: sort2, items: subItems, pref: true),
+                                id: \.logo
+                            ) { item in
+                                CardListRow(
+                                    item: item,
+                                    deleteAds: $deleteAds,
+                                    smartCardManager: smartCardManager,
+                                    onResult: onResult
                                 )
-                            )
-                            Spacer()
+                            }
+                        } header: {
+                            HStack {
+                                Text(
+                                    LocalizedStringKey(
+                                        subItems.first?.area.region().name() ?? ""
+                                    )
+                                )
+                                Spacer()
+                            }
+                        } footer: {
+                            Text(LocalizedStringKey("cardList.description"))
                         }
-                    } footer: {
-                        Text(LocalizedStringKey("cardList.description"))
                     }
                 }
-            }
-
-            if let externalItems {
-                if !externalItems.isEmpty {
-                    Section {
-                        ForEach(
-                            sortItems(
-                                sort: sort2,
-                                items: externalItems,
-                                pref: true
-                            ),
-                            id: \.logo
-                        ) { item in
-                            CardListRow(
-                                item: item,
-                                deleteAds: $deleteAds,
-                                smartCardManager: smartCardManager,
-                                externalDevice: !smartCardManager.readers.isEmpty,
-                                onResult: onResult
-                            )
-                        }
-                    } header: {
-                        VStack(alignment: .leading, spacing: 5) {
-                            HStack {
-                                Text(LocalizedStringKey("cardList.external.title"))
-                                Spacer()
-
-                                HStack(spacing: 4) {
-                                    if smartCardManager.readers.isEmpty {
-                                        Circle()
-                                            .fill(Color.red)
-                                            .stroke(Color.gray, lineWidth: 1.5)
-                                            .frame(width: 15, height: 15)
-
-                                        Text(LocalizedStringKey("cardList.external.disable"))
-                                    } else {
-                                        Circle()
-                                            .fill(Color.green)
-                                            .stroke(Color.gray, lineWidth: 1.5)
-                                            .frame(width: 15, height: 15)
-
-                                        Text(LocalizedStringKey("cardList.external.enable"))
+                
+                if let externalItems {
+                    if !externalItems.isEmpty {
+                        Section {
+                            ForEach(
+                                sortItems(
+                                    sort: sort2,
+                                    items: externalItems,
+                                    pref: true
+                                ),
+                                id: \.logo
+                            ) { item in
+                                CardListRow(
+                                    item: item,
+                                    deleteAds: $deleteAds,
+                                    smartCardManager: smartCardManager,
+                                    externalDevice: !smartCardManager.readers.isEmpty,
+                                    onResult: onResult
+                                )
+                            }
+                        } header: {
+                            VStack(alignment: .leading, spacing: 5) {
+                                HStack {
+                                    Text(LocalizedStringKey("cardList.external.title"))
+                                    Spacer()
+                                    
+                                    HStack(spacing: 4) {
+                                        if smartCardManager.readers.isEmpty {
+                                            Circle()
+                                                .fill(Color.red)
+                                                .stroke(Color.gray, lineWidth: 1.5)
+                                                .frame(width: 15, height: 15)
+                                            
+                                            Text(LocalizedStringKey("cardList.external.disable"))
+                                        } else {
+                                            Circle()
+                                                .fill(Color.green)
+                                                .stroke(Color.gray, lineWidth: 1.5)
+                                                .frame(width: 15, height: 15)
+                                            
+                                            Text(LocalizedStringKey("cardList.external.enable"))
+                                        }
                                     }
                                 }
+                                
+                                Text(LocalizedStringKey("cardList.external.description"))
+                                    .font(.caption)
+                                    .fontWeight(.regular)
                             }
-
-                            Text(LocalizedStringKey("cardList.external.description"))
-                                .font(.caption)
-                                .fontWeight(.regular)
+                        } footer: {
+                            Text(LocalizedStringKey("cardList.description"))
                         }
-                    } footer: {
-                        Text(LocalizedStringKey("cardList.description"))
                     }
                 }
             }
+            .listRowBackground(Color(uiColor:.secondarySystemFill))
         }
+        .scrollContentBackground(.hidden)
+        .listStyle(.insetGrouped)
         .navigationTitle(
             LocalizedStringKey(navigationTitle)
         )

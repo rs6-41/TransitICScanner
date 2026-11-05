@@ -46,7 +46,32 @@ struct TransitICScannerApp: App {
                 .environmentObject(getCountry)
                 .environmentObject(adsModel)
                 .navigationTitle(" ")
+                .background {
+                    WindowAccessor()
+                }
+        }
+        .commands {
+            CommandGroup(replacing: .newItem) {}
+            CommandGroup(replacing: .textEditing) {}
+            CommandGroup(replacing: .help) {}
         }
         .modelContainer(container)
     }
+}
+
+
+struct WindowAccessor: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+
+        DispatchQueue.main.async {
+            #if targetEnvironment(macCatalyst)
+            view.window?.windowScene?.titlebar?.titleVisibility = .hidden
+            #endif
+        }
+
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {}
 }
