@@ -3,6 +3,7 @@ import SwiftData
 import TipKit
 
 struct SavedListView: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Query
     private var cards: [SavedCard]
 
@@ -13,6 +14,21 @@ struct SavedListView: View {
 
     @State private var narrow = "all"
     @State private var sort = "dateDescending"
+    @State private var selectedCardID: PersistentIdentifier?
+    @State private var selectedResult: Result?
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+
+    private var showsSidebar: Bool {
+        #if targetEnvironment(macCatalyst)
+        true
+        #else
+        horizontalSizeClass == .regular
+        #endif
+    }
+
+    private var sidebarSelection: Binding<PersistentIdentifier?>? {
+        showsSidebar ? nil : $selectedCardID
+    }
 
     private var filteredCards: [SavedCard] {
         var result = cards
@@ -108,100 +124,33 @@ struct SavedListView: View {
     }
 
     var body: some View {
-            List {
-                #if !targetEnvironment(macCatalyst)
-                ListAdView(deleteAds: $deleteAds)
-                #endif
-                
-                Section {
-                    if filteredCards.isEmpty {
-                        ContentUnavailableView(
-                            LocalizedStringKey("history.empty"),
-                            systemImage: "tram.card.fill"
-                        )
-                    } else {
-                        ForEach(filteredCards) { card in
-                            NavigationLink {
-                                ResultView(
-                                    result: card.result(),
-                                    scandata: false,
-                                    saveListID: $saveListID,
-                                    deleteAds: $deleteAds,
-                                    embedsNavigationStack: false
-                                )
-                            } label: {
-                                let result = card.result()
-                                
-                                HStack {
-                                    let iconName = result.info?.iconName
-                                    
-                                    if iconName != "" {
-                                        CardImage(name: iconName ?? "")
-                                    } else if let info = result.info {
-                                        let display = result.converter.cardInfo(info)
-                                        
-                                        if let cardName = getCardImageName(
-                                            type: card.converterType,
-                                            name: display.type
-                                        ) {
-                                            CardImage(name: cardName.imageName)
-                                        }
-                                    }
-                                    
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        if result.info?.displayName ?? "" != "" {
-                                            Text(
-                                                LocalizedStringKey(
-                                                    result.info?.displayName ?? ""
-                                                )
-                                            )
-                                            .font(.headline)
-                                            
-                                            Text(LocalizedStringKey(card.name))
-                                                .font(.subheadline)
-                                                .foregroundStyle(.secondary)
-                                            
-                                        } else if let info = result.info,
-                                                  !result.converter.cardInfo(info).type.isEmpty {
-                                            Text(
-                                                LocalizedStringKey(
-                                                    result.converter.cardInfo(info).type
-                                                )
-                                            )
-                                            .font(.headline)
-                                            
-                                            Text(LocalizedStringKey(card.name))
-                                                .font(.subheadline)
-                                                .foregroundStyle(.secondary)
-                                            
-                                        } else {
-                                            Text(LocalizedStringKey(card.nameShort))
-                                                .font(.headline)
-                                        }
-                                    }
-                                    
-                                    Spacer()
-                                    
-                                    if let balance = card.balance {
-                                        VStack(alignment:.trailing) {
-                                            if let currencyType = card.currencyType {
-                                                Text(currencyType.getLocalize(balance.balanceText))
-                                            }
-                                            if let savedAt = card.savedAt {
-                                                Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
-                                                    .font(.caption)
-                                                    .foregroundStyle(Color.gray)
-                                            }
-                                        }
-                                    }
-                                }
-                                .id(saveListID)
-                            }
-                        }
-                        .onDelete(perform: deleteCards)
+        Group {
+            if showsSidebar {
+                NavigationSplitView {
+                    NavigationStack {
+                        savedCardList
                     }
-                } header: {
-                    HStack {
+                } detail: {
+                    detailColumn
+                }
+            } else {
+                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+                    savedCardList
+                } detail: {
+                    detailColumn
+                }
+            }
+        }
+    }
+
+    private var savedCardList: some View {
+        List(selection: sidebarSelection) {
+            Group {
+#if !targetEnvironment(macCatalyst)
+                ListAdView(deleteAds: $deleteAds)
+#endif
+                Section {
+                    HStack(spacing: 8) {
                         Menu {
                             Picker(
                                 "tab.history.narrow",
@@ -214,20 +163,12 @@ struct SavedListView: View {
                             }
                         } label: {
                             if let item = narrowItems.first(where: { $0.0 == narrow }) {
-                                HStack {
-                                    Spacer()
-                                    Text(LocalizedStringKey(item.1))
-                                        .lineLimit(1)
-                                        .truncationMode(.tail)
-                                        .frame(maxWidth: .infinity,alignment:.center)
-                                    Spacer()
-                                    Image(systemName:"chevron.up.chevron.down")
-                                }
+                                pickerLabel(item.1)
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
-
+                        
                         Menu {
                             Picker(
                                 "tab.history.sort",
@@ -235,54 +176,178 @@ struct SavedListView: View {
                             ) {
                                 Text(LocalizedStringKey("tab.history.sort.new"))
                                     .tag("dateDescending")
-
                                 Text(LocalizedStringKey("tab.history.sort.old"))
                                     .tag("dateAscending")
-
                                 Text(LocalizedStringKey("tab.history.sort.name"))
                                     .tag("nameAscending")
-
                                 Text(LocalizedStringKey("tab.history.sort.name.desc"))
                                     .tag("nameDescending")
                             }
                         } label: {
                             let sortKey: String = switch sort {
-                            case "dateAscending":
-                                "tab.history.sort.old"
-                            case "nameAscending":
-                                "tab.history.sort.name"
-                            case "nameDescending":
-                                "tab.history.sort.name.desc"
-                            default:
-                                "tab.history.sort.new"
+                            case "dateAscending": "tab.history.sort.old"
+                            case "nameAscending": "tab.history.sort.name"
+                            case "nameDescending": "tab.history.sort.name.desc"
+                            default: "tab.history.sort.new"
                             }
-                            HStack {
-                                Spacer()
-                                Text(LocalizedStringKey(sortKey))
-                                    .lineLimit(1)
-                                    .truncationMode(.tail)
-                                    .frame(maxWidth: .infinity,alignment:.center)
-                                Spacer()
-                                Image(systemName:"chevron.up.chevron.down")
-                            }
-                            .padding(.horizontal)
+                            pickerLabel(sortKey)
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
                     }
-                    .frame(maxWidth: 350)
+                    .listRowInsets(EdgeInsets(
+                        top: 8,
+                        leading: horizontalSizeClass == .regular ? 0 : 16,
+                        bottom: 8,
+                        trailing: horizontalSizeClass == .regular ? 0 : 16
+                    ))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                }
+                Section {
+
+                    if filteredCards.isEmpty {
+                        ContentUnavailableView(
+                            LocalizedStringKey("history.empty"),
+                            systemImage: "tram.card.fill"
+                        )
+                    } else {
+                        ForEach(filteredCards) { card in
+                            let result = card.result()
+
+                            Button {
+                                selectedCardID = card.persistentModelID
+                                selectedResult = card.result()
+                                preferredCompactColumn = .detail
+                            } label: {
+                                HStack {
+                                    let iconName = result.info?.iconName
+
+                                    if iconName != "" {
+                                        CardImage(name: iconName ?? "")
+                                    } else if let info = result.info {
+                                        let display = result.converter.cardInfo(info)
+
+                                        if let cardName = getCardImageName(
+                                            type: card.converterType,
+                                            name: display.type
+                                        ) {
+                                            CardImage(name: cardName.imageName)
+                                        }
+                                    }
+
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        if result.info?.displayName ?? "" != "" {
+                                            Text(
+                                                LocalizedStringKey(
+                                                    result.info?.displayName ?? ""
+                                                )
+                                            )
+                                            .font(.headline)
+
+                                            Text(LocalizedStringKey(card.name))
+                                                .font(.subheadline)
+                                                .foregroundStyle(.secondary)
+
+                                        } else if let info = result.info,
+                                                  !result.converter.cardInfo(info).type.isEmpty {
+                                            Text(
+                                                LocalizedStringKey(
+                                                    result.converter.cardInfo(info).type
+                                                )
+                                            )
+                                            .font(.headline)
+
+                                            Text(LocalizedStringKey(card.name))
+                                                .font(.subheadline)
+                                                .foregroundStyle(.secondary)
+
+                                        } else {
+                                            Text(LocalizedStringKey(card.nameShort))
+                                                .font(.headline)
+                                        }
+                                    }
+
+                                    Spacer()
+
+                                    if let balance = card.balance {
+                                        VStack(alignment: .trailing) {
+                                            if let currencyType = card.currencyType {
+                                                Text(currencyType.getLocalize(balance.balanceText))
+                                            }
+                                            if let savedAt = card.savedAt {
+                                                Text(savedAt, format: Date.FormatStyle(date: .numeric, time: .omitted))
+                                                    .font(.caption)
+                                                    .foregroundStyle(Color.gray)
+                                            }
+                                        }
+                                    }
+                                }
+#if targetEnvironment(macCatalyst)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 8)
+#endif
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .tag(card.persistentModelID)
+                        }
+                        .onDelete(perform: deleteCards)
+                    }
                 }
             }
-            .onChange(of: cards) {
-                if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
-                    narrow = "all"
-                }
+            .listRowBackground(Color(uiColor: .secondarySystemFill))
+            .listSectionSpacing(.compact)
+        }
+        .scrollContentBackground(.hidden)
+        .listStyle(.insetGrouped)
+        .onChange(of: cards) {
+            if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
+                narrow = "all"
             }
-            .navigationTitle("tab.history")
-            .searchable(
-                text: $searchText,
-                prompt: Text(LocalizedStringKey("search"))
+            if let selectedCardID,
+               !cards.contains(where: { $0.persistentModelID == selectedCardID }) {
+                self.selectedCardID = nil
+                selectedResult = nil
+                preferredCompactColumn = .sidebar
+            }
+        }
+        .navigationTitle("tab.history")
+        .searchable(
+            text: $searchText,
+            prompt: Text(LocalizedStringKey("search"))
+        )
+    }
+
+    @ViewBuilder
+    private var detailColumn: some View {
+        if let selectedResult {
+            ResultView(
+                result: selectedResult,
+                scandata: false,
+                saveListID: $saveListID,
+                deleteAds: $deleteAds,
+                embedsNavigationStack: false
             )
+            .id(selectedCardID)
+        } else {
+            EmptyViewSideBar(
+                title: "history.select.empty",
+                icon: "filemenu.and.pointer.arrow",
+                description: "history.select.empty.description"
+            )
+        }
+    }
+
+    private func pickerLabel(_ title: String) -> some View {
+        HStack(spacing: 6) {
+            Text(LocalizedStringKey(title))
+                .lineLimit(1)
+                .truncationMode(.tail)
+                .frame(maxWidth: .infinity, alignment: .center)
+            Image(systemName: "chevron.up.chevron.down")
+        }
+        .padding(.horizontal, 8)
     }
 
     private func deleteCards(at offsets: IndexSet) {
