@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA43A04F309D6C17008A3C48 /* TransitICSCanner_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA43A04F309D6C17008A3C48 /* TransitICSCanner_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABAF3066867600A3D87B /* WidgetKit.framework */; };
 		AA87ABCE306686B600A3D87B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABB13066867600A3D87B /* SwiftUI.framework */; };
@@ -352,6 +352,7 @@
 /* Begin PBXTargetDependency section */
 		AA43A04E309D6C17008A3C48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */;
 			targetProxy = AA43A04D309D6C17008A3C48 /* PBXContainerItemProxy */;
 		};
