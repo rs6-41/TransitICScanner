@@ -272,7 +272,7 @@ struct SavedListView: View {
 
                                     if let balance = card.balance {
                                         VStack(alignment: .trailing) {
-                                            if let currencyType = card.currencyType {
+                                            if let currencyType = card.parsedCurrencyType {
                                                 Text(currencyType.getLocalize(balance.balanceText))
                                             }
                                             if let savedAt = card.savedAt {

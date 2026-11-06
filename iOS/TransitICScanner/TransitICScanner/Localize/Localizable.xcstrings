@@ -287,6 +287,9 @@
         }
       }
     },
+    "appTitle" : {
+
+    },
     "cancel" : {
       "localizations" : {
         "en" : {
@@ -4630,9 +4633,6 @@
           }
         }
       }
-    },
-    "Hello, world!" : {
-
     },
     "history.empty" : {
       "localizations" : {
