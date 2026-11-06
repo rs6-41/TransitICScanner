@@ -4631,6 +4631,9 @@
         }
       }
     },
+    "Hello, world!" : {
+
+    },
     "history.empty" : {
       "localizations" : {
         "en" : {
