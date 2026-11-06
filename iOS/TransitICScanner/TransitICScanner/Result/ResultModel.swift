@@ -13,6 +13,7 @@ struct Result: Hashable {
     var description: String
     var savedAt:Date? = Date.now
     var fullLog:String? = ""
+    var converterTypeRaw: String? = nil
 }
 
 // 履歴データ

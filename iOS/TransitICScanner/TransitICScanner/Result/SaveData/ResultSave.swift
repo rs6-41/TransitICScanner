@@ -286,7 +286,8 @@ extension SavedCard {
             isLastHide: isLastHide,
             description: cardDescription,
             savedAt: savedAt,
-            fullLog: fullLog
+            fullLog: fullLog,
+            converterTypeRaw: converterTypeRaw
         )
         #else
         return Result(
@@ -298,7 +299,8 @@ extension SavedCard {
             isLastHide: isLastHide,
             description: cardDescription,
             savedAt: savedAt,
-            fullLog: fullLog
+            fullLog: fullLog,
+            converterTypeRaw: converterTypeRaw
         )
         #endif
     }
