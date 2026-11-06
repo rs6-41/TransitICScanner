@@ -1,7 +1,10 @@
 import SwiftUI
 import Foundation
-import CoreNFC
 import Combine
+
+#if !os(watchOS)
+import CoreNFC
+#endif
 
 final class CardItemsStore: ObservableObject {
     @Published var cardItems: [CardInfo] = []
@@ -25,6 +28,7 @@ let relCards: [CardInfo] = [
 
 
 /// 種別で動作を切り替える定義
+#if !os(watchOS)
 extension NFCScannerModel {
     func switchCard(name:String,_ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch name {
@@ -49,6 +53,7 @@ extension NFCScannerModel {
         }
     }
 }
+#endif
 
 enum ConverterType: String,CaseIterable {
     case jpIC
@@ -66,6 +71,7 @@ enum ConverterType: String,CaseIterable {
     case jpOKICA
     case jpRapica
 
+    #if !os(watchOS)
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
         case .jpIC:
@@ -131,4 +137,5 @@ enum ConverterType: String,CaseIterable {
             jpRapica_Converter.history(item)
         }
     }
+    #endif
 }
