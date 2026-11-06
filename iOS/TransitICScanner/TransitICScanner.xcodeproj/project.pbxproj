@@ -62,6 +62,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICSCanner_Watch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Result/BalanceFormat.swift,
+				Result/SaveData/Storage.swift,
+			);
+			target = AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */;
+		};
 		AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -136,6 +144,7 @@
 				AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */,
 				AA87AC59306752C900A3D87B /* Exceptions for "TransitICScanner" folder in "CardBalanceWidgetExtension" target */,
 				AA87AC3E30669C8400A3D87B /* Exceptions for "TransitICScanner" folder in "Compile Sources" phase from "CardBalanceWidgetExtension" target */,
+				AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICSCanner_Watch Watch App" target */,
 			);
 			path = TransitICScanner;
 			sourceTree = "<group>";
