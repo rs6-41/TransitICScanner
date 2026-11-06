@@ -1,13 +1,13 @@
 'use strict';
 
 const emojiChoices = [
-  { name: '📃 ドキュメントの更新', value: '📃' },
-  { name: '✨ 新機能の追加', value: '✨' },
-  { name: '🐛 バグの修正', value: '🐛' },
-  { name: '♻️ コードの整理', value: '♻️' },
-  { name: '💄 UI・デザインの変更', value: '💄' },
-  { name: '⚡️ パフォーマンス改善', value: '⚡️' },
-  { name: '✅ テストの追加・修正', value: '✅' }
+  { name: '📃 Document Update / ドキュメント更新', value: '📃' },
+  { name: '✨ New Features / 新機能の追加', value: '✨' },
+  { name: '🐛 Bug Fix / バグ修正', value: '🐛' },
+  { name: '♻️  Refactoring / コード整理', value: '♻️' },
+  { name: '💄 UI/Design changes / UI・デザインの変更', value: '💄' },
+  { name: '⚡️ Improve Performance / パフォーマンス改善', value: '⚡️' },
+  { name: '✅ Add/Fix Test / テストの追加・修正', value: '✅' }
 ];
 
 module.exports = {
@@ -16,23 +16,23 @@ module.exports = {
       {
         type: 'list',
         name: 'emoji',
-        message: '変更内容を選択してください',
+        message: 'Changes / 変更内容:',
         choices: emojiChoices
       },
       {
         type: 'input',
         name: 'issue',
-        message: 'Issue番号',
+        message: 'Issue:',
         validate(value) {
-          return /^\d+$/.test(value.trim()) || 'Issue番号は数字で入力してください';
+          return /^\d+$/.test(value.trim()) || 'Please enter a numeric Issue number. / Issue番号は数字で入力してください';
         }
       },
       {
         type: 'input',
         name: 'content',
-        message: '内容',
+        message: 'Content / 内容:',
         validate(value) {
-          return value.trim().length > 0 || '内容を入力してください';
+          return value.trim().length > 0 || 'Enter text. / 内容を入力してください';
         }
       }
     ]).then(({ emoji, issue, content }) => {
