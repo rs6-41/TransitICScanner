@@ -32,18 +32,27 @@ struct ScanReaderPicker: View {
             readerMenuContent
         } label: {
             if showsIconAndText {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(LocalizedStringKey("navigation.readerSelection"))
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundStyle(Color.gray)
-                        .padding(.bottom, 1)
-                    Label {
-                        Text(readerName)
-                    } icon: {
-                        Image(systemName: selectedReaderSymbol)
+
+                    HStack(spacing: 8) {
+                        Label {
+                            Text(readerName)
+                                .lineLimit(1)
+                        } icon: {
+                            Image(systemName: selectedReaderSymbol)
+                        }
+                        Spacer(minLength: 4)
+                        Image(systemName: "chevron.up.chevron.down")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(.secondary)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .contentShape(Rectangle())
             } else {
                 Image(systemName: selectedReaderSymbol)
             }

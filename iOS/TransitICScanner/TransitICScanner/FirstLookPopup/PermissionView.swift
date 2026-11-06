@@ -5,6 +5,7 @@ import AdSupport
 import CoreLocation
 import UserNotifications
 import Foundation
+import CoreNFC
 
 @MainActor
 final class LocationPermissionManager: NSObject, CLLocationManagerDelegate {
@@ -44,7 +45,7 @@ struct PermissionModalView: View {
     @State private var path: [Int] = []
     @State private var locationManager = LocationPermissionManager()
 
-    let lastPath = 4
+    let lastPath = 5
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -95,8 +96,32 @@ struct PermissionModalView: View {
                 }
             )
         }
-
+        
         if value == 1 {
+            if NFCNDEFReaderSession.readingAvailable {
+                return PermissionModel(
+                    title: "permission.nfc",
+                    imageName: "intro_nfc_corenfc",
+                    description: "permission.nfc.corenfc.description",
+                    descriptionRed: nil,
+                    action: { completion in
+                        completion()
+                    }
+                )
+            } else {
+                return PermissionModel(
+                    title: "permission.nfc",
+                    imageName: "intro_nfc_external",
+                    description: "permission.nfc.external.description",
+                    descriptionRed: nil,
+                    action: { completion in
+                        completion()
+                    }
+                )
+            }
+        }
+
+        if value == 2 {
             return PermissionModel(
                 title: "permission.gps.title",
                 imageName: "permission_GPS",
@@ -111,7 +136,7 @@ struct PermissionModalView: View {
         }
         
 
-        if value == 2 {
+        if value == 3 {
             return PermissionModel(
                 title: "permission.notifications.title",
                 imageName: "permission_Notifications",
@@ -143,7 +168,7 @@ struct PermissionModalView: View {
             )
         }
 
-        if value == 3 {
+        if value == 4 {
             let attStatus = ATTrackingManager.trackingAuthorizationStatus
 
             if attStatus != .restricted && attStatus != .denied {
