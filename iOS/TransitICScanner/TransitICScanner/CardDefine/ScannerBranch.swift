@@ -1,7 +1,7 @@
 import SwiftUI
 import Foundation
-import CoreNFC
 import Combine
+import CoreNFC
 
 final class CardItemsStore: ObservableObject {
     @Published var cardItems: [CardInfo] = []

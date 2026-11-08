@@ -1,6 +1,9 @@
 import SwiftUI
 import Foundation
+
+#if !os(watchOS)
 import CoreNFC
+#endif
 
 /// カード情報を定義する
 struct CardInfo {
@@ -23,7 +26,11 @@ struct ScanOption {
     var name: String //定義名
     let nameShort: String
     var scanType: ScanType
+    #if os(watchOS)
+    var pollingOption:String
+    #else
     var pollingOption:NFCTagReaderSession.PollingOption
+    #endif
     var felicaSystemCodes: [String]? //Felicaシステムコードを設定
     var url: URL?
     var historyCount: Int //履歴の取得件数

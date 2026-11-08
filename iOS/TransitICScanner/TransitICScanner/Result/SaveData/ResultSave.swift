@@ -1,5 +1,7 @@
 import Foundation
+#if !os(watchOS)
 import WidgetKit
+#endif
 import SwiftData
 
 enum CloudSyncSettings {
@@ -22,6 +24,7 @@ enum CloudSyncSettings {
 }
 
 enum SavedDataModelContainer {
+    #if !os(watchOS)
     static func deleteStore() throws {
         let fileManager = FileManager.default
 
@@ -52,6 +55,7 @@ enum SavedDataModelContainer {
             }
         }
     }
+    #endif
 
     static func makeContainer() throws -> ModelContainer {
         let schema = Schema([
@@ -117,10 +121,8 @@ final class SavedCard {
     )
     var histories: [SavedHistory]? = []
 
-    var currencyType: currencyType? {
-        TransitICScanner.currencyType(
-            rawValue: currency.lowercased()
-        )
+    var parsedCurrencyType: currencyType? {
+        currencyType(rawValue: currency.lowercased())
     }
 
     init(
@@ -137,7 +139,7 @@ final class SavedCard {
         balance: Double? = nil,
         isLastHide: Bool = false,
         cardDescription: String = "",
-        converterType: ConverterType,
+        converterTypeRaw: String? = nil,
         savedAt: Date,
         fullLog: String? = nil,
         issueInfo: issueInfo? = nil
@@ -155,13 +157,14 @@ final class SavedCard {
         self.balance = balance
         self.isLastHide = isLastHide
         self.cardDescription = cardDescription
-        self.converterTypeRaw = converterType.rawValue
+        self.converterTypeRaw = converterTypeRaw
         self.histories = []
         self.savedAt = savedAt
         self.fullLog = fullLog
         self.issueInfo = issueInfo
     }
 
+    #if !os(watchOS)
     var converterType: ConverterType {
         guard let converterTypeRaw else {
             return .jpIC
@@ -169,6 +172,7 @@ final class SavedCard {
 
         return ConverterType(rawValue: converterTypeRaw) ?? .jpIC
     }
+    #endif
 }
 
 @Model
@@ -249,7 +253,7 @@ extension SavedCard {
             nameShort: nameShort,
             displayName: displayName,
             iconName: iconName,
-            currencyType: currencyType,
+            currencyType: parsedCurrencyType,
             type: type,
             serial: serial,
             version: version,
@@ -273,6 +277,19 @@ extension SavedCard {
             )
         }
 
+        #if os(watchOS)
+        return Result(
+            balance: balance,
+            isHistory: !history.isEmpty,
+            history: history.isEmpty ? nil : history,
+            info: info,
+            isLastHide: isLastHide,
+            description: cardDescription,
+            savedAt: savedAt,
+            fullLog: fullLog,
+            converterTypeRaw: converterTypeRaw
+        )
+        #else
         return Result(
             balance: balance,
             isHistory: !history.isEmpty,
@@ -282,13 +299,26 @@ extension SavedCard {
             isLastHide: isLastHide,
             description: cardDescription,
             savedAt: savedAt,
-            fullLog: fullLog
+            fullLog: fullLog,
+            converterTypeRaw: converterTypeRaw
         )
+        #endif
     }
 }
 
 enum ResultSave {
 
+    static func loadResults(
+        from modelContext: ModelContext
+    ) throws -> [Result] {
+        let descriptor = FetchDescriptor<SavedCard>(
+            sortBy: [SortDescriptor(\.name)]
+        )
+
+        return try modelContext.fetch(descriptor).map { $0.result() }
+    }
+
+    #if !os(watchOS)
     static func save(
         _ result: Result,
         in modelContext: ModelContext
@@ -322,7 +352,7 @@ enum ResultSave {
                 balance: result.balance,
                 isLastHide: result.isLastHide,
                 cardDescription: result.description,
-                converterType: result.converter,
+                converterTypeRaw: result.converter.rawValue,
                 savedAt: result.savedAt ?? Date.now,
                 fullLog: result.fullLog,
                 issueInfo: info.issueInfo ?? nil
@@ -430,7 +460,13 @@ enum ResultSave {
         }
 
         let saveData = BalanceWidgetModel(
-            DisplayName: info.displayName ?? Localize(info.name),
+            DisplayName: info.displayName ?? {
+                #if os(watchOS)
+                info.name
+                #else
+                Localize(info.name)
+                #endif
+            }(),
             balance: result.balance,
             currencyType: result.info?.currencyType,
             idm: info.idm,
@@ -585,4 +621,5 @@ enum ResultSave {
             )
         }
     }
+    #endif
 }

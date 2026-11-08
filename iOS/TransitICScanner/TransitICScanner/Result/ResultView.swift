@@ -194,24 +194,24 @@ struct ResultView: View {
         let balance = result.balance ?? 0
         let balanceText = balance.balanceText
         Group {
-            HStack {
-                Text(LocalizedStringKey("result.info.balance"))
-                Spacer()
-                HStack(spacing:0) {
+            LabeledContent(LocalizedStringKey("result.info.balance")) {
+                Group {
                     if let currency = info.currencyType?.getLocalize(balanceText) {
                         Text(currency)
                     } else {
                         Text(balanceText)
                     }
                 }
+                .textSelection(.enabled)
             }
             
-            ListInfoContent(title:"result.info.cardCategory",value:LocalizedStringKey(display.nameShort))
+            LabeledContent(LocalizedStringKey("result.info.cardCategory")) {
+                Text(LocalizedStringKey(display.nameShort))
+                    .textSelection(.enabled)
+            }
             
             if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
-                HStack {
-                    Text(LocalizedStringKey("result.info.cardType"))
-                    Spacer()
+                LabeledContent(LocalizedStringKey("result.info.cardType")) {
                     Group {
                         if display.typeLocalizeTable != "" {
                             Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
@@ -219,16 +219,21 @@ struct ResultView: View {
                             Text(Localize(display.type))
                         }
                     }
-                        .foregroundStyle(Color.gray)
-                        .textSelection(.enabled)
+                    .textSelection(.enabled)
                 }
             }
             
             if !display.idm.isEmpty {
-                ListInfoContent(title:"result.info.ID",rawValue:display.idm)
+                LabeledContent(LocalizedStringKey("result.info.ID")) {
+                    Text(String(display.idm))
+                        .textSelection(.enabled)
+                }
             }
             if let savedAt = result.savedAt {
-                ListInfoContent(title:"result.info.date",rawValue:savedAt.formatted(date: .numeric, time: .shortened))
+                LabeledContent(LocalizedStringKey("result.info.date")) {
+                    Text(String(savedAt.formatted(date: .numeric, time: .shortened)))
+                        .textSelection(.enabled)
+                }
             }
         }
         .onAppear() {
@@ -244,21 +249,41 @@ struct ResultView: View {
     ) -> some View {
         
         Section() {
-            ListInfoContent(title:"result.info.issueInfo.region",value:LocalizedStringKey(issueInfo.region))
+            
+            LabeledContent(LocalizedStringKey("result.info.issueInfo.region")) {
+                Text(LocalizedStringKey(issueInfo.region))
+                    .textSelection(.enabled)
+            }
+            
             if areaText != "" {
-                ListInfoContent(title:"result.info.issueInfo.prefecture",value:areaText)
+                LabeledContent(LocalizedStringKey("result.info.issueInfo.prefecture")) {
+                    Text(areaText)
+                        .textSelection(.enabled)
+                }
             }
             if let otherAreaInfo = issueInfo.otherAreaInfo {
-                ListInfoContent(title:"result.info.issueInfo.otherAreaInfo",value:LocalizedStringKey(otherAreaInfo))
+                LabeledContent(LocalizedStringKey("result.info.issueInfo.otherAreaInfo")) {
+                    Text(LocalizedStringKey(otherAreaInfo))
+                        .textSelection(.enabled)
+                }
             }
             if let issuer = issueInfo.issuer {
-                ListInfoContent(title:"result.info.issueInfo.issuer",value:LocalizedStringKey(issuer))
+                LabeledContent(LocalizedStringKey("result.info.issueInfo.issuer")) {
+                    Text(LocalizedStringKey(issuer))
+                        .textSelection(.enabled)
+                }
             }
             if let date = issueInfo.date {
-                ListInfoContent(title:"result.info.issueInfo.date",rawValue:date.formatted(date: .numeric, time: .shortened))
+                LabeledContent(LocalizedStringKey("result.info.issueInfo.date")) {
+                    Text(String(date.formatted(date: .numeric, time: .shortened)))
+                        .textSelection(.enabled)
+                }
             }
             if let expiry = issueInfo.expiry {
-                ListInfoContent(title:"result.info.issueInfo.expiry",rawValue:expiry.formatted(date: .numeric, time: .shortened))
+                LabeledContent(LocalizedStringKey("result.info.issueInfo.expiry")) {
+                    Text(String(expiry.formatted(date: .numeric, time: .shortened)))
+                        .textSelection(.enabled)
+                }
             }
         } header: {
             Text(LocalizedStringKey("result.info.issueInfo"))
@@ -346,15 +371,8 @@ struct ResultView: View {
             spacing: 6
         ) {
             HStack {
-                Text(
-                    String(
-                        localized: String.LocalizationValue(
-                            display.processType
-                        )
-                    )
-                )
-                .font(.headline)
-
+                Text(String(localized: String.LocalizationValue(display.processType)))
+                    .font(.headline)
                 Spacer()
 
                 ZStack {
@@ -372,6 +390,13 @@ struct ResultView: View {
             }
 
             HStack(spacing: 2) {
+                let balanceText =
+                    display.balance.balanceText
+                let currency = result.info?.currencyType?.getLocalize(balanceText)
+                Text(currency ?? LocalizedStringKey(balanceText))
+                
+                Spacer()
+                
                 if let diff {
                     let amount = resultHistoryAmount(diff: diff)
                     let currency = result.info?.currencyType?.getLocalize(amount)
@@ -382,13 +407,6 @@ struct ResultView: View {
                         : .red
                     )
                 }
-
-                Spacer()
-
-                let balanceText =
-                    display.balance.balanceText
-                let currency = result.info?.currencyType?.getLocalize(balanceText)
-                Text(currency ?? LocalizedStringKey(balanceText))
             }
         }
     }
@@ -453,28 +471,6 @@ struct ResultView: View {
             } else {
                 cardUserName = displayName
             }
-        }
-    }
-}
-
-struct ListInfoContent: View {
-    @State var title:LocalizedStringKey
-    @State var value:LocalizedStringKey?
-    @State var rawValue:String?
-    
-    var body: some View {
-        HStack {
-            Text(title)
-            Spacer()
-            Group {
-                if let value {
-                    Text(value)
-                } else if let rawValue {
-                    Text(rawValue)
-                }
-            }
-            .foregroundStyle(Color.gray)
-            .textSelection(.enabled)
         }
     }
 }
