@@ -6,11 +6,14 @@ struct Result: Hashable {
     var isHistory: Bool
     var history: [ResultHistory]?
     var info: ResultCardInfo?
+    #if !os(watchOS)
     var converter: ConverterType
+    #endif
     var isLastHide: Bool
     var description: String
     var savedAt:Date? = Date.now
     var fullLog:String? = ""
+    var converterTypeRaw: String? = nil
 }
 
 // 履歴データ

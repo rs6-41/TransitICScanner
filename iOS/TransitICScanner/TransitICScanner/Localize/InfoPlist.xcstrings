@@ -12,19 +12,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "世界IC残高確認"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "全球IC餘額查詢"
           }
         }
@@ -41,19 +41,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "世界IC残高確認"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "全球IC餘額查詢"
           }
         }
@@ -153,6 +153,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This information is used to display Google ads.\nAllowing access may help us show you more relevant ads."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google広告の表示に使用されます。許可すると関連性の高い広告が表示されます。"
           }
         },
         "zh-Hans" : {
