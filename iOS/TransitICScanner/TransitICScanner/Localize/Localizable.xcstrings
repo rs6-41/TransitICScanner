@@ -838,6 +838,35 @@
         }
       }
     },
+    "card.KMT" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        }
+      }
+    },
     "card.manaca" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1561,6 +1590,35 @@
         }
       }
     },
+    "cardList.area.id" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indonesia"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "インドネシア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印度尼西亚"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印度尼西亞"
+          }
+        }
+      }
+    },
     "cardList.area.jp" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2214,6 +2272,38 @@
           }
         }
       }
+    },
+    "cardList.idKMT" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        }
+      }
+    },
+    "cardList.idKMT.description" : {
+      "extractionState" : "manual"
     },
     "cardList.jpDoCard" : {
       "extractionState" : "manual",
@@ -3681,7 +3771,32 @@
       }
     },
     "currency.idr.%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rp. %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ルピー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 印尼盾"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rp. %@"
+          }
+        }
+      }
     },
     "currency.jpy.%@" : {
       "localizations" : {
@@ -3840,13 +3955,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ SG$"
+            "value" : "%@ 坡元"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ SG$"
+            "value" : "%@ 坡元"
           }
         }
       }
@@ -4718,6 +4833,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "八達通"
+          }
+        }
+      }
+    },
+    "idKMT.short" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
           }
         }
       }
