@@ -7,6 +7,9 @@
     " " : {
 
     },
+    "(%@)" : {
+
+    },
     "ads" : {
       "localizations" : {
         "en" : {
@@ -7340,25 +7343,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Balance"
+            "value" : "History"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "残高"
+            "value" : "履歴"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "余额"
+            "value" : "历史"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "餘額"
+            "value" : "歷史"
           }
         }
       }
@@ -8765,6 +8768,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最後掃描時間"
+          }
+        }
+      }
+    },
+    "result.info.date.watch" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Scan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "最終スキャン"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "最后扫描"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "最後掃描"
           }
         }
       }

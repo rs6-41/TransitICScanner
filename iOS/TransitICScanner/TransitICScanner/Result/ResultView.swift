@@ -390,6 +390,13 @@ struct ResultView: View {
             }
 
             HStack(spacing: 2) {
+                let balanceText =
+                    display.balance.balanceText
+                let currency = result.info?.currencyType?.getLocalize(balanceText)
+                Text(currency ?? LocalizedStringKey(balanceText))
+                
+                Spacer()
+                
                 if let diff {
                     let amount = resultHistoryAmount(diff: diff)
                     let currency = result.info?.currencyType?.getLocalize(amount)
@@ -400,13 +407,6 @@ struct ResultView: View {
                         : .red
                     )
                 }
-
-                Spacer()
-
-                let balanceText =
-                    display.balance.balanceText
-                let currency = result.info?.currencyType?.getLocalize(balanceText)
-                Text(currency ?? LocalizedStringKey(balanceText))
             }
         }
     }
