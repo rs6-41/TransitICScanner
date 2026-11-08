@@ -3680,6 +3680,9 @@
         }
       }
     },
+    "currency.idr.%@" : {
+
+    },
     "currency.jpy.%@" : {
       "localizations" : {
         "en" : {
