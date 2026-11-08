@@ -132,9 +132,9 @@ struct WatchResultView: View {
                     let currency = card.info?.currencyType?.getLocalize(amount)
                     Group {
                         if let currency {
-                            Text("(\(Text(currency)))")
+                            Text(currency)
                         } else {
-                            Text("(\(amount))")
+                            Text(amount)
                         }
                     }
                     .foregroundStyle(
