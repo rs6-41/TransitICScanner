@@ -494,6 +494,33 @@ enum ResultSave {
         }
     }
 
+    /// 保存済みカードの表示名・券面だけを更新する。
+    /// 残高や履歴は書き換えないため、他の端末で同期された新しい読取結果を上書きしない。
+    static func updateUserData(
+        idm: String,
+        displayName: String?,
+        iconName: String?,
+        in modelContext: ModelContext
+    ) throws {
+        guard let card = try loadCard(idm: idm, from: modelContext) else {
+            return
+        }
+
+        card.displayName = displayName
+        card.iconName = iconName
+        try modelContext.save()
+
+        WidgetDataStore.update { models in
+            guard let index = models.firstIndex(where: { $0.idm == idm }) else {
+                return
+            }
+            if let displayName, !displayName.isEmpty {
+                models[index].DisplayName = displayName
+            }
+            models[index].icon = iconName
+        }
+    }
+
     static func loadCards(
         from modelContext: ModelContext
     ) throws -> [SavedCard] {
