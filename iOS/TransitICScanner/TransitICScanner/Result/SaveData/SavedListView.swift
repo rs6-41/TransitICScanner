@@ -14,9 +14,12 @@ struct SavedListView: View {
 
     @State private var narrow = "all"
     @State private var sort = "dateDescending"
+    // 画面遷移（regular 幅：分割表示の詳細列）
     @State private var selectedCardID: PersistentIdentifier?
     @State private var selectedResult: ScanResult?
-    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+
+    // 画面遷移（compact 幅：プッシュ遷移）
+    @State private var compactPath: [ScanResult] = []
 
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
@@ -24,10 +27,6 @@ struct SavedListView: View {
         #else
         horizontalSizeClass == .regular
         #endif
-    }
-
-    private var sidebarSelection: Binding<PersistentIdentifier?>? {
-        showsSidebar ? nil : $selectedCardID
     }
 
     private var filteredCards: [SavedCard] {
@@ -134,17 +133,19 @@ struct SavedListView: View {
                     detailColumn
                 }
             } else {
-                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+                // iPhone：一覧から結果画面へプッシュ遷移する
+                NavigationStack(path: $compactPath) {
                     savedCardList
-                } detail: {
-                    detailColumn
+                        .navigationDestination(for: ScanResult.self) { result in
+                            savedResultView(result)
+                        }
                 }
             }
         }
     }
 
     private var savedCardList: some View {
-        List(selection: sidebarSelection) {
+        List {
             Group {
 #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
@@ -216,9 +217,7 @@ struct SavedListView: View {
                             let result = card.result()
 
                             Button {
-                                selectedCardID = card.persistentModelID
-                                selectedResult = card.result()
-                                preferredCompactColumn = .detail
+                                open(card)
                             } label: {
                                 HStack {
                                     let iconName = result.info?.iconName
@@ -290,7 +289,6 @@ struct SavedListView: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
-                            .tag(card.persistentModelID)
                         }
                         .onDelete(perform: deleteCards)
                     }
@@ -305,11 +303,15 @@ struct SavedListView: View {
             if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
                 narrow = "all"
             }
+            // 表示中のカードが削除された場合は一覧に戻る
             if let selectedCardID,
                !cards.contains(where: { $0.persistentModelID == selectedCardID }) {
                 self.selectedCardID = nil
                 selectedResult = nil
-                preferredCompactColumn = .sidebar
+            }
+            let savedIDms = Set(cards.map(\.idm))
+            if compactPath.contains(where: { !savedIDms.contains($0.info?.idm ?? "") }) {
+                compactPath.removeAll()
             }
         }
         .navigationTitle("tab.history")
@@ -322,20 +324,34 @@ struct SavedListView: View {
     @ViewBuilder
     private var detailColumn: some View {
         if let selectedResult {
-            ResultView(
-                result: selectedResult,
-                scandata: false,
-                saveListID: $saveListID,
-                deleteAds: $deleteAds,
-                embedsNavigationStack: false
-            )
-            .id(selectedCardID)
+            savedResultView(selectedResult)
+                .id(selectedCardID)
         } else {
             EmptyViewSideBar(
                 title: "history.select.empty",
                 icon: "filemenu.and.pointer.arrow",
                 description: "history.select.empty.description"
             )
+        }
+    }
+
+    private func savedResultView(_ result: ScanResult) -> some View {
+        ResultView(
+            result: result,
+            scandata: false,
+            saveListID: $saveListID,
+            deleteAds: $deleteAds,
+            embedsNavigationStack: false
+        )
+    }
+
+    /// 保存済みカードを開く
+    private func open(_ card: SavedCard) {
+        if showsSidebar {
+            selectedCardID = card.persistentModelID
+            selectedResult = card.result()
+        } else {
+            compactPath = [card.result()]
         }
     }
 
