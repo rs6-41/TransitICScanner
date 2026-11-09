@@ -46,7 +46,7 @@ extension NFCScannerModel {
         _ session: NFCTagReaderSession
     ) {
         guard case let .iso7816(isoTag) = tag else {
-            session.invalidate(errorMessage: "Not ISO7816 tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
             return
         }
 
@@ -66,10 +66,7 @@ extension NFCScannerModel {
             do {
                 let result = try await twICash_result(using: send)
 
-                await MainActor.run {
-                    self.result = result
-                    session.invalidate()
-                }
+                await self.completeScan(result, session: session)
             } catch {
                 Log.debug(
                     "iCash 2.0 scan error:",

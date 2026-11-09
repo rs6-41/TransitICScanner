@@ -191,6 +191,7 @@ struct ScanningButton: View {
                     }
                 }
             } else if checkDevice() {
+                model.scanError = nil
                 model.readerSetup()
             } else {
                 nfcError = true
@@ -212,6 +213,13 @@ struct ScanningButton: View {
         .onChange(of: model.result) {
             if let result = model.result {
                 onResult?(result)
+            }
+        }
+        .onChange(of: model.scanError) {
+            // 読取画面が閉じた後に、タイムアウトなどシステム側の理由で終了したことを通知する
+            if let scanError = model.scanError {
+                scanErrorMessage = scanError.message
+                nfcError = true
             }
         }
         .alert(

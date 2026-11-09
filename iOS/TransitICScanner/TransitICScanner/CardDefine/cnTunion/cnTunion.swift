@@ -109,7 +109,7 @@ extension NFCScannerModel {
 
         guard case let .iso7816(isoTag) = tag else {
             session.invalidate(
-                errorMessage: "Not ISO7816 tag"
+                errorMessage: String(localized: "error.smartCardReader.notISO7816")
             )
             return
         }
@@ -697,21 +697,24 @@ extension NFCScannerModel {
             "===== T-UNION FULL LOG END ====="
         )
 
-        await MainActor.run {
+        let result = ScanResult(
+            balance: balance,
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: cnTunion.scanOption.converter,
+            isLastHide: false,
+            description: cnTunion.scand_description,
+            savedAt: Date.now,
+            fullLog: fullLog.text
+        )
 
-            self.result = ScanResult(
-                balance: balance,
-                isHistory: true,
-                history: history,
-                info: info,
-                converter: cnTunion.scanOption.converter,
-                isLastHide: false,
-                description: cnTunion.scand_description,
-                savedAt: Date.now,
-                fullLog: fullLog.text
-            )
-
-            session?.invalidate()
+        if let session {
+            await self.completeScan(result, session: session)
+        } else {
+            await MainActor.run {
+                self.result = result
+            }
         }
     }
 }

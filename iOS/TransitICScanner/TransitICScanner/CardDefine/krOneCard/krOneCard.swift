@@ -66,10 +66,7 @@ extension NFCScannerModel {
                 session.invalidate(errorMessage: String(localized: "error.smartCardReader.oneCardRead"))
                 return
             }
-            await MainActor.run {
-                self.result = result
-                session.invalidate()
-            }
+            await self.completeScan(result, session: session)
         }
     }
 
