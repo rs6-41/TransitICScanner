@@ -29,5 +29,8 @@ Temporary Items
 
 UserInterfaceState.xcuserstate
 
+# Xcode ユーザー固有の設定（ブレークポイント、スキーム表示状態など）
+xcuserdata/
+
 env.swift
 node_modules/
