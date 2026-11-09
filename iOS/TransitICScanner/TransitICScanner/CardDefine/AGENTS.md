@@ -12,7 +12,7 @@
 
 ## 2. 既存アーキテクチャとの整合
 
-- 新規カードの実装前に `CardModel.swift`、`ScannerBranch.swift`、`Area.swift`、`cardDesignList.swift`、`prefSort.swift` と、仕様が近い既存カードの定義・読取処理・Converterを読む。近いカードのコードは構造の参考に限り、カード固有の仕様値や変換規則をコピーしない。
+- 新規カードの実装前に `CardModel.swift`、`ScannerBranch.swift`、`ConverterType.swift`、`Area.swift`、`cardDesignList.swift`、`prefSort.swift` と、仕様が近い既存カードの定義・読取処理・Converterを読む。近いカードのコードは構造の参考に限り、カード固有の仕様値や変換規則をコピーしない。
 - カード情報は `CardInfo` と `ScanOption` の既存モデルで表現する。共通モデルや既存の型を確認せずに重複モデルを追加しない。
 - カードの識別子 `CardID`（`CardModel.swift`）、`ScanOption.id`、ConverterType、switch分岐、一覧への掲載状態は相互に一致させる。新規実装では、`CardID` へのcase追加、`ScannerBranch.swift` の `devCards` / `featureCards` / `relCards` のいずれかへの登録、`switchCard(id:)` / `scanWithExternalReader` の分岐（`CardID` を網羅的に switch しているため漏れはコンパイルエラーになる）、`ConverterType` のcaseおよび表示変換分岐を確認し、対象カードの公開状態に応じて漏れなく更新する。
 - FeliCaカードの読取処理は `FeliCaTagReading`（`Scan/FeliCa/FeliCaTagReading.swift`）に対して1つだけ実装し、`readFeliCa(id:_:)` に登録する。内蔵リーダー(CoreNFC)と外部リーダー(PC/SC)はこの実装を共有するため、リーダー別に解析処理を書かない。仕様または依頼から状態を確定できない場合は、リリース済み一覧へ追加せず、確認事項として報告する。
