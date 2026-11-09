@@ -145,6 +145,11 @@ struct ContentView: View {
         } message: {
             Text(storageError.message)
         }
+        .task(id: deleteAdsPurchaseID) {
+            // 返金・他の端末での購入などを広告表示に反映する
+            PurchaseManager.shared.startObservingTransactions()
+            await PurchaseManager.shared.refreshEntitlement()
+        }
         .task(id: firstPermission) {
             // 初回の権限説明(ATT を含む)が終わってから広告の同意を取得する
             if !firstPermission {

@@ -18,41 +18,46 @@ struct SettingAdsPurchase: View {
                 
                     .onInAppPurchaseCompletion { product, result in
                         switch result {
-                            case .success(let purchaseResult):
-                                switch purchaseResult {
-                                    case .success(_):
-                                        purchaseAlertTitle = String(localized:"setting.ads.purchase.done")
-                                        purchaseAlertMessage = String(localized:"setting.ads.purchase.done.message")
-                                        isPurchaseAlert = true
-                                        deleteAds = true
-                                    case .userCancelled: break //キャンセル
-                                    @unknown default: break
+                        case .success(let purchaseResult):
+                            do {
+                                switch try await PurchaseManager.shared.handlePurchase(purchaseResult) {
+                                case .purchased:
+                                    purchaseAlertTitle = String(localized:"setting.ads.purchase.done")
+                                    purchaseAlertMessage = String(localized:"setting.ads.purchase.done.message")
+                                    isPurchaseAlert = true
+                                    deleteAds = true
+                                case .pending:
+                                    // 承認待ち（ファミリー共有の承認など）。完了時は Transaction.updates で反映される
+                                    purchaseAlertTitle = String(localized:"setting.ads.purchase.pending")
+                                    purchaseAlertMessage = String(localized:"setting.ads.purchase.pending.message")
+                                    isPurchaseAlert = true
+                                case .cancelled:
+                                    break
                                 }
-                            case .failure(let error):
-                                purchaseAlertTitle = String(localized:"setting.ads.purchase.error")
+                            } catch {
+                                purchaseAlertTitle = String(localized:"setting.ads.restore.unverified")
                                 purchaseAlertMessage = error.localizedDescription
                                 isPurchaseAlert = true
+                            }
+                        case .failure(let error):
+                            purchaseAlertTitle = String(localized:"setting.ads.purchase.error")
+                            purchaseAlertMessage = error.localizedDescription
+                            isPurchaseAlert = true
+                        }
                     }
-                }
             }
             Button(action: {
                 Task {
                     do {
-                        try await AppStore.sync()
-                        
-                        for await verificationResult in Transaction.currentEntitlements(for:deleteAdsPurchaseID) {
-                                switch verificationResult {
-                                case .verified(_):
-                                    purchaseAlertTitle = String(localized:"setting.ads.restore.done")
-                                    purchaseAlertMessage = String(localized:"setting.ads.restore.done.message")
-                                    isPurchaseAlert = true
-                                    deleteAds = true
-                                case .unverified(_, let verificationError):
-                                    purchaseAlertTitle = String(localized:"setting.ads.restore.unverified")
-                                    purchaseAlertMessage = verificationError.localizedDescription
-                                    isPurchaseAlert = true
-                                }
-                            }
+                        if try await PurchaseManager.shared.restore() {
+                            purchaseAlertTitle = String(localized:"setting.ads.restore.done")
+                            purchaseAlertMessage = String(localized:"setting.ads.restore.done.message")
+                            deleteAds = true
+                        } else {
+                            purchaseAlertTitle = String(localized:"setting.ads.restore.notFound")
+                            purchaseAlertMessage = String(localized:"setting.ads.restore.notFound.message")
+                        }
+                        isPurchaseAlert = true
                     } catch {
                         purchaseAlertTitle = String(localized:"setting.ads.restore.unverified")
                         purchaseAlertMessage = error.localizedDescription
