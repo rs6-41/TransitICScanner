@@ -151,7 +151,7 @@ struct PermissionModalView: View {
                         if settings.authorizationStatus == .notDetermined {
                             center.requestAuthorization(options: [.alert, .badge]) { _, error in
                                 if let error {
-                                    print("Notification authorization error: \(error.localizedDescription)")
+                                    Log.debug("Notification authorization error: \(error.localizedDescription)")
                                 }
 
                                 DispatchQueue.main.async {
@@ -189,13 +189,13 @@ struct PermissionModalView: View {
                             switch status {
                             case .authorized:
                                 let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                                print("ATT: Authorized: \(idfa)")
+                                Log.debug("ATT: Authorized: \(idfa)")
                             case .denied:
-                                print("ATT: Denied")
+                                Log.debug("ATT: Denied")
                             case .notDetermined:
-                                print("ATT: Not Determined")
+                                Log.debug("ATT: Not Determined")
                             case .restricted:
-                                print("ATT: Restricted")
+                                Log.debug("ATT: Restricted")
                             @unknown default:
                                 break
                             }

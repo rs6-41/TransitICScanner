@@ -71,7 +71,7 @@ extension NativeAdManager: NativeAdLoaderDelegate {
         _ adLoader: AdLoader,
         didFailToReceiveAdWithError error: Error
     ) {
-        print(
+        Log.debug(
             "Native Ad Load Failed: \(error.localizedDescription)"
         )
 

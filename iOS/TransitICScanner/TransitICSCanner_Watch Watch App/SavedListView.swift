@@ -77,7 +77,7 @@ struct SavedListView: View {
                     from: container.mainContext
                 )
             } catch {
-                print("保存データの読み込みに失敗しました:", error)
+                Log.debug("保存データの読み込みに失敗しました:", error)
             }
         }
     }

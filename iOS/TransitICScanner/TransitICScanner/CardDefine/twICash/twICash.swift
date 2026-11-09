@@ -71,7 +71,7 @@ extension NFCScannerModel {
                     session.invalidate()
                 }
             } catch {
-                print(
+                Log.debug(
                     "iCash 2.0 scan error:",
                     error.localizedDescription
                 )
@@ -96,13 +96,13 @@ extension NFCScannerModel {
         let reader = ICash2Reader(send: send)
         let readResult = try await reader.readCard()
 
-        print("===== iCash 2.0 =====")
-        print("Card Number:", readResult.cardNumber)
-        print("Balance:", readResult.balance)
-        print("Record Count:", readResult.records.count)
+        Log.debug("===== iCash 2.0 =====")
+        Log.debug("Card Number:", readResult.cardNumber)
+        Log.debug("Balance:", readResult.balance)
+        Log.debug("Record Count:", readResult.records.count)
 
         for record in readResult.records {
-            print(
+            Log.debug(
                 "iCash Record:",
                 "date=\(String(describing: record.date))",
                 "mappingID=\(record.mappingID)",

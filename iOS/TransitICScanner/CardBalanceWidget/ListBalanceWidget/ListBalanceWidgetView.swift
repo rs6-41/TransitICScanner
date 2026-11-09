@@ -29,8 +29,8 @@ struct ListBalanceWidgetView: View {
                 .prefix(maxItems)
         )
         
-        print("View: entry.models = \(entry.models.count)")
-        print("View: filtered models = \(result.count)")
+        Log.debug("View: entry.models = \(entry.models.count)")
+        Log.debug("View: filtered models = \(result.count)")
         
         return result
     }

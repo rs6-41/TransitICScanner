@@ -136,7 +136,7 @@ extension NFCScannerModel {
             "Scan Date: \(Date.now)"
         )
 
-        print("T-Union scan started")
+        Log.debug("T-Union scan started")
 
         fullLog.append(
             "T-Union scan started"
@@ -148,7 +148,7 @@ extension NFCScannerModel {
             }
             .joined(separator: " ")
 
-        print(
+        Log.debug(
             "ISO7816 identifier:",
             identifierHex
         )
@@ -161,7 +161,7 @@ extension NFCScannerModel {
 
         if aid.isEmpty {
 
-            print(
+            Log.debug(
                 "Initial Selected AID: empty"
             )
 
@@ -177,7 +177,7 @@ extension NFCScannerModel {
                 }
                 .joined(separator: " ")
 
-            print(
+            Log.debug(
                 "Initial Selected AID:",
                 aidHex
             )
@@ -194,7 +194,7 @@ extension NFCScannerModel {
                 historicalBytes
             )
 
-            print(
+            Log.debug(
                 "Historical Bytes:",
                 historicalBytes
                     .map {
@@ -209,7 +209,7 @@ extension NFCScannerModel {
                 "Historical Bytes: nil"
             )
 
-            print(
+            Log.debug(
                 "Historical Bytes: nil"
             )
         }
@@ -221,7 +221,7 @@ extension NFCScannerModel {
                 applicationData
             )
 
-            print(
+            Log.debug(
                 "Application Data:",
                 applicationData
                     .map {
@@ -236,7 +236,7 @@ extension NFCScannerModel {
                 "Application Data: nil"
             )
 
-            print(
+            Log.debug(
                 "Application Data: nil"
             )
         }
@@ -308,7 +308,7 @@ extension NFCScannerModel {
                 }
                 .joined(separator: " ")
 
-            print(
+            Log.debug(
                 "Selecting AID:",
                 aidHex
             )
@@ -337,7 +337,7 @@ extension NFCScannerModel {
 
                 fciData = response
 
-                print(
+                Log.debug(
                     "Selected AID:",
                     aidHex
                 )
@@ -355,7 +355,7 @@ extension NFCScannerModel {
 
             } else {
 
-                print(
+                Log.debug(
                     "Failed to select AID:",
                     aidHex
                 )
@@ -407,7 +407,7 @@ extension NFCScannerModel {
         let managementP1 =
             UInt8(0x80 | 0x17)
 
-        print(
+        Log.debug(
             String(
                 format:
                     "--- SFI17_MANAGEMENT READ BINARY P1=%02X P2=00 ---",
@@ -454,14 +454,14 @@ extension NFCScannerModel {
                 hex
             )
 
-            print(log)
+            Log.debug(log)
             fullLog.append(log)
         }
 
         let transactionP2 =
             UInt8((0x18 << 3) | 0x04)
 
-        print(
+        Log.debug(
             String(
                 format:
                     "--- SFI18_TRANSACTION P2=%02X ---",
@@ -493,7 +493,7 @@ extension NFCScannerModel {
                 fullLog: fullLog
             ) else {
 
-                print(
+                Log.debug(
                     "SFI18 record=\(record) APDU_FAILED"
                 )
 
@@ -520,7 +520,7 @@ extension NFCScannerModel {
                 hex
             )
 
-            print(log)
+            Log.debug(log)
             fullLog.append(log)
 
             if sw1 == 0x6A &&
@@ -532,7 +532,7 @@ extension NFCScannerModel {
         let tripP2 =
             UInt8((0x1E << 3) | 0x04)
 
-        print(
+        Log.debug(
             String(
                 format:
                     "--- SFI1E_TRIP P2=%02X ---",
@@ -564,7 +564,7 @@ extension NFCScannerModel {
                 fullLog: fullLog
             ) else {
 
-                print(
+                Log.debug(
                     "SFI1E record=\(record) APDU_FAILED"
                 )
 
@@ -591,7 +591,7 @@ extension NFCScannerModel {
                 hex
             )
 
-            print(log)
+            Log.debug(log)
             fullLog.append(log)
 
             if sw1 == 0x6A &&
@@ -748,7 +748,7 @@ extension NFCScannerModel {
             commandHex
         )
 
-        print(commandLog)
+        Log.debug(commandLog)
 
         fullLog?.append(commandLog)
 
@@ -774,7 +774,7 @@ extension NFCScannerModel {
                 responseHex
             )
 
-            print(responseLog)
+            Log.debug(responseLog)
 
             fullLog?.append(responseLog)
 
@@ -789,7 +789,7 @@ extension NFCScannerModel {
             let errorLog =
                 "APDU error: \(error.localizedDescription)"
 
-            print(errorLog)
+            Log.debug(errorLog)
 
             fullLog?.append(errorLog)
 
@@ -973,7 +973,7 @@ extension NFCScannerModel {
                 }
                 .joined(separator: ", ")
 
-        print(
+        Log.debug(
             "Parsed SFIs from FCI:",
             result
         )
@@ -1162,7 +1162,7 @@ extension NFCScannerModel {
                 p2
             )
 
-        print(title)
+        Log.debug(title)
 
         fullLog?.append(title)
 
@@ -1181,7 +1181,7 @@ extension NFCScannerModel {
             fullLog: fullLog
         ) else {
 
-            print(
+            Log.debug(
                 "T-Union SFI 0x17 READ BINARY APDU failed"
             )
 
@@ -1201,7 +1201,7 @@ extension NFCScannerModel {
                 response.count
             )
 
-        print(statusLog)
+        Log.debug(statusLog)
 
         fullLog?.append(statusLog)
 
@@ -1235,7 +1235,7 @@ extension NFCScannerModel {
                 fullLog: fullLog
             ) else {
 
-            print(
+            Log.debug(
                 "T-Union city code: SFI 0x17 could not be read"
             )
 
@@ -1276,17 +1276,17 @@ extension NFCScannerModel {
                 cityCodeRaw
             )
 
-        print(
+        Log.debug(
             "T-Union SFI 0x17 international code:",
             internationalCode
         )
 
-        print(
+        Log.debug(
             "T-Union SFI 0x17 province code:",
             provinceCode
         )
 
-        print(
+        Log.debug(
             String(
                 format:
                     "T-Union SFI 0x17 city code: %02X %02X -> %04X",
@@ -1314,7 +1314,7 @@ extension NFCScannerModel {
                 (UInt16(bytes[8]) << 8) |
                 UInt16(bytes[9])
 
-            print(
+            Log.debug(
                 String(
                     format:
                         "T-Union SFI 0x17 union card type: %04X",
@@ -1333,7 +1333,7 @@ extension NFCScannerModel {
 
         if bytes.count >= 11 {
 
-            print(
+            Log.debug(
                 String(
                     format:
                         "T-Union SFI 0x17 card type: %02X",
@@ -1376,7 +1376,7 @@ extension NFCScannerModel {
                 targetTag: [0x9F, 0x0C]
             ) else {
 
-            print(
+            Log.debug(
                 "9F0C not found in FCI"
             )
 
@@ -1477,27 +1477,27 @@ extension NFCScannerModel {
             )
         }
 
-        print(
+        Log.debug(
             "T-Union card number:",
             cardNumber
         )
 
-        print(
+        Log.debug(
             "T-Union version:",
             version
         )
 
-        print(
+        Log.debug(
             "T-Union issue date:",
             issueDate
         )
 
-        print(
+        Log.debug(
             "T-Union expiry date:",
             expiryDate
         )
 
-        print(
+        Log.debug(
             "T-Union city code:",
             cityCode
         )
@@ -1592,7 +1592,7 @@ extension NFCScannerModel {
         let balance =
             Double(value) / 100.0
 
-        print(
+        Log.debug(
             String(
                 format:
                     "Balance decode: %02X %02X %02X %02X -> %u / 100 = %.2f",
@@ -1915,7 +1915,7 @@ extension NFCScannerModel {
             data
         )
 
-        print(
+        Log.debug(
             "Transaction Record Raw:",
             bytes
                 .map {
@@ -1953,7 +1953,7 @@ extension NFCScannerModel {
 
         default:
 
-            print(
+            Log.debug(
                 "Unknown SFI 0x18 process type:",
                 String(
                     format: "%02X",
@@ -1969,7 +1969,7 @@ extension NFCScannerModel {
                 bytes[16...22]
             )
 
-        print(
+        Log.debug(
             "T-Union Transaction: " +
             "seq=\(transactionSeq), " +
             "type=\(String(format: "%02X", processType)), " +
@@ -2033,7 +2033,7 @@ extension NFCScannerModel {
             data
         )
 
-        print(
+        Log.debug(
             "Trip Record Raw:",
             bytes
                 .map {
@@ -2089,7 +2089,7 @@ extension NFCScannerModel {
 
         default:
 
-            print(
+            Log.debug(
                 "Unknown T-Union trip record type:",
                 String(
                     format: "%02X",
@@ -2113,7 +2113,7 @@ extension NFCScannerModel {
                 bytes[25...31]
             )
 
-        print(
+        Log.debug(
             "T-Union Trip: " +
             "type=\(String(format: "%02X", processType)), " +
             "amount=\(amount), " +

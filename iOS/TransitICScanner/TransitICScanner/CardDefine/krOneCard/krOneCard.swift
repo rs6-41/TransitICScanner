@@ -85,7 +85,7 @@ extension NFCScannerModel {
     }
 
     private func krOneCard_result(_ send: APDUSend) async -> ScanResult? {
-        print("Korea OneCard scan started")
+        Log.debug("Korea OneCard scan started")
             // New Korea OneCard documented AID flow:
             // 1. Select Config DF: A0000004520001
             // 2. Parse FCI for tag 0x4F (main ADF AID) and tag 0x11 (balance APDU descriptor)
@@ -97,7 +97,7 @@ extension NFCScannerModel {
             var selectedCardType = "Unknown"
 
             // Step 1: Select Config DF
-            print("Selecting Config DF AID: \(configDFAID.map { String(format: "%02X", $0) }.joined())")
+            Log.debug("Selecting Config DF AID: \(configDFAID.map { String(format: "%02X", $0) }.joined())")
             guard let (configFCI, sw1, sw2) = await krOneCard_sendAPDU(send, ins: 0xA4, p1: 0x04, p2: 0x00, data: configDFAID, le: 256, cla: 0x00),
                   sw1 == 0x90 && sw2 == 0x00 else {
                 return nil
@@ -106,14 +106,14 @@ extension NFCScannerModel {
             // Step 2: Parse Config DF FCI for main ADF AID, balance APDU descriptor, and file descriptors
             let (mainAID, balanceAPDU, fileDescriptors) = krOneCard_parseConfigFCI(configFCI)
             if let mainAID = mainAID {
-                print("Main ADF AID from Config FCI: \(mainAID.map { String(format: "%02X", $0) }.joined())")
+                Log.debug("Main ADF AID from Config FCI: \(mainAID.map { String(format: "%02X", $0) }.joined())")
             } else {
-                print("No main ADF AID found in Config FCI, will fallback to default Korea OneCard ADF")
+                Log.debug("No main ADF AID found in Config FCI, will fallback to default Korea OneCard ADF")
             }
             if let balanceAPDU = balanceAPDU {
-                print(String(format: "Balance APDU Descriptor from Config FCI: CLA:%02X INS:%02X P1:%02X P2:%02X Le:%d", balanceAPDU.0, balanceAPDU.1, balanceAPDU.2, balanceAPDU.3, balanceAPDU.4))
+                Log.debug(String(format: "Balance APDU Descriptor from Config FCI: CLA:%02X INS:%02X P1:%02X P2:%02X Le:%d", balanceAPDU.0, balanceAPDU.1, balanceAPDU.2, balanceAPDU.3, balanceAPDU.4))
             } else {
-                print("No balance APDU descriptor found in Config FCI, will use default APDU")
+                Log.debug("No balance APDU descriptor found in Config FCI, will use default APDU")
             }
 
             // Step 3: Select main ADF
@@ -121,8 +121,8 @@ extension NFCScannerModel {
             var krOneCard_cardTypeName = krOneCard_cardTypeName(for: adfAID)
             selectedCardType = krOneCard_cardTypeName.0
             var issuer:String? = krOneCard_cardTypeName.1
-            print("Korea OneCard detected type: \(selectedCardType)")
-            print("Selecting main ADF AID: \(adfAID.map { String(format: "%02X", $0) }.joined())")
+            Log.debug("Korea OneCard detected type: \(selectedCardType)")
+            Log.debug("Selecting main ADF AID: \(adfAID.map { String(format: "%02X", $0) }.joined())")
             guard let (adfFCI, sw1b, sw2b) = await krOneCard_sendAPDU(send, ins: 0xA4, p1: 0x04, p2: 0x00, data: adfAID, le: 256, cla: 0x00),
                   sw1b == 0x90 && sw2b == 0x00 else {
                 return nil
@@ -130,19 +130,19 @@ extension NFCScannerModel {
 
             // Step 4: Get balance using descriptor if present, else default
             let balance = await krOneCard_getBalance(send, balanceAPDU)
-            print("Final Korea OneCard balance value:", balance ?? -1)
+            Log.debug("Final Korea OneCard balance value:", balance ?? -1)
 
 
             // Info/history using the selected ADF context and file descriptors
             let info = await krOneCard_getInfoWithSFI(adfFCI, cardTypeName: selectedCardType, issuer: issuer)
             let history = await krOneCard_readKnownRecords(send, fileDescriptors: fileDescriptors)
 
-            print("===== Korea OneCard Result Debug =====")
-            print("balance:", balance as Any)
-            print("history count:", history?.count as Any)
-            print("info:", info as Any)
-            print("converter:", krOneCard.scanOption.converter as Any)
-            print("================================")
+            Log.debug("===== Korea OneCard Result Debug =====")
+            Log.debug("balance:", balance as Any)
+            Log.debug("history count:", history?.count as Any)
+            Log.debug("info:", info as Any)
+            Log.debug("converter:", krOneCard.scanOption.converter as Any)
+            Log.debug("================================")
 
             return ScanResult(
                 balance: balance ?? 0,
@@ -161,13 +161,13 @@ extension NFCScannerModel {
     private func krOneCard_sendAPDU(_ send: APDUSend, ins: UInt8, p1: UInt8, p2: UInt8, data: Data = Data(), le: Int = 256, cla: UInt8 = 0x00) async -> (Data, UInt8, UInt8)? {
         do {
             let dataHex = data.map { String(format: "%02X", $0) }.joined()
-            print(String(format: "APDU Command: CLA:%02X INS:%02X P1:%02X P2:%02X Data:%@", cla, ins, p1, p2, dataHex))
+            Log.debug(String(format: "APDU Command: CLA:%02X INS:%02X P1:%02X P2:%02X Data:%@", cla, ins, p1, p2, dataHex))
             let (response, sw1, sw2) = try await send(cla, ins, p1, p2, data, le)
             let responseHex = response.map { String(format: "%02X", $0) }.joined()
-            print(String(format: "APDU Response: SW1:%02X SW2:%02X Data:%@", sw1, sw2, responseHex))
+            Log.debug(String(format: "APDU Response: SW1:%02X SW2:%02X Data:%@", sw1, sw2, responseHex))
             return (response, sw1, sw2)
         } catch {
-            print("APDU error:", error.localizedDescription)
+            Log.debug("APDU error:", error.localizedDescription)
             return nil
         }
     }
@@ -233,7 +233,7 @@ extension NFCScannerModel {
                         let fileType = descriptor[0] >> 5
                         let sfi = descriptor[0] & 0x1F
                         let maxLength = (UInt16(descriptor[1]) << 8) | UInt16(descriptor[2])
-                        print("9F10 Descriptor: fileType=\(fileType), SFI=\(sfi), maxLength=\(maxLength)")
+                        Log.debug("9F10 Descriptor: fileType=\(fileType), SFI=\(sfi), maxLength=\(maxLength)")
                         descriptors.append((fileType, sfi, maxLength))
                         j += 3
                     }
@@ -265,24 +265,24 @@ extension NFCScannerModel {
             le: le,
             cla: cla
         ) else {
-            print("Korea OneCard balance APDU communication failed")
+            Log.debug("Korea OneCard balance APDU communication failed")
             return nil
         }
 
         guard sw1 == 0x90 && sw2 == 0x00 else {
-            print(String(format: "Korea OneCard balance APDU failed SW=%02X%02X", sw1, sw2))
+            Log.debug(String(format: "Korea OneCard balance APDU failed SW=%02X%02X", sw1, sw2))
             return nil
         }
 
-        print("===== Korea OneCard balance raw response =====")
-        print("Length:", response.count)
-        print("HEX:", response.map { String(format: "%02X", $0) }.joined(separator: " "))
-        print("DEC:", response.map { String($0) }.joined(separator: " "))
-        print("ASCII:", String(data: response, encoding: .ascii) ?? "nil")
-        print("========================================")
+        Log.debug("===== Korea OneCard balance raw response =====")
+        Log.debug("Length:", response.count)
+        Log.debug("HEX:", response.map { String(format: "%02X", $0) }.joined(separator: " "))
+        Log.debug("DEC:", response.map { String($0) }.joined(separator: " "))
+        Log.debug("ASCII:", String(data: response, encoding: .ascii) ?? "nil")
+        Log.debug("========================================")
 
         guard response.count >= 4 else {
-            print("Korea OneCard balance response length invalid:", response.count)
+            Log.debug("Korea OneCard balance response length invalid:", response.count)
             return nil
         }
 
@@ -296,7 +296,7 @@ extension NFCScannerModel {
                                   UInt32(response[1]) << 8 |
                                   UInt32(response[0])
 
-        print("Korea OneCard balance candidates: BE=\(bigEndianBalance) KRW LE=\(littleEndianBalance) KRW")
+        Log.debug("Korea OneCard balance candidates: BE=\(bigEndianBalance) KRW LE=\(littleEndianBalance) KRW")
 
         if bigEndianBalance != 0 {
             return Double(bigEndianBalance)
@@ -306,7 +306,7 @@ extension NFCScannerModel {
             return Double(littleEndianBalance)
         }
 
-        print("Korea OneCard balance is zero. Keeping zero value because APDU succeeded.")
+        Log.debug("Korea OneCard balance is zero. Keeping zero value because APDU succeeded.")
         return 0.0
     }
 
@@ -332,9 +332,9 @@ extension NFCScannerModel {
 
     // MARK: - Get Info from T-money ADF FCI (parse tag B0 after SELECT)
     private func krOneCard_getInfoWithSFI(_ adfFCI: Data, cardTypeName: String, issuer:String?) async -> ResultCardInfo? {
-        print("===== Korea OneCard ADF FCI raw =====")
-        print(adfFCI.map { String(format: "%02X", $0) }.joined(separator: " "))
-        print("===============================")
+        Log.debug("===== Korea OneCard ADF FCI raw =====")
+        Log.debug(adfFCI.map { String(format: "%02X", $0) }.joined(separator: " "))
+        Log.debug("===============================")
         let purseInfo = krOneCard_findTLV(adfFCI, tag: 0xB0)
         guard let b0 = purseInfo else {
             return ResultCardInfo(
@@ -372,15 +372,15 @@ extension NFCScannerModel {
         let userCode = arr.count > 25 ? String(format:"%02X", arr[25]) : nil
         let balMax: String? = arr.count >= 31 ? String((UInt32(arr[27]) << 24) | (UInt32(arr[28]) << 16) | (UInt32(arr[29]) << 8) | UInt32(arr[30])) : nil
         // Debug prints
-        print("Korea OneCard B0 CARDTYPE: \(cardType)")
-        print("Korea OneCard B0 ALG: \(alg)")
-        print("Korea OneCard B0 VK: \(vk)")
-        print("Korea OneCard B0 IDCENTER: \(idCenter)")
-        print("Korea OneCard B0 CSN: \(csn)")
-        print("Korea OneCard B0 Issue Date: \(issueDate ?? "nil")")
-        print("Korea OneCard B0 Expiry Date: \(expiryDate ?? "nil")")
-        print("Korea OneCard B0 USERCODE: \(userCode ?? "nil")")
-        print("Korea OneCard B0 BALMAX: \(balMax ?? "nil")")
+        Log.debug("Korea OneCard B0 CARDTYPE: \(cardType)")
+        Log.debug("Korea OneCard B0 ALG: \(alg)")
+        Log.debug("Korea OneCard B0 VK: \(vk)")
+        Log.debug("Korea OneCard B0 IDCENTER: \(idCenter)")
+        Log.debug("Korea OneCard B0 CSN: \(csn)")
+        Log.debug("Korea OneCard B0 Issue Date: \(issueDate ?? "nil")")
+        Log.debug("Korea OneCard B0 Expiry Date: \(expiryDate ?? "nil")")
+        Log.debug("Korea OneCard B0 USERCODE: \(userCode ?? "nil")")
+        Log.debug("Korea OneCard B0 BALMAX: \(balMax ?? "nil")")
         let validity = [issueDate, expiryDate].compactMap{$0}.joined(separator:"-")
         return ResultCardInfo(
             idm: csn,
@@ -460,7 +460,7 @@ extension NFCScannerModel {
         // expose it through SFI 4 (and sometimes mirrored SFI 5). The Config DF
         // descriptor SFI=3 is not the transaction record file on these cards.
         for sfi in [UInt8(4)] {
-            print("Reading Korea OneCard transaction records SFI: \(sfi)")
+            Log.debug("Reading Korea OneCard transaction records SFI: \(sfi)")
 
             if sfi == 4 {
                 let efTrans = Data([0x00, 0x03])
@@ -504,11 +504,11 @@ extension NFCScannerModel {
                     continue
                 }
 
-                print("===== Korea OneCard READ RECORD raw =====")
-                print("SFI: \(sfi) Record: \(record)")
-                print("SW: \(String(format: "%02X%02X", sw1, sw2))")
-                print("HEX: " + response.map { String(format: "%02X", $0) }.joined(separator: " "))
-                print("===================================")
+                Log.debug("===== Korea OneCard READ RECORD raw =====")
+                Log.debug("SFI: \(sfi) Record: \(record)")
+                Log.debug("SW: \(String(format: "%02X%02X", sw1, sw2))")
+                Log.debug("HEX: " + response.map { String(format: "%02X", $0) }.joined(separator: " "))
+                Log.debug("===================================")
 
                 guard sw1 == 0x90 && sw2 == 0x00 else {
                     continue
@@ -531,11 +531,11 @@ extension NFCScannerModel {
     private func krOneCard_parseTransactionRecord(_ data: Data) -> ResultHistory? {
         let bytes = [UInt8](data)
 
-        print("===== Korea OneCard transaction parse =====")
-        print(bytes.map { String(format: "%02X", $0) }.joined(separator: " "))
-        print("====================================")
+        Log.debug("===== Korea OneCard transaction parse =====")
+        Log.debug(bytes.map { String(format: "%02X", $0) }.joined(separator: " "))
+        Log.debug("====================================")
         guard bytes.count >= 46 else {
-            print("Korea OneCard EFTRANS record too short: \(bytes.count) bytes")
+            Log.debug("Korea OneCard EFTRANS record too short: \(bytes.count) bytes")
             return nil
         }
 
@@ -550,7 +550,7 @@ extension NFCScannerModel {
         let amount = Double((UInt32(bytes[10]) << 24) | (UInt32(bytes[11]) << 16) | (UInt32(bytes[12]) << 8) | UInt32(bytes[13]))
         let date = krOneCard_decodeBCDDate(bytes[26...32])
 
-        print("Korea OneCard Transaction type=\(String(format: "%02X", processType)) amount=\(amount) balance=\(balance) transaction=\(transactionId) date=\(date)")
+        Log.debug("Korea OneCard Transaction type=\(String(format: "%02X", processType)) amount=\(amount) balance=\(balance) transaction=\(transactionId) date=\(date)")
 
         return ResultHistory(
             processType: processType,

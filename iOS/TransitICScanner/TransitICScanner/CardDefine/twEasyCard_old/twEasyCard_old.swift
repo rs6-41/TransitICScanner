@@ -231,7 +231,7 @@ struct twEasyCard_old_View: View {
             do {
                 try await controller.verifyCaptcha(captcha: captcha)
                 let html = try await controller.search(cardID: card, birthday: birthday, checkword: captcha)
-                print("[EasyCard] Checking latest response HTML length: \(html.count)")
+                Log.debug("[EasyCard] Checking latest response HTML length: \(html.count)")
 
                 if let serverMessage = controller.extractServerAlert(from: html) {
                     await controller.loadCaptcha(baseURL: item.scanOption.url!.deletingLastPathComponent())
@@ -262,16 +262,16 @@ struct twEasyCard_old_View: View {
             return
                 }
 
-                print("[EasyCard] HTML length: \(html.count)")
+                Log.debug("[EasyCard] HTML length: \(html.count)")
                 
                 guard let parsed = controller.parseEasyCardResult(html: html, cardID: card) else {
-                    print("[EasyCard] Failed to create Result")
+                    Log.debug("[EasyCard] Failed to create Result")
                     return
                 }
                 
                 await MainActor.run {
                     isLoading = false
-                    print("[EasyCard] Navigate ResultView history count: \(parsed.history?.count ?? 0)")
+                    Log.debug("[EasyCard] Navigate ResultView history count: \(parsed.history?.count ?? 0)")
                     result = parsed
                     navigationResult = parsed
                 }
@@ -299,7 +299,7 @@ struct twEasyCard_old_View: View {
                 await MainActor.run {
                     isLoading = false
                 }
-                print("Error during submission: \(error)")
+                Log.debug("Error during submission: \(error)")
             }
         }
     }
@@ -352,22 +352,22 @@ final class twEasyCard_old_scraping: ObservableObject {
                     self.captchaImage = image
                 }
             } else {
-                print("Failed to decode captcha image data")
+                Log.debug("Failed to decode captcha image data")
             }
         } catch {
-            print("Error loading captcha: \(error)")
+            Log.debug("Error loading captcha: \(error)")
         }
     }
 
     func verifyCaptcha(captcha: String) async throws {
         // Print all cookies before request
         if let cookies = HTTPCookieStorage.shared.cookies, !cookies.isEmpty {
-            print("[EasyCard] Cookies before verifyCaptcha:")
+            Log.debug("[EasyCard] Cookies before verifyCaptcha:")
             for cookie in cookies {
-                print("  Cookie: \(cookie.name) = \(cookie.value)")
+                Log.debug("  Cookie: \(cookie.name) = \(cookie.value)")
             }
         } else {
-            print("[EasyCard] No cookies before verifyCaptcha")
+            Log.debug("[EasyCard] No cookies before verifyCaptcha")
         }
         let verifyURL = self.baseURL.appendingPathComponent("captcha_verify.php")
         var request = URLRequest(url: verifyURL)
@@ -386,29 +386,29 @@ final class twEasyCard_old_scraping: ObservableObject {
 
         // Print HTTP status captcha and headers
         if let httpResponse = response as? HTTPURLResponse {
-            print("[EasyCard] verifyCaptcha status code: \(httpResponse.statusCode)")
-            print("[EasyCard] verifyCaptcha response headers:")
+            Log.debug("[EasyCard] verifyCaptcha status code: \(httpResponse.statusCode)")
+            Log.debug("[EasyCard] verifyCaptcha response headers:")
             for (key, value) in httpResponse.allHeaderFields {
-                print("  \(key): \(value)")
+                Log.debug("  \(key): \(value)")
             }
         }
 
         // Print response body as UTF-8 text if possible
         if let text = String(data: data, encoding: .utf8) {
-            print("[EasyCard] verifyCaptcha response body:\n\(text)")
+            Log.debug("[EasyCard] verifyCaptcha response body:\n\(text)")
         } else {
-            print("[EasyCard] verifyCaptcha response body could not be decoded as UTF-8")
+            Log.debug("[EasyCard] verifyCaptcha response body could not be decoded as UTF-8")
         }
 
         // Parse JSON and print dictionary
         guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-            print("[EasyCard] verifyCaptcha: Failed to parse JSON")
+            Log.debug("[EasyCard] verifyCaptcha: Failed to parse JSON")
             throw URLError(.cannotParseResponse)
         }
-        print("[EasyCard] verifyCaptcha JSON dictionary: \(jsonObj)")
+        Log.debug("[EasyCard] verifyCaptcha JSON dictionary: \(jsonObj)")
         // Print message field if present
         if let message = jsonObj["message"] as? String {
-            print("[EasyCard] Captcha message: \(message)")
+            Log.debug("[EasyCard] Captcha message: \(message)")
         }
         guard (jsonObj["success"] as? Bool) == true else {
             let message = (jsonObj["message"] as? String) ?? "Unknown Error"
@@ -419,12 +419,12 @@ final class twEasyCard_old_scraping: ObservableObject {
     func search(cardID: String, birthday: String, checkword: String, period: String = "date1y") async throws -> String {
         // Print all cookies before request
         if let cookies = HTTPCookieStorage.shared.cookies, !cookies.isEmpty {
-            print("[EasyCard] Cookies before search:")
+            Log.debug("[EasyCard] Cookies before search:")
             for cookie in cookies {
-                print("  Cookie: \(cookie.name) = \(cookie.value)")
+                Log.debug("  Cookie: \(cookie.name) = \(cookie.value)")
             }
         } else {
-            print("[EasyCard] No cookies before search")
+            Log.debug("[EasyCard] No cookies before search")
         }
         let searchURL = self.baseURL.appendingPathComponent("CardSearch.php")
         var request = URLRequest(
@@ -456,7 +456,7 @@ final class twEasyCard_old_scraping: ObservableObject {
         ]
         let bodyString = bodyComponents.joined(separator: "&")
         // Print the complete form body string being sent
-        print("[EasyCard] search POST body: \(bodyString)")
+        Log.debug("[EasyCard] search POST body: \(bodyString)")
         request.httpBody = bodyString.data(using: .utf8)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         let config = URLSessionConfiguration.default
@@ -467,22 +467,22 @@ final class twEasyCard_old_scraping: ObservableObject {
 
         // Print HTTP status captcha and headers
         if let httpResponse = response as? HTTPURLResponse {
-            print("[EasyCard] search status code: \(httpResponse.statusCode)")
-            print("[EasyCard] search response headers:")
+            Log.debug("[EasyCard] search status code: \(httpResponse.statusCode)")
+            Log.debug("[EasyCard] search response headers:")
             for (key, value) in httpResponse.allHeaderFields {
-                print("  \(key): \(value)")
+                Log.debug("  \(key): \(value)")
             }
         }
 
         if let htmlString = String(data: data, encoding: .utf8) {
             // Print first 4000 characters of HTML response
             let preview = htmlString.prefix(4000)
-            print("[EasyCard] search HTML response (first 4000 chars):\n\(preview)")
+            Log.debug("[EasyCard] search HTML response (first 4000 chars):\n\(preview)")
 
-            print("[EasyCard] contains pg1: \(htmlString.contains("id=\"pg1\""))")
-            print("[EasyCard] contains transaction header: \(htmlString.contains("交易時間"))")
-            print("[EasyCard] contains code text: \(htmlString.contains("驗證"))")
-            print("[EasyCard] contains input prompt: \(htmlString.contains("請輸入"))")
+            Log.debug("[EasyCard] contains pg1: \(htmlString.contains("id=\"pg1\""))")
+            Log.debug("[EasyCard] contains transaction header: \(htmlString.contains("交易時間"))")
+            Log.debug("[EasyCard] contains code text: \(htmlString.contains("驗證"))")
+            Log.debug("[EasyCard] contains input prompt: \(htmlString.contains("請輸入"))")
 
             // Check for <script>alert( and window.alert(
             let patterns = [
@@ -496,7 +496,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                     for match in matches {
                         if match.numberOfRanges > 1, let range = Range(match.range(at: 1), in: htmlString) {
                             let alertText = String(htmlString[range])
-                            print("[EasyCard] Server alert: \(alertText)")
+                            Log.debug("[EasyCard] Server alert: \(alertText)")
                             foundAlert = true
                         }
                     }
@@ -505,15 +505,15 @@ final class twEasyCard_old_scraping: ObservableObject {
             if !foundAlert {
                 // Detect window.alert( even if not matching the above
                 if htmlString.contains("window.alert(") {
-                    print("[EasyCard] Detected window.alert( in response HTML")
+                    Log.debug("[EasyCard] Detected window.alert( in response HTML")
                 }
             }
             
             self.htmlResult = htmlString
-            print("HTML result received:\n\(htmlString)")
+            Log.debug("HTML result received:\n\(htmlString)")
             return htmlString
         } else {
-            print("Failed to decode HTML response")
+            Log.debug("Failed to decode HTML response")
             return ""
         }
     }
@@ -581,7 +581,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                     )
                     histories.append(history)
                     index += 1
-                    print("[EasyCard] Parsed history: date=\(columns[0]), type=\(columns[1]), amount=\(amount), balance=\(balance)")
+                    Log.debug("[EasyCard] Parsed history: date=\(columns[0]), type=\(columns[1]), amount=\(amount), balance=\(balance)")
                 }
             }
             // Sort histories by date descending and reassign transactionId
@@ -629,7 +629,7 @@ final class twEasyCard_old_scraping: ObservableObject {
             )
             return result
         } catch {
-            print("Error parsing EasyCard result: \(error)")
+            Log.debug("Error parsing EasyCard result: \(error)")
             return nil
         }
     }
@@ -645,12 +645,12 @@ final class twEasyCard_old_scraping: ObservableObject {
         if let bodyRange = html.range(of: "</body>", options: .caseInsensitive),
            let scriptRange = html.range(of: "</script>", options: .backwards) {
             if scriptRange.upperBound > bodyRange.lowerBound {
-                print("[EasyCard] Last <script> is not immediately before </body>")
+                Log.debug("[EasyCard] Last <script> is not immediately before </body>")
                 return nil
             }
             let between = html[scriptRange.upperBound..<bodyRange.lowerBound]
             if between.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
-                print("[EasyCard] Content exists between </script> and </body>")
+                Log.debug("[EasyCard] Content exists between </script> and </body>")
                 return nil
             }
         }
@@ -658,7 +658,7 @@ final class twEasyCard_old_scraping: ObservableObject {
               let messageRange = Range(match.range(at: 1), in: html) else {
             return nil
         }
-        print("[EasyCard] Matched server alert: \(String(html[messageRange]))")
+        Log.debug("[EasyCard] Matched server alert: \(String(html[messageRange]))")
         return String(html[messageRange])
     }
 }

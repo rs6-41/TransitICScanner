@@ -112,7 +112,7 @@ extension NFCScannerModel {
                     blockData,
                     error in
 
-                    print(
+                    Log.debug(
                         "OKICA history status:",
                         status1,
                         status2,
@@ -124,7 +124,7 @@ extension NFCScannerModel {
                           status1 == 0x00,
                           status2 == 0x00 else {
 
-                        print(
+                        Log.debug(
                             "OKICA history read error:",
                             error as Any
                         )
@@ -195,7 +195,7 @@ extension NFCScannerModel {
             }
             .joined(separator: " ")
 
-        print("OKICA history:", hex)
+        Log.debug("OKICA history:", hex)
 
         if bytes.allSatisfy({ $0 == 0x00 }) {
             return nil

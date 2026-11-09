@@ -21,7 +21,7 @@ enum WidgetDataStore {
     /// 保存済みデータを読み込む。データがない、または復元できない場合は空配列を返す。
     static func load() -> [BalanceWidgetModel] {
         guard let defaults else {
-            print("Widget: App Groupを取得できません")
+            Log.error("Widget: App Groupを取得できません")
             return []
         }
 
@@ -32,7 +32,7 @@ enum WidgetDataStore {
         do {
             return try JSONDecoder().decode([BalanceWidgetModel].self, from: data)
         } catch {
-            print("Widget: Decode失敗", error)
+            Log.error("Widget: Decode失敗 \(error)")
             return []
         }
     }
@@ -46,7 +46,7 @@ enum WidgetDataStore {
             let data = try JSONEncoder().encode(models)
             defaults?.set(data, forKey: key)
         } catch {
-            print("Widget: Encode失敗", error)
+            Log.error("Widget: Encode失敗 \(error)")
             return
         }
 
