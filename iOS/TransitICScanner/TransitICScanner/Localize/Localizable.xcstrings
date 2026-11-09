@@ -5,10 +5,10 @@
       "shouldTranslate" : false
     },
     " " : {
-
+      "shouldTranslate" : false
     },
     "(%@)" : {
-
+      "shouldTranslate" : false
     },
     "ads" : {
       "localizations" : {
@@ -2303,7 +2303,33 @@
       }
     },
     "cardList.idKMT.description" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakarta Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ジャカルタの交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加达交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達交通卡"
+          }
+        }
+      }
     },
     "cardList.jpDoCard" : {
       "extractionState" : "manual",
@@ -5213,6 +5239,35 @@
         }
       }
     },
+    "issue.id.jakarta.issuer.KaiCommuter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        }
+      }
+    },
     "issue.jp.hokkaido.city.asahikawa" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6398,6 +6453,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "北海道"
+          }
+        }
+      }
+    },
+    "locate.prefecture.Jakarta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakarta"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ジャカルタ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加达"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達"
           }
         }
       }
@@ -12589,7 +12673,14 @@
 
     },
     "tip.widget.title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
+          }
+        }
+      }
     },
     "tool.fullLog" : {
       "localizations" : {
