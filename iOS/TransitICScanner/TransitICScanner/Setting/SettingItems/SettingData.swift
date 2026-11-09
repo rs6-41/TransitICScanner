@@ -63,7 +63,7 @@ struct SettingData: View {
         do {
             try ResultSave.deleteAll(from: modelContext)
         } catch {
-            
+            StorageErrorNotifier.shared.report(error, operation: "保存データの全件削除")
         }
     }
 }
