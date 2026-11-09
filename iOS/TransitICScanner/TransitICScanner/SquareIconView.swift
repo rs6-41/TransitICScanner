@@ -4,7 +4,7 @@ struct SquareIcon: View {
     var text: LocalizedStringKey?
     var subText: LocalizedStringKey?
     @State var systemImage: String
-    @State var color:Color
+    @State var color: Color
     var body: some View {
         HStack {
             ZStack {
@@ -15,7 +15,7 @@ struct SquareIcon: View {
                     .foregroundStyle(.white)
                     .bold()
             }
-            VStack(alignment:.leading) {
+            VStack(alignment: .leading) {
                 if let text {
                     Text(text)
                 }
@@ -30,5 +30,5 @@ struct SquareIcon: View {
 }
 
 #Preview {
-    SquareIcon(text: "Text", subText:"subText",systemImage: "ladybug.fill",color: Color.red)
+    SquareIcon(text: "Text", subText: "subText", systemImage: "ladybug.fill", color: Color.red)
 }

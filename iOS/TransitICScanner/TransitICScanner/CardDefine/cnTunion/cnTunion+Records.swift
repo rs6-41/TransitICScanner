@@ -13,20 +13,22 @@ extension NFCScannerModel {
             "GET BALANCE"
         )
 
-        guard let (
-            resp,
-            sw1,
-            sw2
-        ) = await cnTunion_sendAPDU(
-            tag,
-            ins: 0x5C,
-            p1: 0x00,
-            p2: 0x02,
-            data: Data(),
-            le: 4,
-            cla: 0x80,
-            fullLog: fullLog
-        ) else {
+        guard
+            let (
+                resp,
+                sw1,
+                sw2
+            ) = await cnTunion_sendAPDU(
+                tag,
+                ins: 0x5C,
+                p1: 0x00,
+                p2: 0x02,
+                data: Data(),
+                le: 4,
+                cla: 0x80,
+                fullLog: fullLog
+            )
+        else {
 
             fullLog?.append(
                 "GET BALANCE: APDU failed"
@@ -36,8 +38,9 @@ extension NFCScannerModel {
         }
 
         guard sw1 == 0x90,
-              sw2 == 0x00,
-              resp.count >= 4 else {
+            sw2 == 0x00,
+            resp.count >= 4
+        else {
 
             fullLog?.append(
                 String(
@@ -53,10 +56,7 @@ extension NFCScannerModel {
         }
 
         let value =
-            (UInt32(resp[0]) << 24) |
-            (UInt32(resp[1]) << 16) |
-            (UInt32(resp[2]) << 8) |
-            UInt32(resp[3])
+            (UInt32(resp[0]) << 24) | (UInt32(resp[1]) << 16) | (UInt32(resp[2]) << 8) | UInt32(resp[3])
 
         let balance =
             Double(value) / 100.0
@@ -90,7 +90,6 @@ extension NFCScannerModel {
         return balance
     }
 
-
     func cnTunion_readKnownRecords(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
@@ -99,11 +98,9 @@ extension NFCScannerModel {
         computedBalance: Double?
     ) {
 
-        var transactionLogs:
-            [ResultHistory] = []
+        var transactionLogs: [ResultHistory] = []
 
-        var tripLogs:
-            [ResultHistory] = []
+        var tripLogs: [ResultHistory] = []
 
         let p2 =
             UInt8(
@@ -116,26 +113,25 @@ extension NFCScannerModel {
 
         for record in 1...20 {
 
-            guard let (
-                resp,
-                sw1,
-                sw2
-            ) = await cnTunion_sendAPDU(
-                tag,
-                ins: 0xB2,
-                p1: UInt8(record),
-                p2: p2,
-                le: 256,
-                cla: 0x00,
-                fullLog: fullLog
-            ) else {
+            guard
+                let (
+                    resp,
+                    sw1,
+                    sw2
+                ) = await cnTunion_sendAPDU(
+                    tag,
+                    ins: 0xB2,
+                    p1: UInt8(record),
+                    p2: p2,
+                    le: 256,
+                    cla: 0x00,
+                    fullLog: fullLog
+                )
+            else {
                 continue
             }
 
-            if sw1 == 0x90 &&
-                sw2 == 0x00 &&
-                resp.count >= 23 &&
-                !resp.allSatisfy({ $0 == 0 }) {
+            if sw1 == 0x90 && sw2 == 0x00 && resp.count >= 23 && !resp.allSatisfy({ $0 == 0 }) {
 
                 let parsed =
                     cnTunion_parseTransactionRecord(
@@ -160,26 +156,25 @@ extension NFCScannerModel {
 
         for record in 1...20 {
 
-            guard let (
-                resp,
-                sw1,
-                sw2
-            ) = await cnTunion_sendAPDU(
-                tag,
-                ins: 0xB2,
-                p1: UInt8(record),
-                p2: tripP2,
-                le: 256,
-                cla: 0x00,
-                fullLog: fullLog
-            ) else {
+            guard
+                let (
+                    resp,
+                    sw1,
+                    sw2
+                ) = await cnTunion_sendAPDU(
+                    tag,
+                    ins: 0xB2,
+                    p1: UInt8(record),
+                    p2: tripP2,
+                    le: 256,
+                    cla: 0x00,
+                    fullLog: fullLog
+                )
+            else {
                 continue
             }
 
-            if sw1 == 0x90 &&
-                sw2 == 0x00 &&
-                resp.count >= 48 &&
-                !resp.allSatisfy({ $0 == 0 }) {
+            if sw1 == 0x90 && sw2 == 0x00 && resp.count >= 48 && !resp.allSatisfy({ $0 == 0 }) {
 
                 let parsed =
                     cnTunion_parseTripRecord(
@@ -200,15 +195,9 @@ extension NFCScannerModel {
             tripLogs.filter { log in
 
                 let key =
-                    "\(log.date.year ?? 0)-" +
-                    "\(log.date.month ?? 0)-" +
-                    "\(log.date.day ?? 0)-" +
-                    "\(log.date.hour ?? 0)-" +
-                    "\(log.date.minute ?? 0)-" +
-                    "\(log.date.second ?? 0)|" +
-                    "\(log.processType)|" +
-                    "\(log.amount ?? 0)|" +
-                    "\(log.balance)"
+                    "\(log.date.year ?? 0)-" + "\(log.date.month ?? 0)-" + "\(log.date.day ?? 0)-"
+                    + "\(log.date.hour ?? 0)-" + "\(log.date.minute ?? 0)-" + "\(log.date.second ?? 0)|"
+                    + "\(log.processType)|" + "\(log.amount ?? 0)|" + "\(log.balance)"
 
                 if seenTrip.contains(key) {
                     return false
@@ -228,16 +217,15 @@ extension NFCScannerModel {
             ) ?? .distantPast
         }
 
-        var computedBalance:
-            Double? = nil
+        var computedBalance: Double? = nil
 
         if let anchor =
             tripLogs.max(
                 by: {
-                    dateValue($0) <
-                    dateValue($1)
+                    dateValue($0) < dateValue($1)
                 }
-            ) {
+            )
+        {
 
             let anchorDate =
                 dateValue(anchor)
@@ -247,14 +235,12 @@ extension NFCScannerModel {
 
             let newerTransactions =
                 transactionLogs
-                    .filter {
-                        dateValue($0) >
-                        anchorDate
-                    }
-                    .sorted {
-                        dateValue($0) <
-                        dateValue($1)
-                    }
+                .filter {
+                    dateValue($0) > anchorDate
+                }
+                .sorted {
+                    dateValue($0) < dateValue($1)
+                }
 
             for t in newerTransactions {
 
@@ -264,20 +250,15 @@ extension NFCScannerModel {
                 if let index =
                     transactionLogs.firstIndex(
                         where: {
-                            dateValue($0) ==
-                                dateValue(t) &&
-                            $0.transactionId ==
-                                t.transactionId
+                            dateValue($0) == dateValue(t) && $0.transactionId == t.transactionId
                         }
-                    ) {
+                    )
+                {
 
                     let old =
                         transactionLogs[index]
 
-                    if !(
-                        old.processType != 0x03 &&
-                        abs(old.amount ?? 0.0) < 0.001
-                    ) {
+                    if !(old.processType != 0x03 && abs(old.amount ?? 0.0) < 0.001) {
 
                         transactionLogs[index] =
                             ResultHistory(
@@ -312,8 +293,7 @@ extension NFCScannerModel {
             transactionLogs + tripLogs
 
         logs.removeAll {
-            $0.processType != 0x03 &&
-            abs($0.amount ?? 0.0) < 0.001
+            $0.processType != 0x03 && abs($0.amount ?? 0.0) < 0.001
         }
 
         logs.sort {
@@ -329,8 +309,7 @@ extension NFCScannerModel {
             }
 
             return
-                $0.transactionId >
-                $1.transactionId
+                $0.transactionId > $1.transactionId
         }
 
         fullLog?.append(
@@ -363,7 +342,6 @@ extension NFCScannerModel {
         )
     }
 
-
     func cnTunion_parseTransactionRecord(
         _ data: Data,
         fullLog: CNTRunionFullLog? = nil
@@ -394,14 +372,10 @@ extension NFCScannerModel {
         )
 
         let transactionSeq =
-            (UInt16(bytes[0]) << 8) |
-            UInt16(bytes[1])
+            (UInt16(bytes[0]) << 8) | UInt16(bytes[1])
 
         let amountRaw =
-            (UInt32(bytes[5]) << 24) |
-            (UInt32(bytes[6]) << 16) |
-            (UInt32(bytes[7]) << 8) |
-            UInt32(bytes[8])
+            (UInt32(bytes[5]) << 24) | (UInt32(bytes[6]) << 16) | (UInt32(bytes[7]) << 8) | UInt32(bytes[8])
 
         let processType =
             bytes[9]
@@ -439,20 +413,15 @@ extension NFCScannerModel {
             )
 
         Log.debug(
-            "T-Union Transaction: " +
-            "seq=\(transactionSeq), " +
-            "type=\(String(format: "%02X", processType)), " +
-            "amount=\(amount)"
+            "T-Union Transaction: " + "seq=\(transactionSeq), " + "type=\(String(format: "%02X", processType)), "
+                + "amount=\(amount)"
         )
 
         fullLog?.append(
-            "Transaction seq=\(transactionSeq) " +
-            "type=\(String(format: "%02X", processType)) " +
-            "amount=\(amount)"
+            "Transaction seq=\(transactionSeq) " + "type=\(String(format: "%02X", processType)) " + "amount=\(amount)"
         )
 
-        if processType != 0x03 &&
-            amount < 0.01 {
+        if processType != 0x03 && amount < 0.01 {
             return []
         }
 
@@ -475,12 +444,10 @@ extension NFCScannerModel {
                 stationOut:
                     0,
                 transactionId:
-                    100000 +
-                    Int(transactionSeq)
+                    100000 + Int(transactionSeq)
             )
         ]
     }
-
 
     func cnTunion_parseTripRecord(
         _ data: Data,
@@ -522,19 +489,13 @@ extension NFCScannerModel {
         case 0x04, 0x06:
 
             let amountRaw =
-                (UInt32(bytes[17]) << 24) |
-                (UInt32(bytes[18]) << 16) |
-                (UInt32(bytes[19]) << 8) |
-                UInt32(bytes[20])
+                (UInt32(bytes[17]) << 24) | (UInt32(bytes[18]) << 16) | (UInt32(bytes[19]) << 8) | UInt32(bytes[20])
 
             amount =
                 -Double(amountRaw) / 100.0
 
             let balanceRaw =
-                (UInt32(bytes[21]) << 24) |
-                (UInt32(bytes[22]) << 16) |
-                (UInt32(bytes[23]) << 8) |
-                UInt32(bytes[24])
+                (UInt32(bytes[21]) << 24) | (UInt32(bytes[22]) << 16) | (UInt32(bytes[23]) << 8) | UInt32(bytes[24])
 
             balance =
                 Double(
@@ -546,10 +507,7 @@ extension NFCScannerModel {
             amount = 0
 
             let balanceRaw =
-                (UInt32(bytes[21]) << 24) |
-                (UInt32(bytes[22]) << 16) |
-                (UInt32(bytes[23]) << 8) |
-                UInt32(bytes[24])
+                (UInt32(bytes[21]) << 24) | (UInt32(bytes[22]) << 16) | (UInt32(bytes[23]) << 8) | UInt32(bytes[24])
 
             balance =
                 Double(
@@ -583,20 +541,15 @@ extension NFCScannerModel {
             )
 
         Log.debug(
-            "T-Union Trip: " +
-            "type=\(String(format: "%02X", processType)), " +
-            "amount=\(amount), " +
-            "balance=\(balance)"
+            "T-Union Trip: " + "type=\(String(format: "%02X", processType)), " + "amount=\(amount), "
+                + "balance=\(balance)"
         )
 
         fullLog?.append(
-            "Trip type=\(String(format: "%02X", processType)) " +
-            "amount=\(amount) " +
-            "balance=\(balance)"
+            "Trip type=\(String(format: "%02X", processType)) " + "amount=\(amount) " + "balance=\(balance)"
         )
 
-        if processType != 0x03 &&
-            amount < 0.01 {
+        if processType != 0x03 && amount < 0.01 {
             return []
         }
 
@@ -619,15 +572,10 @@ extension NFCScannerModel {
                 stationOut:
                     0,
                 transactionId:
-                    200000 +
-                    (
-                        Int(bytes[1]) << 8 |
-                        Int(bytes[2])
-                    )
+                    200000 + (Int(bytes[1]) << 8 | Int(bytes[2]))
             )
         ]
     }
-
 
     func cnTunion_decodeBCDDate(
         _ bytes: ArraySlice<UInt8>
@@ -638,8 +586,7 @@ extension NFCScannerModel {
         ) -> Int {
 
             Int(
-                (b >> 4) * 10 +
-                (b & 0x0F)
+                (b >> 4) * 10 + (b & 0x0F)
             )
         }
 
@@ -651,8 +598,7 @@ extension NFCScannerModel {
         }
 
         let year =
-            bcd(arr[0]) * 100 +
-            bcd(arr[1])
+            bcd(arr[0]) * 100 + bcd(arr[1])
 
         let month =
             bcd(arr[2])

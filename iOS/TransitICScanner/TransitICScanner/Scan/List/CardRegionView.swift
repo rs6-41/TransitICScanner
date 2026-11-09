@@ -29,10 +29,10 @@ struct CardRegionView: View {
     var body: some View {
         List {
             Group {
-#if !targetEnvironment(macCatalyst)
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-#endif
-                
+                #endif
+
                 Section {
                     ForEach(
                         sortItems(sort: sort, items: items, pref: false),
@@ -47,7 +47,7 @@ struct CardRegionView: View {
                 } footer: {
                     Text(LocalizedStringKey("cardList.description"))
                 }
-                
+
                 if let subItems {
                     if !subItems.isEmpty {
                         Section {
@@ -75,7 +75,7 @@ struct CardRegionView: View {
                         }
                     }
                 }
-                
+
                 if let externalItems {
                     if !externalItems.isEmpty {
                         Section {
@@ -99,26 +99,26 @@ struct CardRegionView: View {
                                 HStack {
                                     Text(LocalizedStringKey("cardList.external.title"))
                                     Spacer()
-                                    
+
                                     HStack(spacing: 4) {
                                         if smartCardManager.readers.isEmpty {
                                             Circle()
                                                 .fill(Color.red)
                                                 .stroke(Color.gray, lineWidth: 1.5)
                                                 .frame(width: 15, height: 15)
-                                            
+
                                             Text(LocalizedStringKey("cardList.external.disable"))
                                         } else {
                                             Circle()
                                                 .fill(Color.green)
                                                 .stroke(Color.gray, lineWidth: 1.5)
                                                 .frame(width: 15, height: 15)
-                                            
+
                                             Text(LocalizedStringKey("cardList.external.enable"))
                                         }
                                     }
                                 }
-                                
+
                                 Text(LocalizedStringKey("cardList.external.description"))
                                     .font(.caption)
                                     .fontWeight(.regular)
@@ -129,7 +129,7 @@ struct CardRegionView: View {
                     }
                 }
             }
-            .listRowBackground(Color(uiColor:.secondarySystemFill))
+            .listRowBackground(Color(uiColor: .secondarySystemFill))
         }
         .scrollContentBackground(.hidden)
         .listStyle(.insetGrouped)

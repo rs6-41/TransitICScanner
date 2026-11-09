@@ -6,16 +6,16 @@ struct ResultView: View {
     @State var scandata: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
+
     @State var cardUserName = ""
-    @State var cardDesign:CardDesign? = nil
-    
-    @Binding var saveListID:UUID
-    @Binding var deleteAds:Bool
+    @State var cardDesign: CardDesign? = nil
+
+    @Binding var saveListID: UUID
+    @Binding var deleteAds: Bool
     var onDone: (() -> Void)? = nil
     var embedsNavigationStack = true
-    
-    @State var areaText:LocalizedStringKey = ""
+
+    @State var areaText: LocalizedStringKey = ""
 
     var body: some View {
         Group {
@@ -32,7 +32,7 @@ struct ResultView: View {
     private var resultContent: some View {
         List {
             #if !targetEnvironment(macCatalyst)
-            ListAdView(deleteAds:$deleteAds)
+            ListAdView(deleteAds: $deleteAds)
             #endif
             resultUserdataSection
             resultInfoSection
@@ -47,7 +47,7 @@ struct ResultView: View {
         .onAppear() {
             setDefaultDisplayName()
         }
-        .onChange(of:cardUserName) {
+        .onChange(of: cardUserName) {
             setDefaultDisplayName()
         }
         .toolbar {
@@ -73,7 +73,7 @@ struct ResultView: View {
         }
         .navigationTitle(Text(cardUserName))
     }
-    
+
     @ViewBuilder
     private var resultUserdataSection: some View {
         Section {
@@ -127,7 +127,7 @@ struct ResultView: View {
                                 }
                             }
                         }
-                        
+
                         if cardDesign == nil {
                             cardDesign = cardDesignList.first {
                                 $0.type == result.converter && $0.isDefault
@@ -176,12 +176,12 @@ struct ResultView: View {
         } header: {
             Text(LocalizedStringKey("result.info"))
         } footer: {
-            VStack(alignment:.leading, spacing:0) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text(LocalizedStringKey("result.description.common"))
                 Text(LocalizedStringKey(result.description))
             }
         }
-        
+
         if let info = result.info {
             if let issueInfos = info.issueInfo {
                 resultIssueContent(issueInfos)
@@ -207,17 +207,20 @@ struct ResultView: View {
                 }
                 .textSelection(.enabled)
             }
-            
+
             LabeledContent(LocalizedStringKey("result.info.cardCategory")) {
                 Text(LocalizedStringKey(display.nameShort))
                     .textSelection(.enabled)
             }
-            
+
             if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
                 LabeledContent(LocalizedStringKey("result.info.cardType")) {
                     Group {
                         if display.typeLocalizeTable != "" {
-                            Text(String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable))
+                            Text(
+                                String(
+                                    localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
+                            )
                         } else {
                             Text(Localize(display.type))
                         }
@@ -225,7 +228,7 @@ struct ResultView: View {
                     .textSelection(.enabled)
                 }
             }
-            
+
             if !display.idm.isEmpty {
                 LabeledContent(LocalizedStringKey("result.info.ID")) {
                     Text(String(display.idm))
@@ -245,19 +248,19 @@ struct ResultView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func resultIssueContent(
         _ issueInfo: IssueInfo
     ) -> some View {
-        
+
         Section() {
-            
+
             LabeledContent(LocalizedStringKey("result.info.issueInfo.region")) {
                 Text(LocalizedStringKey(issueInfo.region))
                     .textSelection(.enabled)
             }
-            
+
             if areaText != "" {
                 LabeledContent(LocalizedStringKey("result.info.issueInfo.prefecture")) {
                     Text(areaText)
@@ -361,13 +364,13 @@ struct ResultView: View {
         let hasNext = index + 1 < history.count
         let nextBalance: Double =
             hasNext
-                ? history[index + 1].balance
-                : 0
+            ? history[index + 1].balance
+            : 0
 
         let diff: Double? =
             hasNext
-                ? item.balance - nextBalance
-                : (result.isLastHide ? nil : item.balance)
+            ? item.balance - nextBalance
+            : (result.isLastHide ? nil : item.balance)
 
         VStack(
             alignment: .leading,
@@ -397,18 +400,18 @@ struct ResultView: View {
                     display.balance.balanceText
                 let currency = result.info?.currencyType?.getLocalize(balanceText)
                 Text(currency ?? LocalizedStringKey(balanceText))
-                
+
                 Spacer()
-                
+
                 if let diff {
                     let amount = resultHistoryAmount(diff: diff)
                     let currency = result.info?.currencyType?.getLocalize(amount)
                     Text(currency ?? LocalizedStringKey(amount))
-                    .foregroundStyle(
-                        diff >= 0
-                        ? .green
-                        : .red
-                    )
+                        .foregroundStyle(
+                            diff >= 0
+                                ? .green
+                                : .red
+                        )
                 }
             }
         }
@@ -435,10 +438,10 @@ struct ResultView: View {
         } catch {
             StorageErrorNotifier.shared.report(error, operation: "読取結果の保存")
         }
-        
+
         saveListID = UUID()
     }
-    
+
     /// 保存済みカードの表示名・券面だけを保存する
     private func saveUserData() {
         guard let info = result.info else {
@@ -461,9 +464,10 @@ struct ResultView: View {
 
     private func setCardDesign(_ name: String?) {
         if let iconName = result.info?.iconName,
-           let design = cardDesignList.first(where: {
-               $0.imageName == iconName
-           }) {
+            let design = cardDesignList.first(where: {
+                $0.imageName == iconName
+            })
+        {
             cardDesign = design
         } else if let design = (cardDesignList.first { $0.name == name }) {
             cardDesign = design
@@ -472,16 +476,17 @@ struct ResultView: View {
         } else {
         }
     }
-    
+
     func setDefaultDisplayName() {
         if cardUserName == "" {
-            let displayName:String = result.info?.displayName ?? ""
+            let displayName: String = result.info?.displayName ?? ""
             if displayName == "" {
                 if let info = result.info {
                     let display = result.converter.cardInfo(info)
                     if !display.type.isEmpty {
                         if display.typeLocalizeTable != "" {
-                            cardUserName = String(localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
+                            cardUserName = String(
+                                localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
                         } else {
                             cardUserName = Localize(display.type)
                         }
@@ -489,7 +494,7 @@ struct ResultView: View {
                         cardUserName = Localize(display.nameShort)
                     }
                 } else {
-                    cardUserName = String(localized:"card")
+                    cardUserName = String(localized: "card")
                 }
             } else {
                 cardUserName = displayName

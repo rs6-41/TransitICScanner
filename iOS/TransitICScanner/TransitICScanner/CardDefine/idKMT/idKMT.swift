@@ -12,7 +12,7 @@ let idKMT = CardInfo(
     regionOption: .southEastAsia,
     description: "cardList.idKMT.description",
     scannedDescription: "idKMT.scand.description",
-    searchWords: ["KAI","Commuter","Kartu Multi Trip","KMT","Jakarta","Indonesia"],
+    searchWords: ["KAI", "Commuter", "Kartu Multi Trip", "KMT", "Jakarta", "Indonesia"],
     scanOption: ScanOption(
         id: .idKMT,
         nameShort: "idKMT.short",
@@ -37,10 +37,12 @@ extension NFCScannerModel {
 
     /// KAI Commuter (KMT) を読み取る。内蔵リーダー・外部リーダー共通。
     func idKMT_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
-        guard let data = await idKMT_readData(
-            felicaTag,
-            count: self.scanOption.historyCount
-        ) else {
+        guard
+            let data = await idKMT_readData(
+                felicaTag,
+                count: self.scanOption.historyCount
+            )
+        else {
             return nil
         }
 
@@ -62,37 +64,45 @@ extension NFCScannerModel {
         _ felicaTag: any FeliCaTagReading,
         count: Int
     ) async -> KMTData? {
-        guard let idBlock = await idKMT_readBlocks(
-            felicaTag,
-            service: Data([0x0B, 0x30]),
-            blocks: [0]
-        )?.first else {
+        guard
+            let idBlock = await idKMT_readBlocks(
+                felicaTag,
+                service: Data([0x0B, 0x30]),
+                blocks: [0]
+            )?.first
+        else {
             return nil
         }
 
-        guard let balanceBlock = await idKMT_readBlocks(
-            felicaTag,
-            service: Data([0x17, 0x10]),
-            blocks: [0]
-        )?.first else {
+        guard
+            let balanceBlock = await idKMT_readBlocks(
+                felicaTag,
+                service: Data([0x17, 0x10]),
+                blocks: [0]
+            )?.first
+        else {
             return nil
         }
 
         let historyCount = min(max(count, 0), 20)
 
-        guard let historyBlocks = await idKMT_readBlocks(
-            felicaTag,
-            service: Data([0x0F, 0x20]),
-            blocks: Array(0..<historyCount).map { UInt8($0) }
-        ) else {
+        guard
+            let historyBlocks = await idKMT_readBlocks(
+                felicaTag,
+                service: Data([0x0F, 0x20]),
+                blocks: Array(0..<historyCount).map { UInt8($0) }
+            )
+        else {
             return nil
         }
 
-        guard let data = KMTData.parse(
-            idBlock: idBlock,
-            balanceBlock: balanceBlock,
-            historyBlocks: historyBlocks
-        ) else {
+        guard
+            let data = KMTData.parse(
+                idBlock: idBlock,
+                balanceBlock: balanceBlock,
+                historyBlocks: historyBlocks
+            )
+        else {
             self.session?.invalidate(
                 errorMessage: String(localized: "scanner.coreNFC.scanning.error.read")
             )
@@ -125,9 +135,10 @@ extension NFCScannerModel {
                     blockList: blockList
                 ) { status1, status2, data, error in
                     guard error == nil,
-                          status1 == 0,
-                          status2 == 0,
-                          data.count == blockList.count else {
+                        status1 == 0,
+                        status2 == 0,
+                        data.count == blockList.count
+                    else {
                         continuation.resume(returning: nil)
                         return
                     }
@@ -186,7 +197,8 @@ struct KMTData {
         historyBlocks: [Data]
     ) -> KMTData? {
         guard idBlock.count >= 16,
-              balanceBlock.count >= 16 else {
+            balanceBlock.count >= 16
+        else {
             return nil
         }
 
@@ -200,7 +212,8 @@ struct KMTData {
             )
             .trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
-            serialNumber = serialBytes
+            serialNumber =
+                serialBytes
                 .map { String(format: "%02X", $0) }
                 .joined()
         }
@@ -224,7 +237,8 @@ struct KMTData {
 
     private static func parseHistory(_ data: Data) -> ResultHistory? {
         guard data.count >= 16,
-              data[0] != 0 else {
+            data[0] != 0
+        else {
             return nil
         }
 
@@ -238,7 +252,8 @@ struct KMTData {
         let sequenceNumber = uint24BigEndian(data, offset: 13)
         let rawAmount = Int64(uint32BigEndian(data, offset: 4))
 
-        let amount: Int64 = processType == 1
+        let amount: Int64 =
+            processType == 1
             ? rawAmount
             : -rawAmount
 
@@ -304,7 +319,7 @@ struct KMTData {
         offset: Int
     ) -> UInt16 {
         (UInt16(data[offset]) << 8)
-        | UInt16(data[offset + 1])
+            | UInt16(data[offset + 1])
     }
 
     private static func uint24BigEndian(
@@ -312,8 +327,8 @@ struct KMTData {
         offset: Int
     ) -> UInt32 {
         (UInt32(data[offset]) << 16)
-        | (UInt32(data[offset + 1]) << 8)
-        | UInt32(data[offset + 2])
+            | (UInt32(data[offset + 1]) << 8)
+            | UInt32(data[offset + 2])
     }
 
     private static func uint32BigEndian(
@@ -321,9 +336,9 @@ struct KMTData {
         offset: Int
     ) -> UInt32 {
         (UInt32(data[offset]) << 24)
-        | (UInt32(data[offset + 1]) << 16)
-        | (UInt32(data[offset + 2]) << 8)
-        | UInt32(data[offset + 3])
+            | (UInt32(data[offset + 1]) << 16)
+            | (UInt32(data[offset + 2]) << 8)
+            | UInt32(data[offset + 3])
     }
 
     private static func uint32LittleEndian(
@@ -331,8 +346,8 @@ struct KMTData {
         offset: Int
     ) -> UInt32 {
         UInt32(data[offset])
-        | (UInt32(data[offset + 1]) << 8)
-        | (UInt32(data[offset + 2]) << 16)
-        | (UInt32(data[offset + 3]) << 24)
+            | (UInt32(data[offset + 1]) << 8)
+            | (UInt32(data[offset + 2]) << 16)
+            | (UInt32(data[offset + 3]) << 24)
     }
 }

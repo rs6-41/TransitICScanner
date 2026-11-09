@@ -4,7 +4,7 @@ import Foundation
 import CryptoTokenKit
 import Combine
 
-struct SmartCardReader: Identifiable,Hashable {
+struct SmartCardReader: Identifiable, Hashable {
     let id: String
     let name: String
 
@@ -26,9 +26,9 @@ final class SmartCardManager: ObservableObject {
     @Published private(set) var readers: [SmartCardReader] = []
     @Published private(set) var selectedSource: ScanReaderSource = .builtIn
     @Published private(set) var isAvailable = false
-    
+
     private var slotManager: TKSmartCardSlotManager?
-    
+
     private var monitoringTask: Task<Void, Never>?
     private var hasUserSelectedReader = false
 
@@ -86,8 +86,7 @@ final class SmartCardManager: ObservableObject {
             if selectedSource != .builtIn {
                 selectedSource = .builtIn
             }
-        }
-        else {
+        } else {
             if let selectedReaderID, !updatedReaders.contains(where: { $0.id == selectedReaderID }) {
                 self.selectedReaderID = updatedReaders.first?.id
             } else if selectedReaderID == nil {
@@ -111,37 +110,37 @@ final class SmartCardManager: ObservableObject {
             selectedReaderID = readerID
         }
     }
-    
+
     // MARK: - セッション
-    func makeSession(name:String,command:String) async throws -> [String] {
+    func makeSession(name: String, command: String) async throws -> [String] {
         /// 指定された名称のカードリーダーでカードを検出
-        if let slot = await slotManager?.getSlot(withName:name) {
+        if let slot = await slotManager?.getSlot(withName: name) {
             /// カードリーダーのオブジェクト(TKSmartCard)を作成
             if let card = slot.makeSmartCard() {
                 do {
-                    let response:[String]
-                    
+                    let response: [String]
+
                     /// セッションを開始
                     try await card.beginSession()
-                    
-                    if let h = Data(hex:command) {
+
+                    if let h = Data(hex: command) {
                         let r = try await card.transmit(h)
                         response = r.map { String(format: "%02X", $0) }
                     } else {
                         response = []
                     }
-                    
+
                     /// セッションを終了
                     card.endSession()
                     return response
-                    
+
                 } catch {
                     card.endSession()
                     throw ReaderError.message(error.localizedDescription)
                 }
             }
         }
-        throw ReaderError.message(String(localized:"error.smartCardReader.notDetectionCard"))
+        throw ReaderError.message(String(localized: "error.smartCardReader.notDetectionCard"))
     }
 
     /// Holds one exclusive external-card session for a complete card scan.
@@ -152,8 +151,9 @@ final class SmartCardManager: ObservableObject {
 
         let slotName = readerID ?? selectedReaderID
         guard let slotName,
-              let slot = await slotManager.getSlot(withName: slotName),
-              slot.state != .missing else {
+            let slot = await slotManager.getSlot(withName: slotName),
+            slot.state != .missing
+        else {
             throw ReaderError.message(String(localized: "error.smartCardReader.unavailable"))
         }
 
@@ -215,17 +215,15 @@ final class SmartCardManager: ObservableObject {
             )
         }
     }
-    
-    
+
     /// 返答を1バイトごとの16進数配列として返却
-    func hexConvert(_ text:String) -> [String] {
+    func hexConvert(_ text: String) -> [String] {
         return stride(from: 0, to: text.count, by: 2).map { i -> String in
             let startIndex = text.index(text.startIndex, offsetBy: i)
             let endIndex = text.index(startIndex, offsetBy: 2, limitedBy: text.endIndex) ?? text.endIndex
             return String(text[startIndex..<endIndex])
         }
     }
-    
 
     // MARK: - 監視
     /// リーダーの状態を自動更新する
@@ -246,7 +244,7 @@ final class SmartCardManager: ObservableObject {
     deinit {
         monitoringTask?.cancel()
     }
-    
+
     ///停止
     func stop() {
         monitoringTask?.cancel()
@@ -260,7 +258,7 @@ extension Data {
         guard len % 2 == 0 else { return nil }
         var data = Data(capacity: len / 2)
         var index = hex.startIndex
-        
+
         for _ in 0..<(len / 2) {
             let nextIndex = hex.index(index, offsetBy: 2)
             let byteString = hex[index..<nextIndex]

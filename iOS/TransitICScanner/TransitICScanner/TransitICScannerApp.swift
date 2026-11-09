@@ -5,11 +5,12 @@ import Combine
 import GoogleMobileAds
 #endif
 
-
 class AppDelegate: UIResponder, UIApplicationDelegate {
-#if !targetEnvironment(macCatalyst)
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    #if !targetEnvironment(macCatalyst)
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         // Mobile Ads SDK は広告の同意取得後に AdConsentManager が初期化する
         return true
     }
@@ -23,7 +24,7 @@ struct TransitICScannerApp: App {
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
-    
+
     @StateObject var smartCardManager = SmartCardManager()
 
     let container: ModelContainer
@@ -58,7 +59,6 @@ struct TransitICScannerApp: App {
         .modelContainer(container)
     }
 }
-
 
 struct WindowAccessor: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {

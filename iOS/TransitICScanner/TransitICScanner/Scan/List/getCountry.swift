@@ -111,7 +111,8 @@ final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
 
         do {
-            let placemarks = try await geocoder.reverseGeocodeLocation(location,preferredLocale: Locale(identifier: "en_US"))
+            let placemarks = try await geocoder.reverseGeocodeLocation(
+                location, preferredLocale: Locale(identifier: "en_US"))
 
             guard let placemark = placemarks.first else {
                 countryCode = nil
@@ -143,7 +144,6 @@ final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
         switch manager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
             manager.requestLocation()
-
 
         case .denied, .restricted:
             countryCode = nil

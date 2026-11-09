@@ -359,7 +359,8 @@ struct CardList: View {
         }
     }
 
-    private func items(for region: RegionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?) {
+    private func items(for region: RegionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?)
+    {
         let primaryItems = cards(inPrimaryRegionOf: region)
         let regularItems = primaryItems.filter { $0.scanOption.scanType != .external }
         let externalItems = primaryItems.filter { $0.scanOption.scanType == .external }
@@ -389,7 +390,8 @@ struct CardList: View {
 
     private func isAvailableAtCurrentLocation(_ item: CardInfo) -> Bool {
         guard let currentCode = getCountry.countryCode,
-              item.countryCode.contains(currentCode) else {
+            item.countryCode.contains(currentCode)
+        else {
             return false
         }
 

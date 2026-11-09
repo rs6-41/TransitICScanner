@@ -24,7 +24,7 @@ struct CardListRow: View {
     }
 
     var body: some View {
-                VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 4) {
             switch item.scanOption.scanType {
             case .nfc:
                 ScanningButton(
@@ -133,10 +133,10 @@ struct ListButtonInner: View {
             }
         }
         .foregroundStyle(Color.primary)
-#if targetEnvironment(macCatalyst)
+        #if targetEnvironment(macCatalyst)
         .padding(.horizontal, 6)
         .padding(.vertical, 6)
-#endif
+        #endif
     }
 }
 

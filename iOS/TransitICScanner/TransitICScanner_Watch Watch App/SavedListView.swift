@@ -4,21 +4,22 @@ import SwiftData
 struct SavedListView: View {
     @State private var cards: [ScanResult] = []
     @State private var modelContainer: ModelContainer?
-    
+
     @State var isFilterSheet = false
-    @State var filterType:String = ""
+    @State var filterType: String = ""
     var body: some View {
         List {
-            ForEach(cards.filter { card in filterType.isEmpty || card.converterTypeRaw == filterType}, id: \.self) { card in
+            ForEach(cards.filter { card in filterType.isEmpty || card.converterTypeRaw == filterType }, id: \.self) {
+                card in
                 NavigationLink {
-                    WatchResultView(card:card)
+                    WatchResultView(card: card)
                 } label: {
                     HStack {
                         Image(card.info?.iconName ?? "")
                             .resizable()
                             .scaledToFit()
-                            .frame(width:35)
-                        VStack(alignment:.leading) {
+                            .frame(width: 35)
+                        VStack(alignment: .leading) {
                             Text(card.info?.displayName ?? card.info?.name ?? "")
                                 .fontWeight(.semibold)
                                 .lineLimit(1)
@@ -29,17 +30,17 @@ struct SavedListView: View {
                                 }
                             }
                         }
-                        .padding(.horizontal,5)
+                        .padding(.horizontal, 5)
                     }
                 }
             }
         }
         .toolbar {
-            ToolbarItem(placement:.topBarLeading){
-                Button("watch.list.filter" , systemImage: "line.3.horizontal.decrease"){
+            ToolbarItem(placement: .topBarLeading) {
+                Button("watch.list.filter", systemImage: "line.3.horizontal.decrease") {
                     isFilterSheet.toggle()
                 }
-                .tint(filterType == "" ? .clear:.blue)
+                .tint(filterType == "" ? .clear : .blue)
             }
         }
         .sheet(isPresented: $isFilterSheet) {
@@ -68,7 +69,7 @@ struct SavedListView: View {
                 }
             }
         }
-        
+
         .task {
             do {
                 let container = try SavedDataModelContainer.makeContainer()

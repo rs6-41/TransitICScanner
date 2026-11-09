@@ -16,7 +16,7 @@ enum hkOctopus_Converter {
             type: info.type
         )
     }
-    
+
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {

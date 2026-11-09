@@ -9,15 +9,15 @@ struct ListAdView: View {
     @Binding var deleteAds: Bool
     @State var isDisplayMyAppAdd = true
     @EnvironmentObject var ads: AdsModel
-    
+
     @Environment(\.dismiss) private var dismiss
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @State var colorSchemeID = 0
-    
+
     @State var myAppsAd = myAppsAds.randomElement()
-    
-    @State private var adSize: CGSize = CGSize(width:0, height:60)
+
+    @State private var adSize: CGSize = CGSize(width: 0, height: 60)
 
     var body: some View {
         if !deleteAds {
@@ -40,12 +40,15 @@ struct ListAdView: View {
                                 .id(colorSchemeID)
                         }
                     } else {
-                        PlaceholderAdsView(icon: UIImage(named:"twICash"),headline: String("Placeholder"),bodyText: String("PlaceholderPlaceholder"),callToAction:String("Placeholder"))
-                            .redacted(reason: .placeholder)
-                            .id(colorSchemeID)
+                        PlaceholderAdsView(
+                            icon: UIImage(named: "twICash"), headline: String("Placeholder"),
+                            bodyText: String("PlaceholderPlaceholder"), callToAction: String("Placeholder")
+                        )
+                        .redacted(reason: .placeholder)
+                        .id(colorSchemeID)
                     }
                 }
-                .onChange(of:colorScheme) {
+                .onChange(of: colorScheme) {
                     colorSchemeID += 1
                 }
                 .frame(minHeight: adSize.height)

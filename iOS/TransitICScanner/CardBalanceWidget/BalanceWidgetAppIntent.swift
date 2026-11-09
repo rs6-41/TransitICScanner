@@ -14,11 +14,11 @@ final class CardBalanceModel {
 
 extension CardBalanceModel: AppEntity {
     typealias ID = String
-    
+
     var id: String {
         idm
     }
-    
+
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(stringLiteral: name)
     }
@@ -46,7 +46,8 @@ struct CardBalanceQuery: EntityQuery {
     func entities(for ids: [CardBalanceModel.ID]) async throws -> [CardBalanceModel] {
         let savedWidgetData = getSavedWidgetData()
 
-        return savedWidgetData
+        return
+            savedWidgetData
             .filter { ids.contains($0.idm) }
             .map {
                 CardBalanceModel(

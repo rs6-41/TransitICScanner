@@ -28,24 +28,28 @@ enum SavedDataModelContainer {
     static func deleteStore() throws {
         let fileManager = FileManager.default
 
-        guard let containerURL = fileManager.containerURL(
-            forSecurityApplicationGroupIdentifier: StorageConfig.appGroup
-        ) else {
+        guard
+            let containerURL = fileManager.containerURL(
+                forSecurityApplicationGroupIdentifier: StorageConfig.appGroup
+            )
+        else {
             Log.debug("App GroupのURLを取得できません")
             return
         }
 
-        let applicationSupportURL = containerURL
+        let applicationSupportURL =
+            containerURL
             .appendingPathComponent("Library")
             .appendingPathComponent("Application Support")
 
-        let storeURL = applicationSupportURL
+        let storeURL =
+            applicationSupportURL
             .appendingPathComponent("default.store")
 
         let storeFiles = [
             storeURL,
             storeURL.appendingPathExtension("shm"),
-            storeURL.appendingPathExtension("wal")
+            storeURL.appendingPathExtension("wal"),
         ]
 
         for url in storeFiles {
@@ -72,7 +76,7 @@ enum SavedDataModelContainer {
     private static var schema: Schema {
         Schema([
             SavedCard.self,
-            SavedHistory.self
+            SavedHistory.self,
         ])
     }
 
@@ -153,7 +157,7 @@ final class SavedCard {
     var savedAt: Date? = Date.now
 
     var fullLog: String?
-    
+
     var issueInfo: IssueInfo?
 
     @Relationship(
@@ -435,9 +439,11 @@ enum ResultSave {
             )
 
             for history in histories {
-                guard !existingTransactionIDs.contains(
-                    history.transactionId
-                ) else {
+                guard
+                    !existingTransactionIDs.contains(
+                        history.transactionId
+                    )
+                else {
                     continue
                 }
 
@@ -474,13 +480,14 @@ enum ResultSave {
         try modelContext.save()
 
         let saveData = BalanceWidgetModel(
-            DisplayName: info.displayName ?? {
-                #if os(watchOS)
-                info.name
-                #else
-                Localize(info.name)
-                #endif
-            }(),
+            DisplayName: info.displayName
+                ?? {
+                    #if os(watchOS)
+                    info.name
+                    #else
+                    Localize(info.name)
+                    #endif
+                }(),
             balance: result.balance,
             currencyType: result.info?.currencyType,
             idm: info.idm,
@@ -550,10 +557,12 @@ enum ResultSave {
         idm: String,
         from modelContext: ModelContext
     ) throws {
-        guard let card = try loadCard(
-            idm: idm,
-            from: modelContext
-        ) else {
+        guard
+            let card = try loadCard(
+                idm: idm,
+                from: modelContext
+            )
+        else {
             return
         }
 

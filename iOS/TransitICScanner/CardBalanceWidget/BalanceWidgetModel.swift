@@ -1,13 +1,13 @@
 import SwiftUI
 import WidgetKit
 
-struct BalanceWidgetModel: Hashable,Codable {
+struct BalanceWidgetModel: Hashable, Codable {
     var DisplayName: String?
     var balance: Double?
     var currencyType: CurrencyType?
     var idm: String
     var icon: String?
-    var savedAt:Date?
+    var savedAt: Date?
 }
 
 /// Widget 表示用データの保存先（App Group の UserDefaults）
@@ -60,18 +60,18 @@ func getSavedWidgetData() -> [BalanceWidgetModel] {
 
 //未選択
 let notSelectionModel = BalanceWidgetModel(
-    DisplayName:String(localized:"widget.balance.placeholder.notSelection"),
-    balance:0.0,
+    DisplayName: String(localized: "widget.balance.placeholder.notSelection"),
+    balance: 0.0,
     idm: "system.option.notSelection",
-    savedAt:Date.now
+    savedAt: Date.now
 )
 
 //プレースホルダー
 let placeholderModel = BalanceWidgetModel(
-    DisplayName:String(localized:"widget.balance.placeholder.displayName"),
-    balance:5000.0,
-    currencyType:.usd,
+    DisplayName: String(localized: "widget.balance.placeholder.displayName"),
+    balance: 5000.0,
+    currencyType: .usd,
     idm: "PLACEHOLDER",
-    icon:"placeholderCard",
-    savedAt:Date.now
+    icon: "placeholderCard",
+    savedAt: Date.now
 )

@@ -8,38 +8,47 @@ struct AcknowledgmentView: View {
             }
         }
         .navigationTitle(LocalizedStringKey("setting.acknowledgment"))
-        
+
         .contentMargins(.top, 10)
     }
 }
 
 //カード商標
 struct TRView: View {
-    let trItems:[String] = ["apple","google","sony"]
+    let trItems: [String] = ["apple", "google", "sony"]
     @EnvironmentObject var store: CardItemsStore
     var body: some View {
         List {
-            Section(header:Text("setting.acknowledgment.tr.card")) {
+            Section(header: Text("setting.acknowledgment.tr.card")) {
                 ForEach(store.cardItems, id: \.logo) { item in
-                    NavigationLink(destination: Acknowledgment(title:item.name,text:"setting.acknowledgment." + item.scanOption.name)) {
+                    NavigationLink(
+                        destination: Acknowledgment(
+                            title: item.name, text: "setting.acknowledgment." + item.scanOption.name)
+                    ) {
                         Text(LocalizedStringKey(item.name))
                     }
                 }
             }
-            Section(header:Text("setting.acknowledgment.tr.other"),footer: Text("setting.acknowledgment.cardtr.description")) {
+            Section(
+                header: Text("setting.acknowledgment.tr.other"),
+                footer: Text("setting.acknowledgment.cardtr.description")
+            ) {
                 ForEach(trItems, id: \.self) { trItem in
-                    NavigationLink(destination: Acknowledgment(title:"setting.acknowledgment." + trItem + ".title",text:"setting.acknowledgment." + trItem)) {
+                    NavigationLink(
+                        destination: Acknowledgment(
+                            title: "setting.acknowledgment." + trItem + ".title",
+                            text: "setting.acknowledgment." + trItem)
+                    ) {
                         Text(LocalizedStringKey("setting.acknowledgment." + trItem + ".title"))
                     }
                 }
             }
         }
         .navigationTitle(LocalizedStringKey("setting.acknowledgment.cardtr"))
-        
+
         .contentMargins(.top, 10)
     }
 }
-
 
 struct Acknowledgment: View {
     var title: String
@@ -53,7 +62,7 @@ struct Acknowledgment: View {
             }
             .padding()
         }
-        .frame(maxWidth:.infinity,alignment:.leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

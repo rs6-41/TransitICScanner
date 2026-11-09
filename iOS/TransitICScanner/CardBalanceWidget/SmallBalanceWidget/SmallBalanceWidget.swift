@@ -7,7 +7,9 @@ struct SmallBalanceWidget: Widget {
     let kind: String = "com.rs6apps.TransitICScanner.BalanceWidget.small"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: SmallWidgetConfigurationAppIntent.self, provider: SmallBalanceWidgetProvider()) { entry in
+        AppIntentConfiguration(
+            kind: kind, intent: SmallWidgetConfigurationAppIntent.self, provider: SmallBalanceWidgetProvider()
+        ) { entry in
             SmallBalanceWidgetView(entry: entry)
                 .containerBackground(.ultraThinMaterial, for: .widget)
         }

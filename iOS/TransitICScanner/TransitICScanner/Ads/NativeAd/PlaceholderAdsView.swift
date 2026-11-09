@@ -9,15 +9,15 @@ struct PlaceholderAdsView: View {
     @State var callToAction: String?
     @State var url: URL?
     @Environment(\.openURL) var openURL
-    
+
     var body: some View {
         HStack {
             if let icon {
                 Image(uiImage: icon)
                     .resizable()
-                    .frame(width:48,height:48)
+                    .frame(width: 48, height: 48)
             }
-            VStack(alignment:.leading,spacing:0) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text(LocalizedStringKey(headline))
                     .fontWeight(.semibold)
                 Group {
@@ -28,7 +28,7 @@ struct PlaceholderAdsView: View {
                         Text(LocalizedStringKey(advertiser))
                     }
                 }
-                .font(.system(size:12))
+                .font(.system(size: 12))
                 .foregroundStyle(Color.gray)
                 .lineLimit(3)
             }
@@ -39,11 +39,11 @@ struct PlaceholderAdsView: View {
                 }) {
                     Text(LocalizedStringKey(callToAction ?? "ads.placeholder.myapp.button"))
                 }
-                .font(.system(size:14))
+                .font(.system(size: 14))
                 .allowsHitTesting(true)
                 .fontWeight(.semibold)
-                .padding(.vertical,5)
-                .padding(.horizontal,10)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
                 .background(Color.accentColor)
                 .foregroundColor(.white)
                 .cornerRadius(50)

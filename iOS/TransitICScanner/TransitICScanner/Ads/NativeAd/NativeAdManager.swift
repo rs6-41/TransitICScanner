@@ -47,7 +47,7 @@ final class NativeAdManager: NSObject, ObservableObject {
             options: [
                 imageOptions,
                 mediaOptions,
-                viewOptions
+                viewOptions,
             ]
         )
 

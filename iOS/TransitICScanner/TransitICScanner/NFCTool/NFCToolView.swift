@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NFCToolView: View {
-    @Binding var deleteAds:Bool
+    @Binding var deleteAds: Bool
     var body: some View {
         List {
             NavigationLink(destination: NFCLogView()) {

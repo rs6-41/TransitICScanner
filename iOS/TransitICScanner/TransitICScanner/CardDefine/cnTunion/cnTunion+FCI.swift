@@ -42,7 +42,8 @@ extension NFCScannerModel {
                 Int(first & 0x7F)
 
             guard numBytes > 0,
-                  offset + numBytes < bytes.count else {
+                offset + numBytes < bytes.count
+            else {
                 return nil
             }
 
@@ -50,8 +51,7 @@ extension NFCScannerModel {
 
             for i in 1...numBytes {
                 length =
-                    (length << 8) |
-                    Int(bytes[offset + i])
+                    (length << 8) | Int(bytes[offset + i])
             }
 
             return (
@@ -98,10 +98,12 @@ extension NFCScannerModel {
                     return
                 }
 
-                guard let (
-                    length,
-                    lengthBytes
-                ) = parseLength(index) else {
+                guard
+                    let (
+                        length,
+                        lengthBytes
+                    ) = parseLength(index)
+                else {
                     return
                 }
 
@@ -119,7 +121,8 @@ extension NFCScannerModel {
                     )
 
                 if tag.count == 1,
-                   tag[0] == 0x94 {
+                    tag[0] == 0x94
+                {
 
                     let aflBytes =
                         bytes[
@@ -137,8 +140,7 @@ extension NFCScannerModel {
                             let sfi =
                                 aflBytes[i] >> 3
 
-                            if sfi != 0 &&
-                                !sfiList.contains(sfi) {
+                            if sfi != 0 && !sfiList.contains(sfi) {
 
                                 sfiList.append(sfi)
                             }
@@ -151,10 +153,7 @@ extension NFCScannerModel {
                     let tagValue =
                         tag[0]
 
-                    if tagValue == 0x6F ||
-                        tagValue == 0xA5 ||
-                        tagValue == 0xBF ||
-                        tagValue == 0x70 {
+                    if tagValue == 0x6F || tagValue == 0xA5 || tagValue == 0xBF || tagValue == 0x70 {
 
                         parseTLV(
                             index,
@@ -174,10 +173,10 @@ extension NFCScannerModel {
 
         let result =
             sfiList
-                .map {
-                    String($0)
-                }
-                .joined(separator: ", ")
+            .map {
+                String($0)
+            }
+            .joined(separator: ", ")
 
         Log.debug(
             "Parsed SFIs from FCI:",
@@ -190,7 +189,6 @@ extension NFCScannerModel {
 
         return sfiList
     }
-
 
     func cnTunion_parseFCITag(
         _ data: Data,
@@ -225,7 +223,8 @@ extension NFCScannerModel {
                 Int(first & 0x7F)
 
             guard numberOfBytes > 0,
-                  offset + numberOfBytes < end else {
+                offset + numberOfBytes < end
+            else {
                 return nil
             }
 
@@ -234,8 +233,7 @@ extension NFCScannerModel {
             for i in 1...numberOfBytes {
 
                 length =
-                    (length << 8) |
-                    Int(bytes[offset + i])
+                    (length << 8) | Int(bytes[offset + i])
             }
 
             return (
@@ -282,13 +280,15 @@ extension NFCScannerModel {
                     return nil
                 }
 
-                guard let (
-                    length,
-                    lengthBytes
-                ) = parseLength(
-                    index,
-                    end
-                ) else {
+                guard
+                    let (
+                        length,
+                        lengthBytes
+                    ) = parseLength(
+                        index,
+                        end
+                    )
+                else {
                     return nil
                 }
 
@@ -315,13 +315,7 @@ extension NFCScannerModel {
                 }
 
                 let constructed =
-                    tag.count == 1 &&
-                    (
-                        tag[0] == 0x6F ||
-                        tag[0] == 0xA5 ||
-                        tag[0] == 0x70 ||
-                        tag[0] == 0xBF
-                    )
+                    tag.count == 1 && (tag[0] == 0x6F || tag[0] == 0xA5 || tag[0] == 0x70 || tag[0] == 0xBF)
 
                 if constructed {
 
@@ -329,7 +323,8 @@ extension NFCScannerModel {
                         parseTLV(
                             index,
                             index + length
-                        ) {
+                        )
+                    {
 
                         return result
                     }
@@ -346,7 +341,6 @@ extension NFCScannerModel {
             bytes.count
         )
     }
-
 
     func cnTunion_readManagementInfo(
         _ tag: APDUSend,
@@ -372,20 +366,22 @@ extension NFCScannerModel {
 
         fullLog?.append(title)
 
-        guard let (
-            response,
-            sw1,
-            sw2
-        ) = await cnTunion_sendAPDU(
-            tag,
-            ins: 0xB0,
-            p1: p1,
-            p2: p2,
-            data: Data(),
-            le: 0x3C,
-            cla: 0x00,
-            fullLog: fullLog
-        ) else {
+        guard
+            let (
+                response,
+                sw1,
+                sw2
+            ) = await cnTunion_sendAPDU(
+                tag,
+                ins: 0xB0,
+                p1: p1,
+                p2: p2,
+                data: Data(),
+                le: 0x3C,
+                cla: 0x00,
+                fullLog: fullLog
+            )
+        else {
 
             Log.debug(
                 "T-Union SFI 0x17 READ BINARY APDU failed"
@@ -417,7 +413,8 @@ extension NFCScannerModel {
         )
 
         guard sw1 == 0x90,
-              sw2 == 0x00 else {
+            sw2 == 0x00
+        else {
 
             return nil
         }
@@ -429,17 +426,18 @@ extension NFCScannerModel {
         return response
     }
 
-
     func cnTunion_getCityCode(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> String? {
 
-        guard let data =
-            await cnTunion_readManagementInfo(
-                tag,
-                fullLog: fullLog
-            ) else {
+        guard
+            let data =
+                await cnTunion_readManagementInfo(
+                    tag,
+                    fullLog: fullLog
+                )
+        else {
 
             Log.debug(
                 "T-Union city code: SFI 0x17 could not be read"
@@ -460,21 +458,20 @@ extension NFCScannerModel {
 
         let internationalCode =
             bytes[0...3]
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined()
 
         let provinceCode =
             bytes[4...5]
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined()
 
         let cityCodeRaw =
-            (UInt16(bytes[6]) << 8) |
-            UInt16(bytes[7])
+            (UInt16(bytes[6]) << 8) | UInt16(bytes[7])
 
         let cityCode =
             String(
@@ -517,8 +514,7 @@ extension NFCScannerModel {
         if bytes.count >= 10 {
 
             let unionCardType =
-                (UInt16(bytes[8]) << 8) |
-                UInt16(bytes[9])
+                (UInt16(bytes[8]) << 8) | UInt16(bytes[9])
 
             Log.debug(
                 String(
@@ -559,7 +555,6 @@ extension NFCScannerModel {
         return cityCode
     }
 
-
     func cnTunion_getInfoFromFCI(
         _ fci: Data,
         tag: APDUSend,
@@ -576,11 +571,13 @@ extension NFCScannerModel {
             "City Code: \(cityCode)"
         )
 
-        guard let metadata =
-            cnTunion_parseFCITag(
-                fci,
-                targetTag: [0x9F, 0x0C]
-            ) else {
+        guard
+            let metadata =
+                cnTunion_parseFCITag(
+                    fci,
+                    targetTag: [0x9F, 0x0C]
+                )
+        else {
 
             Log.debug(
                 "9F0C not found in FCI"
@@ -638,24 +635,24 @@ extension NFCScannerModel {
 
         let cardNumber =
             cardNumberBytes
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined()
 
         let issueDate =
             issueDateBytes
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined()
 
         let expiryDate =
             expiryDateBytes
-                .map {
-                    String(format: "%02X", $0)
-                }
-                .joined()
+            .map {
+                String(format: "%02X", $0)
+            }
+            .joined()
 
         var version = ""
 
@@ -663,14 +660,15 @@ extension NFCScannerModel {
             cnTunion_parseFCITag(
                 fci,
                 targetTag: [0x9F, 0x08]
-            ) {
+            )
+        {
 
             version =
                 versionData
-                    .map {
-                        String(format: "%02X", $0)
-                    }
-                    .joined()
+                .map {
+                    String(format: "%02X", $0)
+                }
+                .joined()
 
             fullLog?.appendData(
                 "9F08 Version",
@@ -723,7 +721,7 @@ extension NFCScannerModel {
         fullLog?.append(
             "Expiry Date: \(expiryDate)"
         )
-        
+
         let getIssueInfo = cnTunion_getIssueInfo(iin: String(cardNumber))
 
         return ResultCardInfo(
@@ -736,7 +734,9 @@ extension NFCScannerModel {
             version: version,
             validDate:
                 "\(issueDate)-\(expiryDate)",
-            issueInfo: IssueInfo(region:cnTunion.area.rawValue,area:getIssueInfo.area,city:getIssueInfo.city,issuer:getIssueInfo.issuer)
+            issueInfo: IssueInfo(
+                region: cnTunion.area.rawValue, area: getIssueInfo.area, city: getIssueInfo.city,
+                issuer: getIssueInfo.issuer)
         )
     }
 }

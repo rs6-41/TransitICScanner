@@ -23,7 +23,8 @@ enum Log {
     }
 
     private static func logger(_ fileID: String) -> Logger {
-        let category = fileID
+        let category =
+            fileID
             .split(separator: "/")
             .last
             .map { String($0.replacingOccurrences(of: ".swift", with: "")) }

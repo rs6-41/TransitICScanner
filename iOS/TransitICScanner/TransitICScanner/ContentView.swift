@@ -32,17 +32,16 @@ struct ContentView: View {
     @AppStorage("deleteAds") var deleteAds = false
     @AppStorage("adDebug") var adDebug = false
     @AppStorage("cloudSyncEnabled") var isCloudSyncEnabled = true
-    
+
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var ads: AdsModel
-    
+
     @Environment(\.dismiss) private var dismiss
 
     @ObservedObject var smartCardManager: SmartCardManager
-    
-    
+
     @AppStorage("firstPermission") var firstPermission = true
-    
+
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var isDuoOpen = false
     @ObservedObject private var storageError = StorageErrorNotifier.shared
@@ -63,8 +62,7 @@ struct ContentView: View {
         isDuoOpen
         #endif
     }
-    
-    
+
     private var scanTabIcon: String {
         if UIDevice.current.userInterfaceIdiom == .phone {
             "iphone.radiowaves.left.and.right"
@@ -72,7 +70,7 @@ struct ContentView: View {
             "wave.3.right.circle"
         }
     }
-    
+
     var body: some View {
         TabView(selection: $tab) {
             Tab(LocalizedStringKey("tab.scan"), systemImage: scanTabIcon, value: 0) {
@@ -104,11 +102,11 @@ struct ContentView: View {
         .tabViewSidebarBottomBar {
             if showsSidebar && !usesPhoneNavigationBarPicker {
                 VStack(alignment: .leading, spacing: 10) {
-#if targetEnvironment(macCatalyst)
+                    #if targetEnvironment(macCatalyst)
                     Rectangle()
                         .fill(Color.secondary.opacity(0.2))
                         .frame(height: 1)
-#endif
+                    #endif
                     ScanReaderPicker(
                         manager: smartCardManager,
                         showsIconAndText: true
@@ -123,19 +121,20 @@ struct ContentView: View {
         .tabViewStyle(.sidebarAdaptable)
         .iPhoneDuoHinge(value: $isDuoOpen)
         .task {
-                smartCardManager.start()
-            }
+            smartCardManager.start()
+        }
         .alert(
             LocalizedStringKey("error.storage.title"),
             isPresented: $isStorageAlert
         ) {
             Button(LocalizedStringKey("ok")) {}
         } message: {
-            Text(LocalizedStringKey(
-                SavedDataModelContainer.startupState == .localOnly
-                    ? "error.storage.localOnly.message"
-                    : "error.storage.inMemory.message"
-            ))
+            Text(
+                LocalizedStringKey(
+                    SavedDataModelContainer.startupState == .localOnly
+                        ? "error.storage.localOnly.message"
+                        : "error.storage.inMemory.message"
+                ))
         }
         .alert(
             LocalizedStringKey("error.storage.save.title"),
@@ -157,37 +156,41 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $firstPermission) {
-                PermissionModalView(isPresented: $firstPermission)
-                    .interactiveDismissDisabled(true)
-            }
+            PermissionModalView(isPresented: $firstPermission)
+                .interactiveDismissDisabled(true)
+        }
         .sheet(isPresented: $ads.isDeleteAdsSheet) {
-                NavigationStack {
-                    List {
-                        SettingAdsPurchase(deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle, purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert, deleteAds: $deleteAds)
-                            .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
-                                Button(LocalizedStringKey("ok")) {
-                                    ads.purchaseAlertTitle = ""
-                                    ads.purchaseAlertMessage = ""
-                                    ads.isPurchaseAlert = false
-                                    ads.isDeleteAdsSheet = false
-                                }
-                            } message: {
-                                Text(ads.purchaseAlertMessage)
-                            }
+            NavigationStack {
+                List {
+                    SettingAdsPurchase(
+                        deleteAdsPurchaseID: $deleteAdsPurchaseID, purchaseAlertTitle: $ads.purchaseAlertTitle,
+                        purchaseAlertMessage: $ads.purchaseAlertMessage, isPurchaseAlert: $ads.isPurchaseAlert,
+                        deleteAds: $deleteAds
+                    )
+                    .alert(ads.purchaseAlertTitle, isPresented: $ads.isPurchaseAlert) {
+                        Button(LocalizedStringKey("ok")) {
+                            ads.purchaseAlertTitle = ""
+                            ads.purchaseAlertMessage = ""
+                            ads.isPurchaseAlert = false
+                            ads.isDeleteAdsSheet = false
+                        }
+                    } message: {
+                        Text(ads.purchaseAlertMessage)
                     }
-                    .navigationTitle(LocalizedStringKey("ads.delete"))
-                    .toolbar {
-                        ToolbarItem(placement:.cancellationAction){
-                            Button(action: {
-                                dismiss()
-                                ads.isDeleteAdsSheet = false
-                            }) {
-                                Image(systemName:"xmark")
-                            }
+                }
+                .navigationTitle(LocalizedStringKey("ads.delete"))
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: {
+                            dismiss()
+                            ads.isDeleteAdsSheet = false
+                        }) {
+                            Image(systemName: "xmark")
                         }
                     }
                 }
             }
+        }
 
         .onAppear() {
             setup()
@@ -195,13 +198,13 @@ struct ContentView: View {
     }
     private func setup() {
         devSetting = false
-        
+
         switch appEnvironment {
         case .dev:
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             cardItemsStore.cardItems = devCards + featureCards + relCards
             adDebug = true
-            
+
         case .beta:
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             if version != isLaunchVersionFastBeta {
@@ -214,7 +217,7 @@ struct ContentView: View {
             } else {
                 cardItemsStore.cardItems = relCards
             }
-            
+
         case .rel:
             enableCardType = 0
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
@@ -225,9 +228,9 @@ struct ContentView: View {
             }
             cardItemsStore.cardItems = relCards
             adDebug = false
-            
+
         }
-        
+
         #if !targetEnvironment(macCatalyst)
         if adDebug {
             NativeAdUnitIDValue = dev_NativeAdUnitID
@@ -237,17 +240,16 @@ struct ContentView: View {
             BannerUnitIDValue = bannerUnitID
         }
         #endif
-        
-        
-        
+
         // ATT の許可は初回起動時の説明画面(PermissionModalView)から求める。
         // 説明画面を完了済みでまだ未決定の場合（説明画面に ATT がなかった旧バージョンからの更新など）のみここで求める。
         if !firstPermission,
-           ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            ATTrackingManager.trackingAuthorizationStatus == .notDetermined
+        {
             ATTrackingManager.requestTrackingAuthorization { _ in }
         }
     }
-    
+
     func firstLook() {
         versionFirstLook = true
     }

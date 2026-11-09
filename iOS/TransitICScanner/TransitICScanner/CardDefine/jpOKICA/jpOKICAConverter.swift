@@ -20,8 +20,9 @@ enum jpOKICA_Converter {
     ) -> String {
 
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
+            let month = date.month,
+            let day = date.day
+        else {
             return String(localized: "unknown")
         }
 
@@ -41,7 +42,7 @@ enum jpOKICA_Converter {
             return String(localized: "result.history.charge")
 
         case 0x08480000,
-             0x08480400:
+            0x08480400:
             return String(localized: "result.history.charge")
 
         case 0x051F0000:

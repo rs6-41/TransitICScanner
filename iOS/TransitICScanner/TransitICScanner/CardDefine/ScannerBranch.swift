@@ -1,4 +1,3 @@
-
 import SwiftUI
 import Foundation
 import Combine
@@ -11,7 +10,7 @@ final class CardItemsStore: ObservableObject {
 let cardItemsStore = CardItemsStore()
 
 let devCards: [CardInfo] = [
-    spFlashPay, idKMT
+    spFlashPay, idKMT,
 ]
 
 let featureCards: [CardInfo] = []
@@ -19,7 +18,7 @@ let featureCards: [CardInfo] = []
 let relCards: [CardInfo] = [
     jpIC, jpIC_SAPICA, jpIC_IruCa, cnTunion, hkOctopus, krOneCard,
     twICash, jpNplus, jpIC_icsca, twEasyCard_old, jpDoCard, jpOKICA,
-    usClipper, jpRapica
+    usClipper, jpRapica,
 ]
 
 extension NFCScannerModel {
@@ -28,7 +27,7 @@ extension NFCScannerModel {
     func switchCard(id: CardID, _ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
+            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             scanFeliCa(id: id, tag, session)
         case .cnTunion:
             self.cnTunion_scan(tag, session)
@@ -55,7 +54,7 @@ extension NFCScannerModel {
 
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
+            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             try await scanFeliCaExternal(id: id, using: manager)
         case .usClipper:
             try await usClipper_scanExternal(using: manager)
@@ -93,7 +92,7 @@ extension NFCScannerModel {
         case .idKMT:
             await idKMT_read(felicaTag)
         case .cnTunion, .krOneCard, .twICash, .usClipper,
-             .twEasyCard_old, .spFlashPay:
+            .twEasyCard_old, .spFlashPay:
             nil
         }
     }
@@ -107,10 +106,12 @@ extension NFCScannerModel {
         }
 
         Task { @MainActor in
-            guard let result = await self.readFeliCa(
-                id: id,
-                CoreNFCFeliCaTag(tag: felicaTag)
-            ) else {
+            guard
+                let result = await self.readFeliCa(
+                    id: id,
+                    CoreNFCFeliCaTag(tag: felicaTag)
+                )
+            else {
                 session.invalidate(
                     errorMessage: String(localized: "scanner.coreNFC.scanning.error.read")
                 )

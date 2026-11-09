@@ -4,12 +4,12 @@ import SwiftUI
 struct SmallBalanceWidgetView: View {
     var entry: SmallBalanceWidgetProvider.Entry
     var body: some View {
-        VStack(alignment:.leading) {
+        VStack(alignment: .leading) {
             Text(entry.model.DisplayName ?? "unknown")
                 .bold()
             Text(String(entry.model.balance ?? 0))
             Spacer()
         }
-        .frame(maxWidth:.infinity)
+        .frame(maxWidth: .infinity)
     }
 }
