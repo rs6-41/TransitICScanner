@@ -10,6 +10,7 @@ enum areaType: String,CaseIterable {
     case kp = "cardList.area.kp"
     case us = "cardList.area.us"
     case sg = "cardList.area.sg"
+    case id = "cardList.area.id"
     
     //ソート名（doc/sortName.md参照）
     func sortName() -> String {
@@ -23,6 +24,7 @@ enum areaType: String,CaseIterable {
             case .kp: return "cardList.area.kp.sortName"
             case .us: return "cardList.area.us.sortName"
             case .sg: return "cardList.area.sg.sortName"
+            case .id: return "cardList.area.id.sortName"
         }
     }
     
@@ -37,6 +39,7 @@ enum areaType: String,CaseIterable {
             case .kp: return .eastAsia
             case .us: return .northAmerica
             case .sg: return .southEastAsia
+            case .id: return .southEastAsia
         }
     }
 }
@@ -114,6 +117,7 @@ enum currencyType: String, CaseIterable,Codable {
     case kpw
     case usd
     case sgd // シンガポールドル
+    case idr // インドネシア・ルピア
     
     func getLocalize(_ price:String) -> LocalizedStringKey {
         switch self {
@@ -125,6 +129,7 @@ enum currencyType: String, CaseIterable,Codable {
             case .kpw: return "currency.kpw.\(price)"
             case .usd: return "currency.usd.\(price)"
             case .sgd: return "currency.sgd.\(price)"
+            case .idr: return "currency.idr.\(price)"
         }
     }
 }
