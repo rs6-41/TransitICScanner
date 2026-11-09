@@ -14,9 +14,12 @@ struct SavedListView: View {
 
     @State private var narrow = "all"
     @State private var sort = "dateDescending"
+    // 画面遷移（regular 幅：分割表示の詳細列）
     @State private var selectedCardID: PersistentIdentifier?
-    @State private var selectedResult: Result?
-    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+    @State private var selectedResult: ScanResult?
+
+    // 画面遷移（compact 幅：プッシュ遷移）
+    @State private var compactPath: [ScanResult] = []
 
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
@@ -24,10 +27,6 @@ struct SavedListView: View {
         #else
         horizontalSizeClass == .regular
         #endif
-    }
-
-    private var sidebarSelection: Binding<PersistentIdentifier?>? {
-        showsSidebar ? nil : $selectedCardID
     }
 
     private var filteredCards: [SavedCard] {
@@ -46,9 +45,10 @@ struct SavedListView: View {
                 let name = card.name
                 let nameShort = card.nameShort
                 let displayName = cardResult.info?.displayName ?? ""
-                let type = cardResult.info.map {
-                    cardResult.converter.cardInfo($0).type
-                } ?? ""
+                let type =
+                    cardResult.info.map {
+                        cardResult.converter.cardInfo($0).type
+                    } ?? ""
 
                 return name.localizedCaseInsensitiveContains(searchText)
                     || nameShort.localizedCaseInsensitiveContains(searchText)
@@ -84,7 +84,7 @@ struct SavedListView: View {
 
     private var narrowItems: [(String, String)] {
         var items: [(String, String)] = [
-            ("all", String(localized:"tab.history.narrow.all"))
+            ("all", String(localized: "tab.history.narrow.all"))
         ]
 
         let cardTypes = Dictionary(
@@ -134,21 +134,23 @@ struct SavedListView: View {
                     detailColumn
                 }
             } else {
-                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+                // iPhone：一覧から結果画面へプッシュ遷移する
+                NavigationStack(path: $compactPath) {
                     savedCardList
-                } detail: {
-                    detailColumn
+                        .navigationDestination(for: ScanResult.self) { result in
+                            savedResultView(result)
+                        }
                 }
             }
         }
     }
 
     private var savedCardList: some View {
-        List(selection: sidebarSelection) {
+        List {
             Group {
-#if !targetEnvironment(macCatalyst)
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-#endif
+                #endif
                 Section {
                     HStack(spacing: 8) {
                         Menu {
@@ -168,7 +170,7 @@ struct SavedListView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
-                        
+
                         Menu {
                             Picker(
                                 "tab.history.sort",
@@ -184,23 +186,26 @@ struct SavedListView: View {
                                     .tag("nameDescending")
                             }
                         } label: {
-                            let sortKey: String = switch sort {
-                            case "dateAscending": "tab.history.sort.old"
-                            case "nameAscending": "tab.history.sort.name"
-                            case "nameDescending": "tab.history.sort.name.desc"
-                            default: "tab.history.sort.new"
-                            }
+                            let sortKey: String =
+                                switch sort {
+                                case "dateAscending": "tab.history.sort.old"
+                                case "nameAscending": "tab.history.sort.name"
+                                case "nameDescending": "tab.history.sort.name.desc"
+                                default: "tab.history.sort.new"
+                                }
                             pickerLabel(sortKey)
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
                     }
-                    .listRowInsets(EdgeInsets(
-                        top: 8,
-                        leading: horizontalSizeClass == .regular ? 0 : 16,
-                        bottom: 8,
-                        trailing: horizontalSizeClass == .regular ? 0 : 16
-                    ))
+                    .listRowInsets(
+                        EdgeInsets(
+                            top: 8,
+                            leading: horizontalSizeClass == .regular ? 0 : 16,
+                            bottom: 8,
+                            trailing: horizontalSizeClass == .regular ? 0 : 16
+                        )
+                    )
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                 }
@@ -216,9 +221,7 @@ struct SavedListView: View {
                             let result = card.result()
 
                             Button {
-                                selectedCardID = card.persistentModelID
-                                selectedResult = card.result()
-                                preferredCompactColumn = .detail
+                                open(card)
                             } label: {
                                 HStack {
                                     let iconName = result.info?.iconName
@@ -250,7 +253,8 @@ struct SavedListView: View {
                                                 .foregroundStyle(.secondary)
 
                                         } else if let info = result.info,
-                                                  !result.converter.cardInfo(info).type.isEmpty {
+                                            !result.converter.cardInfo(info).type.isEmpty
+                                        {
                                             Text(
                                                 LocalizedStringKey(
                                                     result.converter.cardInfo(info).type
@@ -283,14 +287,13 @@ struct SavedListView: View {
                                         }
                                     }
                                 }
-#if targetEnvironment(macCatalyst)
+                                #if targetEnvironment(macCatalyst)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 8)
-#endif
+                                #endif
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
-                            .tag(card.persistentModelID)
                         }
                         .onDelete(perform: deleteCards)
                     }
@@ -305,11 +308,16 @@ struct SavedListView: View {
             if narrow != "all" && !narrowItems.contains(where: { $0.0 == narrow }) {
                 narrow = "all"
             }
+            // 表示中のカードが削除された場合は一覧に戻る
             if let selectedCardID,
-               !cards.contains(where: { $0.persistentModelID == selectedCardID }) {
+                !cards.contains(where: { $0.persistentModelID == selectedCardID })
+            {
                 self.selectedCardID = nil
                 selectedResult = nil
-                preferredCompactColumn = .sidebar
+            }
+            let savedIDms = Set(cards.map(\.idm))
+            if compactPath.contains(where: { !savedIDms.contains($0.info?.idm ?? "") }) {
+                compactPath.removeAll()
             }
         }
         .navigationTitle("tab.history")
@@ -322,20 +330,34 @@ struct SavedListView: View {
     @ViewBuilder
     private var detailColumn: some View {
         if let selectedResult {
-            ResultView(
-                result: selectedResult,
-                scandata: false,
-                saveListID: $saveListID,
-                deleteAds: $deleteAds,
-                embedsNavigationStack: false
-            )
-            .id(selectedCardID)
+            savedResultView(selectedResult)
+                .id(selectedCardID)
         } else {
             EmptyViewSideBar(
                 title: "history.select.empty",
                 icon: "filemenu.and.pointer.arrow",
                 description: "history.select.empty.description"
             )
+        }
+    }
+
+    private func savedResultView(_ result: ScanResult) -> some View {
+        ResultView(
+            result: result,
+            scandata: false,
+            saveListID: $saveListID,
+            deleteAds: $deleteAds,
+            embedsNavigationStack: false
+        )
+    }
+
+    /// 保存済みカードを開く
+    private func open(_ card: SavedCard) {
+        if showsSidebar {
+            selectedCardID = card.persistentModelID
+            selectedResult = card.result()
+        } else {
+            compactPath = [card.result()]
         }
     }
 
@@ -351,14 +373,15 @@ struct SavedListView: View {
     }
 
     private func deleteCards(at offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(filteredCards[index])
-        }
+        // ResultSave.deleteCard を使い、Widget のデータからも削除する
+        let idms = offsets.map { filteredCards[$0].idm }
 
         do {
-            try modelContext.save()
+            for idm in idms {
+                try ResultSave.deleteCard(idm: idm, from: modelContext)
+            }
         } catch {
-            print("保存データの削除に失敗しました: \(error)")
+            StorageErrorNotifier.shared.report(error, operation: "保存データの削除")
         }
     }
 }

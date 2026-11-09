@@ -5,37 +5,41 @@ import CoreNFC
 let twICash = CardInfo(
     logo: "twICash",
     name: "cardList.twICash",
-    sortName:"cardList.twICash.sortName",
+    sortName: "cardList.twICash.sortName",
     area: .tw,
     countryCode: ["tw"],
     prefectures: nil,
     regionOption: nil,
-    description:"cardList.twICash.description",
-    scand_description: "twICash.scand.description",
-    searchWords: ["cardList.area.tw","aijinka","ㄞˋㄐㄧㄣㄎㄚˇ"],
+    description: "cardList.twICash.description",
+    scannedDescription: "twICash.scand.description",
+    searchWords: ["cardList.area.tw", "aijinka", "ㄞˋㄐㄧㄣㄎㄚˇ"],
     scanOption: ScanOption(
-        name: "twICash",
-        nameShort:"twICash.short",
+        id: .twICash,
+        nameShort: "twICash.short",
         scanType: .nfc,
         pollingOption: [.iso14443],
         felicaSystemCodes: nil,
         historyCount: 20,
-        currencyType:.ntd,
+        currencyType: .ntd,
         converter: .twICash,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
-            balance:980.0,
-            idm:"7311235747421931",
-            type:"",
+            balance: 980.0,
+            idm: "7311235747421931",
+            type: "",
             history: [
-            //TODO: 駅コード例を調べる（暫定的に全て1111）
-            // 2: +500TWD 高速鉄道でチャージ 残高1000RMB 2025/19/23 19:21
-            ResultHistory(processType: 0x00,date: sampleDay2,balance: 1000,amount: 500,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 151,mappingID: "THR"),
-            // 3: 20TWD 台北メトロ改札 残高980RMB 2026/1/3 12:58
-            ResultHistory(processType: 0x00,date: sampleDay3,balance: 980,amount: 20,lineIn: 0x11,stationIn: 0x11,lineOut: 0x11,stationOut: 0x11,transactionId: 152,mappingID: "TRT"),
+                //TODO: 駅コード例を調べる（暫定的に全て1111）
+                // 2: +500TWD 高速鉄道でチャージ 残高1000RMB 2025/19/23 19:21
+                ResultHistory(
+                    processType: 0x00, date: sampleDay2, balance: 1000, amount: 500, lineIn: 0x11, stationIn: 0x11,
+                    lineOut: 0x11, stationOut: 0x11, transactionId: 151, mappingID: "THR"),
+                // 3: 20TWD 台北メトロ改札 残高980RMB 2026/1/3 12:58
+                ResultHistory(
+                    processType: 0x00, date: sampleDay3, balance: 980, amount: 20, lineIn: 0x11, stationIn: 0x11,
+                    lineOut: 0x11, stationOut: 0x11, transactionId: 152, mappingID: "TRT"),
             ]
         )
 )
@@ -46,7 +50,7 @@ extension NFCScannerModel {
         _ session: NFCTagReaderSession
     ) {
         guard case let .iso7816(isoTag) = tag else {
-            session.invalidate(errorMessage: "Not ISO7816 tag")
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
             return
         }
 
@@ -66,12 +70,9 @@ extension NFCScannerModel {
             do {
                 let result = try await twICash_result(using: send)
 
-                await MainActor.run {
-                    self.result = result
-                    session.invalidate()
-                }
+                await self.completeScan(result, session: session)
             } catch {
-                print(
+                Log.debug(
                     "iCash 2.0 scan error:",
                     error.localizedDescription
                 )
@@ -92,17 +93,17 @@ extension NFCScannerModel {
         await MainActor.run { self.result = result }
     }
 
-    private func twICash_result(using send: @escaping APDUSend) async throws -> Result {
+    private func twICash_result(using send: @escaping APDUSend) async throws -> ScanResult {
         let reader = ICash2Reader(send: send)
         let readResult = try await reader.readCard()
 
-        print("===== iCash 2.0 =====")
-        print("Card Number:", readResult.cardNumber)
-        print("Balance:", readResult.balance)
-        print("Record Count:", readResult.records.count)
+        Log.debug("===== iCash 2.0 =====")
+        Log.debug("Card Number:", readResult.cardNumber)
+        Log.debug("Balance:", readResult.balance)
+        Log.debug("Record Count:", readResult.records.count)
 
         for record in readResult.records {
-            print(
+            Log.debug(
                 "iCash Record:",
                 "date=\(String(describing: record.date))",
                 "mappingID=\(record.mappingID)",
@@ -125,17 +126,17 @@ extension NFCScannerModel {
             serial: readResult.cardNumber,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region: twICash.area.rawValue, issuer: "issue.tw.issuer.icash")
+            issueInfo: IssueInfo(region: twICash.area.rawValue, issuer: "issue.tw.issuer.icash")
         )
 
-        return Result(
+        return ScanResult(
             balance: Double(readResult.balance),
             isHistory: !history.isEmpty,
             history: history,
             info: info,
             converter: twICash.scanOption.converter,
             isLastHide: false,
-            description: twICash.scand_description,
+            description: twICash.scannedDescription,
             savedAt: Date.now
         )
     }
@@ -154,9 +155,10 @@ extension NFCScannerModel {
 
             return twICash_transactionID(
                 record: $0
-            ) > twICash_transactionID(
-                record: $1
             )
+                > twICash_transactionID(
+                    record: $1
+                )
         }
 
         var currentHistoricalBalance = currentBalance
@@ -203,9 +205,11 @@ extension NFCScannerModel {
             identifier: .gregorian
         )
 
-        guard let timeZone = TimeZone(
-            identifier: "Asia/Taipei"
-        ) else {
+        guard
+            let timeZone = TimeZone(
+                identifier: "Asia/Taipei"
+            )
+        else {
             return DateComponents()
         }
 
@@ -218,7 +222,7 @@ extension NFCScannerModel {
                 .day,
                 .hour,
                 .minute,
-                .second
+                .second,
             ],
             from: date
         )
@@ -313,10 +317,8 @@ final class ICash2Reader {
         }
 
         let balance =
-            Int32(balanceData[0]) |
-            (Int32(balanceData[1]) << 8) |
-            (Int32(balanceData[2]) << 16) |
-            (Int32(balanceData[3]) << 24)
+            Int32(balanceData[0]) | (Int32(balanceData[1]) << 8) | (Int32(balanceData[2]) << 16)
+            | (Int32(balanceData[3]) << 24)
 
         let recordsData = try await readRecentRecords()
         let records = parseRecentRecords(recordsData)
@@ -337,7 +339,7 @@ final class ICash2Reader {
             data: Data([
                 0x11,
                 0x87,
-                0x16
+                0x16,
             ]),
             expectedResponseLength: 256
         )
@@ -356,7 +358,7 @@ final class ICash2Reader {
             0x00,
             length,
             0x00,
-            0x00
+            0x00,
         ])
 
         let response = try await transmit(
@@ -410,7 +412,7 @@ final class ICash2Reader {
             0x00,
             0x00,
             0x00,
-            0x00
+            0x00,
         ])
 
         var response = try await transmit(
@@ -425,8 +427,7 @@ final class ICash2Reader {
         var result = Data()
         result.append(response.data)
 
-        while response.statusWord1 == 0x91 &&
-              response.statusWord2 == 0xAF {
+        while response.statusWord1 == 0x91 && response.statusWord2 == 0xAF {
             response = try await transmit(
                 instructionClass: 0x90,
                 instructionCode: 0xAF,
@@ -439,8 +440,7 @@ final class ICash2Reader {
             result.append(response.data)
         }
 
-        guard response.statusWord1 == 0x91 &&
-              response.statusWord2 == 0x00 else {
+        guard response.statusWord1 == 0x91 && response.statusWord2 == 0x00 else {
             throw ICash2ReaderError.unexpectedStatus(
                 response.statusWord1,
                 response.statusWord2
@@ -494,8 +494,7 @@ final class ICash2Reader {
     private func checkStatus(
         _ response: Response
     ) throws {
-        guard response.statusWord1 == 0x91 &&
-              response.statusWord2 == 0x00 else {
+        guard response.statusWord1 == 0x91 && response.statusWord2 == 0x00 else {
             throw ICash2ReaderError.unexpectedStatus(
                 response.statusWord1,
                 response.statusWord2
@@ -531,14 +530,15 @@ final class ICash2Reader {
 
             let date = parseRecordDate(recordData)
 
-            let mappingID = String(
-                bytes: [
-                    recordData[19],
-                    recordData[20],
-                    recordData[21]
-                ],
-                encoding: .ascii
-            ) ?? ""
+            let mappingID =
+                String(
+                    bytes: [
+                        recordData[19],
+                        recordData[20],
+                        recordData[21],
+                    ],
+                    encoding: .ascii
+                ) ?? ""
 
             let dealerBytes = Data(
                 recordData[22...32]
@@ -624,16 +624,17 @@ final class ICash2Reader {
         )
 
         guard year >= 1,
-              month >= 1,
-              month <= 12,
-              day >= 1,
-              day <= 31,
-              hour >= 0,
-              hour <= 23,
-              minute >= 0,
-              minute <= 59,
-              second >= 0,
-              second <= 59 else {
+            month >= 1,
+            month <= 12,
+            day >= 1,
+            day <= 31,
+            hour >= 0,
+            hour <= 23,
+            minute >= 0,
+            minute <= 59,
+            second >= 0,
+            second <= 59
+        else {
             return nil
         }
 
@@ -641,9 +642,11 @@ final class ICash2Reader {
             identifier: .gregorian
         )
 
-        guard let timeZone = TimeZone(
-            identifier: "Asia/Taipei"
-        ) else {
+        guard
+            let timeZone = TimeZone(
+                identifier: "Asia/Taipei"
+            )
+        else {
             return nil
         }
 
@@ -684,7 +687,8 @@ final class ICash2Reader {
     private func decimalValueFromHexBytes(
         _ bytes: UInt8...
     ) -> Int {
-        let hexString = bytes
+        let hexString =
+            bytes
             .map {
                 String(
                     format: "%02X",

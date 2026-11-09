@@ -58,7 +58,8 @@ struct NFCLogView: View {
                                     spacing: 3
                                 ) {
                                     if let displayName = card.displayName,
-                                       !displayName.isEmpty {
+                                        !displayName.isEmpty
+                                    {
                                         Text(
                                             LocalizedStringKey(displayName)
                                         )
@@ -109,7 +110,7 @@ struct NFCLogView: View {
 struct NFCLogDetailView: View {
     let card: SavedCard
 
-    private var result: Result {
+    private var result: ScanResult {
         card.result()
     }
 
@@ -154,11 +155,12 @@ struct NFCLogDetailView: View {
     }
 
     private var fileName: String {
-        let sanitizedName = card.name
+        let sanitizedName =
+            card.name
             .replacingOccurrences(of: "/", with: "_")
             .replacingOccurrences(of: "\\", with: "_")
             .replacingOccurrences(of: ":", with: "_")
-        + "_" + String(card.idm)
+            + "_" + String(card.idm)
 
         return "\(sanitizedName)_NFCLog.txt"
     }

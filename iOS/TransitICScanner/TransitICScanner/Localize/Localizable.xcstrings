@@ -11,6 +11,7 @@
       "shouldTranslate" : false
     },
     "ads" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -39,6 +40,7 @@
       }
     },
     "ads.delete" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -67,6 +69,7 @@
       }
     },
     "ads.placeholder.myapp.button" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -95,6 +98,7 @@
       }
     },
     "ads.placeholder.myapp.IMGPiper.body" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -123,6 +127,7 @@
       }
     },
     "ads.placeholder.myapp.IMGPiper.title" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -151,6 +156,7 @@
       }
     },
     "ads.placeholder.myapp.Replacer.body" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -179,6 +185,7 @@
       }
     },
     "ads.placeholder.myapp.Replacer.title" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -207,6 +214,7 @@
       }
     },
     "ads.placeholder.myapp.webp.body" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -235,6 +243,7 @@
       }
     },
     "ads.placeholder.myapp.webp.title" : {
+      "comment" : "Ads",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -263,6 +272,7 @@
       }
     },
     "appName" : {
+      "comment" : "App Name",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -272,25 +282,26 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "世界IC残高確認"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
         }
       }
     },
     "appName.short" : {
+      "comment" : "App Name (watchOS)",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -404,6 +415,7 @@
       }
     },
     "card.Asaca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -433,6 +445,7 @@
       }
     },
     "card.company.jr" : {
+      "comment" : "Issuer Company Name\n発行企業名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -462,6 +475,7 @@
       }
     },
     "card.company.kotoden" : {
+      "comment" : "Issuer Company Name\n発行企業名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -491,6 +505,7 @@
       }
     },
     "card.default" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -520,6 +535,7 @@
       }
     },
     "card.DoCard" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -549,6 +565,7 @@
       }
     },
     "card.ezl" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -578,6 +595,7 @@
       }
     },
     "card.hayakaken" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -607,6 +625,7 @@
       }
     },
     "card.hkOctopus" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -636,6 +655,7 @@
       }
     },
     "card.hongkong_tunion" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -665,6 +685,7 @@
       }
     },
     "card.icoca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -694,6 +715,7 @@
       }
     },
     "card.icsca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -723,6 +745,7 @@
       }
     },
     "card.IruCa" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -752,6 +775,7 @@
       }
     },
     "card.iwasaki" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -781,6 +805,7 @@
       }
     },
     "card.jpNplus" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -810,6 +835,7 @@
       }
     },
     "card.kcash" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -839,6 +865,7 @@
       }
     },
     "card.KMT" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -868,6 +895,7 @@
       }
     },
     "card.manaca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -897,6 +925,7 @@
       }
     },
     "card.moiba" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -926,6 +955,7 @@
       }
     },
     "card.nimoca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -955,6 +985,7 @@
       }
     },
     "card.OKICA" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -984,6 +1015,7 @@
       }
     },
     "card.pasmo" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1013,6 +1045,7 @@
       }
     },
     "card.phone" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1042,6 +1075,7 @@
       }
     },
     "card.railplus" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1071,6 +1105,7 @@
       }
     },
     "card.rapica" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1100,6 +1135,7 @@
       }
     },
     "card.SAPICA" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1129,6 +1165,7 @@
       }
     },
     "card.snapper" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1158,6 +1195,7 @@
       }
     },
     "card.sugoca" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1187,6 +1225,7 @@
       }
     },
     "card.suica" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1216,6 +1255,7 @@
       }
     },
     "card.tmoney" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1245,6 +1285,7 @@
       }
     },
     "card.toica" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1274,6 +1315,7 @@
       }
     },
     "card.twEasyCard_old" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1303,6 +1345,7 @@
       }
     },
     "card.twICash" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1332,6 +1375,7 @@
       }
     },
     "card.usClipper" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1361,6 +1405,7 @@
       }
     },
     "card.web.twEasyCard_old" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1390,6 +1435,7 @@
       }
     },
     "card.web.twEasyCard_old.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1418,6 +1464,7 @@
       }
     },
     "card.web.twiPass_old" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1447,6 +1494,7 @@
       }
     },
     "cardList.allCards" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1475,6 +1523,7 @@
       }
     },
     "cardList.area.cn" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1504,6 +1553,7 @@
       }
     },
     "cardList.area.cn.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1533,6 +1583,7 @@
       }
     },
     "cardList.area.hk" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1562,6 +1613,7 @@
       }
     },
     "cardList.area.hk.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1591,6 +1643,7 @@
       }
     },
     "cardList.area.id" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1620,6 +1673,7 @@
       }
     },
     "cardList.area.jp" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1649,6 +1703,7 @@
       }
     },
     "cardList.area.jp.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1678,6 +1733,7 @@
       }
     },
     "cardList.area.kp" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1707,6 +1763,7 @@
       }
     },
     "cardList.area.kr" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1736,6 +1793,7 @@
       }
     },
     "cardList.area.kr.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1765,6 +1823,7 @@
       }
     },
     "cardList.area.mo" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1794,6 +1853,7 @@
       }
     },
     "cardList.area.mo.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1823,6 +1883,7 @@
       }
     },
     "cardList.area.sg" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1852,6 +1913,7 @@
       }
     },
     "cardList.area.tw" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1881,6 +1943,7 @@
       }
     },
     "cardList.area.tw.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1910,6 +1973,7 @@
       }
     },
     "cardList.area.us" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1939,6 +2003,7 @@
       }
     },
     "cardList.cnTunion" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1968,6 +2033,7 @@
       }
     },
     "cardList.cnTunion.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1996,6 +2062,7 @@
       }
     },
     "cardList.cnTunion.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2187,6 +2254,7 @@
       }
     },
     "cardList.hkOctopus" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2216,6 +2284,7 @@
       }
     },
     "cardList.hkOctopus.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2245,6 +2314,7 @@
       }
     },
     "cardList.hkOctopus.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2274,6 +2344,7 @@
       }
     },
     "cardList.idKMT" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2303,6 +2374,7 @@
       }
     },
     "cardList.idKMT.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2332,6 +2404,7 @@
       }
     },
     "cardList.jpDoCard" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2361,6 +2434,7 @@
       }
     },
     "cardList.jpDoCard.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2390,6 +2464,7 @@
       }
     },
     "cardList.jpIC" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2419,6 +2494,7 @@
       }
     },
     "cardList.jpIC_icsca" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2448,6 +2524,7 @@
       }
     },
     "cardList.jpIC_icsca.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2477,6 +2554,7 @@
       }
     },
     "cardList.jpIC_icsca.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2506,6 +2584,7 @@
       }
     },
     "cardList.jpIC_IruCa" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2535,6 +2614,7 @@
       }
     },
     "cardList.jpIC_IruCa.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2564,6 +2644,7 @@
       }
     },
     "cardList.jpIC_IruCa.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2593,6 +2674,7 @@
       }
     },
     "cardList.jpIC_SAPICA" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2622,6 +2704,7 @@
       }
     },
     "cardList.jpIC_SAPICA.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2651,6 +2734,7 @@
       }
     },
     "cardList.jpIC_SAPICA.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2680,6 +2764,7 @@
       }
     },
     "cardList.jpIC.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2709,6 +2794,7 @@
       }
     },
     "cardList.jpIC.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2738,6 +2824,7 @@
       }
     },
     "cardList.jpNplus" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2767,6 +2854,7 @@
       }
     },
     "cardList.jpNplus.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2796,6 +2884,7 @@
       }
     },
     "cardList.jpNplus.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2825,6 +2914,7 @@
       }
     },
     "cardList.jpOKICA" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2854,6 +2944,7 @@
       }
     },
     "cardList.jpOKICA.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2883,6 +2974,7 @@
       }
     },
     "cardList.jpOKICA.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2894,7 +2986,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "OKICA"
+            "value" : "okica"
           }
         },
         "zh-Hans" : {
@@ -2912,6 +3004,7 @@
       }
     },
     "cardList.jpRapica" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2941,6 +3034,7 @@
       }
     },
     "cardList.jpRapica.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2952,7 +3046,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "鹿児島の共通交通系ICカードです。"
+            "value" : "鹿児島の共通交通系ICカード"
           }
         },
         "zh-Hans" : {
@@ -2970,6 +3064,7 @@
       }
     },
     "cardList.krOneCard" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2999,6 +3094,7 @@
       }
     },
     "cardList.krOneCard.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3027,6 +3123,7 @@
       }
     },
     "cardList.krOneCard.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3422,6 +3519,7 @@
       }
     },
     "cardList.sort.locate_ascend" : {
+      "comment" : "Scan list's sort\nスキャン一覧のソート",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3451,6 +3549,7 @@
       }
     },
     "cardList.sort.locate_descend" : {
+      "comment" : "Scan list's sort\nスキャン一覧のソート",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3480,6 +3579,7 @@
       }
     },
     "cardList.sort.name_ascend" : {
+      "comment" : "Scan list's sort\nスキャン一覧のソート",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3509,6 +3609,7 @@
       }
     },
     "cardList.sort.name_descend" : {
+      "comment" : "Scan list's sort\nスキャン一覧のソート",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3566,6 +3667,7 @@
       }
     },
     "cardList.twEasyCard_old.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3595,6 +3697,7 @@
       }
     },
     "cardList.twICash" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3624,6 +3727,7 @@
       }
     },
     "cardList.twICash.description" : {
+      "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3653,6 +3757,7 @@
       }
     },
     "cardList.twICash.sortName" : {
+      "comment" : "Sorting Localize",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3682,6 +3787,7 @@
       }
     },
     "cardList.usClipper" : {
+      "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3740,6 +3846,7 @@
       }
     },
     "cnTunion.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3797,17 +3904,18 @@
       }
     },
     "currency.idr.%@" : {
+      "comment" : "Currency: Indonesian rupiah\n通貨: インドネシア・ルピー",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rp. %@"
+            "value" : "%@ Rp."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ ルピー"
+            "value" : "%@ Rp."
           }
         },
         "zh-Hans" : {
@@ -3818,13 +3926,14 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Rp. %@"
           }
         }
       }
     },
     "currency.jpy.%@" : {
+      "comment" : "Currency: Japanese Yen\n通貨: 日本円",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3853,6 +3962,7 @@
       }
     },
     "currency.kpw.%@" : {
+      "comment" : "Currency: North Korea won\n通貨: 朝鮮ウォン",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3881,6 +3991,7 @@
       }
     },
     "currency.krw.%@" : {
+      "comment" : "Currency: South Korea won\n通貨: 韓国ウォン",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3937,6 +4048,7 @@
       }
     },
     "currency.rmb.%@" : {
+      "comment" : "Currency: Chinese Yuan\n通貨: 人民元",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3965,6 +4077,7 @@
       }
     },
     "currency.sgd.%@" : {
+      "comment" : "Currency: Singapore Dollar\n通貨: シンガポールドル",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3993,6 +4106,7 @@
       }
     },
     "currency.usd.%@" : {
+      "comment" : "Currency: US Dollar\n通貨: 米ドル",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4274,7 +4388,6 @@
       }
     },
     "error.smartCardReader.felicaInfoService" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4526,7 +4639,124 @@
         }
       }
     },
+    "error.storage.inMemory.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved data could not be opened. Cards scanned now will not be kept after the app is closed. Please restart the app or update to the latest version."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存データを開けませんでした。今スキャンしたカードはアプリを終了すると保存されません。アプリを再起動するか、最新版にアップデートしてください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开已保存的数据。现在扫描的卡片在关闭应用后不会被保存。请重新启动应用或更新到最新版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟已儲存的資料。現在掃描的卡片在關閉App後不會被保存。請重新啟動App或更新至最新版本。"
+          }
+        }
+      }
+    },
+    "error.storage.localOnly.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud sync could not be started, so cards are being saved on this device only for now. Please restart the app later."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同期を開始できなかったため、現在はこの端末にのみ保存しています。しばらくしてからアプリを再起動してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法启动iCloud同步，目前仅保存在此设备上。请稍后重新启动应用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法啟動iCloud同步，目前僅儲存在此裝置上。請稍後重新啟動App。"
+          }
+        }
+      }
+    },
+    "error.storage.save.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could Not Save Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データを保存できませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法保存数据"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法儲存資料"
+          }
+        }
+      }
+    },
+    "error.storage.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to Open Saved Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存データを開けませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开已保存的数据"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟已儲存的資料"
+          }
+        }
+      }
+    },
     "form.birthday.day" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4555,6 +4785,7 @@
       }
     },
     "form.birthday.description" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4583,6 +4814,7 @@
       }
     },
     "form.birthday.month" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4611,6 +4843,7 @@
       }
     },
     "form.birthday.title" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4639,6 +4872,7 @@
       }
     },
     "form.captcha" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4667,6 +4901,7 @@
       }
     },
     "form.captcha.title" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4695,6 +4930,7 @@
       }
     },
     "form.card.description" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4723,6 +4959,7 @@
       }
     },
     "form.card.title" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4751,6 +4988,7 @@
       }
     },
     "form.description.scraping.easycard" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4779,6 +5017,7 @@
       }
     },
     "form.done" : {
+      "comment" : "Scraping Form\nスクレイピングフォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4835,6 +5074,7 @@
       }
     },
     "hkOctopus.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4864,6 +5104,7 @@
       }
     },
     "idKMT.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5269,6 +5510,7 @@
       }
     },
     "issue.jp.hokkaido.city.asahikawa" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5298,6 +5540,7 @@
       }
     },
     "issue.jp.hokkaido.city.sapporo" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5414,6 +5657,7 @@
       }
     },
     "issue.jp.kagawa.city.takamatsu" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5559,6 +5803,7 @@
       }
     },
     "issue.jp.miyazaki.city.sendai" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5878,6 +6123,7 @@
       }
     },
     "jp.sapporo" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5936,6 +6182,7 @@
       }
     },
     "jpDoCard.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -5965,6 +6212,7 @@
       }
     },
     "jpIC_icsca.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6023,6 +6271,7 @@
       }
     },
     "jpIC_IruCa.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6081,6 +6330,7 @@
       }
     },
     "jpIC_SAPICA.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6139,6 +6389,7 @@
       }
     },
     "jpIC.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6197,6 +6448,7 @@
       }
     },
     "jpNplus.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6226,6 +6478,7 @@
       }
     },
     "jpOKICA.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6284,6 +6537,7 @@
       }
     },
     "jpRapica.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6313,6 +6567,7 @@
       }
     },
     "krOneCard.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6342,6 +6597,7 @@
       }
     },
     "locate.city.CA.SF" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6371,6 +6627,7 @@
       }
     },
     "locate.city.okinawa.mainIsland" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6400,6 +6657,7 @@
       }
     },
     "locate.prefecture.CA" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6429,6 +6687,7 @@
       }
     },
     "locate.prefecture.Hokkaido" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6458,6 +6717,7 @@
       }
     },
     "locate.prefecture.Jakarta" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6487,6 +6747,7 @@
       }
     },
     "locate.prefecture.Kagawa" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6516,6 +6777,7 @@
       }
     },
     "locate.prefecture.Kagoshima" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6545,6 +6807,7 @@
       }
     },
     "locate.prefecture.Miyagi" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6574,6 +6837,7 @@
       }
     },
     "locate.prefecture.Miyazaki" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6603,6 +6867,7 @@
       }
     },
     "locate.prefecture.Nagasaki" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6632,6 +6897,7 @@
       }
     },
     "locate.prefecture.Okinawa" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -6698,7 +6964,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "カードを選択"
           }
         },
@@ -7223,6 +7489,7 @@
       }
     },
     "region.africa" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7252,6 +7519,7 @@
       }
     },
     "region.centralAsia" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7281,6 +7549,7 @@
       }
     },
     "region.eastAsia" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7310,6 +7579,7 @@
       }
     },
     "region.europa" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7339,6 +7609,7 @@
       }
     },
     "region.japanLocal" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7368,6 +7639,7 @@
       }
     },
     "region.latinAmerica" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7397,6 +7669,7 @@
       }
     },
     "region.middleEastAsia" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7426,6 +7699,7 @@
       }
     },
     "region.northAmerica" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7455,6 +7729,7 @@
       }
     },
     "region.oceania" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7484,6 +7759,7 @@
       }
     },
     "region.southAsia" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7513,6 +7789,7 @@
       }
     },
     "region.southEastAsia" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7626,6 +7903,7 @@
       }
     },
     "result.history.boarding" : {
+      "comment" : "Used Location\n利用場所",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -7655,6 +7933,7 @@
       }
     },
     "result.history.bus" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7683,6 +7962,7 @@
       }
     },
     "result.history.charge" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7711,6 +7991,7 @@
       }
     },
     "result.history.charge_auto" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7739,6 +8020,7 @@
       }
     },
     "result.history.charge.bus" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7767,6 +8049,7 @@
       }
     },
     "result.history.charge.store" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7795,6 +8078,7 @@
       }
     },
     "result.history.compositeFare" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7852,6 +8136,7 @@
       }
     },
     "result.history.counter.cancel" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7909,6 +8194,7 @@
       }
     },
     "result.history.cycle" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7965,6 +8251,7 @@
       }
     },
     "result.history.end" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7993,6 +8280,7 @@
       }
     },
     "result.history.fare" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8021,6 +8309,7 @@
       }
     },
     "result.history.fare_collection.jr" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8049,6 +8338,7 @@
       }
     },
     "result.history.fare_collection.other" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8077,6 +8367,7 @@
       }
     },
     "result.history.ferry" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8105,6 +8396,7 @@
       }
     },
     "result.history.hsr" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8133,6 +8425,7 @@
       }
     },
     "result.history.lrt" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8190,6 +8483,7 @@
       }
     },
     "result.history.mrt.tw.kaohsiung" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8218,6 +8512,7 @@
       }
     },
     "result.history.mrt.tw.taipei" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8246,6 +8541,7 @@
       }
     },
     "result.history.mrt.tw.taizhong" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8274,6 +8570,7 @@
       }
     },
     "result.history.mrt.tw.taoyuan" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8302,6 +8599,7 @@
       }
     },
     "result.history.new" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8330,6 +8628,7 @@
       }
     },
     "result.history.notHistory" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8358,6 +8657,7 @@
       }
     },
     "result.history.other" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8386,6 +8686,7 @@
       }
     },
     "result.history.parking" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8414,6 +8715,7 @@
       }
     },
     "result.history.platform.other" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8442,6 +8744,7 @@
       }
     },
     "result.history.rail" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8470,6 +8773,7 @@
       }
     },
     "result.history.register" : {
+      "comment" : "Used Location\n利用場所",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -8499,6 +8803,7 @@
       }
     },
     "result.history.reissue" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8527,6 +8832,7 @@
       }
     },
     "result.history.shinkansen" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8555,6 +8861,7 @@
       }
     },
     "result.history.shopping" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8583,6 +8890,7 @@
       }
     },
     "result.history.shopping.cancel" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8611,6 +8919,7 @@
       }
     },
     "result.history.shopping.cash" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8639,6 +8948,7 @@
       }
     },
     "result.history.shopping.platform" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8667,6 +8977,7 @@
       }
     },
     "result.history.shopping.platform.cash" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8724,6 +9035,7 @@
       }
     },
     "result.history.stationOperation" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8752,6 +9064,7 @@
       }
     },
     "result.history.taiwan_railway" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8780,6 +9093,7 @@
       }
     },
     "result.history.ticket" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8808,6 +9122,7 @@
       }
     },
     "result.history.ticket_bus" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8836,6 +9151,7 @@
       }
     },
     "result.history.ticket.platform" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8864,6 +9180,7 @@
       }
     },
     "result.info" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8892,6 +9209,7 @@
       }
     },
     "result.info.balance" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8920,6 +9238,7 @@
       }
     },
     "result.info.cardCategory" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8948,6 +9267,7 @@
       }
     },
     "result.info.cardType" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -8976,6 +9296,7 @@
       }
     },
     "result.info.date" : {
+      "comment" : "Used Location\n利用場所",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -9368,6 +9689,35 @@
         }
       }
     },
+    "scanner.coreNFC.error.noTag" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No card was detected."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードを検出できませんでした。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未检测到卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未偵測到卡片。"
+          }
+        }
+      }
+    },
     "scanner.coreNFC.error.notfeliCa" : {
       "localizations" : {
         "en" : {
@@ -9397,6 +9747,7 @@
       }
     },
     "scanner.coreNFC.scan.message" : {
+      "comment" : "CoreNFC UI",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -9909,6 +10260,7 @@
       }
     },
     "setting.acknowledgment.hkOctopus" : {
+      "comment" : "Trademarks(商標): Octopus",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -9938,6 +10290,7 @@
       }
     },
     "setting.acknowledgment.jp.jpIC_icsca" : {
+      "comment" : "Trademarks(商標): icsca",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -9967,6 +10320,7 @@
       }
     },
     "setting.acknowledgment.jpDoCard" : {
+      "comment" : "Trademarks(商標): DoCard",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -9996,6 +10350,7 @@
       }
     },
     "setting.acknowledgment.jpIC" : {
+      "comment" : "Trademarks(商標): 交通系IC",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10025,6 +10380,7 @@
       }
     },
     "setting.acknowledgment.jpIC_icsca" : {
+      "comment" : "Trademarks(商標): icsca",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10054,6 +10410,7 @@
       }
     },
     "setting.acknowledgment.jpIC_IruCa" : {
+      "comment" : "Trademarks(商標): IruCa",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10141,6 +10498,7 @@
       }
     },
     "setting.acknowledgment.jpOKICA" : {
+      "comment" : "Trademarks(商標): OKICA",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10228,6 +10586,7 @@
       }
     },
     "setting.acknowledgment.sony" : {
+      "comment" : "Trademarks(商標): FeliCa",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10342,6 +10701,7 @@
       }
     },
     "setting.acknowledgment.twEasyCard_old" : {
+      "comment" : "Trademarks(商標): EasyCard",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10371,6 +10731,7 @@
       }
     },
     "setting.acknowledgment.twICash" : {
+      "comment" : "Trademarks(商標): iCash 2.0",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10400,6 +10761,7 @@
       }
     },
     "setting.acknowledgment.usClipper" : {
+      "comment" : "Trademarks(商標): Clipper",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10452,6 +10814,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "廣告"
+          }
+        }
+      }
+    },
+    "setting.ads.privacyOptions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ad Privacy Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "広告のプライバシー設定"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "广告隐私设置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告隱私設定"
           }
         }
       }
@@ -10540,6 +10931,64 @@
         }
       }
     },
+    "setting.ads.purchase.pending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase Pending"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入の承認待ち"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购买等待批准"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購買等待核准"
+          }
+        }
+      }
+    },
+    "setting.ads.purchase.pending.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ads will be removed automatically once the purchase is approved."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入が承認されると自動的に広告が削除されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "购买获得批准后，广告将自动移除。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購買核准後，廣告將自動移除。"
+          }
+        }
+      }
+    },
     "setting.ads.restore" : {
       "localizations" : {
         "en" : {
@@ -10620,6 +11069,64 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "恢復購買完成。"
+          }
+        }
+      }
+    },
+    "setting.ads.restore.notFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Purchases Found"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入履歴が見つかりません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未找到购买记录"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找不到購買紀錄"
+          }
+        }
+      }
+    },
+    "setting.ads.restore.notFound.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No ad removal purchase was found for this Apple Account."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このApple Accountでの広告削除の購入は見つかりませんでした。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未找到此Apple账户的去广告购买记录。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找不到此Apple帳號的移除廣告購買紀錄。"
           }
         }
       }
@@ -11869,6 +12376,7 @@
       }
     },
     "setting.debug.result.dummyCard.form.request" : {
+      "comment" : "Dummy card add form\nダミーカード追加フォーム",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12679,6 +13187,24 @@
             "state" : "translated",
             "value" : "Widget"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウィジェット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小组件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小組件"
+          }
         }
       }
     },
@@ -12879,6 +13405,7 @@
       }
     },
     "twEasyCard_old.form.error.birthday.count" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12907,6 +13434,7 @@
       }
     },
     "twEasyCard_old.form.error.captcha.count" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12935,6 +13463,7 @@
       }
     },
     "twEasyCard_old.form.error.captcha.empty" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12963,6 +13492,7 @@
       }
     },
     "twEasyCard_old.form.error.card.count" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12991,6 +13521,7 @@
       }
     },
     "twEasyCard_old.form.error.card.empty" : {
+      "comment" : "Scraping Form Alert\nスクレイピングフォームの警告",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -13048,6 +13579,7 @@
       }
     },
     "twEasyCard_old.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13106,6 +13638,7 @@
       }
     },
     "twICash.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13163,6 +13696,7 @@
       }
     },
     "usClipper.short" : {
+      "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13449,6 +13983,7 @@
       }
     },
     "上海" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13478,6 +14013,7 @@
       }
     },
     "上海公共交通卡" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13507,6 +14043,7 @@
       }
     },
     "八达通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13536,6 +14073,7 @@
       }
     },
     "北京" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13565,6 +14103,7 @@
       }
     },
     "北京一卡通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13594,6 +14133,7 @@
       }
     },
     "四川省" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13623,6 +14163,7 @@
       }
     },
     "成都市" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13652,6 +14193,7 @@
       }
     },
     "杭州通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13681,6 +14223,7 @@
       }
     },
     "深圳通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13710,6 +14253,7 @@
       }
     },
     "澳门特别行政区" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13739,6 +14283,7 @@
       }
     },
     "澳门通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13768,6 +14313,7 @@
       }
     },
     "羊城通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -13797,6 +14343,7 @@
       }
     },
     "香港特别行政区" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

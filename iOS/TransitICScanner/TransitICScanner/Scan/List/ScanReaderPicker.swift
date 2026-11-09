@@ -93,10 +93,10 @@ struct ScanReaderPicker: View {
         } header: {
             Text(
                 !manager.isAvailable
-                ? String(localized: "cardList.reader.unavailable")
-                : manager.hasConnectedReader
-                ? String(localized: "cardList.reader.connected")
-                : String(localized: "cardList.reader.disconnected")
+                    ? String(localized: "cardList.reader.unavailable")
+                    : manager.hasConnectedReader
+                        ? String(localized: "cardList.reader.connected")
+                        : String(localized: "cardList.reader.disconnected")
             )
         }
         .tint(Color.primary)

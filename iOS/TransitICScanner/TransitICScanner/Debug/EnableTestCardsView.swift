@@ -5,17 +5,17 @@ struct EnableTestCardsView: View {
 
     var body: some View {
         List {
-            Section(header:Text(LocalizedStringKey("setting.debug.enableTestCards.dev"))) {
+            Section(header: Text(LocalizedStringKey("setting.debug.enableTestCards.dev"))) {
                 ForEach(devCards, id: \.name) { card in
                     EnableTestCard(card: card)
                 }
             }
-            Section(header:Text(LocalizedStringKey("setting.debug.enableTestCards.feature"))) {
+            Section(header: Text(LocalizedStringKey("setting.debug.enableTestCards.feature"))) {
                 ForEach(featureCards, id: \.name) { card in
                     EnableTestCard(card: card)
                 }
             }
-            Section(header:Text(LocalizedStringKey("setting.debug.enableTestCards.rel"))) {
+            Section(header: Text(LocalizedStringKey("setting.debug.enableTestCards.rel"))) {
                 ForEach(relCards, id: \.name) { card in
                     EnableTestCard(card: card)
                 }

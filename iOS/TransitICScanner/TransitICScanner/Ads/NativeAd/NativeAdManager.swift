@@ -15,6 +15,10 @@ final class NativeAdManager: NSObject, ObservableObject {
     private var adLoader: AdLoader?
 
     func loadAd() {
+        guard AdConsentManager.shared.canRequestAds else {
+            return
+        }
+
         guard ad == nil, !loadCompleted else {
             return
         }
@@ -43,7 +47,7 @@ final class NativeAdManager: NSObject, ObservableObject {
             options: [
                 imageOptions,
                 mediaOptions,
-                viewOptions
+                viewOptions,
             ]
         )
 
@@ -71,7 +75,7 @@ extension NativeAdManager: NativeAdLoaderDelegate {
         _ adLoader: AdLoader,
         didFailToReceiveAdWithError error: Error
     ) {
-        print(
+        Log.debug(
             "Native Ad Load Failed: \(error.localizedDescription)"
         )
 

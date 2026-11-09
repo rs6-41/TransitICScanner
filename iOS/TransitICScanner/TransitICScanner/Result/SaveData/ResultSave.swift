@@ -28,59 +28,104 @@ enum SavedDataModelContainer {
     static func deleteStore() throws {
         let fileManager = FileManager.default
 
-        guard let containerURL = fileManager.containerURL(
-            forSecurityApplicationGroupIdentifier: AppGroup
-        ) else {
-            print("App GroupのURLを取得できません")
+        guard
+            let containerURL = fileManager.containerURL(
+                forSecurityApplicationGroupIdentifier: StorageConfig.appGroup
+            )
+        else {
+            Log.debug("App GroupのURLを取得できません")
             return
         }
 
-        let applicationSupportURL = containerURL
+        let applicationSupportURL =
+            containerURL
             .appendingPathComponent("Library")
             .appendingPathComponent("Application Support")
 
-        let storeURL = applicationSupportURL
+        let storeURL =
+            applicationSupportURL
             .appendingPathComponent("default.store")
 
         let storeFiles = [
             storeURL,
             storeURL.appendingPathExtension("shm"),
-            storeURL.appendingPathExtension("wal")
+            storeURL.appendingPathExtension("wal"),
         ]
 
         for url in storeFiles {
             if fileManager.fileExists(atPath: url.path) {
-                print("SwiftDataストア削除:", url.path)
+                Log.debug("SwiftDataストア削除:", url.path)
                 try fileManager.removeItem(at: url)
             }
         }
     }
     #endif
 
-    static func makeContainer() throws -> ModelContainer {
-        let schema = Schema([
-            SavedCard.self,
-            SavedHistory.self
-        ])
+    /// 起動時に使った保存先の状態
+    enum StartupState: Equatable {
+        /// 設定どおり（iCloud 同期の設定に従う）
+        case normal
+        /// iCloud 同期付きで開けなかったため、この端末のみに保存している
+        case localOnly
+        /// 保存データを開けなかったため、一時的なメモリ上の保存先を使っている（終了すると消える）
+        case inMemory
+    }
 
-        let configuration: ModelConfiguration
+    private(set) static var startupState: StartupState = .normal
+
+    private static var schema: Schema {
+        Schema([
+            SavedCard.self,
+            SavedHistory.self,
+        ])
+    }
+
+    static func makeContainer() throws -> ModelContainer {
+        try makeContainer(cloudSync: CloudSyncSettings.isEnabled)
+    }
+
+    /// 起動用の ModelContainer を作る。失敗してもアプリが起動できるよう、
+    /// iCloud 同期なし → メモリ上の一時保存の順に切り替える。
+    static func makeContainerWithFallback() -> ModelContainer {
+        do {
+            let container = try makeContainer()
+            startupState = .normal
+            return container
+        } catch {
+            Log.error("ModelContainerを作成できません: \(error)")
+        }
 
         if CloudSyncSettings.isEnabled {
-            print("CloudKit ON")
-
-            configuration = ModelConfiguration(
-                schema: schema,
-                cloudKitDatabase: .private(
-                    cloudKitContainerIdentifier
-                )
-            )
-        } else {
-            print("CloudKit OFF")
-
-            configuration = ModelConfiguration(
-                schema: schema
-            )
+            do {
+                let container = try makeContainer(cloudSync: false)
+                startupState = .localOnly
+                return container
+            } catch {
+                Log.error("ローカルのModelContainerも作成できません: \(error)")
+            }
         }
+
+        do {
+            let configuration = ModelConfiguration(
+                schema: schema,
+                isStoredInMemoryOnly: true
+            )
+            let container = try ModelContainer(for: schema, configurations: [configuration])
+            startupState = .inMemory
+            return container
+        } catch {
+            fatalError("メモリ上のModelContainerも作成できません: \(error)")
+        }
+    }
+
+    private static func makeContainer(cloudSync: Bool) throws -> ModelContainer {
+        let configuration = ModelConfiguration(
+            schema: schema,
+            groupContainer: .identifier(StorageConfig.appGroup),
+            cloudKitDatabase: cloudSync
+                ? .private(StorageConfig.cloudKitContainerIdentifier)
+                : .none
+        )
 
         return try ModelContainer(
             for: schema,
@@ -112,8 +157,8 @@ final class SavedCard {
     var savedAt: Date? = Date.now
 
     var fullLog: String?
-    
-    var issueInfo: issueInfo?
+
+    var issueInfo: IssueInfo?
 
     @Relationship(
         deleteRule: .cascade,
@@ -121,8 +166,8 @@ final class SavedCard {
     )
     var histories: [SavedHistory]? = []
 
-    var parsedCurrencyType: currencyType? {
-        currencyType(rawValue: currency.lowercased())
+    var parsedCurrencyType: CurrencyType? {
+        CurrencyType(rawValue: currency.lowercased())
     }
 
     init(
@@ -142,7 +187,7 @@ final class SavedCard {
         converterTypeRaw: String? = nil,
         savedAt: Date,
         fullLog: String? = nil,
-        issueInfo: issueInfo? = nil
+        issueInfo: IssueInfo? = nil
     ) {
         self.idm = idm
         self.name = name
@@ -246,7 +291,7 @@ final class SavedHistory {
 }
 
 extension SavedCard {
-    func result() -> Result {
+    func result() -> ScanResult {
         let info = ResultCardInfo(
             idm: idm,
             name: name,
@@ -278,7 +323,7 @@ extension SavedCard {
         }
 
         #if os(watchOS)
-        return Result(
+        return ScanResult(
             balance: balance,
             isHistory: !history.isEmpty,
             history: history.isEmpty ? nil : history,
@@ -290,7 +335,7 @@ extension SavedCard {
             converterTypeRaw: converterTypeRaw
         )
         #else
-        return Result(
+        return ScanResult(
             balance: balance,
             isHistory: !history.isEmpty,
             history: history.isEmpty ? nil : history,
@@ -310,7 +355,7 @@ enum ResultSave {
 
     static func loadResults(
         from modelContext: ModelContext
-    ) throws -> [Result] {
+    ) throws -> [ScanResult] {
         let descriptor = FetchDescriptor<SavedCard>(
             sortBy: [SortDescriptor(\.name)]
         )
@@ -320,7 +365,7 @@ enum ResultSave {
 
     #if !os(watchOS)
     static func save(
-        _ result: Result,
+        _ result: ScanResult,
         in modelContext: ModelContext
     ) throws {
         guard let info = result.info else {
@@ -360,10 +405,10 @@ enum ResultSave {
 
             modelContext.insert(card)
 
-            print("insert直後:", card)
-            print("insert直後 hasChanges:", modelContext.hasChanges)
+            Log.debug("insert直後:", card)
+            Log.debug("insert直後 hasChanges:", modelContext.hasChanges)
 
-            print(
+            Log.debug(
                 "insert直後の件数:",
                 try modelContext.fetch(
                     FetchDescriptor<SavedCard>()
@@ -394,9 +439,11 @@ enum ResultSave {
             )
 
             for history in histories {
-                guard !existingTransactionIDs.contains(
-                    history.transactionId
-                ) else {
+                guard
+                    !existingTransactionIDs.contains(
+                        history.transactionId
+                    )
+                else {
                     continue
                 }
 
@@ -432,41 +479,15 @@ enum ResultSave {
 
         try modelContext.save()
 
-        let cards = try modelContext.fetch(
-            FetchDescriptor<SavedCard>()
-        )
-
-        print("保存直後のSavedCard数:", cards.count)
-
-        for card in cards {
-            print(
-                "SavedCard:",
-                card.idm,
-                card.name
-            )
-        }
-
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
-
-        if let savedData = sharedDefaults?.data(
-            forKey: "widgetDatas"
-        ),
-           let decodedUsers = try? JSONDecoder().decode(
-            [BalanceWidgetModel].self,
-            from: savedData
-           ) {
-            widgetModels = decodedUsers
-        }
-
         let saveData = BalanceWidgetModel(
-            DisplayName: info.displayName ?? {
-                #if os(watchOS)
-                info.name
-                #else
-                Localize(info.name)
-                #endif
-            }(),
+            DisplayName: info.displayName
+                ?? {
+                    #if os(watchOS)
+                    info.name
+                    #else
+                    Localize(info.name)
+                    #endif
+                }(),
             balance: result.balance,
             currencyType: result.info?.currencyType,
             idm: info.idm,
@@ -474,36 +495,37 @@ enum ResultSave {
             savedAt: result.savedAt
         )
 
-        widgetModels.removeAll {
-            $0.idm == info.idm
+        WidgetDataStore.update { models in
+            models.removeAll { $0.idm == info.idm }
+            models.append(saveData)
+        }
+    }
+
+    /// 保存済みカードの表示名・券面だけを更新する。
+    /// 残高や履歴は書き換えないため、他の端末で同期された新しい読取結果を上書きしない。
+    static func updateUserData(
+        idm: String,
+        displayName: String?,
+        iconName: String?,
+        in modelContext: ModelContext
+    ) throws {
+        guard let card = try loadCard(idm: idm, from: modelContext) else {
+            return
         }
 
-        widgetModels.append(saveData)
+        card.displayName = displayName
+        card.iconName = iconName
+        try modelContext.save()
 
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
-
-            sharedDefaults?.synchronize()
-
-            print("Widget保存:")
-            print("AppGroup:", AppGroup)
-            print("件数:", widgetModels.count)
-            print("データサイズ:", encodedData.count)
-        } else {
-            print("WidgetデータのEncodeに失敗")
+        WidgetDataStore.update { models in
+            guard let index = models.firstIndex(where: { $0.idm == idm }) else {
+                return
+            }
+            if let displayName, !displayName.isEmpty {
+                models[index].DisplayName = displayName
+            }
+            models[index].icon = iconName
         }
-
-        print(
-            "Widget保存後:",
-            sharedDefaults?.data(forKey: "widgetDatas") != nil
-        )
-
-        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func loadCards(
@@ -535,43 +557,21 @@ enum ResultSave {
         idm: String,
         from modelContext: ModelContext
     ) throws {
-        guard let card = try loadCard(
-            idm: idm,
-            from: modelContext
-        ) else {
+        guard
+            let card = try loadCard(
+                idm: idm,
+                from: modelContext
+            )
+        else {
             return
         }
 
         modelContext.delete(card)
         try modelContext.save()
 
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
-
-        if let savedData = sharedDefaults?.data(
-            forKey: "widgetDatas"
-        ),
-           let decodedUsers = try? JSONDecoder().decode(
-            [BalanceWidgetModel].self,
-            from: savedData
-           ) {
-            widgetModels = decodedUsers
+        WidgetDataStore.update { models in
+            models.removeAll { $0.idm == idm }
         }
-
-        widgetModels.removeAll {
-            $0.idm == idm
-        }
-
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
-        }
-
-        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func deleteAll(
@@ -587,16 +587,8 @@ enum ResultSave {
 
         try modelContext.save()
 
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
-
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
+        WidgetDataStore.update { models in
+            models.removeAll()
         }
     }
 
@@ -614,9 +606,9 @@ enum ResultSave {
 
             try modelContext.save()
 
-            print("保存データをリセットしました")
+            Log.debug("保存データをリセットしました")
         } catch {
-            print(
+            Log.debug(
                 "保存データのリセットに失敗しました: \(error)"
             )
         }

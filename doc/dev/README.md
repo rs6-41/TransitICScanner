@@ -1,10 +1,21 @@
 # 開発
 
+ - [ファイル構成とアーキテクチャ](./ARCHITECTURE.md)：各ファイルの役割・実装意図、よくある変更で触るファイル
+
 ## 開発環境
 ### iOS
  - macOS 27
  -- Xcode 27
- -- Swift 6.4
+ -- Swift 6.4（Xcode プロジェクトの言語モードは Swift 5 / `SWIFT_VERSION = 5.0`）
+
+## コードの書式
+
+Swift のコードは `swift-format`（Xcode 付属）で書式を揃える。設定は `iOS/TransitICScanner/.swift-format`（4スペースインデント、1行120文字）。
+
+```sh
+cd iOS/TransitICScanner
+git ls-files '*.swift' | tr '\n' '\0' | xargs -0 xcrun swift-format format --in-place --configuration .swift-format
+```
 
 ## コミットメッセージ規定
 絵文字 + Issues番号 + 内容

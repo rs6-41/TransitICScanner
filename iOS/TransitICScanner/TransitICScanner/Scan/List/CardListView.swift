@@ -2,26 +2,44 @@ import SwiftUI
 import CoreNFC
 import Combine
 
+/// スキャンタブ：カード一覧から読み取りを始め、結果画面へ遷移する
+///
+/// 画面幅によって遷移の仕組みを切り替える。
+/// - iPad・Mac・開いた iPhone Duo（regular 幅）：`NavigationSplitView`。
+///   左に地域・カード一覧、右（詳細列）に読取結果を表示する
+/// - iPhone（compact 幅）：`NavigationStack` のパス(`compactPath`)に積んでプッシュ遷移する。
+///   一覧 → 地域 → 結果 の順に積むため、どの階層から読み取っても結果画面へアニメーション付きで遷移する
 struct CardList: View {
-    @State private var searchText = ""
+    /// iPhone（compact 幅）での遷移先
+    enum CompactRoute: Hashable {
+        case region(RegionList)
+        case result(ScanResult)
+    }
+
     @EnvironmentObject var getCountry: GetCountry
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var isDuoOpen = false
 
-    @State var currentCountryItems: [CardInfo] = []
-    @State var searchItems: [CardInfo] = []
-    @State private var administrativeArea: String?
-    @State private var selection: regionList?
-    @State private var regionPath: [regionList] = []
-    @State private var selectedResult: Result?
-    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
-
-    @State var isDisplayScrapingForm = false
     @Binding var deleteAds: Bool
     @ObservedObject var smartCardManager: SmartCardManager
 
+    // 一覧の内容
+    @State private var searchText = ""
+    @State private var currentCountryItems: [CardInfo] = []
+    @State private var searchItems: [CardInfo] = []
+    @State private var administrativeArea: String?
+
+    // 画面遷移（regular 幅）
+    @State private var regionPath: [RegionList] = []
+    @State private var selectedResult: ScanResult?
+
+    // 画面遷移（compact 幅）
+    @State private var compactPath: [CompactRoute] = []
+
+    @State private var isDuoOpen = false
+
+    /// 分割表示（サイドバー＋詳細列）を使うか
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
         true
@@ -30,6 +48,7 @@ struct CardList: View {
         #endif
     }
 
+    /// 開いた iPhone Duo では、読取方式の切り替えをナビゲーションバーに置く
     private var usesPhoneNavigationBarPicker: Bool {
         #if targetEnvironment(macCatalyst)
         false
@@ -38,259 +57,238 @@ struct CardList: View {
         #endif
     }
 
-    private var sidebarSelection: Binding<regionList?>? {
-        showsSidebar ? nil : $selection
-    }
-
     var body: some View {
         Group {
             if showsSidebar {
-                NavigationSplitView {
-                    NavigationStack(path: $regionPath) {
-                        sidebar
-                            .navigationDestination(for: regionList.self) { region in
-                                regionCards(for: region)
-                            }
-                    }
-                } detail: {
-                    detailColumn
-                        .toolbar {
-                            if usesPhoneNavigationBarPicker {
-                                if #available(iOS 27.0, *) {
-                                    ToolbarItem(placement: .topBarPinnedTrailing) {
-                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
-                                    }
-                                } else {
-                                    ToolbarItem(placement: .topBarTrailing) {
-                                        ScanReaderPicker(manager: smartCardManager).toolbarMenu
-                                    }
-                                }
-                            }
-                        }
-                }
-            } else if selection == nil {
-                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
-                    sidebar
-                        .toolbar {
-                            if !showsSidebar {
-                                ToolbarItem(placement: .topBarTrailing) {
-                                    ScanReaderPicker(manager: smartCardManager)
-                                }
-                            }
-                        }
-                } detail: {
-                    detailColumn
-                }
+                splitView
             } else {
-                NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
-                    sidebar
-                        .toolbar {
-                            if !showsSidebar {
-                                ToolbarItem(placement: .topBarTrailing) {
-                                    ScanReaderPicker(manager: smartCardManager)
-                                }
-                            }
-                        }
-                } content: {
-                    regionContent
-                } detail: {
-                }
+                compactStack
             }
         }
-
         .iPhoneDuoHinge(value: $isDuoOpen)
         .onAppear {
             getCountry.start()
-            updateList()
-
-            Task {
-                administrativeArea = await getCountry.fetchAdministrativeArea()
-                updateList()
-            }
+            refreshCurrentLocation()
         }
         .onChange(of: getCountry.countryCode) {
-            updateList()
-
-            Task {
-                administrativeArea = await getCountry.fetchAdministrativeArea()
-                updateList()
-            }
+            refreshCurrentLocation()
         }
         .onChange(of: searchText) {
             search()
             if !searchText.isEmpty {
                 regionPath.removeAll()
-                selection = nil
                 selectedResult = nil
-                preferredCompactColumn = .sidebar
             }
-        }
-        .onChange(of: selection) {
-            selectedResult = nil
-            preferredCompactColumn = selection == nil ? .sidebar : .content
         }
         .onChange(of: regionPath) {
             if regionPath.isEmpty {
-                selection = nil
                 selectedResult = nil
             }
         }
     }
 
-    @ViewBuilder
-    private var sidebar: some View {
-        Group {
-            if showsSidebar {
-                sidebarList
-                    .searchable(
-                        text: $searchText,
-                        placement: .sidebar,
-                        prompt: String(localized: "cardList.search")
-                    )
-                    .navigationTitle(LocalizedStringKey("cardList.title"))
-            } else {
-                sidebarList
-                    .searchable(
-                        text: $searchText,
-                        prompt: Text(LocalizedStringKey("cardList.search"))
-                    )
-                    .navigationTitle(LocalizedStringKey("cardList.title"))
+    // MARK: - 画面遷移
+
+    /// iPad・Mac：サイドバーに一覧、詳細列に読取結果
+    private var splitView: some View {
+        NavigationSplitView {
+            NavigationStack(path: $regionPath) {
+                sidebar
+                    .navigationDestination(for: RegionList.self) { region in
+                        regionCards(for: region)
+                    }
             }
+        } detail: {
+            detailColumn
+                .toolbar {
+                    if usesPhoneNavigationBarPicker {
+                        readerPickerToolbarItem
+                    }
+                }
         }
-        .scrollContentBackground(.hidden)
-        .background(Color(uiColor:.quaternarySystemFill))
     }
 
-    private var sidebarList: some View {
-            List(selection: sidebarSelection) {
-                Group {
-#if !targetEnvironment(macCatalyst)
-                    ListAdView(deleteAds: $deleteAds)
-#endif
-                    
-                    if debug.isDisplay {
-                        VStack(alignment: .leading) {
-                            Toggle(String("DEBUG MODE"), isOn: $debug.isDisplay)
-                                .bold()
-                                .foregroundStyle(Color.red)
-                            
-                            HStack(spacing: 3) {
-                                Text(LocalizedStringKey("cardList.nowLocate"))
-                                Text(verbatim: ": ")
-                                Text(verbatim: getCountry.countryCode ?? "nil")
-                                
-                                if let administrativeArea {
-                                    Text(verbatim: " \(administrativeArea)")
-                                }
-                            }
-                        }
+    /// iPhone：一覧 → 地域 → 結果 をプッシュ遷移
+    private var compactStack: some View {
+        NavigationStack(path: $compactPath) {
+            sidebar
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        ScanReaderPicker(manager: smartCardManager)
                     }
-                    
-                    if !currentCountryItems.isEmpty {
-                        Section {
-                            ForEach(currentCountryItems, id: \.logo) { item in
-                                CardListRow(
-                                    item: item,
-                                    deleteAds: $deleteAds,
-                                    smartCardManager: smartCardManager,
-                                    onResult: showResult
-                                )
+                }
+                .navigationDestination(for: CompactRoute.self) { route in
+                    switch route {
+                    case .region(let region):
+                        regionCards(for: region)
+                            .scrollContentBackground(.hidden)
+                            .background(Color(uiColor: .quaternarySystemFill))
+                    case .result(let result):
+                        resultView(result) {
+                            if !compactPath.isEmpty {
+                                compactPath.removeLast()
                             }
-                        } header: {
-                            Text(LocalizedStringKey("cardList.nowLocate"))
-                        }
-                    }
-                    
-                    if searchText == "" {
-                        Section {
-                            ForEach(regionLists, id: \.self) { list in
-                                let filtFirstItem = store.cardItems.filter {
-                                    $0.regionOption == nil &&
-                                    $0.area.region() == list.first
-                                } +
-                                store.cardItems.filter {
-                                    $0.regionOption == list.first
-                                }
-                                
-                                if !filtFirstItem.isEmpty {
-                                    if showsSidebar {
-                                        Button {
-                                            selectedResult = nil
-                                            regionPath = [list]
-                                        } label: {
-                                            SquareIcon(
-                                                text: LocalizedStringKey(list.first.name()),
-                                                systemImage: list.first.icon(),
-                                                color: Color.blue
-                                            )
-                                        }
-                                        .buttonStyle(.plain)
-                                        .contentShape(Rectangle())
-                                    } else {
-                                        Button {
-                                            selection = list
-                                            selectedResult = nil
-                                            preferredCompactColumn = .content
-                                        } label: {
-                                            SquareIcon(
-                                                text: LocalizedStringKey(list.first.name()),
-                                                systemImage: list.first.icon(),
-                                                color: Color.blue
-                                            )
-                                        }
-                                        .buttonStyle(.plain)
-                                        .tag(list)
-                                    }
-                                }
-                            }
-                        } header: {
-                            Text(LocalizedStringKey("cardList.otherLocate"))
-                        } footer: {
-                            Text(LocalizedStringKey("cardList.description"))
-                        }
-                    } else {
-                        Section {
-                            ForEach(searchItems, id: \.logo) { item in
-                                CardListRow(
-                                    item: item,
-                                    deleteAds: $deleteAds,
-                                    smartCardManager: smartCardManager,
-                                    onResult: showResult
-                                )
-                            }
-                        } header: {
-                            if searchText.isEmpty {
-                                HStack {
-                                    Text(LocalizedStringKey("cardList.allCards"))
-                                }
-                            } else {
-                                Text(LocalizedStringKey("cardList.searchResults"))
-                            }
-                        } footer: {
-                            Text(LocalizedStringKey("cardList.description"))
                         }
                     }
                 }
-                .listRowBackground(Color(uiColor:.secondarySystemFill))
-            }
-            .scrollContentBackground(.hidden)
-            .listStyle(.insetGrouped)
-            .alignmentGuide(.listRowSeparatorLeading) { _ in
-                .zero
-            }
-    }
-
-    @ViewBuilder
-    private var regionContent: some View {
-        if let selection {
-            regionCards(for: selection)
-                .scrollContentBackground(.hidden)
-                .background(Color(uiColor:.quaternarySystemFill))
         }
     }
 
-    private func regionCards(for region: regionList) -> some View {
+    @ToolbarContentBuilder
+    private var readerPickerToolbarItem: some ToolbarContent {
+        if #available(iOS 27.0, *) {
+            ToolbarItem(placement: .topBarPinnedTrailing) {
+                ScanReaderPicker(manager: smartCardManager).toolbarMenu
+            }
+        } else {
+            ToolbarItem(placement: .topBarTrailing) {
+                ScanReaderPicker(manager: smartCardManager).toolbarMenu
+            }
+        }
+    }
+
+    /// 地域を開く
+    private func openRegion(_ region: RegionList) {
+        if showsSidebar {
+            selectedResult = nil
+            regionPath = [region]
+        } else {
+            compactPath.append(.region(region))
+        }
+    }
+
+    /// 読取結果を表示する（各カードの行から呼ばれる）
+    private func showResult(_ result: ScanResult) {
+        if showsSidebar {
+            selectedResult = result
+        } else {
+            compactPath.append(.result(result))
+        }
+    }
+
+    // MARK: - 一覧
+
+    private var sidebar: some View {
+        sidebarList
+            .searchable(
+                text: $searchText,
+                placement: showsSidebar ? .sidebar : .automatic,
+                prompt: Text(LocalizedStringKey("cardList.search"))
+            )
+            .navigationTitle(LocalizedStringKey("cardList.title"))
+            .scrollContentBackground(.hidden)
+            .background(Color(uiColor: .quaternarySystemFill))
+    }
+
+    private var sidebarList: some View {
+        List {
+            Group {
+                #if !targetEnvironment(macCatalyst)
+                ListAdView(deleteAds: $deleteAds)
+                #endif
+
+                if debug.isDisplay {
+                    debugLocationRow
+                }
+
+                if !currentCountryItems.isEmpty {
+                    currentLocationSection
+                }
+
+                if searchText.isEmpty {
+                    regionSection
+                } else {
+                    searchResultSection
+                }
+            }
+            .listRowBackground(Color(uiColor: .secondarySystemFill))
+        }
+        .scrollContentBackground(.hidden)
+        .listStyle(.insetGrouped)
+        .alignmentGuide(.listRowSeparatorLeading) { _ in
+            .zero
+        }
+    }
+
+    /// 現在地で使えるカード
+    private var currentLocationSection: some View {
+        Section {
+            ForEach(currentCountryItems, id: \.logo) { item in
+                cardRow(item)
+            }
+        } header: {
+            Text(LocalizedStringKey("cardList.nowLocate"))
+        }
+    }
+
+    /// 他の地域（地域を選ぶと、その地域のカード一覧へ遷移する）
+    private var regionSection: some View {
+        Section {
+            ForEach(regionLists, id: \.self) { region in
+                if !cards(inPrimaryRegionOf: region).isEmpty {
+                    Button {
+                        openRegion(region)
+                    } label: {
+                        SquareIcon(
+                            text: LocalizedStringKey(region.first.name()),
+                            systemImage: region.first.icon(),
+                            color: Color.blue
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .contentShape(Rectangle())
+                }
+            }
+        } header: {
+            Text(LocalizedStringKey("cardList.otherLocate"))
+        } footer: {
+            Text(LocalizedStringKey("cardList.description"))
+        }
+    }
+
+    /// 検索結果
+    private var searchResultSection: some View {
+        Section {
+            ForEach(searchItems, id: \.logo) { item in
+                cardRow(item)
+            }
+        } header: {
+            Text(LocalizedStringKey("cardList.searchResults"))
+        } footer: {
+            Text(LocalizedStringKey("cardList.description"))
+        }
+    }
+
+    /// （デバッグ表示）現在地の判定結果
+    private var debugLocationRow: some View {
+        VStack(alignment: .leading) {
+            Toggle(String("DEBUG MODE"), isOn: $debug.isDisplay)
+                .bold()
+                .foregroundStyle(Color.red)
+
+            HStack(spacing: 3) {
+                Text(LocalizedStringKey("cardList.nowLocate"))
+                Text(verbatim: ": ")
+                Text(verbatim: getCountry.countryCode ?? "nil")
+
+                if let administrativeArea {
+                    Text(verbatim: " \(administrativeArea)")
+                }
+            }
+        }
+    }
+
+    private func cardRow(_ item: CardInfo) -> some View {
+        CardListRow(
+            item: item,
+            smartCardManager: smartCardManager,
+            onResult: showResult
+        )
+    }
+
+    private func regionCards(for region: RegionList) -> some View {
         let regionItems = items(for: region)
+
         return CardRegionView(
             smartCardManager: smartCardManager,
             items: regionItems.items,
@@ -304,61 +302,68 @@ struct CardList: View {
         .id(region)
     }
 
+    // MARK: - 結果
+
+    private func resultView(_ result: ScanResult, onDone: @escaping () -> Void) -> some View {
+        ResultView(
+            result: result,
+            scandata: true,
+            saveListID: .constant(UUID()),
+            deleteAds: $deleteAds,
+            onDone: onDone,
+            embedsNavigationStack: false
+        )
+    }
+
+    /// iPad・Mac の詳細列：読取結果、または未選択時の案内
     @ViewBuilder
     private var detailColumn: some View {
-        if let resultToDisplay = selectedResult {
-            ResultView(
-                result: resultToDisplay,
-                scandata: true,
-                saveListID: .constant(UUID()),
-                deleteAds: $deleteAds,
-                onDone: {
-                    selectedResult = nil
-                    preferredCompactColumn = selection == nil ? .sidebar : .content
-                },
-                embedsNavigationStack: false
+        if let selectedResult {
+            resultView(selectedResult) {
+                self.selectedResult = nil
+            }
+        } else if isReaderAvailable {
+            EmptyViewSideBar(
+                title: "navigation.split.notselection",
+                icon: "tram.card",
+                description: nil
             )
         } else {
-            switch smartCardManager.selectedSource {
-            case .builtIn:
-                if NFCNDEFReaderSession.readingAvailable {
-                    DisplayEmptyView(isEnptyReader:false)
-                } else {
-                    DisplayEmptyView(isEnptyReader:true)
-                }
-            case .external:
-                if let selectedReader = smartCardManager.readers.first(where: {
-                    $0.id == smartCardManager.selectedReaderID
-                }) {
-                    DisplayEmptyView(isEnptyReader:false)
-                } else {
-                    DisplayEmptyView(isEnptyReader:true)
-                }
+            EmptyViewSideBar(
+                title: "cardList.reader.enptyReader",
+                icon: "mediastick",
+                description: "cardList.reader.enptyReader.description"
+            )
+        }
+    }
+
+    /// 選択中の読取方式で読み取りができるか
+    private var isReaderAvailable: Bool {
+        switch smartCardManager.selectedSource {
+        case .builtIn:
+            NFCNDEFReaderSession.readingAvailable
+        case .external:
+            smartCardManager.readers.contains {
+                $0.id == smartCardManager.selectedReaderID
             }
         }
     }
-    
-    @ViewBuilder
-    private func DisplayEmptyView(isEnptyReader:Bool) -> some View {
-        if isEnptyReader {
-            EmptyViewSideBar(title: "cardList.reader.enptyReader", icon: "mediastick", description: "cardList.reader.enptyReader.description")
-        } else {
-            EmptyViewSideBar(title: "navigation.split.notselection", icon: "tram.card", description:nil)
-        }
-    }
 
-    private func showResult(_ result: Result) {
-        selectedResult = result
-        preferredCompactColumn = .detail
-    }
+    // MARK: - 一覧の内容
 
-    private func items(for region: regionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?) {
-        let firstRegionItems = store.cardItems.filter {
+    /// 地域の第1区分に含まれるカード
+    private func cards(inPrimaryRegionOf region: RegionList) -> [CardInfo] {
+        store.cardItems.filter {
             ($0.regionOption == nil && $0.area.region() == region.first)
                 || $0.regionOption == region.first
         }
-        let regularItems = firstRegionItems.filter { $0.scanOption.scanType != .external }
-        let externalItems = firstRegionItems.filter { $0.scanOption.scanType == .external }
+    }
+
+    private func items(for region: RegionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?)
+    {
+        let primaryItems = cards(inPrimaryRegionOf: region)
+        let regularItems = primaryItems.filter { $0.scanOption.scanType != .external }
+        let externalItems = primaryItems.filter { $0.scanOption.scanType == .external }
         let subItems = region.second.map { second in
             store.cardItems.filter {
                 $0.regionOption == nil
@@ -369,25 +374,28 @@ struct CardList: View {
         return (regularItems, subItems, externalItems)
     }
 
-    private func updateList() {
-        getCurrentItems()
-    }
+    /// 現在地（国・都道府県）を取り直して、現在地のカード一覧を更新する
+    private func refreshCurrentLocation() {
+        updateCurrentCountryItems()
 
-    private func getCurrentItems() {
-        currentCountryItems = store.cardItems.filter {
-            isCurrentLocation(item: $0)
+        Task {
+            administrativeArea = await getCountry.fetchAdministrativeArea()
+            updateCurrentCountryItems()
         }
     }
 
-    private func isCurrentLocation(item: CardInfo) -> Bool {
-        guard let currentCode = getCountry.countryCode else {
+    private func updateCurrentCountryItems() {
+        currentCountryItems = store.cardItems.filter(isAvailableAtCurrentLocation)
+    }
+
+    private func isAvailableAtCurrentLocation(_ item: CardInfo) -> Bool {
+        guard let currentCode = getCountry.countryCode,
+            item.countryCode.contains(currentCode)
+        else {
             return false
         }
 
-        guard item.countryCode.contains(currentCode) else {
-            return false
-        }
-
+        // 都道府県の指定がないカードは国全体で使える
         guard let prefectures = item.prefectures else {
             return true
         }
@@ -400,289 +408,15 @@ struct CardList: View {
     }
 
     private func search() {
-        if searchText.isEmpty {
-            updateList()
-        } else {
-            currentCountryItems = []
-
-            searchItems = store.cardItems.filter { item in
-                let localizedName = String(
-                    localized: String.LocalizationValue(item.name)
-                )
-
-                if localizedName.localizedCaseInsensitiveContains(searchText) {
-                    return true
-                }
-
-                let localizedArea = String(
-                    localized: String.LocalizationValue(item.area.rawValue)
-                )
-
-                if localizedArea.localizedCaseInsensitiveContains(searchText) {
-                    return true
-                }
-
-                return item.searchWords.contains { key in
-                    let localizedWord = String(
-                        localized: String.LocalizationValue(key)
-                    )
-
-                    return localizedWord.localizedCaseInsensitiveContains(searchText)
-                }
-            }
+        guard !searchText.isEmpty else {
+            updateCurrentCountryItems()
+            return
         }
-    }
-}
 
-struct iPhoneDuoHingeModifier: ViewModifier {
-    @Binding var value: Bool
-
-    func body(content: Content) -> some View {
-        if #available(iOS 27.1, *) {
-            content
-                .onHingeChange { _, duo in
-                    guard let hinge = duo.hinge else {
-                        value = false
-                        return
-                    }
-                    value = hinge.status == .partiallyOpen || hinge.status == .fullyOpen
-                }
-        } else {
-            content
-        }
-    }
-}
-
-extension View {
-    func iPhoneDuoHinge(value: Binding<Bool>) -> some View {
-        self.modifier(iPhoneDuoHingeModifier(value: value))
-    }
-}
-struct EmptyViewSideBar: View {
-    var title:String
-    var icon:String
-    var description:String?
-    
-    var body: some View {
-        ContentUnavailableView {
-            Label {
-                Text(LocalizedStringKey(title))
-                    .font(.title2)
-            } icon: {
-                Image(systemName: icon)
-                    .imageScale(.large)
-            }
-        } description: {
-            if let description {
-                Text(LocalizedStringKey(description))
-                    .font(.body)
-            }
-        }
-    }
-}
-
-
-enum SortType: String, CaseIterable {
-    case name_ascend = "cardList.sort.name_ascend"
-    case name_descend = "cardList.sort.name_descend"
-
-    case locate_ascend = "cardList.sort.locate_ascend"
-    case locate_descend = "cardList.sort.locate_descend"
-}
-
-struct CardRegionView: View {
-    @ObservedObject var smartCardManager: SmartCardManager
-
-    @State var items: [CardInfo]
-    @State var subItems: [CardInfo]?
-    @State var externalItems: [CardInfo]?
-
-    @Binding var deleteAds: Bool
-    var navigationTitle: String
-    var showsSortToolbar = true
-    var onResult: ((Result) -> Void)? = nil
-
-    @State var sort: SortType = .locate_ascend
-    @State var sort2: SortType = .locate_ascend
-    @State var sort3: SortType = .locate_ascend
-
-    var body: some View {
-        List {
-            Group {
-#if !targetEnvironment(macCatalyst)
-                ListAdView(deleteAds: $deleteAds)
-#endif
-                
-                Section {
-                    ForEach(
-                        sortItems(sort: sort, items: items, pref: false),
-                        id: \.logo
-                    ) { item in
-                        CardListRow(
-                            item: item,
-                            deleteAds: $deleteAds,
-                            smartCardManager: smartCardManager,
-                            onResult: onResult
-                        )
-                    }
-                } footer: {
-                    Text(LocalizedStringKey("cardList.description"))
-                }
-                
-                if let subItems {
-                    if !subItems.isEmpty {
-                        Section {
-                            ForEach(
-                                sortItems(sort: sort2, items: subItems, pref: true),
-                                id: \.logo
-                            ) { item in
-                                CardListRow(
-                                    item: item,
-                                    deleteAds: $deleteAds,
-                                    smartCardManager: smartCardManager,
-                                    onResult: onResult
-                                )
-                            }
-                        } header: {
-                            HStack {
-                                Text(
-                                    LocalizedStringKey(
-                                        subItems.first?.area.region().name() ?? ""
-                                    )
-                                )
-                                Spacer()
-                            }
-                        } footer: {
-                            Text(LocalizedStringKey("cardList.description"))
-                        }
-                    }
-                }
-                
-                if let externalItems {
-                    if !externalItems.isEmpty {
-                        Section {
-                            ForEach(
-                                sortItems(
-                                    sort: sort2,
-                                    items: externalItems,
-                                    pref: true
-                                ),
-                                id: \.logo
-                            ) { item in
-                                CardListRow(
-                                    item: item,
-                                    deleteAds: $deleteAds,
-                                    smartCardManager: smartCardManager,
-                                    externalDevice: !smartCardManager.readers.isEmpty,
-                                    onResult: onResult
-                                )
-                            }
-                        } header: {
-                            VStack(alignment: .leading, spacing: 5) {
-                                HStack {
-                                    Text(LocalizedStringKey("cardList.external.title"))
-                                    Spacer()
-                                    
-                                    HStack(spacing: 4) {
-                                        if smartCardManager.readers.isEmpty {
-                                            Circle()
-                                                .fill(Color.red)
-                                                .stroke(Color.gray, lineWidth: 1.5)
-                                                .frame(width: 15, height: 15)
-                                            
-                                            Text(LocalizedStringKey("cardList.external.disable"))
-                                        } else {
-                                            Circle()
-                                                .fill(Color.green)
-                                                .stroke(Color.gray, lineWidth: 1.5)
-                                                .frame(width: 15, height: 15)
-                                            
-                                            Text(LocalizedStringKey("cardList.external.enable"))
-                                        }
-                                    }
-                                }
-                                
-                                Text(LocalizedStringKey("cardList.external.description"))
-                                    .font(.caption)
-                                    .fontWeight(.regular)
-                            }
-                        } footer: {
-                            Text(LocalizedStringKey("cardList.description"))
-                        }
-                    }
-                }
-            }
-            .listRowBackground(Color(uiColor:.secondarySystemFill))
-        }
-        .scrollContentBackground(.hidden)
-        .listStyle(.insetGrouped)
-        .navigationTitle(
-            LocalizedStringKey(navigationTitle)
-        )
-        .toolbar {
-            if showsSortToolbar {
-                CardSortPicker(sort: $sort)
-            }
-        }
-    }
-
-    func sortItems(
-        sort: SortType,
-        items: [CardInfo],
-        pref: Bool
-    ) -> [CardInfo] {
-        items.sorted {
-            switch sort {
-            case .name_ascend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
-                ) == .orderedAscending
-
-            case .name_descend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
-                ) == .orderedDescending
-
-            case .locate_ascend:
-                if pref {
-                    String(prefSort($0.prefectures?.first ?? ""))
-                        .localizedStandardCompare(
-                            String(prefSort($1.prefectures?.first ?? ""))
-                        ) == .orderedAscending
-                } else {
-                    Localize($0.area.sortName()).localizedStandardCompare(
-                        Localize($1.area.sortName())
-                    ) == .orderedAscending
-                }
-
-            case .locate_descend:
-                if pref {
-                    String(prefSort($0.prefectures?.first ?? ""))
-                        .localizedStandardCompare(
-                            String(prefSort($1.prefectures?.first ?? ""))
-                        ) == .orderedDescending
-                } else {
-                    Localize($0.area.sortName()).localizedStandardCompare(
-                        Localize($1.area.sortName())
-                    ) == .orderedDescending
-                }
-            }
-        }
-    }
-}
-
-struct CardSortPicker: View {
-    @Binding var sort: SortType
-
-    var body: some View {
-        Menu {
-            Picker("", selection: $sort) {
-                ForEach(SortType.allCases, id: \.self) { item in
-                    Text(LocalizedStringKey(item.rawValue))
-                }
-            }
-        } label: {
-            Image(systemName: "arrow.up.arrow.down")
+        currentCountryItems = []
+        searchItems = store.cardItems.filter { item in
+            item.matchesSearch(searchText)
+                || Localize(item.area.rawValue).localizedCaseInsensitiveContains(searchText)
         }
     }
 }

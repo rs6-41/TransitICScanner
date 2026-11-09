@@ -11,8 +11,15 @@ struct BannerAdsView: View {
     @State var adsHeight: CGFloat = 50.0
     @StateObject private var debugModel = DebugModel()
     @Binding var loadingError: Bool
+    @ObservedObject private var consent = AdConsentManager.shared
 
     var body: some View {
+        if consent.canRequestAds {
+            bannerContent
+        }
+    }
+
+    private var bannerContent: some View {
         GeometryReader { geometry in
             let adSize = currentOrientationAnchoredAdaptiveBanner(
                 width: geometry.size.width
@@ -55,11 +62,9 @@ private struct BannerViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> BannerView {
         let banner = BannerView(adSize: adSize)
-        
-        
-        
+
         @EnvironmentObject var debug: DebugModel
-        
+
         banner.adUnitID = BannerUnitIDValue
         banner.delegate = context.coordinator
         banner.load(Request())
@@ -84,7 +89,7 @@ private struct BannerViewContainer: UIViewRepresentable {
         }
 
         func bannerViewDidReceiveAd(_ bannerView: BannerView) {
-            print("DID RECEIVE AD.")
+            Log.debug("DID RECEIVE AD.")
 
             DispatchQueue.main.async {
                 self.parent.loadingError = false
@@ -95,7 +100,7 @@ private struct BannerViewContainer: UIViewRepresentable {
             _ bannerView: BannerView,
             didFailToReceiveAdWithError error: Error
         ) {
-            print("FAILED TO RECEIVE AD: \(error.localizedDescription)")
+            Log.debug("FAILED TO RECEIVE AD: \(error.localizedDescription)")
 
             DispatchQueue.main.async {
                 self.parent.loadingError = true
