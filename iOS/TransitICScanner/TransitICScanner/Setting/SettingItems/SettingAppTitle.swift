@@ -3,9 +3,7 @@ import SwiftUI
 struct SettingAppTitle: View {
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-    let appEnvironment = Bundle.main.object(
-        forInfoDictionaryKey: "AppEnvironment"
-    ) as? String
+    let appEnvironment = AppEnvironment.current
     @Binding var devSettingAlert:Bool
     
     var body: some View {
@@ -33,7 +31,7 @@ struct SettingAppTitle: View {
                                     Text(LocalizedStringKey(stage))
                                 }
                             }
-                            if appEnvironment == "DEV" {
+                            if appEnvironment == .dev {
                                 Text(String("(\(buildNumber))"))
                             }
                         }
@@ -54,15 +52,13 @@ struct SettingAppTitle: View {
     
     func stage() -> String? {
         switch appEnvironment {
-        case "DEV":
+        case .dev:
             return "setting.appVersion.stage.dev"
             
-        case "BETA":
+        case .beta:
             return "setting.appVersion.stage.beta"
             
-        case "REL": return nil
-        case .none: return nil
-        case .some(_): return nil
+        case .rel: return nil
         }
     }
 }

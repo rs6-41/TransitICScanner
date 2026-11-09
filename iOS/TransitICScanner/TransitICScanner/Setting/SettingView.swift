@@ -12,9 +12,7 @@ struct SettingView: View {
     
     @Binding var isCloudSyncEnabled:Bool
     
-    let appEnvironment = Bundle.main.object(
-        forInfoDictionaryKey: "AppEnvironment"
-    ) as? String
+    let appEnvironment = AppEnvironment.current
     @AppStorage("devSetting") var devSetting = false
     @State var devSettingAlert = false
     
@@ -41,7 +39,7 @@ struct SettingView: View {
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }
-                    if appEnvironment == "DEV" || devSetting {
+                    if appEnvironment == .dev || devSetting {
                         NavigationLink(destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)) {
                             SquareIcon(text:"setting.debug", systemImage: "hammer.fill",color:Color.blue)
                         }
