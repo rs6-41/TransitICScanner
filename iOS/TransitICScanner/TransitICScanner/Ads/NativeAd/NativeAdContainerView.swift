@@ -20,7 +20,7 @@ struct NativeAdContentView: View {
     let bodyView: UIView?
     let advertiserView: UIView?
     let callToActionView: UIView?
-    
+
     private let setting = adSetting()
     var body: some View {
         HStack(spacing: 8) {
@@ -55,7 +55,7 @@ struct NativeAdContentView: View {
 
 struct ExistingUIView: UIViewRepresentable {
     let view: UIView
-    
+
     func makeUIView(context: Context) -> UIView {
         view
     }
@@ -68,7 +68,7 @@ struct NativeAdTextView: View {
     let font: Font
     let secondary: Bool
     let lineLimit: Int
-    
+
     init(
         text: String,
         font: Font = .body,
@@ -93,7 +93,7 @@ struct NativeAdTextView: View {
 struct NativeAdIconView: View {
     let image: UIImage?
     let size: CGFloat
-    
+
     init(
         image: UIImage?,
         size: CGFloat = 48
@@ -119,22 +119,22 @@ struct NativeAdIconView: View {
 
 struct NativeAdCallToActionView: View {
     let text: String
-    
+
     init(
         text: String
     ) {
         self.text = text
     }
     var body: some View {
-            Text(text)
-                .font(.system(size: 12))
-                .foregroundStyle(.white)
-                .padding(.vertical, 4)
-                .padding(.horizontal, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .fill(Color.accentColor)
-                )
+        Text(text)
+            .font(.system(size: 12))
+            .foregroundStyle(.white)
+            .padding(.vertical, 4)
+            .padding(.horizontal, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color.accentColor)
+            )
     }
 }
 
@@ -143,7 +143,7 @@ private struct NativeAdTextHostingView: View {
     let font: Font
     let secondary: Bool
     let lineLimit: Int
-    
+
     var body: some View {
         NativeAdTextView(
             text: text,
@@ -157,7 +157,7 @@ private struct NativeAdTextHostingView: View {
 private struct NativeAdIconHostingView: View {
     let image: UIImage?
     let size: CGFloat
-    
+
     var body: some View {
         NativeAdIconView(
             image: image,
@@ -168,7 +168,7 @@ private struct NativeAdIconHostingView: View {
 
 private struct NativeAdCallToActionHostingView: View {
     let text: String
-    
+
     var body: some View {
         NativeAdCallToActionView(
             text: text
@@ -177,7 +177,7 @@ private struct NativeAdCallToActionHostingView: View {
 }
 
 final class NativeAdContainerView: NativeAdView {
-    
+
     var onSizeChanged: ((CGSize) -> Void)?
     private let contentStack = UIStackView()
     private let textStack = UIStackView()
@@ -211,7 +211,7 @@ final class NativeAdContainerView: NativeAdView {
             contentStack.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentStack.topAnchor.constraint(equalTo: topAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+            contentStack.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     override func layoutSubviews() {
@@ -254,8 +254,8 @@ final class NativeAdContainerView: NativeAdView {
             width: width,
             height: requiredHeight
         )
-        guard abs(newSize.width - lastReportedSize.width) > 0.5 ||
-                abs(newSize.height - lastReportedSize.height) > 0.5 else {
+        guard abs(newSize.width - lastReportedSize.width) > 0.5 || abs(newSize.height - lastReportedSize.height) > 0.5
+        else {
             return
         }
         lastReportedSize = newSize
@@ -287,7 +287,8 @@ final class NativeAdContainerView: NativeAdView {
         textStack.addArrangedSubview(headlineView)
         self.headlineView = headlineView
         if let body = nativeAd.body,
-           !body.isEmpty {
+            !body.isEmpty
+        {
             let bodyController = UIHostingController(
                 rootView: NativeAdTextHostingView(
                     text: body,
@@ -305,7 +306,8 @@ final class NativeAdContainerView: NativeAdView {
             self.bodyView = bodyView
         }
         if let advertiser = nativeAd.advertiser,
-           !advertiser.isEmpty {
+            !advertiser.isEmpty
+        {
             let advertiserController = UIHostingController(
                 rootView: NativeAdTextHostingView(
                     text: advertiser,
@@ -323,7 +325,8 @@ final class NativeAdContainerView: NativeAdView {
             self.advertiserView = advertiserView
         }
         if let callToAction = nativeAd.callToAction,
-           !callToAction.isEmpty {
+            !callToAction.isEmpty
+        {
             let ctaController = UIHostingController(
                 rootView: NativeAdCallToActionHostingView(
                     text: callToAction
@@ -338,8 +341,7 @@ final class NativeAdContainerView: NativeAdView {
             self.callToActionView = ctaView
         }
         let hasMedia =
-        nativeAd.mediaContent.hasVideoContent ||
-        nativeAd.mediaContent.mainImage != nil
+            nativeAd.mediaContent.hasVideoContent || nativeAd.mediaContent.mainImage != nil
         if hasMedia {
             let mediaView = MediaView()
             mediaView.translatesAutoresizingMaskIntoConstraints = false
@@ -350,7 +352,7 @@ final class NativeAdContainerView: NativeAdView {
             contentStack.addArrangedSubview(mediaView)
             NSLayoutConstraint.activate([
                 mediaView.widthAnchor.constraint(equalToConstant: 120),
-                mediaView.heightAnchor.constraint(equalToConstant: 120)
+                mediaView.heightAnchor.constraint(equalToConstant: 120),
             ])
             self.mediaView = mediaView
             sideViewHeight = 120
@@ -370,7 +372,7 @@ final class NativeAdContainerView: NativeAdView {
             contentStack.addArrangedSubview(iconView)
             NSLayoutConstraint.activate([
                 iconView.widthAnchor.constraint(equalToConstant: setting.icon),
-                iconView.heightAnchor.constraint(equalToConstant: setting.icon)
+                iconView.heightAnchor.constraint(equalToConstant: setting.icon),
             ])
             self.iconView = iconView
             sideViewHeight = setting.icon
@@ -408,5 +410,5 @@ final class NativeAdContainerView: NativeAdView {
         hasSideView = false
         lastReportedSize = .zero
     }
-    
+
 }

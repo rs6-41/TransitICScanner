@@ -1,4 +1,3 @@
-
 import Foundation
 
 enum idKMT_Converter {
@@ -15,13 +14,15 @@ enum idKMT_Converter {
 
     private static func formatDate(_ date: DateComponents) -> String {
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
+            let month = date.month,
+            let day = date.day
+        else {
             return String(localized: "unknown")
         }
 
         guard let hour = date.hour,
-              let minute = date.minute else {
+            let minute = date.minute
+        else {
             return "\(year)/\(month)/\(day)"
         }
 

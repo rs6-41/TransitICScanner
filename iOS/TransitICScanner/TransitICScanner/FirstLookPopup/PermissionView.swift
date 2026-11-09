@@ -96,7 +96,7 @@ struct PermissionModalView: View {
                 }
             )
         }
-        
+
         if value == 1 {
             if NFCNDEFReaderSession.readingAvailable {
                 return PermissionModel(
@@ -127,14 +127,13 @@ struct PermissionModalView: View {
                 imageName: "permission_GPS",
                 description: "permission.gps.description",
                 descriptionRed: nil,
-                icon:"location.fill",
-                fill:Color.blue,
+                icon: "location.fill",
+                fill: Color.blue,
                 action: { completion in
                     locationManager.requestAuthorization(completion: completion)
                 }
             )
         }
-        
 
         if value == 3 {
             return PermissionModel(
@@ -142,8 +141,8 @@ struct PermissionModalView: View {
                 imageName: "permission_Notifications",
                 description: "permission.notifications.description",
                 descriptionRed: nil,
-                icon:"bell.badge.fill",
-                fill:Color.red,
+                icon: "bell.badge.fill",
+                fill: Color.red,
                 action: { completion in
                     let center = UNUserNotificationCenter.current()
 
@@ -151,7 +150,7 @@ struct PermissionModalView: View {
                         if settings.authorizationStatus == .notDetermined {
                             center.requestAuthorization(options: [.alert, .badge]) { _, error in
                                 if let error {
-                                    print("Notification authorization error: \(error.localizedDescription)")
+                                    Log.debug("Notification authorization error: \(error.localizedDescription)")
                                 }
 
                                 DispatchQueue.main.async {
@@ -177,8 +176,8 @@ struct PermissionModalView: View {
                     imageName: "permission_ATT",
                     description: "permission.att.description",
                     descriptionRed: "permission.att.description.ifDenied",
-                    icon:"flag.fill",
-                    fill:Color.orange,
+                    icon: "flag.fill",
+                    fill: Color.orange,
                     action: { completion in
                         guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else {
                             completion()
@@ -189,13 +188,13 @@ struct PermissionModalView: View {
                             switch status {
                             case .authorized:
                                 let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                                print("ATT: Authorized: \(idfa)")
+                                Log.debug("ATT: Authorized: \(idfa)")
                             case .denied:
-                                print("ATT: Denied")
+                                Log.debug("ATT: Denied")
                             case .notDetermined:
-                                print("ATT: Not Determined")
+                                Log.debug("ATT: Not Determined")
                             case .restricted:
-                                print("ATT: Restricted")
+                                Log.debug("ATT: Restricted")
                             @unknown default:
                                 break
                             }
@@ -210,21 +209,21 @@ struct PermissionModalView: View {
                 return nil
             }
         }
-        
+
         if value == lastPath {
             return PermissionModel(
                 title: "permission.done",
                 imageName: "permission_last",
                 description: "permission.done.description",
                 descriptionRed: nil,
-                icon:"checkmark",
-                color:Color.green,
+                icon: "checkmark",
+                color: Color.green,
                 action: { completion in
                     isPresented = false
                     completion()
                 }
-                )
-            }
+            )
+        }
 
         return nil
     }
@@ -246,10 +245,10 @@ struct PermissionView: View {
     @Binding var path: [Int]
     let lastPath: Int
     @Binding var isPresented: Bool
-    
+
     @State var animate = true
-    
-    @State var description:AttributedString = ""
+
+    @State var description: AttributedString = ""
 
     var body: some View {
         VStack {
@@ -258,14 +257,14 @@ struct PermissionView: View {
                     .frame(height: 50)
 
                 VStack(spacing: 0) {
-                    HStack(spacing:3) {
+                    HStack(spacing: 3) {
                         if let icon = content.icon {
                             if let fill = content.fill {
-                                SquareIcon(systemImage: icon,color:fill)
-                                    .symbolEffect(.drawOn.byLayer, options: .nonRepeating, isActive:animate)
+                                SquareIcon(systemImage: icon, color: fill)
+                                    .symbolEffect(.drawOn.byLayer, options: .nonRepeating, isActive: animate)
                             } else if let color = content.color {
                                 Image(systemName: icon)
-                                    .symbolEffect(.drawOn.byLayer, options: .nonRepeating, isActive:animate)
+                                    .symbolEffect(.drawOn.byLayer, options: .nonRepeating, isActive: animate)
                                     .foregroundStyle(color)
                                     .bold()
                                     .font(.title)
@@ -275,7 +274,7 @@ struct PermissionView: View {
                             .bold()
                             .font(.title)
                             .lineLimit(1)
-                                .fixedSize()
+                            .fixedSize()
                     }
                     .onAppear() {
                         if let fill = content.fill {
@@ -299,17 +298,16 @@ struct PermissionView: View {
                     }
                 }
 
-
                 if let descriptionRed = content.descriptionRed {
                     Text(description)
-                    .onAppear() {
-                        var text1 = AttributedString(String(localized:content.description))
-                        var text2 = AttributedString(String(localized:descriptionRed))
-                        text2.foregroundColor = .red
-                        description = text1 + "\n" + text2
-                    }
+                        .onAppear() {
+                            var text1 = AttributedString(String(localized: content.description))
+                            var text2 = AttributedString(String(localized: descriptionRed))
+                            text2.foregroundColor = .red
+                            description = text1 + "\n" + text2
+                        }
                 } else {
-                    Text(String(localized:content.description))
+                    Text(String(localized: content.description))
                 }
             }
 

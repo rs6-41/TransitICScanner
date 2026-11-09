@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 func prefSort(_ prefecture: String) -> Int {
     switch prefecture {
     //日本
@@ -51,7 +50,7 @@ func prefSort(_ prefecture: String) -> Int {
     case "Miyazaki": return 44
     case "Kagoshima": return 45
     case "Okinawa": return 46
-        
+
     // アメリカ
     case "AL": return 0
     case "AK": return 1
@@ -104,7 +103,7 @@ func prefSort(_ prefecture: String) -> Int {
     case "WI": return 48
     case "WY": return 49
     case "DC": return 50
-        
+
     default: return -1
     }
 }

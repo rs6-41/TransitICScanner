@@ -5,12 +5,13 @@ import Combine
 import GoogleMobileAds
 #endif
 
-
 class AppDelegate: UIResponder, UIApplicationDelegate {
-#if !targetEnvironment(macCatalyst)
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MobileAds.shared.start(completionHandler: nil)
+    #if !targetEnvironment(macCatalyst)
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        // Mobile Ads SDK は広告の同意取得後に AdConsentManager が初期化する
         return true
     }
     #endif
@@ -23,19 +24,19 @@ struct TransitICScannerApp: App {
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
     @StateObject private var getCountry = GetCountry()
-    
+
     @StateObject var smartCardManager = SmartCardManager()
 
     let container: ModelContainer
 
     init() {
-        do {
-            self.container = try SavedDataModelContainer.makeContainer()
-        } catch {
-            fatalError(
-                "ModelContainerを作成できません: \(error)"
-            )
+        // 保存先は ModelContainer の作成前に確定させる
+        if AppEnvironment.current != .dev {
+            StorageConfig.setDebugStorage(false)
         }
+
+        // 失敗しても起動できるよう、作成できない場合は保存先を切り替える（ContentView で通知する）
+        self.container = SavedDataModelContainer.makeContainerWithFallback()
     }
 
     var body: some Scene {
@@ -58,7 +59,6 @@ struct TransitICScannerApp: App {
         .modelContainer(container)
     }
 }
-
 
 struct WindowAccessor: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {

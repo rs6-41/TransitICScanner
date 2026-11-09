@@ -12,11 +12,13 @@ let usClipper = CardInfo(
     prefectures: ["CA"],
     regionOption: nil,
     description: "cardList.usClipper.description",
-    scand_description: "",
-    searchWords: ["clipper", "くりっぱー", "クリッパー", "サンフランシスコ", "san francisco",
-                  "bay area", "california", "BART", "Muni", "Caltrain"],
+    scannedDescription: "",
+    searchWords: [
+        "clipper", "くりっぱー", "クリッパー", "サンフランシスコ", "san francisco",
+        "bay area", "california", "BART", "Muni", "Caltrain",
+    ],
     scanOption: ScanOption(
-        name: "usClipper",
+        id: .usClipper,
         nameShort: "usClipper.short",
         scanType: .nfc,
         pollingOption: [.iso14443],
@@ -26,18 +28,20 @@ let usClipper = CardInfo(
         converter: .usClipper,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 12.5,
         idm: "04A1B2C3D4E5F6",
         type: "",
         history: [
             // 乗車: processType4 = 事業者(16bit) << 16 | 交通種別(16bit)
-            ResultHistory(processType: 0x02, processType4: 0x00040061, date: sampleDay3, balance: 12.5, amount: -2.85,
-                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 2),
+            ResultHistory(
+                processType: 0x02, processType4: 0x00040061, date: sampleDay3, balance: 12.5, amount: -2.85,
+                lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 2),
             // チャージ
-            ResultHistory(processType: 0x01, processType4: 0x00040000, date: sampleDay2, balance: 15.35, amount: 20.0,
-                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 1),
+            ResultHistory(
+                processType: 0x01, processType4: 0x00040000, date: sampleDay2, balance: 15.35, amount: 20.0,
+                lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 1),
         ]
     )
 )
@@ -47,9 +51,9 @@ let usClipper = CardInfo(
 
 /// 履歴の中間表現
 struct ClipperEvent {
-    let time: UInt32       // 1900-01-01 からの秒数
-    let kind: UInt8        // 0x01 = チャージ, 0x02 = 乗車(トリップ)
-    let amountCents: Int   // チャージ: +, 運賃: -
+    let time: UInt32  // 1900-01-01 からの秒数
+    let kind: UInt8  // 0x01 = チャージ, 0x02 = 乗車(トリップ)
+    let amountCents: Int  // チャージ: +, 運賃: -
     let agency: UInt16
     let transport: UInt16
     let route: UInt16
@@ -58,8 +62,8 @@ struct ClipperEvent {
     let seq: Int
 }
 
-private let clipperEpochOffset: TimeInterval = 2_208_988_800   // 1900-01-01 -> 1970-01-01
-private let clipperAID = Data([0x90, 0x11, 0xF2])              // 0x9011F2 (実機ログ: GetApplicationIDs は 90 11 F2 の順)
+private let clipperEpochOffset: TimeInterval = 2_208_988_800  // 1900-01-01 -> 1970-01-01
+private let clipperAID = Data([0x90, 0x11, 0xF2])  // 0x9011F2 (実機ログ: GetApplicationIDs は 90 11 F2 の順)
 
 private func clipper_be16(_ b: [UInt8], _ o: Int) -> UInt16 {
     (UInt16(b[o]) << 8) | UInt16(b[o + 1])
@@ -90,7 +94,7 @@ extension NFCScannerModel {
 
         switch tag {
         case .miFare(let t):
-            print("Clipper: using NFCMiFareTag path")
+            Log.debug("Clipper: using NFCMiFareTag path")
             guard t.mifareFamily == .desfire else {
                 session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
                 return
@@ -109,7 +113,7 @@ extension NFCScannerModel {
             identifier = t.identifier
 
         case .iso7816(let t):
-            print("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
+            Log.debug("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
             send = { cla, ins, p1, p2, data, le in
                 let apdu = NFCISO7816APDU(
                     instructionClass: cla,
@@ -134,11 +138,7 @@ extension NFCScannerModel {
                 return
             }
 
-            await MainActor.run {
-                self.result = result
-                self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
-                session.invalidate()
-            }
+            await self.completeScan(result, session: session)
         }
     }
 
@@ -157,10 +157,11 @@ extension NFCScannerModel {
     private func usClipper_result(
         _ send: APDUSend,
         identifier: Data
-    ) async -> Result? {
+    ) async -> ScanResult? {
         guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil,
-              let balanceData = await clipper_readFile(send, file: 0x02),
-              balanceData.count >= 20 else {
+            let balanceData = await clipper_readFile(send, file: 0x02),
+            balanceData.count >= 20
+        else {
             return nil
         }
 
@@ -171,14 +172,14 @@ extension NFCScannerModel {
             limit: scanOption.historyCount
         )
         let info = await clipper_info(send, identifier: identifier)
-        return Result(
+        return ScanResult(
             balance: Double(balanceCents) / 100.0,
             isHistory: true,
             history: history,
             info: info,
             converter: usClipper.scanOption.converter,
             isLastHide: false,
-            description: usClipper.scand_description,
+            description: usClipper.scannedDescription,
             savedAt: Date.now
         )
     }
@@ -198,17 +199,18 @@ extension NFCScannerModel {
             for (i, r) in clipper_records(data).enumerated() {
                 let time = clipper_be32(r, 4)
                 guard time != 0 else { continue }
-                events.append(ClipperEvent(
-                    time: time,
-                    kind: 0x01,
-                    amountCents: Int(clipper_be16(r, 14)),
-                    agency: clipper_be16(r, 2),
-                    transport: 0,
-                    route: 0,
-                    stationIn: 0,
-                    stationOut: 0,
-                    seq: 100_000 + i
-                ))
+                events.append(
+                    ClipperEvent(
+                        time: time,
+                        kind: 0x01,
+                        amountCents: Int(clipper_be16(r, 14)),
+                        agency: clipper_be16(r, 2),
+                        transport: 0,
+                        route: 0,
+                        stationIn: 0,
+                        stationOut: 0,
+                        seq: 100_000 + i
+                    ))
             }
         }
 
@@ -256,10 +258,11 @@ extension NFCScannerModel {
                     parsed.remove(at: index)
                 }
 
-                parsed.append((
-                    event: event,
-                    hasExit: exit != 0
-                ))
+                parsed.append(
+                    (
+                        event: event,
+                        hasExit: exit != 0
+                    ))
             }
 
             events.append(contentsOf: parsed.map { $0.event })
@@ -332,7 +335,7 @@ extension NFCScannerModel {
             serial: serial,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(
+            issueInfo: IssueInfo(
                 region: usClipper.area.rawValue,
                 area: "locate.prefecture.CA",
                 city: "locate.city.CA.SF",
@@ -364,7 +367,8 @@ extension NFCScannerModel {
 
         var order: [UInt8] = [0xBD, 0xBB]
         if let settings = await clipper_command(send, ins: 0xF5, data: Data([file])),
-           let type = settings.first {
+            let type = settings.first
+        {
             switch type {
             case 0x00, 0x01: order = [0xBD]
             case 0x03, 0x04: order = [0xBB]
@@ -404,12 +408,12 @@ extension NFCScannerModel {
                     256
                 )
             } catch {
-                print(String(format: "Clipper APDU INS=%02X error:", code), error)
+                Log.debug(String(format: "Clipper APDU INS=%02X error:", code), error)
                 return nil
             }
 
             let (resp, sw1, sw2) = result
-            print(String(format: "Clipper APDU INS=%02X SW=%02X%02X LEN=%d", code, sw1, sw2, resp.count))
+            Log.debug(String(format: "Clipper APDU INS=%02X SW=%02X%02X LEN=%d", code, sw1, sw2, resp.count))
 
             guard sw1 == 0x91 else {
                 return nil

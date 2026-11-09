@@ -11,10 +11,10 @@ let jpDoCard = CardInfo(
     prefectures: ["Hokkaido"],
     regionOption: nil,
     description: "cardList.jpDoCard.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido"],
     scanOption: ScanOption(
-        name: "jpDoCard",
+        id: .jpDoCard,
         nameShort: "jpDoCard.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
@@ -23,7 +23,7 @@ let jpDoCard = CardInfo(
         currencyType: .jpy,
         converter: .jpDoCard
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance: 500.0,
@@ -51,7 +51,7 @@ let jpDoCard = CardInfo(
                     lineOut: 0x11,
                     stationOut: 0x11,
                     transactionId: 152
-                )
+                ),
             ]
         )
 )
@@ -64,7 +64,8 @@ final class JpDoCardFullLog {
     }
 
     func appendData(_ title: String, _ data: Data) {
-        let hex = data
+        let hex =
+            data
             .map { String(format: "%02X", $0) }
             .joined(separator: " ")
 
@@ -72,7 +73,8 @@ final class JpDoCardFullLog {
     }
 
     func appendBytes(_ title: String, _ bytes: [UInt8]) {
-        let hex = bytes
+        let hex =
+            bytes
             .map { String(format: "%02X", $0) }
             .joined(separator: " ")
 
@@ -82,19 +84,7 @@ final class JpDoCardFullLog {
 
 extension NFCScannerModel {
 
-    func jpDoCard_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession
-    ) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(
-                errorMessage: String(
-                    localized: "scanner.coreNFC.error.notfeliCa"
-                )
-            )
-            return
-        }
-
+    func jpDoCard_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         let fullLog = JpDoCardFullLog()
         let scanDate = Date()
 
@@ -103,75 +93,70 @@ extension NFCScannerModel {
         fullLog.append("System Code: 8DB6")
         fullLog.appendBytes("IDm", [UInt8](felicaTag.currentIDm))
 
-        Task { @MainActor [self] in
+        let info = await jpDoCard_info(
+            felicaTag,
+            fullLog: fullLog
+        )
 
-            let info = await jpDoCard_info(
-                felicaTag,
-                fullLog: fullLog
-            )
+        let balance = await jpDoCard_balance(
+            felicaTag,
+            fullLog: fullLog
+        )
 
-            let balance = await jpDoCard_balance(
-                felicaTag,
-                fullLog: fullLog
-            )
+        let history = await jpDoCard_history(
+            felicaTag,
+            count: self.scanOption.historyCount,
+            creationDate: info?.validDate,
+            fullLog: fullLog
+        )
 
-            let history = await jpDoCard_history(
-                felicaTag,
-                count: self.scanOption.historyCount,
-                creationDate: info?.validDate,
-                fullLog: fullLog
-            )
+        fullLog.append("===== FINAL RESULT =====")
 
-            fullLog.append("===== FINAL RESULT =====")
-
-            if let balance {
-                fullLog.append("Balance: \(balance)")
-            } else {
-                fullLog.append("Balance: unavailable")
-            }
-
-            fullLog.append(
-                "History Count: \(history?.count ?? 0)"
-            )
-
-            fullLog.append(
-                "History Available: \(history != nil)"
-            )
-
-            if let info {
-                fullLog.append("Card Type: \(info.type)")
-                fullLog.append(
-                    "Card Creation Date: \(info.validDate ?? "nil")"
-                )
-            } else {
-                fullLog.append("Card Type: unavailable")
-            }
-
-            fullLog.append("===== DOCARD FULL LOG END =====")
-
-            self.result = Result(
-                balance: Double(balance ?? 0),
-                isHistory: history != nil,
-                history: history,
-                info: info,
-                converter: jpDoCard.scanOption.converter,
-                isLastHide: true,
-                description: jpDoCard.scand_description,
-                savedAt: Date.now,
-                fullLog: fullLog.text
-            )
-
-            self.session?.alertMessage =
-                String(
-                    localized: "scanner.coreNFC.scanning.done"
-                )
-
-            session.invalidate()
+        if let balance {
+            fullLog.append("Balance: \(balance)")
+        } else {
+            fullLog.append("Balance: unavailable")
         }
+
+        fullLog.append(
+            "History Count: \(history?.count ?? 0)"
+        )
+
+        fullLog.append(
+            "History Available: \(history != nil)"
+        )
+
+        if let info {
+            fullLog.append("Card Type: \(info.type)")
+            fullLog.append(
+                "Card Creation Date: \(info.validDate ?? "nil")"
+            )
+        } else {
+            fullLog.append("Card Type: unavailable")
+        }
+
+        fullLog.append("===== DOCARD FULL LOG END =====")
+
+        // 残高が読めない場合は 0 円として扱わず読取失敗にする
+        guard let balance else {
+            return nil
+        }
+
+        return ScanResult(
+            balance: Double(balance),
+            isHistory: history != nil,
+            history: history,
+            info: info,
+            converter: jpDoCard.scanOption.converter,
+            isLastHide: true,
+            description: jpDoCard.scannedDescription,
+            savedAt: Date.now,
+            fullLog: fullLog.text
+        )
     }
 
     func jpDoCard_balance(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> Int? {
 
@@ -180,12 +165,14 @@ extension NFCScannerModel {
         fullLog?.append("Service Code: 010F")
         fullLog?.append("Block: 00")
 
-        guard let data = await jpDoCard_read(
-            felicaTag,
-            service: Data([0x0F, 0x01]),
-            blocks: [0],
-            fullLog: fullLog
-        )?.first else {
+        guard
+            let data = await jpDoCard_read(
+                felicaTag,
+                service: Data([0x0F, 0x01]),
+                blocks: [0],
+                fullLog: fullLog
+            )?.first
+        else {
             fullLog?.append("Balance read: FAILED")
             return nil
         }
@@ -200,8 +187,7 @@ extension NFCScannerModel {
         let bytes = [UInt8](data)
 
         let balance =
-            (Int(bytes[14]) << 8) |
-            Int(bytes[15])
+            (Int(bytes[14]) << 8) | Int(bytes[15])
 
         fullLog?.appendData(
             "Balance Block 00",
@@ -222,7 +208,7 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 20,
         creationDate: String? = nil,
         fullLog: JpDoCardFullLog? = nil
@@ -255,12 +241,14 @@ extension NFCScannerModel {
                 "--- DoCard Block \(blockIndex) ---"
             )
 
-            guard let data = await jpDoCard_read(
-                felicaTag,
-                service: Data([0x0F, 0x01]),
-                blocks: [UInt8(blockIndex)],
-                fullLog: fullLog
-            )?.first else {
+            guard
+                let data = await jpDoCard_read(
+                    felicaTag,
+                    service: Data([0x0F, 0x01]),
+                    blocks: [UInt8(blockIndex)],
+                    fullLog: fullLog
+                )?.first
+            else {
                 fullLog?.append(
                     "BLOCK \(blockIndex): READ FAILED"
                 )
@@ -292,15 +280,13 @@ extension NFCScannerModel {
             let day = Int(bytes[1])
 
             let dateRaw =
-                (Int(bytes[4]) << 8) |
-                Int(bytes[5])
+                (Int(bytes[4]) << 8) | Int(bytes[5])
 
             let sequence = Int(bytes[11])
             let processType = bytes[12]
 
             let balance =
-                (Int(bytes[14]) << 8) |
-                Int(bytes[15])
+                (Int(bytes[14]) << 8) | Int(bytes[15])
 
             fullLog?.append(
                 String(
@@ -435,13 +421,11 @@ extension NFCScannerModel {
         if processType == 0x02 {
             offset = 9
             amount =
-                (Int(bytes[9]) << 8) |
-                Int(bytes[10])
+                (Int(bytes[9]) << 8) | Int(bytes[10])
         } else {
             offset = 8
             amount =
-                (Int(bytes[8]) << 8) |
-                Int(bytes[9])
+                (Int(bytes[8]) << 8) | Int(bytes[9])
         }
 
         fullLog?.append(
@@ -467,7 +451,8 @@ extension NFCScannerModel {
     ) -> DateComponents {
 
         guard (1...12).contains(month),
-              (1...31).contains(day) else {
+            (1...31).contains(day)
+        else {
 
             fullLog?.append(
                 "Date decode: invalid month/day \(month)/\(day)"
@@ -481,8 +466,9 @@ extension NFCScannerModel {
         }
 
         guard let creationYear = creationDate?.year,
-              let creationMonth = creationDate?.month,
-              let creationDay = creationDate?.day else {
+            let creationMonth = creationDate?.month,
+            let creationDay = creationDate?.day
+        else {
 
             fullLog?.append(
                 "Date decode: creation date unavailable -> year 0"
@@ -497,8 +483,7 @@ extension NFCScannerModel {
 
         var year = creationYear
 
-        if month < creationMonth ||
-            (month == creationMonth && day < creationDay) {
+        if month < creationMonth || (month == creationMonth && day < creationDay) {
             year += 1
         }
 
@@ -518,8 +503,9 @@ extension NFCScannerModel {
     ) -> String {
 
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
+            let month = date.month,
+            let day = date.day
+        else {
             return String(localized: "unknown")
         }
 
@@ -549,9 +535,10 @@ extension NFCScannerModel {
         )
 
         guard parts.count == 3,
-              let year = Int(parts[0]),
-              let month = Int(parts[1]),
-              let day = Int(parts[2]) else {
+            let year = Int(parts[0]),
+            let month = Int(parts[1]),
+            let day = Int(parts[2])
+        else {
             return nil
         }
 
@@ -563,7 +550,7 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_info(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> ResultCardInfo? {
 
@@ -580,12 +567,14 @@ extension NFCScannerModel {
         fullLog?.append("Service Code: 004B")
         fullLog?.append("Block: 00")
 
-        guard let data = await jpDoCard_read(
-            felicaTag,
-            service: Data([0x4B, 0x00]),
-            blocks: [0],
-            fullLog: fullLog
-        )?.first else {
+        guard
+            let data = await jpDoCard_read(
+                felicaTag,
+                service: Data([0x4B, 0x00]),
+                blocks: [0],
+                fullLog: fullLog
+            )?.first
+        else {
 
             fullLog?.append(
                 "Card type detection: READ FAILED"
@@ -631,8 +620,7 @@ extension NFCScannerModel {
         )
 
         let cardCode =
-            (Int(bytes[0]) << 8) |
-            Int(bytes[1])
+            (Int(bytes[0]) << 8) | Int(bytes[1])
 
         fullLog?.append(
             String(
@@ -646,8 +634,7 @@ extension NFCScannerModel {
         )
 
         let creationDateRaw =
-            (Int(bytes[8]) << 8) |
-            Int(bytes[9])
+            (Int(bytes[8]) << 8) | Int(bytes[9])
 
         let creationDate =
             jpDoCard_decodeCreationDate(
@@ -656,7 +643,7 @@ extension NFCScannerModel {
             )
 
         let cardType: String
-        var issuer:String? = nil
+        var issuer: String? = nil
 
         switch cardCode {
         case 0x0102:
@@ -710,9 +697,11 @@ extension NFCScannerModel {
             issueInfo: setIssueInfo(issuer)
         )
     }
-    
-    private func setIssueInfo(_ issuer:String?) -> issueInfo {
-        return issueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Hokkaido",city:"issue.jp.hokkaido.city.asahikawa",issuer:issuer)
+
+    private func setIssueInfo(_ issuer: String?) -> IssueInfo {
+        return IssueInfo(
+            region: jpDoCard.area.rawValue, area: "locate.prefecture.Hokkaido",
+            city: "issue.jp.hokkaido.city.asahikawa", issuer: issuer)
     }
 
     private func jpDoCard_decodeCreationDate(
@@ -751,7 +740,8 @@ extension NFCScannerModel {
         )
 
         guard (1...12).contains(month),
-              (1...31).contains(day) else {
+            (1...31).contains(day)
+        else {
 
             fullLog?.append(
                 "Creation Date: INVALID"
@@ -772,11 +762,12 @@ extension NFCScannerModel {
     ) -> String? {
 
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day,
-              year > 0,
-              (1...12).contains(month),
-              (1...31).contains(day) else {
+            let month = date.month,
+            let day = date.day,
+            year > 0,
+            (1...12).contains(month),
+            (1...31).contains(day)
+        else {
             return nil
         }
 
@@ -790,13 +781,14 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8],
         fullLog: JpDoCardFullLog? = nil
     ) async -> [Data]? {
 
-        let serviceHex = service
+        let serviceHex =
+            service
             .map {
                 String(format: "%02X", $0)
             }
@@ -810,7 +802,8 @@ extension NFCScannerModel {
             "Service: \(serviceHex)"
         )
 
-        let blockHex = blocks
+        let blockHex =
+            blocks
             .map {
                 String(format: "%02X", $0)
             }
@@ -823,7 +816,7 @@ extension NFCScannerModel {
         let blockList = blocks.map {
             Data([
                 0x80,
-                $0
+                $0,
             ])
         }
 
@@ -876,8 +869,9 @@ extension NFCScannerModel {
                 }
 
                 guard error == nil,
-                      status1 == 0x00,
-                      status2 == 0x00 else {
+                    status1 == 0x00,
+                    status2 == 0x00
+                else {
 
                     fullLog?.append(
                         "READ RESULT: FAILED"

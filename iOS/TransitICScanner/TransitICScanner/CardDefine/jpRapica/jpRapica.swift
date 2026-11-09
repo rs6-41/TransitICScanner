@@ -12,98 +12,91 @@ let jpRapica = CardInfo(
     prefectures: ["Kagoshima"],
     regionOption: nil,
     description: "cardList.jpRapica.description",
-    scand_description: "jpRapica.scand.description",
-    searchWords: ["locate.prefecture.Kagoshima", "かごしま", "カゴシマ", "鹿児島", "kagoshima",
-                  "らぴか", "ラピカ", "Rapica", "いわさき", "いわさきICカード",
-                  "市電", "市バス", "南国交通", "JR九州バス"],
+    scannedDescription: "jpRapica.scand.description",
+    searchWords: [
+        "locate.prefecture.Kagoshima", "かごしま", "カゴシマ", "鹿児島", "kagoshima",
+        "らぴか", "ラピカ", "Rapica", "いわさき", "いわさきICカード",
+        "市電", "市バス", "南国交通", "JR九州バス",
+    ],
     scanOption: ScanOption(
-        name: "jpRapica",
+        id: .jpRapica,
         nameShort: "jpRapica.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
-        felicaSystemCodes: ["9481","8194"],
+        felicaSystemCodes: ["9481", "8194"],
         historyCount: 16,
         currencyType: .jpy,
         converter: .jpRapica,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 1750.0,
         idm: "0102030405060708",
         type: "",
         history: [
             // 降車 (市電 郡元(南)) 残額1750円
-            ResultHistory(processType: 0x41, processType4: 0x101E8610, date: sampleDay3, balance: 1750, amount: nil,
-                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
+            ResultHistory(
+                processType: 0x41, processType4: 0x101E8610, date: sampleDay3, balance: 1750, amount: nil,
+                lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
             // 乗車 (市電 武之橋) 残額1910円
-            ResultHistory(processType: 0x30, processType4: 0x101E8530, date: sampleDay3, balance: 1910, amount: nil,
-                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
+            ResultHistory(
+                processType: 0x30, processType4: 0x101E8530, date: sampleDay3, balance: 1910, amount: nil,
+                lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
             // 積増 2750円
-            ResultHistory(processType: 0x40, processType4: 0x10000000, date: sampleDay2, balance: 2750, amount: nil,
-                          lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
+            ResultHistory(
+                processType: 0x40, processType4: 0x10000000, date: sampleDay2, balance: 2750, amount: nil,
+                lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0, transactionId: 0),
         ]
     )
 )
 
 /// 属性情報(004B)から得られる最新状態
 struct RapicaAttribute {
-    var balance: Int            // 残額 + プレミア (履歴の残額と同じ基準)
-    var lastDate: DateComponents // 直近処理日時
+    var balance: Int  // 残額 + プレミア (履歴の残額と同じ基準)
+    var lastDate: DateComponents  // 直近処理日時
 }
 
 extension NFCScannerModel {
 
     // サービスコードはリトルエンディアンで渡す (例: 008F -> 8F 00)
-    private var rapicaService_issue: Data   { Data([0x0B, 0x00]) }
-    private var rapicaService_attr: Data    { Data([0x4B, 0x00]) }
+    private var rapicaService_issue: Data { Data([0x0B, 0x00]) }
+    private var rapicaService_attr: Data { Data([0x4B, 0x00]) }
     private var rapicaService_history: Data { Data([0x8F, 0x00]) }
 
     //MARK: スキャン
-    func jpRapica_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(errorMessage: String(localized: "scanner.coreNFC.error.notfeliCa"))
-            return
+    func jpRapica_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        guard let attr = await rapica_attribute(felicaTag) else {
+            return nil
         }
 
-        Task {
-            guard let attr = await rapica_attribute(felicaTag) else {
-                session.invalidate(errorMessage: String(localized: "scanner.coreNFC.scanning.error.read"))
-                return
-            }
+        let history = await rapica_history(
+            felicaTag,
+            count: self.scanOption.historyCount,
+            reference: attr.lastDate
+        )
 
-            let history = await rapica_history(
-                felicaTag,
-                count: self.scanOption.historyCount,
-                reference: attr.lastDate
-            )
+        let info = await rapica_info(felicaTag)
 
-            let info = await rapica_info(felicaTag)
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(attr.balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpRapica.scanOption.converter,
-                    isLastHide: true,
-                    description: jpRapica.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
-                session.invalidate()
-            }
-        }
+        return ScanResult(
+            balance: Double(attr.balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpRapica.scanOption.converter,
+            isLastHide: true,
+            description: jpRapica.scannedDescription,
+            savedAt: Date.now
+        )
     }
 
     //MARK: 属性情報 (残額・直近処理日時)
     // block0: [0]年 [1]月 [2]日 [3]時 [4]分 (すべてバイナリ)
     // block1: [4-5]残額 [6-7]プレミア (ともにBE)
-    func rapica_attribute(_ felicaTag: NFCFeliCaTag) async -> RapicaAttribute? {
+    func rapica_attribute(_ felicaTag: any FeliCaTagReading) async -> RapicaAttribute? {
         guard let blocks = await rapica_read(felicaTag, service: rapicaService_attr, blockCount: 2),
-              blocks.count >= 2 else { return nil }
+            blocks.count >= 2
+        else { return nil }
 
         let b0 = [UInt8](blocks[0])
         let b1 = [UInt8](blocks[1])
@@ -127,21 +120,24 @@ extension NFCScannerModel {
     // 取引番号がないため、mappingIDを日付と取引日時から生成
     //
     func rapica_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 16,
         reference: DateComponents
     ) async -> [ResultHistory]? {
         let blockCount = min(max(count, 1), 16)
 
-        guard let blocks = await rapica_read(
-            felicaTag,
-            service: rapicaService_history,
-            blockCount: blockCount
-        ) else {
+        guard
+            let blocks = await rapica_read(
+                felicaTag,
+                service: rapicaService_history,
+                blockCount: blockCount
+            )
+        else {
             return nil
         }
 
-        let refYear = reference.year
+        let refYear =
+            reference.year
             ?? Calendar.current.component(.year, from: Date())
 
         let refMD =
@@ -158,7 +154,8 @@ extension NFCScannerModel {
             }
 
             if bytes.allSatisfy({ $0 == 0x00 })
-                || bytes.allSatisfy({ $0 == 0xFF }) {
+                || bytes.allSatisfy({ $0 == 0xFF })
+            {
                 continue
             }
 
@@ -189,7 +186,7 @@ extension NFCScannerModel {
 
             let balance = Double(
                 Int(bytes[14]) << 8
-                | Int(bytes[15])
+                    | Int(bytes[15])
             )
 
             let sortYear =
@@ -263,7 +260,8 @@ extension NFCScannerModel {
             )
         }
 
-        return parsed
+        return
+            parsed
             .sorted {
                 if $0.key != $1.key {
                     return $0.key > $1.key
@@ -278,18 +276,19 @@ extension NFCScannerModel {
 
     //MARK: カード情報
     // 発行情報(000B) block0: [0-1]事業者コード [5-7]発行日(年/月/日) [12-13]デポジット
-    func rapica_info(_ felicaTag: NFCFeliCaTag) async -> ResultCardInfo? {
+    func rapica_info(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
             .joined()
 
         var issueDate: Date? = nil
-        var issuerKey:String? = nil
-        var type:String = ""
+        var issuerKey: String? = nil
+        var type: String = ""
 
         if let blocks = await rapica_read(felicaTag, service: rapicaService_issue, blockCount: 1),
-           let data = blocks.first {
+            let data = blocks.first
+        {
             let b = [UInt8](data)
             if b.count == 16 {
                 let operatorCode = (UInt16(b[0]) << 8) | UInt16(b[1])
@@ -326,7 +325,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(
+            issueInfo: IssueInfo(
                 region: jpRapica.area.rawValue,
                 area: "locate.prefecture.Kagoshima",
                 issuer: issuerKey,
@@ -337,7 +336,7 @@ extension NFCScannerModel {
 
     //MARK: 共通読み取り (8ブロックずつ分割)
     func rapica_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blockCount: Int,
         blocksPerRead: Int = 8
@@ -356,7 +355,7 @@ extension NFCScannerModel {
     }
 
     private func rapica_readChunk(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         range: Range<Int>
     ) async -> [Data]? {
@@ -368,7 +367,7 @@ extension NFCScannerModel {
                 blockList: blockList
             ) { status1, status2, data, error in
                 guard error == nil, status1 == 0x00, status2 == 0x00 else {
-                    print("Rapica read error:", status1, status2, error as Any)
+                    Log.debug("Rapica read error:", status1, status2, error as Any)
                     continuation.resume(returning: nil)
                     return
                 }

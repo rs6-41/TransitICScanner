@@ -5,8 +5,8 @@ import SwiftUI
 
 struct ListBalanceWidget: Widget {
     let kind: String = "com.rs6apps.TransitICScanner.BalanceWidget.list"
-    
-    var widgetFamilies:[WidgetFamily] {
+
+    var widgetFamilies: [WidgetFamily] {
         if #available(iOS 27.0, *) {
             return [.systemMedium, .systemLarge, .systemExtraLargePortrait]
         } else {
@@ -15,7 +15,9 @@ struct ListBalanceWidget: Widget {
     }
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ListWidgetConfigurationAppIntent.self, provider: ListBalanceWidgetProvider()) { entry in
+        AppIntentConfiguration(
+            kind: kind, intent: ListWidgetConfigurationAppIntent.self, provider: ListBalanceWidgetProvider()
+        ) { entry in
             ListBalanceWidgetView(entry: entry)
                 .containerBackground(.ultraThinMaterial, for: .widget)
         }

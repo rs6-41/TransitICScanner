@@ -11,10 +11,10 @@ let jpOKICA = CardInfo(
     prefectures: ["Okinawa"],
     regionOption: nil,
     description: "cardList.jpOKICA.description",
-    scand_description: "jpIC.scand.description",
-    searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
+    scannedDescription: "jpIC.scand.description",
+    searchWords: ["card.OKICA", "おきか", "オキカ", "ゆいレール", "那覇", "琉球"],
     scanOption: ScanOption(
-        name: "jpOKICA",
+        id: .jpOKICA,
         nameShort: "jpOKICA.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
@@ -24,73 +24,54 @@ let jpOKICA = CardInfo(
         converter: .jpOKICA,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 1200.0,
         idm: "0405820A9A93CDEF",
         type: "card.OKICA",
         history: [
-            ResultHistory(processType: 0x01, processType4: UInt32(0x16010002),date: sampleDay2,balance: 1200,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 152
+            ResultHistory(
+                processType: 0x01, processType4: UInt32(0x16010002), date: sampleDay2, balance: 1200, amount: nil,
+                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 152
             ),
-            ResultHistory(processType: 0x01, processType4: UInt32(0x08020000),date: sampleDay1,balance: 1500,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 151
-            )
+            ResultHistory(
+                processType: 0x01, processType4: UInt32(0x08020000), date: sampleDay1, balance: 1500, amount: nil,
+                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 151
+            ),
         ]
     )
 )
 
 extension NFCScannerModel {
 
-    func jpOKICA_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession,
-        optionType: String = ""
-    ) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(
-                errorMessage: String(
-                    localized: "scanner.coreNFC.error.notfeliCa"
-                )
-            )
-            return
-        }
-
-        Task {
-            guard let history = await okica_history(
+    func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        guard
+            let history = await okica_history(
                 felicaTag,
                 count: self.scanOption.historyCount
-            ) else {
-                return
-            }
-
-            let balance = history.first?.balance ?? 0
-
-            let info = await okica_info(
-                felicaTag,
-                optionType: optionType
             )
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpOKICA.scanOption.converter,
-                    isLastHide: true,
-                    description: jpOKICA.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage =
-                    String(localized: "scanner.coreNFC.scanning.done")
-
-                session.invalidate()
-            }
+        else {
+            return nil
         }
+
+        let balance = history.first?.balance ?? 0
+
+        let info = await okica_info(felicaTag)
+
+        return ScanResult(
+            balance: Double(balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpOKICA.scanOption.converter,
+            isLastHide: true,
+            description: jpOKICA.scannedDescription,
+            savedAt: Date.now
+        )
     }
 
     func okica_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 20
     ) async -> [ResultHistory]? {
 
@@ -119,7 +100,7 @@ extension NFCScannerModel {
                 return (start..<end).map {
                     Data([
                         0x80,
-                        UInt8($0)
+                        UInt8($0),
                     ])
                 }
             }
@@ -137,7 +118,7 @@ extension NFCScannerModel {
                     blockData,
                     error in
 
-                    print(
+                    Log.debug(
                         "OKICA history status:",
                         status1,
                         status2,
@@ -146,10 +127,11 @@ extension NFCScannerModel {
                     )
 
                     guard error == nil,
-                          status1 == 0x00,
-                          status2 == 0x00 else {
+                        status1 == 0x00,
+                        status2 == 0x00
+                    else {
 
-                        print(
+                        Log.debug(
                             "OKICA history read error:",
                             error as Any
                         )
@@ -214,13 +196,14 @@ extension NFCScannerModel {
             return nil
         }
 
-        let hex = bytes
+        let hex =
+            bytes
             .map {
                 String(format: "%02X", $0)
             }
             .joined(separator: " ")
 
-        print("OKICA history:", hex)
+        Log.debug("OKICA history:", hex)
 
         if bytes.allSatisfy({ $0 == 0x00 }) {
             return nil
@@ -231,14 +214,10 @@ extension NFCScannerModel {
         }
 
         let processType4 =
-            (UInt32(bytes[0]) << 24) |
-            (UInt32(bytes[1]) << 16) |
-            (UInt32(bytes[2]) << 8) |
-            UInt32(bytes[3])
+            (UInt32(bytes[0]) << 24) | (UInt32(bytes[1]) << 16) | (UInt32(bytes[2]) << 8) | UInt32(bytes[3])
 
         let rawDate =
-            (UInt16(bytes[4]) << 8) |
-            UInt16(bytes[5])
+            (UInt16(bytes[4]) << 8) | UInt16(bytes[5])
 
         let year =
             Int((rawDate >> 9) & 0x7F) + 2000
@@ -250,20 +229,19 @@ extension NFCScannerModel {
             Int(rawDate & 0x1F)
 
         guard year >= 2000,
-              month >= 1,
-              month <= 12,
-              day >= 1,
-              day <= 31 else {
+            month >= 1,
+            month <= 12,
+            day >= 1,
+            day <= 31
+        else {
             return nil
         }
 
         let balance =
-            Int(bytes[10]) |
-            (Int(bytes[11]) << 8)
+            Int(bytes[10]) | (Int(bytes[11]) << 8)
 
         let transactionId =
-            (Int(bytes[13]) << 8) |
-            Int(bytes[14])
+            (Int(bytes[13]) << 8) | Int(bytes[14])
 
         return ResultHistory(
             processType: bytes[1],
@@ -284,8 +262,7 @@ extension NFCScannerModel {
     }
 
     func okica_info(
-        _ felicaTag: NFCFeliCaTag,
-        optionType: String
+        _ felicaTag: any FeliCaTagReading
     ) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
@@ -306,12 +283,14 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region:jpOKICA.area.rawValue,area:"locate.prefecture.Okinawa",issuer:"issue.jp.okinawa.issuer.okica")
+            issueInfo: IssueInfo(
+                region: jpOKICA.area.rawValue, area: "locate.prefecture.Okinawa",
+                issuer: "issue.jp.okinawa.issuer.okica")
         )
     }
 
     func okica_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
     ) async -> [Data]? {
@@ -321,7 +300,7 @@ extension NFCScannerModel {
             let blockList = blocks.map {
                 Data([
                     0x80,
-                    $0
+                    $0,
                 ])
             }
 
@@ -335,8 +314,9 @@ extension NFCScannerModel {
                 error in
 
                 guard error == nil,
-                      status1 == 0x00,
-                      status2 == 0x00 else {
+                    status1 == 0x00,
+                    status2 == 0x00
+                else {
 
                     continuation.resume(
                         returning: nil
@@ -353,7 +333,7 @@ extension NFCScannerModel {
     }
 
     func okica_readMultiple(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         count: Int
     ) async -> [Data]? {
@@ -363,7 +343,7 @@ extension NFCScannerModel {
             let blockList = (0..<count).map {
                 Data([
                     0x80,
-                    UInt8($0)
+                    UInt8($0),
                 ])
             }
 
@@ -377,8 +357,9 @@ extension NFCScannerModel {
                 error in
 
                 guard error == nil,
-                      status1 == 0x00,
-                      status2 == 0x00 else {
+                    status1 == 0x00,
+                    status2 == 0x00
+                else {
 
                     continuation.resume(
                         returning: nil

@@ -15,7 +15,7 @@ enum twEasyCard_old_Converter {
             type: info.type
         )
     }
-    
+
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {
@@ -32,11 +32,11 @@ enum twEasyCard_old_Converter {
         let process: String
         switch history.processType {
         case 1:
-            process = String(localized:"result.history.fare")
+            process = String(localized: "result.history.fare")
         case 2:
-            process = String(localized:"result.history.charge")
+            process = String(localized: "result.history.charge")
         default:
-            process = String(localized:"result.history.other")
+            process = String(localized: "result.history.other")
         }
 
         return DisplayHistory(
