@@ -15,7 +15,7 @@ let hkOctopus = CardInfo(
     scand_description: "",
     searchWords: ["badatong","baat3daat6tung1","baatdaattung"],
     scanOption: ScanOption(
-        name:"hkOctopus",
+        id: .hkOctopus,
         nameShort:"hkOctopus.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -38,28 +38,22 @@ let hkOctopus = CardInfo(
 
 @MainActor
 extension NFCScannerModel {
-    func hkOctopus_scan(_ tag: NFCTag,_ session: NFCTagReaderSession) async{
-        guard case let .feliCa(felicaTag)=tag else{
-            session.invalidate(errorMessage:"Not FeliCa"); return
-        }
+    func hkOctopus_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
         let info = await hkOctopus_info(felicaTag)
         let balance = await hkOctopus_balance(felicaTag) ?? 0.0
 
-        self.result = Result(
+        return Result(
             balance: Double(balance),
             isHistory: false,
             history: nil,
             info: info,
-            converter:hkOctopus.scanOption.converter,
+            converter: hkOctopus.scanOption.converter,
             isLastHide: false,
             description: hkOctopus.scand_description,
             savedAt: Date.now
         )
-
-        session.alertMessage = String(localized:"scanner.coreNFC.scanning.done")
-        session.invalidate()
     }
-    func hkOctopus_balance(_ tag:NFCFeliCaTag) async -> Double?{
+    func hkOctopus_balance(_ tag:any FeliCaTagReading) async -> Double?{
         await withCheckedContinuation{c in
             tag.readWithoutEncryption(
                 serviceCodeList: [Data([0x17, 0x01])],
@@ -96,7 +90,7 @@ extension NFCScannerModel {
             }
         }
     }
-    func hkOctopus_info(_ tag: NFCFeliCaTag) async -> ResultCardInfo? {
+    func hkOctopus_info(_ tag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = tag.currentIDm
             .map { String(format: "%02X", $0) }

@@ -14,7 +14,7 @@ let idKMT = CardInfo(
     scand_description: "idKMT.scand.description",
     searchWords: ["KAI","Commuter","Kartu Multi Trip","KMT","Jakarta","Indonesia"],
     scanOption: ScanOption(
-        name: "idKMT",
+        id: .idKMT,
         nameShort: "idKMT.short",
         scanType: .nfc,
         pollingOption: [.iso18092],

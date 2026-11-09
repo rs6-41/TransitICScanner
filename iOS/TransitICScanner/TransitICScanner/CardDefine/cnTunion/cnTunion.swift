@@ -15,7 +15,7 @@ let cnTunion = CardInfo(
     scand_description: "",
     searchWords: ["zhongguojiaotonglianhe"],
     scanOption: ScanOption(
-        name: "cnTunion",
+        id: .cnTunion,
         nameShort: "cnTunion.short",
         scanType: .nfc,
         pollingOption: [.iso14443],

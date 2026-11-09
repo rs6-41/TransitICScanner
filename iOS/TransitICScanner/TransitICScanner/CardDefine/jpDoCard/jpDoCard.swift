@@ -14,7 +14,7 @@ let jpDoCard = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido"],
     scanOption: ScanOption(
-        name: "jpDoCard",
+        id: .jpDoCard,
         nameShort: "jpDoCard.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
@@ -82,19 +82,7 @@ final class JpDoCardFullLog {
 
 extension NFCScannerModel {
 
-    func jpDoCard_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession
-    ) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(
-                errorMessage: String(
-                    localized: "scanner.coreNFC.error.notfeliCa"
-                )
-            )
-            return
-        }
-
+    func jpDoCard_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
         let fullLog = JpDoCardFullLog()
         let scanDate = Date()
 
@@ -103,75 +91,65 @@ extension NFCScannerModel {
         fullLog.append("System Code: 8DB6")
         fullLog.appendBytes("IDm", [UInt8](felicaTag.currentIDm))
 
-        Task { @MainActor [self] in
+        let info = await jpDoCard_info(
+            felicaTag,
+            fullLog: fullLog
+        )
 
-            let info = await jpDoCard_info(
-                felicaTag,
-                fullLog: fullLog
-            )
+        let balance = await jpDoCard_balance(
+            felicaTag,
+            fullLog: fullLog
+        )
 
-            let balance = await jpDoCard_balance(
-                felicaTag,
-                fullLog: fullLog
-            )
+        let history = await jpDoCard_history(
+            felicaTag,
+            count: self.scanOption.historyCount,
+            creationDate: info?.validDate,
+            fullLog: fullLog
+        )
 
-            let history = await jpDoCard_history(
-                felicaTag,
-                count: self.scanOption.historyCount,
-                creationDate: info?.validDate,
-                fullLog: fullLog
-            )
+        fullLog.append("===== FINAL RESULT =====")
 
-            fullLog.append("===== FINAL RESULT =====")
-
-            if let balance {
-                fullLog.append("Balance: \(balance)")
-            } else {
-                fullLog.append("Balance: unavailable")
-            }
-
-            fullLog.append(
-                "History Count: \(history?.count ?? 0)"
-            )
-
-            fullLog.append(
-                "History Available: \(history != nil)"
-            )
-
-            if let info {
-                fullLog.append("Card Type: \(info.type)")
-                fullLog.append(
-                    "Card Creation Date: \(info.validDate ?? "nil")"
-                )
-            } else {
-                fullLog.append("Card Type: unavailable")
-            }
-
-            fullLog.append("===== DOCARD FULL LOG END =====")
-
-            self.result = Result(
-                balance: Double(balance ?? 0),
-                isHistory: history != nil,
-                history: history,
-                info: info,
-                converter: jpDoCard.scanOption.converter,
-                isLastHide: true,
-                description: jpDoCard.scand_description,
-                savedAt: Date.now,
-                fullLog: fullLog.text
-            )
-
-            self.session?.alertMessage =
-                String(
-                    localized: "scanner.coreNFC.scanning.done"
-                )
-
-            session.invalidate()
+        if let balance {
+            fullLog.append("Balance: \(balance)")
+        } else {
+            fullLog.append("Balance: unavailable")
         }
+
+        fullLog.append(
+            "History Count: \(history?.count ?? 0)"
+        )
+
+        fullLog.append(
+            "History Available: \(history != nil)"
+        )
+
+        if let info {
+            fullLog.append("Card Type: \(info.type)")
+            fullLog.append(
+                "Card Creation Date: \(info.validDate ?? "nil")"
+            )
+        } else {
+            fullLog.append("Card Type: unavailable")
+        }
+
+        fullLog.append("===== DOCARD FULL LOG END =====")
+
+        return Result(
+            balance: Double(balance ?? 0),
+            isHistory: history != nil,
+            history: history,
+            info: info,
+            converter: jpDoCard.scanOption.converter,
+            isLastHide: true,
+            description: jpDoCard.scand_description,
+            savedAt: Date.now,
+            fullLog: fullLog.text
+        )
     }
 
     func jpDoCard_balance(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> Int? {
 
@@ -222,7 +200,7 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 20,
         creationDate: String? = nil,
         fullLog: JpDoCardFullLog? = nil
@@ -563,7 +541,7 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_info(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> ResultCardInfo? {
 
@@ -790,7 +768,7 @@ extension NFCScannerModel {
     }
 
     func jpDoCard_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8],
         fullLog: JpDoCardFullLog? = nil

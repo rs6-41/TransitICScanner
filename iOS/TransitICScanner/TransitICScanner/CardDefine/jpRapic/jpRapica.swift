@@ -17,7 +17,7 @@ let jpRapica = CardInfo(
                   "らぴか", "ラピカ", "Rapica", "いわさき", "いわさきICカード",
                   "市電", "市バス", "南国交通", "JR九州バス"],
     scanOption: ScanOption(
-        name: "jpRapica",
+        id: .jpRapica,
         nameShort: "jpRapica.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
@@ -60,48 +60,35 @@ extension NFCScannerModel {
     private var rapicaService_history: Data { Data([0x8F, 0x00]) }
 
     //MARK: スキャン
-    func jpRapica_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(errorMessage: String(localized: "scanner.coreNFC.error.notfeliCa"))
-            return
+    func jpRapica_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+        guard let attr = await rapica_attribute(felicaTag) else {
+            return nil
         }
 
-        Task {
-            guard let attr = await rapica_attribute(felicaTag) else {
-                session.invalidate(errorMessage: String(localized: "scanner.coreNFC.scanning.error.read"))
-                return
-            }
+        let history = await rapica_history(
+            felicaTag,
+            count: self.scanOption.historyCount,
+            reference: attr.lastDate
+        )
 
-            let history = await rapica_history(
-                felicaTag,
-                count: self.scanOption.historyCount,
-                reference: attr.lastDate
-            )
+        let info = await rapica_info(felicaTag)
 
-            let info = await rapica_info(felicaTag)
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(attr.balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpRapica.scanOption.converter,
-                    isLastHide: true,
-                    description: jpRapica.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
-                session.invalidate()
-            }
-        }
+        return Result(
+            balance: Double(attr.balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpRapica.scanOption.converter,
+            isLastHide: true,
+            description: jpRapica.scand_description,
+            savedAt: Date.now
+        )
     }
 
     //MARK: 属性情報 (残額・直近処理日時)
     // block0: [0]年 [1]月 [2]日 [3]時 [4]分 (すべてバイナリ)
     // block1: [4-5]残額 [6-7]プレミア (ともにBE)
-    func rapica_attribute(_ felicaTag: NFCFeliCaTag) async -> RapicaAttribute? {
+    func rapica_attribute(_ felicaTag: any FeliCaTagReading) async -> RapicaAttribute? {
         guard let blocks = await rapica_read(felicaTag, service: rapicaService_attr, blockCount: 2),
               blocks.count >= 2 else { return nil }
 
@@ -127,7 +114,7 @@ extension NFCScannerModel {
     // 取引番号がないため、mappingIDを日付と取引日時から生成
     //
     func rapica_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 16,
         reference: DateComponents
     ) async -> [ResultHistory]? {
@@ -278,7 +265,7 @@ extension NFCScannerModel {
 
     //MARK: カード情報
     // 発行情報(000B) block0: [0-1]事業者コード [5-7]発行日(年/月/日) [12-13]デポジット
-    func rapica_info(_ felicaTag: NFCFeliCaTag) async -> ResultCardInfo? {
+    func rapica_info(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -337,7 +324,7 @@ extension NFCScannerModel {
 
     //MARK: 共通読み取り (8ブロックずつ分割)
     func rapica_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blockCount: Int,
         blocksPerRead: Int = 8
@@ -356,7 +343,7 @@ extension NFCScannerModel {
     }
 
     private func rapica_readChunk(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         range: Range<Int>
     ) async -> [Data]? {

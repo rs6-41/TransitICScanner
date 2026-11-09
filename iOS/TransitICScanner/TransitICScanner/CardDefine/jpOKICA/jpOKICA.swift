@@ -14,7 +14,7 @@ let jpOKICA = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
     scanOption: ScanOption(
-        name: "jpOKICA",
+        id: .jpOKICA,
         nameShort: "jpOKICA.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
@@ -40,57 +40,32 @@ let jpOKICA = CardInfo(
 
 extension NFCScannerModel {
 
-    func jpOKICA_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession,
-        optionType: String = ""
-    ) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(
-                errorMessage: String(
-                    localized: "scanner.coreNFC.error.notfeliCa"
-                )
-            )
-            return
+    func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+        guard let history = await okica_history(
+            felicaTag,
+            count: self.scanOption.historyCount
+        ) else {
+            return nil
         }
 
-        Task {
-            guard let history = await okica_history(
-                felicaTag,
-                count: self.scanOption.historyCount
-            ) else {
-                return
-            }
+        let balance = history.first?.balance ?? 0
 
-            let balance = history.first?.balance ?? 0
+        let info = await okica_info(felicaTag)
 
-            let info = await okica_info(
-                felicaTag,
-                optionType: optionType
-            )
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpOKICA.scanOption.converter,
-                    isLastHide: true,
-                    description: jpOKICA.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage =
-                    String(localized: "scanner.coreNFC.scanning.done")
-
-                session.invalidate()
-            }
-        }
+        return Result(
+            balance: Double(balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpOKICA.scanOption.converter,
+            isLastHide: true,
+            description: jpOKICA.scand_description,
+            savedAt: Date.now
+        )
     }
 
     func okica_history(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int = 20
     ) async -> [ResultHistory]? {
 
@@ -284,8 +259,7 @@ extension NFCScannerModel {
     }
 
     func okica_info(
-        _ felicaTag: NFCFeliCaTag,
-        optionType: String
+        _ felicaTag: any FeliCaTagReading
     ) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
@@ -311,7 +285,7 @@ extension NFCScannerModel {
     }
 
     func okica_read(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
     ) async -> [Data]? {
@@ -353,7 +327,7 @@ extension NFCScannerModel {
     }
 
     func okica_readMultiple(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         count: Int
     ) async -> [Data]? {
