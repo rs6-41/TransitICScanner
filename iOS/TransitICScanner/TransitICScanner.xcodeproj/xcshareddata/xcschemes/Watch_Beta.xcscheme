@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA43A044309D6C14008A3C48"
-               BuildableName = "TransitICSCanner_Watch Watch App.app"
+               BuildableName = "TransitICScanner_Watch Watch App.app"
                ReferencedContainer = "container:TransitICScanner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA43A044309D6C14008A3C48"
-            BuildableName = "TransitICSCanner_Watch Watch App.app"
+            BuildableName = "TransitICScanner_Watch Watch App.app"
             ReferencedContainer = "container:TransitICScanner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,7 +74,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA43A044309D6C14008A3C48"
-            BuildableName = "TransitICSCanner_Watch Watch App.app"
+            BuildableName = "TransitICScanner_Watch Watch App.app"
             ReferencedContainer = "container:TransitICScanner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

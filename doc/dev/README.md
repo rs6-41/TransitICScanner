@@ -4,7 +4,7 @@
 ### iOS
  - macOS 27
  -- Xcode 27
- -- Swift 6.4
+ -- Swift 6.4（Xcode プロジェクトの言語モードは Swift 5 / `SWIFT_VERSION = 5.0`）
 
 ## コミットメッセージ規定
 絵文字 + Issues番号 + 内容

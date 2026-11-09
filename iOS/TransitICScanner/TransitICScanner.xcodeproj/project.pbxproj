@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA43A04F309D6C17008A3C48 /* TransitICSCanner_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA43A04F309D6C17008A3C48 /* TransitICScanner_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA43A638309D98FE008A3C48 /* TransitICScanner/Result/SaveData/Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000013 /* TransitICScanner/Result/SaveData/Storage.swift */; };
 		AA43A639309D98FE008A3C48 /* TransitICScanner/Result/SaveData/Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000013 /* TransitICScanner/Result/SaveData/Storage.swift */; };
 		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -28,7 +28,7 @@
 			containerPortal = 000000000000000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AA43A044309D6C14008A3C48;
-			remoteInfo = "TransitICSCanner_Watch Watch App";
+			remoteInfo = "TransitICScanner_Watch Watch App";
 		};
 		AA87ABDB306686B800A3D87B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -45,7 +45,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolder = Product;
 			files = (
-				AA43A04F309D6C17008A3C48 /* TransitICSCanner_Watch Watch App.app in Embed Watch Content */,
+				AA43A04F309D6C17008A3C48 /* TransitICScanner_Watch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 		};
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TransitICSCanner_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TransitICScanner_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA87ABAF3066867600A3D87B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AA87ABB13066867600A3D87B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CardBalanceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +73,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICSCanner_Watch Watch App" target */ = {
+		AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICScanner_Watch Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppIcon/AppIcon_Watch.icon,
@@ -85,7 +85,7 @@
 				Result/BalanceFormat.swift,
 				Utility/Log.swift,
 			);
-			target = AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */;
+			target = AA43A044309D6C14008A3C48 /* TransitICScanner_Watch Watch App */;
 		};
 		AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -141,9 +141,9 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA43A046309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */ = {
+		AA43A046309D6C14008A3C48 /* TransitICScanner_Watch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "TransitICSCanner_Watch Watch App";
+			path = "TransitICScanner_Watch Watch App";
 			sourceTree = "<group>";
 		};
 		AA87ABCF306686B600A3D87B /* CardBalanceWidget */ = {
@@ -161,7 +161,7 @@
 				AA544C253062578500EFAE03 /* Exceptions for "TransitICScanner" folder in "TransitICScanner" target */,
 				AA87AC59306752C900A3D87B /* Exceptions for "TransitICScanner" folder in "CardBalanceWidgetExtension" target */,
 				AA87AC3E30669C8400A3D87B /* Exceptions for "TransitICScanner" folder in "Compile Sources" phase from "CardBalanceWidgetExtension" target */,
-				AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICSCanner_Watch Watch App" target */,
+				AA43A056309D74B1008A3C48 /* Exceptions for "TransitICScanner" folder in "TransitICScanner_Watch Watch App" target */,
 			);
 			path = TransitICScanner;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 				AB0000000000000000000013 /* TransitICScanner/Result/SaveData/Storage.swift */,
 				AB0000000000000000000014 /* TransitICScanner/CardDefine/Area.swift */,
 				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
-				AA43A046309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */,
+				AA43A046309D6C14008A3C48 /* TransitICScanner_Watch Watch App */,
 				AA87ABAE3066867600A3D87B /* Frameworks */,
 				000000000000000000000020 /* Products */,
 				AAC4A093304B343D003B1B10 /* TransitICScanner */,
@@ -211,7 +211,7 @@
 			children = (
 				000000000000000000000120 /* TransitICScanner.app */,
 				AA87ABCC306686B600A3D87B /* CardBalanceWidgetExtension.appex */,
-				AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */,
+				AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,9 +255,9 @@
 			productReference = 000000000000000000000120 /* TransitICScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */ = {
+		AA43A044309D6C14008A3C48 /* TransitICScanner_Watch Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA43A050309D6C17008A3C48 /* Build configuration list for PBXNativeTarget "TransitICSCanner_Watch Watch App" */;
+			buildConfigurationList = AA43A050309D6C17008A3C48 /* Build configuration list for PBXNativeTarget "TransitICScanner_Watch Watch App" */;
 			buildPhases = (
 				AA43A041309D6C14008A3C48 /* Sources */,
 				AA43A042309D6C14008A3C48 /* Frameworks */,
@@ -266,11 +266,11 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				AA43A046309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */,
+				AA43A046309D6C14008A3C48 /* TransitICScanner_Watch Watch App */,
 			);
-			name = "TransitICSCanner_Watch Watch App";
-			productName = "TransitICSCanner_Watch Watch App";
-			productReference = AA43A045309D6C14008A3C48 /* TransitICSCanner_Watch Watch App.app */;
+			name = "TransitICScanner_Watch Watch App";
+			productName = "TransitICScanner_Watch Watch App";
+			productReference = AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */ = {
@@ -338,7 +338,7 @@
 			targets = (
 				000000000000000100000000 /* TransitICScanner */,
 				AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */,
-				AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */,
+				AA43A044309D6C14008A3C48 /* TransitICScanner_Watch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +390,7 @@
 		AA43A04E309D6C17008A3C48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */;
+			target = AA43A044309D6C14008A3C48 /* TransitICScanner_Watch Watch App */;
 			targetProxy = AA43A04D309D6C17008A3C48 /* PBXContainerItemProxy */;
 		};
 		AA87ABDC306686B800A3D87B /* PBXTargetDependency */ = {
@@ -671,19 +671,19 @@
 			};
 			name = Release;
 		};
-		AA43A051309D6C17008A3C48 /* Debug configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */ = {
+		AA43A051309D6C17008A3C48 /* Debug configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Watch;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "TransitICSCanner_Watch Watch App/TransitICSCanner_Watch Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TransitICScanner_Watch Watch App/TransitICScanner_Watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TransitICSCanner_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = TransitICScanner_Watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.rs6apps.TransitICScanner;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -707,19 +707,19 @@
 			};
 			name = Debug;
 		};
-		AA43A052309D6C17008A3C48 /* Beta configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */ = {
+		AA43A052309D6C17008A3C48 /* Beta configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Watch;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "TransitICSCanner_Watch Watch App/TransitICSCanner_Watch Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TransitICScanner_Watch Watch App/TransitICScanner_Watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TransitICSCanner_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = TransitICScanner_Watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.rs6apps.TransitICScanner;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -744,19 +744,19 @@
 			};
 			name = Beta;
 		};
-		AA43A053309D6C17008A3C48 /* Release configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */ = {
+		AA43A053309D6C17008A3C48 /* Release configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Watch;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "TransitICSCanner_Watch Watch App/TransitICSCanner_Watch Watch App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TransitICScanner_Watch Watch App/TransitICScanner_Watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W48QB4863;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TransitICSCanner_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = TransitICScanner_Watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.rs6apps.TransitICScanner;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1057,12 +1057,12 @@
 			);
 			defaultConfigurationName = Release;
 		};
-		AA43A050309D6C17008A3C48 /* Build configuration list for PBXNativeTarget "TransitICSCanner_Watch Watch App" */ = {
+		AA43A050309D6C17008A3C48 /* Build configuration list for PBXNativeTarget "TransitICScanner_Watch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA43A051309D6C17008A3C48 /* Debug configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */,
-				AA43A052309D6C17008A3C48 /* Beta configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */,
-				AA43A053309D6C17008A3C48 /* Release configuration for PBXNativeTarget "TransitICSCanner_Watch Watch App" */,
+				AA43A051309D6C17008A3C48 /* Debug configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */,
+				AA43A052309D6C17008A3C48 /* Beta configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */,
+				AA43A053309D6C17008A3C48 /* Release configuration for PBXNativeTarget "TransitICScanner_Watch Watch App" */,
 			);
 			defaultConfigurationName = Release;
 		};
