@@ -1451,7 +1451,7 @@ self.result = Result(
         usClipper.scanOption.converter,
     isLastHide: false,
     description:
-        usClipper.scand_description,
+        usClipper.scannedDescription,
     savedAt: Date.now
 )
 ```
