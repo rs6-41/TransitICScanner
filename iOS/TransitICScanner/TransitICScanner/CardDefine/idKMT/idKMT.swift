@@ -8,19 +8,11 @@ let idKMT = CardInfo(
     sortName: "cardList.idKMT.sortName",
     area: .id,
     countryCode: ["id"],
-    prefectures: nil,
+    prefectures: ["Jakarta"],
     regionOption: .southEastAsia,
     description: "cardList.idKMT.description",
     scand_description: "idKMT.scand.description",
-    searchWords: [
-        "KAI Commuter",
-        "Kartu Multi Trip",
-        "KMT",
-        "Jakarta",
-        "Indonesia",
-        "インドネシア",
-        "ジャカルタ"
-    ],
+    searchWords: ["KAI","Commuter","Kartu Multi Trip","KMT","Jakarta","Indonesia"],
     scanOption: ScanOption(
         name: "idKMT",
         nameShort: "idKMT.short",
@@ -34,8 +26,8 @@ let idKMT = CardInfo(
     ),
     infomation: nil,
     sample: ResultSample(
-        balance: 0,
-        idm: "",
+        balance: 4000,
+        idm: "0127FFFFFFFF6EAB",
         type: "card.KMT",
         history: []
     )
@@ -160,9 +152,9 @@ extension NFCScannerModel {
                 validDate: nil,
                 issueInfo: issueInfo(
                     region: idKMT.area.rawValue,
-                    area: nil,
+                    area: "locate.prefecture.Jakarta",
                     city: nil,
-                    issuer: nil
+                    issuer: "issue.id.jakarta.issuer.KaiCommuter"
                 )
             )
 
