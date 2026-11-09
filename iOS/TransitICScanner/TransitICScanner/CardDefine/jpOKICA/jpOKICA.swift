@@ -12,7 +12,7 @@ let jpOKICA = CardInfo(
     regionOption: nil,
     description: "cardList.jpOKICA.description",
     scannedDescription: "jpIC.scand.description",
-    searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
+    searchWords: ["card.OKICA", "おきか", "オキカ", "ゆいレール", "那覇", "琉球"],
     scanOption: ScanOption(
         id: .jpOKICA,
         nameShort: "jpOKICA.short",
@@ -30,10 +30,14 @@ let jpOKICA = CardInfo(
         idm: "0405820A9A93CDEF",
         type: "card.OKICA",
         history: [
-            ResultHistory(processType: 0x01, processType4: UInt32(0x16010002),date: sampleDay2,balance: 1200,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 152
+            ResultHistory(
+                processType: 0x01, processType4: UInt32(0x16010002), date: sampleDay2, balance: 1200, amount: nil,
+                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 152
             ),
-            ResultHistory(processType: 0x01, processType4: UInt32(0x08020000),date: sampleDay1,balance: 1500,amount: nil,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 151
-            )
+            ResultHistory(
+                processType: 0x01, processType4: UInt32(0x08020000), date: sampleDay1, balance: 1500, amount: nil,
+                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 151
+            ),
         ]
     )
 )
@@ -41,10 +45,12 @@ let jpOKICA = CardInfo(
 extension NFCScannerModel {
 
     func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
-        guard let history = await okica_history(
-            felicaTag,
-            count: self.scanOption.historyCount
-        ) else {
+        guard
+            let history = await okica_history(
+                felicaTag,
+                count: self.scanOption.historyCount
+            )
+        else {
             return nil
         }
 
@@ -94,7 +100,7 @@ extension NFCScannerModel {
                 return (start..<end).map {
                     Data([
                         0x80,
-                        UInt8($0)
+                        UInt8($0),
                     ])
                 }
             }
@@ -121,8 +127,9 @@ extension NFCScannerModel {
                     )
 
                     guard error == nil,
-                          status1 == 0x00,
-                          status2 == 0x00 else {
+                        status1 == 0x00,
+                        status2 == 0x00
+                    else {
 
                         Log.debug(
                             "OKICA history read error:",
@@ -189,7 +196,8 @@ extension NFCScannerModel {
             return nil
         }
 
-        let hex = bytes
+        let hex =
+            bytes
             .map {
                 String(format: "%02X", $0)
             }
@@ -206,14 +214,10 @@ extension NFCScannerModel {
         }
 
         let processType4 =
-            (UInt32(bytes[0]) << 24) |
-            (UInt32(bytes[1]) << 16) |
-            (UInt32(bytes[2]) << 8) |
-            UInt32(bytes[3])
+            (UInt32(bytes[0]) << 24) | (UInt32(bytes[1]) << 16) | (UInt32(bytes[2]) << 8) | UInt32(bytes[3])
 
         let rawDate =
-            (UInt16(bytes[4]) << 8) |
-            UInt16(bytes[5])
+            (UInt16(bytes[4]) << 8) | UInt16(bytes[5])
 
         let year =
             Int((rawDate >> 9) & 0x7F) + 2000
@@ -225,20 +229,19 @@ extension NFCScannerModel {
             Int(rawDate & 0x1F)
 
         guard year >= 2000,
-              month >= 1,
-              month <= 12,
-              day >= 1,
-              day <= 31 else {
+            month >= 1,
+            month <= 12,
+            day >= 1,
+            day <= 31
+        else {
             return nil
         }
 
         let balance =
-            Int(bytes[10]) |
-            (Int(bytes[11]) << 8)
+            Int(bytes[10]) | (Int(bytes[11]) << 8)
 
         let transactionId =
-            (Int(bytes[13]) << 8) |
-            Int(bytes[14])
+            (Int(bytes[13]) << 8) | Int(bytes[14])
 
         return ResultHistory(
             processType: bytes[1],
@@ -280,7 +283,9 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: IssueInfo(region:jpOKICA.area.rawValue,area:"locate.prefecture.Okinawa",issuer:"issue.jp.okinawa.issuer.okica")
+            issueInfo: IssueInfo(
+                region: jpOKICA.area.rawValue, area: "locate.prefecture.Okinawa",
+                issuer: "issue.jp.okinawa.issuer.okica")
         )
     }
 
@@ -295,7 +300,7 @@ extension NFCScannerModel {
             let blockList = blocks.map {
                 Data([
                     0x80,
-                    $0
+                    $0,
                 ])
             }
 
@@ -309,8 +314,9 @@ extension NFCScannerModel {
                 error in
 
                 guard error == nil,
-                      status1 == 0x00,
-                      status2 == 0x00 else {
+                    status1 == 0x00,
+                    status2 == 0x00
+                else {
 
                     continuation.resume(
                         returning: nil
@@ -337,7 +343,7 @@ extension NFCScannerModel {
             let blockList = (0..<count).map {
                 Data([
                     0x80,
-                    UInt8($0)
+                    UInt8($0),
                 ])
             }
 
@@ -351,8 +357,9 @@ extension NFCScannerModel {
                 error in
 
                 guard error == nil,
-                      status1 == 0x00,
-                      status2 == 0x00 else {
+                    status1 == 0x00,
+                    status2 == 0x00
+                else {
 
                     continuation.resume(
                         returning: nil

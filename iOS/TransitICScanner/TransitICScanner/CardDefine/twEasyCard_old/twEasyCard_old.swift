@@ -4,27 +4,27 @@ import SwiftUI
 
 //MARK: EasyCard(旧式・スクレイピング)
 //MIFARE Classicかつ暗号化領域で読み取れないためスクレイピングで取得
-let twEasyCard_old:CardInfo = CardInfo(
-    logo:"twEasyCard_old",
-    name:"card.web.twEasyCard_old",
-    sortName:"cardList.twEasyCard_old.sortName",
+let twEasyCard_old: CardInfo = CardInfo(
+    logo: "twEasyCard_old",
+    name: "card.web.twEasyCard_old",
+    sortName: "cardList.twEasyCard_old.sortName",
     area: .tw,
     countryCode: ["tw"],
     prefectures: nil,
     regionOption: nil,
-    description: String(localized:"card.web.twEasyCard_old.description"),
+    description: String(localized: "card.web.twEasyCard_old.description"),
     scannedDescription: "twEasyCard_old.scand.description",
-    searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
+    searchWords: ["cardList.area.tw", "youyouka", "ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         id: .twEasyCard_old,
-        nameShort:"twEasyCard_old.short",
+        nameShort: "twEasyCard_old.short",
         scanType: .scraping,
-        pollingOption:[],
-        felicaSystemCodes:[],
-        url: URL(string:"https://ezweb.easycard.com.tw/search/")!,
-        historyCount:999,
-        currencyType:.ntd,
-        converter:.twEasyCard_old,
+        pollingOption: [],
+        felicaSystemCodes: [],
+        url: URL(string: "https://ezweb.easycard.com.tw/search/")!,
+        historyCount: 999,
+        currencyType: .ntd,
+        converter: .twEasyCard_old,
         scrapingView: {
             AnyView(twEasyCard_old_View())
         }
@@ -32,14 +32,18 @@ let twEasyCard_old:CardInfo = CardInfo(
     information: nil,
     sample:
         ResultSample(
-            balance:980.0,
-            idm:"7462640446",
-            type:"",
+            balance: 980.0,
+            idm: "7462640446",
+            type: "",
             history: [
-            // 2: +500TWD 台北站でチャージ 残高1000TWD 2025/19/23 19:21
-            ResultHistory(processType: 0x00,date: sampleDay2,balance: 1000,amount: 500,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 1,mappingID: "台北站"),
-            // 3: 20TWD 台北站 残高980TWD 2026/1/3 12:58
-            ResultHistory(processType: 0x00,date: sampleDay3,balance: 980,amount: 20,lineIn: 0x00,stationIn: 0x00,lineOut: 0x00,stationOut: 0x00,transactionId: 152,mappingID: "台北站"),
+                // 2: +500TWD 台北站でチャージ 残高1000TWD 2025/19/23 19:21
+                ResultHistory(
+                    processType: 0x00, date: sampleDay2, balance: 1000, amount: 500, lineIn: 0x00, stationIn: 0x00,
+                    lineOut: 0x00, stationOut: 0x00, transactionId: 1, mappingID: "台北站"),
+                // 3: 20TWD 台北站 残高980TWD 2026/1/3 12:58
+                ResultHistory(
+                    processType: 0x00, date: sampleDay3, balance: 980, amount: 20, lineIn: 0x00, stationIn: 0x00,
+                    lineOut: 0x00, stationOut: 0x00, transactionId: 152, mappingID: "台北站"),
             ]
         )
 )
@@ -50,11 +54,11 @@ struct twEasyCard_old_View: View {
     @StateObject private var controller = twEasyCard_old_scraping()
     @State private var result: ScanResult?
     @State private var navigationResult: ScanResult?
-    @State var scannedNumber:String? = ""
+    @State var scannedNumber: String? = ""
     @State var error = false
     @State var errorMessage = ""
-    
-    @State var name:String = ""
+
+    @State var name: String = ""
     @State var card: String = ""
     @State var birthday: String = ""
     @State var birthdayMonth: String = ""
@@ -62,18 +66,18 @@ struct twEasyCard_old_View: View {
     @State var captcha: String = ""
     @State var isLoaded: Bool = false
     @State var isLoading: Bool = false
-    @State var cardLimit:Int = 16
-    @State var captchaLimit:Int = 6
-    
+    @State var cardLimit: Int = 16
+    @State var captchaLimit: Int = 6
+
     @AppStorage("deleteAds") var deleteAds = false
 
     var body: some View {
         NavigationStack {
             Form {
                 Section(
-                    header:Text(LocalizedStringKey("form.card.title")),
-                    footer:Text(LocalizedStringKey("form.card.description"))
-                ){
+                    header: Text(LocalizedStringKey("form.card.title")),
+                    footer: Text(LocalizedStringKey("form.card.description"))
+                ) {
                     TextField(String("0123456789"), text: $card)
                         .keyboardType(.numberPad)
                         .onChange(of: card) {
@@ -83,9 +87,9 @@ struct twEasyCard_old_View: View {
                         }
                 }
                 Section(
-                    header:Text(LocalizedStringKey("form.birthday.title")),
-                    footer:Text(LocalizedStringKey("form.birthday.description"))
-                ){
+                    header: Text(LocalizedStringKey("form.birthday.title")),
+                    footer: Text(LocalizedStringKey("form.birthday.description"))
+                ) {
                     HStack {
                         TextField(LocalizedStringKey("form.birthday.month"), text: $birthdayMonth)
                             .keyboardType(.numberPad)
@@ -107,16 +111,16 @@ struct twEasyCard_old_View: View {
                     }
                 }
                 Section(
-                    header:Text(LocalizedStringKey("form.captcha.title")),
-                    footer:Text(LocalizedStringKey("form.captcha"))
-                ){
-                    VStack(alignment:.leading) {
+                    header: Text(LocalizedStringKey("form.captcha.title")),
+                    footer: Text(LocalizedStringKey("form.captcha"))
+                ) {
+                    VStack(alignment: .leading) {
                         if let image = controller.captchaImage {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width:250)
-                                .padding(.bottom,5)
+                                .frame(width: 250)
+                                .padding(.bottom, 5)
                                 .onAppear() {
                                     isLoaded = true
                                 }
@@ -140,23 +144,23 @@ struct twEasyCard_old_View: View {
                     }
                 }
                 .listSectionSpacing(15)
-                
-                Section(footer:Text(LocalizedStringKey("form.description.scraping.easycard"))) {
+
+                Section(footer: Text(LocalizedStringKey("form.description.scraping.easycard"))) {
                     Button(action: {
                         onSubmit()
                     }) {
                         Text(LocalizedStringKey("form.done"))
                             .bold()
                             .padding()
-                            .frame(maxWidth:.infinity,maxHeight:30)
+                            .frame(maxWidth: .infinity, maxHeight: 30)
                     }
                     .disabled(!isLoaded)
                     .buttonStyle(GlassProminentButtonStyle())
-                    .frame(maxWidth:400,alignment:.center)
+                    .frame(maxWidth: 400, alignment: .center)
                     .padding(.bottom)
                 }
                 .listRowInsets(
-                    .init(top: .zero,leading: .zero,bottom: .zero,trailing: .zero)
+                    .init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero)
                 )
                 .listRowBackground(Color.clear)
             }
@@ -178,11 +182,11 @@ struct twEasyCard_old_View: View {
                     .navigationBarBackButtonHidden()
             }
             .toolbar {
-                ToolbarItem(placement:.cancellationAction){
+                ToolbarItem(placement: .cancellationAction) {
                     Button(action: {
                         dismiss()
                     }) {
-                        Image(systemName:"xmark")
+                        Image(systemName: "xmark")
                     }
                 }
             }
@@ -205,19 +209,19 @@ struct twEasyCard_old_View: View {
     func onSubmit() {
         birthday = birthdayMonth + birthdayDay
         if card == "" || card.isEmpty {
-            errorMessage = String(localized:"twEasyCard_old.form.error.card.empty")
+            errorMessage = String(localized: "twEasyCard_old.form.error.card.empty")
             error = true
         } else if card.count != 10 && card.count != 16 {
-            errorMessage = String(localized:"twEasyCard_old.form.error.card.count")
+            errorMessage = String(localized: "twEasyCard_old.form.error.card.count")
             error = true
         } else if captcha == "" || captcha.isEmpty {
-            errorMessage = String(localized:"twEasyCard_old.form.error.captcha.empty")
+            errorMessage = String(localized: "twEasyCard_old.form.error.captcha.empty")
             error = true
         } else if captcha.count != 6 {
-            errorMessage = String(localized:"twEasyCard_old.form.error.captcha.count")
+            errorMessage = String(localized: "twEasyCard_old.form.error.captcha.count")
             error = true
         } else if birthday.count != 0 && birthday.count == 4 {
-            errorMessage = String(localized:"twEasyCard_old.form.error.birthday.count")
+            errorMessage = String(localized: "twEasyCard_old.form.error.birthday.count")
             error = true
         } else {
             postData()
@@ -235,40 +239,40 @@ struct twEasyCard_old_View: View {
 
                 if let serverMessage = controller.extractServerAlert(from: html) {
                     await controller.loadCaptcha(baseURL: item.scanOption.url!.deletingLastPathComponent())
-                    
-            //エラーハンドリング(サーバー側)
-            await MainActor.run {
-                isLoading = false
-                captcha = ""
-                error = false
-                switch serverMessage {
-                case "非悠遊卡號":
-                    errorMessage = String(localized: "twEasyCard_old.error.server.invalid.card")
-                case "驗證碼未通過":
-                    errorMessage = String(localized: "twEasyCard_old.error.server.invalid.captcha")
-                case "記名卡請輸入正確生日，非記名卡生日欄位無須填寫":
-                    errorMessage = String(localized: "twEasyCard_old.error.server.invalid.birthday")
-                case "請輸入正確起迄日期":
-                    errorMessage = String(localized: "twEasyCard_old.error.server.invalid.date")
-                case "語音播放次數已達上限":
-                    errorMessage = String(localized: "twEasyCard_old.error.server.invalid.audio")
-                default:
-                    errorMessage = serverMessage
-                }
-                DispatchQueue.main.async {
-                    error = true
-                }
-            }
-            return
+
+                    //エラーハンドリング(サーバー側)
+                    await MainActor.run {
+                        isLoading = false
+                        captcha = ""
+                        error = false
+                        switch serverMessage {
+                        case "非悠遊卡號":
+                            errorMessage = String(localized: "twEasyCard_old.error.server.invalid.card")
+                        case "驗證碼未通過":
+                            errorMessage = String(localized: "twEasyCard_old.error.server.invalid.captcha")
+                        case "記名卡請輸入正確生日，非記名卡生日欄位無須填寫":
+                            errorMessage = String(localized: "twEasyCard_old.error.server.invalid.birthday")
+                        case "請輸入正確起迄日期":
+                            errorMessage = String(localized: "twEasyCard_old.error.server.invalid.date")
+                        case "語音播放次數已達上限":
+                            errorMessage = String(localized: "twEasyCard_old.error.server.invalid.audio")
+                        default:
+                            errorMessage = serverMessage
+                        }
+                        DispatchQueue.main.async {
+                            error = true
+                        }
+                    }
+                    return
                 }
 
                 Log.debug("[EasyCard] HTML length: \(html.count)")
-                
+
                 guard let parsed = controller.parseEasyCardResult(html: html, cardID: card) else {
                     Log.debug("[EasyCard] Failed to create Result")
                     return
                 }
-                
+
                 await MainActor.run {
                     isLoading = false
                     Log.debug("[EasyCard] Navigate ResultView history count: \(parsed.history?.count ?? 0)")
@@ -305,7 +309,6 @@ struct twEasyCard_old_View: View {
     }
 }
 
-
 final class twEasyCard_old_scraping: ObservableObject {
     private let baseURL = twEasyCard_old.scanOption.url!
     @Published var captchaImage: UIImage?
@@ -328,8 +331,9 @@ final class twEasyCard_old_scraping: ObservableObject {
             cardSearchRequest.httpMethod = "GET"
             let (cardSearchData, cardSearchResponse) = try await session.data(for: cardSearchRequest)
             if let httpResponse = cardSearchResponse as? HTTPURLResponse,
-               let headerFields = httpResponse.allHeaderFields as? [String: String],
-               let url = httpResponse.url {
+                let headerFields = httpResponse.allHeaderFields as? [String: String],
+                let url = httpResponse.url
+            {
                 let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
                 HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
                 self.cookies = HTTPCookieStorage.shared.cookies ?? []
@@ -375,7 +379,7 @@ final class twEasyCard_old_scraping: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let jsonBody: [String: String] = [
             "captcha": captcha,
-            "token": captchaToken
+            "token": captchaToken,
         ]
         request.httpBody = try JSONSerialization.data(withJSONObject: jsonBody)
         let config = URLSessionConfiguration.default
@@ -452,7 +456,7 @@ final class twEasyCard_old_scraping: ObservableObject {
             "date=date1y",
             "START_DATE=\(startString)",
             "END_DATE=\(endString)",
-            "checkword=\(checkword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? checkword)"
+            "checkword=\(checkword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? checkword)",
         ]
         let bodyString = bodyComponents.joined(separator: "&")
         // Print the complete form body string being sent
@@ -487,12 +491,13 @@ final class twEasyCard_old_scraping: ObservableObject {
             // Check for <script>alert( and window.alert(
             let patterns = [
                 #"<script>\s*alert\(['"](.+?)['"]\)"#,
-                #"window\.alert\(['"](.+?)['"]\)"#
+                #"window\.alert\(['"](.+?)['"]\)"#,
             ]
             var foundAlert = false
             for pattern in patterns {
                 if let regex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) {
-                    let matches = regex.matches(in: htmlString, options: [], range: NSRange(location: 0, length: htmlString.utf16.count))
+                    let matches = regex.matches(
+                        in: htmlString, options: [], range: NSRange(location: 0, length: htmlString.utf16.count))
                     for match in matches {
                         if match.numberOfRanges > 1, let range = Range(match.range(at: 1), in: htmlString) {
                             let alertText = String(htmlString[range])
@@ -508,7 +513,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                     Log.debug("[EasyCard] Detected window.alert( in response HTML")
                 }
             }
-            
+
             self.htmlResult = htmlString
             Log.debug("HTML result received:\n\(htmlString)")
             return htmlString
@@ -548,7 +553,8 @@ final class twEasyCard_old_scraping: ObservableObject {
                     guard columns.count >= 10 else { continue }
                     // Parse date from column0
                     guard let parsedDate = dateFormatter.date(from: columns[0]) else { continue }
-                    let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: parsedDate)
+                    let dateComponents = calendar.dateComponents(
+                        [.year, .month, .day, .hour, .minute, .second], from: parsedDate)
                     // Map processType from column1
                     let processText = columns[1]
                     let processType: Int
@@ -563,7 +569,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                     var amount = Double(columns[3].replacingOccurrences(of: ",", with: "")) ?? 0.0
                     // Parse balance from column4
                     let balance = Double(columns[4].replacingOccurrences(of: ",", with: "")) ?? 0.0
-                    
+
                     if processType == 1 {
                         amount = -amount
                     }
@@ -584,7 +590,9 @@ final class twEasyCard_old_scraping: ObservableObject {
                         )
                     )
                     histories.append(history)
-                    Log.debug("[EasyCard] Parsed history: date=\(columns[0]), type=\(columns[1]), amount=\(amount), balance=\(balance)")
+                    Log.debug(
+                        "[EasyCard] Parsed history: date=\(columns[0]), type=\(columns[1]), amount=\(amount), balance=\(balance)"
+                    )
                 }
             }
             // 日付順に並べる（transactionId は取引ごとに固定の値なので振り直さない）
@@ -603,7 +611,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                 serial: nil,
                 version: nil,
                 validDate: nil,
-                issueInfo: IssueInfo(region:twEasyCard_old.area.rawValue,issuer:"issue.tw.issuer.easycard")
+                issueInfo: IssueInfo(region: twEasyCard_old.area.rawValue, issuer: "issue.tw.issuer.easycard")
             )
             let balance = histories.last?.balance ?? 0.0
             let result = ScanResult(
@@ -625,14 +633,18 @@ final class twEasyCard_old_scraping: ObservableObject {
 
     func extractServerAlert(from html: String) -> String? {
         let pattern = #"<script[^>]*>\s*(?:window\.)?alert\(\s*['\"]([^'\"]+)['\"]\s*\)\s*</script>"#
-        guard let regex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive, .dotMatchesLineSeparators]) else {
+        guard
+            let regex = try? NSRegularExpression(
+                pattern: pattern, options: [.caseInsensitive, .dotMatchesLineSeparators])
+        else {
             return nil
         }
         let range = NSRange(html.startIndex..<html.endIndex, in: html)
         let matches = regex.matches(in: html, options: [], range: range)
         // Insert logic to check if the matched <script> is immediately before </body>
         if let bodyRange = html.range(of: "</body>", options: .caseInsensitive),
-           let scriptRange = html.range(of: "</script>", options: .backwards) {
+            let scriptRange = html.range(of: "</script>", options: .backwards)
+        {
             if scriptRange.upperBound > bodyRange.lowerBound {
                 Log.debug("[EasyCard] Last <script> is not immediately before </body>")
                 return nil
@@ -644,14 +656,14 @@ final class twEasyCard_old_scraping: ObservableObject {
             }
         }
         guard let match = matches.last,
-              let messageRange = Range(match.range(at: 1), in: html) else {
+            let messageRange = Range(match.range(at: 1), in: html)
+        else {
             return nil
         }
         Log.debug("[EasyCard] Matched server alert: \(String(html[messageRange]))")
         return String(html[messageRange])
     }
 }
-
 
 enum EasyCardServerError: LocalizedError {
     case server(String)

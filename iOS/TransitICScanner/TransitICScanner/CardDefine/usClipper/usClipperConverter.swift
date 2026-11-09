@@ -16,9 +16,10 @@ enum usClipper_Converter {
 
     private static func formatDate(_ date: DateComponents) -> String {
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
-            return String(localized:"unknown")
+            let month = date.month,
+            let day = date.day
+        else {
+            return String(localized: "unknown")
         }
 
         let ymd = "\(year)/\(month)/\(day)"
@@ -32,17 +33,17 @@ enum usClipper_Converter {
     // MARK: 事業者名
     private static func agencyName(_ code: UInt16) -> String {
         switch code {
-            case 0x01: return "(AC Transit)"
-            case 0x04: return "(BART)"
-            case 0x06: return "(Caltrain)"
-            case 0x08: return "(County Connection)"
-            case 0x0B: return "(Golden Gate Transit)"
-            case 0x0F: return "(SamTrans)"
-            case 0x11: return "(VTA)"
-            case 0x12: return "(Muni)"
-            case 0x19: return "(Golden Gate Ferry)"
-            case 0x1B: return "(SF Bay Ferry)"
-            default: return ""
+        case 0x01: return "(AC Transit)"
+        case 0x04: return "(BART)"
+        case 0x06: return "(Caltrain)"
+        case 0x08: return "(County Connection)"
+        case 0x0B: return "(Golden Gate Transit)"
+        case 0x0F: return "(SamTrans)"
+        case 0x11: return "(VTA)"
+        case 0x12: return "(Muni)"
+        case 0x19: return "(Golden Gate Ferry)"
+        case 0x1B: return "(SF Bay Ferry)"
+        default: return ""
         }
     }
 
@@ -51,10 +52,10 @@ enum usClipper_Converter {
     // 未確認: 0x61, 0x75 = バス / 0x62 = 近郊鉄道 / 0x73 = フェリー
     private static func modeName(_ code: UInt16) -> String? {
         switch code {
-            case 0x6F, 0x62: return String(localized:"result.history.rail")   //鉄道
-            case 0x61, 0x75, 0x77: return String(localized:"result.history.bus") //バス
-            case 0x73: return String(localized:"result.history.ferry")        //フェリー
-            default: return nil
+        case 0x6F, 0x62: return String(localized: "result.history.rail")  //鉄道
+        case 0x61, 0x75, 0x77: return String(localized: "result.history.bus")  //バス
+        case 0x73: return String(localized: "result.history.ferry")  //フェリー
+        default: return nil
         }
     }
 
@@ -65,19 +66,19 @@ enum usClipper_Converter {
         let transport = UInt16(type4 & 0xFFFF)
 
         switch value {
-            case 0x01:
-                // チャージ: 事業者は機械の設置事業者
-                return String(localized:"result.history.charge") + " \(agencyName(agency))"
+        case 0x01:
+            // チャージ: 事業者は機械の設置事業者
+            return String(localized: "result.history.charge") + " \(agencyName(agency))"
 
-            case 0x02:
-                let name = agencyName(agency)
-                if let mode = modeName(transport) {
-                    return "\(mode) \(name)"
-                }
-                return "\(name) \(agencyName(transport))"
+        case 0x02:
+            let name = agencyName(agency)
+            if let mode = modeName(transport) {
+                return "\(mode) \(name)"
+            }
+            return "\(name) \(agencyName(transport))"
 
-            default:
-                return String(localized:"result.history.other")
+        default:
+            return String(localized: "result.history.other")
         }
     }
 
@@ -87,8 +88,8 @@ enum usClipper_Converter {
             idm: info.idm,
             name: info.name,
             nameShort: info.nameShort,
-            currencyType:info.currencyType ?? .usd,
-            type:info.type
+            currencyType: info.currencyType ?? .usd,
+            type: info.type
         )
     }
 }

@@ -19,7 +19,8 @@ extension NFCScannerModel {
         UInt8
     )? {
 
-        let commandHex = data
+        let commandHex =
+            data
             .map {
                 String(format: "%02X", $0)
             }
@@ -48,7 +49,8 @@ extension NFCScannerModel {
                 sw2
             ) = try await tag(cla, ins, p1, p2, data, le)
 
-            let responseHex = response
+            let responseHex =
+                response
                 .map {
                     String(format: "%02X", $0)
                 }

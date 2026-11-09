@@ -62,11 +62,9 @@ private struct BannerViewContainer: UIViewRepresentable {
 
     func makeUIView(context: Context) -> BannerView {
         let banner = BannerView(adSize: adSize)
-        
-        
-        
+
         @EnvironmentObject var debug: DebugModel
-        
+
         banner.adUnitID = BannerUnitIDValue
         banner.delegate = context.coordinator
         banner.load(Request())

@@ -45,9 +45,10 @@ struct SavedListView: View {
                 let name = card.name
                 let nameShort = card.nameShort
                 let displayName = cardResult.info?.displayName ?? ""
-                let type = cardResult.info.map {
-                    cardResult.converter.cardInfo($0).type
-                } ?? ""
+                let type =
+                    cardResult.info.map {
+                        cardResult.converter.cardInfo($0).type
+                    } ?? ""
 
                 return name.localizedCaseInsensitiveContains(searchText)
                     || nameShort.localizedCaseInsensitiveContains(searchText)
@@ -83,7 +84,7 @@ struct SavedListView: View {
 
     private var narrowItems: [(String, String)] {
         var items: [(String, String)] = [
-            ("all", String(localized:"tab.history.narrow.all"))
+            ("all", String(localized: "tab.history.narrow.all"))
         ]
 
         let cardTypes = Dictionary(
@@ -147,9 +148,9 @@ struct SavedListView: View {
     private var savedCardList: some View {
         List {
             Group {
-#if !targetEnvironment(macCatalyst)
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-#endif
+                #endif
                 Section {
                     HStack(spacing: 8) {
                         Menu {
@@ -169,7 +170,7 @@ struct SavedListView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
-                        
+
                         Menu {
                             Picker(
                                 "tab.history.sort",
@@ -185,23 +186,26 @@ struct SavedListView: View {
                                     .tag("nameDescending")
                             }
                         } label: {
-                            let sortKey: String = switch sort {
-                            case "dateAscending": "tab.history.sort.old"
-                            case "nameAscending": "tab.history.sort.name"
-                            case "nameDescending": "tab.history.sort.name.desc"
-                            default: "tab.history.sort.new"
-                            }
+                            let sortKey: String =
+                                switch sort {
+                                case "dateAscending": "tab.history.sort.old"
+                                case "nameAscending": "tab.history.sort.name"
+                                case "nameDescending": "tab.history.sort.name.desc"
+                                default: "tab.history.sort.new"
+                                }
                             pickerLabel(sortKey)
                         }
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.glass)
                     }
-                    .listRowInsets(EdgeInsets(
-                        top: 8,
-                        leading: horizontalSizeClass == .regular ? 0 : 16,
-                        bottom: 8,
-                        trailing: horizontalSizeClass == .regular ? 0 : 16
-                    ))
+                    .listRowInsets(
+                        EdgeInsets(
+                            top: 8,
+                            leading: horizontalSizeClass == .regular ? 0 : 16,
+                            bottom: 8,
+                            trailing: horizontalSizeClass == .regular ? 0 : 16
+                        )
+                    )
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                 }
@@ -249,7 +253,8 @@ struct SavedListView: View {
                                                 .foregroundStyle(.secondary)
 
                                         } else if let info = result.info,
-                                                  !result.converter.cardInfo(info).type.isEmpty {
+                                            !result.converter.cardInfo(info).type.isEmpty
+                                        {
                                             Text(
                                                 LocalizedStringKey(
                                                     result.converter.cardInfo(info).type
@@ -282,10 +287,10 @@ struct SavedListView: View {
                                         }
                                     }
                                 }
-#if targetEnvironment(macCatalyst)
+                                #if targetEnvironment(macCatalyst)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 8)
-#endif
+                                #endif
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
@@ -305,7 +310,8 @@ struct SavedListView: View {
             }
             // 表示中のカードが削除された場合は一覧に戻る
             if let selectedCardID,
-               !cards.contains(where: { $0.persistentModelID == selectedCardID }) {
+                !cards.contains(where: { $0.persistentModelID == selectedCardID })
+            {
                 self.selectedCardID = nil
                 selectedResult = nil
             }

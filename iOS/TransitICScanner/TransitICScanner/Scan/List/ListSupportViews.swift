@@ -4,10 +4,10 @@ import SwiftUI
 
 /// 分割表示の詳細列などで、何も選ばれていないときに表示する案内
 struct EmptyViewSideBar: View {
-    var title:String
-    var icon:String
-    var description:String?
-    
+    var title: String
+    var icon: String
+    var description: String?
+
     var body: some View {
         ContentUnavailableView {
             Label {

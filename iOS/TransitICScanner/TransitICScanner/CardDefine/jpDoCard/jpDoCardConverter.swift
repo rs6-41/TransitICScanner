@@ -40,8 +40,9 @@ enum jpDoCard_Converter {
     ) -> String {
 
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
+            let month = date.month,
+            let day = date.day
+        else {
             return String(localized: "unknown")
         }
 

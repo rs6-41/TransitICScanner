@@ -17,8 +17,9 @@ enum twICash_Converter {
         _ date: DateComponents
     ) -> String {
         guard let year = date.year,
-              let month = date.month,
-              let day = date.day else {
+            let month = date.month,
+            let day = date.day
+        else {
             return String(localized: "unknown")
         }
 
@@ -30,56 +31,48 @@ enum twICash_Converter {
     ) -> String {
         let value = mappingID.uppercased()
 
-        if value == "KRT" ||
-           value.hasPrefix("KRT") {
-            return String(localized:"result.history.mrt.tw.kaohsiung")
+        if value == "KRT" || value.hasPrefix("KRT") {
+            return String(localized: "result.history.mrt.tw.kaohsiung")
         }
 
-        if value == "TRT" ||
-           value.hasPrefix("TRT") {
-            return String(localized:"result.history.mrt.tw.taipei")
+        if value == "TRT" || value.hasPrefix("TRT") {
+            return String(localized: "result.history.mrt.tw.taipei")
         }
 
-        if value == "TRA" ||
-           value.hasPrefix("TRA") {
-            return String(localized:"result.history.taiwan_railway")
+        if value == "TRA" || value.hasPrefix("TRA") {
+            return String(localized: "result.history.taiwan_railway")
         }
 
-        if value == "TMC" ||
-           value.hasPrefix("TMC") {
-            return String(localized:"result.history.mrt.tw.taoyuan")
+        if value == "TMC" || value.hasPrefix("TMC") {
+            return String(localized: "result.history.mrt.tw.taoyuan")
         }
 
-        if value == "TCT" ||
-           value.hasPrefix("TCT") {
-            return String(localized:"result.history.mrt.tw.taizhong")
+        if value == "TCT" || value.hasPrefix("TCT") {
+            return String(localized: "result.history.mrt.tw.taizhong")
         }
 
         if value == "THR" {
-            return String(localized:"result.history.hsr")
+            return String(localized: "result.history.hsr")
         }
 
-        if value == "TTB" ||
-           value == "KPB" {
-            return String(localized:"result.history.cycle")
+        if value == "TTB" || value == "KPB" {
+            return String(localized: "result.history.cycle")
         }
 
         if isParkingCode(value) {
-            return String(localized:"result.history.parking")
+            return String(localized: "result.history.parking")
         }
 
         if value == "KCS" {
-            return String(localized:"result.history.ferry")
+            return String(localized: "result.history.ferry")
         }
 
-        if value == "TLR" ||
-           value == "KLR" ||
-           value.hasPrefix("TLR") {
-            return String(localized:"result.history.lrt")
+        if value == "TLR" || value == "KLR" || value.hasPrefix("TLR") {
+            return String(localized: "result.history.lrt")
         }
 
         if isBusNumber(value) {
-            return String(localized:"result.history.bus")
+            return String(localized: "result.history.bus")
         }
 
         let busCodes: Set<String> = [
@@ -140,26 +133,26 @@ enum twICash_Converter {
             "UBS",
             "YLB",
             "ZBC",
-            "ZNB"
+            "ZNB",
         ]
 
         if busCodes.contains(value) {
-            return String(localized:"result.history.bus")
+            return String(localized: "result.history.bus")
         }
 
-        return String(localized:"result.history.fare")
+        return String(localized: "result.history.fare")
     }
 
     private static func isParkingCode(
         _ value: String
     ) -> Bool {
-        if value == "I00" ||
-           value == "I01" {
+        if value == "I00" || value == "I01" {
             return true
         }
 
         guard value.count == 3,
-              value.first == "P" else {
+            value.first == "P"
+        else {
             return false
         }
 
@@ -172,7 +165,8 @@ enum twICash_Converter {
         _ value: String
     ) -> Bool {
         guard value.count >= 2,
-              value.first == "B" else {
+            value.first == "B"
+        else {
             return false
         }
 

@@ -99,7 +99,8 @@ final class PurchaseManager {
     private func hasEntitlement() async -> Bool {
         for await entitlement in Transaction.currentEntitlements(for: productID) {
             if case .verified(let transaction) = entitlement,
-               transaction.revocationDate == nil {
+                transaction.revocationDate == nil
+            {
                 return true
             }
         }

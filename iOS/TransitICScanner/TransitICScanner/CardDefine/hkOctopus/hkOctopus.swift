@@ -4,36 +4,36 @@ import SwiftUI
 
 //MARK: Octopus
 let hkOctopus = CardInfo(
-    logo:"hkOctopus",
-    name:"cardList.hkOctopus",
-    sortName:"cardList.hkOctopus.sortName",
+    logo: "hkOctopus",
+    name: "cardList.hkOctopus",
+    sortName: "cardList.hkOctopus.sortName",
     area: .hk,
     countryCode: ["hk"],
     prefectures: nil,
     regionOption: nil,
-    description:"cardList.hkOctopus.description",
+    description: "cardList.hkOctopus.description",
     scannedDescription: "",
-    searchWords: ["badatong","baat3daat6tung1","baatdaattung"],
+    searchWords: ["badatong", "baat3daat6tung1", "baatdaattung"],
     scanOption: ScanOption(
         id: .hkOctopus,
-        nameShort:"hkOctopus.short",
+        nameShort: "hkOctopus.short",
         scanType: .nfc,
-        pollingOption:[.iso18092],
-        felicaSystemCodes:["8008"],
-        historyCount:0,
-        currencyType:.hkd,
-        converter:.hkOctopus,
+        pollingOption: [.iso18092],
+        felicaSystemCodes: ["8008"],
+        historyCount: 0,
+        currencyType: .hkd,
+        converter: .hkOctopus,
         scrapingView: nil
     ),
     information: nil,
     sample:
         ResultSample(
-            balance:300.0,
-            idm:"012467574734EB05",
-            type:"",
+            balance: 300.0,
+            idm: "012467574734EB05",
+            type: "",
             history: []
         )
-    
+
 )
 
 @MainActor
@@ -57,8 +57,8 @@ extension NFCScannerModel {
             savedAt: Date.now
         )
     }
-    func hkOctopus_balance(_ tag:any FeliCaTagReading) async -> Double?{
-        await withCheckedContinuation{c in
+    func hkOctopus_balance(_ tag: any FeliCaTagReading) async -> Double? {
+        await withCheckedContinuation { c in
             tag.readWithoutEncryption(
                 serviceCodeList: [Data([0x17, 0x01])],
                 blockList: [Data([0x80, 0x00])]
@@ -69,10 +69,10 @@ extension NFCScannerModel {
                 }
 
                 guard error == nil,
-                      status1 == 0,
-                      status2 == 0,
-                      let d = data.first,
-                      d.count >= 4
+                    status1 == 0,
+                    status2 == 0,
+                    let d = data.first,
+                    d.count >= 4
                 else {
                     c.resume(returning: nil)
                     return
@@ -83,10 +83,7 @@ extension NFCScannerModel {
                 let b = [UInt8](d)
 
                 let raw =
-                    Int(UInt32(b[0]) << 24) |
-                    Int(UInt32(b[1]) << 16) |
-                    Int(UInt32(b[2]) << 8) |
-                    Int(UInt32(b[3]))
+                    Int(UInt32(b[0]) << 24) | Int(UInt32(b[1]) << 16) | Int(UInt32(b[2]) << 8) | Int(UInt32(b[3]))
 
                 // Octopus stores the value in 0.1 HKD units and includes the HK$50 deposit.
                 let displayBalance = Double(max(raw - 500, 0)) / 10.0
@@ -112,7 +109,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: IssueInfo(region:hkOctopus.area.rawValue)
+            issueInfo: IssueInfo(region: hkOctopus.area.rawValue)
         )
     }
 }

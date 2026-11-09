@@ -4,7 +4,7 @@ import GoogleMobileAds
 #endif
 
 struct NativeAdRepresentable: UIViewRepresentable {
-    
+
     let nativeAd: NativeAd
     @Binding var size: CGSize
     func makeCoordinator() -> Coordinator {
@@ -16,11 +16,11 @@ struct NativeAdRepresentable: UIViewRepresentable {
         let view = NativeAdContainerView()
         view.onSizeChanged = { newSize in
             guard newSize.width > 0,
-                  newSize.height > 0 else {
+                newSize.height > 0
+            else {
                 return
             }
-            guard abs(size.width - newSize.width) > 0.5 ||
-                    abs(size.height - newSize.height) > 0.5 else {
+            guard abs(size.width - newSize.width) > 0.5 || abs(size.height - newSize.height) > 0.5 else {
                 return
             }
             DispatchQueue.main.async {
@@ -39,11 +39,11 @@ struct NativeAdRepresentable: UIViewRepresentable {
     ) {
         uiView.onSizeChanged = { newSize in
             guard newSize.width > 0,
-                  newSize.height > 0 else {
+                newSize.height > 0
+            else {
                 return
             }
-            guard abs(size.width - newSize.width) > 0.5 ||
-                    abs(size.height - newSize.height) > 0.5 else {
+            guard abs(size.width - newSize.width) > 0.5 || abs(size.height - newSize.height) > 0.5 else {
                 return
             }
             DispatchQueue.main.async {
@@ -62,8 +62,7 @@ struct NativeAdRepresentable: UIViewRepresentable {
             view: NativeAdContainerView,
             nativeAd: NativeAd
         ) {
-            guard configuredView !== view ||
-                    configuredAd !== nativeAd else {
+            guard configuredView !== view || configuredAd !== nativeAd else {
                 return
             }
             configuredView = view

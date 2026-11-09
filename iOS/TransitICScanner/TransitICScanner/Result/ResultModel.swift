@@ -11,8 +11,8 @@ struct ScanResult: Hashable {
     #endif
     var isLastHide: Bool
     var description: String
-    var savedAt:Date? = Date.now
-    var fullLog:String? = ""
+    var savedAt: Date? = Date.now
+    var fullLog: String? = ""
     var converterTypeRaw: String? = nil
 }
 
@@ -42,8 +42,9 @@ extension ResultHistory {
     ///   - balance: 取引後の残高（下位 16 bit を使う）
     static func makeTransactionID(date: DateComponents, processType: UInt8, balance: Int) -> Int {
         let year = max((date.year ?? 2000) - 2000, 0)
-        let timeKey = ((((year * 12 + (date.month ?? 0)) * 31 + (date.day ?? 0)) * 24
-            + (date.hour ?? 0)) * 60 + (date.minute ?? 0)) * 60 + (date.second ?? 0)
+        let timeKey =
+            ((((year * 12 + (date.month ?? 0)) * 31 + (date.day ?? 0)) * 24
+                + (date.hour ?? 0)) * 60 + (date.minute ?? 0)) * 60 + (date.second ?? 0)
         let discriminator = Int(processType) << 16 | (balance & 0xFFFF)
         return timeKey << 24 | discriminator
     }
@@ -66,13 +67,13 @@ struct ResultCardInfo: Hashable, Codable {
 
 //発行情報
 struct IssueInfo: Hashable, Codable {
-    var region: String //発行地域
-    var area: String? //発行都市
-    var city: String? //発行エリア
-    var otherAreaInfo: String? //その他の情報
-    var issuer: String? //発行者
-    var date: Date? //発行日
-    var expiry: Date? //有効期限
+    var region: String  //発行地域
+    var area: String?  //発行都市
+    var city: String?  //発行エリア
+    var otherAreaInfo: String?  //その他の情報
+    var issuer: String?  //発行者
+    var date: Date?  //発行日
+    var expiry: Date?  //有効期限
 }
 
 struct DisplayHistory: Hashable {

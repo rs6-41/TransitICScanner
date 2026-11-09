@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import CoreNFC
 
-
 let cnTunion = CardInfo(
     logo: "cnTunion_beijing",
     name: "cardList.cnTunion",
@@ -53,11 +52,10 @@ let cnTunion = CardInfo(
                     lineOut: 0x11,
                     stationOut: 0x11,
                     transactionId: 152
-                )
+                ),
             ]
         )
 )
-
 
 final class CNTRunionFullLog {
 
@@ -72,7 +70,8 @@ final class CNTRunionFullLog {
         _ title: String,
         _ data: Data
     ) {
-        let hex = data
+        let hex =
+            data
             .map {
                 String(format: "%02X", $0)
             }
@@ -87,7 +86,8 @@ final class CNTRunionFullLog {
         _ title: String,
         _ bytes: [UInt8]
     ) {
-        let hex = bytes
+        let hex =
+            bytes
             .map {
                 String(format: "%02X", $0)
             }
@@ -98,7 +98,6 @@ final class CNTRunionFullLog {
         )
     }
 }
-
 
 extension NFCScannerModel {
 
@@ -240,7 +239,7 @@ extension NFCScannerModel {
                 "Application Data: nil"
             )
         }
-        
+
         fullLog.append("")
         fullLog.append(
             "===== ASYNC SCAN START ====="
@@ -280,18 +279,18 @@ extension NFCScannerModel {
         let aids: [Data] = [
             Data([
                 0xA0, 0x00, 0x00, 0x06,
-                0x32, 0x01, 0x01, 0x05
+                0x32, 0x01, 0x01, 0x05,
             ]),
             Data([
                 0xA0, 0x00, 0x00, 0x06,
-                0x32, 0x01, 0x01, 0x06
+                0x32, 0x01, 0x01, 0x06,
             ]),
             Data([
                 0x32, 0x50, 0x41, 0x59,
                 0x2E, 0x53, 0x59, 0x53,
                 0x2E, 0x44, 0x44, 0x46,
-                0x30, 0x31
-            ])
+                0x30, 0x31,
+            ]),
         ]
 
         fullLog.append(
@@ -302,7 +301,8 @@ extension NFCScannerModel {
 
         for aid in aids {
 
-            let aidHex = aid
+            let aidHex =
+                aid
                 .map {
                     String(format: "%02X", $0)
                 }
@@ -332,8 +332,9 @@ extension NFCScannerModel {
                 cla: 0x00,
                 fullLog: fullLog
             ),
-            sw1 == 0x90,
-            sw2 == 0x00 {
+                sw1 == 0x90,
+                sw2 == 0x00
+            {
 
                 fciData = response
 
@@ -438,7 +439,8 @@ extension NFCScannerModel {
             fullLog: fullLog
         ) {
 
-            let hex = response
+            let hex =
+                response
                 .map {
                     String(format: "%02X", $0)
                 }
@@ -479,19 +481,21 @@ extension NFCScannerModel {
 
         for record in 1...20 {
 
-            guard let (
-                response,
-                sw1,
-                sw2
-            ) = await cnTunion_sendAPDU(
-                send,
-                ins: 0xB2,
-                p1: UInt8(record),
-                p2: transactionP2,
-                le: 256,
-                cla: 0x00,
-                fullLog: fullLog
-            ) else {
+            guard
+                let (
+                    response,
+                    sw1,
+                    sw2
+                ) = await cnTunion_sendAPDU(
+                    send,
+                    ins: 0xB2,
+                    p1: UInt8(record),
+                    p2: transactionP2,
+                    le: 256,
+                    cla: 0x00,
+                    fullLog: fullLog
+                )
+            else {
 
                 Log.debug(
                     "SFI18 record=\(record) APDU_FAILED"
@@ -504,7 +508,8 @@ extension NFCScannerModel {
                 continue
             }
 
-            let hex = response
+            let hex =
+                response
                 .map {
                     String(format: "%02X", $0)
                 }
@@ -523,8 +528,7 @@ extension NFCScannerModel {
             Log.debug(log)
             fullLog.append(log)
 
-            if sw1 == 0x6A &&
-                sw2 == 0x83 {
+            if sw1 == 0x6A && sw2 == 0x83 {
                 break
             }
         }
@@ -550,19 +554,21 @@ extension NFCScannerModel {
 
         for record in 1...20 {
 
-            guard let (
-                response,
-                sw1,
-                sw2
-            ) = await cnTunion_sendAPDU(
-                send,
-                ins: 0xB2,
-                p1: UInt8(record),
-                p2: tripP2,
-                le: 256,
-                cla: 0x00,
-                fullLog: fullLog
-            ) else {
+            guard
+                let (
+                    response,
+                    sw1,
+                    sw2
+                ) = await cnTunion_sendAPDU(
+                    send,
+                    ins: 0xB2,
+                    p1: UInt8(record),
+                    p2: tripP2,
+                    le: 256,
+                    cla: 0x00,
+                    fullLog: fullLog
+                )
+            else {
 
                 Log.debug(
                     "SFI1E record=\(record) APDU_FAILED"
@@ -575,7 +581,8 @@ extension NFCScannerModel {
                 continue
             }
 
-            let hex = response
+            let hex =
+                response
                 .map {
                     String(format: "%02X", $0)
                 }
@@ -594,8 +601,7 @@ extension NFCScannerModel {
             Log.debug(log)
             fullLog.append(log)
 
-            if sw1 == 0x6A &&
-                sw2 == 0x83 {
+            if sw1 == 0x6A && sw2 == 0x83 {
                 break
             }
         }
@@ -652,13 +658,11 @@ extension NFCScannerModel {
         )
 
         let balance =
-            computedBalance ??
-            history?.first(
+            computedBalance ?? history?.first(
                 where: {
                     $0.balance != 0
                 }
-            )?.balance ??
-            rawBalance
+            )?.balance ?? rawBalance
 
         fullLog.append("")
         fullLog.append(

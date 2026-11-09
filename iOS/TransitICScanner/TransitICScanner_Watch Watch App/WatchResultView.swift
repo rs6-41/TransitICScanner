@@ -9,11 +9,11 @@ struct WatchResultView: View {
                     Image(card.info?.iconName ?? "")
                         .resizable()
                         .scaledToFit()
-                        .frame(width:35)
+                        .frame(width: 35)
                     Text(card.info?.displayName ?? "")
                         .fontWeight(.semibold)
                 }
-                
+
                 if let balance = card.balance {
                     if let currency = card.info?.currencyType?.getLocalize(String(balance.balanceText)) {
                         LabeledContent(LocalizedStringKey("result.history.balance")) {
@@ -25,7 +25,7 @@ struct WatchResultView: View {
                     LabeledContent {
                         Text(String(savedAt.formatted(date: .numeric, time: .shortened)))
                     } label: {
-                        Image(systemName:"clock.arrow.trianglehead.2.counterclockwise.rotate.90")
+                        Image(systemName: "clock.arrow.trianglehead.2.counterclockwise.rotate.90")
                     }
                 }
             }
@@ -35,8 +35,10 @@ struct WatchResultView: View {
                         Text(LocalizedStringKey(cardCategory))
                     }
                 }
-                
-                if let cardType = card.info?.type, Localize(card.info?.name ?? "") != Localize(cardType) && cardType != "" {
+
+                if let cardType = card.info?.type,
+                    Localize(card.info?.name ?? "") != Localize(cardType) && cardType != ""
+                {
                     LabeledContent(LocalizedStringKey("result.info.cardType")) {
                         if card.info?.name ?? "" == "cnTunion" {
                             Text(String(localized: String.LocalizationValue(cardType), table: "cnTunion_cards"))
@@ -82,7 +84,7 @@ struct WatchResultView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func resultHistoryRow(
         index: Int,
@@ -92,13 +94,13 @@ struct WatchResultView: View {
         let hasNext = index + 1 < history.count
         let nextBalance: Double =
             hasNext
-                ? history[index + 1].balance
-                : 0
+            ? history[index + 1].balance
+            : 0
 
         let diff: Double? =
             hasNext
-                ? item.balance - nextBalance
-                : (card.isLastHide ? nil : item.balance)
+            ? item.balance - nextBalance
+            : (card.isLastHide ? nil : item.balance)
 
         VStack(
             alignment: .leading,
@@ -121,12 +123,12 @@ struct WatchResultView: View {
 
             HStack(spacing: 2) {
                 let balanceText =
-                String(item.balance.balanceText)
+                    String(item.balance.balanceText)
                 let currency = card.info?.currencyType?.getLocalize(balanceText)
                 Text(currency ?? LocalizedStringKey(balanceText))
-                
+
                 Spacer()
-                
+
                 if let diff {
                     let amount = resultHistoryAmount(diff: diff)
                     let currency = card.info?.currencyType?.getLocalize(amount)
