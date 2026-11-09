@@ -39,7 +39,10 @@ struct ResultView: View {
             resultHistorySection
         }
         .onDisappear() {
-            saveAction()
+            // 新しく読み取った結果だけを保存する（保存済みカードの表示では保存しない）
+            if scandata {
+                saveAction()
+            }
         }
         .onAppear() {
             setDefaultDisplayName()
@@ -91,7 +94,7 @@ struct ResultView: View {
                     info.displayName = cardUserName
                     result.info = info
                     if !scandata {
-                        saveAction()
+                        saveUserData()
                     }
                 }
             }
@@ -147,7 +150,7 @@ struct ResultView: View {
                 info.iconName = newValue?.imageName
                 result.info = info
                 if !scandata {
-                    saveAction()
+                    saveUserData()
                 }
             }
         }
@@ -436,6 +439,26 @@ struct ResultView: View {
         saveListID = UUID()
     }
     
+    /// 保存済みカードの表示名・券面だけを保存する
+    private func saveUserData() {
+        guard let info = result.info else {
+            return
+        }
+
+        do {
+            try ResultSave.updateUserData(
+                idm: info.idm,
+                displayName: info.displayName,
+                iconName: info.iconName,
+                in: modelContext
+            )
+        } catch {
+            Log.error("表示名・券面の保存に失敗: \(error.localizedDescription)")
+        }
+
+        saveListID = UUID()
+    }
+
     private func setCardDesigin(_ name: String?) {
         if let iconName = result.info?.iconName,
            let design = cardDesignList.first(where: {
