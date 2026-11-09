@@ -358,7 +358,7 @@ struct SavedListView: View {
         do {
             try modelContext.save()
         } catch {
-            print("保存データの削除に失敗しました: \(error)")
+            Log.debug("保存データの削除に失敗しました: \(error)")
         }
     }
 }

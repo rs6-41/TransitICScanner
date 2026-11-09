@@ -65,7 +65,7 @@ extension NFCScannerModel {
             ) { status1, status2, data, error in
 
                 if let error {
-                    print(error)
+                    Log.debug(error)
                 }
 
                 guard error == nil,
@@ -78,7 +78,7 @@ extension NFCScannerModel {
                     return
                 }
 
-                print(d.map { String(format: "%02X", $0) }.joined(separator: " "))
+                Log.debug(d.map { String(format: "%02X", $0) }.joined(separator: " "))
 
                 let b = [UInt8](d)
 
@@ -101,7 +101,7 @@ extension NFCScannerModel {
             .map { String(format: "%02X", $0) }
             .joined()
 
-        print("IDm:", idm)
+        Log.debug("IDm:", idm)
 
         return ResultCardInfo(
             idm: idm,

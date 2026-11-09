@@ -84,7 +84,7 @@ private struct BannerViewContainer: UIViewRepresentable {
         }
 
         func bannerViewDidReceiveAd(_ bannerView: BannerView) {
-            print("DID RECEIVE AD.")
+            Log.debug("DID RECEIVE AD.")
 
             DispatchQueue.main.async {
                 self.parent.loadingError = false
@@ -95,7 +95,7 @@ private struct BannerViewContainer: UIViewRepresentable {
             _ bannerView: BannerView,
             didFailToReceiveAdWithError error: Error
         ) {
-            print("FAILED TO RECEIVE AD: \(error.localizedDescription)")
+            Log.debug("FAILED TO RECEIVE AD: \(error.localizedDescription)")
 
             DispatchQueue.main.async {
                 self.parent.loadingError = true

@@ -90,7 +90,7 @@ extension NFCScannerModel {
 
         switch tag {
         case .miFare(let t):
-            print("Clipper: using NFCMiFareTag path")
+            Log.debug("Clipper: using NFCMiFareTag path")
             guard t.mifareFamily == .desfire else {
                 session.invalidate(errorMessage: String(localized: "error.smartCardReader.notDESFire"))
                 return
@@ -109,7 +109,7 @@ extension NFCScannerModel {
             identifier = t.identifier
 
         case .iso7816(let t):
-            print("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
+            Log.debug("Clipper: using NFCISO7816Tag path, initialSelectedAID:", t.initialSelectedAID)
             send = { cla, ins, p1, p2, data, le in
                 let apdu = NFCISO7816APDU(
                     instructionClass: cla,
@@ -404,12 +404,12 @@ extension NFCScannerModel {
                     256
                 )
             } catch {
-                print(String(format: "Clipper APDU INS=%02X error:", code), error)
+                Log.debug(String(format: "Clipper APDU INS=%02X error:", code), error)
                 return nil
             }
 
             let (resp, sw1, sw2) = result
-            print(String(format: "Clipper APDU INS=%02X SW=%02X%02X LEN=%d", code, sw1, sw2, resp.count))
+            Log.debug(String(format: "Clipper APDU INS=%02X SW=%02X%02X LEN=%d", code, sw1, sw2, resp.count))
 
             guard sw1 == 0x91 else {
                 return nil

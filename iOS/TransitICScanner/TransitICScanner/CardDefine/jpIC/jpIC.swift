@@ -195,7 +195,7 @@ extension NFCScannerModel {
 
             felicaTag.readWithoutEncryption(serviceCodeList: [serviceCode], blockList: blockList) { [weak self] status1, status2, blockData, error in
                 if let error = error {
-                    print("Read error: \(error)")
+                    Log.debug("Read error: \(error)")
                     self?.session?.invalidate(errorMessage: error.localizedDescription)
                     continuation.resume(returning: nil)
                     return
@@ -237,7 +237,7 @@ extension NFCScannerModel {
                     serviceCodeList: [serviceCode],
                     blockList: blockList
                 ) { status1, status2, blockData, error in
-                    print("History status:", status1, status2, "count:", blockData.count)
+                    Log.debug("History status:", status1, status2, "count:", blockData.count)
                     guard error == nil,
                           status1 == 0x00,
                           status2 == 0x00 else {
@@ -254,7 +254,7 @@ extension NFCScannerModel {
                     for (index, data) in result.enumerated() {
                         let bytes = [UInt8](data)
                         let hex = bytes.map { String(format: "%02X", $0) }.joined(separator: " ")
-                        print(String(format: "[%02d] %@", index, hex))
+                        Log.debug(String(format: "[%02d] %@", index, hex))
                     }
                     let history = result.compactMap { data -> ResultHistory? in
                         let bytes = [UInt8](data)
@@ -266,7 +266,7 @@ extension NFCScannerModel {
                         if bytes.allSatisfy({ $0 == 0 }) {
                             return nil
                         }
-                        print("bytes:\(bytes)")
+                        Log.debug("bytes:\(bytes)")
 
                         //解析
                         let rawDate = UInt16(bytes[4]) << 8 | UInt16(bytes[5])

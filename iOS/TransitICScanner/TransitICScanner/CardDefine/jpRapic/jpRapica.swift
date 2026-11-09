@@ -355,7 +355,7 @@ extension NFCScannerModel {
                 blockList: blockList
             ) { status1, status2, data, error in
                 guard error == nil, status1 == 0x00, status2 == 0x00 else {
-                    print("Rapica read error:", status1, status2, error as Any)
+                    Log.debug("Rapica read error:", status1, status2, error as Any)
                     continuation.resume(returning: nil)
                     return
                 }

@@ -83,6 +83,7 @@
 				Localize/Localizable.xcstrings,
 				Localize/localize.swift,
 				Result/BalanceFormat.swift,
+				Utility/Log.swift,
 			);
 			target = AA43A044309D6C14008A3C48 /* TransitICSCanner_Watch Watch App */;
 		};
@@ -122,6 +123,7 @@
 				AppIcon/AppIcon.icon,
 				Assets.xcassets,
 				Result/BalanceFormat.swift,
+				Utility/Log.swift,
 			);
 			target = AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */;
 		};

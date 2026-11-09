@@ -207,9 +207,9 @@ struct DebugSettingView: View {
                 result,
                 in: modelContext
             )
-            print("Resultの保存に成功しました")
+            Log.debug("Resultの保存に成功しました")
         } catch {
-            print("Resultの保存に失敗しました: \(error)")
+            Log.debug("Resultの保存に失敗しました: \(error)")
         }
     }
 }

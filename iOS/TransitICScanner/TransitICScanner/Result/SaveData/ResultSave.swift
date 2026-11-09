@@ -31,7 +31,7 @@ enum SavedDataModelContainer {
         guard let containerURL = fileManager.containerURL(
             forSecurityApplicationGroupIdentifier: StorageConfig.appGroup
         ) else {
-            print("App GroupのURLを取得できません")
+            Log.debug("App GroupのURLを取得できません")
             return
         }
 
@@ -50,7 +50,7 @@ enum SavedDataModelContainer {
 
         for url in storeFiles {
             if fileManager.fileExists(atPath: url.path) {
-                print("SwiftDataストア削除:", url.path)
+                Log.debug("SwiftDataストア削除:", url.path)
                 try fileManager.removeItem(at: url)
             }
         }
@@ -66,7 +66,7 @@ enum SavedDataModelContainer {
         let configuration: ModelConfiguration
 
         if CloudSyncSettings.isEnabled {
-            print("CloudKit ON")
+            Log.debug("CloudKit ON")
 
             configuration = ModelConfiguration(
                 schema: schema,
@@ -76,7 +76,7 @@ enum SavedDataModelContainer {
                 )
             )
         } else {
-            print("CloudKit OFF")
+            Log.debug("CloudKit OFF")
 
             configuration = ModelConfiguration(
                 schema: schema,
@@ -363,10 +363,10 @@ enum ResultSave {
 
             modelContext.insert(card)
 
-            print("insert直後:", card)
-            print("insert直後 hasChanges:", modelContext.hasChanges)
+            Log.debug("insert直後:", card)
+            Log.debug("insert直後 hasChanges:", modelContext.hasChanges)
 
-            print(
+            Log.debug(
                 "insert直後の件数:",
                 try modelContext.fetch(
                     FetchDescriptor<SavedCard>()
@@ -434,20 +434,6 @@ enum ResultSave {
         }
 
         try modelContext.save()
-
-        let cards = try modelContext.fetch(
-            FetchDescriptor<SavedCard>()
-        )
-
-        print("保存直後のSavedCard数:", cards.count)
-
-        for card in cards {
-            print(
-                "SavedCard:",
-                card.idm,
-                card.name
-            )
-        }
 
         let saveData = BalanceWidgetModel(
             DisplayName: info.displayName ?? {
@@ -546,9 +532,9 @@ enum ResultSave {
 
             try modelContext.save()
 
-            print("保存データをリセットしました")
+            Log.debug("保存データをリセットしました")
         } catch {
-            print(
+            Log.debug(
                 "保存データのリセットに失敗しました: \(error)"
             )
         }
