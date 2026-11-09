@@ -12,7 +12,7 @@ struct BalanceWidgetModel: Hashable,Codable {
 
 func getSavedWidgetData() -> [BalanceWidgetModel] {
     guard let sharedDefaults = UserDefaults(
-        suiteName: AppGroup
+        suiteName: StorageConfig.appGroup
     ) else {
         print("Widget: App Groupを取得できません")
         return []

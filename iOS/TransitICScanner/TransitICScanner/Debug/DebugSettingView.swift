@@ -40,7 +40,8 @@ struct DebugSettingView: View {
     
     @AppStorage("adDebug") var adDebug = false
     
-    @AppStorage("isDebugStorage") var isDebugStorage = false
+    @AppStorage(StorageConfig.debugStorageKey, store: StorageConfig.sharedSettings)
+    var isDebugStorage = false
     @AppStorage("firstPermission") var firstPermission = true
     
     var body: some View {
@@ -103,9 +104,6 @@ struct DebugSettingView: View {
                 Section() {
                         Toggle(isOn: $isDebugStorage) {
                             Text(LocalizedStringKey("setting.debug.result.debugStorage"))
-                        }
-                        .onChange(of:isDebugStorage) {
-                            debugStorage(isDebugStorage)
                         }
                     
                 } header: {

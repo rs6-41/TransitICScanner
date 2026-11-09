@@ -29,7 +29,7 @@ enum SavedDataModelContainer {
         let fileManager = FileManager.default
 
         guard let containerURL = fileManager.containerURL(
-            forSecurityApplicationGroupIdentifier: AppGroup
+            forSecurityApplicationGroupIdentifier: StorageConfig.appGroup
         ) else {
             print("App GroupのURLを取得できません")
             return
@@ -70,15 +70,18 @@ enum SavedDataModelContainer {
 
             configuration = ModelConfiguration(
                 schema: schema,
+                groupContainer: .identifier(StorageConfig.appGroup),
                 cloudKitDatabase: .private(
-                    cloudKitContainerIdentifier
+                    StorageConfig.cloudKitContainerIdentifier
                 )
             )
         } else {
             print("CloudKit OFF")
 
             configuration = ModelConfiguration(
-                schema: schema
+                schema: schema,
+                groupContainer: .identifier(StorageConfig.appGroup),
+                cloudKitDatabase: .none
             )
         }
 
@@ -447,7 +450,7 @@ enum ResultSave {
         }
 
         var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
 
         if let savedData = sharedDefaults?.data(
             forKey: "widgetDatas"
@@ -491,7 +494,7 @@ enum ResultSave {
             sharedDefaults?.synchronize()
 
             print("Widget保存:")
-            print("AppGroup:", AppGroup)
+            print("AppGroup:", StorageConfig.appGroup)
             print("件数:", widgetModels.count)
             print("データサイズ:", encodedData.count)
         } else {
@@ -546,7 +549,7 @@ enum ResultSave {
         try modelContext.save()
 
         var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
 
         if let savedData = sharedDefaults?.data(
             forKey: "widgetDatas"
@@ -588,7 +591,7 @@ enum ResultSave {
         try modelContext.save()
 
         var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: AppGroup)
+        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
 
         if let encodedData = try? JSONEncoder().encode(
             widgetModels

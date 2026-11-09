@@ -24,9 +24,7 @@ struct ContentView: View {
 
     @AppStorage("isLaunchVersionFastBeta") var isLaunchVersionFastBeta = ""
     @AppStorage("isLaunchVersionFastRel") var isLaunchVersionFastRel = ""
-    let appEnvironment = Bundle.main.object(
-        forInfoDictionaryKey: "AppEnvironment"
-    ) as? String
+    let appEnvironment = AppEnvironment.current
 
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     @State var versionFirstLook = false
@@ -42,8 +40,6 @@ struct ContentView: View {
 
     @ObservedObject var smartCardManager: SmartCardManager
     
-    
-    @AppStorage("isDebugStorage") var isDebugStorage = false
     
     @AppStorage("firstPermission") var firstPermission = true
     
@@ -83,7 +79,7 @@ struct ContentView: View {
                 SavedListView(deleteAds: $deleteAds)
             }
 
-            if appEnvironment == "DEV" {
+            if appEnvironment == .dev {
                 Tab(LocalizedStringKey("tab.tool"), systemImage: "latch.2.case.fill", value: 2) {
                     NavigationStack {
                         NFCToolView(deleteAds: $deleteAds)
@@ -167,13 +163,12 @@ struct ContentView: View {
         devSetting = false
         
         switch appEnvironment {
-        case "DEV":
+        case .dev:
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             cardItemsStore.cardItems = devCards + featureCards + relCards
             adDebug = true
-            debugStorage(isDebugStorage)
             
-        case "BETA":
+        case .beta:
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds.test"
             if version != isLaunchVersionFastBeta {
                 isTestCardEnabled = true
@@ -185,9 +180,8 @@ struct ContentView: View {
             } else {
                 cardItemsStore.cardItems = relCards
             }
-            isDebugStorage = false
             
-        case "REL":
+        case .rel:
             enableCardType = 0
             deleteAdsPurchaseID = "com.rs6apps.TransitICScanner.deleteAds"
             if version != isLaunchVersionFastRel {
@@ -197,10 +191,7 @@ struct ContentView: View {
             }
             cardItemsStore.cardItems = relCards
             adDebug = false
-            isDebugStorage = false
             
-        case .none:break
-        case .some(_):break
         }
         
         #if !targetEnvironment(macCatalyst)
@@ -213,7 +204,6 @@ struct ContentView: View {
         }
         #endif
         
-        CloudSyncSettings.setEnabled(isCloudSyncEnabled)
         
         
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })

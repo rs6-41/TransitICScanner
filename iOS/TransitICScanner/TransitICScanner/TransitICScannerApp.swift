@@ -29,6 +29,11 @@ struct TransitICScannerApp: App {
     let container: ModelContainer
 
     init() {
+        // 保存先は ModelContainer の作成前に確定させる
+        if AppEnvironment.current != .dev {
+            StorageConfig.setDebugStorage(false)
+        }
+
         do {
             self.container = try SavedDataModelContainer.makeContainer()
         } catch {
