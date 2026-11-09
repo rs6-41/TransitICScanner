@@ -24,7 +24,7 @@ let spFlashPay = CardInfo(
         converter: .jpIC,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 1200.0,
         idm: "0405820A9A93CDEF",

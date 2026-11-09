@@ -27,7 +27,7 @@ let krOneCard = CardInfo(
         converter:.krOneCard,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:10000.0,
@@ -84,7 +84,7 @@ extension NFCScannerModel {
         await MainActor.run { self.result = result }
     }
 
-    private func krOneCard_result(_ send: APDUSend) async -> Result? {
+    private func krOneCard_result(_ send: APDUSend) async -> ScanResult? {
         print("Korea OneCard scan started")
             // New Korea OneCard documented AID flow:
             // 1. Select Config DF: A0000004520001
@@ -144,7 +144,7 @@ extension NFCScannerModel {
             print("converter:", krOneCard.scanOption.converter as Any)
             print("================================")
 
-            return Result(
+            return ScanResult(
                 balance: balance ?? 0,
                 isHistory: true,
                 history: history ?? [],
@@ -346,7 +346,7 @@ extension NFCScannerModel {
                 serial: nil,
                 version: nil,
                 validDate: nil,
-                issueInfo: issueInfo(region:krOneCard.area.rawValue,issuer:issuer)
+                issueInfo: IssueInfo(region:krOneCard.area.rawValue,issuer:issuer)
             )
         }
         // Published Korea OneCard B0 layout:
@@ -391,7 +391,7 @@ extension NFCScannerModel {
             serial: csn.isEmpty ? nil : csn,
             version: cardType.isEmpty ? nil : cardType,
             validDate: validity.isEmpty ? nil : validity,
-            issueInfo: issueInfo(region:krOneCard.area.rawValue,issuer:issuer)
+            issueInfo: IssueInfo(region:krOneCard.area.rawValue,issuer:issuer)
         )
     }
 

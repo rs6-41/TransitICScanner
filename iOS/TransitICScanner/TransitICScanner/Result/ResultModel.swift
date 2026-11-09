@@ -1,7 +1,7 @@
 import SwiftUI
 
 // 結果
-struct Result: Hashable {
+struct ScanResult: Hashable {
     var balance: Double?
     var isHistory: Bool
     var history: [ResultHistory]?
@@ -38,16 +38,16 @@ struct ResultCardInfo: Hashable, Codable {
     var nameShort: String
     var displayName: String?
     var iconName: String?
-    var currencyType: currencyType?
+    var currencyType: CurrencyType?
     var type: String
     var serial: String?
     var version: String?
     var validDate: String?
-    var issueInfo: issueInfo?
+    var issueInfo: IssueInfo?
 }
 
 //発行情報
-struct issueInfo: Hashable, Codable {
+struct IssueInfo: Hashable, Codable {
     var region: String //発行地域
     var area: String? //発行都市
     var city: String? //発行エリア
@@ -70,7 +70,7 @@ struct DisplayCardInfo: Hashable {
     var nameShort: String
     var displayName: String?
     var iconName: String?
-    var currencyType: currencyType
+    var currencyType: CurrencyType
     var type: String
     var typeLocalizeTable: String? = nil
 }

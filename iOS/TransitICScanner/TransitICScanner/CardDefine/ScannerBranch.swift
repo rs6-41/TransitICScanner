@@ -80,7 +80,7 @@ extension NFCScannerModel {
 
     /// FeliCa カードの読取処理。内蔵リーダーと外部リーダーで同じ実装を使う。
     /// 読み取りに失敗した場合は nil を返す。
-    func readFeliCa(id: CardID, _ felicaTag: any FeliCaTagReading) async -> Result? {
+    func readFeliCa(id: CardID, _ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca:
             await jpIC_read(felicaTag, cardID: id)

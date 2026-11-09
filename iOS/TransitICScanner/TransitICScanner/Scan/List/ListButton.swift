@@ -6,7 +6,7 @@ struct CardListRow: View {
     @EnvironmentObject var debug: DebugModel
 
     let item: CardInfo
-    var onResult: ((Result) -> Void)?
+    var onResult: ((ScanResult) -> Void)?
 
     @Binding var deleteAds: Bool
     var externalDevice: Bool
@@ -17,7 +17,7 @@ struct CardListRow: View {
         deleteAds: Binding<Bool>,
         smartCardManager: SmartCardManager,
         externalDevice: Bool = false,
-        onResult: ((Result) -> Void)? = nil
+        onResult: ((ScanResult) -> Void)? = nil
     ) {
         self.item = item
         self._deleteAds = deleteAds
@@ -119,7 +119,7 @@ struct ListButtonInner: View {
 
             Spacer()
 
-            if item.infomation != nil {
+            if item.information != nil {
                 Button {
                     isCardInfoView.toggle()
                 } label: {
@@ -130,7 +130,7 @@ struct ListButtonInner: View {
                 .sheet(isPresented: $isCardInfoView) {
                     NavigationStack {
                         ScrollView {
-                            item.infomation
+                            item.information
                         }
                     }
                 }
@@ -146,7 +146,7 @@ struct ListButtonInner: View {
 
 struct ScanningButton: View {
     let item: CardInfo
-    var onResult: ((Result) -> Void)?
+    var onResult: ((ScanResult) -> Void)?
 
     @StateObject private var model: NFCScannerModel
     @State var nfcError = false
@@ -158,7 +158,7 @@ struct ScanningButton: View {
         item: CardInfo,
         deleteAds: Binding<Bool>,
         smartCardManager: SmartCardManager,
-        onResult: ((Result) -> Void)? = nil
+        onResult: ((ScanResult) -> Void)? = nil
     ) {
         self.item = item
         self.onResult = onResult

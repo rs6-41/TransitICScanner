@@ -25,7 +25,7 @@ let cnTunion = CardInfo(
         converter: .cnTunion,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance: 295.0,
@@ -699,7 +699,7 @@ extension NFCScannerModel {
 
         await MainActor.run {
 
-            self.result = Result(
+            self.result = ScanResult(
                 balance: balance,
                 isHistory: true,
                 history: history,
@@ -1530,7 +1530,7 @@ extension NFCScannerModel {
             version: version,
             validDate:
                 "\(issueDate)-\(expiryDate)",
-            issueInfo: issueInfo(region:cnTunion.area.rawValue,area:getIssueInfo.area,city:getIssueInfo.city,issuer:getIssueInfo.issuer)
+            issueInfo: IssueInfo(region:cnTunion.area.rawValue,area:getIssueInfo.area,city:getIssueInfo.city,issuer:getIssueInfo.issuer)
         )
     }
 

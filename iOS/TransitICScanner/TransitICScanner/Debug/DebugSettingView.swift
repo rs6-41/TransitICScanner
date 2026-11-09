@@ -201,7 +201,7 @@ struct DebugSettingView: View {
         }
     }
     
-    private func saveAction(result:Result) {
+    private func saveAction(result:ScanResult) {
         do {
             try ResultSave.save(
                 result,

@@ -29,7 +29,7 @@ let jpIC = CardInfo(
         converter:.jpIC,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:1099.0,
@@ -68,7 +68,7 @@ let jpIC_icsca = CardInfo(
         currencyType:.jpy,
         converter:.jpIC
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:500.0,
@@ -106,7 +106,7 @@ let jpIC_SAPICA = CardInfo(
         currencyType:.jpy,
         converter:.jpIC
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:500.0,
@@ -144,7 +144,7 @@ let jpIC_IruCa = CardInfo(
         currencyType:.jpy,
         converter:.jpIC
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:500.0,
@@ -165,7 +165,7 @@ let jpIC_IruCa = CardInfo(
 extension NFCScannerModel {
     
     /// 交通系IC(およびシステムコード違いの互換カード)を読み取る
-    func jpIC_read(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> Result? {
+    func jpIC_read(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ScanResult? {
         guard let balance = await jpIC_balance(felicaTag) else { return nil }
 
         let history = await jpIC_history(
@@ -175,7 +175,7 @@ extension NFCScannerModel {
 
         let info = await jpIC_info(felicaTag, cardID: cardID)
 
-        return Result(
+        return ScanResult(
             balance: Double(balance),
             isHistory: true,
             history: history,
@@ -365,7 +365,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region:jpIC.area.rawValue,area:issueArea,city:issueCity,issuer:issuer)
+            issueInfo: IssueInfo(region:jpIC.area.rawValue,area:issueArea,city:issueCity,issuer:issuer)
         )
     }
     

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct ResultView: View {
-    @State var result: Result
+    @State var result: ScanResult
     @State var scandata: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
@@ -245,7 +245,7 @@ struct ResultView: View {
     
     @ViewBuilder
     private func resultIssueContent(
-        _ issueInfo: issueInfo
+        _ issueInfo: IssueInfo
     ) -> some View {
         
         Section() {

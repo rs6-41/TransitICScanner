@@ -24,7 +24,7 @@ let twICash = CardInfo(
         converter: .twICash,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:980.0,
@@ -92,7 +92,7 @@ extension NFCScannerModel {
         await MainActor.run { self.result = result }
     }
 
-    private func twICash_result(using send: @escaping APDUSend) async throws -> Result {
+    private func twICash_result(using send: @escaping APDUSend) async throws -> ScanResult {
         let reader = ICash2Reader(send: send)
         let readResult = try await reader.readCard()
 
@@ -125,10 +125,10 @@ extension NFCScannerModel {
             serial: readResult.cardNumber,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region: twICash.area.rawValue, issuer: "issue.tw.issuer.icash")
+            issueInfo: IssueInfo(region: twICash.area.rawValue, issuer: "issue.tw.issuer.icash")
         )
 
-        return Result(
+        return ScanResult(
             balance: Double(readResult.balance),
             isHistory: !history.isEmpty,
             history: history,

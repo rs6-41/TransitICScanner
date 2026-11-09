@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WatchResultView: View {
-    var card: Result
+    var card: ScanResult
     var body: some View {
         List {
             Section() {

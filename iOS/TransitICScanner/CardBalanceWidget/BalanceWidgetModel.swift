@@ -4,7 +4,7 @@ import WidgetKit
 struct BalanceWidgetModel: Hashable,Codable {
     var DisplayName: String?
     var balance: Double?
-    var currencyType: currencyType?
+    var currencyType: CurrencyType?
     var idm: String
     var icon: String?
     var savedAt:Date?
