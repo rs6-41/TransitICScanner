@@ -28,7 +28,7 @@ extension NFCScannerModel {
     func switchCard(id: CardID, _ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica:
+             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             scanFeliCa(id: id, tag, session)
         case .cnTunion:
             self.cnTunion_scan(tag, session)
@@ -38,8 +38,6 @@ extension NFCScannerModel {
             self.twICash_scan(tag, session)
         case .usClipper:
             self.usClipper_scan(tag, session)
-        case .idKMT:
-            self.idKMT_scan(tag, session)
         case .twEasyCard_old:
             // スクレイピングで取得するため NFC 読取はない
             return
@@ -57,7 +55,7 @@ extension NFCScannerModel {
 
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica:
+             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             try await scanFeliCaExternal(id: id, using: manager)
         case .usClipper:
             try await usClipper_scanExternal(using: manager)
@@ -67,8 +65,6 @@ extension NFCScannerModel {
             try await cnTunion_scanExternal(using: manager)
         case .twICash:
             try await twICash_scanExternal(using: manager)
-        case .idKMT:
-            try await idKMT_scanExternal(using: manager)
         case .twEasyCard_old, .spFlashPay:
             throw ReaderError.message(
                 String(localized: "cardList.reader.unsupported")
@@ -94,7 +90,9 @@ extension NFCScannerModel {
             await jpDoCard_read(felicaTag)
         case .jpRapica:
             await jpRapica_read(felicaTag)
-        case .cnTunion, .krOneCard, .twICash, .usClipper, .idKMT,
+        case .idKMT:
+            await idKMT_read(felicaTag)
+        case .cnTunion, .krOneCard, .twICash, .usClipper,
              .twEasyCard_old, .spFlashPay:
             nil
         }

@@ -35,151 +35,34 @@ let idKMT = CardInfo(
 
 extension NFCScannerModel {
 
-    func idKMT_scan(
-        _ tag: NFCTag,
-        _ session: NFCTagReaderSession,
-        optionType: String = ""
-    ) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(
-                errorMessage: String(localized: "scanner.coreNFC.error.notfeliCa")
-            )
-            return
+    /// KAI Commuter (KMT) を読み取る。内蔵リーダー・外部リーダー共通。
+    func idKMT_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        guard let data = await idKMT_readData(
+            felicaTag,
+            count: self.scanOption.historyCount
+        ) else {
+            return nil
         }
 
-        Task {
-            guard let data = await idKMT_readData(
-                felicaTag,
-                count: self.scanOption.historyCount
-            ) else {
-                return
-            }
+        let info = idKMT_info(felicaTag, data: data)
 
-            let info = idKMT_info(felicaTag, data: data)
-
-            await MainActor.run {
-                self.result = ScanResult(
-                    balance: Double(data.balance),
-                    isHistory: true,
-                    history: data.histories,
-                    info: info,
-                    converter: idKMT.scanOption.converter,
-                    isLastHide: true,
-                    description: idKMT.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage =
-                    String(localized: "scanner.coreNFC.scanning.done")
-
-                session.invalidate()
-            }
-        }
-    }
-
-    func idKMT_scanExternal(using manager: SmartCardManager) async throws {
-        let result = try await manager.withCard { card in
-            let reader = KMTExternalAPDU(
-                transmit: manager.apduSender(for: card)
-            )
-
-            let idmData = try await reader.send(
-                0xCA,
-                p1: 0x00,
-                p2: 0x00,
-                le: 256
-            )
-
-            guard idmData.count >= 8 else {
-                throw ReaderError.message(
-                    String(localized: "error.smartCardReader.felicaIDm")
-                )
-            }
-
-            let idm = idmData.prefix(8)
-                .map { String(format: "%02X", $0) }
-                .joined()
-
-            let idBlocks = try await reader.readBlocks(
-                service: [0x0B, 0x30],
-                count: 1,
-                failureKey: "error.smartCardReader.felicaInfoService"
-            )
-
-            guard let idBlock = idBlocks.first else {
-                throw ReaderError.message(
-                    String(localized: "error.smartCardReader.felicaBalance")
-                )
-            }
-
-            let balanceBlocks = try await reader.readBlocks(
-                service: [0x17, 0x10],
-                count: 1,
-                failureKey: "error.smartCardReader.felicaInfoService"
-            )
-
-            guard let balanceBlock = balanceBlocks.first else {
-                throw ReaderError.message(
-                    String(localized: "error.smartCardReader.felicaBalance")
-                )
-            }
-
-            let historyBlocks = try await reader.readBlocks(
-                service: [0x0F, 0x20],
-                count: min(max(self.scanOption.historyCount, 0), 20),
-                failureKey: "error.smartCardReader.felicaHistoryService",
-                stopAtEmpty: true
-            )
-
-            guard let data = KMTData.parse(
-                idBlock: idBlock,
-                balanceBlock: balanceBlock,
-                historyBlocks: historyBlocks
-            ) else {
-                throw ReaderError.message(
-                    String(localized: "scanner.coreNFC.scanning.error.read")
-                )
-            }
-
-            let info = ResultCardInfo(
-                idm: idm,
-                name: idKMT.name,
-                nameShort: idKMT.scanOption.nameShort,
-                currencyType: idKMT.scanOption.currencyType,
-                type: "card.KMT",
-                serial: data.serialNumber,
-                version: nil,
-                validDate: nil,
-                issueInfo: IssueInfo(
-                    region: idKMT.area.rawValue,
-                    area: "locate.prefecture.Jakarta",
-                    city: nil,
-                    issuer: "issue.id.jakarta.issuer.KaiCommuter"
-                )
-            )
-
-            return ScanResult(
-                balance: Double(data.balance),
-                isHistory: true,
-                history: data.histories,
-                info: info,
-                converter: idKMT.scanOption.converter,
-                isLastHide: true,
-                description: idKMT.scand_description,
-                savedAt: Date.now
-            )
-        }
-
-        await MainActor.run {
-            self.result = result
-        }
+        return ScanResult(
+            balance: Double(data.balance),
+            isHistory: true,
+            history: data.histories,
+            info: info,
+            converter: idKMT.scanOption.converter,
+            isLastHide: true,
+            description: idKMT.scand_description,
+            savedAt: Date.now
+        )
     }
 
     func idKMT_readData(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         count: Int
     ) async -> KMTData? {
-        guard let idBlock = await idKMT_read(
+        guard let idBlock = await idKMT_readBlocks(
             felicaTag,
             service: Data([0x0B, 0x30]),
             blocks: [0]
@@ -187,7 +70,7 @@ extension NFCScannerModel {
             return nil
         }
 
-        guard let balanceBlock = await idKMT_read(
+        guard let balanceBlock = await idKMT_readBlocks(
             felicaTag,
             service: Data([0x17, 0x10]),
             blocks: [0]
@@ -197,7 +80,7 @@ extension NFCScannerModel {
 
         let historyCount = min(max(count, 0), 20)
 
-        guard let historyBlocks = await idKMT_read(
+        guard let historyBlocks = await idKMT_readBlocks(
             felicaTag,
             service: Data([0x0F, 0x20]),
             blocks: Array(0..<historyCount).map { UInt8($0) }
@@ -219,8 +102,8 @@ extension NFCScannerModel {
         return data
     }
 
-    func idKMT_read(
-        _ tag: NFCFeliCaTag,
+    func idKMT_readBlocks(
+        _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
     ) async -> [Data]? {
@@ -264,7 +147,7 @@ extension NFCScannerModel {
     }
 
     func idKMT_info(
-        _ felicaTag: NFCFeliCaTag,
+        _ felicaTag: any FeliCaTagReading,
         data: KMTData
     ) -> ResultCardInfo {
         let idm = felicaTag.currentIDm
@@ -282,9 +165,9 @@ extension NFCScannerModel {
             validDate: nil,
             issueInfo: IssueInfo(
                 region: idKMT.area.rawValue,
-                area: nil,
+                area: "locate.prefecture.Jakarta",
                 city: nil,
-                issuer: nil
+                issuer: "issue.id.jakarta.issuer.KaiCommuter"
             )
         )
     }
@@ -451,98 +334,5 @@ struct KMTData {
         | (UInt32(data[offset + 1]) << 8)
         | (UInt32(data[offset + 2]) << 16)
         | (UInt32(data[offset + 3]) << 24)
-    }
-}
-
-private struct KMTExternalAPDU {
-    let transmit: APDUSend
-
-    func send(
-        _ ins: UInt8,
-        p1: UInt8,
-        p2: UInt8,
-        data: Data = Data(),
-        le: Int = 0
-    ) async throws -> Data {
-        let (payload, sw1, sw2) = try await transmit(
-            0xFF,
-            ins,
-            p1,
-            p2,
-            data,
-            le
-        )
-
-        guard sw1 == 0x90, sw2 == 0x00 else {
-            throw ReaderError.message(
-                String(
-                    format: String(localized:
-                        "error.smartCardReader.felicaCommandFailed"
-                    ),
-                    Int(sw1),
-                    Int(sw2)
-                )
-            )
-        }
-
-        return payload
-    }
-
-    func readBlocks(
-        service: [UInt8],
-        count: Int,
-        start: Int = 0,
-        failureKey: String,
-        stopAtEmpty: Bool = false
-    ) async throws -> [Data] {
-        let (_, sw1, sw2) = try await transmit(
-            0xFF,
-            0xA4,
-            0x00,
-            0x01,
-            Data(service),
-            0
-        )
-
-        guard sw1 == 0x90, sw2 == 0x00 else {
-            throw ReaderError.message(
-                String(
-                    format: String(localized:
-                        String.LocalizationValue(failureKey)
-                    ),
-                    Int(sw1),
-                    Int(sw2)
-                )
-            )
-        }
-
-        var blocks: [Data] = []
-
-        for index in start..<(start + count) {
-            let data = try await send(
-                0xB0,
-                p1: 0x00,
-                p2: UInt8(index),
-                le: 256
-            )
-
-            guard data.count >= 16 else {
-                throw ReaderError.message(
-                    String(localized: "error.smartCardReader.felicaBalance")
-                )
-            }
-
-            let block = Data(data.prefix(16))
-
-            if stopAtEmpty &&
-                (block.allSatisfy { $0 == 0 } ||
-                 block.allSatisfy { $0 == 0xFF }) {
-                break
-            }
-
-            blocks.append(block)
-        }
-
-        return blocks
     }
 }
