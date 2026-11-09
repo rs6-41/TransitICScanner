@@ -31,6 +31,24 @@ struct ResultHistory: Hashable, Codable {
     var mappingID: String = ""
 }
 
+extension ResultHistory {
+    /// カード内に連番がない場合に、取引を一意に識別する `transactionId` を作る。
+    ///
+    /// 保存時は `transactionId` が同じ履歴を重複として扱うため、
+    /// 同じ取引からは常に同じ値になり、別の取引とは衝突しにくい値にする必要がある。
+    /// - Parameters:
+    ///   - date: 取引日時（秒まで使う）
+    ///   - processType: 取引種別
+    ///   - balance: 取引後の残高（下位 16 bit を使う）
+    static func makeTransactionID(date: DateComponents, processType: UInt8, balance: Int) -> Int {
+        let year = max((date.year ?? 2000) - 2000, 0)
+        let timeKey = ((((year * 12 + (date.month ?? 0)) * 31 + (date.day ?? 0)) * 24
+            + (date.hour ?? 0)) * 60 + (date.minute ?? 0)) * 60 + (date.second ?? 0)
+        let discriminator = Int(processType) << 16 | (balance & 0xFFFF)
+        return timeKey << 24 | discriminator
+    }
+}
+
 // カード情報
 struct ResultCardInfo: Hashable, Codable {
     var idm: String

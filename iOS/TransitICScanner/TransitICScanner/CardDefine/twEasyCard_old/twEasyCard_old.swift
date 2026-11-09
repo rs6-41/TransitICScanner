@@ -528,7 +528,6 @@ final class twEasyCard_old_scraping: ObservableObject {
             let tdRegex = try NSRegularExpression(pattern: tdPattern, options: [])
             let nsrange = NSRange(html.startIndex..<html.endIndex, in: html)
             let matches = rowRegex.matches(in: html, options: [], range: nsrange)
-            var index = 0
             let calendar = Calendar.current
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -577,32 +576,22 @@ final class twEasyCard_old_scraping: ObservableObject {
                         stationIn: 0,
                         lineOut: 0,
                         stationOut: 0,
-                        transactionId: index
+                        // 並び順の番号は再取得のたびに変わるため、日時・種別・残高から取引IDを作る
+                        transactionId: ResultHistory.makeTransactionID(
+                            date: dateComponents,
+                            processType: UInt8(processType),
+                            balance: Int(balance)
+                        )
                     )
                     histories.append(history)
-                    index += 1
                     Log.debug("[EasyCard] Parsed history: date=\(columns[0]), type=\(columns[1]), amount=\(amount), balance=\(balance)")
                 }
             }
-            // Sort histories by date descending and reassign transactionId
+            // 日付順に並べる（transactionId は取引ごとに固定の値なので振り直さない）
             histories.sort { first, second in
                 let firstDate = Calendar.current.date(from: first.date) ?? .distantPast
                 let secondDate = Calendar.current.date(from: second.date) ?? .distantPast
                 return firstDate < secondDate
-            }
-
-            histories = histories.enumerated().map { index, history in
-                ResultHistory(
-                    processType: history.processType,
-                    date: history.date,
-                    balance: history.balance,
-                    amount: history.amount,
-                    lineIn: history.lineIn,
-                    stationIn: history.stationIn,
-                    lineOut: history.lineOut,
-                    stationOut: history.stationOut,
-                    transactionId: index
-                )
             }
 
             let cardInfo = ResultCardInfo(

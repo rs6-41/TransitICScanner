@@ -164,6 +164,7 @@ extension NFCScannerModel {
                             second: Int(bytes[4])
                         )
 
+                        // カード内に連番がないため、日時・種別・残高から取引IDを作る
                         return ResultHistory(
                             processType: bytes[13],
                             date: date,
@@ -173,7 +174,11 @@ extension NFCScannerModel {
                             stationIn: 0,
                             lineOut: 0,
                             stationOut: 0,
-                            transactionId: 0
+                            transactionId: ResultHistory.makeTransactionID(
+                                date: date,
+                                processType: bytes[13],
+                                balance: Int(balance)
+                            )
                         )
                     }
 
