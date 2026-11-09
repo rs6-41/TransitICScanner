@@ -34,13 +34,8 @@ struct TransitICScannerApp: App {
             StorageConfig.setDebugStorage(false)
         }
 
-        do {
-            self.container = try SavedDataModelContainer.makeContainer()
-        } catch {
-            fatalError(
-                "ModelContainerを作成できません: \(error)"
-            )
-        }
+        // 失敗しても起動できるよう、作成できない場合は保存先を切り替える（ContentView で通知する）
+        self.container = SavedDataModelContainer.makeContainerWithFallback()
     }
 
     var body: some Scene {

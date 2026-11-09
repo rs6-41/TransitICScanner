@@ -45,6 +45,8 @@ struct ContentView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var isDuoOpen = false
+    @State private var isStorageAlert =
+        SavedDataModelContainer.startupState != .normal
     private var showsSidebar: Bool {
         #if targetEnvironment(macCatalyst)
         true
@@ -122,6 +124,18 @@ struct ContentView: View {
         .task {
                 smartCardManager.start()
             }
+        .alert(
+            LocalizedStringKey("error.storage.title"),
+            isPresented: $isStorageAlert
+        ) {
+            Button(LocalizedStringKey("ok")) {}
+        } message: {
+            Text(LocalizedStringKey(
+                SavedDataModelContainer.startupState == .localOnly
+                    ? "error.storage.localOnly.message"
+                    : "error.storage.inMemory.message"
+            ))
+        }
         .task(id: firstPermission) {
             // 初回の権限説明(ATT を含む)が終わってから広告の同意を取得する
             if !firstPermission {

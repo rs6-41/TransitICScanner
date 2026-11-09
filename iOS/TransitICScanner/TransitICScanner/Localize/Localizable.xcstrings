@@ -4526,6 +4526,93 @@
         }
       }
     },
+    "error.storage.inMemory.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved data could not be opened. Cards scanned now will not be kept after the app is closed. Please restart the app or update to the latest version."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存データを開けませんでした。今スキャンしたカードはアプリを終了すると保存されません。アプリを再起動するか、最新版にアップデートしてください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开已保存的数据。现在扫描的卡片在关闭应用后不会被保存。请重新启动应用或更新到最新版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟已儲存的資料。現在掃描的卡片在關閉App後不會被保存。請重新啟動App或更新至最新版本。"
+          }
+        }
+      }
+    },
+    "error.storage.localOnly.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud sync could not be started, so cards are being saved on this device only for now. Please restart the app later."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud同期を開始できなかったため、現在はこの端末にのみ保存しています。しばらくしてからアプリを再起動してください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法启动iCloud同步，目前仅保存在此设备上。请稍后重新启动应用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法啟動iCloud同步，目前僅儲存在此裝置上。請稍後重新啟動App。"
+          }
+        }
+      }
+    },
+    "error.storage.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to Open Saved Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存データを開けませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法打开已保存的数据"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟已儲存的資料"
+          }
+        }
+      }
+    },
     "form.birthday.day" : {
       "localizations" : {
         "en" : {

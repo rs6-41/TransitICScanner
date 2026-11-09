@@ -57,33 +57,71 @@ enum SavedDataModelContainer {
     }
     #endif
 
-    static func makeContainer() throws -> ModelContainer {
-        let schema = Schema([
+    /// 起動時に使った保存先の状態
+    enum StartupState: Equatable {
+        /// 設定どおり（iCloud 同期の設定に従う）
+        case normal
+        /// iCloud 同期付きで開けなかったため、この端末のみに保存している
+        case localOnly
+        /// 保存データを開けなかったため、一時的なメモリ上の保存先を使っている（終了すると消える）
+        case inMemory
+    }
+
+    private(set) static var startupState: StartupState = .normal
+
+    private static var schema: Schema {
+        Schema([
             SavedCard.self,
             SavedHistory.self
         ])
+    }
 
-        let configuration: ModelConfiguration
+    static func makeContainer() throws -> ModelContainer {
+        try makeContainer(cloudSync: CloudSyncSettings.isEnabled)
+    }
+
+    /// 起動用の ModelContainer を作る。失敗してもアプリが起動できるよう、
+    /// iCloud 同期なし → メモリ上の一時保存の順に切り替える。
+    static func makeContainerWithFallback() -> ModelContainer {
+        do {
+            let container = try makeContainer()
+            startupState = .normal
+            return container
+        } catch {
+            Log.error("ModelContainerを作成できません: \(error)")
+        }
 
         if CloudSyncSettings.isEnabled {
-            Log.debug("CloudKit ON")
-
-            configuration = ModelConfiguration(
-                schema: schema,
-                groupContainer: .identifier(StorageConfig.appGroup),
-                cloudKitDatabase: .private(
-                    StorageConfig.cloudKitContainerIdentifier
-                )
-            )
-        } else {
-            Log.debug("CloudKit OFF")
-
-            configuration = ModelConfiguration(
-                schema: schema,
-                groupContainer: .identifier(StorageConfig.appGroup),
-                cloudKitDatabase: .none
-            )
+            do {
+                let container = try makeContainer(cloudSync: false)
+                startupState = .localOnly
+                return container
+            } catch {
+                Log.error("ローカルのModelContainerも作成できません: \(error)")
+            }
         }
+
+        do {
+            let configuration = ModelConfiguration(
+                schema: schema,
+                isStoredInMemoryOnly: true
+            )
+            let container = try ModelContainer(for: schema, configurations: [configuration])
+            startupState = .inMemory
+            return container
+        } catch {
+            fatalError("メモリ上のModelContainerも作成できません: \(error)")
+        }
+    }
+
+    private static func makeContainer(cloudSync: Bool) throws -> ModelContainer {
+        let configuration = ModelConfiguration(
+            schema: schema,
+            groupContainer: .identifier(StorageConfig.appGroup),
+            cloudKitDatabase: cloudSync
+                ? .private(StorageConfig.cloudKitContainerIdentifier)
+                : .none
+        )
 
         return try ModelContainer(
             for: schema,
