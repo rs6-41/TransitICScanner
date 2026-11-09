@@ -14,7 +14,7 @@ let twICash = CardInfo(
     scand_description: "twICash.scand.description",
     searchWords: ["cardList.area.tw","aijinka","ㄞˋㄐㄧㄣㄎㄚˇ"],
     scanOption: ScanOption(
-        name: "twICash",
+        id: .twICash,
         nameShort:"twICash.short",
         scanType: .nfc,
         pollingOption: [.iso14443],

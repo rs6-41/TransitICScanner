@@ -14,7 +14,7 @@ let spFlashPay = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
     scanOption: ScanOption(
-        name: "spFlashPay",
+        id: .spFlashPay,
         nameShort: "spFlashPay.short",
         scanType: .nfc,
         pollingOption: [.iso18092],

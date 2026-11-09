@@ -16,7 +16,7 @@ let usClipper = CardInfo(
     searchWords: ["clipper", "くりっぱー", "クリッパー", "サンフランシスコ", "san francisco",
                   "bay area", "california", "BART", "Muni", "Caltrain"],
     scanOption: ScanOption(
-        name: "usClipper",
+        id: .usClipper,
         nameShort: "usClipper.short",
         scanType: .nfc,
         pollingOption: [.iso14443],

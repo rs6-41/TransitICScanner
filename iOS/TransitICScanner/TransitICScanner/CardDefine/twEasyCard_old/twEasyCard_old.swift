@@ -16,7 +16,7 @@ let twEasyCard_old:CardInfo = CardInfo(
     scand_description: "twEasyCard_old.scand.description",
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
-        name:"twEasyCard_old",
+        id: .twEasyCard_old,
         nameShort:"twEasyCard_old.short",
         scanType: .scraping,
         pollingOption:[],

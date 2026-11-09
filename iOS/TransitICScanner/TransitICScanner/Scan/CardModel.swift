@@ -22,8 +22,30 @@ struct CardInfo {
     let sample: ResultSample
 }
 
+/// カード定義の識別子。読取処理の分岐はこの enum で網羅的に行う。
+/// rawValue は保存データやローカライズキーで使われるため変更しないこと。
+enum CardID: String, CaseIterable {
+    case jpIC
+    case jpIC_SAPICA
+    case jpIC_IruCa
+    case jpIC_icsca
+    case cnTunion
+    case hkOctopus
+    case krOneCard
+    case twICash
+    case jpNplus
+    case twEasyCard_old
+    case usClipper
+    case jpDoCard
+    case jpOKICA
+    case jpRapica
+    case idKMT
+    case spFlashPay
+}
+
 struct ScanOption {
-    var name: String //定義名
+    var id: CardID //定義名
+    var name: String { id.rawValue }
     let nameShort: String
     var scanType: ScanType
     #if os(watchOS)

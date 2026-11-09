@@ -15,7 +15,7 @@ let jpNplus = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Nagasaki","ながさき","ナガサキ","nagasaki","Tカード","県営バス"],
     scanOption:ScanOption(
-        name:"jpNplus",
+        id: .jpNplus,
         nameShort:"jpNplus.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -46,44 +46,30 @@ let jpNplus = CardInfo(
 //カードの読み取り処理
 extension NFCScannerModel {
     
-    func jpNplus_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(errorMessage: String(localized:"scanner.coreNFC.error.notfeliCa"))
-            return
-        }
+    func jpNplus_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+        guard let balance = await jpNplus_balance(felicaTag) else { return nil }
 
-        Task {
-            guard let balance = await jpNplus_balance(felicaTag) else { return }
+        let history = await jpNplus_history(
+            felicaTag,
+            count: self.scanOption.historyCount
+        )
 
-            let history = await jpNplus_history(
-                felicaTag,
-                count: self.scanOption.historyCount
-            )
+        let info = await jpNplus_info(felicaTag)
 
-            let info = await jpNplus_info(felicaTag)
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpNplus.scanOption.converter,
-                    isLastHide:true,
-                    description: jpNplus.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage =
-                String(localized:"scanner.coreNFC.scanning.done")
-
-                session.invalidate()
-            }
-        }
+        return Result(
+            balance: Double(balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpNplus.scanOption.converter,
+            isLastHide: true,
+            description: jpNplus.scand_description,
+            savedAt: Date.now
+        )
     }
     
     //MARK: 残高を取得する
-    func jpNplus_balance(_ felicaTag: NFCFeliCaTag) async -> Int? {
+    func jpNplus_balance(_ felicaTag: any FeliCaTagReading) async -> Int? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x40, 0x8B].reversed())
             let blockList = [Data([0x80, 0x01])]
@@ -117,7 +103,7 @@ extension NFCScannerModel {
     }
     
     //MARK: 履歴を取得する
-    func jpNplus_history(_ felicaTag: NFCFeliCaTag, count: Int = 20) async -> [ResultHistory]? {
+    func jpNplus_history(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x80, 0xCF].reversed())
             let blockCount = min(max(count, 1), 20)
@@ -210,7 +196,7 @@ extension NFCScannerModel {
     }
 
     //MARK: カード情報を取得する
-    func jpNplus_info(_ felicaTag: NFCFeliCaTag) async -> ResultCardInfo? {
+    func jpNplus_info(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -230,7 +216,7 @@ extension NFCScannerModel {
     }
     
     func jpNplus_read(
-        _ tag:NFCFeliCaTag,
+        _ tag:any FeliCaTagReading,
         service:Data,
         blocks:[UInt8]
     ) async -> [Data]? {
@@ -262,7 +248,7 @@ extension NFCScannerModel {
     }
 
     func jpNplus_readMultiple(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         count: Int
     ) async -> [Data]? {

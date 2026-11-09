@@ -150,7 +150,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
             DispatchQueue.main.async {
                 Task { @MainActor in
                     self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.message")
-                    await self.switchCard(name: self.scanOption.name, tag, session)
+                    await self.switchCard(id: self.scanOption.id, tag, session)
                 }
             }
         }

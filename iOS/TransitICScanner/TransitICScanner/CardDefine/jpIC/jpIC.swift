@@ -19,7 +19,7 @@ let jpIC = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["card.suica","jpIC_suica","card.pasmo","card.icoca","card.toica","card.nimoca","card.manaca","すいか","ぱすも","いこか","といか","にもか","まなか","はやかけん","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr","じぇーあーる","にほん","スイカ","パスモ","イコカ","トイカ","ニモカ","マナカ","ハヤカケン","suika","pasumo","ikoka","toika","nimoka","manaka"],
     scanOption:ScanOption(
-        name:"jpIC",
+        id: .jpIC,
         nameShort:"jpIC.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -59,7 +59,7 @@ let jpIC_icsca = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Miyagi","いくすか","card.icsca","いくすか","仙台","sendai","せんだい"],
     scanOption:ScanOption(
-        name:"jpIC_icsca",
+        id: .jpIC_icsca,
         nameShort:"jpIC_icsca.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -97,7 +97,7 @@ let jpIC_SAPICA = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
     scanOption:ScanOption(
-        name:"jpIC_SAPICA",
+        id: .jpIC_SAPICA,
         nameShort:"jpIC_SAPICA.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -135,7 +135,7 @@ let jpIC_IruCa = CardInfo(
     scand_description: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
     scanOption:ScanOption(
-        name:"jpIC_IruCa",
+        id: .jpIC_IruCa,
         nameShort:"jpIC_IruCa.short",
         scanType: .nfc,
         pollingOption:[.iso18092],
@@ -164,44 +164,31 @@ let jpIC_IruCa = CardInfo(
 //カードの読み取り処理
 extension NFCScannerModel {
     
-    func jpIC_scan(_ tag: NFCTag, _ session: NFCTagReaderSession, optionType:String = "") {
-        guard case let .feliCa(felicaTag) = tag else {
-            session.invalidate(errorMessage: String(localized:"scanner.coreNFC.error.notfeliCa"))
-            return
-        }
+    /// 交通系IC(およびシステムコード違いの互換カード)を読み取る
+    func jpIC_read(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> Result? {
+        guard let balance = await jpIC_balance(felicaTag) else { return nil }
 
-        Task {
-            guard let balance = await jpIC_balance(felicaTag) else { return }
+        let history = await jpIC_history(
+            felicaTag,
+            count: self.scanOption.historyCount
+        )
 
-            let history = await jpIC_history(
-                felicaTag,
-                count: self.scanOption.historyCount
-            )
+        let info = await jpIC_info(felicaTag, cardID: cardID)
 
-            let info = await jpIC_info(felicaTag, optionType:optionType)
-
-            await MainActor.run {
-                self.result = Result(
-                    balance: Double(balance),
-                    isHistory: true,
-                    history: history,
-                    info: info,
-                    converter: jpIC.scanOption.converter,
-                    isLastHide:true,
-                    description: jpIC.scand_description,
-                    savedAt: Date.now
-                )
-
-                self.session?.alertMessage =
-                String(localized:"scanner.coreNFC.scanning.done")
-
-                session.invalidate()
-            }
-        }
+        return Result(
+            balance: Double(balance),
+            isHistory: true,
+            history: history,
+            info: info,
+            converter: jpIC.scanOption.converter,
+            isLastHide: true,
+            description: jpIC.scand_description,
+            savedAt: Date.now
+        )
     }
     
     //MARK: 残高を取得する
-    func jpIC_balance(_ felicaTag: NFCFeliCaTag) async -> Int? {
+    func jpIC_balance(_ felicaTag: any FeliCaTagReading) async -> Int? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x00, 0x8B].reversed())
             let blockList = [Data([0x80, 0x00])]
@@ -232,7 +219,7 @@ extension NFCScannerModel {
     }
     
     //MARK: 履歴を取得する
-    func jpIC_history(_ felicaTag: NFCFeliCaTag, count: Int = 20) async -> [ResultHistory]? {
+    func jpIC_history(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x0F, 0x09])
             let blockCount = min(max(count, 1), 20)
@@ -330,7 +317,7 @@ extension NFCScannerModel {
     }
 
     //MARK: カード情報を取得する
-    func jpIC_info(_ felicaTag: NFCFeliCaTag, optionType:String) async -> ResultCardInfo? {
+    func jpIC_info(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -349,20 +336,21 @@ extension NFCScannerModel {
         var issueCity:String?
         var issuer:String?
         
-        switch optionType {
-            case "jpIC_SAPICA":
+        switch cardID {
+            case .jpIC_SAPICA:
                 cardType = "card.SAPICA"
                 issueArea = "locate.prefecture.Hokkaido"
                 issueCity = "issue.jp.hokkaido.city.sapporo"
                 issuer = "issue.jp.hokkaido.issuer.sapporo_information_network"
-            case "jpIC_IruCa":
+            case .jpIC_IruCa:
                 cardType = "card.IruCa"
                 issueArea = "locate.prefecture.Kagawa"
                 issueCity = "issue.jp.kagawa.city.takamatsu"
                 issuer = "issue.jp.kagawa.issuer.kotoden"
-            case "jpIC_icsca":
+            case .jpIC_icsca:
+                // icsca は宮城県仙台市のカード（city/issuer のキー名は miyazaki だが値は仙台）
                 cardType = "card.icsca"
-                issueArea = "locate.prefecture.Miyazaki"
+                issueArea = "locate.prefecture.Miyagi"
                 issueCity = "issue.jp.miyazaki.city.sendai"
                 issuer = "issue.jp.miyazaki.issuer.sendai_transport"
             default:break
@@ -411,7 +399,7 @@ extension NFCScannerModel {
     }
     
     func jpIC_read(
-        _ tag:NFCFeliCaTag,
+        _ tag:any FeliCaTagReading,
         service:Data,
         blocks:[UInt8]
     ) async -> [Data]? {
@@ -443,7 +431,7 @@ extension NFCScannerModel {
     }
 
     func jpIC_readMultiple(
-        _ tag: NFCFeliCaTag,
+        _ tag: any FeliCaTagReading,
         service: Data,
         count: Int
     ) async -> [Data]? {
