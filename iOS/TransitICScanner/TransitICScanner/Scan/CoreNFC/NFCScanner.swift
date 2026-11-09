@@ -12,7 +12,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
     @Published var scanError: ScanError? = nil
     @Published var scanOption: ScanOption
     @Published var sessionActive: Bool = false
-    @Published var result: Result? = nil
+    @Published var result: ScanResult? = nil
 
     var session: NFCTagReaderSession?
     var currentTag: NFCTag?

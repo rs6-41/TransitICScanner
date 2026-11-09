@@ -109,7 +109,7 @@ struct NFCLogView: View {
 struct NFCLogDetailView: View {
     let card: SavedCard
 
-    private var result: Result {
+    private var result: ScanResult {
         card.result()
     }
 

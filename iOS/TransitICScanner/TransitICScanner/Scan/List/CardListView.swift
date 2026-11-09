@@ -15,7 +15,7 @@ struct CardList: View {
     @State private var administrativeArea: String?
     @State private var selection: regionList?
     @State private var regionPath: [regionList] = []
-    @State private var selectedResult: Result?
+    @State private var selectedResult: ScanResult?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
     @State var isDisplayScrapingForm = false
@@ -347,7 +347,7 @@ struct CardList: View {
         }
     }
 
-    private func showResult(_ result: Result) {
+    private func showResult(_ result: ScanResult) {
         selectedResult = result
         preferredCompactColumn = .detail
     }
@@ -500,7 +500,7 @@ struct CardRegionView: View {
     @Binding var deleteAds: Bool
     var navigationTitle: String
     var showsSortToolbar = true
-    var onResult: ((Result) -> Void)? = nil
+    var onResult: ((ScanResult) -> Void)? = nil
 
     @State var sort: SortType = .locate_ascend
     @State var sort2: SortType = .locate_ascend

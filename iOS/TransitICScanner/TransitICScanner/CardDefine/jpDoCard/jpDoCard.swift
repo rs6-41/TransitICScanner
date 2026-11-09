@@ -23,7 +23,7 @@ let jpDoCard = CardInfo(
         currencyType: .jpy,
         converter: .jpDoCard
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance: 500.0,
@@ -82,7 +82,7 @@ final class JpDoCardFullLog {
 
 extension NFCScannerModel {
 
-    func jpDoCard_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+    func jpDoCard_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         let fullLog = JpDoCardFullLog()
         let scanDate = Date()
 
@@ -135,7 +135,7 @@ extension NFCScannerModel {
 
         fullLog.append("===== DOCARD FULL LOG END =====")
 
-        return Result(
+        return ScanResult(
             balance: Double(balance ?? 0),
             isHistory: history != nil,
             history: history,
@@ -689,8 +689,8 @@ extension NFCScannerModel {
         )
     }
     
-    private func setIssueInfo(_ issuer:String?) -> issueInfo {
-        return issueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Hokkaido",city:"issue.jp.hokkaido.city.asahikawa",issuer:issuer)
+    private func setIssueInfo(_ issuer:String?) -> IssueInfo {
+        return IssueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Hokkaido",city:"issue.jp.hokkaido.city.asahikawa",issuer:issuer)
     }
 
     private func jpDoCard_decodeCreationDate(

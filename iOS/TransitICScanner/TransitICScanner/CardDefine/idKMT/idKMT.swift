@@ -24,7 +24,7 @@ let idKMT = CardInfo(
         converter: .idKMT,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 4000,
         idm: "0127FFFFFFFF6EAB",
@@ -58,7 +58,7 @@ extension NFCScannerModel {
             let info = idKMT_info(felicaTag, data: data)
 
             await MainActor.run {
-                self.result = Result(
+                self.result = ScanResult(
                     balance: Double(data.balance),
                     isHistory: true,
                     history: data.histories,
@@ -150,7 +150,7 @@ extension NFCScannerModel {
                 serial: data.serialNumber,
                 version: nil,
                 validDate: nil,
-                issueInfo: issueInfo(
+                issueInfo: IssueInfo(
                     region: idKMT.area.rawValue,
                     area: "locate.prefecture.Jakarta",
                     city: nil,
@@ -158,7 +158,7 @@ extension NFCScannerModel {
                 )
             )
 
-            return Result(
+            return ScanResult(
                 balance: Double(data.balance),
                 isHistory: true,
                 history: data.histories,
@@ -280,7 +280,7 @@ extension NFCScannerModel {
             serial: data.serialNumber,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(
+            issueInfo: IssueInfo(
                 region: idKMT.area.rawValue,
                 area: nil,
                 city: nil,

@@ -24,7 +24,7 @@ let jpOKICA = CardInfo(
         converter: .jpOKICA,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 1200.0,
         idm: "0405820A9A93CDEF",
@@ -40,7 +40,7 @@ let jpOKICA = CardInfo(
 
 extension NFCScannerModel {
 
-    func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+    func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard let history = await okica_history(
             felicaTag,
             count: self.scanOption.historyCount
@@ -52,7 +52,7 @@ extension NFCScannerModel {
 
         let info = await okica_info(felicaTag)
 
-        return Result(
+        return ScanResult(
             balance: Double(balance),
             isHistory: true,
             history: history,
@@ -280,7 +280,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region:jpOKICA.area.rawValue,area:"locate.prefecture.Okinawa",issuer:"issue.jp.okinawa.issuer.okica")
+            issueInfo: IssueInfo(region:jpOKICA.area.rawValue,area:"locate.prefecture.Okinawa",issuer:"issue.jp.okinawa.issuer.okica")
         )
     }
 

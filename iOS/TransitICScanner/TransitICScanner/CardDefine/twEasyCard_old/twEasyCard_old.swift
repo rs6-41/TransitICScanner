@@ -29,7 +29,7 @@ let twEasyCard_old:CardInfo = CardInfo(
             AnyView(twEasyCard_old_View())
         }
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:980.0,
@@ -48,8 +48,8 @@ struct twEasyCard_old_View: View {
     let item: CardInfo = twEasyCard_old
     @Environment(\.dismiss) private var dismiss
     @StateObject private var controller = twEasyCard_old_scraping()
-    @State private var result: Result?
-    @State private var navigationResult: Result?
+    @State private var result: ScanResult?
+    @State private var navigationResult: ScanResult?
     @State var scannedNumber:String? = ""
     @State var error = false
     @State var errorMessage = ""
@@ -518,7 +518,7 @@ final class twEasyCard_old_scraping: ObservableObject {
         }
     }
 
-    func parseEasyCardResult(html: String, cardID: String) -> Result? {
+    func parseEasyCardResult(html: String, cardID: String) -> ScanResult? {
         guard !html.isEmpty else { return nil }
         var histories: [ResultHistory] = []
         do {
@@ -614,10 +614,10 @@ final class twEasyCard_old_scraping: ObservableObject {
                 serial: nil,
                 version: nil,
                 validDate: nil,
-                issueInfo: issueInfo(region:twEasyCard_old.area.rawValue,issuer:"issue.tw.issuer.easycard")
+                issueInfo: IssueInfo(region:twEasyCard_old.area.rawValue,issuer:"issue.tw.issuer.easycard")
             )
             let balance = histories.last?.balance ?? 0.0
-            let result = Result(
+            let result = ScanResult(
                 balance: balance,
                 isHistory: true,
                 history: histories,

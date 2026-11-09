@@ -25,7 +25,7 @@ let jpNplus = CardInfo(
         converter:.jpNplus,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:2300.0,
@@ -46,7 +46,7 @@ let jpNplus = CardInfo(
 //カードの読み取り処理
 extension NFCScannerModel {
     
-    func jpNplus_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+    func jpNplus_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard let balance = await jpNplus_balance(felicaTag) else { return nil }
 
         let history = await jpNplus_history(
@@ -56,7 +56,7 @@ extension NFCScannerModel {
 
         let info = await jpNplus_info(felicaTag)
 
-        return Result(
+        return ScanResult(
             balance: Double(balance),
             isHistory: true,
             history: history,
@@ -211,7 +211,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Nagasaki",issuer:"issue.jp.nagasaki.issuer.ntasu")
+            issueInfo: IssueInfo(region:jpDoCard.area.rawValue,area:"locate.prefecture.Nagasaki",issuer:"issue.jp.nagasaki.issuer.ntasu")
         )
     }
     

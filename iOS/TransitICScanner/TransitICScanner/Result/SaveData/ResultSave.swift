@@ -116,7 +116,7 @@ final class SavedCard {
 
     var fullLog: String?
     
-    var issueInfo: issueInfo?
+    var issueInfo: IssueInfo?
 
     @Relationship(
         deleteRule: .cascade,
@@ -124,8 +124,8 @@ final class SavedCard {
     )
     var histories: [SavedHistory]? = []
 
-    var parsedCurrencyType: currencyType? {
-        currencyType(rawValue: currency.lowercased())
+    var parsedCurrencyType: CurrencyType? {
+        CurrencyType(rawValue: currency.lowercased())
     }
 
     init(
@@ -145,7 +145,7 @@ final class SavedCard {
         converterTypeRaw: String? = nil,
         savedAt: Date,
         fullLog: String? = nil,
-        issueInfo: issueInfo? = nil
+        issueInfo: IssueInfo? = nil
     ) {
         self.idm = idm
         self.name = name
@@ -249,7 +249,7 @@ final class SavedHistory {
 }
 
 extension SavedCard {
-    func result() -> Result {
+    func result() -> ScanResult {
         let info = ResultCardInfo(
             idm: idm,
             name: name,
@@ -281,7 +281,7 @@ extension SavedCard {
         }
 
         #if os(watchOS)
-        return Result(
+        return ScanResult(
             balance: balance,
             isHistory: !history.isEmpty,
             history: history.isEmpty ? nil : history,
@@ -293,7 +293,7 @@ extension SavedCard {
             converterTypeRaw: converterTypeRaw
         )
         #else
-        return Result(
+        return ScanResult(
             balance: balance,
             isHistory: !history.isEmpty,
             history: history.isEmpty ? nil : history,
@@ -313,7 +313,7 @@ enum ResultSave {
 
     static func loadResults(
         from modelContext: ModelContext
-    ) throws -> [Result] {
+    ) throws -> [ScanResult] {
         let descriptor = FetchDescriptor<SavedCard>(
             sortBy: [SortDescriptor(\.name)]
         )
@@ -323,7 +323,7 @@ enum ResultSave {
 
     #if !os(watchOS)
     static func save(
-        _ result: Result,
+        _ result: ScanResult,
         in modelContext: ModelContext
     ) throws {
         guard let info = result.info else {

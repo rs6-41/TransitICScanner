@@ -27,7 +27,7 @@ let jpRapica = CardInfo(
         converter: .jpRapica,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 1750.0,
         idm: "0102030405060708",
@@ -60,7 +60,7 @@ extension NFCScannerModel {
     private var rapicaService_history: Data { Data([0x8F, 0x00]) }
 
     //MARK: スキャン
-    func jpRapica_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+    func jpRapica_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard let attr = await rapica_attribute(felicaTag) else {
             return nil
         }
@@ -73,7 +73,7 @@ extension NFCScannerModel {
 
         let info = await rapica_info(felicaTag)
 
-        return Result(
+        return ScanResult(
             balance: Double(attr.balance),
             isHistory: true,
             history: history,
@@ -313,7 +313,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(
+            issueInfo: IssueInfo(
                 region: jpRapica.area.rawValue,
                 area: "locate.prefecture.Kagoshima",
                 issuer: issuerKey,

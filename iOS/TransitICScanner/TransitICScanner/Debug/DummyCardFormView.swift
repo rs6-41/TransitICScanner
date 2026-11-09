@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DummyCardFormView: View {
     @Environment(\.dismiss) private var dismiss
-    @State var result:Result = Result(isHistory: false, converter: .jpIC, isLastHide: false, description: "", savedAt: Date.now)
+    @State var result:ScanResult = ScanResult(isHistory: false, converter: .jpIC, isLastHide: false, description: "", savedAt: Date.now)
     @State var history:[ResultHistory] = []
     @State var info:ResultCardInfo = ResultCardInfo(idm: "", name: "", nameShort: "", currencyType:
         .usd, type: "")
@@ -10,7 +10,7 @@ struct DummyCardFormView: View {
     @State var balance: Double = 0.0
     @State var isHistory:Bool = false
     @State var nameShort: String = ""
-    @State var currency: currencyType = .usd
+    @State var currency: CurrencyType = .usd
     @State var type: String = ""
     @State var idm: String = String(Int.random(in: 100000000000...999999999999))
     @State var converter:ConverterType = .jpIC
@@ -29,7 +29,7 @@ struct DummyCardFormView: View {
                 ListFormTextView(isRequest: true, title: "result.info.cardCategory", placeholder: "result.userData.name.placeholder", value: $nameShort)
                 ListFormTextView(isRequest: false, title: "result.info.cardType", placeholder: "result.info.cardType", value: $type)
                 Picker(LocalizedStringKey("setting.debug.result.dummyCard.form.currency"),selection: $currency) {
-                    ForEach(currencyType.allCases, id: \.self) { item in
+                    ForEach(CurrencyType.allCases, id: \.self) { item in
                         Text(String("\(item)")).tag(item)
                     }
                 }
@@ -107,7 +107,7 @@ struct DummyCardFormView: View {
         
         
         info = ResultCardInfo(idm: idm, name: "DEBUG", nameShort: nameShort, type: type)
-        result = Result(
+        result = ScanResult(
             balance: balance,
             isHistory: isHistory,
             history: history,

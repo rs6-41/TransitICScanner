@@ -10,15 +10,15 @@ struct CardInfo {
     let logo: String
     let name: String
     let sortName: String
-    let area: areaType
+    let area: AreaType
     let countryCode: [String]
     let prefectures: [String]?
-    let regionOption: regionType? //地域分類に例外的な指定をする（通常はareaTypeから判定）
+    let regionOption: RegionType? //地域分類に例外的な指定をする（通常はAreaTypeから判定）
     let description: String?
     let scand_description: String
     let searchWords: [String]
     let scanOption: ScanOption
-    let infomation: AnyView?
+    let information: AnyView?
     let sample: ResultSample
 }
 
@@ -56,7 +56,7 @@ struct ScanOption {
     var felicaSystemCodes: [String]? //Felicaシステムコードを設定
     var url: URL?
     var historyCount: Int //履歴の取得件数
-    var currencyType: currencyType //通貨単位
+    var currencyType: CurrencyType //通貨単位
     var converter: ConverterType
     var scrapingView:(() -> AnyView)?
 }
@@ -96,11 +96,6 @@ typealias APDUSend = (
     _ data: Data,
     _ le: Int
 ) async throws -> (Data, UInt8, UInt8)
-
-protocol CardConverter {
-    func convertCardInfo(_ data: Any) -> Any
-    func convertHistory(_ data: Any) -> Any
-}
 
 extension CardInfo {
     func matchesSearch(_ text: String) -> Bool {

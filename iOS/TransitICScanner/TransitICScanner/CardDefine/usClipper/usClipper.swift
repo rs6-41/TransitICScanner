@@ -26,7 +26,7 @@ let usClipper = CardInfo(
         converter: .usClipper,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample: ResultSample(
         balance: 12.5,
         idm: "04A1B2C3D4E5F6",
@@ -157,7 +157,7 @@ extension NFCScannerModel {
     private func usClipper_result(
         _ send: APDUSend,
         identifier: Data
-    ) async -> Result? {
+    ) async -> ScanResult? {
         guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil,
               let balanceData = await clipper_readFile(send, file: 0x02),
               balanceData.count >= 20 else {
@@ -171,7 +171,7 @@ extension NFCScannerModel {
             limit: scanOption.historyCount
         )
         let info = await clipper_info(send, identifier: identifier)
-        return Result(
+        return ScanResult(
             balance: Double(balanceCents) / 100.0,
             isHistory: true,
             history: history,
@@ -332,7 +332,7 @@ extension NFCScannerModel {
             serial: serial,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(
+            issueInfo: IssueInfo(
                 region: usClipper.area.rawValue,
                 area: "locate.prefecture.CA",
                 city: "locate.city.CA.SF",

@@ -25,7 +25,7 @@ let hkOctopus = CardInfo(
         converter:.hkOctopus,
         scrapingView: nil
     ),
-    infomation: nil,
+    information: nil,
     sample:
         ResultSample(
             balance:300.0,
@@ -38,11 +38,11 @@ let hkOctopus = CardInfo(
 
 @MainActor
 extension NFCScannerModel {
-    func hkOctopus_read(_ felicaTag: any FeliCaTagReading) async -> Result? {
+    func hkOctopus_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         let info = await hkOctopus_info(felicaTag)
         let balance = await hkOctopus_balance(felicaTag) ?? 0.0
 
-        return Result(
+        return ScanResult(
             balance: Double(balance),
             isHistory: false,
             history: nil,
@@ -107,7 +107,7 @@ extension NFCScannerModel {
             serial: nil,
             version: nil,
             validDate: nil,
-            issueInfo: issueInfo(region:hkOctopus.area.rawValue)
+            issueInfo: IssueInfo(region:hkOctopus.area.rawValue)
         )
     }
 }

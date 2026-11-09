@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct SavedListView: View {
-    @State private var cards: [Result] = []
+    @State private var cards: [ScanResult] = []
     @State private var modelContainer: ModelContainer?
     
     @State var isFilterSheet = false

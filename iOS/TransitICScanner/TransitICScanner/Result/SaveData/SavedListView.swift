@@ -15,7 +15,7 @@ struct SavedListView: View {
     @State private var narrow = "all"
     @State private var sort = "dateDescending"
     @State private var selectedCardID: PersistentIdentifier?
-    @State private var selectedResult: Result?
+    @State private var selectedResult: ScanResult?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
     private var showsSidebar: Bool {

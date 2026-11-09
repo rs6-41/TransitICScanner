@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum areaType: String,CaseIterable {
+enum AreaType: String,CaseIterable {
     case jp = "cardList.area.jp"
     case cn = "cardList.area.cn"
     case hk = "cardList.area.hk"
@@ -28,7 +28,7 @@ enum areaType: String,CaseIterable {
         }
     }
     
-    func region() -> regionType {
+    func region() -> RegionType {
         switch self {
             case .jp: return .japanLocal
             case .cn: return .eastAsia
@@ -44,7 +44,7 @@ enum areaType: String,CaseIterable {
     }
 }
 
-enum regionType: String, CaseIterable,Codable {
+enum RegionType: String, CaseIterable,Codable {
     case eastAsia //東アジア
     case japanLocal // 日本ローカル
     case southEastAsia //東南アジア
@@ -91,8 +91,8 @@ enum regionType: String, CaseIterable,Codable {
 }
 
 struct regionList:Hashable {
-    var first: regionType
-    var second: regionType?
+    var first: RegionType
+    var second: RegionType?
 }
 let regionLists = [
     regionList(first:.eastAsia,second:.japanLocal),
@@ -108,7 +108,7 @@ let regionLists = [
 ]
 
 
-enum currencyType: String, CaseIterable,Codable {
+enum CurrencyType: String, CaseIterable,Codable {
     case jpy
     case rmb
     case hkd
