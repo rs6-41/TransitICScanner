@@ -129,8 +129,11 @@ extension NFCScannerModel {
             }
 
             // Step 4: Get balance using descriptor if present, else default
-            let balance = await krOneCard_getBalance(send, balanceAPDU)
-            Log.debug("Final Korea OneCard balance value:", balance ?? -1)
+            // 残高が読めない場合は 0 ウォンとして扱わず読取失敗にする
+            guard let balance = await krOneCard_getBalance(send, balanceAPDU) else {
+                return nil
+            }
+            Log.debug("Final Korea OneCard balance value:", balance)
 
 
             // Info/history using the selected ADF context and file descriptors
@@ -145,7 +148,7 @@ extension NFCScannerModel {
             Log.debug("================================")
 
             return ScanResult(
-                balance: balance ?? 0,
+                balance: balance,
                 isHistory: true,
                 history: history ?? [],
                 info: info,
@@ -286,28 +289,13 @@ extension NFCScannerModel {
             return nil
         }
 
-        let bigEndianBalance = UInt32(response[0]) << 24 |
-                                UInt32(response[1]) << 16 |
-                                UInt32(response[2]) << 8 |
-                                UInt32(response[3])
+        // 残高はビッグエンディアン 4 byte（KRW）
+        let balance = UInt32(response[0]) << 24 |
+                      UInt32(response[1]) << 16 |
+                      UInt32(response[2]) << 8 |
+                      UInt32(response[3])
 
-        let littleEndianBalance = UInt32(response[3]) << 24 |
-                                  UInt32(response[2]) << 16 |
-                                  UInt32(response[1]) << 8 |
-                                  UInt32(response[0])
-
-        Log.debug("Korea OneCard balance candidates: BE=\(bigEndianBalance) KRW LE=\(littleEndianBalance) KRW")
-
-        if bigEndianBalance != 0 {
-            return Double(bigEndianBalance)
-        }
-
-        if littleEndianBalance != 0 {
-            return Double(littleEndianBalance)
-        }
-
-        Log.debug("Korea OneCard balance is zero. Keeping zero value because APDU succeeded.")
-        return 0.0
+        return Double(balance)
     }
 
     // MARK: - Card type name mapping
