@@ -351,14 +351,15 @@ struct SavedListView: View {
     }
 
     private func deleteCards(at offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(filteredCards[index])
-        }
+        // ResultSave.deleteCard を使い、Widget のデータからも削除する
+        let idms = offsets.map { filteredCards[$0].idm }
 
         do {
-            try modelContext.save()
+            for idm in idms {
+                try ResultSave.deleteCard(idm: idm, from: modelContext)
+            }
         } catch {
-            Log.debug("保存データの削除に失敗しました: \(error)")
+            StorageErrorNotifier.shared.report(error, operation: "保存データの削除")
         }
     }
 }

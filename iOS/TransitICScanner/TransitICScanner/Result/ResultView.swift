@@ -433,7 +433,7 @@ struct ResultView: View {
 
             Log.debug("Resultの保存に成功しました")
         } catch {
-            Log.debug("Resultの保存に失敗しました: \(error)")
+            StorageErrorNotifier.shared.report(error, operation: "読取結果の保存")
         }
         
         saveListID = UUID()
@@ -453,7 +453,7 @@ struct ResultView: View {
                 in: modelContext
             )
         } catch {
-            Log.error("表示名・券面の保存に失敗: \(error.localizedDescription)")
+            StorageErrorNotifier.shared.report(error, operation: "表示名・券面の保存")
         }
 
         saveListID = UUID()

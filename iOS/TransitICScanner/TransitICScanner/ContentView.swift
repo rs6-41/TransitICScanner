@@ -45,6 +45,7 @@ struct ContentView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var isDuoOpen = false
+    @ObservedObject private var storageError = StorageErrorNotifier.shared
     @State private var isStorageAlert =
         SavedDataModelContainer.startupState != .normal
     private var showsSidebar: Bool {
@@ -135,6 +136,14 @@ struct ContentView: View {
                     ? "error.storage.localOnly.message"
                     : "error.storage.inMemory.message"
             ))
+        }
+        .alert(
+            LocalizedStringKey("error.storage.save.title"),
+            isPresented: $storageError.isPresented
+        ) {
+            Button(LocalizedStringKey("ok")) {}
+        } message: {
+            Text(storageError.message)
         }
         .task(id: firstPermission) {
             // 初回の権限説明(ATT を含む)が終わってから広告の同意を取得する
