@@ -449,19 +449,6 @@ enum ResultSave {
             )
         }
 
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
-
-        if let savedData = sharedDefaults?.data(
-            forKey: "widgetDatas"
-        ),
-           let decodedUsers = try? JSONDecoder().decode(
-            [BalanceWidgetModel].self,
-            from: savedData
-           ) {
-            widgetModels = decodedUsers
-        }
-
         let saveData = BalanceWidgetModel(
             DisplayName: info.displayName ?? {
                 #if os(watchOS)
@@ -477,36 +464,10 @@ enum ResultSave {
             savedAt: result.savedAt
         )
 
-        widgetModels.removeAll {
-            $0.idm == info.idm
+        WidgetDataStore.update { models in
+            models.removeAll { $0.idm == info.idm }
+            models.append(saveData)
         }
-
-        widgetModels.append(saveData)
-
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
-
-            sharedDefaults?.synchronize()
-
-            print("Widget保存:")
-            print("AppGroup:", StorageConfig.appGroup)
-            print("件数:", widgetModels.count)
-            print("データサイズ:", encodedData.count)
-        } else {
-            print("WidgetデータのEncodeに失敗")
-        }
-
-        print(
-            "Widget保存後:",
-            sharedDefaults?.data(forKey: "widgetDatas") != nil
-        )
-
-        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func loadCards(
@@ -548,33 +509,9 @@ enum ResultSave {
         modelContext.delete(card)
         try modelContext.save()
 
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
-
-        if let savedData = sharedDefaults?.data(
-            forKey: "widgetDatas"
-        ),
-           let decodedUsers = try? JSONDecoder().decode(
-            [BalanceWidgetModel].self,
-            from: savedData
-           ) {
-            widgetModels = decodedUsers
+        WidgetDataStore.update { models in
+            models.removeAll { $0.idm == idm }
         }
-
-        widgetModels.removeAll {
-            $0.idm == idm
-        }
-
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
-        }
-
-        WidgetCenter.shared.reloadAllTimelines()
     }
 
     static func deleteAll(
@@ -590,16 +527,8 @@ enum ResultSave {
 
         try modelContext.save()
 
-        var widgetModels: [BalanceWidgetModel] = []
-        let sharedDefaults = UserDefaults(suiteName: StorageConfig.appGroup)
-
-        if let encodedData = try? JSONEncoder().encode(
-            widgetModels
-        ) {
-            sharedDefaults?.set(
-                encodedData,
-                forKey: "widgetDatas"
-            )
+        WidgetDataStore.update { models in
+            models.removeAll()
         }
     }
 

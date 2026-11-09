@@ -135,8 +135,13 @@ extension NFCScannerModel {
 
         fullLog.append("===== DOCARD FULL LOG END =====")
 
+        // 残高が読めない場合は 0 円として扱わず読取失敗にする
+        guard let balance else {
+            return nil
+        }
+
         return ScanResult(
-            balance: Double(balance ?? 0),
+            balance: Double(balance),
             isHistory: history != nil,
             history: history,
             info: info,
