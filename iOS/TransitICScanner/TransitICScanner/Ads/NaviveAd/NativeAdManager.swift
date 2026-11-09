@@ -15,6 +15,10 @@ final class NativeAdManager: NSObject, ObservableObject {
     private var adLoader: AdLoader?
 
     func loadAd() {
+        guard AdConsentManager.shared.canRequestAds else {
+            return
+        }
+
         guard ad == nil, !loadCompleted else {
             return
         }

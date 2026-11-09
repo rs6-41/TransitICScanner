@@ -11,8 +11,15 @@ struct BannerAdsView: View {
     @State var adsHeight: CGFloat = 50.0
     @StateObject private var debugModel = DebugModel()
     @Binding var loadingError: Bool
+    @ObservedObject private var consent = AdConsentManager.shared
 
     var body: some View {
+        if consent.canRequestAds {
+            bannerContent
+        }
+    }
+
+    private var bannerContent: some View {
         GeometryReader { geometry in
             let adSize = currentOrientationAnchoredAdaptiveBanner(
                 width: geometry.size.width

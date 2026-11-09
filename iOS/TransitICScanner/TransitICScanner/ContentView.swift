@@ -122,6 +122,12 @@ struct ContentView: View {
         .task {
                 smartCardManager.start()
             }
+        .task(id: firstPermission) {
+            // 初回の権限説明(ATT を含む)が終わってから広告の同意を取得する
+            if !firstPermission {
+                await AdConsentManager.shared.gatherConsent()
+            }
+        }
         .sheet(isPresented: $firstPermission) {
                 PermissionModalView(isPresented: $firstPermission)
                     .interactiveDismissDisabled(true)
