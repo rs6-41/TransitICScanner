@@ -71,6 +71,7 @@ extension NFCScannerModel {
                 blocks: [0]
             )?.first
         else {
+            Log.debug("KMT: ID ブロック(0x300B)を読めませんでした")
             return nil
         }
 
@@ -81,20 +82,15 @@ extension NFCScannerModel {
                 blocks: [0]
             )?.first
         else {
+            Log.debug("KMT: 残高ブロック(0x1017)を読めませんでした")
             return nil
         }
 
-        let historyCount = min(max(count, 0), 20)
-
-        guard
-            let historyBlocks = await idKMT_readBlocks(
-                felicaTag,
-                service: Data([0x0F, 0x20]),
-                blocks: Array(0..<historyCount).map { UInt8($0) }
-            )
-        else {
-            return nil
-        }
+        let historyBlocks = await idKMT_readHistoryBlocks(
+            felicaTag,
+            service: Data([0x0F, 0x20]),
+            maxCount: min(max(count, 0), 20)
+        )
 
         guard
             let data = KMTData.parse(
@@ -110,6 +106,34 @@ extension NFCScannerModel {
         }
 
         return data
+    }
+
+    /// 履歴ブロックを先頭から1ブロックずつ読む。
+    ///
+    /// カードに保存されている履歴の件数より後ろのブロックは読めない（ステータスエラーになる）ため、
+    /// まとめて読むと履歴が少ないカードで読取全体が失敗する。
+    /// 読めないブロック・空のブロックに達したら、そこまでを履歴として返す。
+    func idKMT_readHistoryBlocks(
+        _ tag: any FeliCaTagReading,
+        service: Data,
+        maxCount: Int
+    ) async -> [Data] {
+        var blocks: [Data] = []
+
+        for index in 0..<maxCount {
+            guard let block = await idKMT_readBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
+                Log.debug("KMT: 履歴ブロック \(index) 以降は読めないため終了")
+                break
+            }
+
+            if block.allSatisfy({ $0 == 0 }) || block.allSatisfy({ $0 == 0xFF }) {
+                break
+            }
+
+            blocks.append(block)
+        }
+
+        return blocks
     }
 
     func idKMT_readBlocks(
