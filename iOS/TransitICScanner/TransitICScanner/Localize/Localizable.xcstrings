@@ -288,13 +288,13 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
         }
@@ -3909,13 +3909,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@Rp."
+            "value" : "%@ Rp."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@Rp."
+            "value" : "%@ Rp."
           }
         },
         "zh-Hans" : {
@@ -6964,7 +6964,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "カードを選択"
           }
         },
@@ -13193,6 +13193,18 @@
             "state" : "translated",
             "value" : "ウィジェット"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小组件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小組件"
+          }
         }
       }
     },
@@ -13971,6 +13983,7 @@
       }
     },
     "上海" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14000,6 +14013,7 @@
       }
     },
     "上海公共交通卡" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14029,6 +14043,7 @@
       }
     },
     "八达通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14088,6 +14103,7 @@
       }
     },
     "北京一卡通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14117,6 +14133,7 @@
       }
     },
     "四川省" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14146,6 +14163,7 @@
       }
     },
     "成都市" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14175,6 +14193,7 @@
       }
     },
     "杭州通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14204,6 +14223,7 @@
       }
     },
     "深圳通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14233,6 +14253,7 @@
       }
     },
     "澳门特别行政区" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14262,6 +14283,7 @@
       }
     },
     "澳门通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14291,6 +14313,7 @@
       }
     },
     "羊城通" : {
+      "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -14320,6 +14343,7 @@
       }
     },
     "香港特别行政区" : {
+      "comment" : "Area Name\n地域名",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
