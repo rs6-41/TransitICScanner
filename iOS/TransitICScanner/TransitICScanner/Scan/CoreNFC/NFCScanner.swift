@@ -3,8 +3,9 @@ import SwiftUI
 @preconcurrency import CoreNFC
 public import Combine
 
-struct ScanError {
+struct ScanError: Equatable {
     var code: NFCReaderError.Code?
+    /// ユーザーに表示するメッセージ
     var message: String
 }
 
@@ -59,17 +60,20 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
             self.session = nil
 
             if let readerError = error as? NFCReaderError {
-                if readerError.code.rawValue != 200 {
-                    let error = "NFCReaderError\ncode: \(readerError.code.rawValue)\n\(readerError.localizedDescription)"
-                    Log.debug(error)
-                    self.scanError = ScanError(code: readerError.code, message: error)
+                // ユーザーによるキャンセル・アプリ自身による終了(エラー文言は読取画面に表示済み)は通知しない
+                guard readerError.code != .readerSessionInvalidationErrorUserCanceled else {
+                    return
                 }
+                Log.debug("NFCReaderError code: \(readerError.code.rawValue) \(readerError.localizedDescription)")
+                self.scanError = ScanError(
+                    code: readerError.code,
+                    message: readerError.localizedDescription
+                )
             } else {
-                let error = "Unknown Error\n\(error.localizedDescription)"
-                Log.debug(error)
+                Log.debug("Unknown Error \(error.localizedDescription)")
                 self.scanError = ScanError(
                     code: .readerSessionInvalidationErrorSessionTerminatedUnexpectedly,
-                    message: error
+                    message: error.localizedDescription
                 )
             }
         }
@@ -81,7 +85,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
         self.currentTag = tags.first
         guard let tag = tags.first else {
-            session.invalidate(errorMessage: "No tag detected")
+            session.invalidate(errorMessage: String(localized: "scanner.coreNFC.error.noTag"))
             return
         }
 
@@ -150,5 +154,15 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
                 await self.switchCard(id: self.scanOption.id, tag, session)
             }
         }
+    }
+}
+
+extension NFCScannerModel {
+    /// CoreNFC での読取成功時の共通処理。結果を公開し、完了メッセージを表示してセッションを終える。
+    @MainActor
+    func completeScan(_ result: ScanResult, session: NFCTagReaderSession) {
+        self.result = result
+        session.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
+        session.invalidate()
     }
 }

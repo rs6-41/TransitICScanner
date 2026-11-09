@@ -134,11 +134,7 @@ extension NFCScannerModel {
                 return
             }
 
-            await MainActor.run {
-                self.result = result
-                self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
-                session.invalidate()
-            }
+            await self.completeScan(result, session: session)
         }
     }
 

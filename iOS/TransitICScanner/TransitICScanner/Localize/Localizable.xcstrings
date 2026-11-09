@@ -9484,6 +9484,35 @@
         }
       }
     },
+    "scanner.coreNFC.error.noTag" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No card was detected."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードを検出できませんでした。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未检测到卡片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未偵測到卡片。"
+          }
+        }
+      }
+    },
     "scanner.coreNFC.error.notfeliCa" : {
       "localizations" : {
         "en" : {

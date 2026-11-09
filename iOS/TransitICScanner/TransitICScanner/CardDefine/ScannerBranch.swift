@@ -117,9 +117,7 @@ extension NFCScannerModel {
                 return
             }
 
-            self.result = result
-            session.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
-            session.invalidate()
+            self.completeScan(result, session: session)
         }
     }
 
