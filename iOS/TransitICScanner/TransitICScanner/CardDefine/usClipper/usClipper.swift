@@ -12,7 +12,7 @@ let usClipper = CardInfo(
     prefectures: ["CA"],
     regionOption: nil,
     description: "cardList.usClipper.description",
-    scand_description: "",
+    scannedDescription: "",
     searchWords: ["clipper", "くりっぱー", "クリッパー", "サンフランシスコ", "san francisco",
                   "bay area", "california", "BART", "Muni", "Caltrain"],
     scanOption: ScanOption(
@@ -174,7 +174,7 @@ extension NFCScannerModel {
             info: info,
             converter: usClipper.scanOption.converter,
             isLastHide: false,
-            description: usClipper.scand_description,
+            description: usClipper.scannedDescription,
             savedAt: Date.now
         )
     }

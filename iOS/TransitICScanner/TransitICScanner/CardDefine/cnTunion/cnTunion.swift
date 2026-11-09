@@ -12,7 +12,7 @@ let cnTunion = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description: String(localized: "cardList.cnTunion.description"),
-    scand_description: "",
+    scannedDescription: "",
     searchWords: ["zhongguojiaotonglianhe"],
     scanOption: ScanOption(
         id: .cnTunion,
@@ -704,7 +704,7 @@ extension NFCScannerModel {
             info: info,
             converter: cnTunion.scanOption.converter,
             isLastHide: false,
-            description: cnTunion.scand_description,
+            description: cnTunion.scannedDescription,
             savedAt: Date.now,
             fullLog: fullLog.text
         )

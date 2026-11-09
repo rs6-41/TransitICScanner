@@ -12,7 +12,7 @@ import Combine
 struct CardList: View {
     /// iPhone（compact 幅）での遷移先
     enum CompactRoute: Hashable {
-        case region(regionList)
+        case region(RegionList)
         case result(ScanResult)
     }
 
@@ -31,7 +31,7 @@ struct CardList: View {
     @State private var administrativeArea: String?
 
     // 画面遷移（regular 幅）
-    @State private var regionPath: [regionList] = []
+    @State private var regionPath: [RegionList] = []
     @State private var selectedResult: ScanResult?
 
     // 画面遷移（compact 幅）
@@ -94,7 +94,7 @@ struct CardList: View {
         NavigationSplitView {
             NavigationStack(path: $regionPath) {
                 sidebar
-                    .navigationDestination(for: regionList.self) { region in
+                    .navigationDestination(for: RegionList.self) { region in
                         regionCards(for: region)
                     }
             }
@@ -148,7 +148,7 @@ struct CardList: View {
     }
 
     /// 地域を開く
-    private func openRegion(_ region: regionList) {
+    private func openRegion(_ region: RegionList) {
         if showsSidebar {
             selectedResult = nil
             regionPath = [region]
@@ -286,7 +286,7 @@ struct CardList: View {
         )
     }
 
-    private func regionCards(for region: regionList) -> some View {
+    private func regionCards(for region: RegionList) -> some View {
         let regionItems = items(for: region)
 
         return CardRegionView(
@@ -352,14 +352,14 @@ struct CardList: View {
     // MARK: - 一覧の内容
 
     /// 地域の第1区分に含まれるカード
-    private func cards(inPrimaryRegionOf region: regionList) -> [CardInfo] {
+    private func cards(inPrimaryRegionOf region: RegionList) -> [CardInfo] {
         store.cardItems.filter {
             ($0.regionOption == nil && $0.area.region() == region.first)
                 || $0.regionOption == region.first
         }
     }
 
-    private func items(for region: regionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?) {
+    private func items(for region: RegionList) -> (items: [CardInfo], subItems: [CardInfo]?, externalItems: [CardInfo]?) {
         let primaryItems = cards(inPrimaryRegionOf: region)
         let regularItems = primaryItems.filter { $0.scanOption.scanType != .external }
         let externalItems = primaryItems.filter { $0.scanOption.scanType == .external }

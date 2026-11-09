@@ -8,7 +8,7 @@ struct ResultView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var cardUserName = ""
-    @State var cardDesign:CardDesigin? = nil
+    @State var cardDesign:CardDesign? = nil
     
     @Binding var saveListID:UUID
     @Binding var deleteAds:Bool
@@ -241,7 +241,7 @@ struct ResultView: View {
         }
         .onAppear() {
             if display.type.isEmpty {
-                setCardDesigin("")
+                setCardDesign("")
             }
         }
     }
@@ -459,7 +459,7 @@ struct ResultView: View {
         saveListID = UUID()
     }
 
-    private func setCardDesigin(_ name: String?) {
+    private func setCardDesign(_ name: String?) {
         if let iconName = result.info?.iconName,
            let design = cardDesignList.first(where: {
                $0.imageName == iconName

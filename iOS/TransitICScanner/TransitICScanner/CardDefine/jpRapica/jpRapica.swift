@@ -12,7 +12,7 @@ let jpRapica = CardInfo(
     prefectures: ["Kagoshima"],
     regionOption: nil,
     description: "cardList.jpRapica.description",
-    scand_description: "jpRapica.scand.description",
+    scannedDescription: "jpRapica.scand.description",
     searchWords: ["locate.prefecture.Kagoshima", "かごしま", "カゴシマ", "鹿児島", "kagoshima",
                   "らぴか", "ラピカ", "Rapica", "いわさき", "いわさきICカード",
                   "市電", "市バス", "南国交通", "JR九州バス"],
@@ -80,7 +80,7 @@ extension NFCScannerModel {
             info: info,
             converter: jpRapica.scanOption.converter,
             isLastHide: true,
-            description: jpRapica.scand_description,
+            description: jpRapica.scannedDescription,
             savedAt: Date.now
         )
     }

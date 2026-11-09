@@ -15,7 +15,7 @@ struct CardInfo {
     let prefectures: [String]?
     let regionOption: RegionType? //地域分類に例外的な指定をする（通常はAreaTypeから判定）
     let description: String?
-    let scand_description: String
+    let scannedDescription: String
     let searchWords: [String]
     let scanOption: ScanOption
     let information: AnyView?

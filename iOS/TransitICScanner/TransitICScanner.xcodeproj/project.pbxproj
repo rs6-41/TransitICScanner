@@ -96,9 +96,9 @@
 			platformFiltersByRelativePath = {
 				Ads/BannerAdsView.swift = (ios, );
 				Ads/ListAdView.swift = (ios, );
-				Ads/NaviveAd/NativeAdContainerView.swift = (ios, );
-				Ads/NaviveAd/NativeAdManager.swift = (ios, );
-				Ads/NaviveAd/NativeAdRepresentable.swift = (ios, );
+				Ads/NativeAd/NativeAdContainerView.swift = (ios, );
+				Ads/NativeAd/NativeAdManager.swift = (ios, );
+				Ads/NativeAd/NativeAdRepresentable.swift = (ios, );
 			};
 			target = 000000000000000100000000 /* TransitICScanner */;
 		};

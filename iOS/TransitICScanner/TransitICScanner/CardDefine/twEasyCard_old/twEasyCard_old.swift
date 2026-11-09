@@ -13,7 +13,7 @@ let twEasyCard_old:CardInfo = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description: String(localized:"card.web.twEasyCard_old.description"),
-    scand_description: "twEasyCard_old.scand.description",
+    scannedDescription: "twEasyCard_old.scand.description",
     searchWords: ["cardList.area.tw","youyouka","ㄧㄡㄧㄡˊㄎㄚˇ"],
     scanOption: ScanOption(
         id: .twEasyCard_old,
@@ -613,7 +613,7 @@ final class twEasyCard_old_scraping: ObservableObject {
                 info: cardInfo,
                 converter: .twEasyCard_old,
                 isLastHide: false,
-                description: twEasyCard_old.scand_description,
+                description: twEasyCard_old.scannedDescription,
                 savedAt: Date.now
             )
             return result
