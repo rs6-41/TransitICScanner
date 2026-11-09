@@ -15,6 +15,7 @@ struct SettingView: View {
     let appEnvironment = AppEnvironment.current
     @AppStorage("devSetting") var devSetting = false
     @State var devSettingAlert = false
+    @ObservedObject private var adConsent = AdConsentManager.shared
     
     
     var body: some View {
@@ -36,6 +37,15 @@ struct SettingView: View {
                 }
                 
                 Section(header:Text(LocalizedStringKey("setting.other"))) {
+                    if adConsent.isPrivacyOptionsRequired {
+                        Button {
+                            Task {
+                                await adConsent.presentPrivacyOptions()
+                            }
+                        } label: {
+                            SquareIcon(text:"setting.ads.privacyOptions", systemImage: "hand.raised.fill",color:Color.indigo)
+                        }
+                    }
                     NavigationLink(destination: AcknowledgmentView()) {
                         SquareIcon(text:"setting.acknowledgment", systemImage: "info.bubble.fill",color:Color.gray)
                     }

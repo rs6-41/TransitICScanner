@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if !targetEnvironment(macCatalyst)
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MobileAds.shared.start(completionHandler: nil)
+        // Mobile Ads SDK は広告の同意取得後に AdConsentManager が初期化する
         return true
     }
     #endif
