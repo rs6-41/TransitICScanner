@@ -206,7 +206,12 @@ struct ContentView: View {
         
         
         
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+        // ATT の許可は初回起動時の説明画面(PermissionModalView)から求める。
+        // 説明画面を完了済みでまだ未決定の場合（説明画面に ATT がなかった旧バージョンからの更新など）のみここで求める。
+        if !firstPermission,
+           ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            ATTrackingManager.requestTrackingAuthorization { _ in }
+        }
     }
     
     func firstLook() {
