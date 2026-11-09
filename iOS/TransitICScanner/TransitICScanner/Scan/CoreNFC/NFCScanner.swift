@@ -48,13 +48,13 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
     }
 
     func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
-        DispatchQueue.main.async {
+        Task { @MainActor in
             self.sessionActive = true
         }
     }
 
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-        DispatchQueue.main.async {
+        Task { @MainActor in
             self.sessionActive = false
             self.session = nil
 
@@ -139,19 +139,15 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
             if let error {
                 print("Connect error:", error)
-                DispatchQueue.main.async {
-                    self.session?.invalidate(errorMessage: error.localizedDescription)
-                }
+                session.invalidate(errorMessage: error.localizedDescription)
                 return
             }
 
             print("connect success")
 
-            DispatchQueue.main.async {
-                Task { @MainActor in
-                    self.session?.alertMessage = String(localized: "scanner.coreNFC.scanning.message")
-                    await self.switchCard(id: self.scanOption.id, tag, session)
-                }
+            Task { @MainActor in
+                session.alertMessage = String(localized: "scanner.coreNFC.scanning.message")
+                await self.switchCard(id: self.scanOption.id, tag, session)
             }
         }
     }

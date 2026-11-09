@@ -40,7 +40,11 @@ let hkOctopus = CardInfo(
 extension NFCScannerModel {
     func hkOctopus_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         let info = await hkOctopus_info(felicaTag)
-        let balance = await hkOctopus_balance(felicaTag) ?? 0.0
+
+        // 残高が読めない場合は 0 円として扱わず読取失敗にする
+        guard let balance = await hkOctopus_balance(felicaTag) else {
+            return nil
+        }
 
         return ScanResult(
             balance: Double(balance),
@@ -67,7 +71,8 @@ extension NFCScannerModel {
                 guard error == nil,
                       status1 == 0,
                       status2 == 0,
-                      let d = data.first
+                      let d = data.first,
+                      d.count >= 4
                 else {
                     c.resume(returning: nil)
                     return
