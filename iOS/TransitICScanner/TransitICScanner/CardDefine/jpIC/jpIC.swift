@@ -16,7 +16,7 @@ let jpIC = CardInfo(
     prefectures: nil,
     regionOption: .eastAsia,
     description:"cardList.jpIC.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["card.suica","jpIC_suica","card.pasmo","card.icoca","card.toica","card.nimoca","card.manaca","すいか","ぱすも","いこか","といか","にもか","まなか","はやかけん","info.jpIC.cardName.welcome_suica","info.jpIC.cardName.tourist_pasmo","cardList.area.jp","card.company.jr","じぇーあーる","にほん","スイカ","パスモ","イコカ","トイカ","ニモカ","マナカ","ハヤカケン","suika","pasumo","ikoka","toika","nimoka","manaka"],
     scanOption:ScanOption(
         id: .jpIC,
@@ -56,7 +56,7 @@ let jpIC_icsca = CardInfo(
     prefectures: ["Miyagi"],
     regionOption: nil,
     description:"cardList.jpIC_icsca.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Miyagi","いくすか","card.icsca","いくすか","仙台","sendai","せんだい"],
     scanOption:ScanOption(
         id: .jpIC_icsca,
@@ -94,7 +94,7 @@ let jpIC_SAPICA = CardInfo(
     prefectures: ["Hokkaido"],
     regionOption: nil,
     description:"cardList.jpIC_SAPICA.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Hokkaido","jp.sapporo","さっぽろ","card.SAPICA","さぴか","サッポロ","サピカ","sapporo","hokkaido"],
     scanOption:ScanOption(
         id: .jpIC_SAPICA,
@@ -132,7 +132,7 @@ let jpIC_IruCa = CardInfo(
     prefectures: ["Kagawa"],
     regionOption: nil,
     description:"cardList.jpIC_IruCa.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Kagawa","かがわ","card.IruCa","いるか","card.company.kotoden","カガワ","イルカ","iruka","kagawa","ことでん","高松琴平"],
     scanOption:ScanOption(
         id: .jpIC_IruCa,
@@ -182,7 +182,7 @@ extension NFCScannerModel {
             info: info,
             converter: jpIC.scanOption.converter,
             isLastHide: true,
-            description: jpIC.scand_description,
+            description: jpIC.scannedDescription,
             savedAt: Date.now
         )
     }

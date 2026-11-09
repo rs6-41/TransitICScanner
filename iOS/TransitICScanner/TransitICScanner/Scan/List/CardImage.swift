@@ -14,7 +14,7 @@ struct CardImage:View {
     }
 }
 
-struct CardDesigin:Hashable,Identifiable {
+struct CardDesign:Hashable,Identifiable {
     let id = UUID()
     var type:ConverterType
     var name:String
@@ -22,18 +22,18 @@ struct CardDesigin:Hashable,Identifiable {
     var isDefault:Bool
 }
 
-struct CardDesiginResult:Hashable {
+struct CardDesignResult:Hashable {
     var imageName:String
 }
 
-func getCardImageName(type: ConverterType, name: String) -> CardDesiginResult? {
+func getCardImageName(type: ConverterType, name: String) -> CardDesignResult? {
     if let card = cardDesignList.first(where: {
         $0.type == type && $0.name == name
     }) {
-        return CardDesiginResult(imageName:card.imageName)
+        return CardDesignResult(imageName:card.imageName)
     }
     
-    return CardDesiginResult(
+    return CardDesignResult(
         imageName:cardDesignList.first(where: {
         $0.type == type && $0.isDefault
         })?.imageName ?? "")

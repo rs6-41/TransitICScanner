@@ -12,7 +12,7 @@ let jpNplus = CardInfo(
     prefectures: ["Nagasaki"],
     regionOption: nil,
     description:"cardList.jpNplus.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["locate.prefecture.Nagasaki","ながさき","ナガサキ","nagasaki","Tカード","県営バス"],
     scanOption:ScanOption(
         id: .jpNplus,
@@ -63,7 +63,7 @@ extension NFCScannerModel {
             info: info,
             converter: jpNplus.scanOption.converter,
             isLastHide: true,
-            description: jpNplus.scand_description,
+            description: jpNplus.scannedDescription,
             savedAt: Date.now
         )
     }

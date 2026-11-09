@@ -11,7 +11,7 @@ let idKMT = CardInfo(
     prefectures: ["Jakarta"],
     regionOption: .southEastAsia,
     description: "cardList.idKMT.description",
-    scand_description: "idKMT.scand.description",
+    scannedDescription: "idKMT.scand.description",
     searchWords: ["KAI","Commuter","Kartu Multi Trip","KMT","Jakarta","Indonesia"],
     scanOption: ScanOption(
         id: .idKMT,
@@ -53,7 +53,7 @@ extension NFCScannerModel {
             info: info,
             converter: idKMT.scanOption.converter,
             isLastHide: true,
-            description: idKMT.scand_description,
+            description: idKMT.scannedDescription,
             savedAt: Date.now
         )
     }

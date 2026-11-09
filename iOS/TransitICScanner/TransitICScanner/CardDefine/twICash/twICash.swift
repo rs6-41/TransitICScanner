@@ -11,7 +11,7 @@ let twICash = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description:"cardList.twICash.description",
-    scand_description: "twICash.scand.description",
+    scannedDescription: "twICash.scand.description",
     searchWords: ["cardList.area.tw","aijinka","ㄞˋㄐㄧㄣㄎㄚˇ"],
     scanOption: ScanOption(
         id: .twICash,
@@ -132,7 +132,7 @@ extension NFCScannerModel {
             info: info,
             converter: twICash.scanOption.converter,
             isLastHide: false,
-            description: twICash.scand_description,
+            description: twICash.scannedDescription,
             savedAt: Date.now
         )
     }

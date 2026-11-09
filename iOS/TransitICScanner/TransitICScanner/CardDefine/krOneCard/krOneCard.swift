@@ -14,7 +14,7 @@ let krOneCard = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description: String(localized:"cardList.krOneCard.description"),
-    scand_description: "",
+    scannedDescription: "",
     searchWords: ["info.krOneCard.cardName.t-money","info.krOneCard.cardName.ezl","info.krOneCard.cardName.reil_plus","info.krOneCard.cardName.onepass","info.krOneCard.cardName.wowpass","cardList.krOneCard"],
     scanOption: ScanOption(
         id: .krOneCard,
@@ -151,7 +151,7 @@ extension NFCScannerModel {
                 info: info,
                 converter: krOneCard.scanOption.converter,
                 isLastHide: false,
-                description: krOneCard.scand_description,
+                description: krOneCard.scannedDescription,
                 savedAt: Date.now
             )
     }

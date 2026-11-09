@@ -90,21 +90,21 @@ enum RegionType: String, CaseIterable,Codable {
     }
 }
 
-struct regionList:Hashable {
+struct RegionList:Hashable {
     var first: RegionType
     var second: RegionType?
 }
 let regionLists = [
-    regionList(first:.eastAsia,second:.japanLocal),
-    regionList(first:.southEastAsia),
-    regionList(first:.centralAsia),
-    regionList(first:.southAsia),
-    regionList(first:.middleEastAsia),
-    regionList(first:.europa),
-    regionList(first:.northAmerica),
-    regionList(first:.latinAmerica),
-    regionList(first:.oceania),
-    regionList(first:.africa)
+    RegionList(first:.eastAsia,second:.japanLocal),
+    RegionList(first:.southEastAsia),
+    RegionList(first:.centralAsia),
+    RegionList(first:.southAsia),
+    RegionList(first:.middleEastAsia),
+    RegionList(first:.europa),
+    RegionList(first:.northAmerica),
+    RegionList(first:.latinAmerica),
+    RegionList(first:.oceania),
+    RegionList(first:.africa)
 ]
 
 

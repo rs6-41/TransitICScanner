@@ -12,7 +12,7 @@ let hkOctopus = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description:"cardList.hkOctopus.description",
-    scand_description: "",
+    scannedDescription: "",
     searchWords: ["badatong","baat3daat6tung1","baatdaattung"],
     scanOption: ScanOption(
         id: .hkOctopus,
@@ -53,7 +53,7 @@ extension NFCScannerModel {
             info: info,
             converter: hkOctopus.scanOption.converter,
             isLastHide: false,
-            description: hkOctopus.scand_description,
+            description: hkOctopus.scannedDescription,
             savedAt: Date.now
         )
     }

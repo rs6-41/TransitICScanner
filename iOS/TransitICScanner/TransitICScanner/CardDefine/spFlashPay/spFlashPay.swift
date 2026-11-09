@@ -11,7 +11,7 @@ let spFlashPay = CardInfo(
     prefectures: nil,
     regionOption: nil,
     description: "cardList.spFlashPay.description",
-    scand_description: "jpIC.scand.description",
+    scannedDescription: "jpIC.scand.description",
     searchWords: ["card.OKICA","おきか","オキカ","ゆいレール","那覇","琉球"],
     scanOption: ScanOption(
         id: .spFlashPay,
