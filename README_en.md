@@ -12,6 +12,7 @@ An application that scans transit IC cards worldwide and retrieves their balance
 | -- | -- | -- | -- |
 | iOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | iOS 26.4+ | Supported |
 | macOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | macOS 26.4+ | Required |
+| watchOS | Unreleased | watchOS 26.4+ | - |
 | Android | Not implemented | TBD | TBD |
 | HarmonyOS | Not implemented | HarmonyOS NEXT | TBD |
 | Windows | Not implemented | TBD | Required |
