@@ -6,26 +6,20 @@ struct ResultView: View {
     @State var scandata: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-
+    
     @State var cardUserName = ""
     @State var cardDesign: CardDesign? = nil
-
+    
     @Binding var saveListID: UUID
     @Binding var deleteAds: Bool
     var onDone: (() -> Void)? = nil
     var embedsNavigationStack = true
-
+    
     @State var areaText: LocalizedStringKey = ""
-
+    
     var body: some View {
-        Group {
-            if embedsNavigationStack {
-                NavigationStack {
-                    resultContent
-                }
-            } else {
-                resultContent
-            }
+        NavigationStack {
+            resultContent
         }
     }
 
