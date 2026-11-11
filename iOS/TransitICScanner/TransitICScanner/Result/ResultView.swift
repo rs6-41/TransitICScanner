@@ -13,12 +13,16 @@ struct ResultView: View {
     @Binding var saveListID: UUID
     @Binding var deleteAds: Bool
     var onDone: (() -> Void)? = nil
-    var embedsNavigationStack = true
+    var showsSidebar:Bool = false
     
     @State var areaText: LocalizedStringKey = ""
     
     var body: some View {
-        NavigationStack {
+        if showsSidebar {
+            NavigationStack {
+                resultContent
+            }
+        } else {
             resultContent
         }
     }

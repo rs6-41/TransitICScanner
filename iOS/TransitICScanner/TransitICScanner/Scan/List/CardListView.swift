@@ -169,32 +169,20 @@ struct CardList: View {
     // MARK: - 一覧
 
     private var sidebar: some View {
-        sidebarList
-            .searchable(
-                text: $searchText,
-                placement: showsSidebar ? .sidebar : .automatic,
-                prompt: Text(LocalizedStringKey("cardList.search"))
-            )
-            .navigationTitle(LocalizedStringKey("cardList.title"))
-            .scrollContentBackground(.hidden)
-            .background(Color(uiColor: .quaternarySystemFill))
-    }
-
-    private var sidebarList: some View {
         List {
             Group {
-                #if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-                #endif
-
+#endif
+                
                 if debug.isDisplay {
                     debugLocationRow
                 }
-
+                
                 if !currentCountryItems.isEmpty {
                     currentLocationSection
                 }
-
+                
                 if searchText.isEmpty {
                     regionSection
                 } else {
@@ -206,8 +194,16 @@ struct CardList: View {
         .scrollContentBackground(.hidden)
         .listStyle(.insetGrouped)
         .alignmentGuide(.listRowSeparatorLeading) { _ in
-            .zero
+                .zero
         }
+        .searchable(
+            text: $searchText,
+            placement: showsSidebar ? .sidebar : .automatic,
+            prompt: Text(LocalizedStringKey("cardList.search"))
+        )
+        .navigationTitle(LocalizedStringKey("cardList.title"))
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor: .quaternarySystemFill))
     }
 
     /// 現在地で使えるカード
@@ -311,7 +307,7 @@ struct CardList: View {
             saveListID: .constant(UUID()),
             deleteAds: $deleteAds,
             onDone: onDone,
-            embedsNavigationStack: false
+            showsSidebar: showsSidebar
         )
     }
 
