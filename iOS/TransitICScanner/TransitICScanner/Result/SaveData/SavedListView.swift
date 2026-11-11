@@ -347,7 +347,7 @@ struct SavedListView: View {
             scandata: false,
             saveListID: $saveListID,
             deleteAds: $deleteAds,
-            embedsNavigationStack: false
+            showsSidebar: showsSidebar
         )
     }
 
