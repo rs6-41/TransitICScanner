@@ -10,6 +10,9 @@
     "(%@)" : {
       "shouldTranslate" : false
     },
+    "%@" : {
+
+    },
     "ads" : {
       "comment" : "Ads",
       "localizations" : {
