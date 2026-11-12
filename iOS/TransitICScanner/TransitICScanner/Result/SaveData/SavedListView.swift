@@ -334,9 +334,9 @@ struct SavedListView: View {
                 .id(selectedCardID)
         } else {
             EmptyViewSideBar(
-                title: "history.select.empty",
+                title: String(localized:"history.select.empty"),
                 icon: "filemenu.and.pointer.arrow",
-                description: "history.select.empty.description"
+                description: String(localized:"history.select.empty.description")
             )
         }
     }
