@@ -81,9 +81,8 @@ struct CardList: View {
             }
         }
         .onChange(of: regionPath) {
-            if regionPath.isEmpty {
-                selectedResult = nil
-            }
+            // 地域を開いた・戻ったときは、前の読取結果を閉じる
+            selectedResult = nil
         }
     }
 
@@ -147,13 +146,27 @@ struct CardList: View {
         }
     }
 
-    /// 地域を開く
-    private func openRegion(_ region: RegionList) {
+    /// 地域を開くリンク
+    ///
+    /// 表示中の `NavigationStack` に登録した `navigationDestination` の型に合わせて値を渡す。
+    /// - regular 幅：`regionPath`（`RegionList`）
+    /// - compact 幅：`compactPath`（`CompactRoute`）
+    @ViewBuilder
+    private func regionLink(_ region: RegionList) -> some View {
+        let label = SquareIcon(
+            text: LocalizedStringKey(region.first.name()),
+            systemImage: region.first.icon(),
+            color: Color.blue
+        )
+
         if showsSidebar {
-            selectedResult = nil
-            regionPath = [region]
+            NavigationLink(value: region) {
+                label
+            }
         } else {
-            compactPath.append(.region(region))
+            NavigationLink(value: CompactRoute.region(region)) {
+                label
+            }
         }
     }
 
@@ -222,17 +235,7 @@ struct CardList: View {
         Section {
             ForEach(regionLists, id: \.self) { region in
                 if !cards(inPrimaryRegionOf: region).isEmpty {
-                    Button {
-                        openRegion(region)
-                    } label: {
-                        SquareIcon(
-                            text: LocalizedStringKey(region.first.name()),
-                            systemImage: region.first.icon(),
-                            color: Color.blue
-                        )
-                    }
-                    .buttonStyle(.plain)
-                    .contentShape(Rectangle())
+                    regionLink(region)
                 }
             }
         } header: {
