@@ -264,6 +264,7 @@
 	</array>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 	<array>
+		<string>A0000003410001</string>
 		<string>A000000632010105</string>
 		<string>A000000632010111</string>
 		<string>A000000632010106</string>

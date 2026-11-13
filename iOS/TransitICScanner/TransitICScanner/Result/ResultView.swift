@@ -365,10 +365,13 @@ struct ResultView: View {
             ? history[index + 1].balance
             : 0
 
+        // KMT の balance は符号付きレコード金額。残高同士の差分として扱わない。
         let diff: Double? =
-            hasNext
-            ? item.balance - nextBalance
-            : (result.isLastHide ? nil : item.balance)
+            result.converter == .idKMT
+            ? nil
+            : (hasNext
+                ? item.balance - nextBalance
+                : (result.isLastHide ? nil : item.balance))
 
         VStack(
             alignment: .leading,
