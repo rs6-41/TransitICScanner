@@ -30,6 +30,7 @@ TransitICScanner/
 ├── skills/                      … カード開発・翻訳スキル、テンプレート、検証ツール
 ├── AppIcon.psd                  … アプリアイコンの元データ
 ├── package.json / .cz-adapter.js … コミットメッセージ用 Commitizen 設定
+├── .github/workflows/ci.yml     … GitHub Actions（命名・書式・回帰テスト、ユニットテスト、Widget/Watchビルド）
 └── iOS/TransitICScanner/
     ├── TransitICScanner.xcodeproj/
     ├── TransitICScanner/                 … アプリ本体（iOS / Mac Catalyst）※一部を Widget・Watch と共有
@@ -49,6 +50,8 @@ TransitICScanner/
     │   └── Assets.xcassets, AppIcon/, Info.plist, *.entitlements, PrivacyInfo.xcprivacy, *.storekit
     ├── CardBalanceWidget/                … ホーム画面 Widget（Widget Extension）
     ├── TransitICScanner_Watch Watch App/ … Apple Watch アプリ（保存済みデータの閲覧のみ）
+    ├── TransitICScannerTests/            … ユニットテスト（Swift Testing、アプリをホストに `@testable import`）
+    ├── ci_scripts/                       … Xcode Cloud のカスタムスクリプトと env.swift 生成（GitHub Actions と共用）
     └── CardBalance/                      … ⚠ どのターゲットにも属していない Xcode テンプレートの残骸（§9）
 ```
 
@@ -62,6 +65,7 @@ TransitICScanner/
 |---|---|---|
 | `TransitICScanner` | `TransitICScanner/` | アプリ本体。iOS と Mac Catalyst（Mac では外部リーダーが必須） |
 | `CardBalanceWidgetExtension` | `CardBalanceWidget/` | 残高を表示する Widget（小サイズとリストの2種類） |
+| `TransitICScannerTests` | `TransitICScannerTests/` | ユニットテスト。`Dev` スキームのTestアクションで実行（ホストはアプリ本体） |
 | `TransitICScanner_Watch Watch App` | `TransitICScanner_Watch Watch App/` | iPhone で保存したカードを CloudKit 経由で閲覧する |
 
 ### 3.2 ファイルとターゲットの対応（重要）
@@ -114,6 +118,8 @@ Watch とアプリで同じファイルを使う箇所は `#if os(watchOS)` で�
 let NativeUnitID = ""   // AdMob ネイティブ広告ユニットID（本番）
 let bannerUnitID = ""   // AdMob バナー広告ユニットID（本番）
 ```
+
+CIでは `ci_scripts/make_env_swift.sh` が環境変数 `ADMOB_NATIVE_UNIT_ID` / `ADMOB_BANNER_UNIT_ID` から生成します（未設定なら空文字列のダミー）。Xcode CloudのArchiveでは未設定をエラーにします。
 
 ---
 
@@ -349,7 +355,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 - ビルド確認：`Dev` と `Watch_Dev` に加えて、共有ファイルを触ったら `Widget` も、ログやリリース分岐を触ったら `Release` もビルドする
 - 書式：コミット前に `swift-format` を適用する（設定は `iOS/TransitICScanner/.swift-format`。手順は `doc/dev/README.md`）
 - 画面遷移の確認：シミュレータではカードをタップするとサンプル結果が返るので、iPhone / iPad の両方で 一覧 → 地域 → 結果 → 戻る を確認する
-- 自動テストは `skills/transit-card-workflow/scripts/`（KMT解析・読取、Widget保存互換性）。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
+- 自動テストは `TransitICScannerTests/`（Xcodeのユニットテスト）と `skills/transit-card-workflow/scripts/`（KMT解析・読取、Widget保存互換性）。PRではGitHub Actionsが両方を実行する。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
 - コミットメッセージは `doc/dev/README.md` の形式（絵文字 + Issue番号 + 内容）に従う
 
 ---
