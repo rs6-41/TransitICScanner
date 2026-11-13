@@ -12,19 +12,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "世界IC残高確認"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
         }
@@ -41,19 +41,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "世界IC残高確認"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC余额查询"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
         }
@@ -83,7 +83,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "用於讀取卡片信息"
+            "value" : "用於讀取卡片資訊"
           }
         }
       }
@@ -164,13 +164,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "广告的展示将使用此信息。\n允许后，我们可以为您展示更相关的广告。"
+            "value" : "此信息将用于展示 Google 广告。\n允许后，我们可以为您展示更相关的广告。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "廣告的展示將使用此信息。\n允許後，我們可以為您展示更相關的廣告。"
+            "value" : "此資訊將用於顯示 Google 廣告。\n允許後，我們可以為您顯示更相關的廣告。"
           }
         }
       }
