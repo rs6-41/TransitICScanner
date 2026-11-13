@@ -31,12 +31,6 @@ UserInterfaceState.xcuserstate
 
 # Xcode ユーザー固有の設定（ブレークポイント、スキーム表示状態など）
 xcuserdata/
-DerivedData/
-*.xcresult
-
-# Python スクリプトの実行時キャッシュ
-__pycache__/
-*.py[cod]
 
 env.swift
 node_modules/

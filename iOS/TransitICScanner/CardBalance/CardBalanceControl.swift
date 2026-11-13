@@ -42,7 +42,7 @@ extension CardBalanceControl {
         }
 
         func currentValue(configuration: TimerConfiguration) async throws -> Value {
-            let isRunning = true  // Check if the timer is running
+            let isRunning = true // Check if the timer is running
             return CardBalanceControl.Value(isRunning: isRunning, name: configuration.timerName)
         }
     }

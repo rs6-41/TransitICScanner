@@ -210,12 +210,10 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     case "48800": card = cnTunion_Info(name: "温州交运城市公交IC卡互通卡", area: "浙江省", city: "温州市", issuer: "温州市交通运输集团有限公司")
     case "48801": card = cnTunion_Info(name: "杭州通交通联合卡/杭州市第三代社保卡", area: "浙江省", city: "杭州市", issuer: "杭州市民卡支付有限公司")
     case "48802": card = cnTunion_Info(name: "甬城通·交通部卡/宁波交通卡·交通部卡", area: "浙江省", city: "宁波市", issuer: "宁波市民卡运营管理有限公司")
-    case "48803":
-        card = cnTunion_Info(name: "嘉兴交通一卡通·城际通卡", area: "浙江省", city: "嘉兴市", issuer: "嘉兴市公共交通有限公司、嘉兴市国鸿公共交通有限公司")
+    case "48803": card = cnTunion_Info(name: "嘉兴交通一卡通·城际通卡", area: "浙江省", city: "嘉兴市", issuer: "嘉兴市公共交通有限公司、嘉兴市国鸿公共交通有限公司")
     case "48804": card = cnTunion_Info(name: "台州通", area: "浙江省", city: "台州市", issuer: "台州市畅行智慧交通科技有限公司")
     case "48805": card = cnTunion_Info(name: "金华交通一卡通", area: "浙江省", city: "金华市", issuer: "金华市公交集团有限公司")
-    case "48806":
-        card = cnTunion_Info(name: "湖州市交通一卡通", area: "浙江省", city: "湖州市", issuer: "湖州市惠通公交一卡通有限公司（城市）、湖州康达公交运输有限公司（城乡）")
+    case "48806": card = cnTunion_Info(name: "湖州市交通一卡通", area: "浙江省", city: "湖州市", issuer: "湖州市惠通公交一卡通有限公司（城市）、湖州康达公交运输有限公司（城乡）")
     case "48807": card = cnTunion_Info(name: "绍兴通卡", area: "浙江省", city: "绍兴市", issuer: "绍兴市公交信息科技有限公司")
     case "48808": card = cnTunion_Info(name: "衢州公交交通一卡通", area: "浙江省", city: "衢州市", issuer: "浙江衢州公交集团有限公司")
     case "48809": card = cnTunion_Info(name: "舟山群岛通卡", area: "浙江省", city: "舟山市", issuer: "舟山市智慧城市运营有限公司")
@@ -254,8 +252,7 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     case "48937": card = cnTunion_Info(name: "吉林长白行一卡通", area: "吉林省", city: "白城市 镇赉县", issuer: "吉林省长白行交通卡技术服务有限公司")
     case "48938": card = cnTunion_Info(name: "吉林长白行一卡通", area: "吉林省", city: "白城市 通榆县", issuer: "吉林省长白行交通卡技术服务有限公司")
     case "48939": card = cnTunion_Info(name: "延吉交通一卡通", area: "吉林省", city: "延边朝鲜族自治州 延吉市", issuer: "延吉市公交集团有限公司")
-    case "48942":
-        card = cnTunion_Info(name: "珲春城市一卡通唰唰通互通卡", area: "吉林省", city: "延边朝鲜族自治州 珲春市", issuer: "珲春市智慧城市投资管理有限公司")
+    case "48942": card = cnTunion_Info(name: "珲春城市一卡通唰唰通互通卡", area: "吉林省", city: "延边朝鲜族自治州 珲春市", issuer: "珲春市智慧城市投资管理有限公司")
     case "48944": card = cnTunion_Info(name: "", area: "吉林省", city: "延边朝鲜族自治州 和龙市", issuer: "和龙市公交出租旅游汽车中心")
     case "48946": card = cnTunion_Info(name: "吉林通", area: "吉林省", city: "延边朝鲜族自治州 敦化市", issuer: "吉林省通卡支付股份有限公司")
     case "48947": card = cnTunion_Info(name: "吉林长白行一卡通", area: "吉林省", city: "松原市 扶余市", issuer: "吉林省长白行交通卡技术服务有限公司")
@@ -265,42 +262,24 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     case "48951": card = cnTunion_Info(name: "吉林长白行一卡通/金通卡", area: "吉林省", city: "长春市 双阳区", issuer: "吉林省长白行交通卡技术服务有限公司")
 
     // MARK: 甘肃省 - 0310490
-    case "49000":
-        card = cnTunion_Info(
-            name: "兰州公交集团IC卡、兰州轨道交通一卡通（市区）/丝路任我行·飞天卡（榆中、永登、皋兰、红古）", area: "甘肃省", city: "兰州市",
-            issuer: "兰州公交集团、兰州市轨道交通有限公司（市区）、兰州交发建集团（红古、榆中、永登、皋兰）")
+    case "49000": card = cnTunion_Info(name: "兰州公交集团IC卡、兰州轨道交通一卡通（市区）/丝路任我行·飞天卡（榆中、永登、皋兰、红古）", area: "甘肃省", city: "兰州市", issuer: "兰州公交集团、兰州市轨道交通有限公司（市区）、兰州交发建集团（红古、榆中、永登、皋兰）")
     case "49001": card = cnTunion_Info(name: "", area: "甘肃省", city: "平凉市", issuer: "平凉市崆通公交服务集团有限责任公司")
     case "49003": card = cnTunion_Info(name: "丝路任我行·金昌市公共交通有限公司IC卡", area: "甘肃省", city: "金昌市", issuer: "金昌国有公共交通运营有限公司")
-    case "49004":
-        card = cnTunion_Info(
-            name: "丝路任我行/丝路任我行·靖远/丝路任我行·会宁公交IC卡", area: "甘肃省", city: "白银市",
-            issuer: "白银市公共交通公司、靖远五环汽车运输有限公司（靖远）、会宁县汇通公交服务有限公司（会宁）")
-    case "49006":
-        card = cnTunion_Info(
-            name: "丝路任我行·酒泉（肃州）/丝路任我行·敦煌（敦煌）", area: "甘肃省", city: "酒泉市", issuer: "甘肃广和公交集团有限公司（肃州）、敦煌文旅交通有限公司（敦煌）")
-    case "49007":
-        card = cnTunion_Info(
-            name: "丝路任我行·山丹丹运公交公司IC卡/丝路任我行·民乐", area: "甘肃省", city: "张掖市",
-            issuer: "山丹县丹运公交运输有限公司（山丹）、甘肃西运运输实业(集团)有限责任公司公交客运分公司（民乐）")
+    case "49004": card = cnTunion_Info(name: "丝路任我行/丝路任我行·靖远/丝路任我行·会宁公交IC卡", area: "甘肃省", city: "白银市", issuer: "白银市公共交通公司、靖远五环汽车运输有限公司（靖远）、会宁县汇通公交服务有限公司（会宁）")
+    case "49006": card = cnTunion_Info(name: "丝路任我行·酒泉（肃州）/丝路任我行·敦煌（敦煌）", area: "甘肃省", city: "酒泉市", issuer: "甘肃广和公交集团有限公司（肃州）、敦煌文旅交通有限公司（敦煌）")
+    case "49007": card = cnTunion_Info(name: "丝路任我行·山丹丹运公交公司IC卡/丝路任我行·民乐", area: "甘肃省", city: "张掖市", issuer: "山丹县丹运公交运输有限公司（山丹）、甘肃西运运输实业(集团)有限责任公司公交客运分公司（民乐）")
     case "49008": card = cnTunion_Info(name: "丝路任我行·凉州卡", area: "甘肃省", city: "武威市", issuer: "甘肃一卡通信息技术服务有限公司")
-    case "49010":
-        card = cnTunion_Info(
-            name: "丝路任我行·陇南/丝路任我行·宕昌/丝路任我行·成县/丝路任我行·文县", area: "甘肃省", city: "陇南市",
-            issuer: "陇运集团武都公交公司、宕昌县金诚公共交通有限责任公司、陇运集团成县公交公司、陇运集团文县公交公司")
+    case "49010": card = cnTunion_Info(name: "丝路任我行·陇南/丝路任我行·宕昌/丝路任我行·成县/丝路任我行·文县", area: "甘肃省", city: "陇南市", issuer: "陇运集团武都公交公司、宕昌县金诚公共交通有限责任公司、陇运集团成县公交公司、陇运集团文县公交公司")
     case "49011": card = cnTunion_Info(name: "丝路任我行·环县", area: "甘肃省", city: "庆阳市", issuer: "庆阳公共交通集团有限公司")
     case "49012": card = cnTunion_Info(name: "丝路任我行·临夏", area: "甘肃省", city: "临夏回族自治州", issuer: "临夏道合公交客运服务有限责任公司")
     case "49015": card = cnTunion_Info(name: "兰州新区公交卡", area: "甘肃省", city: "兰州市 兰州新区", issuer: "兰州新区城市公共交通有限公司")
 
     // MARK: 重庆 - 0310492
-    // 主城、江津、永川、荣昌、垫江及万盛开发区
-    case "49200": card = cnTunion_Info(name: "宜居畅通卡·交通联合版", area: nil, city: "重庆", issuer: "重庆城市通卡支付有限责任公司")
+    case "49200": card = cnTunion_Info(name: "宜居畅通卡·交通联合版", area: nil, city: "重庆", issuer: "重庆城市通卡支付有限责任公司")  // 主城、江津、永川、荣昌、垫江及万盛开发区
     case "49201": card = cnTunion_Info(name: "交运通", area: nil, city: "重庆", issuer: "重庆交运城卡科技有限公司")  // その他の区県
 
     // MARK: 山东省 - 0310493
-    case "49300":
-        card = cnTunion_Info(
-            name: "枣庄汽运交通一卡通/枣庄市交通一卡通", area: "山东省", city: "枣庄市",
-            issuer: "山东省枣庄汽车运输有限公司、枣庄市民卡管理有限公司、滕州市上善公交有限公司（滕州公交）、滕州市国运汽车运输有限公司、枣庄骐骥公交客运有限公司（山亭公交）")
+    case "49300": card = cnTunion_Info(name: "枣庄汽运交通一卡通/枣庄市交通一卡通", area: "山东省", city: "枣庄市", issuer: "山东省枣庄汽车运输有限公司、枣庄市民卡管理有限公司、滕州市上善公交有限公司（滕州公交）、滕州市国运汽车运输有限公司、枣庄骐骥公交客运有限公司（山亭公交）")
     case "49301": card = cnTunion_Info(name: "沂蒙通", area: "山东省", city: "临沂市", issuer: "临沂市沂蒙公交科技有限公司")
     case "49304": card = cnTunion_Info(name: "琴岛通", area: "山东省", city: "青岛市", issuer: "青岛市琴岛通卡股份有限公司")
     case "49305": card = cnTunion_Info(name: "泰安市民卡/省会都市圈卡", area: "山东省", city: "泰安市", issuer: "泰安市公共交通有限公司")
@@ -310,9 +289,7 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     case "49309": card = cnTunion_Info(name: "齐达通全国交通一卡通/省会都市圈卡", area: "山东省", city: "淄博市", issuer: "淄博齐达通信息技术有限公司")
     case "49310": card = cnTunion_Info(name: "东营公交卡/省会都市圈卡", area: "山东省", city: "东营市", issuer: "东营市公共交通集团有限公司")
     case "49311": card = cnTunion_Info(name: "潍坊通", area: "山东省", city: "潍坊市", issuer: "潍坊市市民卡有限公司")
-    case "49312":
-        card = cnTunion_Info(
-            name: "济宁交通一卡通（市公交）/济宁城际公交IC卡（城际公交）", area: "山东省", city: "济宁市", issuer: "济宁市公共交通集团有限公司、济宁城际公交集团有限公司")
+    case "49312": card = cnTunion_Info(name: "济宁交通一卡通（市公交）/济宁城际公交IC卡（城际公交）", area: "山东省", city: "济宁市", issuer: "济宁市公共交通集团有限公司、济宁城际公交集团有限公司")
     case "49313": card = cnTunion_Info(name: "滨州交通一卡通/省会都市圈卡", area: "山东省", city: "滨州市", issuer: "滨州市公共汽车公司")
     case "49314": card = cnTunion_Info(name: "德州交通一卡通/省会都市圈卡", area: "山东省", city: "德州市", issuer: "德州市公共汽车公司")
     case "49315": card = cnTunion_Info(name: "聊城交通一卡通/省会都市圈卡", area: "山东省", city: "聊城市", issuer: "聊城市公共交通集团有限公司")
@@ -341,8 +318,7 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     case "49700": card = cnTunion_Info(name: "佳木斯全国交通一卡通", area: "黑龙江省", city: "佳木斯市", issuer: "佳木斯市公共交通有限公司")
     case "49701": card = cnTunion_Info(name: "鸡西交通部卡", area: "黑龙江省", city: "鸡西市", issuer: "鸡西市公共交通有限责任公司")
     case "49702": card = cnTunion_Info(name: "哈尔滨城市通", area: "黑龙江省", city: "哈尔滨市", issuer: "哈尔滨市城市通智能卡有限责任公司")
-    case "49703":
-        card = cnTunion_Info(name: "齐齐哈尔公交IC卡·齐联卡全国一卡通", area: "黑龙江省", city: "齐齐哈尔市", issuer: "齐齐哈尔市大众智能卡有限公司")
+    case "49703": card = cnTunion_Info(name: "齐齐哈尔公交IC卡·齐联卡全国一卡通", area: "黑龙江省", city: "齐齐哈尔市", issuer: "齐齐哈尔市大众智能卡有限公司")
     case "49704": card = cnTunion_Info(name: "鹤岗全国交通一卡通", area: "黑龙江省", city: "鹤岗市", issuer: "鹤岗市公共交通有限责任公司")
     case "49705": card = cnTunion_Info(name: "双鸭山顺达公交卡", area: "黑龙江省", city: "双鸭山市", issuer: "双鸭山市顺达运输集团有限公司")
     case "49706": card = cnTunion_Info(name: "大庆油城公交一卡通", area: "黑龙江省", city: "大庆市", issuer: "大庆市油城公共交通运输有限公司")
@@ -440,24 +416,18 @@ func cnTunion_getIssueInfo(iin: String) -> cnTunion_Info {
     // MARK: 内蒙古自治区 - 0310511
     case "51100": card = cnTunion_Info(name: "鹿城通·互联互通卡", area: "内蒙古自治区", city: "包头市", issuer: "包头市城市一卡通有限公司")
     case "51101": card = cnTunion_Info(name: "呼和浩特全国交通一卡通", area: "内蒙古自治区", city: "呼和浩特市", issuer: "呼和浩特市公共交通有限责任公司")
-    case "51102":
-        card = cnTunion_Info(name: "乌海交通一卡通", area: "内蒙古自治区", city: "乌海市", issuer: "内蒙古狮城交通集团有限责任公司、乌海市海南区城乡公共交通有限公司")
+    case "51102": card = cnTunion_Info(name: "乌海交通一卡通", area: "内蒙古自治区", city: "乌海市", issuer: "内蒙古狮城交通集团有限责任公司、乌海市海南区城乡公共交通有限公司")
     case "51103": card = cnTunion_Info(name: "赤峰交通一卡通", area: "内蒙古自治区", city: "赤峰市", issuer: "赤峰市公共交通有限责任公司")
-    case "51104":
-        card = cnTunion_Info(name: "呼伦贝尔交通一卡通", area: "内蒙古自治区", city: "呼伦贝尔市", issuer: "呼伦贝尔市海拉尔区明途公共汽车有限责任公司")
+    case "51104": card = cnTunion_Info(name: "呼伦贝尔交通一卡通", area: "内蒙古自治区", city: "呼伦贝尔市", issuer: "呼伦贝尔市海拉尔区明途公共汽车有限责任公司")
     case "51105": card = cnTunion_Info(name: "", area: "内蒙古自治区", city: "兴安盟 阿尔山市", issuer: "阿尔山市宏盛公交客运公司")
     case "51106": card = cnTunion_Info(name: "通辽开鲁交通一卡通", area: "内蒙古自治区", city: "通辽市 开鲁县", issuer: "开鲁县公共交通运输有限责任公司")
-    case "51107":
-        card = cnTunion_Info(name: "锡林浩特交通一卡通", area: "内蒙古自治区", city: "锡林郭勒盟 锡林浩特市", issuer: "锡林浩特市天安公共交通有限责任公司")
+    case "51107": card = cnTunion_Info(name: "锡林浩特交通一卡通", area: "内蒙古自治区", city: "锡林郭勒盟 锡林浩特市", issuer: "锡林浩特市天安公共交通有限责任公司")
     case "51108": card = cnTunion_Info(name: "", area: "内蒙古自治区", city: "乌兰察布市", issuer: "凉城县鑫运公交服务有限公司")
     case "51109": card = cnTunion_Info(name: "天骄通", area: "内蒙古自治区", city: "鄂尔多斯市", issuer: "鄂尔多斯市市民卡建设有限公司")
     case "51110": card = cnTunion_Info(name: "巴彦淖尔交通一卡", area: "内蒙古自治区", city: "巴彦淖尔市", issuer: "巴彦淖尔运通运输服务有限公司")
-    case "51111":
-        card = cnTunion_Info(name: "阿拉善交通一卡通", area: "内蒙古自治区", city: "阿拉善盟", issuer: "阿拉善盟唐盛公交有限公司、阿拉善左旗城市公交有限责任公司")
-    case "51113":
-        card = cnTunion_Info(name: "二连浩特交通一卡通", area: "内蒙古自治区", city: "锡林郭勒盟 二连浩特市", issuer: "二连浩特市北辰公共交通有限责任公司")
-    case "51114":
-        card = cnTunion_Info(name: "内蒙古三代社保卡", area: "内蒙古自治区", city: "乌海市", issuer: "内蒙古狮城交通集团有限责任公司、乌海市海南区城乡公共交通有限公司")
+    case "51111": card = cnTunion_Info(name: "阿拉善交通一卡通", area: "内蒙古自治区", city: "阿拉善盟", issuer: "阿拉善盟唐盛公交有限公司、阿拉善左旗城市公交有限责任公司")
+    case "51113": card = cnTunion_Info(name: "二连浩特交通一卡通", area: "内蒙古自治区", city: "锡林郭勒盟 二连浩特市", issuer: "二连浩特市北辰公共交通有限责任公司")
+    case "51114": card = cnTunion_Info(name: "内蒙古三代社保卡", area: "内蒙古自治区", city: "乌海市", issuer: "内蒙古狮城交通集团有限责任公司、乌海市海南区城乡公共交通有限公司")
 
     // MARK: 辽宁省 - 0310512
     case "51200": card = cnTunion_Info(name: "互联互通明珠卡", area: "辽宁省", city: "大连市", issuer: "大连明珠公用卡股份有限公司")

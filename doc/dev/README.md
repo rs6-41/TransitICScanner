@@ -34,28 +34,8 @@ git ls-files '*.swift' | tr '\n' '\0' | xargs -0 xcrun swift-format format --in-
 コミットメッセージを対話形式で作成するには、最初にプロジェクトの依存関係をインストールします。
 
 ```sh
-npm ci
-git config --local alias.cz '!npx --no-install cz'
+npm install
+npm install --global commitizen
 ```
 
 以降は `git cz` を実行し、変更内容の絵文字を選択してIssue番号と内容を入力します。たとえば Issue番号に `107`、内容に `README.mdに英訳を追加` を入力すると、`📃 #107 README.mdに英訳を追加` がコミットメッセージになります。
-
-Codexが作業した場合は、Issue本文とコミットの内容に `Codex` と明記し、作業の出所を記録します。
-
-## 整理・検証
-
-リポジトリのルートで実行します。
-
-```sh
-# 追跡中のSwiftファイルの書式を検証
-git ls-files -z '*.swift' | xargs -0 xcrun swift-format lint --strict --configuration iOS/TransitICScanner/.swift-format
-
-# KAI Commuterの解析・読み取り処理の回帰テスト（macOS / Swiftが必要）
-python3 script/tests/test_idKMT.py
-
-# 空白エラーと作業ツリーの確認
-git diff --check
-git status --short
-```
-
-末尾に ` 2` が付いたファイルなど、同期・コピー時に生じた重複は、元ファイルとの内容一致と参照の有無を確認してから削除します。画像や設定ファイルでは名前だけで判断しないでください。

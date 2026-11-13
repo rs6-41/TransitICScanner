@@ -41,7 +41,7 @@ struct CardList: View {
 
     /// 分割表示（サイドバー＋詳細列）を使うか
     private var showsSidebar: Bool {
-
+        
         #if targetEnvironment(macCatalyst)
         true
         #else
@@ -189,18 +189,18 @@ struct CardList: View {
     private var sidebar: some View {
         List {
             Group {
-                #if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-                #endif
-
+#endif
+                
                 if debug.isDisplay {
                     debugLocationRow
                 }
-
+                
                 if !currentCountryItems.isEmpty {
                     currentLocationSection
                 }
-
+                
                 if searchText.isEmpty {
                     regionSection
                 } else {
@@ -211,7 +211,7 @@ struct CardList: View {
         }
         .listStyle(.insetGrouped)
         .alignmentGuide(.listRowSeparatorLeading) { _ in
-            .zero
+                .zero
         }
         .searchable(
             text: $searchText,
