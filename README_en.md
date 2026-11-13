@@ -6,6 +6,19 @@ An application that scans transit IC cards worldwide and retrieves their balance
 
 - [Development Environment & Guidelines](./doc/dev/README.md)
 
+## LLM development skills
+
+Reusable instructions, templates, and validation tools for generative AI agents are available in the top-level [skills/ directory](./skills/README.md).
+
+| Skill | Scope |
+| -- | -- |
+| [Card development and issues](./skills/transit-card-workflow/SKILL.md) | Research/iOS issues, research-to-specification, specification-to-iOS implementation, and documentation/skill maintenance issues |
+| [Localization completion](./skills/transit-localization/SKILL.md) | Complete missing translations from one supplied language and record context in the xcstrings JSON `comment` field |
+
+Ask the agent to read the [root AGENTS.md](./AGENTS.md) and the relevant `SKILL.md`, then specify the target and requested stage. For example: “Use `skills/transit-card-workflow/SKILL.md` to create a card specification from the supplied research” or “Use `skills/transit-localization/SKILL.md` to complete the other languages from the Japanese text for these keys.”
+
+These skills follow this project's models, structure, and rules. If you also want issue submission, code changes, commits, or a PR, specify that scope and the target branch. Issues and PRs written by an LLM must carry the `Agent` label while retaining existing labels.
+
 ## Platforms
 
 | OS | Link | Requirements | External Reader |

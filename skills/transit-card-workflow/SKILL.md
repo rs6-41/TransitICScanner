@@ -1,6 +1,6 @@
 ---
 name: transit-card-workflow
-description: TransitICScannerの交通ICカードについて、調査・iOS実装Issueの作成、調査済み情報のカード仕様書化、仕様書からのiOS実装を行う。依頼された工程だけを実行し、カード固有の仕様値は根拠資料から決める。
+description: TransitICScannerのカード調査・iOS実装Issue、文書・スキル整備Issueの作成、調査済み情報の仕様書化、仕様書からのiOS実装を行う。LLMが書き込むIssue・PRにはAgentラベルを付与し、依頼された工程だけを実行する。
 ---
 
 # 交通ICカードの調査・文書化・iOS実装
@@ -11,7 +11,7 @@ description: TransitICScannerの交通ICカードについて、調査・iOS実�
 
 | 依頼 | 読む資料 | 成果物 |
 |---|---|---|
-| 調査Issue／iOS実装Issueを作る | [Issue作成](references/issues.md) | 重複のないIssueと相互リンク |
+| 調査Issue／iOS実装Issue／文書・スキル整備Issueを作る | [Issue作成](references/issues.md) | 対象工程に合う、Agentラベル付きのIssue |
 | 調査済み情報から文書を作る | [情報から仕様書へ](references/research-to-spec.md) | `doc/cards/<cardID>.md`、根拠と未確認事項 |
 | 仕様書からiOSコードを作る | [仕様書からiOSへ](references/spec-to-ios.md) | 登録を含む実装、テスト、検証結果 |
 
@@ -19,7 +19,7 @@ description: TransitICScannerの交通ICカードについて、調査・iOS実�
 
 ## 最初に確定する情報
 
-- カード名・発行地域・世代、正規のcardID、対象工程、既存Issue／仕様書／調査資料を確認する。接続済みGitHubとリポジトリを調べ、既にある情報を再質問しない。
+- カード案件はカード名・発行地域・世代、正規のcardID、対象工程、既存Issue／仕様書／調査資料を確認する。文書・スキル整備は目的・対象ファイル・完了条件を確認し、カードIDは要求しない。提供資料とリポジトリを調べ、既にある情報を再質問しない。
 - ルートの `AGENTS.md` を読み、コード変更時は `iOS/TransitICScanner/AGENTS.md` と `TransitICScanner/CardDefine/AGENTS.md` も読む。命名・保存互換性・Git方針はそこを正とし、このスキルでは複製しない。
 - 各段階で同じcardIDを使う。旧IDがあれば `Utility/CardIdentity.swift` と既存保存データの契約も確認する。
 - [過去カードの事例](references/card-cases.md)は読取方式に合う行から選ぶ。既存コードは構造の参考であり、新カードのサービスコード・金額・日時・取引分類の根拠にはしない。
@@ -33,6 +33,7 @@ description: TransitICScannerの交通ICカードについて、調査・iOS実�
 ## 共通ツール
 
 - 外部資料は実際に開いて根拠箇所を確認する。既に渡された資料をまとめるだけなら、依頼外の追加調査へ拡大しない。
-- GitHubの検索・作成・更新は接続済みツールを優先する。投稿時はユーザーが指定した範囲に従い、成功レスポンスのURLと内容を確認する。失敗・不明なレスポンスでは再投稿の前に既存Issueを検索する。
+- GitHub操作を依頼された場合は接続済みツールを優先し、作成・更新・コメント等を書き込むIssue・PRには必ず既存の `Agent` ラベルを付与する。他のラベルを維持し、返却値または再取得で実際の付与を確認する。詳細はルートAGENTS.mdと[Issue作成](references/issues.md)に従う。
+- 下書き・オフライン指定では提供資料・模擬台帳を使い、外部へ投稿しない。ラベル指定は下書きの投稿メタデータとして記録する。外部確認ができない範囲は明記する。失敗・不明な投稿レスポンスでは再投稿の前に既存Issueを検索する。
 - 複数言語の文言を追加・補完する場合は、同梱の `skills/transit-localization/SKILL.md` を読む。登録箇所はiOS工程の手順にも記載する。
 - 実装用の確認ツールはこのスキルの `scripts/` にある。実行方法と対象選択は [仕様書からiOSへ](references/spec-to-ios.md) を参照する。
