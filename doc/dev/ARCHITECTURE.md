@@ -25,7 +25,7 @@ TransitICScanner/
 ├── README.md / README_en.md     … 対応カード一覧・対応OS（日本語 / 英語）
 ├── doc/
 │   ├── cards/<カードID>.md      … カードごとの仕様書（サービスコード、ブロック形式など）
-│   └── dev/                     … 開発ドキュメント（このファイルを含む）
+│   └── dev/                     … 開発ドキュメント（このファイル、CI/CDの設計メモ `CI.md` を含む）
 ├── resource/card/<カードID>/    … カード券面画像の元データ（アプリには Assets.xcassets 経由で取り込む）
 ├── skills/                      … カード開発・翻訳スキル、テンプレート、検証ツール
 ├── AppIcon.psd                  … アプリアイコンの元データ
