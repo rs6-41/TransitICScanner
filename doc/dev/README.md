@@ -6,6 +6,7 @@
  - [スキル・検証補助の規定](../../skills/AGENTS.md)：再利用手順とテスト
  - [工程別スキル](../../skills/README.md)：Issue作成、仕様書、iOS実装、翻訳補完
  - [ファイル構成とアーキテクチャ](./ARCHITECTURE.md)：各ファイルの役割・実装意図、よくある変更で触るファイル
+ - [CI/CDの設計メモ](./CI.md)：GitHub Actions・Xcode Cloudの構成と実装意図
 
 ## 開発環境
 ### iOS
@@ -84,6 +85,8 @@ git status --short
 ビルド対象の選び方は[Apple実装規定](../../iOS/TransitICScanner/AGENTS.md)を参照してください。ファイルの追加・改名後はステージしてから `git ls-files` を使うと、新しいファイルもformat/lintの対象になります。
 
 ## CI/CD
+
+構成の理由・各スクリプトの実装意図は [CI/CDの設計メモ](./CI.md) を参照してください。
 
 | 仕組み | 契機 | 内容 | 設定 |
 |---|---|---|---|
