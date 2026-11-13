@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "example.reader.unavailable" : {
+      "comment" : "外部カードリーダーが接続されていないときの状態表示。内蔵NFCの有効・無効を指す文言ではない。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : { "state" : "translated", "value" : "No card reader connected" }
+        },
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "カードリーダーが接続されていません" }
+        },
+        "zh-Hans" : {
+          "stringUnit" : { "state" : "translated", "value" : "未连接读卡器" }
+        },
+        "zh-Hant" : {
+          "stringUnit" : { "state" : "translated", "value" : "未連接讀卡機" }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

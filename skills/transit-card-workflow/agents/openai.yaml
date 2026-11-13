@@ -1,0 +1,4 @@
+interface:
+  display_name: "交通ICカード調査・iOS実装"
+  short_description: "交通ICのIssue作成・調査情報の仕様書化・iOS実装を共通化"
+  default_prompt: "$transit-card-workflow を使い、対象カードの調査・iOS実装Issue作成、調査情報の文書化、仕様書からの実装のうち依頼した工程を進めてください。"
