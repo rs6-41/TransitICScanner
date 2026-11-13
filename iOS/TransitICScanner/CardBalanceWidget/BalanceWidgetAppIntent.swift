@@ -37,7 +37,7 @@ struct CardBalanceQuery: EntityQuery {
 
         return savedWidgetData.map {
             CardBalanceModel(
-                name: $0.DisplayName ?? "unknown",
+                name: $0.displayName ?? "unknown",
                 idm: $0.idm
             )
         }
@@ -51,7 +51,7 @@ struct CardBalanceQuery: EntityQuery {
             .filter { ids.contains($0.idm) }
             .map {
                 CardBalanceModel(
-                    name: $0.DisplayName ?? "unknown",
+                    name: $0.displayName ?? "unknown",
                     idm: $0.idm
                 )
             }

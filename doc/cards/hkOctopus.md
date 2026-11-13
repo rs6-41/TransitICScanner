@@ -252,7 +252,7 @@ graph LR;
 
 # コンバーター
 
-`hkOctopusConverter.swift`では、取得したデータを表示用データへ変換する。
+`HKOctopusConverter.swift`では、取得したデータを表示用データへ変換する。
 
 ## 残高変換
 
@@ -280,7 +280,7 @@ String(format: "%.2f", hkd)
 
 として表示される。
 
-※`hkOctopus_balance`側ではデポジットHK$50を差し引いた値を`Result.balance`へ格納しているため、スキャン時の残高とコンバーターへ直接渡した整数値では意味が異なる点に注意。
+※`hkOctopusBalance`側ではデポジットHK$50を差し引いた値を`Result.balance`へ格納しているため、スキャン時の残高とコンバーターへ直接渡した整数値では意味が異なる点に注意。
 
 ---
 
@@ -353,18 +353,18 @@ Octopus
 |ファイル|内容|
 |---|---|
 |`hkOctopus.swift`|Octopusカード定義・FeliCa読み取り・IDm・残高取得|
-|`hkOctopusConverter.swift`|残高・カード情報・履歴の表示用変換|
+|`HKOctopusConverter.swift`|残高・カード情報・履歴の表示用変換|
 
 ### 主な関数
 
 |関数|内容|
 |---|---|
-|`hkOctopus_scan`|Octopusカード全体の読み取り|
-|`hkOctopus_balance`|FeliCaから残高を取得|
-|`hkOctopus_info`|IDm・カード情報を取得|
-|`hkOctopus_Converter.balance`|残高表示変換|
-|`hkOctopus_Converter.cardInfo`|カード情報表示変換|
-|`hkOctopus_Converter.history`|履歴表示変換|
+|`hkOctopusRead`|Octopusカード全体の読み取り|
+|`hkOctopusBalance`|FeliCaから残高を取得|
+|`hkOctopusInfo`|IDm・カード情報を取得|
+|`HKOctopusConverter.balance`|残高表示変換|
+|`HKOctopusConverter.cardInfo`|カード情報表示変換|
+|`HKOctopusConverter.history`|履歴表示変換|
 
 ---
 

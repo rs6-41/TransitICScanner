@@ -1,6 +1,6 @@
 import Foundation
 
-enum twICash_Converter {
+enum TWICashConverter {
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {

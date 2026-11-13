@@ -29,7 +29,7 @@ struct EmptyViewSideBar: View {
 // MARK: - iPhone Duo のヒンジ
 
 /// 折りたたみ端末(iPhone Duo)が開いているかを `value` に反映する
-struct iPhoneDuoHingeModifier: ViewModifier {
+struct IPhoneDuoHingeModifier: ViewModifier {
     @Binding var value: Bool
 
     func body(content: Content) -> some View {
@@ -50,6 +50,6 @@ struct iPhoneDuoHingeModifier: ViewModifier {
 
 extension View {
     func iPhoneDuoHinge(value: Binding<Bool>) -> some View {
-        self.modifier(iPhoneDuoHingeModifier(value: value))
+        self.modifier(IPhoneDuoHingeModifier(value: value))
     }
 }

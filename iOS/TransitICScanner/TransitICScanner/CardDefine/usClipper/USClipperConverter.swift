@@ -1,6 +1,6 @@
 import Foundation
 
-enum usClipper_Converter {
+enum USClipperConverter {
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {

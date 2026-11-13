@@ -1,6 +1,6 @@
 import Foundation
 
-enum cnTunion_Converter {
+enum CNTUnionConverter {
 
     static func balance(_ value: Int) -> String {
         let hkd = Double(value) / 10.0
@@ -10,7 +10,7 @@ enum cnTunion_Converter {
     static func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         var type: String
 
-        type = cnTunion_getIssueInfo(iin: String(info.idm)).name
+        type = cnTunionGetIssueInfo(iin: String(info.idm)).name
 
         return DisplayCardInfo(
             idm: info.idm,

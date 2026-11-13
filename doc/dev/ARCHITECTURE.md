@@ -3,7 +3,7 @@
 このドキュメントは、リポジトリのファイル構成と、各ファイルの役割・実装意図をまとめたものです。
 人間が全体像をつかむため、また LLM が「どのファイルを読む・触るべきか」を判断するために使います。
 
-- 対象：`main` から派生した `feature/ios/refactor-92`（Issue #92）時点の構成
+- 命名・ファイル参照はIssue #125の整理を反映。共通規定はルートの [`AGENTS.md`](../../AGENTS.md)、Apple実装規定は [`iOS/TransitICScanner/AGENTS.md`](../../iOS/TransitICScanner/AGENTS.md) を参照する
 - パスはリポジトリルートからの相対パス。iOS ソースは `iOS/TransitICScanner/` 配下
 - カード定義の追加・変更ルールは [`CardDefine/AGENTS.md`](../../iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md) が正。このドキュメントと食い違う場合は AGENTS.md を優先する
 - ファイルを追加・移動・改名したら、このドキュメントも更新する
@@ -83,7 +83,7 @@ TransitICScanner/
 | `CardDefine/Area.swift` | ✅ | ✅ |
 | `Result/ResultModel.swift` | | ✅ |
 | `Result/SaveData/ResultSave.swift` | | ✅ |
-| `Localize/localize.swift` | | ✅ |
+| `Localize/Localization.swift` | | ✅ |
 | `Localize/*.xcstrings` | ✅（リソースとして） | ✅ |
 | `Assets.xcassets`, `AppIcon/*` | ✅ | ✅（Watch 用アイコンのみ） |
 
@@ -129,10 +129,10 @@ flowchart TD
     B -- 外部リーダー --> F[NFCScannerModel.scanWithExternalReader<br/>SmartCardManager.withCard]
     E -- FeliCa --> G[readFeliCa id:<br/>CoreNFCFeliCaTag]
     F -- FeliCa --> H[readFeliCa id:<br/>ExternalFeliCaTag]
-    G --> I[カード別 &lt;card&gt;_read<br/>CardDefine/&lt;card&gt;/]
+    G --> I[カード別 &lt;card&gt;Read<br/>CardDefine/&lt;card&gt;/]
     H --> I
-    E -- ISO7816/DESFire --> J[&lt;card&gt;_scan<br/>APDUSend で送受信]
-    F -- ISO7816/DESFire --> K[&lt;card&gt;_scanExternal<br/>APDUSend で送受信]
+    E -- ISO7816/DESFire --> J[&lt;card&gt;Scan<br/>APDUSend で送受信]
+    F -- ISO7816/DESFire --> K[&lt;card&gt;ScanExternal<br/>APDUSend で送受信]
     I --> L[ScanResult]
     J --> L
     K --> L
@@ -147,14 +147,14 @@ flowchart TD
 |---|---|---|
 | **カードは `CardID` enum で識別し、分岐は網羅的な `switch` で書く** | カードを追加したときの分岐漏れをコンパイルエラーで検出するため。rawValue は保存データやローカライズキーにも使われるので変更しない | `Scan/CardModel.swift`, `CardDefine/ScannerBranch.swift` |
 | **FeliCa の読み取りは `FeliCaTagReading` に対して1つだけ実装する** | 内蔵リーダーと外部リーダーで同じ解析処理を通し、解析処理の重複や挙動のずれを防ぐため。外部リーダーは PC/SC の疑似 APDU（`FF A4` / `FF B0`）を、CoreNFC と同じ `readWithoutEncryption` の形に変換する | `Scan/FeliCa/FeliCaTagReading.swift` |
-| **ISO7816 / DESFire カードは `APDUSend` クロージャで送受信を抽象化する** | CoreNFC（`NFCISO7816Tag` / `NFCMiFareTag`）と CryptoTokenKit（`TKSmartCard`）の違いを吸収するため | `Scan/CardModel.swift`（`APDUSend`）, 各カードの `_scan` / `_scanExternal` |
+| **ISO7816 / DESFire カードは `APDUSend` クロージャで送受信を抽象化する** | CoreNFC（`NFCISO7816Tag` / `NFCMiFareTag`）と CryptoTokenKit（`TKSmartCard`）の違いを吸収するため | `Scan/CardModel.swift`（`APDUSend`）, 各カードの `Scan` / `ScanExternal` |
 | **読み取った値（生データ）と表示用の値を分ける** | 保存データにはカードから読んだ値だけを残し、取引種別名などは表示時に Converter で変換する。変換ロジックを直せば過去の保存データの表示も直る | `Result/ResultModel.swift`, `CardDefine/ConverterType.swift`, `*Converter.swift` |
-| **読めなかった値を 0 や空として扱わない** | 誤った残高を表示しないため。読取に失敗したら `nil` を返し、セッションをエラーで終了する | 各カードの `_read` |
+| **読めなかった値を 0 や空として扱わない** | 誤った残高を表示しないため。読取に失敗したら `nil` を返し、セッションをエラーで終了する | 各カードの `Read` |
 | **保存先はプロセス起動時に一度だけ決める** | ModelContainer と Widget の参照先が起動中に食い違うのを防ぐため | `Result/SaveData/Storage.swift`（`StorageConfig`） |
 | **履歴の `transactionId` はカード内で一意かつ再読取しても同じ値にする** | 保存時に `transactionId` で重複を除くため。連番がないカードは `ResultHistory.makeTransactionID` を使う。並び順の番号や固定値を使うと履歴が保存されない | `Result/ResultModel.swift`, `Result/SaveData/ResultSave.swift` |
 | **iPhone の画面遷移は `NavigationStack` のパスで行う** | compact 幅で `NavigationSplitView` を差し替えたり `preferredCompactColumn` で遷移したりすると、アニメーションが出ない・遷移先が空になる不具合があったため。分割表示は regular 幅（iPad・Mac）だけで使う | `Scan/List/CardListView.swift`, `Result/SaveData/SavedListView.swift` |
 | **ログは `Log.debug` / `Log.error` を使い、`print` は使わない** | リリースビルドで IDm や履歴の生データを出力しないため | `Utility/Log.swift` |
-| **表示文字列はローカライズキーで持つ** | 多言語（現在は en / ja / zh-Hans / zh-Hant）に対応するため。カード名・地域・発行者などもキー（例：`issue.jp.miyazaki.city.sendai`）で保存する | `Localize/Localizable.xcstrings`, `Localize/localize.swift` |
+| **表示文字列はローカライズキーで持つ** | 多言語（現在は en / ja / zh-Hans / zh-Hant）に対応するため。カード名・地域・発行者などもキー（例：`issue.jp.miyazaki.city.sendai`）で保存する | `Localize/Localizable.xcstrings`, `Localize/Localization.swift` |
 
 ### 4.3 主要な型
 
@@ -199,8 +199,8 @@ flowchart TD
 
 | ファイル | 内容 |
 |---|---|
-| `<カードID>.swift` | ① `let <カードID> = CardInfo(...)`：一覧表示・検索・サンプル・`ScanOption`<br>② `extension NFCScannerModel` の読取処理：FeliCa なら `<id>_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult?`、ISO7816 なら `<id>_scan(tag, session)` と `<id>_scanExternal(using:)` |
-| `<カードID>Converter.swift` | `enum <id>_Converter`。`history(_:) -> DisplayHistory` と `cardInfo(_:) -> DisplayCardInfo`。取引種別コード → ローカライズ文字列の変換など |
+| `<カードID>.swift` | ① `let <カードID> = CardInfo(...)`：一覧表示・検索・サンプル・`ScanOption`<br>② `extension NFCScannerModel` の読取処理：FeliCa なら `<id>Read(_ felicaTag: any FeliCaTagReading) async -> ScanResult?`、ISO7816 なら `<id>Scan(tag, session)` と `<id>ScanExternal(using:)` |
+| `<国コード大文字のカード名>Converter.swift` | `enum <国コード大文字のカード名>Converter`。`history(_:) -> DisplayHistory` と `cardInfo(_:) -> DisplayCardInfo`。取引種別コード → ローカライズ文字列の変換など |
 
 **共通ファイル**
 
@@ -210,15 +210,15 @@ flowchart TD
 | `ScannerBranch.swift` | `relCards` / `featureCards` / `devCards`（一覧に出すカード）、`switchCard(id:)`、`scanWithExternalReader`、`readFeliCa(id:)` | 読取方式ごとの振り分けを1か所に集めている。FeliCa のカードは `readFeliCa` に1行追加するだけで、内蔵リーダーと外部リーダーの両方に対応する |
 | `ConverterType.swift` | `ConverterType` enum と、各 Converter への振り分け。`Data.toIntReversed` | SAPICA などの互換カードは `.jpIC` の Converter を共有する（`CardID` と `ConverterType` は1対1ではない） |
 | `Area.swift` | `AreaType`（国）、`RegionType`（地域区分）、`regionLists`、`CurrencyType`（通貨と表示書式） | Watch とも共有 |
-| `cardDesignList.swift` | 券面画像の一覧（Converter と券種から画像名を引く） | `Scan/List/CardImage.swift` の `getCardImageName` から使う |
-| `prefSort.swift` | 日本の都道府県の並び順 | 一覧の地域ソートに使う |
+| `CardDesigns.swift` | 券面画像の一覧（Converter と券種から画像名を引く） | `Scan/List/CardImage.swift` の `getCardImageName` から使う |
+| `PrefectureSort.swift` | 日本の都道府県の並び順 | 一覧の地域ソートに使う |
 
 **カード一覧**（`CardID` 順）
 
 | CardID | 方式 | 公開状態 | 備考 |
 |---|---|---|---|
 | `jpIC`, `jpIC_SAPICA`, `jpIC_IruCa`, `jpIC_icsca` | FeliCa | rel | 実装は `jpIC/` で共有。システムコードと発行情報だけが異なる |
-| `cnTunion` | ISO7816 | rel | 4ファイルに分割：`cnTunion.swift`（読取フロー）、`+APDU`、`+FCI`（FCI・管理情報）、`+Records`（残高・取引記録）。`cnTunion_cards.swift` は IIN から発行都市・発行者を引く表 |
+| `cnTunion` | ISO7816 | rel | 4ファイルに分割：`cnTunion.swift`（読取フロー）、`+APDU`、`+FCI`（FCI・管理情報）、`+Records`（残高・取引記録）。`CNTUnionIssuerInfo.swift` は IIN から発行都市・発行者を引く表 |
 | `hkOctopus` | FeliCa | rel | 残高は 0.1HKD 単位で、デポジット HK$50 を含む |
 | `krOneCard` | ISO7816 | rel | KS X 6924 |
 | `twICash` | ISO7816 | rel | |
@@ -246,14 +246,14 @@ flowchart TD
 | `List/ListButton.swift` | 一覧の行（`CardListRow`）と読取ボタン（`ScanningButton`） | 読取の起点。結果は `onResult` で呼び出し元に渡し、画面遷移は CardList が行う。**シミュレータでは NFC の代わりにカード定義のサンプル結果を返す**（画面遷移の確認用） |
 | `List/ScanReaderPicker.swift` | 内蔵リーダーと外部リーダーの選択 UI | |
 | `List/CardImage.swift` | 券面画像の表示と画像名の解決 | |
-| `List/getCountry.swift` | 位置情報から現在の国を判定し、一覧の初期表示地域に使う | `CLGeocoder` は iOS 26 で非推奨（警告あり）。MapKit への移行が今後必要 |
+| `List/countryLocationProvider.swift` | 位置情報から現在の国を判定し、一覧の初期表示地域に使う | `CLGeocoder` は iOS 26 で非推奨（警告あり）。MapKit への移行が今後必要 |
 
 ### 5.4 `Result/` — 結果のモデル・表示・保存
 
 | ファイル | 役割 | 実装意図・メモ |
 |---|---|---|
 | `ResultModel.swift` | `ScanResult` と、生データ / 表示用データの型、`ResultHistory.makeTransactionID` | `ScanResult` は Swift 標準の `Result` との衝突を避けるための名前。カード内に取引の連番がない場合は `makeTransactionID`（日時・種別・残高から作る）で `transactionId` を作る |
-| `ResultView.swift` | 結果画面（残高、カード情報、発行情報、履歴、保存ボタン） | 新しく読み取った結果（`scandata`）は閉じるときに `ResultSave.save` で保存する。保存済みカードの表示では、表示名・券面の変更だけを `ResultSave.updateUserData` で保存し、残高や履歴は書き換えない |
+| `ResultView.swift` | 結果画面（残高、カード情報、発行情報、履歴、保存ボタン） | 新しく読み取った結果（`isNewScan`）は閉じるときに `ResultSave.save` で保存する。保存済みカードの表示では、表示名・券面の変更だけを `ResultSave.updateUserData` で保存し、残高や履歴は書き換えない |
 | `BalanceFormat.swift` | `Double` の残高表示書式 | Widget・Watch と共有 |
 | `SaveData/Storage.swift` | `AppEnvironment`、`StorageConfig`（App Group・CloudKit コンテナ・デバッグ用ストレージの切り替え） | 全ターゲットで共有。デバッグ用ストレージの設定はリリース用 App Group に保存し、Widget からも読めるようにしている |
 | `SaveData/ResultSave.swift` | `CloudSyncSettings`、`SavedDataModelContainer`（ModelContainer の作成）、`SavedCard` / `SavedHistory`（`@Model`）、`ResultSave`（保存・読込・削除） | 同じ `transactionId` の履歴は重複して保存しない。保存・削除の後に `WidgetDataStore` を更新する |
@@ -280,10 +280,10 @@ flowchart TD
 | `NFCTool/NFCToolView.swift`, `NFCLogView.swift` | （DEV のみ）保存済みカードの `fullLog` の閲覧 | 新しいカードの解析用 |
 | `Debug/DebugSettingView.swift` | デバッグ設定（広告デバッグ、デバッグ用ストレージ、初回モーダルの再表示、サンプル保存） | |
 | `Debug/DummyCardFormView.swift` | ダミーのカードを手入力で作るフォーム | 実機やカードがなくても保存・Widget の動作を確かめるため |
-| `Debug/EnableTestCardsView.swift`, `CardListItemDebugView.swift`, `getResultSample.swift` | テストカードの有効化、一覧のデバッグ表示、`CardInfo.sample` から `ScanResult` を作る処理 | |
+| `Debug/EnableTestCardsView.swift`, `CardListItemDebugView.swift`, `makeSampleResult.swift` | テストカードの有効化、一覧のデバッグ表示、`CardInfo.sample` から `ScanResult` を作る処理 | |
 | `Localize/Localizable.xcstrings` | アプリ全体の文字列カタログ | 簡体字から繁体字への変換は `script/iOS/` のスクリプトを使う |
 | `Localize/InfoPlist.xcstrings` | 権限ダイアログの文言など | |
-| `Localize/localize.swift` | `Localize(_:)`：キーをローカライズ済みの文字列として取得する（表示以外の用途向け） | |
+| `Localize/Localization.swift` | `localizedString(_:)`：キーをローカライズ済みの文字列として取得する（表示以外の用途向け） | |
 | `Utility/Log.swift` | `Log.debug`（DEBUG のみ、値は `.private`）、`Log.error`（常に出力） | カテゴリは呼び出し元のファイル名 |
 | `Config/*.xcconfig` | `APP_ENVIRONMENT` の定義 | |
 
@@ -305,7 +305,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 
 | ファイル | 役割 |
 |---|---|
-| `TransitICScanner_WatchApp.swift` | `@main` |
+| `TransitICScannerWatchApp.swift` | `@main` |
 | `ContentView.swift`, `SavedListView.swift`, `WatchResultView.swift` | CloudKit から同期した保存済みカードの一覧と詳細（Watch では読み取りはしない）。`SavedListView` が共有の `SavedDataModelContainer.makeContainer()` でコンテナを作る |
 
 ---
@@ -325,9 +325,9 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 
 | やりたいこと | 触るファイル | 注意点 |
 |---|---|---|
-| **新しいカードを追加する** | `doc/cards/<id>.md` → `Scan/CardModel.swift`（`CardID`）→ `CardDefine/<id>/<id>.swift`・`<id>Converter.swift` → `ScannerBranch.swift`（一覧への登録と分岐）→ `ConverterType.swift` → `Info.plist`（システムコード / AID）→ `Localizable.xcstrings` → `Assets.xcassets` / `cardDesignList.swift` → `README.md` / `README_en.md` | **`CardDefine/AGENTS.md` に従う**。`switch` は網羅的なので、追加漏れはビルドエラーで見つかる |
-| FeliCa カードの読取処理を直す | `CardDefine/<id>/<id>.swift` の `<id>_read` と、その中で使っている読取関数 | 内蔵リーダーと外部リーダーの両方に影響する |
-| 取引種別などの表示を直す | `CardDefine/<id>/<id>Converter.swift` | 過去の保存データの表示も変わる |
+| **新しいカードを追加する** | `doc/cards/<id>.md` → `Scan/CardModel.swift`（`CardID`）→ `CardDefine/<id>/<id>.swift`・`<国コード大文字のカード名>Converter.swift` → `ScannerBranch.swift`（一覧への登録と分岐）→ `ConverterType.swift` → `Info.plist`（システムコード / AID）→ `Localizable.xcstrings` → `Assets.xcassets` / `CardDesigns.swift` → `README.md` / `README_en.md` | **`CardDefine/AGENTS.md` に従う**。`switch` は網羅的なので、追加漏れはビルドエラーで見つかる |
+| FeliCa カードの読取処理を直す | `CardDefine/<id>/<id>.swift` の `<id>Read` と、その中で使っている読取関数 | 内蔵リーダーと外部リーダーの両方に影響する |
+| 取引種別などの表示を直す | `CardDefine/<id>/<国コード大文字のカード名>Converter.swift` | 過去の保存データの表示も変わる |
 | 外部リーダーの通信を直す | `Scan/ExternalSmartCardReader/SmartCardManager.swift`、`Scan/FeliCa/FeliCaTagReading.swift`（FeliCa の場合） | |
 | 保存データの項目を増やす | `Result/ResultModel.swift`、`Result/SaveData/ResultSave.swift`（`SavedCard` / `SavedHistory`） | CloudKit 同期のため、プロパティには既定値かオプショナルが必要。**型名・プロパティ名の変更はマイグレーションに影響する** |
 | Widget の表示を変える | `CardBalanceWidget/` 配下、データは `BalanceWidgetModel.swift` | 新しい項目はアプリ側の `ResultSave.save` で書き込む必要がある |
@@ -335,12 +335,10 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 | ログを出す | `Log.debug(...)` / `Log.error(...)` | `print` は使わない。`Log.error` に IDm や個人情報を含めない |
 | 環境ごとの挙動を変える | `ContentView.swift` の `setup()`、`AppEnvironment.current` | 文字列 `"DEV"` などで比較しない |
 
-### コード上の命名規則
+### 命名・実装の共通規定
 
-- カード固有の関数は `<カードID>_<処理名>`（例：`jpIC_balance`、`cnTunion_parseFCI`）とし、`NFCScannerModel` の extension に置く
-- Converter は `enum <カードID>_Converter`（`twEasyCard_old_Converter` のみファイル名が `_Converter`）
-- フォルダ名はカードIDと同じ
-- ローカライズキーは `cardList.*`（一覧）、`<id>.scand.description`（結果画面の説明）、`card.*`（券種）、`locate.*`（地域）、`issue.<国>.<地域>.(city|issuer).*`（発行情報）、`result.history.*`（取引種別）、`scanner.*` / `error.*`（エラー）
+命名・互換性・Git手順はルートの [`AGENTS.md`](../../AGENTS.md)、ターゲット間の責務と検証は [`Apple実装規定`](../../iOS/TransitICScanner/AGENTS.md)、カード固有の実装手順は [`カード定義規定`](../../iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md) に集約する。この文書では規定を重複定義しない。
+
 
 ---
 
@@ -349,7 +347,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 - ビルド確認：`Dev` と `Watch_Dev` に加えて、共有ファイルを触ったら `Widget` も、ログやリリース分岐を触ったら `Release` もビルドする
 - 書式：コミット前に `swift-format` を適用する（設定は `iOS/TransitICScanner/.swift-format`。手順は `doc/dev/README.md`）
 - 画面遷移の確認：シミュレータではカードをタップするとサンプル結果が返るので、iPhone / iPad の両方で 一覧 → 地域 → 結果 → 戻る を確認する
-- 自動テストはまだありません。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
+- 自動テストは `script/tests/`（KMT解析・読取、Widget保存互換性）。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
 - コミットメッセージは `doc/dev/README.md` の形式（絵文字 + Issue番号 + 内容）に従う
 
 ---
@@ -360,8 +358,8 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 |---|---|
 | `CardBalance/` フォルダ | どのターゲットにも属していない Xcode テンプレート（Control Widget の雛形）。ビルド対象外 |
 | 言語モード | `SWIFT_VERSION = 5.0`（Swift 6 の言語モードは未適用）。`ObservableObject` と `@Observable` が混在している |
-| 非推奨 API | `CLGeocoder`（`getCountry.swift`）、`currentOrientationAnchoredAdaptiveBanner`（`BannerAdsView.swift`） |
+| 非推奨 API | `CLGeocoder`（`countryLocationProvider.swift`）、`currentOrientationAnchoredAdaptiveBanner`（`BannerAdsView.swift`） |
 | 綴りの揺れ | ローカライズキーのみ残っている：`*.scand.description`、`cardList.reader.enptyReader`、`issue.jp.miyazaki.*`（icsca。値は宮城県仙台市として正しい） |
-| テスト | テストターゲットと CI はない |
+| テスト | Python経由のSwift回帰テストあり。XcodeテストターゲットとCIはない |
 | リポジトリの場所 | iCloud Drive 上にあると `.git` が破損するおそれがあるため、iCloud の外に置くことを推奨 |
 | `AppIcon.psd` | 8.5MB のバイナリを直接管理している（Git LFS への移行を検討） |

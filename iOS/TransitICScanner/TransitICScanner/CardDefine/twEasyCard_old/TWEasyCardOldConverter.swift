@@ -1,6 +1,6 @@
 import Foundation
 
-enum twEasyCard_old_Converter {
+enum TWEasyCardOldConverter {
     static func balance(_ value: Int) -> String {
         let hkd = Double(value) / 10.0
         return String(format: "%.2f", hkd)

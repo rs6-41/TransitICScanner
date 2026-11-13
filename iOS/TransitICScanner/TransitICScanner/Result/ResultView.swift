@@ -3,7 +3,7 @@ import SwiftData
 
 struct ResultView: View {
     @State var result: ScanResult
-    @State var scandata: Bool
+    @State var isNewScan: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
@@ -32,13 +32,13 @@ struct ResultView: View {
             #if !targetEnvironment(macCatalyst)
             ListAdView(deleteAds: $deleteAds)
             #endif
-            resultUserdataSection
+            resultUserDataSection
             resultInfoSection
             resultHistorySection
         }
         .onDisappear() {
             // 新しく読み取った結果だけを保存する（保存済みカードの表示では保存しない）
-            if scandata {
+            if isNewScan {
                 saveAction()
             }
         }
@@ -52,7 +52,7 @@ struct ResultView: View {
             ToolbarItem(
                 placement: .confirmationAction
             ) {
-                if scandata {
+                if isNewScan {
                     Button(action: {
                         saveAction()
                         if let onDone {
@@ -73,7 +73,7 @@ struct ResultView: View {
     }
 
     @ViewBuilder
-    private var resultUserdataSection: some View {
+    private var resultUserDataSection: some View {
         Section {
             HStack {
                 Text(LocalizedStringKey("result.userData.name"))
@@ -91,7 +91,7 @@ struct ResultView: View {
                 if cardUserName != "" {
                     info.displayName = cardUserName
                     result.info = info
-                    if !scandata {
+                    if !isNewScan {
                         saveUserData()
                     }
                 }
@@ -115,7 +115,7 @@ struct ResultView: View {
                 .pickerStyle(.navigationLink)
             }
             .onAppear() {
-                if scandata {
+                if isNewScan {
                     if cardDesign == nil {
                         if let info = result.info {
                             let display = result.converter.cardInfo(info)
@@ -147,7 +147,7 @@ struct ResultView: View {
 
                 info.iconName = newValue?.imageName
                 result.info = info
-                if !scandata {
+                if !isNewScan {
                     saveUserData()
                 }
             }
@@ -211,7 +211,7 @@ struct ResultView: View {
                     .textSelection(.enabled)
             }
 
-            if !display.type.isEmpty && Localize(display.nameShort) != Localize(display.type) {
+            if !display.type.isEmpty && localizedString(display.nameShort) != localizedString(display.type) {
                 LabeledContent(LocalizedStringKey("result.info.cardType")) {
                     Group {
                         if display.typeLocalizeTable != "" {
@@ -220,7 +220,7 @@ struct ResultView: View {
                                     localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
                             )
                         } else {
-                            Text(Localize(display.type))
+                            Text(localizedString(display.type))
                         }
                     }
                     .textSelection(.enabled)
@@ -295,7 +295,8 @@ struct ResultView: View {
         .onAppear() {
             if let area = issueInfo.area {
                 if let city = issueInfo.city {
-                    areaText = LocalizedStringKey("issue.cityNameLocalize:\(Localize(area)),\(Localize(city))")
+                    areaText = LocalizedStringKey(
+                        "issue.cityNameLocalize:\(localizedString(area)),\(localizedString(city))")
                 } else {
                     areaText = LocalizedStringKey(area)
                 }
@@ -489,10 +490,10 @@ struct ResultView: View {
                             cardUserName = String(
                                 localized: String.LocalizationValue(display.type), table: display.typeLocalizeTable)
                         } else {
-                            cardUserName = Localize(display.type)
+                            cardUserName = localizedString(display.type)
                         }
                     } else {
-                        cardUserName = Localize(display.nameShort)
+                        cardUserName = localizedString(display.nameShort)
                     }
                 } else {
                     cardUserName = String(localized: "card")

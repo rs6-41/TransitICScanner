@@ -36,9 +36,9 @@ let idKMT = CardInfo(
 extension NFCScannerModel {
 
     /// KAI Commuter (KMT) を読み取る。内蔵リーダー・外部リーダー共通。
-    func idKMT_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+    func idKMTRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard
-            let data = await idKMT_readData(
+            let data = await idKMTReadData(
                 felicaTag,
                 count: self.scanOption.historyCount
             )
@@ -46,7 +46,7 @@ extension NFCScannerModel {
             return nil
         }
 
-        let info = idKMT_info(felicaTag, data: data)
+        let info = idKMTInfo(felicaTag, data: data)
 
         return ScanResult(
             balance: Double(data.balance),
@@ -60,12 +60,12 @@ extension NFCScannerModel {
         )
     }
 
-    func idKMT_readData(
+    func idKMTReadData(
         _ felicaTag: any FeliCaTagReading,
         count: Int
     ) async -> KMTData? {
         guard
-            let idBlock = await idKMT_readBlocks(
+            let idBlock = await idKMTReadBlocks(
                 felicaTag,
                 service: Data([0x0B, 0x30]),
                 blocks: [0]
@@ -76,7 +76,7 @@ extension NFCScannerModel {
         }
 
         guard
-            let balanceBlock = await idKMT_readBlocks(
+            let balanceBlock = await idKMTReadBlocks(
                 felicaTag,
                 service: Data([0x17, 0x10]),
                 blocks: [0]
@@ -86,7 +86,7 @@ extension NFCScannerModel {
             return nil
         }
 
-        let historyBlocks = await idKMT_readHistoryBlocks(
+        let historyBlocks = await idKMTReadHistoryBlocks(
             felicaTag,
             service: Data([0x0F, 0x20]),
             maxCount: min(max(count, 0), 20)
@@ -111,7 +111,7 @@ extension NFCScannerModel {
     /// カードに保存されている履歴の件数より後ろのブロックは読めない（ステータスエラーになる）ため、
     /// まとめて読むと履歴が少ないカードで読取全体が失敗する。
     /// 読めないブロック・空のブロックに達したら、そこまでを履歴として返す。
-    func idKMT_readHistoryBlocks(
+    func idKMTReadHistoryBlocks(
         _ tag: any FeliCaTagReading,
         service: Data,
         maxCount: Int
@@ -119,7 +119,7 @@ extension NFCScannerModel {
         var blocks: [Data] = []
 
         for index in 0..<min(max(maxCount, 0), 20) {
-            guard let block = await idKMT_readBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
+            guard let block = await idKMTReadBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
                 Log.debug("KMT: 履歴ブロック \(index) 以降は読めないため終了")
                 break
             }
@@ -134,7 +134,7 @@ extension NFCScannerModel {
         return blocks
     }
 
-    func idKMT_readBlocks(
+    func idKMTReadBlocks(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
@@ -180,7 +180,7 @@ extension NFCScannerModel {
         return result
     }
 
-    func idKMT_info(
+    func idKMTInfo(
         _ felicaTag: any FeliCaTagReading,
         data: KMTData
     ) -> ResultCardInfo {

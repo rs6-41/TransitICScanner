@@ -45,7 +45,7 @@ let twICash = CardInfo(
 )
 
 extension NFCScannerModel {
-    func twICash_scan(
+    func twICashScan(
         _ tag: NFCTag,
         _ session: NFCTagReaderSession
     ) {
@@ -68,7 +68,7 @@ extension NFCScannerModel {
 
         Task {
             do {
-                let result = try await twICash_result(using: send)
+                let result = try await twICashResult(using: send)
 
                 await self.completeScan(result, session: session)
             } catch {
@@ -86,14 +86,14 @@ extension NFCScannerModel {
         }
     }
 
-    func twICash_scanExternal(using manager: SmartCardManager) async throws {
+    func twICashScanExternal(using manager: SmartCardManager) async throws {
         let result = try await manager.withCard { card in
-            try await twICash_result(using: manager.apduSender(for: card))
+            try await twICashResult(using: manager.apduSender(for: card))
         }
         await MainActor.run { self.result = result }
     }
 
-    private func twICash_result(using send: @escaping APDUSend) async throws -> ScanResult {
+    private func twICashResult(using send: @escaping APDUSend) async throws -> ScanResult {
         let reader = ICash2Reader(send: send)
         let readResult = try await reader.readCard()
 
@@ -113,7 +113,7 @@ extension NFCScannerModel {
             )
         }
 
-        let history = twICash_makeHistory(
+        let history = twICashMakeHistory(
             records: readResult.records,
             currentBalance: Double(readResult.balance)
         )
@@ -141,7 +141,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func twICash_makeHistory(
+    private func twICashMakeHistory(
         records: [ICash2Record],
         currentBalance: Double
     ) -> [ResultHistory] {
@@ -153,10 +153,10 @@ extension NFCScannerModel {
                 return lhsDate > rhsDate
             }
 
-            return twICash_transactionID(
+            return twICashTransactionID(
                 record: $0
             )
-                > twICash_transactionID(
+                > twICashTransactionID(
                     record: $1
                 )
         }
@@ -169,7 +169,7 @@ extension NFCScannerModel {
 
             let historyItem = ResultHistory(
                 processType: record.transactionCode,
-                date: twICash_dateComponents(
+                date: twICashDateComponents(
                     from: record.date
                 ),
                 balance: balance,
@@ -180,7 +180,7 @@ extension NFCScannerModel {
                 stationIn: 0,
                 lineOut: 0,
                 stationOut: 0,
-                transactionId: twICash_transactionID(
+                transactionId: twICashTransactionID(
                     record: record
                 ),
                 mappingID: record.mappingID
@@ -194,7 +194,7 @@ extension NFCScannerModel {
         return history
     }
 
-    private func twICash_dateComponents(
+    private func twICashDateComponents(
         from date: Date?
     ) -> DateComponents {
         guard let date else {
@@ -228,7 +228,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func twICash_transactionID(
+    private func twICashTransactionID(
         record: ICash2Record
     ) -> Int {
         var value = 0

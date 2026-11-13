@@ -125,10 +125,10 @@ struct NFCLogDetailView: View {
             lines.append("\(name): \(value)")
         }
 
-        append("Scanning at ", Localize("appName"))
+        append("Scanning at ", localizedString("appName"))
         lines.append("")
         append("IDm", result.info?.idm)
-        append("Name", Localize(result.info?.name ?? ""))
+        append("Name", localizedString(result.info?.name ?? ""))
         append("Serial", result.info?.serial)
         append("Version", result.info?.version)
         append("Valid Date", result.info?.validDate)
@@ -174,7 +174,7 @@ struct NFCLogDetailView: View {
                 Group {
                     informationRow(
                         name: "Scanning at ",
-                        value: Localize("appName")
+                        value: localizedString("appName")
                     )
                     informationRow(
                         name: "IDm",
@@ -183,7 +183,7 @@ struct NFCLogDetailView: View {
 
                     informationRow(
                         name: "Name",
-                        value: Localize(result.info?.name ?? "")
+                        value: localizedString(result.info?.name ?? "")
                     )
 
                     informationRow(

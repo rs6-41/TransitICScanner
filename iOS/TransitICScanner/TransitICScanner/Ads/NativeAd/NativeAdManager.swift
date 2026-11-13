@@ -3,10 +3,10 @@ import Combine
 import GoogleMobileAds
 import SwiftUI
 
-let dev_NativeAdUnitID =
+let debugNativeAdUnitID =
     "ca-app-pub-3940256099942544/3986624511"
 
-var NativeAdUnitIDValue = NativeUnitID
+var activeNativeAdUnitID = NativeUnitID
 
 final class NativeAdManager: NSObject, ObservableObject {
     @Published private(set) var ad: NativeAd?
@@ -41,7 +41,7 @@ final class NativeAdManager: NSObject, ObservableObject {
             .bottomRightCorner
 
         let loader = AdLoader(
-            adUnitID: NativeAdUnitIDValue,
+            adUnitID: activeNativeAdUnitID,
             rootViewController: nil,
             adTypes: [.native],
             options: [

@@ -6,7 +6,7 @@ import GoogleMobileAds
 import Observation
 
 @Observable
-class adSetting {
+class NativeAdLayoutSettings {
     let icon: CGFloat = 48.0
     var textWidth: CGFloat = 150
     var viewSize: CGFloat = 0.0
@@ -21,7 +21,7 @@ struct NativeAdContentView: View {
     let advertiserView: UIView?
     let callToActionView: UIView?
 
-    private let setting = adSetting()
+    private let setting = NativeAdLayoutSettings()
     var body: some View {
         HStack(spacing: 8) {
             if let mediaView {
@@ -270,7 +270,7 @@ final class NativeAdContainerView: NativeAdView {
         }
         clearAdViews()
         configuredAd = nativeAd
-        let setting = adSetting()
+        let setting = NativeAdLayoutSettings()
         let headlineController = UIHostingController(
             rootView: NativeAdTextHostingView(
                 text: nativeAd.headline ?? "",

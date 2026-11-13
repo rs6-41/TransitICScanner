@@ -31,13 +31,13 @@ extension NFCScannerModel {
             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             scanFeliCa(id: id, tag, session)
         case .cnTunion:
-            self.cnTunion_scan(tag, session)
+            self.cnTunionScan(tag, session)
         case .krOneCard:
-            self.krOneCard_scan(tag, session)
+            self.krOneCardScan(tag, session)
         case .twICash:
-            self.twICash_scan(tag, session)
+            self.twICashScan(tag, session)
         case .usClipper:
-            self.usClipper_scan(tag, session)
+            self.usClipperScan(tag, session)
         case .twEasyCard_old:
             // スクレイピングで取得するため NFC 読取はない
             return
@@ -58,13 +58,13 @@ extension NFCScannerModel {
             .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
             try await scanFeliCaExternal(id: id, using: manager)
         case .usClipper:
-            try await usClipper_scanExternal(using: manager)
+            try await usClipperScanExternal(using: manager)
         case .krOneCard:
-            try await krOneCard_scanExternal(using: manager)
+            try await krOneCardScanExternal(using: manager)
         case .cnTunion:
-            try await cnTunion_scanExternal(using: manager)
+            try await cnTunionScanExternal(using: manager)
         case .twICash:
-            try await twICash_scanExternal(using: manager)
+            try await twICashScanExternal(using: manager)
         case .twEasyCard_old, .spFlashPay:
             throw ReaderError.message(
                 String(localized: "cardList.reader.unsupported")
@@ -79,19 +79,19 @@ extension NFCScannerModel {
     func readFeliCa(id: CardID, _ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca:
-            await jpIC_read(felicaTag, cardID: id)
+            await jpICRead(felicaTag, cardID: id)
         case .hkOctopus:
-            await hkOctopus_read(felicaTag)
+            await hkOctopusRead(felicaTag)
         case .jpNplus:
-            await jpNplus_read(felicaTag)
+            await jpNplusRead(felicaTag)
         case .jpOKICA:
-            await jpOKICA_read(felicaTag)
+            await jpOKICARead(felicaTag)
         case .jpDoCard:
-            await jpDoCard_read(felicaTag)
+            await jpDoCardRead(felicaTag)
         case .jpRapica:
-            await jpRapica_read(felicaTag)
+            await jpRapicaRead(felicaTag)
         case .idKMT:
-            await idKMT_read(felicaTag)
+            await idKMTRead(felicaTag)
         case .cnTunion, .krOneCard, .twICash, .usClipper,
             .twEasyCard_old, .spFlashPay:
             nil

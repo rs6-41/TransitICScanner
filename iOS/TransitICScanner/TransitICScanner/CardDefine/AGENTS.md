@@ -1,6 +1,13 @@
 # カード定義実装ルール
 
-このファイルは `iOS/TransitICScanner/TransitICScanner/CardDefine/` 以下でカード定義または読取実装を追加・変更する作業に適用する。カード仕様書から実装を追加するときは、以下をすべて守ること。
+ルートの `AGENTS.md` と `iOS/TransitICScanner/AGENTS.md` を継承し、このディレクトリのカード定義・読取実装・Converterに適用する。共通の命名・保存互換性・Git手順は親の規定を参照する。
+
+## 命名と共有パターン
+
+- カード定義の定数・フォルダ・主定義ファイルは既存カードIDを使う（例：`jpIC` / `jpIC.swift`）。保存・ローカライズ・Assetと共通の識別子は維持する。
+- 内部関数はカードIDに続けてlowerCamelCaseで処理を書く（`jpICRead`、`cnTunionParseFCI`、`idKMTReadHistoryBlocks`）。`<カードID>_<処理名>` は使わない。
+- Converterなどの型はUpperCamelCaseとし、国コードを大文字にする（`JPICConverter`、`CNTUnionConverter`、`IDKMTConverter`）。Converterのファイル名は型名に合わせる。
+- 名前だけを変更する作業ではサービスコード・バイト解析・表示分類・公開状態を変更しない。仕様書中の実装参照は新しい名前に更新し、仕様値は維持する。
 
 ## 1. 仕様の根拠
 
@@ -12,7 +19,7 @@
 
 ## 2. 既存アーキテクチャとの整合
 
-- 新規カードの実装前に `CardModel.swift`、`ScannerBranch.swift`、`ConverterType.swift`、`Area.swift`、`cardDesignList.swift`、`prefSort.swift` と、仕様が近い既存カードの定義・読取処理・Converterを読む。近いカードのコードは構造の参考に限り、カード固有の仕様値や変換規則をコピーしない。
+- 新規カードの実装前に `CardModel.swift`、`ScannerBranch.swift`、`ConverterType.swift`、`Area.swift`、`CardDesigns.swift`、`PrefectureSort.swift` と、仕様が近い既存カードの定義・読取処理・Converterを読む。近いカードのコードは構造の参考に限り、カード固有の仕様値や変換規則をコピーしない。
 - カード情報は `CardInfo` と `ScanOption` の既存モデルで表現する。共通モデルや既存の型を確認せずに重複モデルを追加しない。
 - カードの識別子 `CardID`（`CardModel.swift`）、`ScanOption.id`、ConverterType、switch分岐、一覧への掲載状態は相互に一致させる。新規実装では、`CardID` へのcase追加、`ScannerBranch.swift` の `devCards` / `featureCards` / `relCards` のいずれかへの登録、`switchCard(id:)` / `scanWithExternalReader` の分岐（`CardID` を網羅的に switch しているため漏れはコンパイルエラーになる）、`ConverterType` のcaseおよび表示変換分岐を確認し、対象カードの公開状態に応じて漏れなく更新する。
 - FeliCaカードの読取処理は `FeliCaTagReading`（`Scan/FeliCa/FeliCaTagReading.swift`）に対して1つだけ実装し、`readFeliCa(id:_:)` に登録する。内蔵リーダー(CoreNFC)と外部リーダー(PC/SC)はこの実装を共有するため、リーダー別に解析処理を書かない。仕様または依頼から状態を確定できない場合は、リリース済み一覧へ追加せず、確認事項として報告する。
@@ -24,8 +31,7 @@
 
 ## 3. 変更範囲と登録
 
-- 変更前に既存の作業ツリー差分を確認し、ユーザーの変更を上書き・巻き戻ししない。
-- 追加ファイルは既存カードと同じ命名・ディレクトリ構成を基本とする（例：`<cardID>/<cardID>.swift`、`<cardID>/<cardID>Converter.swift`）。一つの共有実装を使う複数カードでは、既存の共有カード定義パターンを確認してから適用する。
+- 追加ファイルは既存カードと同じ命名・ディレクトリ構成を基本とする（例：`<cardID>/<cardID>.swift`、`<cardID>/<国コード大文字のカード名>Converter.swift`）。一つの共有実装を使う複数カードでは、既存の共有カード定義パターンを確認してから適用する。
 - `ScannerBranch.swift` だけでなく、ローカライズ文字列（各言語の `.xcstrings` 等）、カードロゴのAsset Catalog、カードデザイン一覧など参照される登録箇所を検索し、追加が必要なものをすべて反映する。存在しない画像や未確認のファイル名を登録しない。
 - Xcode projectがファイルを明示登録する方式かどうかを `project.pbxproj` で確認する。必要な方式の場合だけ、追加ファイルをBuild Phases / File Referencesへ登録する。
 - 無関係なリファクタ、他カードの挙動変更、ドキュメントの仕様変更を混ぜない。カード仕様の修正自体が必要なら、その変更を分けて根拠を記録する。

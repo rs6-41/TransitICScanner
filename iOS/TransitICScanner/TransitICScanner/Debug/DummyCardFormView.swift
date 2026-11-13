@@ -107,7 +107,7 @@ struct DummyCardFormView: View {
                     .foregroundStyle(Color.accentColor)
             }
             .navigationDestination(isPresented: $isDone) {
-                ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
+                ResultView(result: result, isNewScan: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
             }
         }
         .navigationTitle(LocalizedStringKey("setting.debug.result.dummyCard"))

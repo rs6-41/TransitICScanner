@@ -52,15 +52,15 @@ let jpNplus = CardInfo(
 //カードの読み取り処理
 extension NFCScannerModel {
 
-    func jpNplus_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
-        guard let balance = await jpNplus_balance(felicaTag) else { return nil }
+    func jpNplusRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        guard let balance = await jpNplusBalance(felicaTag) else { return nil }
 
-        let history = await jpNplus_history(
+        let history = await jpNplusHistory(
             felicaTag,
             count: self.scanOption.historyCount
         )
 
-        let info = await jpNplus_info(felicaTag)
+        let info = await jpNplusInfo(felicaTag)
 
         return ScanResult(
             balance: Double(balance),
@@ -75,7 +75,7 @@ extension NFCScannerModel {
     }
 
     //MARK: 残高を取得する
-    func jpNplus_balance(_ felicaTag: any FeliCaTagReading) async -> Int? {
+    func jpNplusBalance(_ felicaTag: any FeliCaTagReading) async -> Int? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x40, 0x8B].reversed())
             let blockList = [Data([0x80, 0x01])]
@@ -111,7 +111,7 @@ extension NFCScannerModel {
     }
 
     //MARK: 履歴を取得する
-    func jpNplus_history(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
+    func jpNplusHistory(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x80, 0xCF].reversed())
             let blockCount = min(max(count, 1), 20)
@@ -210,7 +210,7 @@ extension NFCScannerModel {
     }
 
     //MARK: カード情報を取得する
-    func jpNplus_info(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
+    func jpNplusInfo(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -231,7 +231,7 @@ extension NFCScannerModel {
         )
     }
 
-    func jpNplus_read(
+    func jpNplusRead(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
@@ -262,7 +262,7 @@ extension NFCScannerModel {
         }
     }
 
-    func jpNplus_readMultiple(
+    func jpNplusReadMultiple(
         _ tag: any FeliCaTagReading,
         service: Data,
         count: Int

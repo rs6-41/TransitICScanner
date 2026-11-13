@@ -67,7 +67,7 @@ Clipper Applicationとして処理
 実装：
 
 ```swift
-guard await clipper_command(
+guard await clipperCommand(
     send,
     ins: 0x5A,
     data: clipperAID
@@ -247,7 +247,7 @@ value =
 実装：
 
 ```swift
-private func clipper_be16(
+private func clipperBe16(
     _ b: [UInt8],
     _ o: Int
 ) -> UInt16 {
@@ -255,7 +255,7 @@ private func clipper_be16(
     | UInt16(b[o + 1])
 }
 
-private func clipper_be32(
+private func clipperBe32(
     _ b: [UInt8],
     _ o: Int
 ) -> UInt32 {
@@ -311,7 +311,7 @@ let date = Date(
 内部データ自体は1900年Epoch基準だが、現在の実装では表示用の `DateComponents` を `America/Los_Angeles` タイムゾーンで生成する。
 
 ```swift
-private func clipper_calendar() -> Calendar {
+private func clipperCalendar() -> Calendar {
     var cal = Calendar(identifier: .gregorian)
     cal.timeZone =
         TimeZone(identifier: "America/Los_Angeles")
@@ -369,7 +369,7 @@ let balanceCents =
     Int(
         Int16(
             bitPattern:
-                clipper_be16(bb, 18)
+                clipperBe16(bb, 18)
         )
     )
 ```
@@ -478,7 +478,7 @@ serial =
 ```swift
 serial =
     String(
-        clipper_be32(
+        clipperBe32(
             [UInt8](d),
             1
         )
@@ -562,7 +562,7 @@ date =
 
 ```swift
 let days =
-    clipper_be16(
+    clipperBe16(
         [UInt8](d),
         8
     )
@@ -659,7 +659,7 @@ timestamp =
 
 ```swift
 let time =
-    clipper_be32(r, 4)
+    clipperBe32(r, 4)
 
 guard time != 0 else {
     continue
@@ -785,7 +785,7 @@ agency =
 
 ```swift
 let agency =
-    clipper_be16(r, 2)
+    clipperBe16(r, 2)
 
 guard agency != 0 else {
     continue
@@ -808,7 +808,7 @@ fareCents =
 
 ```swift
 amountCents:
-    -Int(clipper_be16(r, 6))
+    -Int(clipperBe16(r, 6))
 ```
 
 例えば、
@@ -850,7 +850,7 @@ entryTimestamp =
 
 ```swift
 let entry =
-    clipper_be32(r, 12)
+    clipperBe32(r, 12)
 
 guard entry != 0 else {
     continue
@@ -952,7 +952,7 @@ transport =
 
 ```swift
 transport:
-    clipper_be16(r, 30)
+    clipperBe16(r, 30)
 ```
 
 ---
@@ -1217,7 +1217,7 @@ for e in events {
             processType4:
                 (UInt32(e.agency) << 16)
                 | UInt32(e.transport),
-            date: clipper_components(e.time),
+            date: clipperComponents(e.time),
             balance:
                 Double(running) / 100.0,
             amount:
@@ -1347,7 +1347,7 @@ stationOut = 下位8bit
 
 # Converter
 
-Clipperの `ResultHistory` は `usClipper_Converter` によって表示用の文字列へ変換される。
+Clipperの `ResultHistory` は `USClipperConverter` によって表示用の文字列へ変換される。
 
 ```swift
 static func history(
@@ -1681,7 +1681,7 @@ graph LR;
 | `0x0E` | Standard / Backup | `0xBD` | 乗車履歴 |
 | `0x0F` | 未使用 | 未使用 | 未解析 |
 
-なお、`clipper_readFile()` はGetFileSettingsのFile Typeに応じて実際の読み取りコマンドを選択するため、上表は現在の実装での論理的な対応を示す。
+なお、`clipperReadFile()` はGetFileSettingsのFile Typeに応じて実際の読み取りコマンドを選択するため、上表は現在の実装での論理的な対応を示す。
 
 ---
 
