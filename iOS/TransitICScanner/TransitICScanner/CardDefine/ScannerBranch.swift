@@ -10,7 +10,7 @@ final class CardItemsStore: ObservableObject {
 let cardItemsStore = CardItemsStore()
 
 let devCards: [CardInfo] = [
-    spFlashPay
+    spFlashPay,
 ]
 
 let featureCards: [CardInfo] = []
