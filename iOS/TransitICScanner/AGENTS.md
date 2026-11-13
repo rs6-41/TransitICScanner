@@ -24,4 +24,5 @@
 - アプリの改名・共通処理変更は `Dev`、Watch共有部分は `Watch_Dev`、Widget共有部分は `Widget`、環境分岐・リリース側を触った場合は `Release` をビルドする。結果をターゲットごとに記録する。
 - 命名のみの変更では、カードのサービスコード・ブロック数・バイト位置・日時・残高・取引分類・履歴順が不変であることを差分で確認する。
 - Widgetの保存契約を触ったら `python3 skills/transit-card-workflow/scripts/test_widget_compatibility.py`、KMT読取処理を触ったら `python3 skills/transit-card-workflow/scripts/test_idkai.py` を実行する。
+- 解析・変換・保存互換などUIに依存しない処理を変更したら、`TransitICScannerTests/` に合成データのユニットテストを追加・更新する。実カードの記録や秘密設定をfixtureにしない。
 - `CardBalance/` はビルド対象外のテンプレート。アプリの実装と取り違えず、ここだけの検証でアプリのビルド確認を代替しない。

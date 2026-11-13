@@ -1,0 +1,109 @@
+# PR・mainへのpushで、静的検証・回帰テスト・ユニットテスト・共有ターゲットのビルドを行う。
+# 配布（Archive・TestFlight）はXcode Cloudが担当する。iOS/TransitICScanner/ci_scripts/ を参照。
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PROJECT: iOS/TransitICScanner/TransitICScanner.xcodeproj
+  # Xcode 27ランナー（macOS 27 / Apple Silicon）に含まれるシミュレータを使う。
+  SIMULATOR_DESTINATION: platform=iOS Simulator,name=iPhone 18 Pro
+  # 署名なし（CODE_SIGNING_ALLOWED=NO）ではApp Groupのentitlementが付かず、SwiftDataが起動時に停止する。
+  # チームやプロファイル不要のアドホック署名（-）でシミュレータ向けにentitlementを埋め込む。
+  SIGNING_ARGS: CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= PROVISIONING_PROFILE_SPECIFIER=
+
+jobs:
+  checks:
+    name: 命名・書式・回帰テスト
+    runs-on: xcode-27
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: xcodebuild -version && python3 --version
+
+      - name: 命名規則
+        run: python3 skills/transit-card-workflow/scripts/check_naming.py
+
+      - name: Swift書式
+        run: |
+          git ls-files -z '*.swift' \
+            | xargs -0 xcrun swift-format lint --strict --configuration iOS/TransitICScanner/.swift-format
+
+      - name: 空白エラー
+        run: git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+
+      - name: 回帰テスト（Python + swiftc）
+        run: |
+          python3 skills/transit-card-workflow/scripts/test_idkai.py
+          python3 skills/transit-card-workflow/scripts/test_idkai_identity.py
+          python3 skills/transit-card-workflow/scripts/test_widget_compatibility.py
+          python3 skills/transit-localization/scripts/test_check_xcstrings.py
+
+  unit-tests:
+    name: ユニットテスト（Dev）
+    runs-on: xcode-27
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 広告設定のダミーを生成
+        run: iOS/TransitICScanner/ci_scripts/make_env_swift.sh
+
+      - name: xcodebuild test
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme Dev \
+            -destination "$SIMULATOR_DESTINATION" \
+            -resultBundlePath build/Dev.xcresult \
+            $SIGNING_ARGS
+
+      - name: テスト結果を保存
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Dev-xcresult
+          path: build/Dev.xcresult
+          retention-days: 7
+
+  build:
+    name: ビルド（${{ matrix.scheme }}）
+    runs-on: xcode-27
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # 共有ファイル（Storage・ResultModel等）の変更でWidget・Watchが壊れていないかを確認する。
+          - scheme: Widget
+            destination: generic/platform=iOS Simulator
+          - scheme: Watch_Dev
+            destination: generic/platform=watchOS Simulator
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 広告設定のダミーを生成
+        run: iOS/TransitICScanner/ci_scripts/make_env_swift.sh
+
+      - name: xcodebuild build
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project "$PROJECT" \
+            -scheme "${{ matrix.scheme }}" \
+            -destination "${{ matrix.destination }}" \
+            $SIGNING_ARGS
