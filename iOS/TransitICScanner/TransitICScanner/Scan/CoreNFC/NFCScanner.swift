@@ -132,7 +132,8 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
         switch tag {
         case .miFare(let miFareTag):
-            Log.debug("Detected MiFare family:", miFareTag.mifareFamily.rawValue, "identifier:", hex(miFareTag.identifier))
+            Log.debug(
+                "Detected MiFare family:", miFareTag.mifareFamily.rawValue, "identifier:", hex(miFareTag.identifier))
             if let historical = miFareTag.historicalBytes {
                 Log.debug("historicalBytes:", hex(historical, separator: " "))
             }
