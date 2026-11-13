@@ -44,7 +44,7 @@ TransitICScanner/
     │   ├── NFCTool/                      … 開発用ツール（読取ログ閲覧）
     │   ├── Debug/                        … デバッグ設定・ダミーデータ
     │   ├── Localize/                     … 文字列カタログ（.xcstrings）
-    │   ├── Utility/                      … 共通ユーティリティ（ログ）
+    │   ├── Utility/                      … 共通ユーティリティ（ログ・旧カード識別子の互換処理）
     │   ├── Config/                       … xcconfig（DEV / BETA / REL）
     │   └── Assets.xcassets, AppIcon/, Info.plist, *.entitlements, PrivacyInfo.xcprivacy, *.storekit
     ├── CardBalanceWidget/                … ホーム画面 Widget（Widget Extension）
@@ -80,6 +80,7 @@ TransitICScanner/
 | `Result/BalanceFormat.swift` | ✅ | ✅ |
 | `Result/SaveData/Storage.swift` | ✅ | ✅ |
 | `Utility/Log.swift` | ✅ | ✅ |
+| `Utility/CardIdentity.swift` | ✅ | ✅ |
 | `CardDefine/Area.swift` | ✅ | ✅ |
 | `Result/ResultModel.swift` | | ✅ |
 | `Result/SaveData/ResultSave.swift` | | ✅ |
@@ -228,7 +229,7 @@ flowchart TD
 | `jpDoCard` | FeliCa | rel | 解析用の詳細ログ（`fullLog`）を結果に付ける |
 | `jpOKICA` | FeliCa | rel | 残高は最新の履歴から取る |
 | `jpRapica` | FeliCa | rel | 履歴に年がないため、属性情報の日時を基準に年を補完する |
-| `idKMT` | FeliCa | dev | KAI Commuter（ジャカルタ）。Issue #77 |
+| `idKAI` | FeliCa | dev | KAI Commuter（ジャカルタ）。Issue #77 |
 | `spFlashPay` | — | dev | 読取処理は未実装（分岐では `undefinedName` エラーを返す） |
 
 ### 5.3 `Scan/` — 読取の基盤とカード一覧 UI
@@ -284,6 +285,7 @@ flowchart TD
 | `Localize/Localizable.xcstrings` | アプリ全体の文字列カタログ | 簡体字から繁体字への変換は `script/iOS/` のスクリプトを使う |
 | `Localize/InfoPlist.xcstrings` | 権限ダイアログの文言など | |
 | `Localize/Localization.swift` | `localizedString(_:)`：キーをローカライズ済みの文字列として取得する（表示以外の用途向け） | |
+| `Utility/CardIdentity.swift` | 旧 `idKMT` のID・表示キー・画像名を `idKAI` へ解決 | アプリ・Widget・Watchで共有。保存スキーマやユーザー入力は変更しない |
 | `Utility/Log.swift` | `Log.debug`（DEBUG のみ、値は `.private`）、`Log.error`（常に出力） | カテゴリは呼び出し元のファイル名 |
 | `Config/*.xcconfig` | `APP_ENVIRONMENT` の定義 | |
 

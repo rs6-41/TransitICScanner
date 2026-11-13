@@ -24,6 +24,7 @@
 - SwiftDataの `@Model` 型名・保存プロパティ名、既存Codableのキー、App Group / CloudKit / UserDefaultsのキー、Bundle ID、App Intentの識別子は保存・外部契約である。書式統一だけを理由に変更しない。
 - 例：保存モデルの `transactionId` / `idm`、WidgetのJSONキー `DisplayName` / `widgetDatas` は既存契約。Swift側だけを改名する場合は明示的な `CodingKeys` と旧データのdecode・再encodeテストを追加する。SwiftDataはマイグレーション計画を別途用意する。
 - 非追跡の `env.swift` が提供する `bannerUnitID` / `NativeUnitID` は外部設定との境界として維持する。内容をコミット・ログ出力しない。
+- Issue #118でKAI Commuterの現行識別子は `idKAI` に統一した。旧 `idKMT` のID・ローカライズキー・画像名は `Utility/CardIdentity.swift` で読み込み時に解決する。旧文字列はこの互換処理と回帰テスト・説明に限定し、新規データには現行名を使う。
 - 新しい例外は必要な互換性を説明し、命名チェックの許可対象は該当ファイル・識別子だけに限定する。
 
 ## 作業・検証・Git

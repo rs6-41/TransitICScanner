@@ -23,5 +23,5 @@
 - Xcodeの同期グループを使っている。追加・改名時は `project.pbxproj` のmembershipExceptionsとplatformFiltersByRelativePathを確認する。特にWatch・Widgetで共有するファイルの登録を落とさない。
 - アプリの改名・共通処理変更は `Dev`、Watch共有部分は `Watch_Dev`、Widget共有部分は `Widget`、環境分岐・リリース側を触った場合は `Release` をビルドする。結果をターゲットごとに記録する。
 - 命名のみの変更では、カードのサービスコード・ブロック数・バイト位置・日時・残高・取引分類・履歴順が不変であることを差分で確認する。
-- Widgetの保存契約を触ったら `python3 script/tests/test_widget_compatibility.py`、KMT読取処理を触ったら `python3 script/tests/test_idKMT.py` を実行する。
+- Widgetの保存契約を触ったら `python3 script/tests/test_widget_compatibility.py`、KMT読取処理を触ったら `python3 script/tests/test_idkai.py` を実行する。
 - `CardBalance/` はビルド対象外のテンプレート。アプリの実装と取り違えず、ここだけの検証でアプリのビルド確認を代替しない。

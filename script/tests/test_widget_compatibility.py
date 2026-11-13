@@ -14,6 +14,7 @@ area = (source / 'TransitICScanner/CardDefine/Area.swift').read_text()
 currency = 'enum CurrencyType:' + area.split('enum CurrencyType:', 1)[1].split(
     '    func getLocalize', 1
 )[0] + '}\n'
+identity = (source / 'TransitICScanner/Utility/CardIdentity.swift').read_text()
 checks = r'''
 // Synthetic legacy wire data, not actual card information.
 let legacy: [[String: Any]] = [[
@@ -41,11 +42,17 @@ let minimal = Data("[{\"idm\":\"SYNTHETIC-MINIMAL-ID\"}]".utf8)
 let optional = try JSONDecoder().decode([BalanceWidgetModel].self, from: minimal)[0]
 assert(optional.displayName == nil && optional.balance == nil && optional.savedAt == nil)
 assert(optional.currencyType == nil && optional.icon == nil)
+var legacyCard = optional
+legacyCard.icon = "idKMT"
+assert(legacyCard.iconAssetName == "idKAI")
+assert(legacyCard.icon == "idKMT") // Reading an old icon does not rewrite persisted JSON.
+assert(models[0].iconAssetName == "placeholderCard")
+assert(optional.iconAssetName == nil)
 print("Widget legacy JSON compatibility checks passed")
 '''
 with tempfile.TemporaryDirectory(prefix='widget-compatibility-') as tmp:
     path = Path(tmp)
-    (path / 'main.swift').write_text('import Foundation\n' + currency + model + checks)
+    (path / 'main.swift').write_text('import Foundation\n' + identity + currency + model + checks)
     subprocess.run([
         'xcrun', 'swiftc', '-module-cache-path', str(path / 'cache'),
         str(path / 'main.swift'), '-o', str(path / 'tests'),

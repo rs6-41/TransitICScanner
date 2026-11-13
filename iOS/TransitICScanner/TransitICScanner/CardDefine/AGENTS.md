@@ -5,8 +5,8 @@
 ## 命名と共有パターン
 
 - カード定義の定数・フォルダ・主定義ファイルは既存カードIDを使う（例：`jpIC` / `jpIC.swift`）。保存・ローカライズ・Assetと共通の識別子は維持する。
-- 内部関数はカードIDに続けてlowerCamelCaseで処理を書く（`jpICRead`、`cnTunionParseFCI`、`idKMTReadHistoryBlocks`）。`<カードID>_<処理名>` は使わない。
-- Converterなどの型はUpperCamelCaseとし、国コードを大文字にする（`JPICConverter`、`CNTUnionConverter`、`IDKMTConverter`）。Converterのファイル名は型名に合わせる。
+- 内部関数はカードIDに続けてlowerCamelCaseで処理を書く（`jpICRead`、`cnTunionParseFCI`、`idKAIReadHistoryBlocks`）。`<カードID>_<処理名>` は使わない。
+- Converterなどの型はUpperCamelCaseとし、国コードを大文字にする（`JPICConverter`、`CNTUnionConverter`、`IDKAIConverter`）。Converterのファイル名は型名に合わせる。
 - 名前だけを変更する作業ではサービスコード・バイト解析・表示分類・公開状態を変更しない。仕様書中の実装参照は新しい名前に更新し、仕様値は維持する。
 
 ## 1. 仕様の根拠

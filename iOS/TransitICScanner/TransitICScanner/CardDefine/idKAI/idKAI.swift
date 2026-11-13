@@ -2,33 +2,33 @@ import SwiftUI
 import Foundation
 import CoreNFC
 
-let idKMT = CardInfo(
-    logo: "idKMT",
-    name: "cardList.idKMT",
-    sortName: "cardList.idKMT.sortName",
+let idKAI = CardInfo(
+    logo: "idKAI",
+    name: "cardList.idKAI",
+    sortName: "cardList.idKAI.sortName",
     area: .id,
     countryCode: ["id"],
     prefectures: ["Jakarta"],
     regionOption: .southEastAsia,
-    description: "cardList.idKMT.description",
-    scannedDescription: "idKMT.scand.description",
+    description: "cardList.idKAI.description",
+    scannedDescription: "idKAI.scand.description",
     searchWords: ["KAI", "Commuter", "Kartu Multi Trip", "KMT", "Jakarta", "Indonesia"],
     scanOption: ScanOption(
-        id: .idKMT,
-        nameShort: "idKMT.short",
+        id: .idKAI,
+        nameShort: "idKAI.short",
         scanType: .nfc,
         pollingOption: [.iso18092],
         felicaSystemCodes: ["90B7"],
         historyCount: 20,
         currencyType: .idr,
-        converter: .idKMT,
+        converter: .idKAI,
         scrapingView: nil
     ),
     information: nil,
     sample: ResultSample(
         balance: 4000,
         idm: "0127FFFFFFFF6EAB",
-        type: "card.KMT",
+        type: "card.idKAI",
         history: []
     )
 )
@@ -36,9 +36,9 @@ let idKMT = CardInfo(
 extension NFCScannerModel {
 
     /// KAI Commuter (KMT) を読み取る。内蔵リーダー・外部リーダー共通。
-    func idKMTRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+    func idKAIRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard
-            let data = await idKMTReadData(
+            let data = await idKAIReadData(
                 felicaTag,
                 count: self.scanOption.historyCount
             )
@@ -46,54 +46,54 @@ extension NFCScannerModel {
             return nil
         }
 
-        let info = idKMTInfo(felicaTag, data: data)
+        let info = idKAIInfo(felicaTag, data: data)
 
         return ScanResult(
             balance: Double(data.balance),
             isHistory: true,
             history: data.histories,
             info: info,
-            converter: idKMT.scanOption.converter,
+            converter: idKAI.scanOption.converter,
             isLastHide: true,
-            description: idKMT.scannedDescription,
+            description: idKAI.scannedDescription,
             savedAt: Date.now
         )
     }
 
-    func idKMTReadData(
+    func idKAIReadData(
         _ felicaTag: any FeliCaTagReading,
         count: Int
-    ) async -> KMTData? {
+    ) async -> KAIData? {
         guard
-            let idBlock = await idKMTReadBlocks(
+            let idBlock = await idKAIReadBlocks(
                 felicaTag,
                 service: Data([0x0B, 0x30]),
                 blocks: [0]
             )?.first
         else {
-            Log.debug("KMT: ID ブロック(0x300B)を読めませんでした")
+            Log.debug("KAI: ID ブロック(0x300B)を読めませんでした")
             return nil
         }
 
         guard
-            let balanceBlock = await idKMTReadBlocks(
+            let balanceBlock = await idKAIReadBlocks(
                 felicaTag,
                 service: Data([0x17, 0x10]),
                 blocks: [0]
             )?.first
         else {
-            Log.debug("KMT: 残高ブロック(0x1017)を読めませんでした")
+            Log.debug("KAI: 残高ブロック(0x1017)を読めませんでした")
             return nil
         }
 
-        let historyBlocks = await idKMTReadHistoryBlocks(
+        let historyBlocks = await idKAIReadHistoryBlocks(
             felicaTag,
             service: Data([0x0F, 0x20]),
             maxCount: min(max(count, 0), 20)
         )
 
         guard
-            let data = KMTData.parse(
+            let data = KAIData.parse(
                 idBlock: idBlock,
                 balanceBlock: balanceBlock,
                 historyBlocks: historyBlocks
@@ -111,7 +111,7 @@ extension NFCScannerModel {
     /// カードに保存されている履歴の件数より後ろのブロックは読めない（ステータスエラーになる）ため、
     /// まとめて読むと履歴が少ないカードで読取全体が失敗する。
     /// 読めないブロック・空のブロックに達したら、そこまでを履歴として返す。
-    func idKMTReadHistoryBlocks(
+    func idKAIReadHistoryBlocks(
         _ tag: any FeliCaTagReading,
         service: Data,
         maxCount: Int
@@ -119,8 +119,8 @@ extension NFCScannerModel {
         var blocks: [Data] = []
 
         for index in 0..<min(max(maxCount, 0), 20) {
-            guard let block = await idKMTReadBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
-                Log.debug("KMT: 履歴ブロック \(index) 以降は読めないため終了")
+            guard let block = await idKAIReadBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
+                Log.debug("KAI: 履歴ブロック \(index) 以降は読めないため終了")
                 break
             }
 
@@ -134,7 +134,7 @@ extension NFCScannerModel {
         return blocks
     }
 
-    func idKMTReadBlocks(
+    func idKAIReadBlocks(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
@@ -180,9 +180,9 @@ extension NFCScannerModel {
         return result
     }
 
-    func idKMTInfo(
+    func idKAIInfo(
         _ felicaTag: any FeliCaTagReading,
-        data: KMTData
+        data: KAIData
     ) -> ResultCardInfo {
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -190,15 +190,15 @@ extension NFCScannerModel {
 
         return ResultCardInfo(
             idm: idm,
-            name: idKMT.name,
-            nameShort: idKMT.scanOption.nameShort,
-            currencyType: idKMT.scanOption.currencyType,
-            type: "card.KMT",
+            name: idKAI.name,
+            nameShort: idKAI.scanOption.nameShort,
+            currencyType: idKAI.scanOption.currencyType,
+            type: "card.idKAI",
             serial: data.serialNumber,
             version: nil,
             validDate: nil,
             issueInfo: IssueInfo(
-                region: idKMT.area.rawValue,
+                region: idKAI.area.rawValue,
                 area: "locate.prefecture.Jakarta",
                 city: nil,
                 issuer: "issue.id.jakarta.issuer.KaiCommuter"
@@ -207,7 +207,7 @@ extension NFCScannerModel {
     }
 }
 
-struct KMTData {
+struct KAIData {
     let serialNumber: String
     let balance: UInt32
     let lastTransactionAmount: UInt32
@@ -218,7 +218,7 @@ struct KMTData {
         idBlock: Data,
         balanceBlock: Data,
         historyBlocks: [Data]
-    ) -> KMTData? {
+    ) -> KAIData? {
         guard idBlock.count >= 16,
             balanceBlock.count >= 16
         else {
@@ -251,7 +251,7 @@ struct KMTData {
             parseHistory($0)
         }
 
-        return KMTData(
+        return KAIData(
             serialNumber: serialNumber,
             balance: balance,
             lastTransactionAmount: lastTransactionAmount,
