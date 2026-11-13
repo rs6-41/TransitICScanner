@@ -9,12 +9,12 @@ import tempfile
 
 root = Path(__file__).resolve().parents[2]
 source = root / 'iOS/TransitICScanner/TransitICScanner'
-parser = (source / 'CardDefine/idKMT/idKMT.swift').read_text().split('struct KMTData {', 1)[1]
+parser = (source / 'CardDefine/idKAI/idKAI.swift').read_text().split('struct KAIData {', 1)[1]
 model = (source / 'Result/ResultModel.swift').read_text().split('struct ResultHistory:', 1)[1].split('extension ResultHistory', 1)[0]
-reader_source = (source / 'CardDefine/idKMT/idKMT.swift').read_text()
-reader_methods = reader_source.split('    func idKMTReadHistoryBlocks(', 1)[1].split('    func idKMTInfo(', 1)[0]
+reader_source = (source / 'CardDefine/idKAI/idKAI.swift').read_text()
+reader_methods = reader_source.split('    func idKAIReadHistoryBlocks(', 1)[1].split('    func idKAIInfo(', 1)[0]
 protocol = (source / 'Scan/FeliCa/FeliCaTagReading.swift').read_text().split('protocol FeliCaTagReading {', 1)[1].split('/// CoreNFC', 1)[0]
-reader = 'protocol FeliCaTagReading {' + protocol + '\nfinal class NFCScannerModel {\nfunc idKMTReadHistoryBlocks(' + reader_methods + '\n}\n'
+reader = 'protocol FeliCaTagReading {' + protocol + '\nfinal class NFCScannerModel {\nfunc idKAIReadHistoryBlocks(' + reader_methods + '\n}\n'
 reader += r'''
 enum Log { static func debug(_ text: String) {} }
 final class TestTag: FeliCaTagReading {
@@ -35,8 +35,8 @@ let id = Data("1234567890123456".utf8)
 let balance = Data([0x78,0x56,0x34,0x12, 1,2,3,4, 0,0,0,0,0, 1,2,3])
 // Timestamp/amount/gate/type/sequence exercise both byte orders.
 let record = Data([0x30,0,0,0, 0,0,0x12,0x34, 0x56,0x78, 0,0, 1, 1,2,3])
-func parse(_ b: Data = balance, _ h: [Data] = [record]) -> KMTData {
-    KMTData.parse(idBlock: id, balanceBlock: b, historyBlocks: h)!
+func parse(_ b: Data = balance, _ h: [Data] = [record]) -> KAIData {
+    KAIData.parse(idBlock: id, balanceBlock: b, historyBlocks: h)!
 }
 let parsed = parse()
 assert(parsed.serialNumber == "1234567890123456")
@@ -53,8 +53,8 @@ let slicedRecord = (Data([0xFF]) + record).dropFirst()
 assert(slicedBalance.startIndex != 0 && slicedRecord.startIndex != 0)
 assert(parse(slicedBalance, [slicedRecord]).histories == parsed.histories)
 assert(parse(slicedBalance).balance == parsed.balance)
-assert(KMTData.parse(idBlock: Data(), balanceBlock: balance, historyBlocks: []) == nil)
-assert(KMTData.parse(idBlock: id, balanceBlock: Data(repeating: 0, count: 15), historyBlocks: []) == nil)
+assert(KAIData.parse(idBlock: Data(), balanceBlock: balance, historyBlocks: []) == nil)
+assert(KAIData.parse(idBlock: id, balanceBlock: Data(repeating: 0, count: 15), historyBlocks: []) == nil)
 assert(parse(balance, [Data(), Data(repeating: 0, count: 15)]).histories.isEmpty)
 var unknown = record
 unknown[12] = 255
@@ -65,26 +65,26 @@ assert(parse(balance, [invalid, record]).histories.count == 1)
 let scanner = NFCScannerModel()
 let tag = TestTag()
 let service = Data([0x0F, 0x20])
-let negative = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: -1)
+let negative = await scanner.idKAIReadHistoryBlocks(tag, service: service, maxCount: -1)
 assert(negative.isEmpty && tag.reads == 0)
-let excessive = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: Int.max)
+let excessive = await scanner.idKAIReadHistoryBlocks(tag, service: service, maxCount: Int.max)
 assert(excessive.count == 20 && tag.reads == 20)
 for length in [0, 15, 17] {
     tag.reads = 0
     tag.response = Data(repeating: 1, count: length)
-    let malformed = await scanner.idKMTReadBlocks(tag, service: service, blocks: [0])
+    let malformed = await scanner.idKAIReadBlocks(tag, service: service, blocks: [0])
     assert(malformed == nil)
 }
 for byte: UInt8 in [0, 255] {
     tag.reads = 0
     tag.response = Data(repeating: byte, count: 16)
-    let empty = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: 20)
+    let empty = await scanner.idKAIReadHistoryBlocks(tag, service: service, maxCount: 20)
     assert(empty.isEmpty && tag.reads == 1)
 }
-print("KMT parser and reader regression checks passed")
+print("KAI parser and reader regression checks passed")
 '''
-with tempfile.TemporaryDirectory(prefix='kmt-tests-') as tmp:
+with tempfile.TemporaryDirectory(prefix='idkai-tests-') as tmp:
     path = Path(tmp)
-    (path / 'main.swift').write_text('import Foundation\nstruct ResultHistory:' + model + '\nstruct KMTData {' + parser + reader + checks)
+    (path / 'main.swift').write_text('import Foundation\nstruct ResultHistory:' + model + '\nstruct KAIData {' + parser + reader + checks)
     subprocess.run(['xcrun', 'swiftc', '-module-cache-path', str(path / 'cache'), str(path / 'main.swift'), '-o', str(path / 'tests')], check=True)
     subprocess.run([str(path / 'tests')], check=True)

@@ -27,7 +27,15 @@ enum ConverterType: String, CaseIterable {
     case jpIC_icsca
     case jpOKICA
     case jpRapica
-    case idKMT
+    case idKAI
+
+    init?(rawValue: String) {
+        let identifier = CardIdentity.canonicalID(rawValue)
+        guard let value = Self.allCases.first(where: { $0.rawValue == identifier }) else {
+            return nil
+        }
+        self = value
+    }
 
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
@@ -59,8 +67,8 @@ enum ConverterType: String, CaseIterable {
             JPOKICAConverter.cardInfo(info)
         case .jpRapica:
             JPRapicaConverter.cardInfo(info)
-        case .idKMT:
-            IDKMTConverter.cardInfo(info)
+        case .idKAI:
+            IDKAIConverter.cardInfo(info)
         }
     }
 
@@ -94,8 +102,8 @@ enum ConverterType: String, CaseIterable {
             JPOKICAConverter.history(item)
         case .jpRapica:
             JPRapicaConverter.history(item)
-        case .idKMT:
-            IDKMTConverter.history(item)
+        case .idKAI:
+            IDKAIConverter.history(item)
         }
     }
 }

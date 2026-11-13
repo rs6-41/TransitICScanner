@@ -1,6 +1,6 @@
 # KAI Commuter（Kartu Multi Trip / KMT）
 
-インドネシア・ジャカルタのKAI Commuterが発行する交通ICカード。アプリ内のカードIDは`idKMT`、表示名は`Kartu Multi Trip`。
+インドネシア・ジャカルタのKAI Commuterが発行する交通ICカード。アプリ内のカードIDは`idKAI`、表示名は`Kartu Multi Trip`。
 
 本書は2026年11月13日時点の作業ツリーにある実装を整理したものであり、発行者の公式仕様書ではない。バイトの意味・取引分類・日時補正は現在のコードの解釈を記載する。実カードでの動作検証は本書作成時には行っていない。
 
@@ -28,7 +28,7 @@
 |残高情報|`0x1017`|`17 10`|0|
 |利用履歴|`0x200F`|`0F 20`|0〜19|
 
-Service Codeはリトルエンディアンで渡す。ブロックリスト要素は`80 xx`（`xx`はブロック番号）。共通の`idKMTReadBlocks`は要求を最大10ブロック単位に分割できるが、現在のカード番号・残高・履歴の呼び出しはすべて1ブロックずつ行う。
+Service Codeはリトルエンディアンで渡す。ブロックリスト要素は`80 xx`（`xx`はブロック番号）。共通の`idKAIReadBlocks`は要求を最大10ブロック単位に分割できるが、現在のカード番号・残高・履歴の呼び出しはすべて1ブロックずつ行う。
 
 読み取り成功条件は次のすべてを満たすこと。
 
@@ -44,12 +44,12 @@ flowchart TD
     A[FeliCaタグ取得] --> B[0x300B ブロック0: カード番号]
     B --> C[0x1017 ブロック0: 残高情報]
     C --> D[0x200F: 履歴を先頭から1件ずつ取得]
-    D --> E[KMTData.parse]
+    D --> E[KAIData.parse]
     E --> F[ResultCardInfo / ScanResult生成]
-    F --> G[IDKMTConverter / 共通結果画面]
+    F --> G[IDKAIConverter / 共通結果画面]
 ```
 
-カード番号・残高の読み取りに失敗すると、スキャン結果は`nil`となる。両ブロックのいずれかが16バイト未満でも解析は失敗する。セッションのエラー終了は共通の呼び出し元で行い、idKMTの解析処理からは終了させない。
+カード番号・残高の読み取りに失敗すると、スキャン結果は`nil`となる。両ブロックのいずれかが16バイト未満でも解析は失敗する。セッションのエラー終了は共通の呼び出し元で行い、idKAIの解析処理からは終了させない。
 
 履歴取得件数は`min(max(count, 0), 20)`に制限する。ブロック0から順に読み、最初の読み取り失敗、全バイト`00`、全バイト`FF`のいずれかで取得を終了する。それまでの履歴は保持し、履歴を1件も読めなくてもカード番号・残高が正常ならスキャン結果を生成する。履歴終端と通信障害は、この処理では区別しない。
 
@@ -78,7 +78,7 @@ balance = b[0] + (b[1] << 8) + (b[2] << 16) + (b[3] << 24)
 transactionCounter = (b[13] << 16) + (b[14] << 8) + b[15]
 ```
 
-現在残高は符号なし32ビット整数から`Double`へ変換して`ScanResult.balance`へ渡す。通貨はIDRで、小数点のスケーリングは行わない。最終取引金額と取引カウンターは`KMTData`に保持するが、現在の結果生成処理では使用しない。
+現在残高は符号なし32ビット整数から`Double`へ変換して`ScanResult.balance`へ渡す。通貨はIDRで、小数点のスケーリングは行わない。最終取引金額と取引カウンターは`KAIData`に保持するが、現在の結果生成処理では使用しない。
 
 ## 履歴レコード
 
@@ -116,21 +116,21 @@ Unix秒 = epoch2000 + rawTimestamp + offset
 
 `rawAmount`は符号なし32ビット整数を`Int64`へ変換してから符号を付ける。`ResultHistory.amount`は`nil`。フィールド名は`balance`だが、ここには現在の実装が符号を付けたレコード金額を保存している。取引後残高や入出金の意味が正しいことを本書で保証するものではない。
 
-ゲートコードの上位バイトを`lineIn`または`lineOut`、下位バイトを`stationIn`または`stationOut`へ保存し、反対側は`0`にする。これらを実際の路線・駅名へ変換する処理はidKMTのConverterにはない。
+ゲートコードの上位バイトを`lineIn`または`lineOut`、下位バイトを`stationIn`または`stationOut`へ保存し、反対側は`0`にする。これらを実際の路線・駅名へ変換する処理はidKAIのConverterにはない。
 
 連番は`ResultHistory.transactionId`へ格納する。解析時はブロック順を維持し、共通の結果画面では`transactionId`の降順に並べる。連番の周回補正は行わない。
 
 ## 結果・表示への変換
 
-`ScanResult`は現在残高、解析済み履歴、カード情報を保持し、`isHistory = true`、`isLastHide = true`、Converterは`.idKMT`となる。
+`ScanResult`は現在残高、解析済み履歴、カード情報を保持し、`isHistory = true`、`isLastHide = true`、Converterは`.idKAI`となる。
 
 `ResultCardInfo`にはIDm・カード番号・固定のカード名/種別/発行地域/発行者を設定する。バージョンと有効期限は`nil`。発行者情報はカード内データから読み出した値ではない。
 
-`IDKMTConverter.history`は日時・取引種別・`history.balance`を`DisplayHistory`へ渡す。日時文字列は`年/月/日 時:分`（時・分のみ2桁）で、時分がなければ日付のみ、年月日がなければ「不明」とする。ただし共通結果画面は`ResultHistory.date`からも日時を描画するため、この文字列だけで画面全体の表示形式が決まるわけではない。
+`IDKAIConverter.history`は日時・取引種別・`history.balance`を`DisplayHistory`へ渡す。日時文字列は`年/月/日 時:分`（時・分のみ2桁）で、時分がなければ日付のみ、年月日がなければ「不明」とする。ただし共通結果画面は`ResultHistory.date`からも日時を描画するため、この文字列だけで画面全体の表示形式が決まるわけではない。
 
-idKMTでは符号付きレコード金額を`balance`へ格納するため、共通結果画面の隣接履歴からの差分表示を無効にする。保存済みのidKMT履歴にも適用する。金額そのものの符号規則は引き続き未確認。取引種別が`nil`の場合は「その他」と表示する。
+idKAIでは符号付きレコード金額を`balance`へ格納するため、共通結果画面の隣接履歴からの差分表示を無効にする。保存済みのidKAI履歴にも適用する。金額そのものの符号規則は引き続き未確認。取引種別が`nil`の場合は「その他」と表示する。
 
-`IDKMTConverter.cardInfo`が表示モデルへ渡す項目はIDm・名前・短縮名・通貨・種別で、`serial`は含まれない。カード番号を解析・保持することと、Converter経由で表示することは別である。
+`IDKAIConverter.cardInfo`が表示モデルへ渡す項目はIDm・名前・短縮名・通貨・種別で、`serial`は含まれない。カード番号を解析・保持することと、Converter経由で表示することは別である。
 
 ## 未確認事項
 
@@ -142,8 +142,8 @@ idKMTでは符号付きレコード金額を`balance`へ格納するため、共
 
 ## 実装参照
 
-- [カード定義・読み取り・バイト解析](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKMT/idKMT.swift)
-- [表示変換](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKMT/IDKMTConverter.swift)
+- [カード定義・読み取り・バイト解析](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKAI/idKAI.swift)
+- [表示変換](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKAI/IDKAIConverter.swift)
 - [内蔵・外部リーダーの振り分け](../../iOS/TransitICScanner/TransitICScanner/CardDefine/ScannerBranch.swift)
 - [結果モデル](../../iOS/TransitICScanner/TransitICScanner/Result/ResultModel.swift)
 - [共通結果画面](../../iOS/TransitICScanner/TransitICScanner/Result/ResultView.swift)
@@ -155,6 +155,14 @@ idKMTでは符号付きレコード金額を`balance`へ格納するため、共
 - 履歴取得関数自体でも件数を0〜20に制限し、負数のRange生成とUInt8変換の範囲外を防止。
 - 通信応答の各ブロック長を検証。空の応答ブロックを空履歴として受け入れない。
 - 種別欠落時の誤分類、履歴金額同士の差分表示、セッション終了の重複を修正。
-- `python3 script/tests/test_idKMT.py`で実装のパーサーと履歴読み取り処理を直接コンパイルし、人工データによるバイト順・スライス・短い入力・未知の取引種別・無効履歴の除外・件数境界・不正応答長・空ブロック終端を確認する。実カードのサンプルではない。
+- `python3 script/tests/test_idkai.py`で実装のパーサーと履歴読み取り処理を直接コンパイルし、人工データによるバイト順・スライス・短い入力・未知の取引種別・無効履歴の除外・件数境界・不正応答長・空ブロック終端を確認する。実カードのサンプルではない。
 
 履歴読み取りの失敗と終端の区別は未解決。外部リーダーはカードのステータス異常も`Error`へ変換するため、単にすべての`Error`をスキャン失敗に変えると短い履歴を持つカードの読み取りを壊す可能性がある。終端応答の実測値または仕様の確認が必要。
+
+## 識別子の統一（Issue #118）
+
+コード・カードID・Converter・ローカライズキー・Asset・文書・テストは `idKAI` を正とする。Kartu Multi Trip（KMT）はカードの名称・検索語として維持する。
+
+旧バージョンの `idKMT` / `cardList.idKMT` / `idKMT.short` / `idKMT.scand.description` / `card.KMT` / 画像名 `idKMT` は、共通の `CardIdentity` で現行名に対応させる。保存済みカードは表示用の投影時にキーを解決し、SwiftDataのスキーマ・保存プロパティ・利用者が付けた表示名・残高・履歴を変更しない。Widgetは旧JSONの画像名を表示時に解決する。新しいスキャンでは `idKAI` を保存する。
+
+`python3 script/tests/test_idkai_identity.py` で旧IDの解決、現行IDの出力、ローカライズ全言語・Asset参照、合成データを使ったSwiftDataの保存・取得・表示互換性を検証する。

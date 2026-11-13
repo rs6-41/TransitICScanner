@@ -84,6 +84,7 @@
 				Localize/Localization.swift,
 				Result/BalanceFormat.swift,
 				Utility/Log.swift,
+				Utility/CardIdentity.swift,
 			);
 			target = AA43A044309D6C14008A3C48 /* TransitICScanner_Watch Watch App */;
 		};
@@ -124,6 +125,7 @@
 				Assets.xcassets,
 				Result/BalanceFormat.swift,
 				Utility/Log.swift,
+				Utility/CardIdentity.swift,
 			);
 			target = AA87ABCB306686B600A3D87B /* CardBalanceWidgetExtension */;
 		};

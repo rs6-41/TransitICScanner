@@ -76,7 +76,7 @@ struct ListBalanceWidgetView: View {
                     VStack(spacing: 2) {
                         HStack {
 
-                            if let iconName = card.icon {
+                            if let iconName = card.iconAssetName {
                                 Image(iconName)
                                     .resizable()
                                     .scaledToFit()
