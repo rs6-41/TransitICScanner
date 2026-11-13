@@ -41,6 +41,7 @@ struct CardList: View {
 
     /// 分割表示（サイドバー＋詳細列）を使うか
     private var showsSidebar: Bool {
+        
         #if targetEnvironment(macCatalyst)
         true
         #else
@@ -93,6 +94,9 @@ struct CardList: View {
         NavigationSplitView {
             NavigationStack(path: $regionPath) {
                 sidebar
+                    .listStyle(.sidebar)
+                    .scrollContentBackground(.hidden)
+                    .background(Color(uiColor: .quaternarySystemFill))
                     .navigationDestination(for: RegionList.self) { region in
                         regionCards(for: region)
                     }
@@ -111,6 +115,9 @@ struct CardList: View {
     private var compactStack: some View {
         NavigationStack(path: $compactPath) {
             sidebar
+                .listStyle(.insetGrouped)
+                .scrollContentBackground(.hidden)
+                .background(Color(uiColor: .quaternarySystemFill))
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         ScanReaderPicker(manager: smartCardManager)
@@ -120,8 +127,6 @@ struct CardList: View {
                     switch route {
                     case .region(let region):
                         regionCards(for: region)
-                            .scrollContentBackground(.hidden)
-                            .background(Color(uiColor: .quaternarySystemFill))
                     case .result(let result):
                         resultView(result) {
                             if !compactPath.isEmpty {
@@ -204,7 +209,6 @@ struct CardList: View {
             }
             .listRowBackground(Color(uiColor: .secondarySystemFill))
         }
-        .scrollContentBackground(.hidden)
         .listStyle(.insetGrouped)
         .alignmentGuide(.listRowSeparatorLeading) { _ in
                 .zero
@@ -215,8 +219,6 @@ struct CardList: View {
             prompt: Text(LocalizedStringKey("cardList.search"))
         )
         .navigationTitle(LocalizedStringKey("cardList.title"))
-        .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .quaternarySystemFill))
     }
 
     /// 現在地で使えるカード
