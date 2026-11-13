@@ -1,0 +1,4 @@
+interface:
+  display_name: "交通ICアプリの翻訳補完"
+  short_description: "指定した1言語から不足翻訳を補完しJSON内に文脈コメントを記録"
+  default_prompt: "$transit-localization を使い、私が入力した1言語の文言から他言語を補完し、必要な文脈はxcstringsのcommentに記録してください。"
