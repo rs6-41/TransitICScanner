@@ -40,3 +40,6 @@ __pycache__/
 
 env.swift
 node_modules/
+
+# Xcode Cloud が生成するTestFlightのテスト内容
+iOS/TransitICScanner/TestFlight/
