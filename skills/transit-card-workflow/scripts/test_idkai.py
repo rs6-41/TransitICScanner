@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-root = Path(__file__).resolve().parents[2]
+root = Path(__file__).resolve().parents[3]
 source = root / 'iOS/TransitICScanner/TransitICScanner'
 parser = (source / 'CardDefine/idKAI/idKAI.swift').read_text().split('struct KAIData {', 1)[1]
 model = (source / 'Result/ResultModel.swift').read_text().split('struct ResultHistory:', 1)[1].split('extension ResultHistory', 1)[0]

@@ -3,7 +3,8 @@
  - [共通規定](../../AGENTS.md)：命名、互換性、作業・Gitの規定
  - [Apple実装規定](../../iOS/TransitICScanner/AGENTS.md)：責務、共有処理、ターゲット別検証
  - [カード定義規定](../../iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md)：カード実装の根拠・登録手順
- - [スクリプト規定](../../script/AGENTS.md)：補助処理とテスト
+ - [スキル・検証補助の規定](../../skills/AGENTS.md)：再利用手順とテスト
+ - [工程別スキル](../../skills/README.md)：Issue作成、仕様書、iOS実装、翻訳補完
  - [ファイル構成とアーキテクチャ](./ARCHITECTURE.md)：各ファイルの役割・実装意図、よくある変更で触るファイル
 
 ## 開発環境
@@ -52,17 +53,20 @@ Codexが作業した場合は、Issue本文とコミットの内容に `Codex` �
 
 ```sh
 # 命名規則を検証（保存・外部契約に必要な例外は共通規定を参照）
-python3 script/check_naming.py
+python3 skills/transit-card-workflow/scripts/check_naming.py
 
 # 追跡中のSwiftファイルの書式を検証
 git ls-files -z '*.swift' | xargs -0 xcrun swift-format lint --strict --configuration iOS/TransitICScanner/.swift-format
 
 # KAI Commuterの解析・読み取り処理の回帰テスト（macOS / Swiftが必要）
-python3 script/tests/test_idkai.py
-python3 script/tests/test_idkai_identity.py
+python3 skills/transit-card-workflow/scripts/test_idkai.py
+python3 skills/transit-card-workflow/scripts/test_idkai_identity.py
 
 # Widget保存データの旧JSONキーとの互換性を検証
-python3 script/tests/test_widget_compatibility.py
+python3 skills/transit-card-workflow/scripts/test_widget_compatibility.py
+
+# 翻訳チェック用ツールの回帰テスト
+python3 skills/transit-localization/scripts/test_check_xcstrings.py
 
 # 空白エラーと作業ツリーの確認
 git diff --check

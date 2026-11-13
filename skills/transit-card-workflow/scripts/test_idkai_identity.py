@@ -6,7 +6,7 @@ import re
 import subprocess
 import tempfile
 
-root = Path(__file__).resolve().parents[2]
+root = Path(__file__).resolve().parents[3]
 source = root / 'iOS/TransitICScanner/TransitICScanner'
 identity = (source / 'Utility/CardIdentity.swift').read_text()
 card_model = (source / 'Scan/CardModel.swift').read_text()
