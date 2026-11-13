@@ -14,14 +14,15 @@ env_file="$script_dir/../TransitICScanner/Ads/env.swift"
 native_unit_id=${ADMOB_NATIVE_UNIT_ID:-}
 banner_unit_id=${ADMOB_BANNER_UNIT_ID:-}
 
-if [ -f "$env_file" ] && [ -z "$native_unit_id" ] && [ -z "$banner_unit_id" ]; then
-    echo "env.swift already exists; keeping it."
-    exit 0
-fi
-
+# 配布用では既存ファイルの有無にかかわらず、未設定を先にエラーにする。
 if [ "${REQUIRE_AD_UNIT_IDS:-0}" = "1" ] && { [ -z "$native_unit_id" ] || [ -z "$banner_unit_id" ]; }; then
     echo "error: ADMOB_NATIVE_UNIT_ID and ADMOB_BANNER_UNIT_ID are required for distribution builds." >&2
     exit 1
+fi
+
+if [ -f "$env_file" ] && [ -z "$native_unit_id" ] && [ -z "$banner_unit_id" ]; then
+    echo "env.swift already exists; keeping it."
+    exit 0
 fi
 
 # Swift文字列リテラルへ埋め込むため、AdMobのユニットID形式以外は拒否する。

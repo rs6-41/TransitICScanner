@@ -1,5 +1,6 @@
 #!/bin/sh
-# Xcode Cloud: クローン直後に実行される。非追跡の env.swift を生成する。
+# Xcode Cloud: 各アクションの xcodebuild 直前に実行される。非追跡の env.swift を生成する。
+# CI_XCODEBUILD_ACTION でArchiveを確実に判定できるよう、post-cloneではなくこの段階で行う。
 set -eu
 
 script_dir=$(cd "$(dirname "$0")" && pwd)

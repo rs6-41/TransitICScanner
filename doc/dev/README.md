@@ -102,6 +102,6 @@ Xcodeで連携すると `TransitICScanner.xcodeproj/xcshareddata/xcodecloud/mani
 
 `ci_scripts/` の各スクリプトの役割：
 
-- `ci_post_clone.sh`：`env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
-- `ci_post_xcodebuild.sh`：Archive成功時に直近10コミットから `TestFlight/WhatToTest.*.txt`（TestFlightの「テスト内容」）を生成する。生成物はコミットしない。
+- `ci_pre_xcodebuild.sh`：各アクションのビルド直前に `env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
+- `ci_post_xcodebuild.sh`：環境変数 `TESTFLIGHT_NOTES_FROM_COMMITS=1` を設定したワークフローだけ、Archive成功時に直近10コミットの件名から `TestFlight/WhatToTest.*.txt`（TestFlightの「テスト内容」）を生成する。外部テスターにも表示されるため、既定では生成しない。生成物はコミットしない。
 - `make_env_swift.sh`：`env.swift` の生成本体。GitHub Actionsからも使う。既存の `env.swift` があり環境変数が未設定なら上書きしない。
