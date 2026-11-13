@@ -19,7 +19,7 @@ let relCards: [CardInfo] = [
     jpIC, cnTunion, hkOctopus, twICash, twEasyCard_old, krOneCard,
     jpIC_icsca, jpDoCard, jpOKICA, jpIC_SAPICA, jpIC_IruCa, jpRapica, jpNplus,
     usClipper,
-    idKMT,
+    idKAI,
 ]
 
 extension NFCScannerModel {
@@ -28,7 +28,7 @@ extension NFCScannerModel {
     func switchCard(id: CardID, _ tag: NFCTag, _ session: NFCTagReaderSession) async {
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
+            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKAI:
             scanFeliCa(id: id, tag, session)
         case .cnTunion:
             self.cnTunionScan(tag, session)
@@ -55,7 +55,7 @@ extension NFCScannerModel {
 
         switch id {
         case .jpIC, .jpIC_SAPICA, .jpIC_IruCa, .jpIC_icsca,
-            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKMT:
+            .hkOctopus, .jpNplus, .jpOKICA, .jpDoCard, .jpRapica, .idKAI:
             try await scanFeliCaExternal(id: id, using: manager)
         case .usClipper:
             try await usClipperScanExternal(using: manager)
@@ -90,8 +90,8 @@ extension NFCScannerModel {
             await jpDoCardRead(felicaTag)
         case .jpRapica:
             await jpRapicaRead(felicaTag)
-        case .idKMT:
-            await idKMTRead(felicaTag)
+        case .idKAI:
+            await idKAIRead(felicaTag)
         case .cnTunion, .krOneCard, .twICash, .usClipper,
             .twEasyCard_old, .spFlashPay:
             nil

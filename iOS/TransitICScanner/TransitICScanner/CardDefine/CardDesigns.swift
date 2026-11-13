@@ -54,6 +54,6 @@ let cardDesignList: [CardDesign] = [
     CardDesign(type: .jpRapica, name: "card.rapica", imageName: "jpRapica", isDefault: true),
     CardDesign(type: .jpRapica, name: "card.iwasaki", imageName: "jpRapica_iwasaki", isDefault: false),
 
-    // MARK: idKMT
-    CardDesign(type: .idKMT, name: "card.KMT", imageName: "idKMT", isDefault: true),
+    // MARK: idKAI
+    CardDesign(type: .idKAI, name: "card.idKAI", imageName: "idKAI", isDefault: true),
 ]

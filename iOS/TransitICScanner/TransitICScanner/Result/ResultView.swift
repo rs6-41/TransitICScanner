@@ -368,7 +368,7 @@ struct ResultView: View {
 
         // KMT の balance は符号付きレコード金額。残高同士の差分として扱わない。
         let diff: Double? =
-            result.converter == .idKMT
+            result.converter == .idKAI
             ? nil
             : (hasNext
                 ? item.balance - nextBalance

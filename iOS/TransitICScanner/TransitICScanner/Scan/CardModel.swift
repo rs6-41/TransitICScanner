@@ -23,7 +23,7 @@ struct CardInfo {
 }
 
 /// カード定義の識別子。読取処理の分岐はこの enum で網羅的に行う。
-/// rawValue は保存データやローカライズキーで使われるため変更しないこと。
+/// rawValue は保存データやローカライズキーで使う。明示的に改名する場合は旧値をCardIdentityで解決する。
 enum CardID: String, CaseIterable {
     case jpIC
     case jpIC_SAPICA
@@ -39,8 +39,16 @@ enum CardID: String, CaseIterable {
     case jpDoCard
     case jpOKICA
     case jpRapica
-    case idKMT
+    case idKAI
     case spFlashPay
+
+    init?(rawValue: String) {
+        let identifier = CardIdentity.canonicalID(rawValue)
+        guard let value = Self.allCases.first(where: { $0.rawValue == identifier }) else {
+            return nil
+        }
+        self = value
+    }
 }
 
 struct ScanOption {

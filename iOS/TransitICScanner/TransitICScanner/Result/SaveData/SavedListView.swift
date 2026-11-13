@@ -34,7 +34,7 @@ struct SavedListView: View {
 
         if narrow != "all" {
             result = result.filter { card in
-                card.name == narrow
+                card.nameKey == narrow
             }
         }
 
@@ -42,8 +42,8 @@ struct SavedListView: View {
             result = result.filter { card in
                 let cardResult = card.result()
 
-                let name = card.name
-                let nameShort = card.nameShort
+                let name = card.nameKey
+                let nameShort = card.nameShortKey
                 let displayName = cardResult.info?.displayName ?? ""
                 let type =
                     cardResult.info.map {
@@ -65,12 +65,12 @@ struct SavedListView: View {
 
         case "nameAscending":
             result.sort {
-                $0.name.localizedCompare($1.name) == .orderedAscending
+                $0.nameKey.localizedCompare($1.nameKey) == .orderedAscending
             }
 
         case "nameDescending":
             result.sort {
-                $0.name.localizedCompare($1.name) == .orderedDescending
+                $0.nameKey.localizedCompare($1.nameKey) == .orderedDescending
             }
 
         default:
@@ -89,7 +89,7 @@ struct SavedListView: View {
 
         let cardTypes = Dictionary(
             grouping: cards,
-            by: { $0.name }
+            by: { $0.nameKey }
         )
 
         for (name, cards) in cardTypes {
@@ -248,7 +248,7 @@ struct SavedListView: View {
                                             )
                                             .font(.headline)
 
-                                            Text(LocalizedStringKey(card.name))
+                                            Text(LocalizedStringKey(card.nameKey))
                                                 .font(.subheadline)
                                                 .foregroundStyle(.secondary)
 
@@ -262,12 +262,12 @@ struct SavedListView: View {
                                             )
                                             .font(.headline)
 
-                                            Text(LocalizedStringKey(card.name))
+                                            Text(LocalizedStringKey(card.nameKey))
                                                 .font(.subheadline)
                                                 .foregroundStyle(.secondary)
 
                                         } else {
-                                            Text(LocalizedStringKey(card.nameShort))
+                                            Text(LocalizedStringKey(card.nameShortKey))
                                                 .font(.headline)
                                         }
                                     }
