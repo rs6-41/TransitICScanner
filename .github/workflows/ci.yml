@@ -30,6 +30,9 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 空白チェックで比較元のコミットを参照するため履歴を取得する。
+          fetch-depth: 0
 
       - name: Toolchain
         run: xcodebuild -version && python3 --version
@@ -42,8 +45,21 @@ jobs:
           git ls-files -z '*.swift' \
             | xargs -0 xcrun swift-format lint --strict --configuration iOS/TransitICScanner/.swift-format
 
+      # 既存Markdownの改行用の行末スペースを除外するため、変更差分だけを検査する（ローカル規定と同じ）。
       - name: 空白エラー
-        run: git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          if [ -n "$BASE_REF" ]; then
+            base=$(git merge-base "origin/$BASE_REF" HEAD)
+          elif [ -n "$BEFORE_SHA" ] && git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
+            base=$BEFORE_SHA
+          else
+            echo "比較元のコミットがないためスキップします。"
+            exit 0
+          fi
+          git diff --check "$base" HEAD
 
       - name: 回帰テスト（Python + swiftc）
         run: |
