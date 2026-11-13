@@ -9,7 +9,7 @@ import re
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 CARD_DEFINITIONS = 'iOS/TransitICScanner/TransitICScanner/CardDefine/'
 LEGACY_NAMES = {
     CARD_DEFINITIONS + 'jpIC/jpIC.swift': {'jpIC_SAPICA', 'jpIC_IruCa', 'jpIC_icsca'},

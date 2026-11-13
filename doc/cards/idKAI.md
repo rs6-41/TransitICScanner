@@ -155,7 +155,7 @@ idKAIでは符号付きレコード金額を`balance`へ格納するため、共
 - 履歴取得関数自体でも件数を0〜20に制限し、負数のRange生成とUInt8変換の範囲外を防止。
 - 通信応答の各ブロック長を検証。空の応答ブロックを空履歴として受け入れない。
 - 種別欠落時の誤分類、履歴金額同士の差分表示、セッション終了の重複を修正。
-- `python3 script/tests/test_idkai.py`で実装のパーサーと履歴読み取り処理を直接コンパイルし、人工データによるバイト順・スライス・短い入力・未知の取引種別・無効履歴の除外・件数境界・不正応答長・空ブロック終端を確認する。実カードのサンプルではない。
+- `python3 skills/transit-card-workflow/scripts/test_idkai.py`で実装のパーサーと履歴読み取り処理を直接コンパイルし、人工データによるバイト順・スライス・短い入力・未知の取引種別・無効履歴の除外・件数境界・不正応答長・空ブロック終端を確認する。実カードのサンプルではない。
 
 履歴読み取りの失敗と終端の区別は未解決。外部リーダーはカードのステータス異常も`Error`へ変換するため、単にすべての`Error`をスキャン失敗に変えると短い履歴を持つカードの読み取りを壊す可能性がある。終端応答の実測値または仕様の確認が必要。
 
@@ -165,4 +165,4 @@ idKAIでは符号付きレコード金額を`balance`へ格納するため、共
 
 旧バージョンの `idKMT` / `cardList.idKMT` / `idKMT.short` / `idKMT.scand.description` / `card.KMT` / 画像名 `idKMT` は、共通の `CardIdentity` で現行名に対応させる。保存済みカードは表示用の投影時にキーを解決し、SwiftDataのスキーマ・保存プロパティ・利用者が付けた表示名・残高・履歴を変更しない。Widgetは旧JSONの画像名を表示時に解決する。新しいスキャンでは `idKAI` を保存する。
 
-`python3 script/tests/test_idkai_identity.py` で旧IDの解決、現行IDの出力、ローカライズ全言語・Asset参照、合成データを使ったSwiftDataの保存・取得・表示互換性を検証する。
+`python3 skills/transit-card-workflow/scripts/test_idkai_identity.py` で旧IDの解決、現行IDの出力、ローカライズ全言語・Asset参照、合成データを使ったSwiftDataの保存・取得・表示互換性を検証する。

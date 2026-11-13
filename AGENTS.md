@@ -5,7 +5,7 @@
 ## 規定と資料の役割
 
 - 命名・変更手順・互換性・検証の共通規定はこのファイルを正とする。
-- Appleプラットフォームの実装は `iOS/TransitICScanner/AGENTS.md`、カード定義はその配下の `TransitICScanner/CardDefine/AGENTS.md`、補助スクリプトは `script/AGENTS.md` に従う。
+- Appleプラットフォームの実装は `iOS/TransitICScanner/AGENTS.md`、カード定義はその配下の `TransitICScanner/CardDefine/AGENTS.md`、スキルと検証補助コードは `skills/AGENTS.md` に従う。
 - `doc/dev/ARCHITECTURE.md` は構成と責務、`doc/dev/README.md` は環境と実行手順、`doc/cards/` はカード仕様の根拠を記載する。規定の変更はAGENTS.md、構成の変更はARCHITECTURE.mdに反映する。
 
 ## 命名と書式
@@ -31,7 +31,12 @@
 
 1. 開始時に `git status` と適用対象のAGENTS.mdを確認する。既存のユーザー変更は上書きしない。
 2. 改名時は宣言だけでなく、呼び出し元・共有ターゲット・テストのソース抽出・Xcodeのファイル参照・開発文書も検索する。文字列キーを一括置換しない。
-3. コミット前に `python3 script/check_naming.py`、Swiftのformat/lint、`git diff --check` を実行する。動作を変更する場合は該当する回帰テストを実行する。実行コマンドは `doc/dev/README.md` に記載する。
+3. コミット前に `python3 skills/transit-card-workflow/scripts/check_naming.py`、Swiftのformat/lint、`git diff --check` を実行する。動作を変更する場合は該当する回帰テストを実行する。実行コマンドは `doc/dev/README.md` に記載する。
 4. 検証は実行した範囲と結果を正確に報告する。未実施のビルド・シミュレータ・実カード確認を成功扱いにしない。
 5. 原則として `codex/` の作業用ブランチで変更し、依頼元ブランチへ直接pushしない。ユーザーが指定したブランチ・差し戻し手順を優先する。
 6. コミットは `git cz` で「絵文字 + #Issue番号 + 内容」に揃える。Codexによる作業はIssueとコミット内容に `Codex` を明記する。push先を確認し、force pushはしない。
+
+## 工程別スキル
+
+- カードの調査/iOS実装Issue、調査済み情報からの仕様書、仕様書からのコード作成は `skills/transit-card-workflow/SKILL.md` を読み、依頼された工程だけを進める。
+- 入力された1言語からの翻訳補完は `skills/transit-localization/SKILL.md` を読む。文脈はxcstringsのJSON内 `comment` に置く。

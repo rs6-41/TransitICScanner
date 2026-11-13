@@ -27,7 +27,7 @@ TransitICScanner/
 │   ├── cards/<カードID>.md      … カードごとの仕様書（サービスコード、ブロック形式など）
 │   └── dev/                     … 開発ドキュメント（このファイルを含む）
 ├── resource/card/<カードID>/    … カード券面画像の元データ（アプリには Assets.xcassets 経由で取り込む）
-├── script/                      … 補助スクリプト（xcstrings の簡体字→繁体字変換）
+├── skills/                      … カード開発・翻訳スキル、テンプレート、検証ツール
 ├── AppIcon.psd                  … アプリアイコンの元データ
 ├── package.json / .cz-adapter.js … コミットメッセージ用 Commitizen 設定
 └── iOS/TransitICScanner/
@@ -282,7 +282,7 @@ flowchart TD
 | `Debug/DebugSettingView.swift` | デバッグ設定（広告デバッグ、デバッグ用ストレージ、初回モーダルの再表示、サンプル保存） | |
 | `Debug/DummyCardFormView.swift` | ダミーのカードを手入力で作るフォーム | 実機やカードがなくても保存・Widget の動作を確かめるため |
 | `Debug/EnableTestCardsView.swift`, `CardListItemDebugView.swift`, `makeSampleResult.swift` | テストカードの有効化、一覧のデバッグ表示、`CardInfo.sample` から `ScanResult` を作る処理 | |
-| `Localize/Localizable.xcstrings` | アプリ全体の文字列カタログ | 簡体字から繁体字への変換は `script/iOS/` のスクリプトを使う |
+| `Localize/Localizable.xcstrings` | アプリ全体の文字列カタログ | 翻訳補完は `skills/transit-localization/SKILL.md` に従い、文脈はJSON内commentへ記録する |
 | `Localize/InfoPlist.xcstrings` | 権限ダイアログの文言など | |
 | `Localize/Localization.swift` | `localizedString(_:)`：キーをローカライズ済みの文字列として取得する（表示以外の用途向け） | |
 | `Utility/CardIdentity.swift` | 旧 `idKMT` のID・表示キー・画像名を `idKAI` へ解決 | アプリ・Widget・Watchで共有。保存スキーマやユーザー入力は変更しない |
@@ -349,7 +349,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 - ビルド確認：`Dev` と `Watch_Dev` に加えて、共有ファイルを触ったら `Widget` も、ログやリリース分岐を触ったら `Release` もビルドする
 - 書式：コミット前に `swift-format` を適用する（設定は `iOS/TransitICScanner/.swift-format`。手順は `doc/dev/README.md`）
 - 画面遷移の確認：シミュレータではカードをタップするとサンプル結果が返るので、iPhone / iPad の両方で 一覧 → 地域 → 結果 → 戻る を確認する
-- 自動テストは `script/tests/`（KMT解析・読取、Widget保存互換性）。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
+- 自動テストは `skills/transit-card-workflow/scripts/`（KMT解析・読取、Widget保存互換性）。カードの読取処理を変えたら、`Debug/DummyCardFormView` やサンプルデータでの表示確認に加え、実機と実カードで確認する（確認できなかった場合はその旨を明記する）
 - コミットメッセージは `doc/dev/README.md` の形式（絵文字 + Issue番号 + 内容）に従う
 
 ---

@@ -4,7 +4,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-root = Path(__file__).resolve().parents[2]
+root = Path(__file__).resolve().parents[3]
 source = root / 'iOS/TransitICScanner'
 model = (source / 'CardBalanceWidget/BalanceWidgetModel.swift').read_text()
 model = 'struct BalanceWidgetModel:' + model.split('struct BalanceWidgetModel:', 1)[1].split(
