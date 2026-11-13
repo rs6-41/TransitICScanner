@@ -98,6 +98,8 @@ git status --short
 2. 配布用ワークフローは `Release`（または `Beta`）スキームのArchiveアクションと、TestFlight/App Storeへの配布ポストアクションを設定する。
 3. テストを実行する場合は `Dev` スキームのTestアクションを追加する。
 
+Xcodeで連携すると `TransitICScanner.xcodeproj/xcshareddata/xcodecloud/manifest.json` が作成されます。プロジェクトとXcode Cloudのプロダクトを結び付けるIDだけを含むファイルなので、コミットして共有します（秘密情報は含まれません）。ワークフローの実行結果は、GitHubのチェックに「Xcode Cloud」として表示されます。
+
 `ci_scripts/` の各スクリプトの役割：
 
 - `ci_post_clone.sh`：`env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
