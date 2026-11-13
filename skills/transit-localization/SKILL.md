@@ -49,3 +49,5 @@ python3 skills/transit-localization/scripts/check_xcstrings.py --catalog iOS/Tra
 複雑なvariationはこのチェックの対象外として通知される。上書きや削除でチェックを通さず、構造と各leafの引数を確認し、必要なXcodeビルドを行う。コード参照・表示幅・改行も変更範囲に応じて確認する。
 
 変更したキー、基準言語、補完言語、追加した文脈コメント、実施した確認と未確認点を報告する。呼び出し元も変更した場合は、その用途に必要な検証を加える。
+
+Issue・PRへの書き込みも依頼された場合は、ルートAGENTS.mdの規定に従い `Agent` ラベルを必ず付与して確認し、他のラベルを維持する。Issue作成手順は同梱の `skills/transit-card-workflow/references/issues.md` を使う。翻訳・下書きだけの依頼では外部投稿を始めない。
