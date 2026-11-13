@@ -99,9 +99,7 @@ extension NFCScannerModel {
                 historyBlocks: historyBlocks
             )
         else {
-            self.session?.invalidate(
-                errorMessage: String(localized: "scanner.coreNFC.scanning.error.read")
-            )
+            // セッションの終了は呼び出し元に任せる（外部リーダーでも共有する）。
             return nil
         }
 
@@ -120,7 +118,7 @@ extension NFCScannerModel {
     ) async -> [Data] {
         var blocks: [Data] = []
 
-        for index in 0..<maxCount {
+        for index in 0..<min(max(maxCount, 0), 20) {
             guard let block = await idKMT_readBlocks(tag, service: service, blocks: [UInt8(index)])?.first else {
                 Log.debug("KMT: 履歴ブロック \(index) 以降は読めないため終了")
                 break
@@ -161,7 +159,8 @@ extension NFCScannerModel {
                     guard error == nil,
                         status1 == 0,
                         status2 == 0,
-                        data.count == blockList.count
+                        data.count == blockList.count,
+                        data.allSatisfy({ $0.count == 16 })
                     else {
                         continuation.resume(returning: nil)
                         return
@@ -226,6 +225,8 @@ struct KMTData {
             return nil
         }
 
+        // Data のスライスは開始添字が0とは限らないため、相対位置に正規化する。
+        let balanceBlock = Data(Array(balanceBlock))
         let serialBytes = Array(idBlock.prefix(16))
 
         let serialNumber: String
@@ -260,6 +261,7 @@ struct KMTData {
     }
 
     private static func parseHistory(_ data: Data) -> ResultHistory? {
+        let data = Data(Array(data))
         guard data.count >= 16,
             data[0] != 0
         else {

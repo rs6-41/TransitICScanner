@@ -10,15 +10,16 @@ final class CardItemsStore: ObservableObject {
 let cardItemsStore = CardItemsStore()
 
 let devCards: [CardInfo] = [
-    spFlashPay, idKMT,
+    spFlashPay,
 ]
 
 let featureCards: [CardInfo] = []
 
 let relCards: [CardInfo] = [
-    jpIC, jpIC_SAPICA, jpIC_IruCa, cnTunion, hkOctopus, krOneCard,
-    twICash, jpNplus, jpIC_icsca, twEasyCard_old, jpDoCard, jpOKICA,
-    usClipper, jpRapica,
+    jpIC, cnTunion, hkOctopus, twICash, twEasyCard_old, krOneCard,
+    jpIC_icsca, jpDoCard, jpOKICA, jpIC_SAPICA, jpIC_IruCa, jpRapica, jpNplus,
+    usClipper,
+    idKMT,
 ]
 
 extension NFCScannerModel {
