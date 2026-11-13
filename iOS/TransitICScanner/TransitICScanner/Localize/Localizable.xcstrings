@@ -747,6 +747,36 @@
         }
       }
     },
+    "card.idKAI" : {
+      "comment" : "Card Name\nカード名",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        }
+      }
+    },
     "card.IruCa" : {
       "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
@@ -863,36 +893,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "K-CASH / 케이캐쉬"
-          }
-        }
-      }
-    },
-    "card.idKAI" : {
-      "comment" : "Card Name\nカード名",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kartu Multi Trip"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kartu Multi Trip"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kartu Multi Trip"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kartu Multi Trip"
           }
         }
       }
@@ -10404,6 +10404,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商標。"
+          }
+        }
+      }
+    },
+    "setting.acknowledgment.idKAI" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kartu Multi Trip” are trademarks of KAI Commuter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Kartu Multi Trip」はKAI Commuterの商標です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kartu Multi Trip” 是 KAI Commuter 的商标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kartu Multi Trip” 是 KAI Commuter 的商標。"
           }
         }
       }
