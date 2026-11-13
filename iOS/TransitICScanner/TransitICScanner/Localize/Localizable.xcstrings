@@ -867,7 +867,7 @@
         }
       }
     },
-    "card.KMT" : {
+    "card.idKAI" : {
       "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
       "localizations" : {
@@ -2346,7 +2346,7 @@
         }
       }
     },
-    "cardList.idKMT" : {
+    "cardList.idKAI" : {
       "comment" : "List’s Card Name\nリストのカード名",
       "extractionState" : "manual",
       "localizations" : {
@@ -2376,7 +2376,7 @@
         }
       }
     },
-    "cardList.idKMT.description" : {
+    "cardList.idKAI.description" : {
       "comment" : "List’s Card Description\nリストのカード説明",
       "extractionState" : "manual",
       "localizations" : {
@@ -2402,6 +2402,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "雅加達交通卡"
+          }
+        }
+      }
+    },
+    "cardList.idKAI.sortName" : {
+      "comment" : "Card sort name / カードのソート名",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
           }
         }
       }
@@ -5162,7 +5192,37 @@
         }
       }
     },
-    "idKMT.short" : {
+    "idKAI.scand.description" : {
+      "comment" : "Scanned card description / 読取結果の説明",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakarta Transit Card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ジャカルタの交通カード"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加达交通卡"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達交通卡"
+          }
+        }
+      }
+    },
+    "idKAI.short" : {
       "comment" : "Short Card Name\n短縮カード名",
       "extractionState" : "manual",
       "localizations" : {

@@ -1,6 +1,6 @@
 import Foundation
 
-enum IDKMTConverter {
+enum IDKAIConverter {
 
     static func history(
         _ history: ResultHistory

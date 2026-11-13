@@ -170,6 +170,11 @@ final class SavedCard {
         CurrencyType(rawValue: currency.lowercased())
     }
 
+    // 保存スキーマを変えず、旧カード名・画像名を現行の表示キーへ解決する。
+    var nameKey: String { CardIdentity.localizationKey(name) }
+    var nameShortKey: String { CardIdentity.localizationKey(nameShort) }
+    var iconAssetName: String? { iconName.map(CardIdentity.assetName) }
+
     init(
         idm: String,
         name: String,
@@ -294,12 +299,12 @@ extension SavedCard {
     func result() -> ScanResult {
         let info = ResultCardInfo(
             idm: idm,
-            name: name,
-            nameShort: nameShort,
+            name: nameKey,
+            nameShort: nameShortKey,
             displayName: displayName,
-            iconName: iconName,
+            iconName: iconAssetName,
             currencyType: parsedCurrencyType,
-            type: type,
+            type: CardIdentity.localizationKey(type),
             serial: serial,
             version: version,
             validDate: validDate,
@@ -329,10 +334,10 @@ extension SavedCard {
             history: history.isEmpty ? nil : history,
             info: info,
             isLastHide: isLastHide,
-            description: cardDescription,
+            description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw
+            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
         )
         #else
         return ScanResult(
@@ -342,10 +347,10 @@ extension SavedCard {
             info: info,
             converter: converterType,
             isLastHide: isLastHide,
-            description: cardDescription,
+            description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw
+            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
         )
         #endif
     }

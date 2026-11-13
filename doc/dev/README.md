@@ -58,7 +58,8 @@ python3 script/check_naming.py
 git ls-files -z '*.swift' | xargs -0 xcrun swift-format lint --strict --configuration iOS/TransitICScanner/.swift-format
 
 # KAI Commuterの解析・読み取り処理の回帰テスト（macOS / Swiftが必要）
-python3 script/tests/test_idKMT.py
+python3 script/tests/test_idkai.py
+python3 script/tests/test_idkai_identity.py
 
 # Widget保存データの旧JSONキーとの互換性を検証
 python3 script/tests/test_widget_compatibility.py

@@ -9,6 +9,10 @@ struct BalanceWidgetModel: Hashable, Codable {
     var icon: String?
     var savedAt: Date?
 
+    var iconAssetName: String? {
+        icon.map(CardIdentity.assetName)
+    }
+
     // 既存のApp Group内JSONを、更新前後のアプリ・Widgetで共有できるようにする。
     private enum CodingKeys: String, CodingKey {
         case displayName = "DisplayName"
