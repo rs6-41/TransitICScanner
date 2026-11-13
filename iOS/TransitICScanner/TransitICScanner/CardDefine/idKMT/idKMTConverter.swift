@@ -7,7 +7,7 @@ enum idKMT_Converter {
     ) -> DisplayHistory {
         DisplayHistory(
             date: formatDate(history.date),
-            processType: convertProcessType(history.processType ?? 0),
+            processType: convertProcessType(history.processType),
             balance: Double(history.balance)
         )
     }
@@ -36,7 +36,7 @@ enum idKMT_Converter {
         )
     }
 
-    private static func convertProcessType(_ value: UInt8) -> String {
+    private static func convertProcessType(_ value: UInt8?) -> String {
         switch value {
         case 0:
             return String(localized: "result.history.ticket")
