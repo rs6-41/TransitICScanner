@@ -301,10 +301,10 @@ struct PermissionView: View {
                 if let descriptionRed = content.descriptionRed {
                     Text(description)
                         .onAppear() {
-                            var text1 = AttributedString(String(localized: content.description))
-                            var text2 = AttributedString(String(localized: descriptionRed))
-                            text2.foregroundColor = .red
-                            description = text1 + "\n" + text2
+                            let baseText = AttributedString(String(localized: content.description))
+                            var emphasizedText = AttributedString(String(localized: descriptionRed))
+                            emphasizedText.foregroundColor = .red
+                            description = baseText + "\n" + emphasizedText
                         }
                 } else {
                     Text(String(localized: content.description))

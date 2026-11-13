@@ -28,7 +28,7 @@
 |残高情報|`0x1017`|`17 10`|0|
 |利用履歴|`0x200F`|`0F 20`|0〜19|
 
-Service Codeはリトルエンディアンで渡す。ブロックリスト要素は`80 xx`（`xx`はブロック番号）。共通の`idKMT_readBlocks`は要求を最大10ブロック単位に分割できるが、現在のカード番号・残高・履歴の呼び出しはすべて1ブロックずつ行う。
+Service Codeはリトルエンディアンで渡す。ブロックリスト要素は`80 xx`（`xx`はブロック番号）。共通の`idKMTReadBlocks`は要求を最大10ブロック単位に分割できるが、現在のカード番号・残高・履歴の呼び出しはすべて1ブロックずつ行う。
 
 読み取り成功条件は次のすべてを満たすこと。
 
@@ -46,7 +46,7 @@ flowchart TD
     C --> D[0x200F: 履歴を先頭から1件ずつ取得]
     D --> E[KMTData.parse]
     E --> F[ResultCardInfo / ScanResult生成]
-    F --> G[idKMT_Converter / 共通結果画面]
+    F --> G[IDKMTConverter / 共通結果画面]
 ```
 
 カード番号・残高の読み取りに失敗すると、スキャン結果は`nil`となる。両ブロックのいずれかが16バイト未満でも解析は失敗する。セッションのエラー終了は共通の呼び出し元で行い、idKMTの解析処理からは終了させない。
@@ -126,11 +126,11 @@ Unix秒 = epoch2000 + rawTimestamp + offset
 
 `ResultCardInfo`にはIDm・カード番号・固定のカード名/種別/発行地域/発行者を設定する。バージョンと有効期限は`nil`。発行者情報はカード内データから読み出した値ではない。
 
-`idKMT_Converter.history`は日時・取引種別・`history.balance`を`DisplayHistory`へ渡す。日時文字列は`年/月/日 時:分`（時・分のみ2桁）で、時分がなければ日付のみ、年月日がなければ「不明」とする。ただし共通結果画面は`ResultHistory.date`からも日時を描画するため、この文字列だけで画面全体の表示形式が決まるわけではない。
+`IDKMTConverter.history`は日時・取引種別・`history.balance`を`DisplayHistory`へ渡す。日時文字列は`年/月/日 時:分`（時・分のみ2桁）で、時分がなければ日付のみ、年月日がなければ「不明」とする。ただし共通結果画面は`ResultHistory.date`からも日時を描画するため、この文字列だけで画面全体の表示形式が決まるわけではない。
 
 idKMTでは符号付きレコード金額を`balance`へ格納するため、共通結果画面の隣接履歴からの差分表示を無効にする。保存済みのidKMT履歴にも適用する。金額そのものの符号規則は引き続き未確認。取引種別が`nil`の場合は「その他」と表示する。
 
-`idKMT_Converter.cardInfo`が表示モデルへ渡す項目はIDm・名前・短縮名・通貨・種別で、`serial`は含まれない。カード番号を解析・保持することと、Converter経由で表示することは別である。
+`IDKMTConverter.cardInfo`が表示モデルへ渡す項目はIDm・名前・短縮名・通貨・種別で、`serial`は含まれない。カード番号を解析・保持することと、Converter経由で表示することは別である。
 
 ## 未確認事項
 
@@ -143,7 +143,7 @@ idKMTでは符号付きレコード金額を`balance`へ格納するため、共
 ## 実装参照
 
 - [カード定義・読み取り・バイト解析](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKMT/idKMT.swift)
-- [表示変換](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKMT/idKMTConverter.swift)
+- [表示変換](../../iOS/TransitICScanner/TransitICScanner/CardDefine/idKMT/IDKMTConverter.swift)
 - [内蔵・外部リーダーの振り分け](../../iOS/TransitICScanner/TransitICScanner/CardDefine/ScannerBranch.swift)
 - [結果モデル](../../iOS/TransitICScanner/TransitICScanner/Result/ResultModel.swift)
 - [共通結果画面](../../iOS/TransitICScanner/TransitICScanner/Result/ResultView.swift)

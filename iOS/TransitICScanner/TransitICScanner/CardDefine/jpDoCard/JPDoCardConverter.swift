@@ -1,17 +1,37 @@
 import Foundation
 
-enum jpOKICA_Converter {
+enum JPDoCardConverter {
+    static func balance(
+        _ value: Int
+    ) -> String {
+        return String(
+            format: "%.2f",
+            value
+        )
+    }
 
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {
-
         DisplayHistory(
             date: formatDate(history.date),
             processType: convertProcessType(
-                history.processType4 ?? 0
+                Int(history.processType ?? 0), amount: Int(history.amount ?? 0)
             ),
             balance: Double(history.balance)
+        )
+    }
+
+    static func cardInfo(
+        _ info: ResultCardInfo
+    ) -> DisplayCardInfo {
+
+        DisplayCardInfo(
+            idm: info.idm,
+            name: info.name,
+            nameShort: info.nameShort,
+            currencyType: info.currencyType ?? .jpy,
+            type: info.type
         )
     }
 
@@ -30,48 +50,17 @@ enum jpOKICA_Converter {
     }
 
     private static func convertProcessType(
-        _ value: UInt32
+        _ value: Int, amount: Int
     ) -> String {
-
         switch value {
-
-        case 0x16010002:
+        case 0x02, 0x03, 0x07, 0x12:
             return String(localized: "result.history.fare")
-
-        case 0x08020000:
+        case 0x08, 0x15, 0x1F, 0x20:
             return String(localized: "result.history.charge")
-
-        case 0x08480000,
-            0x08480400:
-            return String(localized: "result.history.charge")
-
-        case 0x051F0000:
-            return String(localized: "result.history.charge.bus")
-
-        case 0x050F000F:
-            return String(localized: "result.history.bus")
-
-        case 0x08070000:
+        case 0x1E, 0x14, 0x2D:
             return String(localized: "result.history.new")
-
-        case 0x1F1F0000:
-            return String(localized: "result.history.charge")
-
         default:
             return String(localized: "result.history.other")
         }
-    }
-
-    static func cardInfo(
-        _ info: ResultCardInfo
-    ) -> DisplayCardInfo {
-
-        DisplayCardInfo(
-            idm: info.idm,
-            name: info.name,
-            nameShort: info.nameShort,
-            currencyType: info.currencyType ?? .jpy,
-            type: info.type
-        )
     }
 }

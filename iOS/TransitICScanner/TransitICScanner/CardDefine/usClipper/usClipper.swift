@@ -65,29 +65,29 @@ struct ClipperEvent {
 private let clipperEpochOffset: TimeInterval = 2_208_988_800  // 1900-01-01 -> 1970-01-01
 private let clipperAID = Data([0x90, 0x11, 0xF2])  // 0x9011F2 (実機ログ: GetApplicationIDs は 90 11 F2 の順)
 
-private func clipper_be16(_ b: [UInt8], _ o: Int) -> UInt16 {
+private func clipperBe16(_ b: [UInt8], _ o: Int) -> UInt16 {
     (UInt16(b[o]) << 8) | UInt16(b[o + 1])
 }
 
-private func clipper_be32(_ b: [UInt8], _ o: Int) -> UInt32 {
+private func clipperBe32(_ b: [UInt8], _ o: Int) -> UInt32 {
     (UInt32(b[o]) << 24) | (UInt32(b[o + 1]) << 16) | (UInt32(b[o + 2]) << 8) | UInt32(b[o + 3])
 }
 
-private func clipper_calendar() -> Calendar {
+private func clipperCalendar() -> Calendar {
     var cal = Calendar(identifier: .gregorian)
     cal.timeZone = TimeZone(identifier: "America/Los_Angeles") ?? .current
     return cal
 }
 
-private func clipper_components(_ seconds: UInt32) -> DateComponents {
+private func clipperComponents(_ seconds: UInt32) -> DateComponents {
     let date = Date(timeIntervalSince1970: TimeInterval(seconds) - clipperEpochOffset)
-    return clipper_calendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    return clipperCalendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
 }
 
 extension NFCScannerModel {
 
     //MARK: スキャン
-    func usClipper_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
+    func usClipperScan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
 
         let send: APDUSend
         let identifier: Data
@@ -133,7 +133,7 @@ extension NFCScannerModel {
         }
 
         Task {
-            guard let result = await usClipper_result(send, identifier: identifier) else {
+            guard let result = await usClipperResult(send, identifier: identifier) else {
                 session.invalidate(errorMessage: String(localized: "error.smartCardReader.clipperRead"))
                 return
             }
@@ -142,10 +142,10 @@ extension NFCScannerModel {
         }
     }
 
-    func usClipper_scanExternal(using manager: SmartCardManager) async throws {
+    func usClipperScanExternal(using manager: SmartCardManager) async throws {
         let result = try await manager.withCard { card in
             let send = manager.apduSender(for: card)
-            guard let result = await usClipper_result(send, identifier: Data()) else {
+            guard let result = await usClipperResult(send, identifier: Data()) else {
                 throw ReaderError.message(String(localized: "error.smartCardReader.clipperRead"))
             }
             return result
@@ -154,24 +154,24 @@ extension NFCScannerModel {
         await MainActor.run { self.result = result }
     }
 
-    private func usClipper_result(
+    private func usClipperResult(
         _ send: APDUSend,
         identifier: Data
     ) async -> ScanResult? {
-        guard await clipper_command(send, ins: 0x5A, data: clipperAID) != nil,
-            let balanceData = await clipper_readFile(send, file: 0x02),
+        guard await clipperCommand(send, ins: 0x5A, data: clipperAID) != nil,
+            let balanceData = await clipperReadFile(send, file: 0x02),
             balanceData.count >= 20
         else {
             return nil
         }
 
-        let balanceCents = Int(Int16(bitPattern: clipper_be16([UInt8](balanceData), 18)))
-        let history = await clipper_history(
+        let balanceCents = Int(Int16(bitPattern: clipperBe16([UInt8](balanceData), 18)))
+        let history = await clipperHistory(
             send,
             currentBalanceCents: balanceCents,
             limit: scanOption.historyCount
         )
-        let info = await clipper_info(send, identifier: identifier)
+        let info = await clipperInfo(send, identifier: identifier)
         return ScanResult(
             balance: Double(balanceCents) / 100.0,
             isHistory: true,
@@ -186,7 +186,7 @@ extension NFCScannerModel {
 
     //MARK: 履歴
     // File 0x4 (チャージ) / File 0xE (トリップ): 32byteレコード
-    func clipper_history(
+    func clipperHistory(
         _ send: APDUSend,
         currentBalanceCents: Int,
         limit: Int
@@ -195,16 +195,16 @@ extension NFCScannerModel {
         var events: [ClipperEvent] = []
 
         // チャージ: [2-3]事業者 [4-7]時刻 [8-11]機械ID [14-15]金額(セント)
-        if let data = await clipper_readFile(send, file: 0x04) {
-            for (i, r) in clipper_records(data).enumerated() {
-                let time = clipper_be32(r, 4)
+        if let data = await clipperReadFile(send, file: 0x04) {
+            for (i, r) in clipperRecords(data).enumerated() {
+                let time = clipperBe32(r, 4)
                 guard time != 0 else { continue }
                 events.append(
                     ClipperEvent(
                         time: time,
                         kind: 0x01,
-                        amountCents: Int(clipper_be16(r, 14)),
-                        agency: clipper_be16(r, 2),
+                        amountCents: Int(clipperBe16(r, 14)),
+                        agency: clipperBe16(r, 2),
                         transport: 0,
                         route: 0,
                         stationIn: 0,
@@ -219,32 +219,32 @@ extension NFCScannerModel {
         // タップオフ有りの交通機関は「入場のみ(仮運賃=最大運賃)」と「出場あり(確定運賃)」の
         // 2レコードが同じ入場時刻で残るため、確定済みがある場合は入場のみ側を除外する
         // トリップ: File 0x0E
-        if let data = await clipper_readFile(send, file: 0x0E) {
+        if let data = await clipperReadFile(send, file: 0x0E) {
             var parsed: [(event: ClipperEvent, hasExit: Bool)] = []
 
-            let records = clipper_records(data).reversed()
+            let records = clipperRecords(data).reversed()
 
             for (i, r) in records.enumerated() {
                 guard r.count >= 32 else { continue }
 
-                let entry = clipper_be32(r, 12)
-                let exit = clipper_be32(r, 16)
+                let entry = clipperBe32(r, 12)
+                let exit = clipperBe32(r, 16)
 
                 guard entry != 0 else { continue }
 
-                let agency = clipper_be16(r, 2)
+                let agency = clipperBe16(r, 2)
 
                 guard agency != 0 else { continue }
 
                 let event = ClipperEvent(
                     time: entry,
                     kind: 0x02,
-                    amountCents: -Int(clipper_be16(r, 6)),
+                    amountCents: -Int(clipperBe16(r, 6)),
                     agency: agency,
-                    transport: clipper_be16(r, 30),
-                    route: clipper_be16(r, 28),
-                    stationIn: clipper_be16(r, 20),
-                    stationOut: clipper_be16(r, 22),
+                    transport: clipperBe16(r, 30),
+                    route: clipperBe16(r, 28),
+                    stationIn: clipperBe16(r, 20),
+                    stationOut: clipperBe16(r, 22),
                     seq: 200_000 + i
                 )
 
@@ -282,7 +282,7 @@ extension NFCScannerModel {
                 ResultHistory(
                     processType: e.kind,
                     processType4: (UInt32(e.agency) << 16) | UInt32(e.transport),
-                    date: clipper_components(e.time),
+                    date: clipperComponents(e.time),
                     balance: Double(running) / 100.0,
                     amount: Double(e.amountCents) / 100.0,
                     // 路線ID(16bit) は lineIn=上位8bit / lineOut=下位8bit に分けて渡す
@@ -302,7 +302,7 @@ extension NFCScannerModel {
 
     //MARK: カード情報
     // File 0x8: [1-4]シリアル / File 0x1: [8-9]有効期限(1900-01-01からの日数)
-    func clipper_info(
+    func clipperInfo(
         _ send: APDUSend,
         identifier: Data
     ) async -> ResultCardInfo? {
@@ -310,15 +310,15 @@ extension NFCScannerModel {
         let uid = identifier.map { String(format: "%02X", $0) }.joined()
 
         var serial: String? = nil
-        if let d = await clipper_readFile(send, file: 0x08), d.count >= 5 {
-            serial = String(clipper_be32([UInt8](d), 1))
+        if let d = await clipperReadFile(send, file: 0x08), d.count >= 5 {
+            serial = String(clipperBe32([UInt8](d), 1))
         }
 
         // 日数は暦日そのもの(タイムゾーンなし)なので、UTCで年月日に直してから
         // 端末のタイムゾーンの 0:00 にして Date 化する (日付がずれないように)
         var expiry: Date? = nil
-        if let d = await clipper_readFile(send, file: 0x01), d.count >= 10 {
-            let days = clipper_be16([UInt8](d), 8)
+        if let d = await clipperReadFile(send, file: 0x01), d.count >= 10 {
+            let days = clipperBe16([UInt8](d), 8)
             let utcDate = Date(timeIntervalSince1970: TimeInterval(days) * 86_400 - clipperEpochOffset)
             var utc = Calendar(identifier: .gregorian)
             utc.timeZone = TimeZone(identifier: "UTC") ?? .current
@@ -347,7 +347,7 @@ extension NFCScannerModel {
 
     //MARK: DESFire共通処理
     /// 32byteごとのレコードに分割 (空/全FFは除外)
-    private func clipper_records(_ data: Data) -> [[UInt8]] {
+    private func clipperRecords(_ data: Data) -> [[UInt8]] {
         let bytes = [UInt8](data)
         return stride(from: 0, to: bytes.count - 31, by: 32)
             .map { Array(bytes[$0..<$0 + 32]) }
@@ -358,7 +358,7 @@ extension NFCScannerModel {
 
     /// ファイル全体を読む。GetFileSettings(0xF5) で種別を調べ、種別に合ったコマンドを使う
     /// (実機: 0x1/0x2/0x5/0x6/0x8/0xE/0xF = 標準・バックアップ, 0x4 = サイクリックレコード)
-    private func clipper_readFile(
+    private func clipperReadFile(
         _ send: APDUSend,
         file: UInt8
     ) async -> Data? {
@@ -366,19 +366,19 @@ extension NFCScannerModel {
         let params = Data([file, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
 
         var order: [UInt8] = [0xBD, 0xBB]
-        if let settings = await clipper_command(send, ins: 0xF5, data: Data([file])),
+        if let settings = await clipperCommand(send, ins: 0xF5, data: Data([file])),
             let type = settings.first
         {
             switch type {
             case 0x00, 0x01: order = [0xBD]
             case 0x03, 0x04: order = [0xBB]
-            case 0x02: return await clipper_command(send, ins: 0x6C, data: Data([file]))
+            case 0x02: return await clipperCommand(send, ins: 0x6C, data: Data([file]))
             default: break
             }
         }
 
         for ins in order {
-            if let d = await clipper_command(send, ins: ins, data: params) {
+            if let d = await clipperCommand(send, ins: ins, data: params) {
                 return d
             }
         }
@@ -386,7 +386,7 @@ extension NFCScannerModel {
     }
 
     /// DESFireネイティブコマンドをISOラップ(CLA 0x90)で送信。0xAF(続きあり)は自動で連結する
-    private func clipper_command(
+    private func clipperCommand(
         _ send: APDUSend,
         ins: UInt8,
         data: Data = Data()

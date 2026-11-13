@@ -25,7 +25,7 @@ struct ListBalanceWidgetView: View {
     var models: [BalanceWidgetModel] {
         let result = Array(
             entry.models
-                .filter { $0 != notSelectionModel }
+                .filter { $0 != unselectedWidgetModel }
                 .prefix(maxItems)
         )
 
@@ -82,7 +82,7 @@ struct ListBalanceWidgetView: View {
                                     .scaledToFit()
                                     .frame(height: 16)
                             }
-                            Text(card.DisplayName ?? "unknown")
+                            Text(card.displayName ?? "unknown")
                                 .fontWeight(.semibold)
 
                             Spacer()

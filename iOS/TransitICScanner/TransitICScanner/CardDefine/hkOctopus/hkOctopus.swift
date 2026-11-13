@@ -38,11 +38,11 @@ let hkOctopus = CardInfo(
 
 @MainActor
 extension NFCScannerModel {
-    func hkOctopus_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
-        let info = await hkOctopus_info(felicaTag)
+    func hkOctopusRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        let info = await hkOctopusInfo(felicaTag)
 
         // 残高が読めない場合は 0 円として扱わず読取失敗にする
-        guard let balance = await hkOctopus_balance(felicaTag) else {
+        guard let balance = await hkOctopusBalance(felicaTag) else {
             return nil
         }
 
@@ -57,7 +57,7 @@ extension NFCScannerModel {
             savedAt: Date.now
         )
     }
-    func hkOctopus_balance(_ tag: any FeliCaTagReading) async -> Double? {
+    func hkOctopusBalance(_ tag: any FeliCaTagReading) async -> Double? {
         await withCheckedContinuation { c in
             tag.readWithoutEncryption(
                 serviceCodeList: [Data([0x17, 0x01])],
@@ -92,7 +92,7 @@ extension NFCScannerModel {
             }
         }
     }
-    func hkOctopus_info(_ tag: any FeliCaTagReading) async -> ResultCardInfo? {
+    func hkOctopusInfo(_ tag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = tag.currentIDm
             .map { String(format: "%02X", $0) }

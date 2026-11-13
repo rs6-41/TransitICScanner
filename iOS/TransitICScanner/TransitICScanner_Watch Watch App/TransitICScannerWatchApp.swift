@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct TransitICScanner_Watch_Watch_AppApp: App {
+struct TransitICScannerWatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

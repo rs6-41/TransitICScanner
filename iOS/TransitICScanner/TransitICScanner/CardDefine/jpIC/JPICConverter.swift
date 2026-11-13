@@ -1,6 +1,6 @@
 import Foundation
 
-enum jpIC_Converter {
+enum JPICConverter {
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {

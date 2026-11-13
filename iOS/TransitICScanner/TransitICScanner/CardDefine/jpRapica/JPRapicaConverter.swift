@@ -1,6 +1,6 @@
 import Foundation
 
-enum jpRapica_Converter {
+enum JPRapicaConverter {
     static func history(
         _ history: ResultHistory
     ) -> DisplayHistory {

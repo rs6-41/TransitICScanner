@@ -1,6 +1,5 @@
 import SwiftUI
 import Combine
-import SwiftUI
 
 //MARK: EasyCard(旧式・スクレイピング)
 //MIFARE Classicかつ暗号化領域で読み取れないためスクレイピングで取得
@@ -26,7 +25,7 @@ let twEasyCard_old: CardInfo = CardInfo(
         currencyType: .ntd,
         converter: .twEasyCard_old,
         scrapingView: {
-            AnyView(twEasyCard_old_View())
+            AnyView(TWEasyCardOldView())
         }
     ),
     information: nil,
@@ -48,10 +47,10 @@ let twEasyCard_old: CardInfo = CardInfo(
         )
 )
 
-struct twEasyCard_old_View: View {
+struct TWEasyCardOldView: View {
     let item: CardInfo = twEasyCard_old
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var controller = twEasyCard_old_scraping()
+    @StateObject private var controller = TWEasyCardOldScraper()
     @State private var result: ScanResult?
     @State private var navigationResult: ScanResult?
     @State var scannedNumber: String? = ""
@@ -178,7 +177,7 @@ struct twEasyCard_old_View: View {
             }
             .navigationTitle(LocalizedStringKey(item.name))
             .navigationDestination(item: $navigationResult) { result in
-                ResultView(result: result, scandata: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
+                ResultView(result: result, isNewScan: true, saveListID: .constant(UUID()), deleteAds: $deleteAds)
                     .navigationBarBackButtonHidden()
             }
             .toolbar {
@@ -309,7 +308,7 @@ struct twEasyCard_old_View: View {
     }
 }
 
-final class twEasyCard_old_scraping: ObservableObject {
+final class TWEasyCardOldScraper: ObservableObject {
     private let baseURL = twEasyCard_old.scanOption.url!
     @Published var captchaImage: UIImage?
     @Published var captchaToken: String = ""
@@ -329,7 +328,7 @@ final class twEasyCard_old_scraping: ObservableObject {
             let cardSearchURL = self.baseURL.appendingPathComponent("CardSearch.php")
             var cardSearchRequest = URLRequest(url: cardSearchURL)
             cardSearchRequest.httpMethod = "GET"
-            let (cardSearchData, cardSearchResponse) = try await session.data(for: cardSearchRequest)
+            let (_, cardSearchResponse) = try await session.data(for: cardSearchRequest)
             if let httpResponse = cardSearchResponse as? HTTPURLResponse,
                 let headerFields = httpResponse.allHeaderFields as? [String: String],
                 let url = httpResponse.url

@@ -1,6 +1,6 @@
 import Foundation
 
-enum hkOctopus_Converter {
+enum HKOctopusConverter {
 
     static func balance(_ value: Int) -> String {
         let hkd = Double(value) / 10.0

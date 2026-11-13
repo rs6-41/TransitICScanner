@@ -151,13 +151,13 @@ struct CardRegionView: View {
         items.sorted {
             switch sort {
             case .name_ascend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
+                localizedString($0.sortName).localizedStandardCompare(
+                    localizedString($1.sortName)
                 ) == .orderedAscending
 
             case .name_descend:
-                Localize($0.sortName).localizedStandardCompare(
-                    Localize($1.sortName)
+                localizedString($0.sortName).localizedStandardCompare(
+                    localizedString($1.sortName)
                 ) == .orderedDescending
 
             case .locate_ascend:
@@ -167,8 +167,8 @@ struct CardRegionView: View {
                             String(prefSort($1.prefectures?.first ?? ""))
                         ) == .orderedAscending
                 } else {
-                    Localize($0.area.sortName()).localizedStandardCompare(
-                        Localize($1.area.sortName())
+                    localizedString($0.area.sortName()).localizedStandardCompare(
+                        localizedString($1.area.sortName())
                     ) == .orderedAscending
                 }
 
@@ -179,8 +179,8 @@ struct CardRegionView: View {
                             String(prefSort($1.prefectures?.first ?? ""))
                         ) == .orderedDescending
                 } else {
-                    Localize($0.area.sortName()).localizedStandardCompare(
-                        Localize($1.area.sortName())
+                    localizedString($0.area.sortName()).localizedStandardCompare(
+                        localizedString($1.area.sortName())
                     ) == .orderedDescending
                 }
             }

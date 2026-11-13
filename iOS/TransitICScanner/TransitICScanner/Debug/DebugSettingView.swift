@@ -19,7 +19,7 @@ struct DebugSettingView: View {
 
     @State var isLoading = false
 
-    @EnvironmentObject var getCountry: GetCountry
+    @EnvironmentObject var countryLocationProvider: CountryLocationProvider
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.modelContext) private var modelContext
@@ -87,10 +87,10 @@ struct DebugSettingView: View {
                     }
                     .onChange(of: devLocate) {
                         if devLocate.isEmpty {
-                            getCountry.resetDebug()
-                            getCountry.start()
+                            countryLocationProvider.resetDebug()
+                            countryLocationProvider.start()
                         } else {
-                            getCountry.debug(country: devLocate)
+                            countryLocationProvider.debug(country: devLocate)
                         }
                     }
                 }
@@ -116,7 +116,7 @@ struct DebugSettingView: View {
                         Task { @MainActor in
                             isLoading = true
                             for card in cardItemsStore.cardItems {
-                                let result = getResultSample(model: card)
+                                let result = makeSampleResult(model: card)
                                 saveAction(result: result)
                                 try? await Task.sleep(nanoseconds: 200_000_000)
                             }
@@ -143,11 +143,11 @@ struct DebugSettingView: View {
                     }
                     .onChange(of: adDebug) {
                         if adDebug {
-                            NativeAdUnitIDValue = dev_NativeAdUnitID
-                            BannerUnitIDValue = dev_BannerUnitID
+                            activeNativeAdUnitID = debugNativeAdUnitID
+                            activeBannerUnitID = debugBannerUnitID
                         } else {
-                            NativeAdUnitIDValue = NativeUnitID
-                            BannerUnitIDValue = bannerUnitID
+                            activeNativeAdUnitID = NativeUnitID
+                            activeBannerUnitID = bannerUnitID
                         }
                     }
                 }

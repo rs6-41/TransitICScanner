@@ -4,7 +4,7 @@ import CoreLocation
 import Combine
 
 @MainActor
-final class GetCountry: NSObject, ObservableObject, CLLocationManagerDelegate {
+final class CountryLocationProvider: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     private let geocoder = CLGeocoder()
 

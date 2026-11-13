@@ -344,7 +344,7 @@ struct SavedListView: View {
     private func savedResultView(_ result: ScanResult) -> some View {
         ResultView(
             result: result,
-            scandata: false,
+            isNewScan: false,
             saveListID: $saveListID,
             deleteAds: $deleteAds,
             showsSidebar: showsSidebar

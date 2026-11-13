@@ -4,7 +4,7 @@ import CoreNFC
 // MARK: - China T-Union FCI・管理情報の解析
 extension NFCScannerModel {
 
-    func cnTunion_parseFCI(
+    func cnTunionParseFCI(
         _ data: Data,
         fullLog: CNTRunionFullLog? = nil
     ) -> [UInt8] {
@@ -190,7 +190,7 @@ extension NFCScannerModel {
         return sfiList
     }
 
-    func cnTunion_parseFCITag(
+    func cnTunionParseFCITag(
         _ data: Data,
         targetTag: [UInt8]
     ) -> Data? {
@@ -342,7 +342,7 @@ extension NFCScannerModel {
         )
     }
 
-    func cnTunion_readManagementInfo(
+    func cnTunionReadManagementInfo(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> Data? {
@@ -371,7 +371,7 @@ extension NFCScannerModel {
                 response,
                 sw1,
                 sw2
-            ) = await cnTunion_sendAPDU(
+            ) = await cnTunionSendAPDU(
                 tag,
                 ins: 0xB0,
                 p1: p1,
@@ -426,14 +426,14 @@ extension NFCScannerModel {
         return response
     }
 
-    func cnTunion_getCityCode(
+    func cnTunionGetCityCode(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> String? {
 
         guard
             let data =
-                await cnTunion_readManagementInfo(
+                await cnTunionReadManagementInfo(
                     tag,
                     fullLog: fullLog
                 )
@@ -555,14 +555,14 @@ extension NFCScannerModel {
         return cityCode
     }
 
-    func cnTunion_getInfoFromFCI(
+    func cnTunionGetInfoFromFCI(
         _ fci: Data,
         tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> ResultCardInfo? {
 
         let cityCode =
-            await cnTunion_getCityCode(
+            await cnTunionGetCityCode(
                 tag,
                 fullLog: fullLog
             ) ?? ""
@@ -573,7 +573,7 @@ extension NFCScannerModel {
 
         guard
             let metadata =
-                cnTunion_parseFCITag(
+                cnTunionParseFCITag(
                     fci,
                     targetTag: [0x9F, 0x0C]
                 )
@@ -657,7 +657,7 @@ extension NFCScannerModel {
         var version = ""
 
         if let versionData =
-            cnTunion_parseFCITag(
+            cnTunionParseFCITag(
                 fci,
                 targetTag: [0x9F, 0x08]
             )
@@ -722,7 +722,7 @@ extension NFCScannerModel {
             "Expiry Date: \(expiryDate)"
         )
 
-        let getIssueInfo = cnTunion_getIssueInfo(iin: String(cardNumber))
+        let getIssueInfo = cnTunionGetIssueInfo(iin: String(cardNumber))
 
         return ResultCardInfo(
             idm: cardNumber,
