@@ -6,17 +6,17 @@ struct ResultView: View {
     @State var scandata: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
+
     @State var cardUserName = ""
     @State var cardDesign: CardDesign? = nil
-    
+
     @Binding var saveListID: UUID
     @Binding var deleteAds: Bool
     var onDone: (() -> Void)? = nil
-    var showsSidebar:Bool = false
-    
+    var showsSidebar: Bool = false
+
     @State var areaText: LocalizedStringKey = ""
-    
+
     var body: some View {
         if showsSidebar {
             NavigationStack {
