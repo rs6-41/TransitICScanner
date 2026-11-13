@@ -2145,10 +2145,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "讀卡器未連線"
+            "value" : "讀卡機未連線"
           }
         }
-      }
+      },
+      "comment" : "外部（CCID）カードリーダーが未接続のままスキャンしようとしたときのエラー。iPhone内蔵NFCの状態ではない。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.external.description" : {
       "localizations" : {
@@ -2161,7 +2162,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外付けリーダーを接続して、このカードをスキャンします。\nハードウェアの制約によりiPhoneでは読み取れません。"
+            "value" : "外部リーダーを接続して、このカードをスキャンします。\nハードウェアの制約によりiPhoneでは読み取れません。"
           }
         },
         "zh-Hans" : {
@@ -2176,7 +2177,8 @@
             "value" : "請連接外接讀卡機以掃描此卡片。\n受限於硬體規格，無法使用 iPhone 讀取。"
           }
         }
-      }
+      },
+      "comment" : "iPhone内蔵NFCでは読めず、外部リーダー専用のカードに表示する説明。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.external.disable" : {
       "localizations" : {
@@ -2251,16 +2253,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "仅使用外部读卡器"
+            "value" : "仅限外接读卡器"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "僅使用外接讀卡器"
+            "value" : "僅限外接讀卡機"
           }
         }
-      }
+      },
+      "comment" : "外部リーダーでのみ読み取れるカードを示すラベル。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.hkOctopus" : {
       "comment" : "List’s Card Name\nリストのカード名",
@@ -3292,16 +3295,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外置读卡器已连接"
+            "value" : "外接读卡器已连接"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外接讀卡器已連線"
+            "value" : "外接讀卡機已連線"
           }
         }
-      }
+      },
+      "comment" : "外部（CCID）カードリーダーが接続されている状態表示。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.disconnected" : {
       "localizations" : {
@@ -3320,16 +3324,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外置读卡器未连接"
+            "value" : "外接读卡器未连接"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外接讀卡器未連線"
+            "value" : "外接讀卡機未連線"
           }
         }
-      }
+      },
+      "comment" : "外部（CCID）カードリーダーが接続されていない状態表示。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.enptyReader" : {
       "localizations" : {
@@ -3354,10 +3359,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "讀卡器未連線"
+            "value" : "讀卡機未連線"
           }
         }
-      }
+      },
+      "comment" : "読み取りリーダーの選択肢に外部リーダーが1台もないときの表示。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.enptyReader.description" : {
       "localizations" : {
@@ -3370,7 +3376,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CCID互換リーダに対応"
+            "value" : "CCID互換リーダーに対応"
           }
         },
         "zh-Hans" : {
@@ -3382,10 +3388,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "支援符合 CCID 標準的讀卡器"
+            "value" : "支援符合 CCID 標準的讀卡機"
           }
         }
-      }
+      },
+      "comment" : "外部リーダー未接続時の補足。対応するのはCCID準拠のリーダー。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.external" : {
       "extractionState" : "stale",
@@ -3405,16 +3412,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外置读卡器"
+            "value" : "外接读卡器"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外接讀卡器"
+            "value" : "外接讀卡機"
           }
         }
-      }
+      },
+      "comment" : "読み取りリーダーの選択肢のうち、外部（CCID）カードリーダーを指す項目名。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.title" : {
       "extractionState" : "stale",
@@ -3443,7 +3451,8 @@
             "value" : "掃描裝置"
           }
         }
-      }
+      },
+      "comment" : "読み取りに使うリーダー（iPhone内蔵NFCまたは外部リーダー）を選ぶ項目の見出し。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.unavailable" : {
       "localizations" : {
@@ -3462,16 +3471,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无法使用外置读卡器"
+            "value" : "无法使用外接读卡器"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "無法使用外接讀卡器"
+            "value" : "無法使用外接讀卡機"
           }
         }
-      }
+      },
+      "comment" : "外部リーダー機能を利用できない（端末・OSが非対応等）ときの状態表示。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.reader.unsupported" : {
       "localizations" : {
@@ -3490,16 +3500,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此卡暂不支持外置读卡器，请切换到内置读卡器。"
+            "value" : "此卡暂不支持外接读卡器，请切换到内置读卡器。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此卡尚不支援外接讀卡器，請切換至內建讀卡器。"
+            "value" : "此卡尚不支援外接讀卡機，請切換至內建讀卡機。"
           }
         }
-      }
+      },
+      "comment" : "選択中のカードが外部リーダー読み取りに未対応のため、内蔵リーダーへの切り替えを促す案内。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "cardList.search" : {
       "localizations" : {
@@ -4471,16 +4482,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外置读卡器返回了不完整的响应。"
+            "value" : "外接读卡器返回了不完整的响应。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外接讀卡器傳回不完整的回應。"
+            "value" : "外接讀卡機傳回不完整的回應。"
           }
         }
-      }
+      },
+      "comment" : "外部（CCID）カードリーダーから不完全な応答を受け取ったときのエラー。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "error.smartCardReader.notDESFire" : {
       "localizations" : {
@@ -4527,16 +4539,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请先将卡片贴近外置读卡器。"
+            "value" : "请先将卡片贴近外接读卡器。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請先將卡片靠近外接讀卡器。"
+            "value" : "請先將卡片靠近外接讀卡機。"
           }
         }
-      }
+      },
+      "comment" : "外部リーダー上にカードが検出されないときの案内。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "error.smartCardReader.notISO7816" : {
       "localizations" : {
@@ -4611,16 +4624,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无法与外置读卡器建立会话。"
+            "value" : "无法与外接读卡器建立会话。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "無法與外接讀卡器建立工作階段。"
+            "value" : "無法與外接讀卡機建立工作階段。"
           }
         }
-      }
+      },
+      "comment" : "外部リーダーとの通信セッションを開始できないときのエラー。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "error.smartCardReader.unavailable" : {
       "localizations" : {
@@ -4639,16 +4653,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外置读卡器不可用。"
+            "value" : "外接读卡器不可用。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外接讀卡器無法使用。"
+            "value" : "外接讀卡機無法使用。"
           }
         }
-      }
+      },
+      "comment" : "外部（CCID）カードリーダーを利用できないときのエラー。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "error.smartCardReader.unreadableCard" : {
       "localizations" : {
@@ -7074,10 +7089,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "讀卡器"
+            "value" : "讀卡機"
           }
         }
-      }
+      },
+      "comment" : "読み取りに使うカードリーダーを選択する画面のタイトル。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "navigation.split.notselection" : {
       "localizations" : {
@@ -7497,10 +7513,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "讀卡器"
+            "value" : "讀卡機"
           }
         }
-      }
+      },
+      "comment" : "初回の権限説明でカードの読み取り方法（内蔵NFC・外部リーダー）を説明する項目名。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "permission.nfc.corenfc.description" : {
       "localizations" : {
@@ -7513,7 +7530,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。\n\nデバイス背面のカメラ付近にカードをかざしてください。\n\nCCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外付けリーダー専用です。詳細はWebサイトをご確認ください。"
+            "value" : "iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。\n\nデバイス背面のカメラ付近にカードをかざしてください。\n\nCCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外部リーダー専用です。詳細はWebサイトをご確認ください。"
           }
         },
         "zh-Hans" : {
@@ -7528,7 +7545,8 @@
             "value" : "您可以使用 iPhone 內建的 NFC 讀卡機掃描卡片。\n\n請將卡片靠近裝置背面的相機區域。\n\n您也可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。部分卡片僅能使用外接讀卡機進行掃描。詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
           }
         }
-      }
+      },
+      "comment" : "NFC内蔵端末向けの読み取り方法の説明。外部リーダーも併用できることを案内する。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "permission.nfc.external.description" : {
       "localizations" : {
@@ -7556,7 +7574,8 @@
             "value" : "此裝置未內建 NFC 讀卡機。您可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。您也可以查看使用 iPhone 掃描的卡片紀錄。\n\n詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
           }
         }
-      }
+      },
+      "comment" : "NFC非搭載端末（iPad等）向けの説明。外部リーダーでの読み取りとiPhoneで読んだ履歴の閲覧を案内する。\n表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。"
     },
     "permission.notifications.description" : {
       "localizations" : {
@@ -10212,7 +10231,8 @@
             "value" : "iPhone、iPad、App Store和Apple Pay是Apple Inc.在美國及其他國家或地區註冊的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.apple.title" : {
       "extractionState" : "manual",
@@ -10269,7 +10289,8 @@
             "value" : "商標等"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.cardtr.description" : {
       "localizations" : {
@@ -10297,7 +10318,8 @@
             "value" : "這是根據卡片發行地區顯示的內容。除上述內容外，文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.cnTunion" : {
       "extractionState" : "manual",
@@ -10326,7 +10348,8 @@
             "value" : "“交通聯合”（China T-union）是中華人民共和國交通運輸部的標準規範。\n文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.google" : {
       "extractionState" : "manual",
@@ -10355,7 +10378,8 @@
             "value" : "Android、Google和Google Pay是Google LLC的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.google.title" : {
       "extractionState" : "manual",
@@ -10387,7 +10411,7 @@
       }
     },
     "setting.acknowledgment.hkOctopus" : {
-      "comment" : "Trademarks(商標): Octopus",
+      "comment" : "Trademarks(商標): Octopus\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10443,10 +10467,11 @@
             "value" : "“Kartu Multi Trip” 是 KAI Commuter 的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.jp.jpIC_icsca" : {
-      "comment" : "Trademarks(商標): icsca",
+      "comment" : "Trademarks(商標): icsca\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10476,7 +10501,7 @@
       }
     },
     "setting.acknowledgment.jpDoCard" : {
-      "comment" : "Trademarks(商標): DoCard",
+      "comment" : "Trademarks(商標): DoCard\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10494,7 +10519,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“DoCard”是道北巴士的商标。\n“Asaca”是旭川电气轨道株式会社的商标。"
+            "value" : "“DoCard”是道北バス的商标。\n“Asaca”是旭川電気軌道株式会社的商标。"
           }
         },
         "zh-Hant" : {
@@ -10506,7 +10531,7 @@
       }
     },
     "setting.acknowledgment.jpIC" : {
-      "comment" : "Trademarks(商標): 交通系IC",
+      "comment" : "Trademarks(商標): 交通系IC\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10536,7 +10561,7 @@
       }
     },
     "setting.acknowledgment.jpIC_icsca" : {
-      "comment" : "Trademarks(商標): icsca",
+      "comment" : "Trademarks(商標): icsca\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10566,7 +10591,7 @@
       }
     },
     "setting.acknowledgment.jpIC_IruCa" : {
-      "comment" : "Trademarks(商標): IruCa",
+      "comment" : "Trademarks(商標): IruCa\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10622,7 +10647,8 @@
             "value" : "“SAPICA”是札幌総合情報センター株式會社的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.jpNplus" : {
       "extractionState" : "manual",
@@ -10651,10 +10677,11 @@
             "value" : "“エヌタス”、“N+”、“長崎バス”是長崎自動車株式會社的商標。\n“Tカード”是カルチュア・コンビニエンス・クラブ株式會社的商標。\n“Vポイントカード”、“Vポイント”及Vポイント標誌是Vポイントマーケティング株式會社及三井住友カード株式會社的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.jpOKICA" : {
-      "comment" : "Trademarks(商標): OKICA",
+      "comment" : "Trademarks(商標): OKICA\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10710,7 +10737,8 @@
             "value" : "「Rapica」是鹿兒島市交通局的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.krOneCard" : {
       "extractionState" : "manual",
@@ -10739,10 +10767,11 @@
             "value" : "“One Card All Pass”（전국호환교통카드）是韓國國土交通省的標準規範。\n“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商標。\n“WOWPASS”是Orange Square, Inc.的商標。\n“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商標。\n“Rail+”和“레일플러스”是Korea Railroad Corporation的商標。\n“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商標。\n“Hanpay”和“한페이”是한페이시스的商標。"
           }
         }
-      }
+      },
+      "comment" : "商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。"
     },
     "setting.acknowledgment.sony" : {
-      "comment" : "Trademarks(商標): FeliCa",
+      "comment" : "Trademarks(商標): FeliCa\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10857,7 +10886,7 @@
       }
     },
     "setting.acknowledgment.twEasyCard_old" : {
-      "comment" : "Trademarks(商標): EasyCard",
+      "comment" : "Trademarks(商標): EasyCard\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10887,7 +10916,7 @@
       }
     },
     "setting.acknowledgment.twICash" : {
-      "comment" : "Trademarks(商標): iCash 2.0",
+      "comment" : "Trademarks(商標): iCash 2.0\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -10917,7 +10946,7 @@
       }
     },
     "setting.acknowledgment.usClipper" : {
-      "comment" : "Trademarks(商標): Clipper",
+      "comment" : "Trademarks(商標): Clipper\n商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
