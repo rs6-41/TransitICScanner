@@ -11,7 +11,7 @@
       "shouldTranslate" : false
     },
     "%@" : {
-
+      "shouldTranslate" : false
     },
     "ads" : {
       "comment" : "Ads",
@@ -205,13 +205,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "智能字换"
+            "value" : "智能替换"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "智能替換"
+            "value" : "智慧替換"
           }
         }
       }
@@ -478,7 +478,7 @@
       }
     },
     "card.company.kotoden" : {
-      "comment" : "Issuer Company Name\n発行企業名",
+      "comment" : "Issuer Company Name\n発行企業名\n高松琴平電気鉄道の通称（ことでん）。中国語では「琴电／琴電」と表記する。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -496,13 +496,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ことでん"
+            "value" : "琴电"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ことでん"
+            "value" : "琴電"
           }
         }
       }
@@ -532,7 +532,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "默認"
+            "value" : "預設"
           }
         }
       }
@@ -2152,6 +2152,12 @@
     },
     "cardList.external.description" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect an external reader to scan this card.\nDue to hardware limitations, this cannot be read on an iPhone."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2161,13 +2167,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "连接外部读卡器以扫描此卡。"
+            "value" : "连接外接读卡器以扫描此卡片。\n受硬件限制，iPhone 无法直接读取。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "連接外接讀卡器以掃描此卡。"
+            "value" : "請連接外接讀卡機以掃描此卡片。\n受限於硬體規格，無法使用 iPhone 讀取。"
           }
         }
       }
@@ -2473,7 +2479,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Asahikawa electric railway and Douhoku Bus"
+            "value" : "Asahikawa Electric Railway and Douhoku Bus"
           }
         },
         "ja" : {
@@ -2485,13 +2491,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "旭川電気軌道和道北バス"
+            "value" : "旭川电气轨道和道北巴士"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "旭川電気軌道和道北バス"
+            "value" : "旭川電氣軌道和道北巴士"
           }
         }
       }
@@ -2653,25 +2659,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kotoden（Takamatsu Kotohira Railway)"
+            "value" : "Kotoden (Takamatsu-Kotohira Electric Railroad)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ことでん（高松琴平電気鉄道)"
+            "value" : "ことでん（高松琴平電気鉄道）"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ことでん（高松琴平电气铁道)"
+            "value" : "琴电（高松琴平电气铁道）"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "高松琴平電氣軌道"
+            "value" : "琴電（高松琴平電氣鐵道）"
           }
         }
       }
@@ -3376,7 +3382,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "支持符合 CCID 標準的讀卡器"
+            "value" : "支援符合 CCID 標準的讀卡器"
           }
         }
       }
@@ -3500,7 +3506,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search of card name, location and more..."
+            "value" : "Search by card name, area, and more…"
           }
         },
         "ja" : {
@@ -3873,13 +3879,13 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "舊金山湾区交通卡"
+            "value" : "舊金山灣區交通卡"
           }
         }
       }
     },
     "cnTunion.short" : {
-      "comment" : "Short Card Name\n短縮カード名",
+      "comment" : "Short Card Name\n短縮カード名\n中国の交通カード規格「交通联合（China T-Union）」の短縮表示名。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3903,7 +3909,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "中國交通聯郃"
+            "value" : "交通聯合"
           }
         }
       }
@@ -3959,8 +3965,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rp. %@"
+            "state" : "translated",
+            "value" : "%@ 印尼盾"
           }
         }
       }
@@ -5032,19 +5038,19 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EasyCardの[公式Webサイト](https://ezweb.easycard.com.tw/search/CardSearch.php)に自動で情報を入力し、データを取得します。\n\nサーバーメンテナンスのため、現地時間の23時~6時は取得できない場合があります。\nWebサイトの仕様変更により利用できなくなる場合があります。"
+            "value" : "EasyCardの[公式Webサイト](https://ezweb.easycard.com.tw/search/CardSearch.php)に自動で情報を入力し、データを取得します。\n\nサーバーメンテナンスのため、現地時間の23時〜6時は取得できない場合があります。\n\nWebサイトの仕様変更により利用できなくなる場合があります。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自动在悠遊卡的[官方网站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填写信息并获取数据。\n\n由于服务器维护，按照当地时间，23:00～6:00期间可能无法获取数据。\n由于网站规格发生变更，可能会导致该功能无法使用。"
+            "value" : "自动在悠遊卡的[官方网站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填写信息并获取数据。\n\n由于服务器维护，当地时间 23:00～6:00 期间可能无法获取数据。\n\n如网站规格发生变更，该功能可能无法使用。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自動在悠遊卡的[官方網站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填寫資訊並取得資料。\n\n由於伺服器維護，按照當地時間，23:00～6:00期間可能無法取得資料。\n由於網站規格發生變更，可能會導致該功能無法使用。"
+            "value" : "自動在悠遊卡的[官方網站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填寫資訊並取得資料。\n\n由於伺服器維護，當地時間 23:00～6:00 期間可能無法取得資料。\n\n如網站規格變更，此功能可能無法使用。"
           }
         }
       }
@@ -5083,7 +5089,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Empty Scanned Card."
+            "value" : "No scanned cards."
           }
         },
         "ja" : {
@@ -5111,7 +5117,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unscanned your card "
+            "value" : "Not Scanned"
           }
         },
         "ja" : {
@@ -5257,8 +5263,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "*Not compatible with older cards without the China T-Union logo."
+            "state" : "translated",
+            "value" : "*Older cards without the China T-Union logo are not supported."
           }
         },
         "ja" : {
@@ -5270,7 +5276,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "※ 不支持使用没有交通聯合标志的旧版卡片。"
+            "value" : "※ 不支持没有交通联合标志的旧版卡片。"
           }
         },
         "zh-Hant" : {
@@ -5286,8 +5292,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Compatible with transit cards bearing the “China T-Union”(交通联合) logo."
+            "state" : "translated",
+            "value" : "Compatible with transit cards bearing the “China T-Union” (交通联合) logo."
           }
         },
         "ja" : {
@@ -5299,13 +5305,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "可用于带有“交通聯合（China T-Union）”标志的交通卡。"
+            "value" : "可用于带有“交通联合（China T-Union）”标志的交通卡。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "可用於帶有“交通聯合（China T-Union）”標誌的交通卡。"
+            "value" : "可用於印有「交通聯合（China T-Union）」標誌的交通卡。"
           }
         }
       }
@@ -5334,7 +5340,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "支援日本交通 IC 卡全國互通服務"
+            "value" : "支援日本交通系 IC 卡全國互通服務（交通系 IC 卡）的所有卡片均可使用。"
           }
         }
       }
@@ -5363,7 +5369,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "PiTaPa 沒有餘額資訊。"
+            "value" : "※ PiTaPa 沒有餘額資訊。"
           }
         }
       }
@@ -6752,7 +6758,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Okinawa MainIsland"
+            "value" : "Okinawa Main Island"
           }
         },
         "ja" : {
@@ -6764,7 +6770,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "沖縄县"
+            "value" : "冲绳本岛"
           }
         },
         "zh-Hant" : {
@@ -6890,7 +6896,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "香川県"
+            "value" : "香川縣"
           }
         }
       }
@@ -6914,7 +6920,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "鹿児島县"
+            "value" : "鹿儿岛县"
           }
         },
         "zh-Hant" : {
@@ -6944,7 +6950,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "宮城县"
+            "value" : "宫城县"
           }
         },
         "zh-Hant" : {
@@ -6974,7 +6980,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "宮崎县"
+            "value" : "宫崎县"
           }
         },
         "zh-Hant" : {
@@ -7004,13 +7010,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "长崎"
+            "value" : "长崎县"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長崎県"
+            "value" : "長崎縣"
           }
         }
       }
@@ -7034,7 +7040,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "沖縄县"
+            "value" : "冲绳县"
           }
         },
         "zh-Hant" : {
@@ -7106,7 +7112,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Empty Scanned Card with Log."
+            "value" : "No scanned cards with logs."
           }
         },
         "ja" : {
@@ -7175,13 +7181,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "等一下"
+            "value" : "稍后"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "等一下"
+            "value" : "稍後"
           }
         }
       }
@@ -7191,13 +7197,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "We display ads to support the ongoing development and maintenance of this app.\nAllowing tracking helps us show you more relevant ads and measure ad performance.\nPlease tap “Allow” to help us continue maintaining the app.\nThank you for support."
+            "value" : "We display ads to support the ongoing development and maintenance of this app.\nAllowing tracking helps us show you more relevant ads and measure ad performance.\nPlease tap “Allow” to help us continue maintaining the app.\nThank you for your support."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このアプリを開発・運営を継続するために、広告を掲載しています。\nトラッキングを許可すると、あなたに関連性の高い広告の表示や、広告の効果測定に役立てられます。\nアプリの継続的運営のために「許可」をお願いします。\nご協力いただく皆様に感謝いたします。"
+            "value" : "このアプリの開発・運営を継続するために、広告を掲載しています。\nトラッキングを許可すると、あなたに関連性の高い広告の表示や、広告の効果測定に役立てられます。\nアプリの継続的運営のために「許可」をお願いします。\nご協力いただく皆様に感謝いたします。"
           }
         },
         "zh-Hans" : {
@@ -7209,10 +7215,11 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "本 App 可讓您使用智慧型手機查詢並儲存全球各地 IC 卡的餘額。\n為了提供個人化的使用體驗，請確認是否授予所需的權限。"
+            "value" : "為了持續開發和維護本 App，我們會顯示廣告。\n允許追蹤有助於我們向您顯示更符合您興趣的廣告，並衡量廣告成效。\n為了支持 App 的持續營運，懇請您選擇「允許」。\n感謝您的支持。"
           }
         }
-      }
+      },
+      "comment" : "App Tracking Transparencyの許可を求める説明文。広告によるアプリ運営とトラッキングの用途を説明する。"
     },
     "permission.att.description.ifDenied" : {
       "localizations" : {
@@ -7259,13 +7266,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您兴趣的广告"
+            "value" : "相关广告"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您興趣的廣告"
+            "value" : "相關廣告"
           }
         }
       }
@@ -7406,7 +7413,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "本應用支持使用智能手機查詢並保存全球各地 IC 卡的餘額。 爲了提供個性化的使用體驗，請確認是否授予所需的權限。"
+            "value" : "本 App 可讓您使用智慧型手機查詢並儲存全球各地 IC 卡的餘額。\n為了提供個人化的使用體驗，請確認是否授予所需的權限。"
           }
         }
       }
@@ -7462,7 +7469,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "位置信息"
+            "value" : "位置資訊"
           }
         }
       }
@@ -7506,13 +7513,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。\n\nデバイス外側のカメラ付近にカードをかざしてください。\n\nCCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外図形リーダー専用です。詳細はWebサイトをご確認ください。"
+            "value" : "iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。\n\nデバイス背面のカメラ付近にカードをかざしてください。\n\nCCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外付けリーダー専用です。詳細はWebサイトをご確認ください。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您可以使用 iPhone 内置的 NFC 读卡器扫描卡片。\n请将卡片靠近设备背面的摄像头区域。\n\n您也可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。部分卡片只能使用外接读卡器进行扫描。详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。"
+            "value" : "您可以使用 iPhone 内置的 NFC 读卡器扫描卡片。\n\n请将卡片靠近设备背面的摄像头区域。\n\n您也可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。部分卡片只能使用外接读卡器进行扫描。详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。"
           }
         },
         "zh-Hant" : {
@@ -8880,7 +8887,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "铁轨"
+            "value" : "铁路"
           }
         },
         "zh-Hant" : {
@@ -8892,13 +8899,13 @@
       }
     },
     "result.history.register" : {
-      "comment" : "Used Location\n利用場所",
+      "comment" : "取引履歴の種別ラベル（Rapica等）。カードの登録処理を表し、店舗のレジ（収銀台）ではない。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Register"
+            "value" : "Registration"
           }
         },
         "ja" : {
@@ -8916,7 +8923,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "收銀台"
+            "value" : "登錄"
           }
         }
       }
@@ -9454,19 +9461,19 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "最終スキャン"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "最后扫描"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "最後掃描"
           }
         }
@@ -9877,7 +9884,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“%@“ をiPhoneの上部にかざしてください"
+            "value" : "「%@」をiPhoneの上部にかざしてください"
           }
         },
         "zh-Hans" : {
@@ -10080,7 +10087,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "验证码"
+            "value" : "图像识别"
           }
         },
         "zh-Hant" : {
@@ -10089,7 +10096,8 @@
             "value" : "圖像識別"
           }
         }
-      }
+      },
+      "comment" : "カード番号をカメラで読み取る（OCR）スキャン方式のセクション名。画像認証（CAPTCHA）ではない。"
     },
     "section.nfc" : {
       "extractionState" : "manual",
@@ -10474,7 +10482,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“DoCard” are trademarks of 道北バス.\n“Asaca” are trademarks of 旭川電気軌道株式会社"
+            "value" : "“DoCard” is a trademark of 道北バス.\n“Asaca” is a trademark of 旭川電気軌道株式会社."
           }
         },
         "ja" : {
@@ -10486,7 +10494,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“DoCard”是道北バス的商标。\n“Asaca”是旭川電気軌道株式会社的商标。"
+            "value" : "“DoCard”是道北巴士的商标。\n“Asaca”是旭川电气轨道株式会社的商标。"
           }
         },
         "zh-Hant" : {
@@ -10534,7 +10542,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“icsca” are trademarks of 仙台市."
+            "value" : "“icsca” is a trademark of 仙台市."
           }
         },
         "ja" : {
@@ -10552,7 +10560,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「icsca」是仙台市的註冊商標。"
+            "value" : "「icsca」是仙台市的商標。"
           }
         }
       }
@@ -10652,7 +10660,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“OKICA” are trademarks of 沖縄ICカード株式会社."
+            "value" : "“OKICA” is a trademark of 沖縄ICカード株式会社."
           }
         },
         "ja" : {
@@ -10681,7 +10689,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“Rapica” are trademarks of 鹿児島市交通局"
+            "value" : "“Rapica” is a trademark of 鹿児島市交通局."
           }
         },
         "ja" : {
@@ -10855,7 +10863,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“EasyCard”, “悠遊卡”is are trademarks of 悠遊卡股份有限公司."
+            "value" : "“EasyCard” and “悠遊卡” are trademarks of 悠遊卡股份有限公司."
           }
         },
         "ja" : {
@@ -11154,7 +11162,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "购买恢复"
+            "value" : "恢复购买"
           }
         },
         "zh-Hant" : {
@@ -12206,7 +12214,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用调试容器"
+            "value" : "使用偵錯容器"
           }
         }
       }
@@ -12262,7 +12270,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "批量添加示例卡片"
+            "value" : "批次新增範例卡片"
           }
         }
       }
@@ -12369,13 +12377,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "登录"
+            "value" : "添加"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "登錄"
+            "value" : "新增"
           }
         }
       }
@@ -12883,7 +12891,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "實驗性功能仍在開發/髮中，可能會齣現異常。\n功能可能會在不另行通知的情況下刪除或更改。"
+            "value" : "實驗性功能仍在開發中，可能會出現異常。\n功能可能會在不另行通知的情況下刪除或更改。"
           }
         }
       }
@@ -12933,7 +12941,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "加入測試版"
+            "value" : "加入测试版"
           }
         },
         "zh-Hant" : {
@@ -13013,6 +13021,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "項目を選択"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择项目"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇項目"
           }
         }
       }
@@ -13423,7 +13443,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "入力した誕生日が間違っているか、無記名卡です。"
+            "value" : "入力した誕生日が間違っているか、無記名カードです。"
           }
         },
         "zh-Hans" : {
@@ -13947,16 +13967,17 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请选取显示卡"
+            "value" : "请选择卡片"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請選擇顯示卡片"
+            "value" : "請選擇卡片"
           }
         }
-      }
+      },
+      "comment" : "ウィジェットで表示するカードが未選択のときの案内。中国語の「显示卡」はグラフィックカードの意味になるため使わない。"
     },
     "widget.balance.list.title" : {
       "extractionState" : "manual",
@@ -14032,7 +14053,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选取"
+            "value" : "选择"
           }
         },
         "zh-Hant" : {
@@ -14061,13 +14082,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选取显示卡"
+            "value" : "选择卡片"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "選擇顯示卡片"
+            "value" : "選擇卡片"
           }
         }
       }
