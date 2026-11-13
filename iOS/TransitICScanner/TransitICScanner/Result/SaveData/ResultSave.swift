@@ -480,12 +480,12 @@ enum ResultSave {
         try modelContext.save()
 
         let saveData = BalanceWidgetModel(
-            DisplayName: info.displayName
+            displayName: info.displayName
                 ?? {
                     #if os(watchOS)
                     info.name
                     #else
-                    Localize(info.name)
+                    localizedString(info.name)
                     #endif
                 }(),
             balance: result.balance,
@@ -522,7 +522,7 @@ enum ResultSave {
                 return
             }
             if let displayName, !displayName.isEmpty {
-                models[index].DisplayName = displayName
+                models[index].displayName = displayName
             }
             models[index].icon = iconName
         }

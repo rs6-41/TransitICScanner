@@ -4,7 +4,7 @@ import CoreNFC
 // MARK: - China T-Union 残高・取引記録の解析
 extension NFCScannerModel {
 
-    func cnTunion_getBalanceFallback(
+    func cnTunionGetBalanceFallback(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> Double? {
@@ -18,7 +18,7 @@ extension NFCScannerModel {
                 resp,
                 sw1,
                 sw2
-            ) = await cnTunion_sendAPDU(
+            ) = await cnTunionSendAPDU(
                 tag,
                 ins: 0x5C,
                 p1: 0x00,
@@ -90,7 +90,7 @@ extension NFCScannerModel {
         return balance
     }
 
-    func cnTunion_readKnownRecords(
+    func cnTunionReadKnownRecords(
         _ tag: APDUSend,
         fullLog: CNTRunionFullLog? = nil
     ) async -> (
@@ -118,7 +118,7 @@ extension NFCScannerModel {
                     resp,
                     sw1,
                     sw2
-                ) = await cnTunion_sendAPDU(
+                ) = await cnTunionSendAPDU(
                     tag,
                     ins: 0xB2,
                     p1: UInt8(record),
@@ -134,7 +134,7 @@ extension NFCScannerModel {
             if sw1 == 0x90 && sw2 == 0x00 && resp.count >= 23 && !resp.allSatisfy({ $0 == 0 }) {
 
                 let parsed =
-                    cnTunion_parseTransactionRecord(
+                    cnTunionParseTransactionRecord(
                         resp,
                         fullLog: fullLog
                     )
@@ -161,7 +161,7 @@ extension NFCScannerModel {
                     resp,
                     sw1,
                     sw2
-                ) = await cnTunion_sendAPDU(
+                ) = await cnTunionSendAPDU(
                     tag,
                     ins: 0xB2,
                     p1: UInt8(record),
@@ -177,7 +177,7 @@ extension NFCScannerModel {
             if sw1 == 0x90 && sw2 == 0x00 && resp.count >= 48 && !resp.allSatisfy({ $0 == 0 }) {
 
                 let parsed =
-                    cnTunion_parseTripRecord(
+                    cnTunionParseTripRecord(
                         resp,
                         fullLog: fullLog
                     )
@@ -342,7 +342,7 @@ extension NFCScannerModel {
         )
     }
 
-    func cnTunion_parseTransactionRecord(
+    func cnTunionParseTransactionRecord(
         _ data: Data,
         fullLog: CNTRunionFullLog? = nil
     ) -> [ResultHistory] {
@@ -408,7 +408,7 @@ extension NFCScannerModel {
         }
 
         let date =
-            cnTunion_decodeBCDDate(
+            cnTunionDecodeBCDDate(
                 bytes[16...22]
             )
 
@@ -449,7 +449,7 @@ extension NFCScannerModel {
         ]
     }
 
-    func cnTunion_parseTripRecord(
+    func cnTunionParseTripRecord(
         _ data: Data,
         fullLog: CNTRunionFullLog? = nil
     ) -> [ResultHistory] {
@@ -536,7 +536,7 @@ extension NFCScannerModel {
         }
 
         let date =
-            cnTunion_decodeBCDDate(
+            cnTunionDecodeBCDDate(
                 bytes[25...31]
             )
 
@@ -577,7 +577,7 @@ extension NFCScannerModel {
         ]
     }
 
-    func cnTunion_decodeBCDDate(
+    func cnTunionDecodeBCDDate(
         _ bytes: ArraySlice<UInt8>
     ) -> DateComponents {
 

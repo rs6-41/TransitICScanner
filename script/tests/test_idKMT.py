@@ -12,9 +12,9 @@ source = root / 'iOS/TransitICScanner/TransitICScanner'
 parser = (source / 'CardDefine/idKMT/idKMT.swift').read_text().split('struct KMTData {', 1)[1]
 model = (source / 'Result/ResultModel.swift').read_text().split('struct ResultHistory:', 1)[1].split('extension ResultHistory', 1)[0]
 reader_source = (source / 'CardDefine/idKMT/idKMT.swift').read_text()
-reader_methods = reader_source.split('    func idKMT_readHistoryBlocks(', 1)[1].split('    func idKMT_info(', 1)[0]
+reader_methods = reader_source.split('    func idKMTReadHistoryBlocks(', 1)[1].split('    func idKMTInfo(', 1)[0]
 protocol = (source / 'Scan/FeliCa/FeliCaTagReading.swift').read_text().split('protocol FeliCaTagReading {', 1)[1].split('/// CoreNFC', 1)[0]
-reader = 'protocol FeliCaTagReading {' + protocol + '\nfinal class NFCScannerModel {\nfunc idKMT_readHistoryBlocks(' + reader_methods + '\n}\n'
+reader = 'protocol FeliCaTagReading {' + protocol + '\nfinal class NFCScannerModel {\nfunc idKMTReadHistoryBlocks(' + reader_methods + '\n}\n'
 reader += r'''
 enum Log { static func debug(_ text: String) {} }
 final class TestTag: FeliCaTagReading {
@@ -65,20 +65,20 @@ assert(parse(balance, [invalid, record]).histories.count == 1)
 let scanner = NFCScannerModel()
 let tag = TestTag()
 let service = Data([0x0F, 0x20])
-let negative = await scanner.idKMT_readHistoryBlocks(tag, service: service, maxCount: -1)
+let negative = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: -1)
 assert(negative.isEmpty && tag.reads == 0)
-let excessive = await scanner.idKMT_readHistoryBlocks(tag, service: service, maxCount: Int.max)
+let excessive = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: Int.max)
 assert(excessive.count == 20 && tag.reads == 20)
 for length in [0, 15, 17] {
     tag.reads = 0
     tag.response = Data(repeating: 1, count: length)
-    let malformed = await scanner.idKMT_readBlocks(tag, service: service, blocks: [0])
+    let malformed = await scanner.idKMTReadBlocks(tag, service: service, blocks: [0])
     assert(malformed == nil)
 }
 for byte: UInt8 in [0, 255] {
     tag.reads = 0
     tag.response = Data(repeating: byte, count: 16)
-    let empty = await scanner.idKMT_readHistoryBlocks(tag, service: service, maxCount: 20)
+    let empty = await scanner.idKMTReadHistoryBlocks(tag, service: service, maxCount: 20)
     assert(empty.isEmpty && tag.reads == 1)
 }
 print("KMT parser and reader regression checks passed")

@@ -432,7 +432,7 @@ blockCount = min(max(count, 1), 20)
 
 # 残高取得処理
 
-`jpNplus_balance`では、以下のService CodeとBlockを使用して残高を取得する。
+`jpNplusBalance`では、以下のService CodeとBlockを使用して残高を取得する。
 
 ```text
 Service Code = 0x8B40
@@ -465,7 +465,7 @@ Read Without Encryption
 
 # 履歴取得処理
 
-`jpNplus_history`では、以下のService Codeを使用する。
+`jpNplusHistory`では、以下のService Codeを使用する。
 
 ```text
 Service Code = 0xCF80
@@ -498,7 +498,7 @@ Read Without Encryption
 
 # 共通読み取り処理
 
-`jpNplus_read`では、指定されたService CodeとBlock番号を使用して読み取りを行う。
+`jpNplusRead`では、指定されたService CodeとBlock番号を使用して読み取りを行う。
 
 ### Block生成
 
@@ -528,7 +528,7 @@ Status Flagが`00 00`以外の場合は`nil`を返す。
 
 # 複数Block読み取り
 
-`jpNplus_readMultiple`では、`0`から指定された件数までのBlockを生成する。
+`jpNplusReadMultiple`では、`0`から指定された件数までのBlockを生成する。
 
 ```text
 (0..<count)
@@ -545,13 +545,13 @@ Status Flagが`00 00`以外の場合は`nil`を返す。
 
 その後、Read Without Encryptionを1回実行する。
 
-現在の実装では、履歴取得本体はこの関数ではなく、`jpNplus_history`内で10Block単位に分割して読み取っている。
+現在の実装では、履歴取得本体はこの関数ではなく、`jpNplusHistory`内で10Block単位に分割して読み取っている。
 
 ---
 
 # コンバーター
 
-`jpNplusConverter.swift`では、取得したカード情報・履歴を表示用データへ変換する。
+`JPNplusConverter.swift`では、取得したカード情報・履歴を表示用データへ変換する。
 
 ## history
 

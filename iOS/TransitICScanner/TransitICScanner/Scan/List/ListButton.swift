@@ -236,7 +236,7 @@ struct ScanningButton: View {
     private func simulateScan() {
         Task { @MainActor in
             try? await Task.sleep(for: .seconds(1))
-            model.result = getResultSample(model: item)
+            model.result = makeSampleResult(model: item)
         }
     }
 

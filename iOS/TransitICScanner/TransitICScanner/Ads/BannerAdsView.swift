@@ -4,8 +4,8 @@ import GoogleMobileAds
 #endif
 import AppTrackingTransparency
 
-let dev_BannerUnitID = "ca-app-pub-3940256099942544/2435281174"
-var BannerUnitIDValue = bannerUnitID
+let debugBannerUnitID = "ca-app-pub-3940256099942544/2435281174"
+var activeBannerUnitID = bannerUnitID
 
 struct BannerAdsView: View {
     @State var adsHeight: CGFloat = 50.0
@@ -38,7 +38,7 @@ struct BannerAdsView: View {
     }
 }
 
-struct BannerAdsView_Previews: PreviewProvider {
+struct BannerAdsViewPreviews: PreviewProvider {
     static var previews: some View {
         BannerAdsView(
             loadingError: .constant(false)
@@ -65,7 +65,7 @@ private struct BannerViewContainer: UIViewRepresentable {
 
         @EnvironmentObject var debug: DebugModel
 
-        banner.adUnitID = BannerUnitIDValue
+        banner.adUnitID = activeBannerUnitID
         banner.delegate = context.coordinator
         banner.load(Request())
 

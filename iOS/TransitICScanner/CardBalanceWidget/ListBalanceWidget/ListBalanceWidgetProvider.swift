@@ -13,7 +13,7 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
 
     func placeholder(in context: Context) -> ListBalanceWidgetEntry {
         ListBalanceWidgetEntry(
-            date: Date(), configuration: ListWidgetConfigurationAppIntent(), models: [placeholderModel],
+            date: Date(), configuration: ListWidgetConfigurationAppIntent(), models: [placeholderWidgetModel],
             updateDate: Date.now)
     }
 
@@ -21,7 +21,7 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
         for configuration: ListWidgetConfigurationAppIntent, in context: Context
     ) async -> ListBalanceWidgetEntry {
         ListBalanceWidgetEntry(
-            date: Date(), configuration: ListWidgetConfigurationAppIntent(), models: [placeholderModel],
+            date: Date(), configuration: ListWidgetConfigurationAppIntent(), models: [placeholderWidgetModel],
             updateDate: Date.now)
     }
 
@@ -36,9 +36,9 @@ struct ListBalanceWidgetProvider: AppIntentTimelineProvider {
         var models: [BalanceWidgetModel] = []
         if let cards = configuration.card {
             for card in cards {
-                let selectCardIDm = card.idm
-                let selectCard = savedWidgetData.first(where: { $0.idm == selectCardIDm }) ?? placeholderModel
-                models.append(selectCard)
+                let selectedCardIDm = card.idm
+                let selectedCard = savedWidgetData.first(where: { $0.idm == selectedCardIDm }) ?? placeholderWidgetModel
+                models.append(selectedCard)
             }
         }
 

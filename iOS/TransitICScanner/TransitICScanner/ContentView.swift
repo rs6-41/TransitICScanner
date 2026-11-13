@@ -233,11 +233,11 @@ struct ContentView: View {
 
         #if !targetEnvironment(macCatalyst)
         if adDebug {
-            NativeAdUnitIDValue = dev_NativeAdUnitID
-            BannerUnitIDValue = dev_BannerUnitID
+            activeNativeAdUnitID = debugNativeAdUnitID
+            activeBannerUnitID = debugBannerUnitID
         } else {
-            NativeAdUnitIDValue = NativeUnitID
-            BannerUnitIDValue = bannerUnitID
+            activeNativeAdUnitID = NativeUnitID
+            activeBannerUnitID = bannerUnitID
         }
         #endif
 

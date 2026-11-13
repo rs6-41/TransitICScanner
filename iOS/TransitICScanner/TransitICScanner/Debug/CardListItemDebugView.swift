@@ -11,7 +11,7 @@ struct CardListItemDebugView: View {
                     String(
                         """
                         [DEBUG] ScanType: \(item.scanOption.scanType)
-                        [DEBUG] area.sortName: \(Localize(item.area.sortName()))
+                        [DEBUG] area.sortName: \(localizedString(item.area.sortName()))
                         [DEBUG] searchWords: \(searchWordsLocalized)
                         """))
             }
@@ -21,7 +21,7 @@ struct CardListItemDebugView: View {
         .foregroundStyle(Color.red)
         .onAppear() {
             for i in item.searchWords {
-                searchWordsLocalized += ("\"" + Localize(i) + "\",")
+                searchWordsLocalized += ("\"" + localizedString(i) + "\",")
             }
         }
     }

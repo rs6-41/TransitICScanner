@@ -51,7 +51,7 @@ let krOneCard = CardInfo(
 )
 
 extension NFCScannerModel {
-    func krOneCard_scan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
+    func krOneCardScan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
         guard case let .iso7816(isoTag) = tag else {
             session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
             return
@@ -69,7 +69,7 @@ extension NFCScannerModel {
         }
 
         Task {
-            guard let result = await krOneCard_result(send) else {
+            guard let result = await krOneCardResult(send) else {
                 session.invalidate(errorMessage: String(localized: "error.smartCardReader.oneCardRead"))
                 return
             }
@@ -77,10 +77,10 @@ extension NFCScannerModel {
         }
     }
 
-    func krOneCard_scanExternal(using manager: SmartCardManager) async throws {
+    func krOneCardScanExternal(using manager: SmartCardManager) async throws {
         let result = try await manager.withCard { card in
             let send = manager.apduSender(for: card)
-            guard let result = await krOneCard_result(send) else {
+            guard let result = await krOneCardResult(send) else {
                 throw ReaderError.message(String(localized: "error.smartCardReader.oneCardRead"))
             }
             return result
@@ -88,7 +88,7 @@ extension NFCScannerModel {
         await MainActor.run { self.result = result }
     }
 
-    private func krOneCard_result(_ send: APDUSend) async -> ScanResult? {
+    private func krOneCardResult(_ send: APDUSend) async -> ScanResult? {
         Log.debug("Korea OneCard scan started")
         // New Korea OneCard documented AID flow:
         // 1. Select Config DF: A0000004520001
@@ -103,7 +103,7 @@ extension NFCScannerModel {
         // Step 1: Select Config DF
         Log.debug("Selecting Config DF AID: \(configDFAID.map { String(format: "%02X", $0) }.joined())")
         guard
-            let (configFCI, sw1, sw2) = await krOneCard_sendAPDU(
+            let (configFCI, sw1, sw2) = await krOneCardSendAPDU(
                 send, ins: 0xA4, p1: 0x04, p2: 0x00, data: configDFAID, le: 256, cla: 0x00),
             sw1 == 0x90 && sw2 == 0x00
         else {
@@ -111,7 +111,7 @@ extension NFCScannerModel {
         }
 
         // Step 2: Parse Config DF FCI for main ADF AID, balance APDU descriptor, and file descriptors
-        let (mainAID, balanceAPDU, fileDescriptors) = krOneCard_parseConfigFCI(configFCI)
+        let (mainAID, balanceAPDU, fileDescriptors) = krOneCardParseConfigFCI(configFCI)
         if let mainAID = mainAID {
             Log.debug("Main ADF AID from Config FCI: \(mainAID.map { String(format: "%02X", $0) }.joined())")
         } else {
@@ -128,13 +128,13 @@ extension NFCScannerModel {
 
         // Step 3: Select main ADF
         let adfAID: Data = mainAID ?? defaultOneCardADFAID
-        var krOneCard_cardTypeName = krOneCard_cardTypeName(for: adfAID)
-        selectedCardType = krOneCard_cardTypeName.0
-        var issuer: String? = krOneCard_cardTypeName.1
+        let cardTypeInfo = krOneCardCardTypeName(for: adfAID)
+        selectedCardType = cardTypeInfo.0
+        let issuer: String? = cardTypeInfo.1
         Log.debug("Korea OneCard detected type: \(selectedCardType)")
         Log.debug("Selecting main ADF AID: \(adfAID.map { String(format: "%02X", $0) }.joined())")
         guard
-            let (adfFCI, sw1b, sw2b) = await krOneCard_sendAPDU(
+            let (adfFCI, sw1b, sw2b) = await krOneCardSendAPDU(
                 send, ins: 0xA4, p1: 0x04, p2: 0x00, data: adfAID, le: 256, cla: 0x00),
             sw1b == 0x90 && sw2b == 0x00
         else {
@@ -143,14 +143,14 @@ extension NFCScannerModel {
 
         // Step 4: Get balance using descriptor if present, else default
         // 残高が読めない場合は 0 ウォンとして扱わず読取失敗にする
-        guard let balance = await krOneCard_getBalance(send, balanceAPDU) else {
+        guard let balance = await krOneCardGetBalance(send, balanceAPDU) else {
             return nil
         }
         Log.debug("Final Korea OneCard balance value:", balance)
 
         // Info/history using the selected ADF context and file descriptors
-        let info = await krOneCard_getInfoWithSFI(adfFCI, cardTypeName: selectedCardType, issuer: issuer)
-        let history = await krOneCard_readKnownRecords(send, fileDescriptors: fileDescriptors)
+        let info = await krOneCardGetInfoWithSFI(adfFCI, cardTypeName: selectedCardType, issuer: issuer)
+        let history = await krOneCardReadKnownRecords(send, fileDescriptors: fileDescriptors)
 
         Log.debug("===== Korea OneCard Result Debug =====")
         Log.debug("balance:", balance as Any)
@@ -173,7 +173,7 @@ extension NFCScannerModel {
 
     // MARK: - APDU helpers
 
-    private func krOneCard_sendAPDU(
+    private func krOneCardSendAPDU(
         _ send: APDUSend, ins: UInt8, p1: UInt8, p2: UInt8, data: Data = Data(), le: Int = 256, cla: UInt8 = 0x00
     ) async -> (Data, UInt8, UInt8)? {
         do {
@@ -195,7 +195,7 @@ extension NFCScannerModel {
     /// Returns (mainAID, balanceAPDU) where:
     ///   mainAID: Data? (tag 0x4F, ADF AID)
     ///   balanceAPDU: (cla, ins, p1, p2, le) for balance APDU (tag 0x11, 5 bytes)
-    private func krOneCard_parseConfigFCI(
+    private func krOneCardParseConfigFCI(
         _ data: Data
     ) -> (
         mainAID: Data?, balanceAPDU: (UInt8, UInt8, UInt8, UInt8, Int)?,
@@ -278,13 +278,13 @@ extension NFCScannerModel {
 
     /// If apduDesc present, send exactly that APDU (cla, ins, p1, p2, le). Otherwise use default (CLA=0x90, INS=0x4C, P1=0x00, P2=0x00, Le=4).
     /// Returns balance as UInt32 (KRW, no division).
-    private func krOneCard_getBalance(_ send: APDUSend, _ apduDesc: (UInt8, UInt8, UInt8, UInt8, Int)?) async -> Double?
+    private func krOneCardGetBalance(_ send: APDUSend, _ apduDesc: (UInt8, UInt8, UInt8, UInt8, Int)?) async -> Double?
     {
         let command = apduDesc ?? (0x90, 0x4C, 0x00, 0x00, 4)
         let (cla, ins, p1, p2, le) = command
 
         guard
-            let (response, sw1, sw2) = await krOneCard_sendAPDU(
+            let (response, sw1, sw2) = await krOneCardSendAPDU(
                 send,
                 ins: ins,
                 p1: p1,
@@ -323,7 +323,7 @@ extension NFCScannerModel {
     }
 
     // MARK: - Card type name mapping
-    private func krOneCard_cardTypeName(for aid: Data) -> (String, String?) {
+    private func krOneCardCardTypeName(for aid: Data) -> (String, String?) {
         let hex = aid.map { String(format: "%02X", $0) }.joined()
 
         switch hex {
@@ -343,13 +343,13 @@ extension NFCScannerModel {
     }
 
     // MARK: - Get Info from T-money ADF FCI (parse tag B0 after SELECT)
-    private func krOneCard_getInfoWithSFI(
+    private func krOneCardGetInfoWithSFI(
         _ adfFCI: Data, cardTypeName: String, issuer: String?
     ) async -> ResultCardInfo? {
         Log.debug("===== Korea OneCard ADF FCI raw =====")
         Log.debug(adfFCI.map { String(format: "%02X", $0) }.joined(separator: " "))
         Log.debug("===============================")
-        let purseInfo = krOneCard_findTLV(adfFCI, tag: 0xB0)
+        let purseInfo = krOneCardFindTLV(adfFCI, tag: 0xB0)
         guard let b0 = purseInfo else {
             return ResultCardInfo(
                 idm: "",
@@ -381,8 +381,8 @@ extension NFCScannerModel {
         let vk = arr.count > 2 ? String(format: "%02X", arr[2]) : ""
         let idCenter = arr.count > 3 ? String(format: "%02X", arr[3]) : ""
         let csn = arr.count >= 12 ? arr[4...11].map { String(format: "%02X", $0) }.joined() : ""
-        let issueDate = arr.count >= 21 ? krOneCard_decodeBCDDateString(arr[17...20]) : nil
-        let expiryDate = arr.count >= 25 ? krOneCard_decodeBCDDateString(arr[21...24]) : nil
+        let issueDate = arr.count >= 21 ? krOneCardDecodeBCDDateString(arr[17...20]) : nil
+        let expiryDate = arr.count >= 25 ? krOneCardDecodeBCDDateString(arr[21...24]) : nil
         let userCode = arr.count > 25 ? String(format: "%02X", arr[25]) : nil
         let balMax: String? =
             arr.count >= 31
@@ -411,7 +411,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func krOneCard_findTLV(_ data: Data, tag: UInt8) -> Data? {
+    private func krOneCardFindTLV(_ data: Data, tag: UInt8) -> Data? {
         let bytes = [UInt8](data)
 
         func parse(_ start: Int, _ end: Int) -> Data? {
@@ -453,7 +453,7 @@ extension NFCScannerModel {
         return parse(0, bytes.count)
     }
 
-    private func krOneCard_decodeBCDDateString(_ bytes: ArraySlice<UInt8>) -> String? {
+    private func krOneCardDecodeBCDDateString(_ bytes: ArraySlice<UInt8>) -> String? {
         let arr = Array(bytes)
         guard arr.count == 4 else { return nil }
         func bcd(_ b: UInt8) -> Int {
@@ -467,7 +467,7 @@ extension NFCScannerModel {
     }
 
     // MARK: - Read T-money Transaction Records (proprietary GET RECORD and fallback SFI)
-    private func krOneCard_readKnownRecords(
+    private func krOneCardReadKnownRecords(
         _ send: APDUSend, fileDescriptors: [(fileType: UInt8, sfi: UInt8, maxLength: UInt16)]
     ) async -> [ResultHistory]? {
         var logs: [ResultHistory] = []
@@ -482,7 +482,7 @@ extension NFCScannerModel {
 
             if sfi == 4 {
                 let efTrans = Data([0x00, 0x03])
-                _ = await krOneCard_sendAPDU(
+                _ = await krOneCardSendAPDU(
                     send,
                     ins: 0xA4,
                     p1: 0x00,
@@ -496,7 +496,7 @@ extension NFCScannerModel {
             for record in 1...20 {
                 let p2 = (sfi << 3) | 0x04
 
-                var readResult = await krOneCard_sendAPDU(
+                var readResult = await krOneCardSendAPDU(
                     send,
                     ins: 0xB2,
                     p1: UInt8(record),
@@ -507,7 +507,7 @@ extension NFCScannerModel {
                 )
 
                 if let (_, sw1, sw2) = readResult, sw1 == 0x6C {
-                    readResult = await krOneCard_sendAPDU(
+                    readResult = await krOneCardSendAPDU(
                         send,
                         ins: 0xB2,
                         p1: UInt8(record),
@@ -532,7 +532,7 @@ extension NFCScannerModel {
                     continue
                 }
 
-                if let history = krOneCard_parseTransactionRecord(response) {
+                if let history = krOneCardParseTransactionRecord(response) {
                     if !logs.contains(where: { $0.transactionId == history.transactionId && $0.date == history.date }) {
                         logs.append(history)
                     }
@@ -546,7 +546,7 @@ extension NFCScannerModel {
     // MARK: - Parse T-money Transaction Record
     /// Parse a T-money EFTRANS transaction record.
     /// Layout follows KS X 6924 EFTRANS: 46 byte record with type, balance, transaction number, fare, terminal ID and BCD timestamp.
-    private func krOneCard_parseTransactionRecord(_ data: Data) -> ResultHistory? {
+    private func krOneCardParseTransactionRecord(_ data: Data) -> ResultHistory? {
         let bytes = [UInt8](data)
 
         Log.debug("===== Korea OneCard transaction parse =====")
@@ -569,7 +569,7 @@ extension NFCScannerModel {
             (UInt32(bytes[6]) << 24) | (UInt32(bytes[7]) << 16) | (UInt32(bytes[8]) << 8) | UInt32(bytes[9]))
         let amount = Double(
             (UInt32(bytes[10]) << 24) | (UInt32(bytes[11]) << 16) | (UInt32(bytes[12]) << 8) | UInt32(bytes[13]))
-        let date = krOneCard_decodeBCDDate(bytes[26...32])
+        let date = krOneCardDecodeBCDDate(bytes[26...32])
 
         Log.debug(
             "Korea OneCard Transaction type=\(String(format: "%02X", processType)) amount=\(amount) balance=\(balance) transaction=\(transactionId) date=\(date)"
@@ -589,7 +589,7 @@ extension NFCScannerModel {
     }
 
     /// Helper: Decode 7-byte BCD date (YYYYMMDDhhmmss) to DateComponents
-    private func krOneCard_decodeBCDDate(_ bytes: ArraySlice<UInt8>) -> DateComponents {
+    private func krOneCardDecodeBCDDate(_ bytes: ArraySlice<UInt8>) -> DateComponents {
         func bcd(_ b: UInt8) -> Int {
             return Int((b >> 4) * 10 + (b & 0x0F))
         }

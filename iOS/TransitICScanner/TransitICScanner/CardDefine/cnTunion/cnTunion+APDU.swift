@@ -4,7 +4,7 @@ import CoreNFC
 // MARK: - China T-Union APDU送受信
 extension NFCScannerModel {
 
-    func cnTunion_sendAPDU(
+    func cnTunionSendAPDU(
         _ tag: APDUSend,
         ins: UInt8,
         p1: UInt8,

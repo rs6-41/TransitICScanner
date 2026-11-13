@@ -16,7 +16,7 @@ struct CardList: View {
         case result(ScanResult)
     }
 
-    @EnvironmentObject var getCountry: GetCountry
+    @EnvironmentObject var countryLocationProvider: CountryLocationProvider
     @EnvironmentObject var debug: DebugModel
     @EnvironmentObject var store: CardItemsStore
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -41,7 +41,7 @@ struct CardList: View {
 
     /// 分割表示（サイドバー＋詳細列）を使うか
     private var showsSidebar: Bool {
-        
+
         #if targetEnvironment(macCatalyst)
         true
         #else
@@ -68,10 +68,10 @@ struct CardList: View {
         }
         .iPhoneDuoHinge(value: $isDuoOpen)
         .onAppear {
-            getCountry.start()
+            countryLocationProvider.start()
             refreshCurrentLocation()
         }
-        .onChange(of: getCountry.countryCode) {
+        .onChange(of: countryLocationProvider.countryCode) {
             refreshCurrentLocation()
         }
         .onChange(of: searchText) {
@@ -189,18 +189,18 @@ struct CardList: View {
     private var sidebar: some View {
         List {
             Group {
-#if !targetEnvironment(macCatalyst)
+                #if !targetEnvironment(macCatalyst)
                 ListAdView(deleteAds: $deleteAds)
-#endif
-                
+                #endif
+
                 if debug.isDisplay {
                     debugLocationRow
                 }
-                
+
                 if !currentCountryItems.isEmpty {
                     currentLocationSection
                 }
-                
+
                 if searchText.isEmpty {
                     regionSection
                 } else {
@@ -211,7 +211,7 @@ struct CardList: View {
         }
         .listStyle(.insetGrouped)
         .alignmentGuide(.listRowSeparatorLeading) { _ in
-                .zero
+            .zero
         }
         .searchable(
             text: $searchText,
@@ -270,7 +270,7 @@ struct CardList: View {
             HStack(spacing: 3) {
                 Text(LocalizedStringKey("cardList.nowLocate"))
                 Text(verbatim: ": ")
-                Text(verbatim: getCountry.countryCode ?? "nil")
+                Text(verbatim: countryLocationProvider.countryCode ?? "nil")
 
                 if let administrativeArea {
                     Text(verbatim: " \(administrativeArea)")
@@ -308,7 +308,7 @@ struct CardList: View {
     private func resultView(_ result: ScanResult, onDone: @escaping () -> Void) -> some View {
         ResultView(
             result: result,
-            scandata: true,
+            isNewScan: true,
             saveListID: .constant(UUID()),
             deleteAds: $deleteAds,
             onDone: onDone,
@@ -380,7 +380,7 @@ struct CardList: View {
         updateCurrentCountryItems()
 
         Task {
-            administrativeArea = await getCountry.fetchAdministrativeArea()
+            administrativeArea = await countryLocationProvider.fetchAdministrativeArea()
             updateCurrentCountryItems()
         }
     }
@@ -390,7 +390,7 @@ struct CardList: View {
     }
 
     private func isAvailableAtCurrentLocation(_ item: CardInfo) -> Bool {
-        guard let currentCode = getCountry.countryCode,
+        guard let currentCode = countryLocationProvider.countryCode,
             item.countryCode.contains(currentCode)
         else {
             return false
@@ -417,7 +417,7 @@ struct CardList: View {
         currentCountryItems = []
         searchItems = store.cardItems.filter { item in
             item.matchesSearch(searchText)
-                || Localize(item.area.rawValue).localizedCaseInsensitiveContains(searchText)
+                || localizedString(item.area.rawValue).localizedCaseInsensitiveContains(searchText)
         }
     }
 }
