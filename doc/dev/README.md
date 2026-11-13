@@ -68,6 +68,12 @@ python3 skills/transit-card-workflow/scripts/test_widget_compatibility.py
 # 翻訳チェック用ツールの回帰テスト
 python3 skills/transit-localization/scripts/test_check_xcstrings.py
 
+# ユニットテスト（TransitICScannerTests、Devスキーム）
+# CIと同じくチーム不要のアドホック署名でApp Groupのentitlementを付ける
+xcodebuild test -project iOS/TransitICScanner/TransitICScanner.xcodeproj -scheme Dev \
+  -destination 'platform=iOS Simulator,name=iPhone 18 Pro' \
+  CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= PROVISIONING_PROFILE_SPECIFIER=
+
 # 空白エラーと作業ツリーの確認
 git diff --check
 git status --short
@@ -76,3 +82,24 @@ git status --short
 末尾に ` 2` が付いたファイルなど、同期・コピー時に生じた重複は、元ファイルとの内容一致と参照の有無を確認してから削除します。画像や設定ファイルでは名前だけで判断しないでください。
 
 ビルド対象の選び方は[Apple実装規定](../../iOS/TransitICScanner/AGENTS.md)を参照してください。ファイルの追加・改名後はステージしてから `git ls-files` を使うと、新しいファイルもformat/lintの対象になります。
+
+## CI/CD
+
+| 仕組み | 契機 | 内容 | 設定 |
+|---|---|---|---|
+| GitHub Actions | PR、mainへのpush、手動 | 命名・書式・空白チェック、Python回帰テスト、`Dev` のユニットテスト、`Widget` / `Watch_Dev` のビルド | `.github/workflows/ci.yml`（ランナー `xcode-27`） |
+| Xcode Cloud | App Store Connectのワークフローで設定 | Archive・TestFlight配布（必要に応じて `Dev` のTest） | `iOS/TransitICScanner/ci_scripts/` |
+
+### Xcode Cloud の設定
+
+ワークフロー自体はリポジトリではなくXcode（Report navigator → Cloud）またはApp Store Connectで作成します。
+
+1. 環境変数にシークレットとして `ADMOB_NATIVE_UNIT_ID` と `ADMOB_BANNER_UNIT_ID` を登録する（値はログに出力しない）。
+2. 配布用ワークフローは `Release`（または `Beta`）スキームのArchiveアクションと、TestFlight/App Storeへの配布ポストアクションを設定する。
+3. テストを実行する場合は `Dev` スキームのTestアクションを追加する。
+
+`ci_scripts/` の各スクリプトの役割：
+
+- `ci_post_clone.sh`：`env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
+- `ci_post_xcodebuild.sh`：Archive成功時に直近10コミットから `TestFlight/WhatToTest.*.txt`（TestFlightの「テスト内容」）を生成する。生成物はコミットしない。
+- `make_env_swift.sh`：`env.swift` の生成本体。GitHub Actionsからも使う。既存の `env.swift` があり環境変数が未設定なら上書きしない。
