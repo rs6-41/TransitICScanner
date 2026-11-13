@@ -23,7 +23,7 @@ struct TransitICScannerApp: App {
     @AppStorage("deleteAds") var deleteAds = false
     @StateObject private var debugModel = DebugModel()
     @StateObject private var adsModel = AdsModel()
-    @StateObject private var getCountry = GetCountry()
+    @StateObject private var countryLocationProvider = CountryLocationProvider()
 
     @StateObject var smartCardManager = SmartCardManager()
 
@@ -44,7 +44,7 @@ struct TransitICScannerApp: App {
             ContentView(smartCardManager: smartCardManager)
                 .environmentObject(cardItemsStore)
                 .environmentObject(debugModel)
-                .environmentObject(getCountry)
+                .environmentObject(countryLocationProvider)
                 .environmentObject(adsModel)
                 .navigationTitle(" ")
                 .background {

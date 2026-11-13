@@ -81,7 +81,7 @@
 				CardDefine/Area.swift,
 				Localize/InfoPlist.xcstrings,
 				Localize/Localizable.xcstrings,
-				Localize/localize.swift,
+				Localize/Localization.swift,
 				Result/BalanceFormat.swift,
 				Utility/Log.swift,
 			);

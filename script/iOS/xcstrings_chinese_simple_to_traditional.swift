@@ -680,8 +680,7 @@ func main() throws {
             )
         }
 
-        if
-            !fileManager.fileExists(atPath: path),
+        if !fileManager.fileExists(atPath: path),
             fileManager.fileExists(atPath: backupPath)
         {
             try? fileManager.copyItem(

@@ -192,15 +192,15 @@ let jpIC_IruCa = CardInfo(
 extension NFCScannerModel {
 
     /// 交通系IC(およびシステムコード違いの互換カード)を読み取る
-    func jpIC_read(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ScanResult? {
-        guard let balance = await jpIC_balance(felicaTag) else { return nil }
+    func jpICRead(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ScanResult? {
+        guard let balance = await jpICBalance(felicaTag) else { return nil }
 
-        let history = await jpIC_history(
+        let history = await jpICHistory(
             felicaTag,
             count: self.scanOption.historyCount
         )
 
-        let info = await jpIC_info(felicaTag, cardID: cardID)
+        let info = await jpICInfo(felicaTag, cardID: cardID)
 
         return ScanResult(
             balance: Double(balance),
@@ -215,7 +215,7 @@ extension NFCScannerModel {
     }
 
     //MARK: 残高を取得する
-    func jpIC_balance(_ felicaTag: any FeliCaTagReading) async -> Int? {
+    func jpICBalance(_ felicaTag: any FeliCaTagReading) async -> Int? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x00, 0x8B].reversed())
             let blockList = [Data([0x80, 0x00])]
@@ -249,7 +249,7 @@ extension NFCScannerModel {
     }
 
     //MARK: 履歴を取得する
-    func jpIC_history(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
+    func jpICHistory(_ felicaTag: any FeliCaTagReading, count: Int = 20) async -> [ResultHistory]? {
         await withCheckedContinuation { continuation in
             let serviceCode = Data([0x0F, 0x09])
             let blockCount = min(max(count, 1), 20)
@@ -347,21 +347,21 @@ extension NFCScannerModel {
     }
 
     //MARK: カード情報を取得する
-    func jpIC_info(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ResultCardInfo? {
+    func jpICInfo(_ felicaTag: any FeliCaTagReading, cardID: CardID) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
             .joined()
 
         // IDmからのカード種別判定
-        let cardIDs: [jpICCheckID] = [
-            jpICCheckID(name: "card.suica", maker: ".112", card: "0312", mobile: nil),
-            jpICCheckID(name: "card.suica", maker: ".114", card: "0114", mobile: nil),
-            jpICCheckID(name: "card.apple", maker: ".139", card: nil, mobile: "E6F5"),
-            jpICCheckID(name: "card.phone", maker: ".140", card: nil, mobile: "B660"),
+        let cardIDs: [JPICCheckID] = [
+            JPICCheckID(name: "card.suica", maker: ".112", card: "0312", mobile: nil),
+            JPICCheckID(name: "card.suica", maker: ".114", card: "0114", mobile: nil),
+            JPICCheckID(name: "card.apple", maker: ".139", card: nil, mobile: "E6F5"),
+            JPICCheckID(name: "card.phone", maker: ".140", card: nil, mobile: "B660"),
         ]
 
-        var cardType = jpIC_checkCardType(id: idm, lists: cardIDs)
+        var cardType = jpICCheckCardType(id: idm, lists: cardIDs)
         var issueArea: String?
         var issueCity: String?
         var issuer: String?
@@ -399,7 +399,7 @@ extension NFCScannerModel {
         )
     }
 
-    func jpIC_checkCardType(id: String, lists: [jpICCheckID]) -> String {
+    func jpICCheckCardType(id: String, lists: [JPICCheckID]) -> String {
         func wildcardMatch(_ value: String, _ pattern: String) -> Bool {
             guard value.count == pattern.count else { return false }
             return zip(value, pattern).allSatisfy { v, p in
@@ -428,7 +428,7 @@ extension NFCScannerModel {
         return ""
     }
 
-    func jpIC_read(
+    func jpICRead(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
@@ -459,7 +459,7 @@ extension NFCScannerModel {
         }
     }
 
-    func jpIC_readMultiple(
+    func jpICReadMultiple(
         _ tag: any FeliCaTagReading,
         service: Data,
         count: Int
@@ -490,7 +490,7 @@ extension NFCScannerModel {
     }
 }
 
-struct jpICCheckID {
+struct JPICCheckID {
     let name: String
     let maker: String
     let card: String?

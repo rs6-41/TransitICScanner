@@ -37,7 +37,7 @@ struct WatchResultView: View {
                 }
 
                 if let cardType = card.info?.type,
-                    Localize(card.info?.name ?? "") != Localize(cardType) && cardType != ""
+                    localizedString(card.info?.name ?? "") != localizedString(cardType) && cardType != ""
                 {
                     LabeledContent(LocalizedStringKey("result.info.cardType")) {
                         if card.info?.name ?? "" == "cnTunion" {

@@ -84,7 +84,7 @@ final class JpDoCardFullLog {
 
 extension NFCScannerModel {
 
-    func jpDoCard_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+    func jpDoCardRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         let fullLog = JpDoCardFullLog()
         let scanDate = Date()
 
@@ -93,17 +93,17 @@ extension NFCScannerModel {
         fullLog.append("System Code: 8DB6")
         fullLog.appendBytes("IDm", [UInt8](felicaTag.currentIDm))
 
-        let info = await jpDoCard_info(
+        let info = await jpDoCardInfo(
             felicaTag,
             fullLog: fullLog
         )
 
-        let balance = await jpDoCard_balance(
+        let balance = await jpDoCardBalance(
             felicaTag,
             fullLog: fullLog
         )
 
-        let history = await jpDoCard_history(
+        let history = await jpDoCardHistory(
             felicaTag,
             count: self.scanOption.historyCount,
             creationDate: info?.validDate,
@@ -155,7 +155,7 @@ extension NFCScannerModel {
         )
     }
 
-    func jpDoCard_balance(
+    func jpDoCardBalance(
         _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> Int? {
@@ -166,7 +166,7 @@ extension NFCScannerModel {
         fullLog?.append("Block: 00")
 
         guard
-            let data = await jpDoCard_read(
+            let data = await jpDoCardRead(
                 felicaTag,
                 service: Data([0x0F, 0x01]),
                 blocks: [0],
@@ -207,7 +207,7 @@ extension NFCScannerModel {
         return balance
     }
 
-    func jpDoCard_history(
+    func jpDoCardHistory(
         _ felicaTag: any FeliCaTagReading,
         count: Int = 20,
         creationDate: String? = nil,
@@ -220,7 +220,7 @@ extension NFCScannerModel {
         )
 
         let creationDateComponents =
-            jpDoCard_parseCreationDate(creationDate)
+            jpDoCardParseCreationDate(creationDate)
 
         fullLog?.append("===== HISTORY READ =====")
         fullLog?.append("System Code: 8DB6")
@@ -229,7 +229,7 @@ extension NFCScannerModel {
 
         if let creationDateComponents {
             fullLog?.append(
-                "Card Creation Date: \(jpDoCard_formatDate(creationDateComponents))"
+                "Card Creation Date: \(jpDoCardFormatDate(creationDateComponents))"
             )
         }
 
@@ -242,7 +242,7 @@ extension NFCScannerModel {
             )
 
             guard
-                let data = await jpDoCard_read(
+                let data = await jpDoCardRead(
                     felicaTag,
                     service: Data([0x0F, 0x01]),
                     blocks: [UInt8(blockIndex)],
@@ -344,13 +344,13 @@ extension NFCScannerModel {
                 )
             )
 
-            let amount = jpDoCard_amount(
+            let amount = jpDoCardAmount(
                 bytes,
                 processType: processType,
                 fullLog: fullLog
             )
 
-            let date = jpDoCard_date(
+            let date = jpDoCardDate(
                 month: month,
                 day: day,
                 creationDate: creationDateComponents,
@@ -358,7 +358,7 @@ extension NFCScannerModel {
             )
 
             fullLog?.append(
-                "Parsed Date: \(jpDoCard_formatDate(date))"
+                "Parsed Date: \(jpDoCardFormatDate(date))"
             )
 
             if let amount {
@@ -405,7 +405,7 @@ extension NFCScannerModel {
         return history
     }
 
-    private func jpDoCard_amount(
+    private func jpDoCardAmount(
         _ bytes: [UInt8],
         processType: UInt8,
         fullLog: JpDoCardFullLog? = nil
@@ -443,7 +443,7 @@ extension NFCScannerModel {
         return Double(amount)
     }
 
-    private func jpDoCard_date(
+    private func jpDoCardDate(
         month: Int,
         day: Int,
         creationDate: DateComponents?,
@@ -498,7 +498,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func jpDoCard_formatDate(
+    private func jpDoCardFormatDate(
         _ date: DateComponents
     ) -> String {
 
@@ -522,7 +522,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func jpDoCard_parseCreationDate(
+    private func jpDoCardParseCreationDate(
         _ value: String?
     ) -> DateComponents? {
 
@@ -549,7 +549,7 @@ extension NFCScannerModel {
         )
     }
 
-    func jpDoCard_info(
+    func jpDoCardInfo(
         _ felicaTag: any FeliCaTagReading,
         fullLog: JpDoCardFullLog? = nil
     ) async -> ResultCardInfo? {
@@ -568,7 +568,7 @@ extension NFCScannerModel {
         fullLog?.append("Block: 00")
 
         guard
-            let data = await jpDoCard_read(
+            let data = await jpDoCardRead(
                 felicaTag,
                 service: Data([0x4B, 0x00]),
                 blocks: [0],
@@ -637,7 +637,7 @@ extension NFCScannerModel {
             (Int(bytes[8]) << 8) | Int(bytes[9])
 
         let creationDate =
-            jpDoCard_decodeCreationDate(
+            jpDoCardDecodeCreationDate(
                 creationDateRaw,
                 fullLog: fullLog
             )
@@ -674,7 +674,7 @@ extension NFCScannerModel {
 
         let validDate =
             creationDate.flatMap {
-                jpDoCard_formatCreationDate($0)
+                jpDoCardFormatCreationDate($0)
             }
 
         fullLog?.append(
@@ -704,7 +704,7 @@ extension NFCScannerModel {
             city: "issue.jp.hokkaido.city.asahikawa", issuer: issuer)
     }
 
-    private func jpDoCard_decodeCreationDate(
+    private func jpDoCardDecodeCreationDate(
         _ value: Int,
         fullLog: JpDoCardFullLog? = nil
     ) -> DateComponents? {
@@ -757,7 +757,7 @@ extension NFCScannerModel {
         )
     }
 
-    private func jpDoCard_formatCreationDate(
+    private func jpDoCardFormatCreationDate(
         _ date: DateComponents
     ) -> String? {
 
@@ -780,7 +780,7 @@ extension NFCScannerModel {
         )
     }
 
-    func jpDoCard_read(
+    func jpDoCardRead(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8],

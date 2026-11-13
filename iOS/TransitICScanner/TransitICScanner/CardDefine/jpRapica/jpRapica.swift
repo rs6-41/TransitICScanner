@@ -60,23 +60,23 @@ struct RapicaAttribute {
 extension NFCScannerModel {
 
     // サービスコードはリトルエンディアンで渡す (例: 008F -> 8F 00)
-    private var rapicaService_issue: Data { Data([0x0B, 0x00]) }
-    private var rapicaService_attr: Data { Data([0x4B, 0x00]) }
-    private var rapicaService_history: Data { Data([0x8F, 0x00]) }
+    private var rapicaIssueService: Data { Data([0x0B, 0x00]) }
+    private var rapicaAttributeService: Data { Data([0x4B, 0x00]) }
+    private var rapicaHistoryService: Data { Data([0x8F, 0x00]) }
 
     //MARK: スキャン
-    func jpRapica_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
-        guard let attr = await rapica_attribute(felicaTag) else {
+    func jpRapicaRead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+        guard let attr = await rapicaAttribute(felicaTag) else {
             return nil
         }
 
-        let history = await rapica_history(
+        let history = await rapicaHistory(
             felicaTag,
             count: self.scanOption.historyCount,
             reference: attr.lastDate
         )
 
-        let info = await rapica_info(felicaTag)
+        let info = await rapicaInfo(felicaTag)
 
         return ScanResult(
             balance: Double(attr.balance),
@@ -93,8 +93,8 @@ extension NFCScannerModel {
     //MARK: 属性情報 (残額・直近処理日時)
     // block0: [0]年 [1]月 [2]日 [3]時 [4]分 (すべてバイナリ)
     // block1: [4-5]残額 [6-7]プレミア (ともにBE)
-    func rapica_attribute(_ felicaTag: any FeliCaTagReading) async -> RapicaAttribute? {
-        guard let blocks = await rapica_read(felicaTag, service: rapicaService_attr, blockCount: 2),
+    func rapicaAttribute(_ felicaTag: any FeliCaTagReading) async -> RapicaAttribute? {
+        guard let blocks = await rapicaRead(felicaTag, service: rapicaAttributeService, blockCount: 2),
             blocks.count >= 2
         else { return nil }
 
@@ -119,7 +119,7 @@ extension NFCScannerModel {
     //MARK: 履歴
     // 取引番号がないため、mappingIDを日付と取引日時から生成
     //
-    func rapica_history(
+    func rapicaHistory(
         _ felicaTag: any FeliCaTagReading,
         count: Int = 16,
         reference: DateComponents
@@ -127,9 +127,9 @@ extension NFCScannerModel {
         let blockCount = min(max(count, 1), 16)
 
         guard
-            let blocks = await rapica_read(
+            let blocks = await rapicaRead(
                 felicaTag,
-                service: rapicaService_history,
+                service: rapicaHistoryService,
                 blockCount: blockCount
             )
         else {
@@ -276,7 +276,7 @@ extension NFCScannerModel {
 
     //MARK: カード情報
     // 発行情報(000B) block0: [0-1]事業者コード [5-7]発行日(年/月/日) [12-13]デポジット
-    func rapica_info(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
+    func rapicaInfo(_ felicaTag: any FeliCaTagReading) async -> ResultCardInfo? {
 
         let idm = felicaTag.currentIDm
             .map { String(format: "%02X", $0) }
@@ -286,7 +286,7 @@ extension NFCScannerModel {
         var issuerKey: String? = nil
         var type: String = ""
 
-        if let blocks = await rapica_read(felicaTag, service: rapicaService_issue, blockCount: 1),
+        if let blocks = await rapicaRead(felicaTag, service: rapicaIssueService, blockCount: 1),
             let data = blocks.first
         {
             let b = [UInt8](data)
@@ -335,7 +335,7 @@ extension NFCScannerModel {
     }
 
     //MARK: 共通読み取り (8ブロックずつ分割)
-    func rapica_read(
+    func rapicaRead(
         _ tag: any FeliCaTagReading,
         service: Data,
         blockCount: Int,
@@ -345,7 +345,7 @@ extension NFCScannerModel {
         var start = 0
         while start < blockCount {
             let end = min(start + blocksPerRead, blockCount)
-            guard let chunk = await rapica_readChunk(tag, service: service, range: start..<end) else {
+            guard let chunk = await rapicaReadChunk(tag, service: service, range: start..<end) else {
                 return nil
             }
             all += chunk
@@ -354,7 +354,7 @@ extension NFCScannerModel {
         return all
     }
 
-    private func rapica_readChunk(
+    private func rapicaReadChunk(
         _ tag: any FeliCaTagReading,
         service: Data,
         range: Range<Int>

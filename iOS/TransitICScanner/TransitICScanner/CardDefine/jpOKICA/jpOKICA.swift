@@ -44,9 +44,9 @@ let jpOKICA = CardInfo(
 
 extension NFCScannerModel {
 
-    func jpOKICA_read(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
+    func jpOKICARead(_ felicaTag: any FeliCaTagReading) async -> ScanResult? {
         guard
-            let history = await okica_history(
+            let history = await okicaHistory(
                 felicaTag,
                 count: self.scanOption.historyCount
             )
@@ -56,7 +56,7 @@ extension NFCScannerModel {
 
         let balance = history.first?.balance ?? 0
 
-        let info = await okica_info(felicaTag)
+        let info = await okicaInfo(felicaTag)
 
         return ScanResult(
             balance: Double(balance),
@@ -70,7 +70,7 @@ extension NFCScannerModel {
         )
     }
 
-    func okica_history(
+    func okicaHistory(
         _ felicaTag: any FeliCaTagReading,
         count: Int = 20
     ) async -> [ResultHistory]? {
@@ -152,7 +152,7 @@ extension NFCScannerModel {
                 if index >= blockLists.count {
 
                     let history = result.compactMap {
-                        okica_parseHistory($0)
+                        okicaParseHistory($0)
                     }
 
                     continuation.resume(
@@ -186,7 +186,7 @@ extension NFCScannerModel {
         }
     }
 
-    private func okica_parseHistory(
+    private func okicaParseHistory(
         _ data: Data
     ) -> ResultHistory? {
 
@@ -261,7 +261,7 @@ extension NFCScannerModel {
         )
     }
 
-    func okica_info(
+    func okicaInfo(
         _ felicaTag: any FeliCaTagReading
     ) async -> ResultCardInfo? {
 
@@ -289,7 +289,7 @@ extension NFCScannerModel {
         )
     }
 
-    func okica_read(
+    func okicaRead(
         _ tag: any FeliCaTagReading,
         service: Data,
         blocks: [UInt8]
@@ -332,7 +332,7 @@ extension NFCScannerModel {
         }
     }
 
-    func okica_readMultiple(
+    func okicaReadMultiple(
         _ tag: any FeliCaTagReading,
         service: Data,
         count: Int

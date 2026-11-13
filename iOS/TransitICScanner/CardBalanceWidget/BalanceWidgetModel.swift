@@ -2,12 +2,18 @@ import SwiftUI
 import WidgetKit
 
 struct BalanceWidgetModel: Hashable, Codable {
-    var DisplayName: String?
+    var displayName: String?
     var balance: Double?
     var currencyType: CurrencyType?
     var idm: String
     var icon: String?
     var savedAt: Date?
+
+    // 既存のApp Group内JSONを、更新前後のアプリ・Widgetで共有できるようにする。
+    private enum CodingKeys: String, CodingKey {
+        case displayName = "DisplayName"
+        case balance, currencyType, idm, icon, savedAt
+    }
 }
 
 /// Widget 表示用データの保存先（App Group の UserDefaults）
@@ -55,20 +61,20 @@ enum WidgetDataStore {
 }
 
 func getSavedWidgetData() -> [BalanceWidgetModel] {
-    [notSelectionModel] + WidgetDataStore.load()
+    [unselectedWidgetModel] + WidgetDataStore.load()
 }
 
 //未選択
-let notSelectionModel = BalanceWidgetModel(
-    DisplayName: String(localized: "widget.balance.placeholder.notSelection"),
+let unselectedWidgetModel = BalanceWidgetModel(
+    displayName: String(localized: "widget.balance.placeholder.notSelection"),
     balance: 0.0,
     idm: "system.option.notSelection",
     savedAt: Date.now
 )
 
 //プレースホルダー
-let placeholderModel = BalanceWidgetModel(
-    DisplayName: String(localized: "widget.balance.placeholder.displayName"),
+let placeholderWidgetModel = BalanceWidgetModel(
+    displayName: String(localized: "widget.balance.placeholder.displayName"),
     balance: 5000.0,
     currencyType: .usd,
     idm: "PLACEHOLDER",

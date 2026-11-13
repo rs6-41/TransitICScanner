@@ -38,5 +38,6 @@ extension ListWidgetConfigurationAppIntent {
 #Preview(as: .systemMedium) {
     ListBalanceWidget()
 } timeline: {
-    ListBalanceWidgetEntry(date: .now, configuration: .placeholder, models: [placeholderModel], updateDate: Date.now)
+    ListBalanceWidgetEntry(
+        date: .now, configuration: .placeholder, models: [placeholderWidgetModel], updateDate: Date.now)
 }

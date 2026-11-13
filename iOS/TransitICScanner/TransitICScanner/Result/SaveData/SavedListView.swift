@@ -334,9 +334,9 @@ struct SavedListView: View {
                 .id(selectedCardID)
         } else {
             EmptyViewSideBar(
-                title: String(localized:"history.select.empty"),
+                title: String(localized: "history.select.empty"),
                 icon: "filemenu.and.pointer.arrow",
-                description: String(localized:"history.select.empty.description")
+                description: String(localized: "history.select.empty.description")
             )
         }
     }
@@ -344,7 +344,7 @@ struct SavedListView: View {
     private func savedResultView(_ result: ScanResult) -> some View {
         ResultView(
             result: result,
-            scandata: false,
+            isNewScan: false,
             saveListID: $saveListID,
             deleteAds: $deleteAds,
             showsSidebar: showsSidebar
