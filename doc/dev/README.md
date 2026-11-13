@@ -6,6 +6,7 @@
  - [スキル・検証補助の規定](../../skills/AGENTS.md)：再利用手順とテスト
  - [工程別スキル](../../skills/README.md)：Issue作成、仕様書、iOS実装、翻訳補完
  - [ファイル構成とアーキテクチャ](./ARCHITECTURE.md)：各ファイルの役割・実装意図、よくある変更で触るファイル
+ - [CI/CDの設計メモ](./CI.md)：GitHub Actions・Xcode Cloudの構成と実装意図
 
 ## 開発環境
 ### iOS
@@ -85,6 +86,8 @@ git status --short
 
 ## CI/CD
 
+構成の理由・各スクリプトの実装意図は [CI/CDの設計メモ](./CI.md) を参照してください。
+
 | 仕組み | 契機 | 内容 | 設定 |
 |---|---|---|---|
 | GitHub Actions | PR、mainへのpush、手動 | 命名・書式・空白チェック、Python回帰テスト、`Dev` のユニットテスト、`Widget` / `Watch_Dev` のビルド | `.github/workflows/ci.yml`（ランナー `xcode-27`） |
@@ -102,6 +105,6 @@ Xcodeで連携すると `TransitICScanner.xcodeproj/xcshareddata/xcodecloud/mani
 
 `ci_scripts/` の各スクリプトの役割：
 
-- `ci_post_clone.sh`：`env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
-- `ci_post_xcodebuild.sh`：Archive成功時に直近10コミットから `TestFlight/WhatToTest.*.txt`（TestFlightの「テスト内容」）を生成する。生成物はコミットしない。
+- `ci_pre_xcodebuild.sh`：各アクションのビルド直前に `env.swift` を生成する。Archiveでは広告ユニットIDの未設定をエラーにする。
+- `ci_post_xcodebuild.sh`：環境変数 `TESTFLIGHT_NOTES_FROM_COMMITS=1` を設定したワークフローだけ、Archive成功時に直近10コミットの件名から `TestFlight/WhatToTest.*.txt`（TestFlightの「テスト内容」）を生成する。外部テスターにも表示されるため、既定では生成しない。生成物はコミットしない。
 - `make_env_swift.sh`：`env.swift` の生成本体。GitHub Actionsからも使う。既存の `env.swift` があり環境変数が未設定なら上書きしない。
