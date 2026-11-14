@@ -827,71 +827,32 @@ extension NFCScannerModel {
             )
         }
 
-        return await withCheckedContinuation { continuation in
-
+        let (status1, status2, data, error) = await withCheckedContinuation {
+            (continuation: CheckedContinuation<(Int, Int, [Data], Error?), Never>) in
             tag.readWithoutEncryption(
                 serviceCodeList: [service],
                 blockList: blockList
-            ) {
-                status1,
-                status2,
-                data,
-                error in
-
-                fullLog?.append(
-                    String(
-                        format:
-                            "Status1: %02X Status2: %02X",
-                        status1,
-                        status2
-                    )
-                )
-
-                if let error {
-                    fullLog?.append(
-                        "Error: \(error.localizedDescription)"
-                    )
-                } else {
-                    fullLog?.append(
-                        "Error: nil"
-                    )
-                }
-
-                fullLog?.append(
-                    "Returned blocks: \(data.count)"
-                )
-
-                for (index, block) in data.enumerated() {
-                    fullLog?.appendData(
-                        "Returned Block[\(index)]",
-                        block
-                    )
-                }
-
-                guard error == nil,
-                    status1 == 0x00,
-                    status2 == 0x00
-                else {
-
-                    fullLog?.append(
-                        "READ RESULT: FAILED"
-                    )
-
-                    continuation.resume(
-                        returning: nil
-                    )
-
-                    return
-                }
-
-                fullLog?.append(
-                    "READ RESULT: SUCCESS"
-                )
-
-                continuation.resume(
-                    returning: data
-                )
+            ) { status1, status2, data, error in
+                continuation.resume(returning: (status1, status2, data, error))
             }
         }
+
+        fullLog?.append(String(format: "Status1: %02X Status2: %02X", status1, status2))
+        if let error {
+            fullLog?.append("Error: \(error.localizedDescription)")
+        } else {
+            fullLog?.append("Error: nil")
+        }
+        fullLog?.append("Returned blocks: \(data.count)")
+        for (index, block) in data.enumerated() {
+            fullLog?.appendData("Returned Block[\(index)]", block)
+        }
+
+        guard error == nil, status1 == 0x00, status2 == 0x00 else {
+            fullLog?.append("READ RESULT: FAILED")
+            return nil
+        }
+        fullLog?.append("READ RESULT: SUCCESS")
+        return data
     }
 }

@@ -63,7 +63,15 @@ extension NFCScannerModel {
                 data: data,
                 expectedResponseLength: le
             )
-            return try await isoTag.sendCommand(apdu: apdu)
+            return try await withCheckedThrowingContinuation { continuation in
+                isoTag.sendCommand(apdu: apdu) { data, sw1, sw2, error in
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume(returning: (data, sw1, sw2))
+                    }
+                }
+            }
         }
 
         Task {
