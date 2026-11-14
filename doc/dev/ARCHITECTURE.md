@@ -155,6 +155,7 @@ flowchart TD
 | **カードは `CardID` enum で識別し、分岐は網羅的な `switch` で書く** | カードを追加したときの分岐漏れをコンパイルエラーで検出するため。rawValue は保存データやローカライズキーにも使われるので変更しない | `Scan/CardModel.swift`, `CardDefine/ScannerBranch.swift` |
 | **FeliCa の読み取りは `FeliCaTagReading` に対して1つだけ実装する** | 内蔵リーダーと外部リーダーで同じ解析処理を通し、解析処理の重複や挙動のずれを防ぐため。外部リーダーは PC/SC の疑似 APDU（`FF A4` / `FF B0`）を、CoreNFC と同じ `readWithoutEncryption` の形に変換する | `Scan/FeliCa/FeliCaTagReading.swift` |
 | **ISO7816 / DESFire カードは `APDUSend` クロージャで送受信を抽象化する** | CoreNFC（`NFCISO7816Tag` / `NFCMiFareTag`）と CryptoTokenKit（`TKSmartCard`）の違いを吸収するため | `Scan/CardModel.swift`（`APDUSend`）, 各カードの `Scan` / `ScanExternal` |
+| **Swift 6の並行性境界を明示する** | CoreNFCのコールバックでは継続に応答値を返し、セッションや可変ログを操作するときはMainActorに戻す。カードIDの文字列変換と共通ロガーは `nonisolated`、表示変換は `@MainActor` とする | 各カードの読取処理、`Utility/CardIdentity.swift`、`Utility/Log.swift`、`CardDefine/ConverterType.swift` |
 | **読み取った値（生データ）と表示用の値を分ける** | 保存データにはカードから読んだ値だけを残し、取引種別名などは表示時に Converter で変換する。変換ロジックを直せば過去の保存データの表示も直る | `Result/ResultModel.swift`, `CardDefine/ConverterType.swift`, `*Converter.swift` |
 | **読めなかった値を 0 や空として扱わない** | 誤った残高を表示しないため。読取に失敗したら `nil` を返し、セッションをエラーで終了する | 各カードの `Read` |
 | **保存先はプロセス起動時に一度だけ決める** | ModelContainer と Widget の参照先が起動中に食い違うのを防ぐため | `Result/SaveData/Storage.swift`（`StorageConfig`） |
@@ -365,7 +366,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 | 項目 | 内容 |
 |---|---|
 | `CardBalance/` フォルダ | どのターゲットにも属していない Xcode テンプレート（Control Widget の雛形）。ビルド対象外 |
-| 言語モード | `SWIFT_VERSION = 5.0`（Swift 6 の言語モードは未適用）。`ObservableObject` と `@Observable` が混在している |
+| 言語モード | Apple Swift 6.4.2 / Xcode 27.2でコンパイルし、全ターゲット・全構成の言語モードは `SWIFT_VERSION = 6.0`（Swift 6言語モード）。`ObservableObject` と `@Observable` が混在している |
 | 非推奨 API | `CLGeocoder`（`countryLocationProvider.swift`）、`currentOrientationAnchoredAdaptiveBanner`（`BannerAdsView.swift`） |
 | 綴りの揺れ | ローカライズキーのみ残っている：`*.scand.description`、`cardList.reader.enptyReader`、`issue.jp.miyazaki.*`（icsca。値は宮城県仙台市として正しい） |
 | テスト | Python経由のSwift回帰テストあり。XcodeテストターゲットとCIはない |

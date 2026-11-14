@@ -27,7 +27,7 @@ extension CardBalanceModel: AppEntity {
         "widget.balance.setting.card.none"
     }
 
-    static var defaultQuery = CardBalanceQuery()
+    static let defaultQuery = CardBalanceQuery()
 }
 
 struct CardBalanceQuery: EntityQuery {

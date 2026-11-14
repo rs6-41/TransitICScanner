@@ -12,7 +12,7 @@ extension Data {
     }
 }
 
-enum ConverterType: String, CaseIterable {
+nonisolated enum ConverterType: String, CaseIterable {
     case jpIC
     case jpIC_SAPICA
     case jpIC_IruCa
@@ -37,6 +37,7 @@ enum ConverterType: String, CaseIterable {
         self = value
     }
 
+    @MainActor
     func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         switch self {
         case .jpIC:
@@ -72,6 +73,7 @@ enum ConverterType: String, CaseIterable {
         }
     }
 
+    @MainActor
     func history(_ item: ResultHistory) -> DisplayHistory {
         switch self {
         case .jpIC:

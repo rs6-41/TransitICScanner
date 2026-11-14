@@ -9,10 +9,27 @@
  - [CI/CDの設計メモ](./CI.md)：GitHub Actions・Xcode Cloudの構成と実装意図
 
 ## 開発環境
-### iOS
- - macOS 27
- -- Xcode 27
- -- Swift 6.4（Xcode プロジェクトの言語モードは Swift 5 / `SWIFT_VERSION = 5.0`）
+### Appleプラットフォーム
+
+| 項目 | 確認済みの環境・設定 |
+| -- | -- |
+| 開発用macOS | 27.2（Build 26B123） |
+| Xcode | 27.2（Build 27B52） |
+| Swiftコンパイラ | Apple Swift 6.4.2（swiftlang-6.4.2.1.9） |
+| Swift言語モード | Swift 6（`SWIFT_VERSION = 6.0`、全ターゲット・全構成） |
+| 最低iOSバージョン | iOS 26.4（`IPHONEOS_DEPLOYMENT_TARGET = 26.4`） |
+| 最低macOSバージョン | macOS 26.4（`MACOSX_DEPLOYMENT_TARGET = 26.4`、Mac Catalyst） |
+| 最低watchOSバージョン | watchOS 26.4（`WATCHOS_DEPLOYMENT_TARGET = 26.4`） |
+
+Swiftコンパイラのバージョンと言語モードは別の設定です。Swift 6.4.2でコンパイルし、言語モードもSwift 6を使用します。`SWIFT_VERSION`にコンパイラのパッチバージョンは指定しません。開発用OS・SDKのバージョンと、アプリの最低対応OSも区別します。
+
+環境を更新したときは次のコマンドで確認し、この表と両言語のREADMEのバッジを更新します。
+
+```sh
+sw_vers
+xcodebuild -version
+xcrun swift --version
+```
 
 ## コードの書式
 

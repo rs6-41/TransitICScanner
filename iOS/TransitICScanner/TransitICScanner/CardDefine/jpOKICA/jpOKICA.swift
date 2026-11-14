@@ -105,9 +105,10 @@ extension NFCScannerModel {
                 }
             }
 
+            @MainActor
             func readBlocks(
                 _ blockList: [Data],
-                completion: @escaping ([Data]?) -> Void
+                completion: @escaping @MainActor @Sendable ([Data]?) -> Void
             ) {
                 felicaTag.readWithoutEncryption(
                     serviceCodeList: [serviceCode],
@@ -117,33 +118,36 @@ extension NFCScannerModel {
                     status2,
                     blockData,
                     error in
-
-                    Log.debug(
-                        "OKICA history status:",
-                        status1,
-                        status2,
-                        "count:",
-                        blockData.count
-                    )
-
-                    guard error == nil,
-                        status1 == 0x00,
-                        status2 == 0x00
-                    else {
+                    Task { @MainActor in
 
                         Log.debug(
-                            "OKICA history read error:",
-                            error as Any
+                            "OKICA history status:",
+                            status1,
+                            status2,
+                            "count:",
+                            blockData.count
                         )
 
-                        completion(nil)
-                        return
-                    }
+                        guard error == nil,
+                            status1 == 0x00,
+                            status2 == 0x00
+                        else {
 
-                    completion(blockData)
+                            Log.debug(
+                                "OKICA history read error:",
+                                error as Any
+                            )
+
+                            completion(nil)
+                            return
+                        }
+
+                        completion(blockData)
+                    }
                 }
             }
 
+            @MainActor
             func readNext(
                 _ index: Int,
                 result: [Data]
