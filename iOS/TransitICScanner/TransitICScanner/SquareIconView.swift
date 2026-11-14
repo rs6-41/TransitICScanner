@@ -12,7 +12,7 @@ struct SquareIcon: View {
                 Image(systemName: "app.fill")
                     .font(.largeTitle)
                     .foregroundStyle(color)
-                
+
                 if let systemImage {
                     Image(systemName: systemImage)
                         .foregroundStyle(.white)
@@ -21,7 +21,7 @@ struct SquareIcon: View {
                     Image(image)
                         .resizable()
                         .scaledToFit()
-                        .frame(height:22)
+                        .frame(height: 22)
                 }
             }
             VStack(alignment: .leading) {
