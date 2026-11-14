@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3B45C730A91DA300C2C66C /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = AA3B45C630A91DA300C2C66C /* LicenseList */; };
+		AA3B45CB30A91E4200C2C66C /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3B45CA30A91E4200C2C66C /* license-list.plist */; };
 		AA43A04F309D6C17008A3C48 /* TransitICScanner_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = AA544C293062702300EFAE03 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AA87ABCD306686B600A3D87B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA87ABAF3066867600A3D87B /* WidgetKit.framework */; };
@@ -62,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* TransitICScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitICScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3B45CA30A91E4200C2C66C /* license-list.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		AA43A045309D6C14008A3C48 /* TransitICScanner_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TransitICScanner_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA87ABAF3066867600A3D87B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AA87ABB13066867600A3D87B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -80,6 +83,9 @@
 				Localize/Localizable.xcstrings,
 				Localize/Localization.swift,
 				Result/BalanceFormat.swift,
+				Result/ResultModel.swift,
+				Result/SaveData/ResultSave.swift,
+				Result/SaveData/Storage.swift,
 				Utility/CardIdentity.swift,
 				Utility/Log.swift,
 			);
@@ -120,7 +126,9 @@
 				AppIcon/AppIcon_Beta.icon,
 				AppIcon/AppIcon.icon,
 				Assets.xcassets,
+				CardDefine/City/Area.swift,
 				Result/BalanceFormat.swift,
+				Result/SaveData/Storage.swift,
 				Utility/CardIdentity.swift,
 				Utility/Log.swift,
 			);
@@ -176,6 +184,7 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				AA3B45C730A91DA300C2C66C /* LicenseList in Frameworks */,
 				AA544C2A3062702300EFAE03 /* GoogleMobileAds in Frameworks */,
 			);
 		};
@@ -203,6 +212,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				AA3B45CA30A91E4200C2C66C /* license-list.plist */,
 				AA87ABCF306686B600A3D87B /* CardBalanceWidget */,
 				AA43A046309D6C14008A3C48 /* TransitICScanner_Watch Watch App */,
 				AA87ABAE3066867600A3D87B /* Frameworks */,
@@ -257,6 +267,7 @@
 			name = TransitICScanner;
 			packageProductDependencies = (
 				AA544C293062702300EFAE03 /* GoogleMobileAds */,
+				AA3B45C630A91DA300C2C66C /* LicenseList */,
 			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* TransitICScanner.app */;
@@ -362,6 +373,7 @@
 			packageReferences = (
 				AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				AA87AC553066CD0700A3D87B /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				AA3B45C530A91DA300C2C66C /* XCRemoteSwiftPackageReference "LicenseList" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
@@ -380,6 +392,7 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				AA3B45CB30A91E4200C2C66C /* license-list.plist in Resources */,
 			);
 		};
 		AA43A043309D6C14008A3C48 /* Resources */ = {
@@ -1211,6 +1224,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AA3B45C530A91DA300C2C66C /* XCRemoteSwiftPackageReference "LicenseList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cybozu/LicenseList.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 		AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -1230,6 +1251,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AA3B45C630A91DA300C2C66C /* LicenseList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA3B45C530A91DA300C2C66C /* XCRemoteSwiftPackageReference "LicenseList" */;
+			productName = LicenseList;
+		};
 		AA544C293062702300EFAE03 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA544C283062702300EFAE03 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
