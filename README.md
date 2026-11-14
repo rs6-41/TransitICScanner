@@ -1,22 +1,15 @@
 [English](README_en.md)
 
 # 世界IC残高確認
+
+[![Swift 6.4.2](https://img.shields.io/badge/Swift-6.4.2-orange?logo=swift&logoColor=white)](./doc/dev/README.md)
+[![Xcode 27.2](https://img.shields.io/badge/Xcode-27.2-147EFB?logo=xcode&logoColor=white)](./doc/dev/README.md)
+[![iOS 26.4+](https://img.shields.io/badge/iOS-26.4%2B-blue?logo=apple&logoColor=white)](#プラットフォーム)
+[![macOS 26.4+](https://img.shields.io/badge/macOS-26.4%2B-blue?logo=apple&logoColor=white)](#プラットフォーム)
+[![App Store](https://img.shields.io/badge/App_Store-Download-0D96F6?logo=appstore&logoColor=white)](https://apps.apple.com/app/id6812794719)
+[![CI](https://img.shields.io/github/actions/workflow/status/rs6-41/TransitICScanner/ci.yml?branch=main&label=CI&logo=github)](https://github.com/rs6-41/TransitICScanner/actions/workflows/ci.yml)
+
 全世界の交通系ICをスキャンできるアプリ
-
- - [開発環境・規程](./doc/dev/README.md)
- 
-## LLMによる開発スキル
-
-生成AI（LLM）がこのリポジトリで利用する手順・テンプレート・検証ツールを、最上位の[skills/](./skills/README.md)にまとめています。
-
-| スキル | 対象 |
-| -- | -- |
-| [カード開発・Issue作成](./skills/transit-card-workflow/SKILL.md) | 調査/iOS実装Issue、調査情報の仕様書化、仕様書からのiOS実装、文書・スキル整備のIssue |
-| [翻訳補完](./skills/transit-localization/SKILL.md) | 任意の1言語から不足翻訳を補完。文脈説明はxcstringsのJSON内`comment`へ記録 |
-
-利用するLLMに[ルートのAGENTS.md](./AGENTS.md)と対象の`SKILL.md`を読み込ませ、対象と必要な工程を指定してください。例えば「`skills/transit-card-workflow/SKILL.md`を使い、提供資料から指定カードの仕様書を作成して」「`skills/transit-localization/SKILL.md`を使い、指定キーの日本語から他言語を補完して」と依頼します。
-
-スキルはこのプロジェクトの規定・モデル・構成に合わせた生成AI向けの指示書です。Issue投稿、コード変更、コミット、PR作成まで行う場合は、その範囲と対象ブランチも指定してください。LLMが作成・更新するIssue・PRには、既存ラベルを維持して`Agent`ラベルを必ず付与します。
 
 ## プラットフォーム
 | OS | リンク | 要件 | 外部リーダー |
@@ -27,6 +20,9 @@
 | Android | 未実装 | 未定 | 未定 |
 | HarmonyOS | 未実装 | HarmonyOS NEXT | 未定 |
 | Windows | 未実装 | 未定 | 必須 |
+
+ - [開発環境・規程](./doc/dev/README.md)
+ - [LLMによる開発スキル](./skills/README.md)
 
 ## 対応状況
 注：iPhone内蔵リーダーではMifare Classicの読み取りができない。

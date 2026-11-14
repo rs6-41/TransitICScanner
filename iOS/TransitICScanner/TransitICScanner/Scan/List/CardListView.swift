@@ -96,7 +96,7 @@ struct CardList: View {
                 sidebar
                     .listStyle(.sidebar)
                     .scrollContentBackground(.hidden)
-                    .background(Color(uiColor: .quaternarySystemFill))
+                    .background(Color(uiColor: .systemGroupedBackground))
                     .navigationDestination(for: RegionList.self) { region in
                         regionCards(for: region)
                     }
@@ -116,8 +116,6 @@ struct CardList: View {
         NavigationStack(path: $compactPath) {
             sidebar
                 .listStyle(.insetGrouped)
-                .scrollContentBackground(.hidden)
-                .background(Color(uiColor: .quaternarySystemFill))
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         ScanReaderPicker(manager: smartCardManager)
@@ -207,7 +205,7 @@ struct CardList: View {
                     searchResultSection
                 }
             }
-            .listRowBackground(Color(uiColor: .secondarySystemFill))
+            .listRowBackground(Color(uiColor: .secondarySystemGroupedBackground))
         }
         .listStyle(.insetGrouped)
         .alignmentGuide(.listRowSeparatorLeading) { _ in
