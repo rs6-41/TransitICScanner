@@ -365,7 +365,7 @@ Widget は SwiftData を直接読みません。アプリ側が保存時に `Wid
 | 項目 | 内容 |
 |---|---|
 | `CardBalance/` フォルダ | どのターゲットにも属していない Xcode テンプレート（Control Widget の雛形）。ビルド対象外 |
-| 言語モード | `SWIFT_VERSION = 5.0`（Swift 6 の言語モードは未適用）。`ObservableObject` と `@Observable` が混在している |
+| 言語モード | Apple Swift 6.4.2 / Xcode 27.2でコンパイルし、全ターゲット・全構成の言語モードは `SWIFT_VERSION = 5.0`（Swift 6 の言語モードは未適用）。`ObservableObject` と `@Observable` が混在している |
 | 非推奨 API | `CLGeocoder`（`countryLocationProvider.swift`）、`currentOrientationAnchoredAdaptiveBanner`（`BannerAdsView.swift`） |
 | 綴りの揺れ | ローカライズキーのみ残っている：`*.scand.description`、`cardList.reader.enptyReader`、`issue.jp.miyazaki.*`（icsca。値は宮城県仙台市として正しい） |
 | テスト | Python経由のSwift回帰テストあり。XcodeテストターゲットとCIはない |

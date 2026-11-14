@@ -13438,25 +13438,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scan Log"
+            "value" : "Scan Log (Debug)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "スキャンログ"
+            "value" : "スキャンログ (Debug)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "扫描日志"
+            "value" : "扫描日志 (Debug)"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "掃描日誌"
+            "value" : "掃描日誌 (Debug)"
           }
         }
       }
