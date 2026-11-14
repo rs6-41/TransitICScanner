@@ -1,7 +1,7 @@
 import Foundation
 
 /// 現行のカード識別子と、旧バージョンが保存した文字列との互換性を管理する。
-enum CardIdentity {
+nonisolated enum CardIdentity {
     static func canonicalID(_ identifier: String) -> String {
         identifier == "idKMT" ? "idKAI" : identifier
     }

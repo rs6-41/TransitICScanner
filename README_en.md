@@ -2,22 +2,14 @@
 
 # Worldwide Transit IC Balance Checker
 
+[![Swift 6.4.2](https://img.shields.io/badge/Swift-6.4.2-orange?logo=swift&logoColor=white)](./doc/dev/README.md)
+[![Xcode 27.2](https://img.shields.io/badge/Xcode-27.2-147EFB?logo=xcode&logoColor=white)](./doc/dev/README.md)
+[![iOS 26.4+](https://img.shields.io/badge/iOS-26.4%2B-blue?logo=apple&logoColor=white)](#platforms)
+[![macOS 26.4+](https://img.shields.io/badge/macOS-26.4%2B-blue?logo=apple&logoColor=white)](#platforms)
+[![App Store](https://img.shields.io/badge/App_Store-Download-0D96F6?logo=appstore&logoColor=white)](https://apps.apple.com/app/id6812794719)
+[![CI](https://img.shields.io/github/actions/workflow/status/rs6-41/TransitICScanner/ci.yml?branch=main&label=CI&logo=github)](https://github.com/rs6-41/TransitICScanner/actions/workflows/ci.yml)
+
 An application that scans transit IC cards worldwide and retrieves their balances and transaction history.
-
-- [Development Environment & Guidelines](./doc/dev/README.md)
-
-## LLM development skills
-
-Reusable instructions, templates, and validation tools for generative AI agents are available in the top-level [skills/ directory](./skills/README.md).
-
-| Skill | Scope |
-| -- | -- |
-| [Card development and issues](./skills/transit-card-workflow/SKILL.md) | Research/iOS issues, research-to-specification, specification-to-iOS implementation, and documentation/skill maintenance issues |
-| [Localization completion](./skills/transit-localization/SKILL.md) | Complete missing translations from one supplied language and record context in the xcstrings JSON `comment` field |
-
-Ask the agent to read the [root AGENTS.md](./AGENTS.md) and the relevant `SKILL.md`, then specify the target and requested stage. For example: “Use `skills/transit-card-workflow/SKILL.md` to create a card specification from the supplied research” or “Use `skills/transit-localization/SKILL.md` to complete the other languages from the Japanese text for these keys.”
-
-These skills follow this project's models, structure, and rules. If you also want issue submission, code changes, commits, or a PR, specify that scope and the target branch. Issues and PRs written by an LLM must carry the `Agent` label while retaining existing labels.
 
 ## Platforms
 
@@ -29,6 +21,9 @@ These skills follow this project's models, structure, and rules. If you also wan
 | Android | Not implemented | TBD | TBD |
 | HarmonyOS | Not implemented | HarmonyOS NEXT | TBD |
 | Windows | Not implemented | TBD | Required |
+
+- [Development Environment & Guidelines](./doc/dev/README.md)
+- [LLM Development Skills](./skills/README.md)
 
 ## Supported Cards
 

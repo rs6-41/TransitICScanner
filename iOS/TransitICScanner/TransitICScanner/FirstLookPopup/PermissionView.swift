@@ -10,14 +10,14 @@ import CoreNFC
 @MainActor
 final class LocationPermissionManager: NSObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
-    private var completion: (() -> Void)?
+    private var completion: (@MainActor @Sendable () -> Void)?
 
     override init() {
         super.init()
         manager.delegate = self
     }
 
-    func requestAuthorization(completion: @escaping () -> Void) {
+    func requestAuthorization(completion: @escaping @MainActor @Sendable () -> Void) {
         self.completion = completion
 
         switch manager.authorizationStatus {
@@ -237,7 +237,7 @@ struct PermissionModel {
     var icon: String?
     var fill: Color?
     var color: Color?
-    var action: (@escaping () -> Void) -> Void
+    var action: (@escaping @MainActor @Sendable () -> Void) -> Void
 }
 
 struct PermissionView: View {
