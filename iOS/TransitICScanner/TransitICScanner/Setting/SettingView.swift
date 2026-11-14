@@ -56,12 +56,12 @@ struct SettingView: View {
                     HStack {
                         SquareIcon(text: "setting.link.github", image: "github", color: Color.primary)
                         Spacer()
-                        Image(systemName:"arrow.up.forward.app.fill")
-                            .foregroundStyle(Color(uiColor:.tertiaryLabel))
+                        Image(systemName: "arrow.up.forward.app.fill")
+                            .foregroundStyle(Color(uiColor: .tertiaryLabel))
                     }
                 }
             }
-            
+
             if appEnvironment == .dev || devSetting {
                 Section() {
                     NavigationLink(
