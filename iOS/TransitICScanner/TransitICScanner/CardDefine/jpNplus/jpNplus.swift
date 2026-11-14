@@ -82,30 +82,32 @@ extension NFCScannerModel {
 
             felicaTag.readWithoutEncryption(serviceCodeList: [serviceCode], blockList: blockList) {
                 [weak self] status1, status2, blockData, error in
-                if let error = error {
-                    Log.debug("Read error: \(error)")
-                    self?.session?.invalidate(errorMessage: error.localizedDescription)
-                    continuation.resume(returning: nil)
-                    return
+                Task { @MainActor in
+                    if let error = error {
+                        Log.debug("Read error: \(error)")
+                        self?.session?.invalidate(errorMessage: error.localizedDescription)
+                        continuation.resume(returning: nil)
+                        return
+                    }
+
+                    guard status1 == 0x00, status2 == 0x00 else {
+                        self?.session?.invalidate(
+                            errorMessage: String(
+                                localized: "scanner.coreNFC.scanning.error.statusFlag,s1:\(status1), s2:\(status2)"))
+                        continuation.resume(returning: nil)
+                        return
+                    }
+
+                    guard let data = blockData.first else {
+                        continuation.resume(returning: nil)
+                        return
+                    }
+
+                    Log.debug("エヌタス：\(data)")
+
+                    let balance = data.toIntReversed(5, 6)
+                    continuation.resume(returning: Int(balance))
                 }
-
-                guard status1 == 0x00, status2 == 0x00 else {
-                    self?.session?.invalidate(
-                        errorMessage: String(
-                            localized: "scanner.coreNFC.scanning.error.statusFlag,s1:\(status1), s2:\(status2)"))
-                    continuation.resume(returning: nil)
-                    return
-                }
-
-                guard let data = blockData.first else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-
-                Log.debug("エヌタス：\(data)")
-
-                let balance = data.toIntReversed(5, 6)
-                continuation.resume(returning: Int(balance))
             }
         }
     }
@@ -124,24 +126,28 @@ extension NFCScannerModel {
                 }
             }
 
-            func readBlocks(_ blockList: [Data], completion: @escaping ([Data]?) -> Void) {
+            @MainActor
+            func readBlocks(_ blockList: [Data], completion: @escaping @MainActor @Sendable ([Data]?) -> Void) {
                 felicaTag.readWithoutEncryption(
                     serviceCodeList: [serviceCode],
                     blockList: blockList
                 ) { status1, status2, blockData, error in
-                    Log.debug("History status:", status1, status2, "count:", blockData.count)
-                    guard error == nil,
-                        status1 == 0x00,
-                        status2 == 0x00
-                    else {
-                        completion(nil)
-                        return
-                    }
+                    Task { @MainActor in
+                        Log.debug("History status:", status1, status2, "count:", blockData.count)
+                        guard error == nil,
+                            status1 == 0x00,
+                            status2 == 0x00
+                        else {
+                            completion(nil)
+                            return
+                        }
 
-                    completion(blockData)
+                        completion(blockData)
+                    }
                 }
             }
 
+            @MainActor
             func readNext(_ index: Int, result: [Data]) {
                 if index >= blockLists.count {
                     for (index, data) in result.enumerated() {

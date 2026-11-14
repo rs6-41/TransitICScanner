@@ -377,9 +377,10 @@ enum ResultSave {
             return
         }
 
+        let idm = info.idm
         let descriptor = FetchDescriptor<SavedCard>(
             predicate: #Predicate {
-                $0.idm == info.idm
+                $0.idm == idm
             }
         )
 

@@ -6,7 +6,7 @@ import os
 /// - `Log.debug`: 開発時の詳細ログ。DEBUG ビルドでのみ出力し、カード IDm などの値を含み得るため
 ///   メッセージは `.private` として記録する（Xcode のデバッガ接続時以外は伏せ字になる）。
 /// - `Log.error`: リリースビルドでも記録するエラー。個人情報やカードの識別子を含めないこと。
-enum Log {
+nonisolated enum Log {
     static let subsystem = Bundle.main.bundleIdentifier ?? "com.rs6apps.TransitICScanner"
 
     /// 開発時の詳細ログ（`print` の置き換え）。カテゴリは呼び出し元のファイル名。

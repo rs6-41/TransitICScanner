@@ -13,7 +13,7 @@ card_model = (source / 'Scan/CardModel.swift').read_text()
 card_id = 'enum CardID:' + card_model.split('enum CardID:', 1)[1].split('struct ScanOption', 1)[0]
 converter = (source / 'CardDefine/ConverterType.swift').read_text()
 converter = 'enum ConverterType:' + converter.split('enum ConverterType:', 1)[1].split(
-    '    func cardInfo', 1
+    '    @MainActor\n    func cardInfo', 1
 )[0] + '}\n'
 result_model = (source / 'Result/ResultModel.swift').read_text()
 area = (source / 'CardDefine/Area.swift').read_text()
