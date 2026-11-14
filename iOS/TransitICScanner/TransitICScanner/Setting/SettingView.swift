@@ -52,7 +52,18 @@ struct SettingView: View {
                 NavigationLink(destination: AcknowledgmentView()) {
                     SquareIcon(text: "setting.acknowledgment", systemImage: "info.bubble.fill", color: Color.gray)
                 }
-                if appEnvironment == .dev || devSetting {
+                Link(destination: URL(string: "https://github.com/rs6-41/TransitICScanner")!) {
+                    HStack {
+                        SquareIcon(text: "setting.link.github", image: "github", color: Color.primary)
+                        Spacer()
+                        Image(systemName:"arrow.up.forward.app.fill")
+                            .foregroundStyle(Color(uiColor:.tertiaryLabel))
+                    }
+                }
+            }
+            
+            if appEnvironment == .dev || devSetting {
+                Section() {
                     NavigationLink(
                         destination: DebugSettingView(deleteAdsPurchaseID: $deleteAdsPurchaseID, deleteAds: $deleteAds)
                     ) {

@@ -3,7 +3,8 @@ import SwiftUI
 struct SquareIcon: View {
     var text: LocalizedStringKey?
     var subText: LocalizedStringKey?
-    @State var systemImage: String
+    @State var systemImage: String?
+    @State var image: String?
     @State var color: Color
     var body: some View {
         HStack {
@@ -11,9 +12,17 @@ struct SquareIcon: View {
                 Image(systemName: "app.fill")
                     .font(.largeTitle)
                     .foregroundStyle(color)
-                Image(systemName: systemImage)
-                    .foregroundStyle(.white)
-                    .bold()
+                
+                if let systemImage {
+                    Image(systemName: systemImage)
+                        .foregroundStyle(.white)
+                        .bold()
+                } else if let image {
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height:22)
+                }
             }
             VStack(alignment: .leading) {
                 if let text {
