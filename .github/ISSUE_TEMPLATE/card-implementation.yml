@@ -1,0 +1,88 @@
+name: "カード実装"
+description: "調査済み交通ICカードの実装"
+title: ""
+body:
+  - type: textarea
+    id: card
+    attributes:
+      label: "カード名・カードID"
+      description: "調査Issueとdoc/cardsの仕様書をリンク"
+    validations:
+      required: true
+  - type: textarea
+    id: platform
+    attributes:
+      label: "対象プラットフォーム・リーダー"
+      description: "iOS CoreNFC / 外付けリーダー等と対応可否"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / 背景・目的"
+      description: "必要性、利用者への影響、既存の問題"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "What / 対象・作業内容"
+      description: "対象範囲、成果物、対象外を明確にする"
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: "Who / 担当・確認者"
+      description: "担当者、レビュー担当、外部協力者。未定なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: when
+    attributes:
+      label: "When / 予定・依存関係"
+      description: "期限、着手条件、先行Issue。未定なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: where
+    attributes:
+      label: "Where / 対象環境・ファイル"
+      description: "対象OS、端末、リポジトリパス、関連資料"
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / 手順・技術方針"
+      description: "実施手順、既存仕様、根拠、代替案"
+    validations:
+      required: true
+  - type: textarea
+    id: cost
+    attributes:
+      label: "How much / 工数・費用・制約"
+      description: "概算工数、カード入手費、API制約など。不明なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: done
+    attributes:
+      label: "完了条件（チェックリスト）"
+      description: "観測・検証できる条件を - [ ] 形式で記載"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "検証方法・証拠"
+      description: "テスト、実カード、ログ、PR、コミット。未実施は未実施と明記"
+    validations:
+      required: true
+  - type: textarea
+    id: compat
+    attributes:
+      label: "互換性・データ保護"
+      description: "既存ID、SwiftData、ローカライズ、過去データの互換性"
+    validations:
+      required: true
