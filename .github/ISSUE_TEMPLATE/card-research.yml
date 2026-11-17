@@ -1,0 +1,88 @@
+name: "カード調査"
+description: "交通ICカードの技術調査・仕様確認"
+title: ""
+body:
+  - type: textarea
+    id: card
+    attributes:
+      label: "カード名・発行地域・世代"
+      description: "名称、発行事業者、国・地域、世代"
+    validations:
+      required: true
+  - type: textarea
+    id: nfc
+    attributes:
+      label: "NFC方式・識別情報"
+      description: "FeliCa System/Service、ISO7816 AID、DESFire File等。未確認は未確認"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: "情報源・入手手段"
+      description: "一次資料、ダンプ、実カード、外部リーダー、法的制約"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / 背景・目的"
+      description: "必要性、利用者への影響、既存の問題"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "What / 対象・作業内容"
+      description: "対象範囲、成果物、対象外を明確にする"
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: "Who / 担当・確認者"
+      description: "担当者、レビュー担当、外部協力者。未定なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: when
+    attributes:
+      label: "When / 予定・依存関係"
+      description: "期限、着手条件、先行Issue。未定なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: where
+    attributes:
+      label: "Where / 対象環境・ファイル"
+      description: "対象OS、端末、リポジトリパス、関連資料"
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / 手順・技術方針"
+      description: "実施手順、既存仕様、根拠、代替案"
+    validations:
+      required: true
+  - type: textarea
+    id: cost
+    attributes:
+      label: "How much / 工数・費用・制約"
+      description: "概算工数、カード入手費、API制約など。不明なら未定"
+    validations:
+      required: false
+  - type: textarea
+    id: done
+    attributes:
+      label: "完了条件（チェックリスト）"
+      description: "観測・検証できる条件を - [ ] 形式で記載"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "検証方法・証拠"
+      description: "テスト、実カード、ログ、PR、コミット。未実施は未実施と明記"
+    validations:
+      required: true
