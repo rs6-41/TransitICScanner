@@ -9,9 +9,16 @@ body:
     attributes:
       value: |
         ## 作業定義・確認事項
-        以下の5W1Hに沿って作業内容を記載してください。
-        担当者・レビュー担当者はアサイン情報を参照します。
 
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+        
   - type: textarea
     id: why
     attributes:
@@ -30,21 +37,14 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        **Who / 誰が**
-        担当・レビュー担当はアサイン情報を参照してください。
-
-        **When / いつ**
-        関連Issue・PRの進捗に応じて調整してください。
-
   - type: textarea
     id: where
     attributes:
       label: "Where / どこで"
       description: "作業ブランチ・対象環境など"
-      placeholder: "対象ブランチや作業環境を記述してください。"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: textarea
     id: how
