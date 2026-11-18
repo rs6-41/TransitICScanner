@@ -24,7 +24,7 @@ body:
     attributes:
       label: "Why / なぜ"
       description: "作業の背景・目的"
-      value: "新規カードスキャン対応のため、カード仕様を調査する"
+      value: "調査済みのカード仕様をもとに、iOSアプリへスキャン機能を実装する"
     validations:
       required: true
 
