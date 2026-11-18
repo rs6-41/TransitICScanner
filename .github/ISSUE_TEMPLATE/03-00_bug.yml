@@ -9,9 +9,15 @@ body:
     attributes:
       value: |
         ## 作業定義・確認事項
-        発生した不具合の調査・修正を行います。
+
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
         担当・レビュー担当はアサイン情報を参照してください。
-        作業時期は関連Issue・PRの進捗に応じて調整してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
 
   - type: textarea
     id: why

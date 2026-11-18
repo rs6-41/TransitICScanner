@@ -9,10 +9,16 @@ body:
     attributes:
       value: |
         ## 作業定義・確認事項
-        新規言語への対応と翻訳カタログの整備を行います。
-        担当・レビュー担当はアサイン情報を参照してください。
-        作業時期は関連Issue・PRの進捗に応じて調整してください。
 
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+        
   - type: input
     id: language
     attributes:
