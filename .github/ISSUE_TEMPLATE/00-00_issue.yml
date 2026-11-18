@@ -1,0 +1,67 @@
+
+name: "一般Issue"
+description: "機能追加・修正・改善など、汎用的な作業Issue"
+title: ""
+labels: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 作業定義・確認事項
+        以下の5W1Hに沿って作業内容を記載してください。
+        担当者・レビュー担当者はアサイン情報を参照します。
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / なぜ"
+      description: "作業の背景・目的・必要性"
+      placeholder: "この作業が必要になった理由を記述してください。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: "What / 何を"
+      description: "作業対象・対象ファイル・機能など"
+      placeholder: "対象となる機能やディレクトリを記述してください。"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+
+  - type: textarea
+    id: where
+    attributes:
+      label: "Where / どこで"
+      description: "作業ブランチ・対象環境など"
+      placeholder: "対象ブランチや作業環境を記述してください。"
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / どうやって"
+      description: "具体的な実装方法・作業手順"
+      placeholder: "実施する作業内容や手順を記述してください。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "完了要件"
+      description: "作業完了と判断するための条件"
+      value: |
+        - [ ] 
+        - [ ] PRを作成する（PR番号：{PR番号を記述}）
+    validations:
+      required: true
