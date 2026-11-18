@@ -27,7 +27,7 @@ body:
     attributes:
       label: "What / 何を"
       description: "調査結果を記録するディレクトリ"
-      value: "/doc/cards"
+      value: "`/doc/cards`"
     validations:
       required: true
 
@@ -36,7 +36,9 @@ body:
     attributes:
       label: "Where / どこで"
       description: "作業ブランチなど"
-      placeholder: "作業ブランチを記載してください"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: textarea
     id: how
