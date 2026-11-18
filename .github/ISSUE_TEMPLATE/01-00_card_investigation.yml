@@ -43,7 +43,12 @@ body:
     attributes:
       label: "How / どうやって"
       description: "調査方法・使用する機材・参考資料など"
-      placeholder: "調査内容や具体的な手順を記述してください"
+      value: |
+        - 既知の資料調査
+        - FeliCa等のダンプ
+        - NFC読み取り可能なアプリの使用
+        - 実物のカードでの検証
+      
     validations:
       required: true
 

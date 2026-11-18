@@ -52,7 +52,9 @@ body:
     attributes:
       label: "How / どうやって"
       description: "実装方法・作業手順"
-      placeholder: "関連ドキュメントIssueでの調査をもとに、実装内容を記述してください"
+      value: |
+        関連ドキュメントIssueでの調査をもとにSwiftで実装する。
+        `/iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md`を使うことで、ドキュメントからのコード生成を補助的にサポートできます。
     validations:
       required: true
 
@@ -69,10 +71,3 @@ body:
         - [ ] PRを作成する（PR番号：{PR番号を記述}）
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 備考
-        `/iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md`
-        を使うことで、ドキュメントからのコード生成を補助的にサポートできます。
