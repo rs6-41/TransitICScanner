@@ -1,0 +1,87 @@
+
+name: "翻訳タスク"
+description: "新規言語への対応・翻訳カタログの整備"
+title: "[翻訳]: "
+labels: ["Translation（翻訳）"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 作業定義・確認事項
+        新規言語への対応と翻訳カタログの整備を行います。
+        担当・レビュー担当はアサイン情報を参照してください。
+        作業時期は関連Issue・PRの進捗に応じて調整してください。
+
+  - type: input
+    id: language
+    attributes:
+      label: "対象言語"
+      description: "新たに対応する言語"
+      placeholder: "例：繁体字中国語（台湾）"
+    validations:
+      required: true
+
+  - type: input
+    id: locale
+    attributes:
+      label: "対象ロケール"
+      description: "言語・地域を表すロケール識別子"
+      placeholder: "例：zh-TW"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / なぜ"
+      description: "作業の背景・目的"
+      value: "対象言語に対応する"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: "What / 何を"
+      description: "翻訳対象のファイル"
+      value: |
+        - 翻訳テーブル（`doc/localize/translate.csv`）
+        - 翻訳カタログ（`Localizable.xcstrings`、`InfoPlist.xcstrings`）
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: "Where / どこで"
+      description: "作業ブランチなど"
+      placeholder: "作業ブランチを記載してください"
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / どうやって"
+      description: "翻訳方法・レビュー手順"
+      value: |
+        - 翻訳スキル `skills/transit-localization` を使って翻訳する
+        - ネイティブスピーカーにレビューを依頼する
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "完了要件"
+      description: "翻訳完了と判断するための条件"
+      value: |
+        - [ ] 翻訳テーブルに対応言語を追加する
+        - [ ] 翻訳テーブルに翻訳内容を追加する
+        - [ ] 翻訳カタログに翻訳を反映する
+        - [ ] 対象ロケールと翻訳カタログを確認する
+        - [ ] 文脈・用語・変数・複数形を点検する
+        - [ ] 対象画面・Widget等で表示を検証する
+        - [ ] ネイティブレビューの実施状況を記録する
+        - [ ] PRを作成する（PR番号：{PR番号を記述}）
+    validations:
+      required: true
