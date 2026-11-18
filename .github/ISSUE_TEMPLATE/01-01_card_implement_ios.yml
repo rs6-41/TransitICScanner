@@ -9,10 +9,16 @@ body:
     attributes:
       value: |
         ## 作業定義・確認事項
-        新規カードのスキャン対応を実装します。
-        担当・レビュー担当はアサイン情報を参照してください。
-        作業時期は関連Issue・PRの進捗に応じて調整してください。
 
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+        
   - type: textarea
     id: why
     attributes:
@@ -27,7 +33,7 @@ body:
     attributes:
       label: "What / 何を"
       description: "実装対象のディレクトリ"
-      value: "/iOS/TransitICScanner/TransitICScanner/CardDefine/"
+      value: "`/iOS/TransitICScanner/TransitICScanner/CardDefine/`"
     validations:
       required: true
 
@@ -36,7 +42,9 @@ body:
     attributes:
       label: "Where / どこで"
       description: "作業ブランチなど"
-      placeholder: "作業ブランチを記載してください"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: input
     id: related_issue
@@ -52,7 +60,9 @@ body:
     attributes:
       label: "How / どうやって"
       description: "実装方法・作業手順"
-      placeholder: "関連ドキュメントIssueでの調査をもとに、実装内容を記述してください"
+      value: |
+        関連ドキュメントIssueでの調査をもとにSwiftで実装する。
+        `/iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md`を使うことで、ドキュメントからのコード生成を補助的にサポートできます。
     validations:
       required: true
 
@@ -69,10 +79,3 @@ body:
         - [ ] PRを作成する（PR番号：{PR番号を記述}）
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 備考
-        `/iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md`
-        を使うことで、ドキュメントからのコード生成を補助的にサポートできます。

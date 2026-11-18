@@ -9,10 +9,16 @@ body:
     attributes:
       value: |
         ## 作業定義・確認事項
-        新規カードのスキャン対応に必要な仕様を調査します。
-        担当・レビュー担当はアサイン情報を参照してください。
-        作業時期は関連Issue・PRの進捗に応じて調整してください。
 
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+             
   - type: textarea
     id: why
     attributes:
@@ -27,7 +33,7 @@ body:
     attributes:
       label: "What / 何を"
       description: "調査結果を記録するディレクトリ"
-      value: "/doc/cards"
+      value: "`/doc/cards`"
     validations:
       required: true
 
@@ -36,14 +42,21 @@ body:
     attributes:
       label: "Where / どこで"
       description: "作業ブランチなど"
-      placeholder: "作業ブランチを記載してください"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: textarea
     id: how
     attributes:
       label: "How / どうやって"
       description: "調査方法・使用する機材・参考資料など"
-      placeholder: "調査内容や具体的な手順を記述してください"
+      value: |
+        - 既知の資料調査
+        - FeliCa等のダンプ
+        - NFC読み取り可能なアプリの使用
+        - 実物のカードでの検証
+      
     validations:
       required: true
 
