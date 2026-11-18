@@ -35,8 +35,10 @@ body:
     id: where
     attributes:
       label: "Where / どこで"
-      description: "対象ブランチ・発生箇所など"
-      placeholder: "例：main / iOS / ScanView"
+      description: "対象ブランチ"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: textarea
     id: how

@@ -56,7 +56,9 @@ body:
     attributes:
       label: "Where / どこで"
       description: "作業ブランチなど"
-      placeholder: "作業ブランチを記載してください"
+      value: "`feature/xxx`"
+    validations:
+      required: true
 
   - type: textarea
     id: how
