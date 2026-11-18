@@ -23,6 +23,7 @@
 
  - [開発環境・規程](./doc/dev/README.md)
  - [LLMによる開発スキル](./skills/README.md)
+ - [LLM作業用のIssueテンプレート](./.github/ISSUE_TEMPLATE/00-00_agent.yml)
 
 ## 対応状況
 注：iPhone内蔵リーダーではMifare Classicの読み取りができない。
