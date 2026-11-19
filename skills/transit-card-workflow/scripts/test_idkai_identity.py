@@ -16,7 +16,7 @@ converter = 'enum ConverterType:' + converter.split('enum ConverterType:', 1)[1]
     '    @MainActor\n    func cardInfo', 1
 )[0] + '}\n'
 result_model = (source / 'Result/ResultModel.swift').read_text()
-area = (source / 'CardDefine/Area.swift').read_text()
+area = (source / 'CardDefine/City/Area.swift').read_text()
 saved = (source / 'Result/SaveData/ResultSave.swift').read_text()
 saved = '@Model\nfinal class SavedCard {' + saved.split('@Model\nfinal class SavedCard {', 1)[1].split(
     '\nenum ResultSave {', 1

@@ -10,7 +10,7 @@ model = (source / 'CardBalanceWidget/BalanceWidgetModel.swift').read_text()
 model = 'struct BalanceWidgetModel:' + model.split('struct BalanceWidgetModel:', 1)[1].split(
     '/// Widget', 1
 )[0]
-area = (source / 'TransitICScanner/CardDefine/Area.swift').read_text()
+area = (source / 'TransitICScanner/CardDefine/City/Area.swift').read_text()
 currency = 'enum CurrencyType:' + area.split('enum CurrencyType:', 1)[1].split(
     '    func getLocalize', 1
 )[0] + '}\n'
