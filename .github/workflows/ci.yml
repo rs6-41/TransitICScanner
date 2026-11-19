@@ -60,7 +60,9 @@ jobs:
           elif [ -n "$BEFORE_SHA" ] && git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
             base=$BEFORE_SHA
           elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            base=$(git merge-base "origin/$DEFAULT_BRANCH" HEAD)
+            if ! base=$(git merge-base "origin/$DEFAULT_BRANCH" HEAD); then
+              base=$(git mktree </dev/null)
+            fi
           else
             echo "比較元のコミットがないためスキップします。"
             exit 0
