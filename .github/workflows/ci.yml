@@ -76,6 +76,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - &approve-license-list
+        name: LicenseListプラグインの固定リビジョンを承認
+        run: |
+          security_dir="$HOME/Library/org.swift.swiftpm/security"
+          mkdir -p "$security_dir"
+          cat > "$security_dir/plugins.json" <<'JSON'
+          [{"packageIdentity":"licenselist","targetName":"PrepareLicenseList","fingerprint":"ee1e897acb2c8f3061fca4434cb702e8ddb7a72c"}]
+          JSON
+
       - name: 広告設定のダミーを生成
         run: iOS/TransitICScanner/ci_scripts/make_env_swift.sh
 
@@ -84,6 +93,7 @@ jobs:
           set -o pipefail
           xcodebuild test \
             -project "$PROJECT" \
+            -onlyUsePackageVersionsFromResolvedFile \
             -scheme Dev \
             -destination "$SIMULATOR_DESTINATION" \
             -resultBundlePath build/Dev.xcresult \
@@ -113,6 +123,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - *approve-license-list
+
       - name: 広告設定のダミーを生成
         run: iOS/TransitICScanner/ci_scripts/make_env_swift.sh
 
@@ -121,6 +133,7 @@ jobs:
           set -o pipefail
           xcodebuild build \
             -project "$PROJECT" \
+            -onlyUsePackageVersionsFromResolvedFile \
             -scheme "${{ matrix.scheme }}" \
             -destination "${{ matrix.destination }}" \
             $SIGNING_ARGS
