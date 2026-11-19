@@ -1,5 +1,7 @@
 import SwiftUI
 
+//MARK: 複数の県名が存在する場合にソートする順番を定義する
+
 func prefSort(_ prefecture: String) -> Int {
     switch prefecture {
     //日本

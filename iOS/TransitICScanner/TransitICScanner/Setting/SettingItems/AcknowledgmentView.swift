@@ -1,4 +1,5 @@
 import SwiftUI
+import LicenseList
 
 struct AcknowledgmentView: View {
     var body: some View {
@@ -6,9 +7,15 @@ struct AcknowledgmentView: View {
             NavigationLink(destination: TRView()) {
                 Text(LocalizedStringKey("setting.acknowledgment.cardtr"))
             }
+            NavigationLink(destination:
+                LicenseListView()
+                .navigationTitle("LICENSE")
+                .navigationBarTitleDisplayMode(.inline)
+            ) {
+                Text(LocalizedStringKey("setting.acknowledgment.oss"))
+            }
         }
         .navigationTitle(LocalizedStringKey("setting.acknowledgment"))
-
         .contentMargins(.top, 10)
     }
 }

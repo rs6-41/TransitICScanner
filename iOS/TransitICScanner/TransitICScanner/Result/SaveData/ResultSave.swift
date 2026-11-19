@@ -23,6 +23,7 @@ enum CloudSyncSettings {
     }
 }
 
+@MainActor
 enum SavedDataModelContainer {
     #if !os(watchOS)
     static func deleteStore() throws {
