@@ -1,17 +1,19 @@
-# PR・mainへのpushで、静的検証・回帰テスト・ユニットテスト・共有ターゲットのビルドを行う。
+# PR・レビュー提出・全ブランチへのpushで、静的検証・回帰テスト・ユニットテスト・共有ターゲットのビルドを行う。
 # 配布（Archive・TestFlight）はXcode Cloudが担当する。iOS/TransitICScanner/ci_scripts/ を参照。
 name: CI
 
 on:
   pull_request:
+  pull_request_review:
+    types: [submitted]
   push:
-    branches: [main]
+    branches: ['**']
   workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
   # PRは新しいpushで古い実行を取り消す。mainは各コミットの結果を残すため取り消さない。
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_review' }}
 
 permissions:
   contents: read
@@ -49,7 +51,7 @@ jobs:
       # 既存Markdownの改行用の行末スペースを除外するため、変更差分だけを検査する（ローカル規定と同じ）。
       - name: 空白エラー
         env:
-          BASE_REF: ${{ github.base_ref }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
           BEFORE_SHA: ${{ github.event.before }}
         run: |
           if [ -n "$BASE_REF" ]; then
