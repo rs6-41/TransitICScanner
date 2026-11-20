@@ -18,7 +18,7 @@ body:
 
         **When / いつ**
         関連Issue・PRの進捗に応じて調整してください。
-        
+
   - type: textarea
     id: why
     attributes:
@@ -61,7 +61,7 @@ body:
       label: "完了要件"
       description: "作業完了と判断するための条件"
       value: |
-        - [ ] 
+        - [ ]
         - [ ] PRを作成する（PR番号：{PR番号を記述}）
     validations:
       required: true

@@ -18,7 +18,7 @@ body:
 
         **When / いつ**
         関連Issue・PRの進捗に応じて調整してください。
-        
+
   - type: textarea
     id: why
     attributes:
