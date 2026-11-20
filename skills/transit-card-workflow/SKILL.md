@@ -11,7 +11,7 @@ description: TransitICScannerのカード調査・iOS実装Issue、文書・ス�
 
 | 依頼 | 読む資料 | 成果物 |
 |---|---|---|
-| 調査Issue／iOS実装Issue／文書・スキル整備Issueを作る | [Issue作成](references/issues.md) | 対象工程に合う、Agentラベル付きのIssue |
+| 調査Issue／iOS実装Issue／文書・スキル整備Issueを作る | [Issue作成](references/issues.md) | 対象工程に合う、Agentラベル・作業者欄付きのIssue |
 | 調査済み情報から文書を作る | [情報から仕様書へ](references/research-to-spec.md) | `doc/cards/<cardID>.md`、根拠と未確認事項 |
 | 仕様書からiOSコードを作る | [仕様書からiOSへ](references/spec-to-ios.md) | 登録を含む実装、テスト、検証結果 |
 

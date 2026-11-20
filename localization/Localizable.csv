@@ -1,0 +1,916 @@
+"key","comment","en","ja","zh-Hans","zh-Hant"
+"(%@)","","","","",""
+"%@","","","","",""
+"ads","Ads","Ads","広告","广告","廣告"
+"ads.delete","Ads","Delete Ads","広告削除","移除广告","移除廣告"
+"ads.placeholder.myapp.button","Ads","  Install  ","インストール"," 下载 "," 下載 "
+"ads.placeholder.myapp.IMGPiper.body","Ads","An app for viewing images in Picture in Picture.","画像をピクチャ・イン・ピクチャで表示できるアプリ","支持以画中画方式查看图片的应用","支援以畫中畫方式查看圖片的APP"
+"ads.placeholder.myapp.IMGPiper.title","Ads","IMGPiper","IMGPiper","画中画","畫中畫"
+"ads.placeholder.myapp.Replacer.body","Ads","Easily replace or insert text strings.","文字列の置換や挿入が簡単にできます。","轻松替换或插入文字。","輕鬆替換或插入文字。"
+"ads.placeholder.myapp.Replacer.title","Ads","Replacer","スマート置換","智能替换","智慧替換"
+"ads.placeholder.myapp.webp.body","Ads","Convert images to WebP format. Supports transparent PNGs and can help reduce PNG file sizes.","画像をWebP形式に変換します。透過PNGにも対応し、PNG画像の軽量化を期待できます。","将图片转换为 WebP 格式。支持透明 PNG，并有助于减小 PNG 文件大小。","將圖片轉換為 WebP 格式。支援透明 PNG，並有助於減小 PNG 文件大小。"
+"ads.placeholder.myapp.webp.title","Ads","WebP Converter","WebPコンバータ","WebP 转换器","WebP 轉換器"
+"appName","App Name","Global IC Balance Checker","世界IC残高確認","全球IC余额查询","全球IC餘額查詢"
+"appName.short","App Name (watchOS)","IC Balance","IC残高","IC余额","IC餘額"
+"cancel","","Cancel","キャンセル","取消","取消"
+"card","","IC Card","カード","IC卡","IC卡"
+"card.apple","Card Name
+カード名","Apple Pay","Apple Pay","Apple Pay","Apple Pay"
+"card.Asaca","Card Name
+カード名","Asaca","Asaca","Asaca","Asaca"
+"card.company.jr","Issuer Company Name / 発行企業名：
+JR","JR","JR","JR","JR"
+"card.company.kotoden","Issuer Company Name / 発行企業名：
+高松琴平電気鉄道","Kotoden","ことでん","琴电","琴電"
+"card.default","Card Name
+カード名","Default","デフォルト","默认","預設"
+"card.DoCard","Card Name
+カード名","DoCard","DoCard","DoCard","DoCard"
+"card.ezl","Card Name
+カード名","EZL","EZL","EZL","EZL"
+"card.hayakaken","Card Name
+カード名","Hayakaken","はやかけん","はやかけん","はやかけん"
+"card.hkOctopus","Card Name
+カード名","Octopus Card","オクトパス/八達通","八达通","八達通"
+"card.hongkong_tunion","Card Name
+カード名","Octopus Card","オクトパス/八達通","八达通","八達通"
+"card.icoca","Card Name
+カード名","ICOCA","ICOCA","ICOCA","ICOCA"
+"card.icsca","Card Name
+カード名","icsca","icsca","icsca","icsca"
+"card.idKAI","Card Name
+カード名","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip"
+"card.IruCa","Card Name
+カード名","IruCa","IruCa","IruCa","IruCa"
+"card.iwasaki","Card Name
+カード名","Iwasaki IC Card","いわさきICカード","Iwasaki IC 卡","Iwasaki IC 卡"
+"card.jpNplus","Card Name
+カード名","Nagasaki Ntasu Card","エヌタスカード","N-Tasu卡(N+)","N-Tasu卡(N+)"
+"card.kcash","Card Name
+カード名","K-CASH","K-CASH / 케이캐쉬","K-CASH / 케이캐쉬","K-CASH / 케이캐쉬"
+"card.manaca","Card Name
+カード名","manaca","manaca","manaca","manaca"
+"card.moiba","Card Name
+カード名","MOIBA","MOIBA","MOIBA","MOIBA"
+"card.nimoca","Card Name
+カード名","nimoca","nimoca","nimoca","nimoca"
+"card.OKICA","Card Name
+カード名","OKICA","OKICA","OKICA","OKICA"
+"card.pasmo","Card Name
+カード名","PASMO","PASMO","PASMO","PASMO"
+"card.phone","Card Name
+カード名","Phone","モバイル","手机","手機"
+"card.railplus","Card Name
+カード名","Rail+","Rail+","Rail+","Rail+"
+"card.rapica","Card Name
+カード名","Rapica","Rapica","Rapica","Rapica"
+"card.SAPICA","Card Name
+カード名","SAPICA","SAPICA","SAPICA","SAPICA"
+"card.snapper","Card Name
+カード名","Snapper","Snapper","Snapper","Snapper"
+"card.sugoca","Card Name
+カード名","SUGOCA","SUGOCA","SUGOCA","SUGOCA"
+"card.suica","Card Name
+カード名","Suica","Suica","Suica","Suica"
+"card.tmoney","Card Name
+カード名","T-money","T-money / 티머니","T-money / 티머니","T-money / 티머니"
+"card.toica","Card Name
+カード名","TOICA","TOICA","TOICA","TOICA"
+"card.twEasyCard_old","Card Name
+カード名","EasyCard","EasyCard（悠遊卡）","悠遊卡","悠遊卡"
+"card.twICash","Card Name
+カード名","icash","icash","icash","icash"
+"card.usClipper","Card Name
+カード名","Clipper","Clipper","Clipper","Clipper"
+"card.web.twEasyCard_old","Card Name
+カード名","EasyCard","EasyCard（悠遊卡）","悠遊卡","悠遊卡"
+"card.web.twEasyCard_old.description","List’s Card Description
+リストのカード説明","EasyCard / Signature Card / Super Card","悠遊卡/悠遊聯名卡/超級悠遊卡","悠遊卡/悠遊聯名卡/超級悠遊卡","悠遊卡/悠遊聯名卡/超級悠遊卡"
+"card.web.twiPass_old","Card Name
+カード名","iPASS","iPASS（一卡通）","iPASS（一卡通）","iPASS（一卡通）"
+"cardList.allCards","","All Cards","全てのカード","所有的卡","所有的卡"
+"cardList.area.cn","Area Name
+地域名","Mainland China","中国本土","中国大陆","中國大陸"
+"cardList.area.cn.sortName","Sorting Localize","china","17/37/3/10/8","zhongguo","zhongguo"
+"cardList.area.hk","Area Name
+地域名","Hong Kong","香港","香港","香港"
+"cardList.area.hk.sortName","Sorting Localize","hongkong","30/46/10/46","hongkong","hongkong"
+"cardList.area.id","Area Name
+地域名","Indonesia","インドネシア","印度尼西亚","印度尼西亞"
+"cardList.area.jp","Area Name
+地域名","Japan","日本","日本","日本"
+"cardList.area.jp.sortName","Sorting Localize","japan","22/30/46","riben","riben"
+"cardList.area.kp","Area Name
+地域名","North Korea","北朝鮮","朝鲜","朝鮮"
+"cardList.area.kr","Area Name
+地域名","South Korea","韓国","韩国","韓國"
+"cardList.area.kr.sortName","Sorting Localize","korea","6/46/10/8","hanguo","hanguo"
+"cardList.area.mo","Area Name
+地域名","Macau","マカオ","澳门","澳門"
+"cardList.area.mo.sortName","Sorting Localize","macau","31/6/5","macau","macau"
+"cardList.area.sg","Area Name
+地域名","Singapore","シンガポール","新加坡","新加坡"
+"cardList.area.tw","Area Name
+地域名","Taiwan","台湾","台湾","臺灣"
+"cardList.area.tw.sortName","Sorting Localize","taiwan","16/2/44/46","taiwan","taiwan"
+"cardList.area.us","Area Name
+地域名","United States","アメリカ","美国","美國"
+"cardList.cnTunion","List’s Card Name
+リストのカード名","T-Union","T-Union（交通聯合）","中国交通联合","中國交通聯合"
+"cardList.cnTunion.description","List’s Card Description
+リストのカード説明","Chinese transit cards bearing the T-Union logo","T-Unionマークのある中国の交通カード","带有交通联合标志的中国交通卡","印有交通聯合標誌的中國交通卡"
+"cardList.cnTunion.sortName","Sorting Localize","tunion","tunion","jiaotonglianhe","jiaotonglianhe"
+"cardList.description","","The respective brands have no partnership, affiliation, or authorization relationship with this app.
+Scan results are for reference only.","各ブランドは本アプリの提携・承認関係にありません。
+スキャン結果は参考用です。","各品牌与本应用不存在合作或授权关系。
+扫描结果仅供参考。","各品牌與本APP不存在合作或授權關係。
+掃描結果僅供參考。"
+"cardList.error.nfc","外部（CCID）カードリーダーが未接続のままスキャンしようとしたときのエラー。iPhone内蔵NFCの状態ではない。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Card reader disconnected.","カードリーダーが接続されていません。","读卡器未连接","讀卡機未連線"
+"cardList.external.description","iPhone内蔵NFCでは読めず、外部リーダー専用のカードに表示する説明。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Connect an external reader to scan this card.
+Due to hardware limitations, this cannot be read on an iPhone.","外部リーダーを接続して、このカードをスキャンします。
+ハードウェアの制約によりiPhoneでは読み取れません。","连接外接读卡器以扫描此卡片。
+受硬件限制，iPhone 无法直接读取。","請連接外接讀卡機以掃描此卡片。
+受限於硬體規格，無法使用 iPhone 讀取。"
+"cardList.external.disable","","Disconnected","未接続","已断开连接","已中斷連線"
+"cardList.external.enable","","Connected","接続済み","已连接","已連線"
+"cardList.external.title","外部リーダーでのみ読み取れるカードを示すラベル。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External Reader Only","外部リーダー専用","仅限外接读卡器","僅限外接讀卡機"
+"cardList.hkOctopus","List’s Card Name
+リストのカード名","Octopus Card","Octopus（八達通）","八达通","八達通"
+"cardList.hkOctopus.description","List’s Card Description
+リストのカード説明","八達通","オクトパスカード","Octopus","Octopus"
+"cardList.hkOctopus.sortName","Sorting Localize","octopus","octopus","badatong","badatong"
+"cardList.idKAI","List’s Card Name
+リストのカード名","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip"
+"cardList.idKAI.description","List’s Card Description
+リストのカード説明","Jakarta Transit Card","ジャカルタの交通カード","雅加达交通卡","雅加達交通卡"
+"cardList.idKAI.sortName","Card sort name / カードのソート名","kartumultitrip","kartumultitrip","kartumultitrip","kartumultitrip"
+"cardList.jpDoCard","List’s Card Name
+リストのカード名","DoCard / Asaca","DoCard / Asaca","DoCard / Asaca","DoCard / Asaca"
+"cardList.jpDoCard.description","List’s Card Description
+リストのカード説明","Asahikawa Electric Railway and Douhoku Bus","旭川電気軌道および道北バス","旭川电气轨道和道北巴士","旭川電氣軌道和道北巴士"
+"cardList.jpIC","List’s Card Name
+リストのカード名","Transportation IC Cards","交通系ICカード","日本交通系IC卡","日本交通系IC卡"
+"cardList.jpIC_icsca","List’s Card Name
+リストのカード名","icsca","icsca","icsca","icsca"
+"cardList.jpIC_icsca.description","List’s Card Description
+リストのカード説明","Sendai City Transportation Bureau (仙台市交通局)","仙台市交通局","仙台市交通局","仙台市交通局"
+"cardList.jpIC_icsca.sortName","Sorting Localize","icsca","2/8/13/6","icsca","icsca"
+"cardList.jpIC_IruCa","List’s Card Name
+リストのカード名","IruCa","IruCa","IruCa","IruCa"
+"cardList.jpIC_IruCa.description","List’s Card Description
+リストのカード説明","Kotoden (Takamatsu-Kotohira Electric Railroad)","ことでん（高松琴平電気鉄道）","琴电（高松琴平电气铁道）","琴電（高松琴平電氣鐵道）"
+"cardList.jpIC_IruCa.sortName","Sorting Localize","IruCa","IruCa","IruCa","IruCa"
+"cardList.jpIC_SAPICA","List’s Card Name
+リストのカード名","SAPICA","SAPICA","SAPICA","SAPICA"
+"cardList.jpIC_SAPICA.description","List’s Card Description
+リストのカード説明","Sapporo area transit card.","札幌圏の地下鉄・路面電車・バス用カード","札幌地区交通卡","札幌地区交通卡"
+"cardList.jpIC_SAPICA.sortName","Sorting Localize","sapica","sapica","sapica","sapica"
+"cardList.jpIC.description","List’s Card Description
+リストのカード説明","Nationwide IC cards in Japan. Such as Suica, PASMO, and ICOCA","Suica, PASMO, ICOCAなど全国互換カード","Suica、PASMO、ICOCA等日本全国通用卡","Suica、PASMO、ICOCA等日本全國通用卡片"
+"cardList.jpIC.sortName","Sorting Localize","transportationiccards","koutuukei","ribenjiaotongka","ribenjiaotongka"
+"cardList.jpNplus","List’s Card Name
+リストのカード名","Nagasaki Ntasu Card","エヌタス(N+)","N+卡","N+卡"
+"cardList.jpNplus.description","List’s Card Description
+リストのカード説明","Nagasaki Bus / Saikai Transport","長崎バス・さいかい交通","长崎公交 / Saikai交通","長崎公車 / Saikai交通"
+"cardList.jpNplus.sortName","Sorting Localize","ntasu","ntasu","ntasu","ntasu"
+"cardList.jpOKICA","List’s Card Name
+リストのカード名","OKICA","OKICA","OKICA","OKICA"
+"cardList.jpOKICA.description","List’s Card Description
+リストのカード説明","Okinawa monorail & bus.","沖縄モノレールとバス","冲绳单轨电车及巴士。","沖繩單軌電車及巴士。"
+"cardList.jpOKICA.sortName","Sorting Localize","okica","okica","okica","okica"
+"cardList.jpRapica","List’s Card Name
+リストのカード名","Rapica / Iwasaki IC","Rapica / いわさきICカード","Rapica / Iwasaki IC","Rapica / Iwasaki IC"
+"cardList.jpRapica.description","List’s Card Description
+リストのカード説明","Kagoshima common transit IC Card.","鹿児島の共通交通系ICカード","鹿儿岛通用交通 IC 卡。","鹿兒島通用交通 IC 卡。"
+"cardList.krOneCard","List’s Card Name
+リストのカード名","One Card All Pass","One Card All Pass","One Card All Pass","One Card All Pass"
+"cardList.krOneCard.description","List’s Card Description
+リストのカード説明","Most Korean transit cards, such as T-money, EZL, and WOWPASS.","T-money, EZL, WOWPASSなど韓国の大半の交通カード","T-money、EZL、WOWPASS等韩国大多数交通卡","T-money、EZL、WOWPASS等韓國大多數交通卡"
+"cardList.krOneCard.sortName","Sorting Localize","onecardallpass","onecardallpass","onecardallpass","onecardallpass"
+"cardList.nowLocate","","Current Location","現在の地域","当前区域","當前區域"
+"cardList.otherLocate","","Other","他の地域","其他地方","其他地方"
+"cardList.reader.builtIn","","iPhone","iPhone","iPhone","iPhone"
+"cardList.reader.connected","外部（CCID）カードリーダーが接続されている状態表示。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External reader connected","外部リーダー接続中","外接读卡器已连接","外接讀卡機已連線"
+"cardList.reader.disconnected","外部（CCID）カードリーダーが接続されていない状態表示。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External reader disconnected","外部リーダー未接続","外接读卡器未连接","外接讀卡機未連線"
+"cardList.reader.enptyReader","読み取りリーダーの選択肢に外部リーダーが1台もないときの表示。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Not Connected.","リーダー未接続","读卡器未连接","讀卡機未連線"
+"cardList.reader.enptyReader.description","外部リーダー未接続時の補足。対応するのはCCID準拠のリーダー。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Supported CCID-compliant readers","CCID互換リーダーに対応","支持符合 CCID 标准的读卡器","支援符合 CCID 標準的讀卡機"
+"cardList.reader.external","読み取りリーダーの選択肢のうち、外部（CCID）カードリーダーを指す項目名。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External reader","外部リーダー","外接读卡器","外接讀卡機"
+"cardList.reader.title","読み取りに使うリーダー（iPhone内蔵NFCまたは外部リーダー）を選ぶ項目の見出し。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Scan with","読み取りリーダー","扫描设备","掃描裝置"
+"cardList.reader.unavailable","外部リーダー機能を利用できない（端末・OSが非対応等）ときの状態表示。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External readers unavailable","外部リーダーを利用できません","无法使用外接读卡器","無法使用外接讀卡機"
+"cardList.reader.unsupported","選択中のカードが外部リーダー読み取りに未対応のため、内蔵リーダーへの切り替えを促す案内。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","External reading is not supported for this card yet. Switch to the built-in reader.","このカードの外部リーダー読み取りには未対応です。内蔵リーダーに切り替えてください。","此卡暂不支持外接读卡器，请切换到内置读卡器。","此卡尚不支援外接讀卡機，請切換至內建讀卡機。"
+"cardList.search","","Search by card name, area, and more…","カード名、地域などで検索…","搜索卡片名称、地区等…","搜尋卡片名稱、地區等…"
+"cardList.searchResults","","Search Results","検索結果","搜索结果","搜索結果"
+"cardList.sort.locate_ascend","Scan list's sort
+スキャン一覧のソート","Area (A-Z)","地域（昇順）","地区正序","地區正序"
+"cardList.sort.locate_descend","Scan list's sort
+スキャン一覧のソート","Area (Z to A)","地域（降順）","地区倒序","地區倒序"
+"cardList.sort.name_ascend","Scan list's sort
+スキャン一覧のソート","Card Name (A-Z)","カード名（昇順）","名称正序","名稱正序"
+"cardList.sort.name_descend","Scan list's sort
+スキャン一覧のソート","Card Name (Z to A)","カード名（降順）","名称倒序","名稱倒序"
+"cardList.title","","Transit Card","交通カード","交通卡","交通卡"
+"cardList.twEasyCard_old.sortName","Sorting Localize","easycard","easycard","youyouka","youyouka"
+"cardList.twICash","List’s Card Name
+リストのカード名","icash 2.0","icash 2.0（愛金卡）","icash 2.0（愛金卡）","icash 2.0（愛金卡）"
+"cardList.twICash.description","List’s Card Description
+リストのカード説明","Taiwan 7-ELEVEN’s Transit card","7-ELEVEN系交通カード","7-ELEVEN系交通卡","7-ELEVEN系交通卡"
+"cardList.twICash.sortName","Sorting Localize","icash","icash","aijinka","aijinka"
+"cardList.usClipper","List’s Card Name
+リストのカード名","Clipper","Clipper","Clipper","Clipper"
+"cardList.usClipper.description","","The BayArea’s transit card","サンフランシスコ・ベイエリアの交通カード","旧金山湾区交通卡","舊金山灣區交通卡"
+"cnTunion.short","Short Card Name
+短縮カード名
+中国の交通カード規格「交通联合（China T-Union）」の短縮表示名。","China T-Union","China T-Union","交通联合","交通聯合"
+"currency.hkd.%@","","HK$ %@","HK$ %@","%@ 港元","HK$ %@"
+"currency.idr.%@","Currency: Indonesian rupiah
+通貨: インドネシア・ルピー","%@ Rp.","%@ Rp.","%@ 印尼盾","%@ 印尼盾"
+"currency.jpy.%@","Currency: Japanese Yen
+通貨: 日本円","%@ JPY","%@ 円","%@ 日元","%@ 日元"
+"currency.kpw.%@","Currency: North Korea won
+通貨: 朝鮮ウォン","%@ KPW","%@ KPW","%@ KPW","%@ KPW"
+"currency.krw.%@","Currency: South Korea won
+通貨: 韓国ウォン","₩ %@","₩ %@","%@ 韩元","%@ 韓元"
+"currency.ntd.%@","","NT$ %@","NT$ %@","%@ 新台币","NT$ %@"
+"currency.rmb.%@","Currency: Chinese Yuan
+通貨: 人民元","%@ RMB","%@ 元","%@ 元","%@ 人民幣"
+"currency.sgd.%@","Currency: Singapore Dollar
+通貨: シンガポールドル","%@ SG$","%@ SG$","%@ 坡元","%@ 坡元"
+"currency.usd.%@","Currency: US Dollar
+通貨: 米ドル","$ %@","$ %@","%@ 美元","%@ 美元"
+"done","","Done","完了","完成","完成"
+"error","","Error","エラー","错误","錯誤"
+"error.ok","","OK","OK","好","好"
+"error.smartCardReader.apduDataTooLong","","APDU data is too long.","APDUデータが長すぎます。","APDU 数据过长。","APDU 資料過長。"
+"error.smartCardReader.clipperRead","","The Clipper card could not be read.","Clipperカードを読み取れませんでした。","无法读取Clipper卡。","無法讀取Clipper 卡。"
+"error.smartCardReader.felicaBalance","","The FeliCa balance data is incomplete.","FeliCaの残高データが不完全です。","FeliCa余额数据不完整。","FeliCa 餘額資料不完整。"
+"error.smartCardReader.felicaCommandFailed","","FeliCa command failed (status: %1$02X%2$02X).","FeliCaコマンドに失敗しました（状態コード：%1$02X%2$02X）。","FeliCa 命令失败（状态码：%1$02X%2$02X）。","FeliCa 指令失敗（狀態碼：%1$02X%2$02X）。"
+"error.smartCardReader.felicaHistoryService","","Could not select the FeliCa history service (status: %1$02X%2$02X).","FeliCaの履歴サービスを選択できませんでした（状態コード：%1$02X%2$02X）。","无法选择 FeliCa 历史记录服务（状态码：%1$02X%2$02X）。","無法選取 FeliCa 交易紀錄服務（狀態碼：%1$02X%2$02X）。"
+"error.smartCardReader.felicaIDm","","Could not read the FeliCa IDm.","FeliCaのIDmを読み取れませんでした。","无法读取 FeliCa IDm。","無法讀取 FeliCa IDm。"
+"error.smartCardReader.felicaInfoService","","Could not select the FeliCa information service (status: %1$02X%2$02X).","FeliCaの情報サービスを選択できませんでした（状態コード：%1$02X%2$02X）。","无法选择 FeliCa 信息服务（状态码：%1$02X%2$02X）。","無法選取 FeliCa 資訊服務（狀態碼：%1$02X%2$02X）。"
+"error.smartCardReader.incompleteResponse","外部（CCID）カードリーダーから不完全な応答を受け取ったときのエラー。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","The external reader returned an incomplete response.","外部リーダーから不完全な応答が返されました。","外接读卡器返回了不完整的响应。","外接讀卡機傳回不完整的回應。"
+"error.smartCardReader.notDESFire","","This is not a DESFire card.","DESFireカードではありません。","这不是 DESFire 卡。","這不是 DESFire 卡。"
+"error.smartCardReader.notDetectionCard","外部リーダー上にカードが検出されないときの案内。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Please tap a card on the external reader first.","外部リーダーにカードをかざしてください。","请先将卡片贴近外接读卡器。","請先將卡片靠近外接讀卡機。"
+"error.smartCardReader.notISO7816","","This is not an ISO 7816 card.","ISO 7816カードではありません。","这不是 ISO 7816 卡。","這不是 ISO 7816 卡。"
+"error.smartCardReader.oneCardRead","","The Korea One Card could not be read.","韓国One Cardを読み取れませんでした。","无法读取韩国 One Card。","無法讀取韓國 One Card。"
+"error.smartCardReader.sessionStart","外部リーダーとの通信セッションを開始できないときのエラー。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Could not start a session with the external reader.","外部リーダーとのセッションを開始できませんでした。","无法与外接读卡器建立会话。","無法與外接讀卡機建立工作階段。"
+"error.smartCardReader.unavailable","外部（CCID）カードリーダーを利用できないときのエラー。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","The external smart card reader is unavailable.","外部リーダーを利用できません。","外接读卡器不可用。","外接讀卡機無法使用。"
+"error.smartCardReader.unreadableCard","","The card was detected but could not be read. Reposition it and try again.","カードを検出しましたが読み取れませんでした。かざす位置を調整して、もう一度お試しください。","已检测到卡片，但无法读取。请调整卡片位置后重试。","已偵測到卡片，但無法讀取。請調整卡片位置後再試一次。"
+"error.storage.inMemory.message","","Saved data could not be opened. Cards scanned now will not be kept after the app is closed. Please restart the app or update to the latest version.","保存データを開けませんでした。今スキャンしたカードはアプリを終了すると保存されません。アプリを再起動するか、最新版にアップデートしてください。","无法打开已保存的数据。现在扫描的卡片在关闭应用后不会被保存。请重新启动应用或更新到最新版本。","無法開啟已儲存的資料。現在掃描的卡片在關閉App後不會被保存。請重新啟動App或更新至最新版本。"
+"error.storage.localOnly.message","","iCloud sync could not be started, so cards are being saved on this device only for now. Please restart the app later.","iCloud同期を開始できなかったため、現在はこの端末にのみ保存しています。しばらくしてからアプリを再起動してください。","无法启动iCloud同步，目前仅保存在此设备上。请稍后重新启动应用。","無法啟動iCloud同步，目前僅儲存在此裝置上。請稍後重新啟動App。"
+"error.storage.save.title","","Could Not Save Data","データを保存できませんでした","无法保存数据","無法儲存資料"
+"error.storage.title","","Unable to Open Saved Data","保存データを開けませんでした","无法打开已保存的数据","無法開啟已儲存的資料"
+"form.birthday.day","Scraping Form
+スクレイピングフォーム","Day","日","日","日"
+"form.birthday.description","Scraping Form
+スクレイピングフォーム","For registered cards, enter your date of birth as two-digit numbers. (Not required for unregistered cards.)","記名カードの場合、誕生日を2桁の数字で記入してください(非記名では入力不要)","对于记名卡，请输入生日的两位数字（非记名卡无需输入）。","對於記名卡，請輸入生日的兩位數字（非記名卡無需輸入）。"
+"form.birthday.month","Scraping Form
+スクレイピングフォーム","Month","月","月","月"
+"form.birthday.title","Scraping Form
+スクレイピングフォーム","Birthday (Signature Card)","誕生日（記名カード）","生日（记名卡）","生日（記名卡）"
+"form.captcha","Scraping Form
+スクレイピングフォーム","Enter the numbers in the image.","上記画像の数字を入力してください。","请输入上方图片中的数字。","請輸入上方圖片中的數字。"
+"form.captcha.title","Scraping Form
+スクレイピングフォーム","CAPTCHA","画像認証","验证码","驗證碼"
+"form.card.description","Scraping Form Alert
+スクレイピングフォームの警告","Enter the numbers shown on the back of the card.","カード裏面にある数字を入力してください。","请输入卡片背面的数字。","請輸入卡片背面的數字。"
+"form.card.title","Scraping Form
+スクレイピングフォーム","Card No.","カード番号","卡号","卡號"
+"form.description.scraping.easycard","Scraping Form
+スクレイピングフォーム","Automatically enters information into the [official EasyCard website](https://ezweb.easycard.com.tw/search/CardSearch.php) and retrieves the data.
+
+Due to server maintenance, data may not be available between 11:00 PM and 6:00 AM local time.
+
+This feature may become unavailable if the website's specifications change.","EasyCardの[公式Webサイト](https://ezweb.easycard.com.tw/search/CardSearch.php)に自動で情報を入力し、データを取得します。
+
+サーバーメンテナンスのため、現地時間の23時〜6時は取得できない場合があります。
+
+Webサイトの仕様変更により利用できなくなる場合があります。","自动在悠遊卡的[官方网站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填写信息并获取数据。
+
+由于服务器维护，当地时间 23:00～6:00 期间可能无法获取数据。
+
+如网站规格发生变更，该功能可能无法使用。","自動在悠遊卡的[官方網站](https://ezweb.easycard.com.tw/search/CardSearch.php)中填寫資訊並取得資料。
+
+由於伺服器維護，當地時間 23:00～6:00 期間可能無法取得資料。
+
+如網站規格變更，此功能可能無法使用。"
+"form.done","Scraping Form
+スクレイピングフォーム","Done","完了","完成","完成"
+"history.empty","","No scanned cards.","スキャン済みのカードがありません","尚未扫描卡片。","尚未掃描卡片。"
+"history.select.empty","","Not Scanned","未スキャン","未扫描卡片","未掃描卡片"
+"history.select.empty.description","","Your card hasn't been scanned yet.","スキャン済みのカードがありません。","您的卡片还没有扫描","您的卡片還沒有掃描"
+"hkOctopus.short","Short Card Name
+短縮カード名","Octopus","Octopus","八达通","八達通"
+"idKAI.scand.description","Scanned card description / 読取結果の説明","Jakarta Transit Card","ジャカルタの交通カード","雅加达交通卡","雅加達交通卡"
+"idKAI.short","Short Card Name
+短縮カード名","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip","Kartu Multi Trip"
+"info.cnTunion.cards","","*Older cards without the China T-Union logo are not supported.","※ 交通聯合のマークがない旧タイプのカードでは利用できません。","※ 不支持没有交通联合标志的旧版卡片。","※ 不支援使用沒有交通聯合標誌的舊版卡片。"
+"info.cnTunion.logo","","Compatible with transit cards bearing the “China T-Union” (交通联合) logo.","「交通聯合（China T-Union）」のロゴがある交通カードで利用できます。","可用于带有“交通联合（China T-Union）”标志的交通卡。","可用於印有「交通聯合（China T-Union）」標誌的交通卡。"
+"info.jpIC.items","","All cards compatible with the Nationwide Mutual Usage Service for Transit IC Cards are supported.","交通系ICカード全国相互利用サービス（交通系ICカード）に対応する全てのカードが利用可能。","支持日本交通系IC卡全国互通服务（交通系IC卡）的所有卡片均可使用。","支援日本交通系 IC 卡全國互通服務（交通系 IC 卡）的所有卡片均可使用。"
+"info.jpIC.note","","*PiTaPa doesn't have balance.","※ PiTaPaには残高情報が存在しません。","※ PiTaPa没有余额信息。","※ PiTaPa 沒有餘額資訊。"
+"info.jpIC.note.other","","Regional partner IC cards are also supported. The latest list of supported cards is available [here](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf).","地域提携ICカードも対応しています。最新の対応カードは[こちら](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)に記載","也支持地区合作IC卡。最新的支持卡片请参阅⁠[此处](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)。","也支援地區合作 IC 卡。最新的支援卡片請參閱[此處](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)。"
+"info.krOneCard.cardName.ezl","","EZL (Cashbee)","EZL（旧Cashbee）","EZL（原Cashbee）","EZL（原Cashbee）"
+"info.krOneCard.cardName.onepass","","One pass","One pass","One pass","One pass"
+"info.krOneCard.cardName.reil_plus","","Rail+","Rail+","Rail+","Rail+"
+"info.krOneCard.cardName.t-money","","T-money","T-money","T-money","T-money"
+"info.krOneCard.cardName.wowpass","","WOWPASS","WOWPASS","WOWPASS","WOWPASS"
+"info.krOneCard.logo","","Compatible with all cards bearing the “One Card All Pass (전국호환 교통카드)” logo.","「One Card All Pass（전국호환 교통카드）」のロゴがある全てのカードで利用可能です。","适用于所有带有“One Card All Pass（전국호환 교통카드）”标志的卡片。","適用於所有帶有“One Card All Pass（전국호환 교통카드）”標誌的卡片。"
+"issue.cityNameLocalize:%@,%@","","%2$@, %1$@","%1$@ %2$@","%1$@ %2$@","%1$@ %2$@"
+"issue.id.jakarta.issuer.KaiCommuter","","KAI Commuter","KAI Commuter","KAI Commuter","KAI Commuter"
+"issue.jp.hokkaido.city.asahikawa","Area Name
+地域名","Asahikawa","旭川市","旭川市","旭川市"
+"issue.jp.hokkaido.city.sapporo","Area Name
+地域名","Sapporo","札幌市","札幌市","札幌市"
+"issue.jp.hokkaido.issuer.asahikawa_railway","","Asahikawa Railway","旭川電気軌道","Asahikawa Railway","旭川電氣軌道"
+"issue.jp.hokkaido.issuer.douhoku_bus","","Douhoku Bus","道北バス","Douhoku Bus","道北巴士"
+"issue.jp.hokkaido.issuer.sapporo_information_network","","Sapporo Information Network Co., Ltd.","札幌総合情報センター株式会社","札幌信息网络株式会社","札幌資訊網路股份有限公司"
+"issue.jp.kagawa.city.takamatsu","Area Name
+地域名","Takamatsu","高松市","高松市","高松市"
+"issue.jp.kagawa.issuer.kotoden","","Takamatsu-Kotohira Railway Co., Ltd.","高松琴平電気鉄道株式会社","Takamatsu-Kotohira Railway Co., Ltd.","高松琴平電氣鐵道股份有限公司"
+"issue.jp.kagoshima.issuer.iwasaki","","Iwasaki Corp.","いわさきコーポレーション","Iwasaki Corp.","岩崎集團"
+"issue.jp.kagoshima.issuer.kagoshimaCity","","Kagoshima transportation Bureau","鹿児島市交通局","Kagoshima transportation Bureau","鹿兒島市交通局"
+"issue.jp.kagoshima.issuer.nangoku","","Nangoku Transport","南国交通株式会社","Nangoku Transport","南國交通"
+"issue.jp.miyazaki.city.sendai","Area Name
+地域名","Sendai","仙台市","仙台市","仙台市"
+"issue.jp.miyazaki.issuer.sendai_transport","","Transportation Bureau City of Sendai","仙台市交通局","仙台市交通局","仙台市交通局"
+"issue.jp.nagasaki.issuer.ntasu","","NTASU Co., Ltd.","株式会社NTASU","NTASU Co., Ltd.","NTASU 股份有限公司"
+"issue.jp.okinawa.issuer.okica","","Okinawa IC Card Co., Ltd.","沖縄ICカード株式会社","Okinawa IC Card Co., Ltd.","沖繩 IC 卡股份有限公司"
+"issue.kr.issuer.ezl","","EZL Corp.","EZL Corp.","EZL Corp.","EZL 公司"
+"issue.kr.issuer.kcash","","KFTC","韓国金融決済院","KFTC","韓國金融電信清算院（KFTC）"
+"issue.kr.issuer.railplus","","KORAIL","KORAIL","KORAIL","韓國鐵道公社（KORAIL）"
+"issue.kr.issuer.tmoney","","Korea Smart Card","韓国スマートカード","Korea Smart Card","韓國智慧卡公司"
+"issue.tw.issuer.easycard","","EasyCard Co., Ltd.","EasyCard Co., Ltd.","悠游卡股份有限公司","悠遊卡股份有限公司"
+"issue.tw.issuer.icash","","icash Corp.","icash Corp.","icash Corp.","愛金卡股份有限公司"
+"issue.us.california.issuer.clipper","","MTC","MTC","MTC","灣區交通局（MTC）"
+"jp.sapporo","Area Name
+地域名","Sapporo","札幌","札幌","札幌"
+"jpDoCard.scand.description","","The latest 20 transactions can be retrieved from the card.","カードから取得可能な履歴は最新の20件です。","可从卡片获取的历史记录最多为最新的20条。","可從卡片取得的歷史紀錄最多為最新的20條。"
+"jpDoCard.short","Short Card Name
+短縮カード名","DoCard / Asaca","DoCard / Asaca","DoCard / Asaca","DoCard / Asaca"
+"jpIC_icsca.short","Short Card Name
+短縮カード名","icsca","icsca","icsca","icsca"
+"jpIC_IruCa","","IruCa","IruCa","IruCa","IruCa"
+"jpIC_IruCa.short","Short Card Name
+短縮カード名","IruCa","IruCa","IruCa","IruCa"
+"jpIC_SAPICA","","SAPICA","SAPICA","SAPICA","SAPICA"
+"jpIC_SAPICA.short","Short Card Name
+短縮カード名","SAPICA","SAPICA","SAPICA","SAPICA"
+"jpIC.scand.description","","The latest 20 transactions can be retrieved from the card.","カードから取得可能な履歴は最新の20件です。","可从卡片获取的历史记录最多为最新的20条。","可從卡片取得的歷史紀錄最多為最新的20條。"
+"jpIC.short","Short Card Name
+短縮カード名","Japan IC Card","交通系IC","日本交通系IC","日本交通系IC"
+"jpNplus.scand.description","","The latest 20 transactions can be retrieved from the card.","カードから取得可能な履歴は最新の20件です。","可从卡片获取的历史记录最多为最新的20条。","可從卡片取得的歷史紀錄最多為最新的20條。"
+"jpNplus.short","Short Card Name
+短縮カード名","Ntasu","エヌタスカード","N-Tasu卡(N+)","N-Tasu卡(N+)"
+"jpOKICA.short","Short Card Name
+短縮カード名","OKICA","OKICA","OKICA","OKICA"
+"jpRapica.scand.description","","The latest 16 transactions can be retrieved from the card.","カードから取得可能な履歴は最新の16件です。","可从卡片获取的历史记录最多为最新的16条。","可從卡片取得的歷史紀錄最多為最新的16條。"
+"jpRapica.short","Short Card Name
+短縮カード名","Kagoshima common IC Card","かごしま共通乗車カード","鹿儿岛通用 IC 卡","鹿兒島通用 IC 卡"
+"krOneCard.short","Short Card Name
+短縮カード名","One Card All Pass","One Card All Pass","One Card All Pass","One Card All Pass"
+"locate.city.CA.SF","Area Name
+地域名","San Francisco","サンフランシスコ","旧金山","舊金山"
+"locate.city.okinawa.mainIsland","Area Name
+地域名","Okinawa Main Island","沖縄本島","冲绳本岛","沖繩本島"
+"locate.prefecture.CA","Area Name
+地域名","California","カリフォルニア州","加州","加州"
+"locate.prefecture.Hokkaido","Area Name
+地域名","Hokkaido","北海道","北海道","北海道"
+"locate.prefecture.Jakarta","Area Name
+地域名","Jakarta","ジャカルタ","雅加达","雅加達"
+"locate.prefecture.Kagawa","Area Name
+地域名","Kagawa","香川県","香川县","香川縣"
+"locate.prefecture.Kagoshima","Area Name
+地域名","Kagoshima","鹿児島県","鹿儿岛县","鹿兒島縣"
+"locate.prefecture.Miyagi","Area Name
+地域名","Miyagi","宮城県","宫城县","宮城縣"
+"locate.prefecture.Miyazaki","Area Name
+地域名","Miyazaki","宮崎県","宫崎县","宮崎縣"
+"locate.prefecture.Nagasaki","Area Name
+地域名","Nagasaki","長崎県","长崎县","長崎縣"
+"locate.prefecture.Okinawa","Area Name
+地域名","Okinawa","沖縄","冲绳县","沖繩縣"
+"navigation.readerSelection","読み取りに使うカードリーダーを選択する画面のタイトル。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Card Reader","カードリーダー","读卡器","讀卡機"
+"navigation.split.notselection","","Select a card","カードを選択","请选择卡片","請選擇卡片"
+"nfc.log.empty","","No scanned cards with logs.","ログ付きのスキャン履歴がありません","尚无带日志的扫描卡片。","尚無包含日誌的掃描卡片。"
+"ok","","OK","OK","好","好"
+"permission.after","","Later","後で","稍后","稍後"
+"permission.att.description","App Tracking Transparencyの許可を求める説明文。広告によるアプリ運営とトラッキングの用途を説明する。","We display ads to support the ongoing development and maintenance of this app.
+Allowing tracking helps us show you more relevant ads and measure ad performance.
+Please tap “Allow” to help us continue maintaining the app.
+Thank you for your support.","このアプリの開発・運営を継続するために、広告を掲載しています。
+トラッキングを許可すると、あなたに関連性の高い広告の表示や、広告の効果測定に役立てられます。
+アプリの継続的運営のために「許可」をお願いします。
+ご協力いただく皆様に感謝いたします。","为了持续开发和维护这款应用，我们会展示广告。
+允许跟踪有助于我们向您展示更符合您兴趣的广告，并衡量广告效果。
+为了支持应用的持续运营，恳请您选择“允许”。
+谢谢您的合作。","為了持續開發和維護本 App，我們會顯示廣告。
+允許追蹤有助於我們向您顯示更符合您興趣的廣告，並衡量廣告成效。
+為了支持 App 的持續營運，懇請您選擇「允許」。
+感謝您的支持。"
+"permission.att.description.ifDenied","","If you don’t allow tracking, you will still see ads, but they may be less relevant to you.","許可しない場合でも、関連性の低い広告が引き続き表示されます。","即使您不允许跟踪，仍然会看到广告，但这些广告可能与您的兴趣关联较低。","即使您不允許跟蹤，仍然會看到廣告，但這些廣告可能與您的興趣關聯較低。"
+"permission.att.title","","Relevant Ads","関連性の高い広告","相关广告","相關廣告"
+"permission.authorized","","Authorized","許可する","允许","許可"
+"permission.continue","","Continue","続ける","继续","繼續"
+"permission.done","","All Done!","すべて完了です！","完成了！","完成了！"
+"permission.done.description","","All set! You can start using the app right away.","全ての設定が完了しました！すぐにアプリを利用できます。","所有设置均已完成！现在即可开始使用应用。","所有設定皆已完成！現在即可開始使用 App。"
+"permission.first.description","","This app lets you check and save the balances of IC cards from around the world using your smartphone.
+Please review the required permissions to personalize your experience.","このアプリでは、世界中のICカード残高をスマートフォンで照会・保存できます。
+体験をパーソナライズするため、必要な権限へのアクセスを確認してください。","本应用支持使用智能手机查询并保存全球各地 IC 卡的余额。
+为了提供个性化的使用体验，请确认是否授予所需的权限。","本 App 可讓您使用智慧型手機查詢並儲存全球各地 IC 卡的餘額。
+為了提供個人化的使用體驗，請確認是否授予所需的權限。"
+"permission.gps.description","","Suggests cards available for use in your current region based on your device’s location.","端末の位置を参照し、現在位置の地域で利用できるカードを提案します。","根据设备的位置信息，推荐您所在地区可使用的卡片。","根據裝置的位置資訊，推薦您所在區域可使用的卡片。"
+"permission.gps.title","","Location","位置情報","位置信息","位置資訊"
+"permission.nfc","初回の権限説明でカードの読み取り方法（内蔵NFC・外部リーダー）を説明する項目名。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","Card Reader","カードリーダー","读卡器","讀卡機"
+"permission.nfc.corenfc.description","NFC内蔵端末向けの読み取り方法の説明。外部リーダーも併用できることを案内する。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","You can scan cards using the iPhone's built-in NFC reader.
+
+Hold your card near the camera area on the back of your device.
+
+You can also connect a CCID-compatible smart card reader to scan cards. Some cards can only be scanned using an external reader. For more information, please visit [our website](https://rs6apps.com/transit/nfc_reader?lang=en).","iPhone内蔵のNFCリーダーを使用してカードをスキャンできます。
+
+デバイス背面のカメラ付近にカードをかざしてください。
+
+CCID互換のICカードリーダーを接続して利用することもできます。一部のカードは外部リーダー専用です。詳細はWebサイトをご確認ください。","您可以使用 iPhone 内置的 NFC 读卡器扫描卡片。
+
+请将卡片靠近设备背面的摄像头区域。
+
+您也可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。部分卡片只能使用外接读卡器进行扫描。详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。","您可以使用 iPhone 內建的 NFC 讀卡機掃描卡片。
+
+請將卡片靠近裝置背面的相機區域。
+
+您也可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。部分卡片僅能使用外接讀卡機進行掃描。詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
+"permission.nfc.external.description","NFC非搭載端末（iPad等）向けの説明。外部リーダーでの読み取りとiPhoneで読んだ履歴の閲覧を案内する。
+表記統一: ja「外部リーダー」/ zh-Hans「外接读卡器」/ zh-Hant「外接讀卡機」、内蔵は「内蔵／内置／內建」。","This device does not have a built-in NFC reader. You can connect a CCID-compatible smart card reader to scan cards. You can also view the history of cards scanned using an iPhone.
+
+For more information, please visit [our website](https://rs6apps.com/transit/nfc_reader?lang=en).","このデバイスにはNFCリーダーが内蔵されていません。 CCID互換のICカードリーダーを接続してスキャンすることができます。iPhoneでスキャンしたカードの履歴を見ることも可能です。
+
+詳細はWebサイトをご確認ください。","此设备不支持内置 NFC 读卡器。您可以连接兼容 CCID 标准的智能卡读卡器来扫描卡片。您也可以查看使用 iPhone 扫描的卡片记录。
+
+详情请访问[我们的网站](https://rs6apps.com/transit/nfc_reader?lang=cn)。","此裝置未內建 NFC 讀卡機。您可以連接相容 CCID 標準的智慧卡讀卡機來掃描卡片。您也可以查看使用 iPhone 掃描的卡片紀錄。
+
+詳情請造訪[我們的網站](https://rs6apps.com/transit/nfc_reader?lang=cn_tw)。"
+"permission.notifications.description","","Notifies you about cards available in your current region while traveling or on the move.","旅行や移動中、現在の地域で利用可能なカードを通知します。","旅行或出行途中，向您通知当前所在地区可使用的卡片。","旅行或移動途中，通知您目前所在區域可使用的卡片。"
+"permission.notifications.title","","Notifications","通知","通知","通知"
+"region.africa","Area Name
+地域名","Africa","アフリカ","非洲","非洲"
+"region.centralAsia","Area Name
+地域名","Central Asia","中央アジア","中亚","中亞"
+"region.eastAsia","Area Name
+地域名","East Asia","東アジア","东亚","東亞"
+"region.europa","Area Name
+地域名","Europa","ヨーロッパ","欧洲","歐洲"
+"region.japanLocal","Area Name
+地域名","Japan Local","日本（地方）","日本地方地区","日本地方地區"
+"region.latinAmerica","Area Name
+地域名","Latin America","中南米","拉丁美洲","拉丁美洲"
+"region.middleEastAsia","Area Name
+地域名","Middle East Asia","中東","中东","中東"
+"region.northAmerica","Area Name
+地域名","North America","北アメリカ","北美洲","北美洲"
+"region.oceania","Area Name
+地域名","Oceania","オセアニア","大洋洲","大洋洲"
+"region.southAsia","Area Name
+地域名","South Asia","南アジア","南亚","南亞"
+"region.southEastAsia","Area Name
+地域名","South East Asia","東南アジア","东南亚","東南亞"
+"result.description.common","","You can scan a saved card again to update its information.","保存済みのカードを再度スキャンすると、情報を更新できます。","重新扫描已保存的卡片即可更新信息。","重新掃描已儲存的卡片即可更新資訊。"
+"result.history.balance","","History","履歴","历史","歷史"
+"result.history.balance:%lld","","History(%lld items)","履歴（%lld件）","历史（%lld件）","歷史（%lld件）"
+"result.history.boarding","Used Location
+利用場所","Boarding","入場","上车","上車"
+"result.history.bus","Used Location
+利用場所","Bus","バス","公交车","公車"
+"result.history.charge","Used Location
+利用場所","Charge","チャージ","充值","儲值"
+"result.history.charge_auto","Used Location
+利用場所","Auto Charge","オートチャージ","自动充值","自動儲值"
+"result.history.charge.bus","Used Location
+利用場所","Charge (Bus)","チャージ（バス）","充值（公交车）","儲值（公車）"
+"result.history.charge.store","Used Location
+利用場所","Charge (Shop)","チャージ（店舗）","充值（门店）","儲值（門市）"
+"result.history.compositeFare","Used Location
+利用場所","Payment (Non-Rail)","支払い（電車以外）","支付（非铁路）","支付（非鐵路）"
+"result.history.counter","","Counter","窓口","窗口","窗口"
+"result.history.counter.cancel","Used Location
+利用場所","Entry Cancellation","入場取り消し","取消进站","取消進站"
+"result.history.counter.green","","Counter (JR)","みどりの窓口","窗口（JR）","窗口（JR）"
+"result.history.cycle","Used Location
+利用場所","Cycle","自転車","自行车","自行車"
+"result.history.empty","","No Transaction History","履歴がありません","暂无历史记录","暫無歷史紀錄"
+"result.history.end","Used Location
+利用場所","Refund","払い戻し","退款","退款"
+"result.history.fare","Used Location
+利用場所","Fare","運賃支払い","支付车费","支付車資"
+"result.history.fare_collection.jr","Used Location
+利用場所","Fare adjustment (JR)","乗越精算（JR）","补票（JR）","補票（JR）"
+"result.history.fare_collection.other","Used Location
+利用場所","Fare adjustment","乗越精算（私鉄）","补票（民营铁路）","補票（民營鐵路）"
+"result.history.ferry","Used Location
+利用場所","Ferry","フェリー","渡轮","渡輪"
+"result.history.hsr","Used Location
+利用場所","High Speed Rail","高速鉄道","高速铁路","高速鐵路"
+"result.history.lrt","Used Location
+利用場所","LRT","LRT","轻轨","輕軌"
+"result.history.monorail","","Monorail","モノレール","单轨电车","單軌電車"
+"result.history.mrt.tw.kaohsiung","Used Location
+利用場所","MRT (Kaohsiung)","MRT（高雄）","高雄捷運","高雄捷運"
+"result.history.mrt.tw.taipei","Used Location
+利用場所","MRT (Taipei)","MRT台北","台北捷運","台北捷運"
+"result.history.mrt.tw.taizhong","Used Location
+利用場所","MRT (taichung)","MRT台中","台中捷運","台中捷運"
+"result.history.mrt.tw.taoyuan","Used Location
+利用場所","MRT (TaoYuan)","MRT桃園","桃園捷運","桃園捷運"
+"result.history.new","Used Location
+利用場所","New Issue","新規発行","新发卡","新發卡"
+"result.history.notHistory","Used Location
+利用場所","Transaction history is not available for this card.","このカードは履歴参照に非対応です。","此卡片不支持查看历史记录。","此卡片不支援查看歷史紀錄。"
+"result.history.other","Used Location
+利用場所","Other","その他","其他","其他"
+"result.history.parking","Used Location
+利用場所","Parking","駐車場","停车场","停車場"
+"result.history.platform.other","Used Location
+利用場所","Fare difference","入場精算（私鉄）","进站结算（私铁）","進站結算（民營鐵路）"
+"result.history.rail","Used Location
+利用場所","Railway","鉄道","铁路","鐵路"
+"result.history.register","取引履歴の種別ラベル（Rapica等）。カードの登録処理を表し、店舗のレジ（収銀台）ではない。","Registration","登録","注册","登錄"
+"result.history.reissue","Used Location
+利用場所","Reissue","再発行","补办","補辦"
+"result.history.shinkansen","Used Location
+利用場所","Shinkansen","新幹線","新干线","新幹線"
+"result.history.shopping","Used Location
+利用場所","Shopping","ショッピング","购物","購物"
+"result.history.shopping.cancel","Used Location
+利用場所","Shopping Cancel","物販キャンセル","取消购物","取消購物"
+"result.history.shopping.cash","Used Location
+利用場所","Shopping with cash","現金併用物販","现金并用支付","現金並用支付"
+"result.history.shopping.platform","Used Location
+利用場所","Shopping (Station)","ショッピング（駅構内）","购物（车站内）","購物（車站內）"
+"result.history.shopping.platform.cash","Used Location
+利用場所","Shopping with cash (Station)","現金併用物販（駅構内）","现金并用支付（站内）","現金並用支付（站內）"
+"result.history.shopping.vendingMachine","","Vending Machine","自動販売機","自动售货机","自動販賣機"
+"result.history.stationOperation","Used Location
+利用場所","Card used","カード利用","卡片使用","卡片使用"
+"result.history.taiwan_railway","Used Location
+利用場所","Taiwan Railway","台湾鉄道","台湾铁路","台灣鐵路"
+"result.history.ticket","Used Location
+利用場所","Buy Ticket","チケット購入","购买车票","購買車票"
+"result.history.ticket_bus","Used Location
+利用場所","Multi-trip tickets","回数券購入","购买回数券","購買回數券"
+"result.history.ticket.platform","Used Location
+利用場所","Ticket","入場券","入场券","入場券"
+"result.info","Used Location
+利用場所","Information","カード情報","信息","資訊"
+"result.info.balance","Used Location
+利用場所","Balance","カード残高","余额","餘額"
+"result.info.cardCategory","Used Location
+利用場所","Category","種別","类型","類型"
+"result.info.cardType","Used Location
+利用場所","Type","カードタイプ","卡片类型","卡片類型"
+"result.info.date","Used Location
+利用場所","Latest Scan","最終スキャン日時","最后扫描时间","最後掃描時間"
+"result.info.date.watch","","Last Scan","最終スキャン","最后扫描","最後掃描"
+"result.info.empty","","Cannot read the information","情報が読み取れません","无法读取信息","無法讀取資訊"
+"result.info.ID","","ID","ID","卡号","卡號"
+"result.info.issueInfo","","Issue Info","発行情報","发行信息","發行資訊"
+"result.info.issueInfo.date","","Issue Date","発行日","签发日期","發行日期"
+"result.info.issueInfo.expiry","","Expiry","有効期限","有效日期","有效期限"
+"result.info.issueInfo.issuer","","Issuer","発行者","发行人","發行機構"
+"result.info.issueInfo.otherAreaInfo","","Area","エリア","区域","區域"
+"result.info.issueInfo.prefecture","","Area","地域","区域","地區"
+"result.info.issueInfo.region","","Region","地域","地区","地區"
+"result.userData.design","","Icon","アイコン","图标","圖示"
+"result.userData.name","","Display Name","表示名","显示名称","顯示名稱"
+"result.userData.name.placeholder","","Card name","カード名","卡片名称","卡片名稱"
+"scanner.coreNFC.error.noTag","","No card was detected.","カードを検出できませんでした。","未检测到卡片。","未偵測到卡片。"
+"scanner.coreNFC.error.notfeliCa","","This card is not supported.","対応していないカードです","不支持此卡","不支援此卡"
+"scanner.coreNFC.scan.message","CoreNFC UI","Hold “%@” near top center of your iPhone.","「%@」をiPhoneの上部にかざしてください","请将“%@”靠近iPhone顶部。","請將「%@」靠近 iPhone 頂部。"
+"scanner.coreNFC.scanning.done","","Done","スキャン完了","扫描完成","掃描完成"
+"scanner.coreNFC.scanning.error.read","","Scanning Error","読み取りエラー","扫描错误","掃描錯誤"
+"scanner.coreNFC.scanning.error.statusFlag,s1:%lld, s2:%lld","","Status flag error. s1: %1$lld, s2:%2$lld","ステータスフラグがエラーを示しています。s1:%1$lld, s2: %2$lld","状态标志显示错误。s1：%1$lld，s2：%2$lld","狀態標誌顯示錯誤。s1：%1$lld，s2：%2$lld"
+"scanner.coreNFC.scanning.message","","Scanning…","スキャン中です。カードを動かさないでください。","正在扫描。请勿移动卡片。","正在掃描。請勿移動卡片。"
+"scanner.scan.message.undefinedName","","Undefined service name.","定義されていないサービスが呼び出されました","调用了未定义的服务。","調用了未定義的服務。"
+"search","","Search","検索","搜索","搜索"
+"section.camera","カード番号をカメラで読み取る（OCR）スキャン方式のセクション名。画像認証（CAPTCHA）ではない。","OCR","画像認識","图像识别","圖像識別"
+"section.nfc","","NFC","NFC","NFC","NFC"
+"section.scraping","","Online retrieval","オンライン取得","在线获取","線上取得"
+"setting.acknowledgment","","Rights Information","権利情報","权利信息","權利資訊"
+"setting.acknowledgment.apple","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","iPhone, iPad, App Store and Apple Pay are registered trademarks of Apple Inc.","iPhone、iPad、App StoreおよびApple Payは、米国および他の国々で登録されたApple Inc.の商標です。","iPhone、iPad、App Store和Apple Pay是Apple Inc.在美国及其他国家或地区注册的商标。","iPhone、iPad、App Store和Apple Pay是Apple Inc.在美國及其他國家或地區註冊的商標。"
+"setting.acknowledgment.apple.title","","Apple","Apple","Apple","Apple"
+"setting.acknowledgment.cardtr","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","Trademarks","商標等","商标等","商標等"
+"setting.acknowledgment.cardtr.description","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","The displayed information is based on the region of the card issuer.
+The company names, trade names, product names, and service names mentioned above or elsewhere are registered trademarks or trademarks of their respective companies.","カードの発行元地域に基づく表示です。上記以外に記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。","这是根据卡片发行地区显示的内容。除上述内容外，文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。","這是根據卡片發行地區顯示的內容。除上述內容外，文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
+"setting.acknowledgment.cnTunion","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“交通联合” (China T-union) is a standard specification established by Ministry of Transport of the People's Republic of China.
+
+The company names, trade names, product names, and service names mentioned herein are registered trademarks or trademarks of their respective companies.","「交通联合」(China T-union)は、中华人民共和国交通运输部の標準規格です。
+記載された会社名、屋号および製品・サービス名は、各社の登録商標または商標です。","“交通联合”（China T-union）是中华人民共和国交通运输部的标准规范。
+文中所列的公司名称、商号以及产品和服务名称均为各公司的注册商标或商标。","“交通聯合”（China T-union）是中華人民共和國交通運輸部的標準規範。
+文中所列的公司名稱、商號以及產品和服務名稱均為各公司的註冊商標或商標。"
+"setting.acknowledgment.google","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Android”, “Google”, and “Google Pay” are trademarks of Google LLC.","Android、GoogleおよびGoogle Payは、Google LLCの商標です。","Android、Google和Google Pay是Google LLC的商标。","Android、Google和Google Pay是Google LLC的商標。"
+"setting.acknowledgment.google.title","","Google","Google","Google","Google"
+"setting.acknowledgment.hkOctopus","Trademarks(商標): Octopus
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Octopus” and “八達通” are trademarks of Octopus Cards Limited（八達通卡有限公司）.","「Octopus」「八達通」「オクトパス」はOctopus Cards Limited（八達通卡有限公司）の商標です。","“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商标。","“Octopus”“八達通”是Octopus Cards Limited（八達通卡有限公司）的商標。"
+"setting.acknowledgment.idKAI","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Kartu Multi Trip” are trademarks of KAI Commuter","「Kartu Multi Trip」はKAI Commuterの商標です。","“Kartu Multi Trip” 是 KAI Commuter 的商标。","“Kartu Multi Trip” 是 KAI Commuter 的商標。"
+"setting.acknowledgment.jp.jpIC_icsca","Trademarks(商標): icsca
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“icsca” is a registered trademark of Sendai-shi.","「icsca」は仙台市の商標です。","“icsca”是仙台市的商标。","「icsca」是仙台市的註冊商標。"
+"setting.acknowledgment.jpDoCard","Trademarks(商標): DoCard
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“DoCard” is a trademark of 道北バス.
+“Asaca” is a trademark of 旭川電気軌道株式会社.","「DoCard」は道北バスの商標です。
+「Asaca」は旭川電気軌道株式会社の商標です。","“DoCard”是道北バス的商标。
+“Asaca”是旭川電気軌道株式会社的商标。","「DoCard」是道北巴士的商標。
+「Asaca」是旭川電氣軌道株式會社的商標。"
+"setting.acknowledgment.jpIC","Trademarks(商標): 交通系IC
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Kitaca” is a registered trademark of Hokkaido Railway Company.
+
+“Suica” is a registered trademark of East Japan Railway Company.
+
+“PASMO” is a registered trademark of PASMO CO., LTD.
+
+“TOICA” is a registered trademark of Central Japan Railway Company.
+
+“manaca” is a registered trademark of Nagoya Transportation Development Organization and MIC CO., LTD.
+
+“ICOCA” is a registered trademark of West Japan Railway Company.
+
+“SUGOCA” is a registered trademark of Kyushu Railway Company.
+
+“nimoca” is a registered trademark of Nishi-Nippon Railroad Co., Ltd.
+
+“はやかけん” is a registered trademark of Fukuoka City Transportation Bureau.
+
+“PiTaPa” is a registered trademark of Surutto KANSAI Co., Ltd.","「Kitaca」は、北海道旅客鉄道株式会社の登録商標です。 
+「Suica」は、東日本旅客鉄道株式会社の登録商標です。 
+「PASMO」は、株式会社パスモの登録商標です。 
+「TOICA」は、東海旅客鉄道株式会社の登録商標です。 
+「manaca」は、株式会社名古屋交通開発機構及び株式会社エムアイシーの登録商標です。 
+「ICOCA」は、西日本旅客鉄道株式会社の登録商標です。 
+「SUGOCA」は、九州旅客鉄道株式会社の登録商標です。 
+「nimoca」は、西日本鉄道株式会社の登録商標です。 
+「はやかけん」は、福岡市交通局の登録商標です。 
+「PiTaPa」は、株式会社スルッとKANSAIの登録商標です。","“Kitaca”是北海道旅客鉄道株式会社的注册商标。
+“Suica”是東日本旅客鉄道株式会社的注册商标。
+“PASMO”是株式会社パスモ的注册商标。
+“TOICA”是東海旅客鉄道株式会社的注册商标。
+“manaca”是株式会社名古屋交通開発機構及株式会社エムアイシー的注册商标。
+“ICOCA”是西日本旅客鉄道株式会社的注册商标。
+“SUGOCA”是九州旅客鉄道株式会社的注册商标。
+“nimoca”是西日本鉄道株式会社的注册商标。
+“はやかけん”是福岡市交通局的注册商标。
+“PiTaPa”是株式会社スルッとKANSAI的注册商标。","“Kitaca”是北海道旅客鉄道株式會社的註冊商標。
+“Suica”是東日本旅客鉄道株式會社的註冊商標。
+“PASMO”是株式會社パスモ的註冊商標。
+“TOICA”是東海旅客鉄道株式會社的註冊商標。
+“manaca”是株式會社名古屋交通開発機構及株式會社エムアイシー的註冊商標。
+“ICOCA”是西日本旅客鉄道株式會社的註冊商標。
+“SUGOCA”是九州旅客鉄道株式會社的註冊商標。
+“nimoca”是西日本鉄道株式會社的註冊商標。
+“はやかけん”是福岡市交通局的註冊商標。
+“PiTaPa”是株式會社スルッとKANSAI的註冊商標。"
+"setting.acknowledgment.jpIC_icsca","Trademarks(商標): icsca
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“icsca” is a trademark of 仙台市.","「icsca」は仙台市の商標です。","“icsca”是仙台市的商标。","「icsca」是仙台市的商標。"
+"setting.acknowledgment.jpIC_IruCa","Trademarks(商標): IruCa
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“IruCa” is a trademark of Takamatsu-Kotohira Electric Railroad Co., Ltd.","「IruCa」は高松琴平電気鉄道株式会社の商標です。","“IruCa”是高松琴平電気鉄道株式会社的商标。","“IruCa”是高松琴平電気鉄道株式會社的商標。"
+"setting.acknowledgment.jpIC_SAPICA","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“SAPICA” is a trademark of Sapporo Information Center Co., Ltd.","「SAPICA」は札幌総合情報センター株式会社の商標です。","“SAPICA”是札幌総合情報センター株式会社的商标。","“SAPICA”是札幌総合情報センター株式會社的商標。"
+"setting.acknowledgment.jpNplus","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“エヌタス”, “N+”, and “長崎バス” are trademarks of 長崎自動車株式会社.
+
+“Tカード” is a trademark of カルチュア・コンビニエンス・クラブ株式会社.
+
+“Vポイントカード”, “Vポイント”, and the Vポイント logo are trademarks of V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation.","「エヌタス」、「N+」、「長崎バス」は長崎自動車株式会社の商標です。
+「Tカード」はカルチュア・コンビニエンス・クラブ株式会社の商標です。
+「Vポイントカード」、「Vポイント」、Vポイントロゴは、Vポイントマーケティング株式会社及び三井住友カード株式会社の商標です。","“エヌタス”、“N+”、“長崎バス”是長崎自動車株式会社的商标。
+“Tカード”是カルチュア・コンビニエンス・クラブ株式会社的商标。
+“Vポイントカード”、“Vポイント”及Vポイント标志是Vポイントマーケティング株式会社及三井住友カード株式会社的商标。","“エヌタス”、“N+”、“長崎バス”是長崎自動車株式會社的商標。
+“Tカード”是カルチュア・コンビニエンス・クラブ株式會社的商標。
+“Vポイントカード”、“Vポイント”及Vポイント標誌是Vポイントマーケティング株式會社及三井住友カード株式會社的商標。"
+"setting.acknowledgment.jpOKICA","Trademarks(商標): OKICA
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“OKICA” is a trademark of 沖縄ICカード株式会社.","「OKICA」は沖縄ICカード株式会社の商標です。","“OKICA”是沖縄ICカード株式会社的商标。","「OKICA」是沖繩 IC 卡股份有限公司的商標。"
+"setting.acknowledgment.jpRapica","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Rapica” is a trademark of 鹿児島市交通局.","「Rapica」は鹿児島市交通局の商標です。","“Rapica”是鹿児島市交通局的商标。","「Rapica」是鹿兒島市交通局的商標。"
+"setting.acknowledgment.krOneCard","商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“One Card All Pass” (전국호환교통카드) is a standard specification established by the Ministry of Land, Infrastructure and Transport of the Republic of Korea.
+
+“T-money” and “티머니” are trademarks of Korea Smart Card Corporation.
+
+“WOWPASS” is a trademark of Orange Square, Inc.
+
+“EZL”, “이즐”, “Cashbee”, and “캐시비” are trademarks of EZL Corp.
+
+“Rail+” and “레일플러스” are trademarks of Korea Railroad Corporation.
+
+“OnePass” and “발행원패스” are trademarks of iM UPay Co., Ltd.
+
+“Hanpay” and “한페이” are trademarks of 한페이시스.","「One Card All Pass」(전국호환교통카드)は、韓国国土交通省の標準規格です。
+「T-money」、「티머니」は、株式会社韓国スマートカードの商標です。
+「WOWPASS」は、Orange Square, Inc. の商標です。
+「EZL」、「이즐」、「Cashbee」、「캐시비」は、EZL Corp.の商標です。
+「Rail+」、「레일플러스」は、Korea Railroad Corporationの商標です。
+「OnePass」、「발행원패스」は、iM UPay Co.,Ltd. の商標です。
+「Hanpay」、「한페이」は、한페이시스の商標です。","“One Card All Pass”（전국호환교통카드）是韩国国土交通省的标准规范。
+“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商标。
+“WOWPASS”是Orange Square, Inc.的商标。
+“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商标。
+“Rail+”和“레일플러스”是Korea Railroad Corporation的商标。
+“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商标。
+“Hanpay”和“한페이”是한페이시스的商标。","“One Card All Pass”（전국호환교통카드）是韓國國土交通省的標準規範。
+“T-money”和“티머니”是Korea Smart Card Co., Ltd.的商標。
+“WOWPASS”是Orange Square, Inc.的商標。
+“EZL”“이즐”“Cashbee”和“캐시비”是EZL Corp.的商標。
+“Rail+”和“레일플러스”是Korea Railroad Corporation的商標。
+“OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商標。
+“Hanpay”和“한페이”是한페이시스的商標。"
+"setting.acknowledgment.sony","Trademarks(商標): FeliCa
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“FeliCa” is a registered trademark or trademark of Sony Group Corporation or its affiliates.","「FeliCa」は、ソニーグループ株式会社またはその関連会社の登録商標または商標です。","“FeliCa”是ソニーグループ株式会社或其关联公司的注册商标或商标。","“FeliCa”是ソニーグループ株式會社或其關聯公司的註冊商標或商標。"
+"setting.acknowledgment.sony.title","","Sony","Sony","Sony","Sony"
+"setting.acknowledgment.tr.card","","Cards","カード","交通卡","交通卡"
+"setting.acknowledgment.tr.other","","Other","その他","其他","其他"
+"setting.acknowledgment.twEasyCard_old","Trademarks(商標): EasyCard
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“EasyCard” and “悠遊卡” are trademarks of 悠遊卡股份有限公司.","「EasyCard」「悠遊卡」は悠遊卡股份有限公司の商標です。","“EasyCard”和“悠遊卡”是悠遊卡股份有限公司的商标。","“EasyCard”和“悠遊卡”是悠遊卡股份有限公司的商標。"
+"setting.acknowledgment.twICash","Trademarks(商標): iCash 2.0
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“icash” and “愛金卡” are trademarks of 愛金卡股份有限公司.
+
+“7-ELEVEN” is a trademark of 統一超商股份有限公司.","「icash」、「愛金卡」は、愛金卡股份有限公司の商標です。
+「7-ELEVEN」は、統一超商股份有限公司の商標です。","“icash”和“愛金卡”是愛金卡股份有限公司的商标。
+“7-ELEVEN”是统一超商股份有限公司的商标。","“icash”和“愛金卡”是愛金卡股份有限公司的商標。
+“7-ELEVEN”是統一超商股份有限公司的商標。"
+"setting.acknowledgment.usClipper","Trademarks(商標): Clipper
+商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“Clipper” are trademarks of MTC","「Clipper」はMTCの商標です。","“Clipper”是MTC的商标。","「Clipper」是灣區交通局（MTC）的商標。"
+"setting.ads","","Ads","広告","广告","廣告"
+"setting.ads.privacyOptions","","Ad Privacy Settings","広告のプライバシー設定","广告隐私设置","廣告隱私設定"
+"setting.ads.purchase.done","","Done","購入完了","购买完成","購買完成"
+"setting.ads.purchase.done.message","","Your purchase to remove ads has been completed! Thank you.","広告削除の購入が完了しました！ありがとうございます。","移除广告的购买已完成！感谢您的支持。","移除廣告的購買已完成！感謝您的支援。"
+"setting.ads.purchase.error","","Error","エラー","错误","錯誤"
+"setting.ads.purchase.pending","","Purchase Pending","購入の承認待ち","购买等待批准","購買等待核准"
+"setting.ads.purchase.pending.message","","Ads will be removed automatically once the purchase is approved.","購入が承認されると自動的に広告が削除されます。","购买获得批准后，广告将自动移除。","購買核准後，廣告將自動移除。"
+"setting.ads.restore","","Restore Purchase","購入を復元","恢复购买","恢復購買"
+"setting.ads.restore.done","","Restore Complete","復元完了","恢复完成","恢復完成"
+"setting.ads.restore.done.message","","Purchase restored successfully.","購入の復元が完了しました。","购买恢复完成。","恢復購買完成。"
+"setting.ads.restore.notFound","","No Purchases Found","購入履歴が見つかりません","未找到购买记录","找不到購買紀錄"
+"setting.ads.restore.notFound.message","","No ad removal purchase was found for this Apple Account.","このApple Accountでの広告削除の購入は見つかりませんでした。","未找到此Apple账户的去广告购买记录。","找不到此Apple帳號的移除廣告購買紀錄。"
+"setting.ads.restore.unverified","","Error","エラー","错误","錯誤"
+"setting.appVersion.stage.beta","","BETA","ベータ版","测试版","測試版"
+"setting.appVersion.stage.dev","","Development","開発版","开发版","開發版"
+"setting.data","","Organize Data","データ管理","数据管理","資料管理"
+"setting.data.cloud","","iCloud Sync","iCloud同期","iCloud同步","iCloud同步"
+"setting.data.cloud.off","","Deactivate iCloud Sync","iCloud同期の無効化","停用iCloud同步","停用iCloud同步"
+"setting.data.cloud.off.message","","Disabling cloud sync will prevent scanned cards from being synchronized.
+Previously synchronized information will not be deleted.","クラウドでの同期を無効にすると、スキャンしたカードは同期されなくなります。
+過去に同期した情報は削除されません。","停用云端同步后，扫描的卡片将不会再进行同步。
+之前已同步的信息不会被删除。","停用雲端同步後，掃描的卡片將不再同步。
+之前已同步的資訊不會被刪除。"
+"setting.data.cloud.off.ok","","Deactivate","無効にする","禁用","停用"
+"setting.data.reset","","Delete History","履歴削除","删除历史","刪除歷史"
+"setting.data.reset.message","","The saved card information will be deleted. This action cannot be undone.","保存したカード情報を削除します。この操作は取り消せません。","删除已保存的卡片信息。此操作无法撤销。","刪除已儲存的卡片資訊。此操作無法復原。"
+"setting.data.reset.ok","","Delete","削除","删除","刪除"
+"setting.debug","","Debug","デバッグ","调试","偵錯"
+"setting.debug.ad","","Ads","広告","广告","廣告"
+"setting.debug.ad.debugMode","","Debug Mode","デバッグモード","调试模式","偵錯模式"
+"setting.debug.ads","","Purchase Status (Ads)","購入状態（広告）","购买状态（广告）","購買狀態（廣告）"
+"setting.debug.ads.id","","Test Purchase","課金テスト","付费测试","付費測試"
+"setting.debug.ads.id.rel","","Release","本番","正式","正式"
+"setting.debug.ads.id.test","","Test","テスト","测试","測試"
+"setting.debug.enable.description","","Developer Mode will remain enabled until the app is restarted.
+If this was not intentional, tap “Cancel.”","アプリを再起動するまで開発者モードを有効にします。
+この表示が意図したものでない場合、「キャンセル」を押してください。","在重新启动应用之前，开发者模式将保持启用状态。
+如果此提示不是您有意触发的，请点击“取消”。","重新啟動 App 前，開發者模式會維持啟用狀態。
+如果此提示不是您有意觸發的，請點擊“取消”。"
+"setting.debug.enable.ok","","Enable","有効にする","启用","啟用"
+"setting.debug.enable.title","","Developer Mode","開発者モード","开发模式","開發模式"
+"setting.debug.enableTestCards","","Enable Card Types","表示するカード","显示卡片","顯示卡片"
+"setting.debug.enableTestCards.count:%lld","","%(variableName)llditems","%1$(variableName)lld件","%1$(variableName)lld件","%1$(variableName)lld件"
+"setting.debug.enableTestCards.dev","","Develop","開発中","开发中","開發中"
+"setting.debug.enableTestCards.feature","","Beta Feature","試験的な機能","实验性功能","實驗性功能"
+"setting.debug.enableTestCards.rel","","Release","リリース","发布","發佈"
+"setting.debug.isdisplay","","Display Debug Info","デバッグ情報の表示","显示调试信息","顯示偵錯資訊"
+"setting.debug.locate","","Location","位置情報","位置信息","位置資訊"
+"setting.debug.locate.reset","","Locate Device","端末の位置","设备位置","裝置位置"
+"setting.debug.permission","","Permission","アクセス権限","权限","權限"
+"setting.debug.permission.isDisplay","","Display Permission Request View","権限要求Viewの表示","显示需要权限View","顯示需要權限View"
+"setting.debug.purchase.title","","In-App Purchase","アプリ内課金","应用内购买","App 內購"
+"setting.debug.result.debugStorage","","Use Debug Container","デバッグコンテナを使用","使用调试容器","使用偵錯容器"
+"setting.debug.result.debugStorage.description","","Save data to a container different from the production environment.","本番環境と異なるコンテナにデータを保存します。","将数据保存到与生产环境不同的容器中","將資料儲存至與正式環境不同的容器中"
+"setting.debug.result.demoCard","","Add All Sample Cards","サンプルカードの一括追加","批量添加示例卡片","批次新增範例卡片"
+"setting.debug.result.dummyCard","","Add Test Cards","テストカードを作成","创建测试卡片","建立測試卡片"
+"setting.debug.result.dummyCard.form.converter","","Converter","コンバータ","转换器","轉換器"
+"setting.debug.result.dummyCard.form.currency","","Currency","通貨単位","货币单位","貨幣單位"
+"setting.debug.result.dummyCard.form.done","","Done","登録","添加","新增"
+"setting.debug.result.dummyCard.form.history.add","","Add History","履歴を追加","追加历史","追加歷史"
+"setting.debug.result.dummyCard.form.history.amount","","Amount","取引額","金额","金額"
+"setting.debug.result.dummyCard.form.history.balance","","After Balance","取引後残高","交易后余额","交易後餘額"
+"setting.debug.result.dummyCard.form.history.date","","Day","取引日時","交易时间","交易時間"
+"setting.debug.result.dummyCard.form.isHistory","","History Data","履歴データ","历史数据","歷史資料"
+"setting.debug.result.dummyCard.form.request","Dummy card add form
+ダミーカード追加フォーム","(Request)","(必須)","（必填）","（必填）"
+"setting.debug.result.title","","Result View","スキャン結果画面","扫描结果界面","掃描結果界面"
+"setting.debug.scanlist.enableCardType","","Display Card Types","表示カード種別","显示类别","顯示類別"
+"setting.debug.scanlist.enableCardType.dev","","Develop","開発","开发","開發"
+"setting.debug.scanlist.enableCardType.feature","","Feature","試験的な機能","实验性功能","實驗性功能"
+"setting.debug.scanlist.enableCardType.optional","","Unselected","未選択","未选择","未選擇"
+"setting.debug.scanlist.enableCardType.rel","","Release","リリース","发布","發佈"
+"setting.debug.scanlist.title","","Scan List View","スキャン一覧画面","扫描列表界面","掃描列表界面"
+"setting.feature","","Beta Feature","試験的な機能","实验性功能","實驗性功能"
+"setting.feature.card","","Beta Support Cards","試験的な対応カード","实验性卡片支持","實驗性卡片支援"
+"setting.feature.card.description","","Enable beta support cards.","調査中のカードを表示し、スキャン可能にします。","显示正在调查中的卡片，使其可以进行扫描。","顯示正在調查中的卡片，使其可以進行掃描。"
+"setting.feature.card.description.devMode","","If card types are selected in the development settings, this setting cannot be changed.
+To test the “Beta Features” screen, go to Setting > Debug > Display Card Types, select “Unselected.”","開発設定で表示カード種別を選択している場合、この設定は変更できません。
+「試験的な機能」画面をテストする場合、設定 > デバッグ > 表示カード種別 から、「未選択」を選択してください。","当前已在开发设置中指定了显示卡片类型，因此无法直接修改该设置。
+如需测试“实验性功能”页面，请前往“设置 > 调试 > 显示卡片类型”，将选项更改为“未选择”。","當前已在開發設定中指定了顯示卡片類型，因此無法直接修改該設定。
+如需測試「實驗性功能」頁面，請前往設定 > 偵錯 > 顯示卡片類型，將選項更改為「未選擇」。"
+"setting.feature.description","","Experimental features are currently under development and may contain bugs or other issues.
+Features may be removed or changed without prior notice.","試験的な機能は開発中のものであり、不具合が発生する場合があります。
+機能は予告なく削除・変更される可能性があります。","实验性功能仍在开发中，可能会出现异常。
+功能可能会在不另行通知的情况下删除或更改。","實驗性功能仍在開發中，可能會出現異常。
+功能可能會在不另行通知的情況下刪除或更改。"
+"setting.feature.sectionTitle","","Beta Features","試験中の機能","实验性功能","實驗性功能"
+"setting.feature.testflight","","Join Beta","ベータ版に参加する","加入测试版","參加Beta版"
+"setting.link.github","","View on GitHub","GitHubで見る","在GitHub中查看","在GitHub中查看"
+"setting.other","","Other","その他","其他","其他"
+"setting.version:%@","","Ver %(variableName)@","バージョン %1$(variableName)@","%1$(variableName)@版本","%1$(variableName)@版本"
+"splitview.empty","","Selection Item","項目を選択","请选择项目","請選擇項目"
+"tab.history","","My Cards","マイカード","我的卡","我的卡"
+"tab.history.narrow","","Narrow","絞り込み","筛选","篩選"
+"tab.history.narrow.all","","All","全て","全部","全部"
+"tab.history.sort","","Sort","並び替え","排序","排序"
+"tab.history.sort.name","","Card Name (A–Z)","名前順","名称正序","名稱正序"
+"tab.history.sort.name.desc","","Card Name (Z-A)","名前逆順","名称倒序","名稱倒序"
+"tab.history.sort.new","","Latest","更新日順","更新正序","更新順序"
+"tab.history.sort.old","","Earliest","更新日逆順","更新倒序","更新倒序"
+"tab.scan","","Scan","スキャン","扫描","掃描"
+"tab.setting","","Setting","設定","设置","設定"
+"tab.tool","","Tool","ツール","工具","工具"
+"tip.widget.message","","","","",""
+"tip.widget.title","","Widget","ウィジェット","小组件","小組件"
+"tool.fullLog","","Scan Log (Debug)","スキャンログ (Debug)","扫描日志 (Debug)","掃描日誌 (Debug)"
+"twEasyCard_old.error.server.invalid.audio","","Maximum number of attempts reached.","試行回数の上限に達しました。","已达到尝试次数上限。","已達到嘗試次數上限。"
+"twEasyCard_old.error.server.invalid.birthday","","The date of birth entered is incorrect, or this is an unregistered card.","入力した誕生日が間違っているか、無記名カードです。","输入的生日有误，或者该卡为无记名卡。","輸入的生日有誤，或者該卡為無記名卡。"
+"twEasyCard_old.error.server.invalid.captcha","","CAPTCHA verification failed.","画像認証に失敗しました","验证码验证失败。","驗證碼驗證失敗。"
+"twEasyCard_old.error.server.invalid.card","","The card number is incorrect.","カード番号が間違っています。","卡号有误","卡號有誤"
+"twEasyCard_old.error.server.invalid.date","","Invalid Date","日付データが不正です。","日期数据无效。","日期資料無效。"
+"twEasyCard_old.error.server.invalid.retry","","Please try again.","もう一度お試しください。","请重试。","請重試。"
+"twEasyCard_old.form.error.birthday.count","Scraping Form Alert
+スクレイピングフォームの警告","Please enter your date of birth using two digits for each field.","誕生日は2桁ずつで入力してください。","请输入两位数的生日。","請輸入兩位數的生日。"
+"twEasyCard_old.form.error.captcha.count","Scraping Form Alert
+スクレイピングフォームの警告","CAPTCHA verification failed.","画像認証の数字が異なります。","验证码数字不正确。","驗證碼數字不正確。"
+"twEasyCard_old.form.error.captcha.empty","Scraping Form Alert
+スクレイピングフォームの警告","CAPTCHA is empty","画像認証が未入力です。","未输入验证码。","未輸入驗證碼。"
+"twEasyCard_old.form.error.card.count","Scraping Form Alert
+スクレイピングフォームの警告","Please enter a 10-digit or 16-digit card number.","カード番号は10桁または16桁で入力してください。","请输入10位或16位卡号","請輸入10位或16位卡號"
+"twEasyCard_old.form.error.card.empty","Scraping Form Alert
+スクレイピングフォームの警告","Card number is required.","カード番号が未入力です。","未输入卡号","未輸入卡號"
+"twEasyCard_old.scand.description","","The data is not up to date. It includes usage history through yesterday and displays the past year’s usage.","データは最新ではなく、昨日までの利用履歴です。過去1年間の利用が表示されます。","数据并非最新数据，而是截至昨天的使用记录。显示过去一年的使用记录。","資料並非最新資料，而是截至昨天的使用記錄。顯示過去一年的使用記錄。"
+"twEasyCard_old.short","Short Card Name
+短縮カード名","EasyCard","EasyCard","悠遊卡","悠遊卡"
+"twICash.scand.description","","Only the 12 most recent transactions can be read.","直近の12件のみ読み取れます。","只能读取最近的12条记录。","只能讀取最近的12條記錄。"
+"twICash.short","Short Card Name
+短縮カード名","icash 2.0","icash 2.0","icash 2.0","icash 2.0"
+"unknown","","Unknown","不明","不明","不明"
+"usClipper.short","Short Card Name
+短縮カード名","Clipper","Clipper","Clipper","Clipper"
+"watch.list.filter","","Filter","絞り込み","筛选","篩選"
+"watch.list.filter.all","","All Cards","全て選択","全选","全選"
+"widget.balance.list.emptySelection","ウィジェットで表示するカードが未選択のときの案内。中国語の「显示卡」はグラフィックカードの意味になるため使わない。","Choose Card","カードを選択してください","请选择卡片","請選擇卡片"
+"widget.balance.list.title","","IC Cards Balance","ICカード残高","IC卡余额","IC卡餘額"
+"widget.balance.placeholder.displayName","","IC Card","ICカード","IC卡","IC卡"
+"widget.balance.placeholder.notSelection","","Choose","選択","选择","選擇"
+"widget.balance.setting.list.card","","Choose Card","カードを選択","选择卡片","選擇卡片"
+"widget.balance.setting.list.description","","Displays the latest card balance.","最新のカード残高を表示します","显示卡片的最新余额","顯示卡片的最新餘額"
+"widget.balance.setting.list.title","","IC Cards Balance","ICカード残高","IC卡余额","IC卡餘額"
+"上海","Area Name
+地域名","Shanghai","上海","上海","上海"
+"上海公共交通卡","Card Name
+カード名","Shanghai Transit Card","上海交通カード","上海公共交通卡","上海公共交通卡"
+"八达通","Card Name
+カード名","Octopus","オクトパス（交通聯合）","八达通","八達通"
+"北京","Area Name
+地域名","Beijing","北京","北京","北京"
+"北京一卡通","Card Name
+カード名","Beijing Transit Card","北京市政交通カード","北京一卡通","北京一卡通"
+"四川省","Area Name
+地域名","Sichuan","四川省","四川省","四川省"
+"成都市","Area Name
+地域名","Chengdu","成都市","成都市","成都市"
+"杭州通","Card Name
+カード名","Hangzhou Transit Card","杭州通","杭州通","杭州通"
+"深圳通","Card Name
+カード名","Shenzhen Tong","深圳交通カード","深圳通","深圳通"
+"澳门特别行政区","Area Name
+地域名","Macau","マカオ特別行政区","澳门特别行政区","澳門特別行政區"
+"澳门通","Card Name
+カード名","Macau Pass","マカオパス（交通聯合）","澳门通","澳門通"
+"羊城通","Card Name
+カード名","YangCheng Tong","羊城通","羊城通","羊城通"
+"香港特别行政区","Area Name
+地域名","HongKong","香港特別行政区","香港特别行政区","香港特別行政區"

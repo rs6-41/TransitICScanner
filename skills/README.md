@@ -9,7 +9,7 @@
 
 例：「`skills/transit-card-workflow/SKILL.md`を使って、指定カードの調査とiOS実装Issueを作成して」「`skills/transit-localization/SKILL.md`を使って、指定キーの日本語から他言語を補完して」のように、対象カード・キーと必要な工程を指定します。
 
-LLMが作成・更新するIssue・PRには、[ルートAGENTS.md](../AGENTS.md)に従い、既存の `Agent` ラベルを必ず実際に付与・確認します。下書きだけの場合はラベル指定を記録し、外部投稿を行いません。
+LLMが作成・更新するIssue・PRには、[ルートAGENTS.md](../AGENTS.md)に従い、既存の `Agent` ラベルを必ず実際に付与・確認します。LLM作業用Issueのタイトル・作業者欄は [Agent Issueテンプレート](../.github/ISSUE_TEMPLATE/00-00_agent.yml) に揃えます。下書きだけの場合はラベル指定を記録し、外部投稿を行いません。
 
 `references/` は工程別の判断基準と過去事例、`assets/` はIssue・仕様書・カタログのテンプレート、`scripts/` は検証コードです。旧 `script/` は廃止し、命名チェックと回帰テストをカード開発スキル配下へ移しました。旧簡体字→繁体字変換は翻訳スキルへ置き換えました。
 
