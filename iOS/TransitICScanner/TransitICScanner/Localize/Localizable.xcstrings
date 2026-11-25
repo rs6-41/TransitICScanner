@@ -1197,6 +1197,35 @@
         }
       }
     },
+    "card.spEZLink" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        }
+      }
+    },
     "card.sugoca" : {
       "comment" : "Card Name\nカード名",
       "extractionState" : "manual",
