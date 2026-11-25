@@ -40,7 +40,7 @@ extension NFCScannerModel {
                 data: data, expectedResponseLength: le
             )
             return try await withCheckedThrowingContinuation { continuation in
-                isoTag.sendCommand(apdu: apdu) { data, sw1, sw2, error in
+                isoTag.sendCommand(apdu: apdu) { @Sendable data, sw1, sw2, error in
                     if let error {
                         continuation.resume(throwing: error)
                     } else {
@@ -54,8 +54,11 @@ extension NFCScannerModel {
             let trace = "nfc/" + UUID().uuidString
             do {
                 let result = try await spEZLinkResult(using: spEZLinkTracedSender(send, trace: trace))
+                Log.debug("EZ-Link trace", trace, "scan.ok records=\(result.history?.count ?? 0)")
                 completeScan(result, session: session)
             } catch {
+                let failure = error as NSError
+                Log.debug("EZ-Link trace", trace, "scan.failed domain=\(failure.domain) code=\(failure.code)")
                 session.invalidate(errorMessage: error.localizedDescription)
             }
         }

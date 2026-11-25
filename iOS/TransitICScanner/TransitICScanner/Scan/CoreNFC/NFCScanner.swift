@@ -35,6 +35,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
     // MARK: - セッションの開始
 
     func readerSetup() {
+        guard session == nil else { return }
         scanError = nil
 
         let configuration: NFCTagReaderSession.Configuration
@@ -49,7 +50,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
             )
         }
 
-        let session = NFCTagReaderSession(configuration: configuration, delegate: self)
+        let session = NFCTagReaderSession(configuration: configuration, delegate: self, queue: .main)
         session.alertMessage = String(
             format: String(localized: "scanner.coreNFC.scan.message"),
             localizedString(scanOption.nameShort)
@@ -60,7 +61,9 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
     // MARK: - NFCTagReaderSessionDelegate
 
-    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {}
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+        Log.debug("CoreNFC scan session active")
+    }
 
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
         Task { @MainActor in
@@ -94,6 +97,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
             return
         }
 
+        Log.debug("CoreNFC scan tag detected")
         Self.logDetectedTag(tag)
 
         session.connect(to: tag) { [weak self] error in
@@ -105,6 +109,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
                 return
             }
 
+            Log.debug("CoreNFC scan tag connected")
             Task { @MainActor in
                 session.alertMessage = String(localized: "scanner.coreNFC.scanning.message")
                 await self.switchCard(id: self.scanOption.id, tag, session)
