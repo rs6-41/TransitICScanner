@@ -56,6 +56,10 @@
 | 沖縄 | OKICA | jpOKICA | Type-F | [OKICA](./doc/cards/jpOKICA.md) | ✅ | |
 | 鹿児島 | Rapica/いわさきICカード | jpRapica | Type-F | [Rapica](./doc/cards/jpRapica.md) | ✅ | |
 
+### 東南アジア
+
+- シンガポール [EZ-Link / NETS FlashPay（CEPAS）](./doc/cards/spFlashPay.md) — 開発用一覧に残高・取引履歴の読み取りを実装。EZ-Linkの残高と履歴はMacのPaSoRiで確認済み。
+
 ### 北アメリカ
 | 地域 | 名称 | 実装名 | NFC | 規格 | 実装状況 | 備考 |
 | -- | -- | -- | -- | -- | -- | -- |

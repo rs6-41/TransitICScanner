@@ -15,9 +15,9 @@ An application that scans transit IC cards worldwide and retrieves their balance
 
 | OS | Link | Requirements | External Reader |
 | -- | -- | -- | -- |
-| iOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | iOS 26.4+ | Supported |
-| macOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) | macOS 26.4+ | Required |
-| watchOS | Unreleased | watchOS 26.4+ | - |
+| iOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/bANTBhFn) | iOS 26.4+ | Supported |
+| macOS | [App Store](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/bANTBhFn) | macOS 26.4+ | Required |
+| watchOS | [Testflight](https://testflight.apple.com/join/bANTBhFn) | watchOS 26.4+ | - |
 | Android | Not implemented | TBD | TBD |
 | HarmonyOS | Not implemented | HarmonyOS NEXT | TBD |
 | Windows | Not implemented | TBD | Required |
@@ -59,6 +59,10 @@ An application that scans transit IC cards worldwide and retrieves their balance
 | Miyagi | icsca | jpIC_icsca | Type-F | [🈹Partial Cybernetics](./doc/cards/jpIC.md) | ✅ | |
 | Okinawa | OKICA | jpOKICA | Type-F | [OKICA](./doc/cards/jpOKICA.md) | ✅ | |
 | Kagoshima | Rapica / Iwasaki IC Card | jpRapica | Type-F | [Rapica](./doc/cards/jpRapica.md) | ✅ | |
+
+### Southeast Asia
+
+- Singapore [EZ-Link / NETS FlashPay (CEPAS)](./doc/cards/spFlashPay.md) — Balance and transaction scanning in the development card list. EZ-Link balance and history verified with a PaSoRi reader on Mac.
 
 ### North America
 
