@@ -9,7 +9,6 @@
 ## 対応予定
 - EZ-LINK
 - KAI Commuter
-- NETS FlashPay
 - La Carte
 
 ## 調査中（公式アプリあり）

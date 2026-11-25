@@ -69,7 +69,12 @@ struct ListButtonInner: View {
 
     var body: some View {
         HStack {
-            CardImage(name: item.logo)
+            if item.logo.isEmpty {
+                Image(systemName: "creditcard")
+                    .frame(width: 55, height: 55)
+            } else {
+                CardImage(name: item.logo)
+            }
 
             VStack(alignment: .leading) {
                 HStack(spacing: 3) {

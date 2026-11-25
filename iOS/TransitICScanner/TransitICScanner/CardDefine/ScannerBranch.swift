@@ -10,7 +10,7 @@ final class CardItemsStore: ObservableObject {
 let cardItemsStore = CardItemsStore()
 
 let devCards: [CardInfo] = [
-    spFlashPay
+    spEZLink
 ]
 
 let featureCards: [CardInfo] = []
@@ -41,8 +41,8 @@ extension NFCScannerModel {
         case .twEasyCard_old:
             // スクレイピングで取得するため NFC 読取はない
             return
-        case .spFlashPay:
-            spFlashPayScan(tag, session)
+        case .spEZLink:
+            spEZLinkScan(tag, session)
         }
     }
 
@@ -62,8 +62,8 @@ extension NFCScannerModel {
             try await cnTunionScanExternal(using: manager)
         case .twICash:
             try await twICashScanExternal(using: manager)
-        case .spFlashPay:
-            try await spFlashPayScanExternal(using: manager)
+        case .spEZLink:
+            try await spEZLinkScanExternal(using: manager)
         case .twEasyCard_old:
             throw ReaderError.message(
                 String(localized: "cardList.reader.unsupported")
@@ -92,7 +92,7 @@ extension NFCScannerModel {
         case .idKAI:
             await idKAIRead(felicaTag)
         case .cnTunion, .krOneCard, .twICash, .usClipper,
-            .twEasyCard_old, .spFlashPay:
+            .twEasyCard_old, .spEZLink:
             nil
         }
     }

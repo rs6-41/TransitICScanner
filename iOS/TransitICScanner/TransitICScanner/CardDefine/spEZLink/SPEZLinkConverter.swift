@@ -1,6 +1,6 @@
 import Foundation
 
-enum SPFlashPayConverter {
+enum SPEZLinkConverter {
     static func cardInfo(_ info: ResultCardInfo) -> DisplayCardInfo {
         DisplayCardInfo(
             idm: info.idm, name: info.name, nameShort: info.nameShort, displayName: info.displayName,

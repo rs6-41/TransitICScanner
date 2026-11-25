@@ -40,7 +40,7 @@ enum CardID: String, CaseIterable {
     case jpOKICA
     case jpRapica
     case idKAI
-    case spFlashPay
+    case spEZLink
 
     init?(rawValue: String) {
         let identifier = CardIdentity.canonicalID(rawValue)

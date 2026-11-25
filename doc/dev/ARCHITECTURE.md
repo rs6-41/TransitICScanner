@@ -237,7 +237,7 @@ flowchart TD
 | `jpOKICA` | FeliCa | rel | 残高は最新の履歴から取る |
 | `jpRapica` | FeliCa | rel | 履歴に年がないため、属性情報の日時を基準に年を補完する |
 | `idKAI` | FeliCa | dev | KAI Commuter（ジャカルタ）。Issue #77 |
-| `spFlashPay` | CEPAS（CoreNFC / PC/SC） | dev | [EZ-Link / NETS FlashPayの残高・取引履歴](../cards/spFlashPay.md) |
+| `spEZLink` | CEPAS（CoreNFC / PC/SC） | dev | [EZ-Linkの残高・取引履歴](../cards/spEZLink.md) |
 
 ### 5.3 `Scan/` — 読取の基盤とカード一覧 UI
 

@@ -221,7 +221,7 @@ final class SavedCard {
             return .jpIC
         }
 
-        return ConverterType(rawValue: converterTypeRaw) ?? .jpIC
+        return ConverterType(rawValue: CardIdentity.savedConverterID(converterTypeRaw, cardNumber: idm)) ?? .jpIC
     }
     #endif
 }
@@ -338,7 +338,7 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #else
         return ScanResult(
@@ -351,7 +351,7 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #endif
     }
@@ -446,7 +446,7 @@ enum ResultSave {
             )
 
             var cepasHistoriesByID: [Int: SavedHistory] = [:]
-            if result.converter == .spFlashPay {
+            if result.converter == .spEZLink {
                 for savedHistory in card.histories ?? [] {
                     cepasHistoriesByID[savedHistory.transactionId] = savedHistory
                 }
@@ -454,7 +454,7 @@ enum ResultSave {
 
             for history in histories {
                 if let savedHistory = cepasHistoriesByID[history.transactionId],
-                    history.mappingID == SPFlashPayHistory.balanceMappingID
+                    history.mappingID == SPEZLinkHistory.balanceMappingID
                 {
                     savedHistory.balance = history.balance
                     savedHistory.mappingID = history.mappingID

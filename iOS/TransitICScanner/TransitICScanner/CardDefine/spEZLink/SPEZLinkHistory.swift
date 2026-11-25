@@ -1,7 +1,7 @@
 import CryptoKit
 import Foundation
 
-enum SPFlashPayHistory {
+enum SPEZLinkHistory {
     static let balanceMappingID = "cepasBalance"
 
     static func newestFirst(_ history: [ResultHistory]) -> [ResultHistory] {

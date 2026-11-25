@@ -338,8 +338,8 @@ struct ResultView: View {
         _ history: [ResultHistory]
     ) -> some View {
         let sortedHistory =
-            result.converter == .spFlashPay
-            ? SPFlashPayHistory.newestFirst(history)
+            result.converter == .spEZLink
+            ? SPEZLinkHistory.newestFirst(history)
             : history.sorted { $0.transactionId > $1.transactionId }
 
         ForEach(
@@ -372,8 +372,8 @@ struct ResultView: View {
             switch result.converter {
             case .idKAI:
                 nil
-            case .spFlashPay:
-                item.mappingID == SPFlashPayHistory.balanceMappingID ? item.amount : nil
+            case .spEZLink:
+                item.mappingID == SPEZLinkHistory.balanceMappingID ? item.amount : nil
             default:
                 hasNext ? item.balance - nextBalance : (result.isLastHide ? nil : item.balance)
             }

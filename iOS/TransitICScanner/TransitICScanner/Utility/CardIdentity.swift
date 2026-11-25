@@ -5,9 +5,17 @@ nonisolated enum CardIdentity {
     static func canonicalID(_ identifier: String) -> String {
         switch identifier {
         case "idKMT": "idKAI"
-        case "spEZLink": "spFlashPay"
         default: identifier
         }
+    }
+
+    static func savedConverterID(_ identifier: String, cardNumber: String) -> String {
+        if identifier == "spFlashPay", cardNumber.hasPrefix("100"),
+            cardNumber.utf8.count == 16, cardNumber.utf8.allSatisfy({ (48...57).contains($0) })
+        {
+            return "spEZLink"
+        }
+        return canonicalID(identifier)
     }
 
     static func localizationKey(_ key: String) -> String {

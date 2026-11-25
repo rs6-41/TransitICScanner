@@ -62,7 +62,7 @@ An application that scans transit IC cards worldwide and retrieves their balance
 
 ### Southeast Asia
 
-- Singapore [EZ-Link / NETS FlashPay (CEPAS)](./doc/cards/spFlashPay.md) — Balance and transaction scanning in the development card list. EZ-Link balance and history verified with a PaSoRi reader on Mac.
+- Singapore [EZ-Link (CEPAS)](./doc/cards/spEZLink.md) — Balance and transaction scanning in the development card list. EZ-Link balance and history verified with a PaSoRi reader on Mac.
 
 ### North America
 
