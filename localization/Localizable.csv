@@ -1,4 +1,6 @@
 "key","comment","en","ja","zh-Hans","zh-Hant"
+"","","","","",""
+" ","","","","",""
 "(%@)","","","","",""
 "%@","","","","",""
 "ads","Ads","Ads","広告","广告","廣告"
@@ -14,14 +16,14 @@
 "appName.short","App Name (watchOS)","IC Balance","IC残高","IC余额","IC餘額"
 "cancel","","Cancel","キャンセル","取消","取消"
 "card","","IC Card","カード","IC卡","IC卡"
-"card.apple","Card Name
-カード名","Apple Pay","Apple Pay","Apple Pay","Apple Pay"
+"card.apple","","Apple Pay","Apple Pay","Apple Pay","Apple Pay"
 "card.Asaca","Card Name
 カード名","Asaca","Asaca","Asaca","Asaca"
-"card.company.jr","Issuer Company Name / 発行企業名：
-JR","JR","JR","JR","JR"
-"card.company.kotoden","Issuer Company Name / 発行企業名：
-高松琴平電気鉄道","Kotoden","ことでん","琴电","琴電"
+"card.company.jr","Issuer Company Name
+発行企業名","JR","JR","JR","JR"
+"card.company.kotoden","Issuer Company Name
+発行企業名
+高松琴平電気鉄道の通称（ことでん）。中国語では「琴电／琴電」と表記する。","Kotoden","ことでん","琴电","琴電"
 "card.default","Card Name
 カード名","Default","デフォルト","默认","預設"
 "card.DoCard","Card Name
@@ -386,6 +388,7 @@ Webサイトの仕様変更により利用できなくなる場合がありま�
 短縮カード名","Kagoshima common IC Card","かごしま共通乗車カード","鹿儿岛通用 IC 卡","鹿兒島通用 IC 卡"
 "krOneCard.short","Short Card Name
 短縮カード名","One Card All Pass","One Card All Pass","One Card All Pass","One Card All Pass"
+"LICENSE","","","","",""
 "locate.city.CA.SF","Area Name
 地域名","San Francisco","サンフランシスコ","旧金山","舊金山"
 "locate.city.okinawa.mainIsland","Area Name
@@ -736,6 +739,7 @@ The company names, trade names, product names, and service names mentioned herei
 “Rail+”和“레일플러스”是Korea Railroad Corporation的商標。
 “OnePass”和“발행원패스”是iM UPay Co.,Ltd.的商標。
 “Hanpay”和“한페이”是한페이시스的商標。"
+"setting.acknowledgment.oss","","Open-Source License","謝辞","开源授权","開源授權"
 "setting.acknowledgment.sony","Trademarks(商標): FeliCa
 商標表記。権利者の社名・商標名は正式表記を示すため意図的に翻訳・音訳しない。各言語にするのは文の構造（「〜は…の商標です」等）のみ。","“FeliCa” is a registered trademark or trademark of Sony Group Corporation or its affiliates.","「FeliCa」は、ソニーグループ株式会社またはその関連会社の登録商標または商標です。","“FeliCa”是ソニーグループ株式会社或其关联公司的注册商标或商标。","“FeliCa”是ソニーグループ株式會社或其關聯公司的註冊商標或商標。"
 "setting.acknowledgment.sony.title","","Sony","Sony","Sony","Sony"

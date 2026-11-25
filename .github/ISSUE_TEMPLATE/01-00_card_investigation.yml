@@ -1,0 +1,78 @@
+
+name: "新規カード調査"
+description: "新規交通系ICカードのNFC仕様を調査する"
+title: "[調査]: "
+labels: ["Investigation (調査)"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 作業定義・確認事項
+
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / なぜ"
+      description: "作業の背景・目的"
+      value: "新規カードスキャン対応のため、カード仕様を調査する"
+    validations:
+      required: true
+
+  - type: input
+    id: what
+    attributes:
+      label: "What / 何を"
+      description: "調査結果を記録するディレクトリ"
+      value: "`/doc/cards`"
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: "Where / どこで"
+      description: "作業ブランチなど"
+      value: "`feature/xxx`"
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / どうやって"
+      description: "調査方法・使用する機材・参考資料など"
+      value: |
+        - 既知の資料調査
+        - FeliCa等のダンプ
+        - NFC読み取り可能なアプリの使用
+        - 実物のカードでの検証
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "完了要件"
+      description: "調査完了と判断するための条件"
+      value: |
+        - [ ] 内部定義名を付与する(国コード + カード名（冒頭1文字を大文字）)
+        - [ ] NFCタイプを調べる
+        - [ ] システムコード・AID等の読み取り情報を調べる
+        - [ ] アプリケーション一覧とその内容を調べる
+        - [ ] 取得した情報から履歴・残高・カード情報の解釈方法を調べる
+        - [ ] ドキュメントを作成する
+        - [ ] 実際のカードで検証する
+        - [ ] PRを作成する（PR番号：{PR番号を記述}）
+    validations:
+      required: true

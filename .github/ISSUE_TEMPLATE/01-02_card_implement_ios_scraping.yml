@@ -1,0 +1,81 @@
+
+name: "新規カード実装（iOS/スクレイピング）"
+description: "調査済みのカード仕様をもとに、iOSアプリへスキャン機能を実装する"
+title: "[カード実装（iOS）]: "
+labels: ["iOS / macOS"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 作業定義・確認事項
+
+  - type: markdown
+    attributes:
+      value: |
+        **Who / 誰が**
+        担当・レビュー担当はアサイン情報を参照してください。
+
+        **When / いつ**
+        関連Issue・PRの進捗に応じて調整してください。
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why / なぜ"
+      description: "作業の背景・目的"
+      value: "調査済みのカード仕様をもとに、iOSアプリへスキャン機能を実装する"
+    validations:
+      required: true
+
+  - type: input
+    id: what
+    attributes:
+      label: "What / 何を"
+      description: "実装対象のディレクトリ"
+      value: "`/iOS/TransitICScanner/TransitICScanner/CardDefine/`"
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: "Where / どこで"
+      description: "作業ブランチなど"
+      value: "`feature/xxx`"
+    validations:
+      required: true
+
+  - type: input
+    id: related_issue
+    attributes:
+      label: "関連ドキュメントIssue"
+      description: "実装の根拠となるカード調査Issue"
+      placeholder: "#123"
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "How / どうやって"
+      description: "実装方法・作業手順"
+      value: |
+        関連ドキュメントIssueでの調査をもとにSwiftで実装する。
+        `/iOS/TransitICScanner/TransitICScanner/CardDefine/AGENTS.md`を使うことで、ドキュメントからのコード生成を補助的にサポートできます。
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "完了要件"
+      description: "実装完了と判断するための条件"
+      value: |
+        - [ ] スクレイピング実装（`./{定義名}/{定義名}.swift`）
+        - [ ] スクレイピングデータ解釈実装（`./{定義名}/{定義名}Converter.swift`）
+        - [ ] 券面デザイン（`./CardDesigns.swift`）
+        - [ ] デザイン定義実装（`./CardDesigns.swift`）
+        - [ ] PRを作成する（PR番号：{PR番号を記述}）
+    validations:
+      required: true
