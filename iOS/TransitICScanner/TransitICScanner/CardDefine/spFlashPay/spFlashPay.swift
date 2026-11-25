@@ -1,43 +1,131 @@
-import SwiftUI
-import Foundation
 import CoreNFC
+import Foundation
 
 let spFlashPay = CardInfo(
     logo: "spFlashPay",
     name: "cardList.spFlashPay",
-    sortName: "cardList.spFlashPay.sortName",
+    sortName: "cardList.spFlashPay",
     area: .sg,
     countryCode: ["sg"],
     prefectures: nil,
     regionOption: nil,
     description: "cardList.spFlashPay.description",
-    scannedDescription: "jpIC.scand.description",
-    searchWords: ["card.OKICA", "おきか", "オキカ", "ゆいレール", "那覇", "琉球"],
+    scannedDescription: "",
+    searchWords: ["EZ-Link", "EZLink", "NETS FlashPay", "CEPAS"],
     scanOption: ScanOption(
         id: .spFlashPay,
-        nameShort: "spFlashPay.short",
+        nameShort: "cardList.spFlashPay",
         scanType: .nfc,
-        pollingOption: [.iso18092],
-        felicaSystemCodes: ["8FC1"],
-        historyCount: 20,
+        pollingOption: [.iso14443],
+        felicaSystemCodes: nil,
+        historyCount: 32,
         currencyType: .sgd,
-        converter: .jpIC,
+        converter: .spFlashPay,
         scrapingView: nil
     ),
     information: nil,
-    sample: ResultSample(
-        balance: 1200.0,
-        idm: "0405820A9A93CDEF",
-        type: "card.OKICA",
-        history: [
-            ResultHistory(
-                processType: 0x01, processType4: UInt32(0x16010002), date: sampleDay2, balance: 1200, amount: nil,
-                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 152
-            ),
-            ResultHistory(
-                processType: 0x01, processType4: UInt32(0x08020000), date: sampleDay1, balance: 1500, amount: nil,
-                lineIn: 0x00, stationIn: 0x00, lineOut: 0x00, stationOut: 0x00, transactionId: 151
-            ),
-        ]
-    )
+    sample: nil
 )
+
+extension NFCScannerModel {
+    func spFlashPayScan(_ tag: NFCTag, _ session: NFCTagReaderSession) {
+        guard case let .iso7816(isoTag) = tag else {
+            session.invalidate(errorMessage: String(localized: "error.smartCardReader.notISO7816"))
+            return
+        }
+        let send: APDUSend = { cla, ins, p1, p2, data, le in
+            let apdu = NFCISO7816APDU(
+                instructionClass: cla, instructionCode: ins, p1Parameter: p1, p2Parameter: p2,
+                data: data, expectedResponseLength: le
+            )
+            return try await withCheckedThrowingContinuation { continuation in
+                isoTag.sendCommand(apdu: apdu) { data, sw1, sw2, error in
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume(returning: (data, sw1, sw2))
+                    }
+                }
+            }
+        }
+
+        Task { @MainActor in
+            do {
+                let result = try await spFlashPayResult(using: send)
+                completeScan(result, session: session)
+            } catch {
+                session.invalidate(errorMessage: error.localizedDescription)
+            }
+        }
+    }
+
+    func spFlashPayScanExternal(using manager: SmartCardManager) async throws {
+        let scanned = try await manager.withCard { card in
+            try await spFlashPayResult(using: manager.apduSender(for: card))
+        }
+        await MainActor.run { result = scanned }
+    }
+}
+
+private func spFlashPayResult(using send: APDUSend) async throws -> ScanResult {
+    let readError = ReaderError.message(String(localized: "scanner.coreNFC.scanning.error.read"))
+    var (data, sw1, _) = try await spFlashPayReadPurse(using: send)
+    if sw1 != 0x90 {
+        let (_, selectSW1, _) = try await send(0x00, 0xA4, 0x00, 0x00, Data([0x40, 0x00]), 256)
+        guard selectSW1 == 0x90 else { throw readError }
+        (data, sw1, _) = try await spFlashPayReadPurse(using: send)
+    }
+    guard sw1 == 0x90, let purse = SPFlashPayPurse.parse(data) else { throw readError }
+
+    let history: [ResultHistory]?
+    do {
+        let records = try await spFlashPayHistory(using: send, readError: readError)
+        history = SPFlashPayHistory.calculatingBalances(records, currentBalanceCents: purse.balanceCents)
+    } catch {
+        Log.debug("CEPAS history could not be read")
+        history = nil
+    }
+
+    let name = purse.isEZLink ? "cardList.spEZLink" : "cardList.spFlashPay.nets"
+    let info = ResultCardInfo(idm: purse.can, name: name, nameShort: name, currencyType: .sgd, type: "")
+    return ScanResult(
+        balance: Double(purse.balanceCents) / 100,
+        isHistory: history != nil,
+        history: history,
+        info: info,
+        converter: .spFlashPay,
+        isLastHide: true,
+        description: ""
+    )
+}
+
+private func spFlashPayHistory(using send: APDUSend, readError: ReaderError) async throws -> [ResultHistory] {
+    let (first, sw1, sw2) = try await spFlashPayReadPurse(using: send, payload: Data([0]))
+    Log.debug(String(format: "CEPAS history first page SW=%02X%02X length=%d", sw1, sw2, first.count))
+    if sw1 == 0x6A, sw2 == 0x83 { return [] }
+    guard sw1 == 0x90, let firstPage = SPFlashPayHistory.parse(first) else { throw readError }
+    guard !first.isEmpty else { return firstPage }
+
+    do {
+        let (second, secondSW1, secondSW2) = try await spFlashPayReadPurse(
+            using: send, payload: Data([UInt8(first.count / 16)])
+        )
+        Log.debug(String(format: "CEPAS history second page SW=%02X%02X length=%d", secondSW1, secondSW2, second.count))
+        if secondSW1 == 0x90, let secondPage = SPFlashPayHistory.parse(second) {
+            return firstPage + secondPage
+        }
+    } catch {
+        Log.debug("CEPAS history second page could not be read")
+    }
+    return firstPage
+}
+
+private func spFlashPayReadPurse(
+    using send: APDUSend, payload: Data = Data()
+) async throws -> (Data, UInt8, UInt8) {
+    let (data, sw1, sw2) = try await send(0x90, 0x32, 0x03, 0x00, payload, 256)
+    if sw1 == 0x6C, sw2 != 0 {
+        return try await send(0x90, 0x32, 0x03, 0x00, payload, Int(sw2))
+    }
+    return (data, sw1, sw2)
+}

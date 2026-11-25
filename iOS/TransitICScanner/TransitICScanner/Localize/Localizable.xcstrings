@@ -3688,6 +3688,126 @@
         }
       }
     },
+    "cardList.spEZLink" : {
+      "comment" : "表示用のカード名。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        }
+      }
+    },
+    "cardList.spFlashPay" : {
+      "comment" : "EZ-LinkとNETS FlashPayをまとめたカード一覧の名称。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link / NETS FlashPay"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link / NETS FlashPay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link / NETS FlashPay"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link / NETS FlashPay"
+          }
+        }
+      }
+    },
+    "cardList.spFlashPay.description" : {
+      "comment" : "シンガポールのCEPASカードの説明。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read CEPAS balances and transactions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CEPASの残高・取引履歴を読み取り"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读取 CEPAS 余额和交易记录"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀取 CEPAS 餘額和交易紀錄"
+          }
+        }
+      }
+    },
+    "cardList.spFlashPay.nets" : {
+      "comment" : "NETS FlashPayの読み取り結果に使用する名称。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NETS FlashPay"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NETS FlashPay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NETS FlashPay"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NETS FlashPay"
+          }
+        }
+      }
+    },
     "cardList.title" : {
       "localizations" : {
         "en" : {
@@ -10036,6 +10156,7 @@
       }
     },
     "scanner.scan.message.undefinedName" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

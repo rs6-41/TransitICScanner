@@ -42,10 +42,7 @@ extension NFCScannerModel {
             // スクレイピングで取得するため NFC 読取はない
             return
         case .spFlashPay:
-            // 開発中（読取処理未実装）
-            session.invalidate(
-                errorMessage: String(localized: "scanner.scan.message.undefinedName")
-            )
+            spFlashPayScan(tag, session)
         }
     }
 
@@ -65,7 +62,9 @@ extension NFCScannerModel {
             try await cnTunionScanExternal(using: manager)
         case .twICash:
             try await twICashScanExternal(using: manager)
-        case .twEasyCard_old, .spFlashPay:
+        case .spFlashPay:
+            try await spFlashPayScanExternal(using: manager)
+        case .twEasyCard_old:
             throw ReaderError.message(
                 String(localized: "cardList.reader.unsupported")
             )

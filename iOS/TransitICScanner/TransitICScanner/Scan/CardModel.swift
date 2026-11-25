@@ -19,7 +19,7 @@ struct CardInfo {
     let searchWords: [String]
     let scanOption: ScanOption
     let information: AnyView?
-    let sample: ResultSample
+    let sample: ResultSample?
 }
 
 /// カード定義の識別子。読取処理の分岐はこの enum で網羅的に行う。

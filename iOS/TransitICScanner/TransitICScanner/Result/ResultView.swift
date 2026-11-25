@@ -337,9 +337,10 @@ struct ResultView: View {
     private func resultHistoryList(
         _ history: [ResultHistory]
     ) -> some View {
-        let sortedHistory = history.sorted {
-            $0.transactionId > $1.transactionId
-        }
+        let sortedHistory =
+            result.converter == .spFlashPay
+            ? SPFlashPayHistory.newestFirst(history)
+            : history.sorted { $0.transactionId > $1.transactionId }
 
         ForEach(
             Array(sortedHistory.enumerated()),
@@ -368,11 +369,14 @@ struct ResultView: View {
 
         // KMT の balance は符号付きレコード金額。残高同士の差分として扱わない。
         let diff: Double? =
-            result.converter == .idKAI
-            ? nil
-            : (hasNext
-                ? item.balance - nextBalance
-                : (result.isLastHide ? nil : item.balance))
+            switch result.converter {
+            case .idKAI:
+                nil
+            case .spFlashPay:
+                item.mappingID == SPFlashPayHistory.balanceMappingID ? item.amount : nil
+            default:
+                hasNext ? item.balance - nextBalance : (result.isLastHide ? nil : item.balance)
+            }
 
         VStack(
             alignment: .leading,

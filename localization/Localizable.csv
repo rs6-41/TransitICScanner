@@ -220,6 +220,10 @@ Due to hardware limitations, this cannot be read on an iPhone.","外部リーダ
 "cardList.sort.name_descend","Scan list's sort
 スキャン一覧のソート","Card Name (Z to A)","カード名（降順）","名称倒序","名稱倒序"
 "cardList.title","","Transit Card","交通カード","交通卡","交通卡"
+"cardList.spEZLink","表示用のカード名。","EZ-Link","EZ-Link","EZ-Link","EZ-Link"
+"cardList.spFlashPay","EZ-LinkとNETS FlashPayをまとめたカード一覧の名称。","EZ-Link / NETS FlashPay","EZ-Link / NETS FlashPay","EZ-Link / NETS FlashPay","EZ-Link / NETS FlashPay"
+"cardList.spFlashPay.description","シンガポールのCEPASカードの説明。","Read CEPAS balances and transactions","CEPASの残高・取引履歴を読み取り","读取 CEPAS 余额和交易记录","讀取 CEPAS 餘額和交易紀錄"
+"cardList.spFlashPay.nets","NETS FlashPayの読み取り結果に使用する名称。","NETS FlashPay","NETS FlashPay","NETS FlashPay","NETS FlashPay"
 "cardList.twEasyCard_old.sortName","Sorting Localize","easycard","easycard","youyouka","youyouka"
 "cardList.twICash","List’s Card Name
 リストのカード名","icash 2.0","icash 2.0（愛金卡）","icash 2.0（愛金卡）","icash 2.0（愛金卡）"

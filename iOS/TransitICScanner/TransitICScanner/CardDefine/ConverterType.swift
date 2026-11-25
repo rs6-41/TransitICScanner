@@ -28,6 +28,7 @@ nonisolated enum ConverterType: String, CaseIterable {
     case jpOKICA
     case jpRapica
     case idKAI
+    case spFlashPay
 
     init?(rawValue: String) {
         let identifier = CardIdentity.canonicalID(rawValue)
@@ -70,6 +71,8 @@ nonisolated enum ConverterType: String, CaseIterable {
             JPRapicaConverter.cardInfo(info)
         case .idKAI:
             IDKAIConverter.cardInfo(info)
+        case .spFlashPay:
+            SPFlashPayConverter.cardInfo(info)
         }
     }
 
@@ -106,6 +109,8 @@ nonisolated enum ConverterType: String, CaseIterable {
             JPRapicaConverter.history(item)
         case .idKAI:
             IDKAIConverter.history(item)
+        case .spFlashPay:
+            SPFlashPayConverter.history(item)
         }
     }
 }

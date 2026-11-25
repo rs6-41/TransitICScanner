@@ -445,7 +445,20 @@ enum ResultSave {
                 (card.histories ?? []).map(\.transactionId)
             )
 
+            var cepasHistoriesByID: [Int: SavedHistory] = [:]
+            if result.converter == .spFlashPay {
+                for savedHistory in card.histories ?? [] {
+                    cepasHistoriesByID[savedHistory.transactionId] = savedHistory
+                }
+            }
+
             for history in histories {
+                if let savedHistory = cepasHistoriesByID[history.transactionId],
+                    history.mappingID == SPFlashPayHistory.balanceMappingID
+                {
+                    savedHistory.balance = history.balance
+                    savedHistory.mappingID = history.mappingID
+                }
                 guard
                     !existingTransactionIDs.contains(
                         history.transactionId
