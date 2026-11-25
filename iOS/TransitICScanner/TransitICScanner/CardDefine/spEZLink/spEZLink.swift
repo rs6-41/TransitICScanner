@@ -2,7 +2,7 @@ import CoreNFC
 import Foundation
 
 let spEZLink = CardInfo(
-    logo: "",
+    logo: "spEZLink",
     name: "cardList.spEZLink",
     sortName: "cardList.spEZLink",
     area: .sg,
