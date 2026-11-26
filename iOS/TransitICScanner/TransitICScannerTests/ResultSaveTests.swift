@@ -54,6 +54,20 @@ struct ResultSaveTests {
         #expect(restored.map(\.transactionId) == [20, 10])
         #expect(restored.map(\.responseOrder) == [0, 1])
         #expect(restored.map(\.balance) == [10, 11])
+
+        var newest = first
+        newest.transactionId = 30
+        result.balance = 9
+        result.history = try SPEZLinkHistory.calculatingBalances([newest, first], currentBalanceCents: 900)
+        try ResultSave.save(result, in: container.mainContext)
+
+        let afterPartialScan = ModelContext(container)
+        let updatedCard = try #require(afterPartialScan.fetch(FetchDescriptor<SavedCard>()).first)
+        let updatedRecords = try #require(updatedCard.result().history)
+        let updated = try SPEZLinkHistory.newestFirst(updatedRecords.sorted { $0.transactionId < $1.transactionId })
+        #expect(updated.map(\.transactionId) == [30, 20, 10])
+        #expect(updated.map(\.responseOrder) == [0, 1, 2])
+        #expect(updated.map(\.balance) == [9, 10, 11])
     }
 
     private func makeResult(idm: String, balance: Double) -> ScanResult {

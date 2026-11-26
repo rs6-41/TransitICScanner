@@ -49,6 +49,24 @@ struct SPEZLinkHistoryTests {
     }
 
     @Test
+    func distinguishesAnEmptySuccessFromNoHistory() async throws {
+        let failure = ReaderError.message("History read failed")
+        await #expect(throws: ReaderError.self) {
+            try await spEZLinkHistory(
+                using: { _, _, _, _, _, _ in (Data(), 0x90, 0) },
+                logfileRecordCount: 11,
+                readError: failure
+            )
+        }
+        let empty = try await spEZLinkHistory(
+            using: { _, _, _, _, _, _ in (Data(), 0x6A, 0x83) },
+            logfileRecordCount: 11,
+            readError: failure
+        )
+        #expect(empty.isEmpty)
+    }
+
+    @Test
     func failsWhenRequiredSecondPageIsUnavailable() async {
         let page = Data(repeating: 1, count: 256)
         let failure = ReaderError.message("History read failed")

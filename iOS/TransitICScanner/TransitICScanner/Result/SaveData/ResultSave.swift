@@ -362,6 +362,33 @@ extension SavedCard {
 }
 
 enum ResultSave {
+    private static func updateEZLinkResponseOrder(
+        saved: [SavedHistory], scanned: [SavedHistory]
+    ) {
+        let savedByDate = Dictionary(grouping: saved, by: \.date)
+        for (date, incoming) in Dictionary(grouping: scanned, by: \.date) {
+            let previous = (savedByDate[date] ?? []).sorted {
+                let lhs = $0.responseOrder ?? Int.max
+                let rhs = $1.responseOrder ?? Int.max
+                return lhs == rhs ? $0.transactionId < $1.transactionId : lhs < rhs
+            }
+            let incomingIDs = Set(incoming.map(\.transactionId))
+            var beforeAnchor: [Int: [SavedHistory]] = [:]
+            var pending: [SavedHistory] = []
+            for item in previous {
+                if incomingIDs.contains(item.transactionId) {
+                    beforeAnchor[item.transactionId] = pending
+                    pending = []
+                } else {
+                    pending.append(item)
+                }
+            }
+            let merged = incoming.flatMap { (beforeAnchor[$0.transactionId] ?? []) + [$0] } + pending
+            for (index, item) in merged.enumerated() {
+                item.responseOrder = index
+            }
+        }
+    }
 
     static func loadResults(
         from modelContext: ModelContext
@@ -449,9 +476,11 @@ enum ResultSave {
                 (card.histories ?? []).map(\.transactionId)
             )
 
+            let previousHistories = card.histories ?? []
+            var scannedEZLinkHistories: [SavedHistory] = []
             var cepasHistoriesByID: [Int: SavedHistory] = [:]
             if result.converter == .spEZLink {
-                for savedHistory in card.histories ?? [] {
+                for savedHistory in previousHistories {
                     cepasHistoriesByID[savedHistory.transactionId] = savedHistory
                 }
             }
@@ -462,7 +491,9 @@ enum ResultSave {
                 {
                     savedHistory.balance = history.balance
                     savedHistory.mappingID = history.mappingID
-                    savedHistory.responseOrder = history.responseOrder
+                    if !scannedEZLinkHistories.contains(where: { $0.transactionId == history.transactionId }) {
+                        scannedEZLinkHistories.append(savedHistory)
+                    }
                 }
                 guard
                     !existingTransactionIDs.contains(
@@ -487,6 +518,9 @@ enum ResultSave {
                     responseOrder: history.responseOrder
                 )
 
+                if result.converter == .spEZLink, history.mappingID == SPEZLinkHistory.balanceMappingID {
+                    scannedEZLinkHistories.append(savedHistory)
+                }
                 savedHistory.card = card
 
                 if card.histories == nil {
@@ -500,6 +534,9 @@ enum ResultSave {
                 existingTransactionIDs.insert(
                     history.transactionId
                 )
+            }
+            if result.converter == .spEZLink {
+                updateEZLinkResponseOrder(saved: previousHistories, scanned: scannedEZLinkHistories)
             }
         }
 

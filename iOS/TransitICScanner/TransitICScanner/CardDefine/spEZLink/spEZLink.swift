@@ -177,6 +177,7 @@ func spEZLinkHistory(
     Log.debug(String(format: "CEPAS history first page SW=%02X%02X length=%d", sw1, sw2, first.count))
     if sw1 == 0x6A, sw2 == 0x83 { return [] }
     guard sw1 == 0x90, let firstPage = SPEZLinkHistory.parse(first) else { throw readError }
+    guard logfileRecordCount == 0 || !first.isEmpty else { throw readError }
     let recordsRead = first.count / 16
     Log.debug("EZ-Link history logfile record count:", logfileRecordCount)
     guard recordsRead > 0, logfileRecordCount == 0 || recordsRead < logfileRecordCount else { return firstPage }
