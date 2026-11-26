@@ -1,0 +1,15 @@
+"key","comment","en","ja","zh-Hans","zh-Hant","es","fr","id","ko","yue-Hant"
+"CFBundleDisplayName","Bundle display name","Global IC Balance Checker","世界IC残高確認","全球IC余额查询","全球IC餘額查詢","Consulta de saldo de tarjetas de transporte del mundo","Solde des cartes de transport du monde","Cek Saldo Kartu Transportasi Dunia","세계 교통카드 잔액 조회","全球交通卡餘額查詢"
+"CFBundleName","Bundle name","Global IC Balance Checker","世界IC残高確認","全球IC余额查询","全球IC餘額查詢","Consulta de saldo de tarjetas de transporte del mundo","Solde des cartes de transport du monde","Cek Saldo Kartu Transportasi Dunia","세계 교통카드 잔액 조회","全球交通卡餘額查詢"
+"NFCReaderUsageDescription","Privacy - NFC Scan Usage Description","Used to read card information.","カード情報の読み取りに使用します","用于读取卡片信息","用於讀取卡片資訊","Se usa para leer la información de la tarjeta.","Utilisé pour lire les informations de la carte.","Digunakan untuk membaca informasi kartu.","카드 정보를 읽는 데 사용합니다.","用嚟讀取卡嘅資料。"
+"NSCameraUsageDescription","Privacy - Camera Usage Description","Used to read the card number.","カード番号の読み取りに使用します","用于读取卡号","用於讀取卡號","Se usa para leer el número de tarjeta.","Utilisé pour lire le numéro de carte.","Digunakan untuk membaca nomor kartu.","카드 번호를 읽는 데 사용합니다.","用嚟讀取卡號。"
+"NSLocationWhenInUseUsageDescription","Privacy - Location When In Use Usage Description","Suggest cards based on your current location.","現在の位置に基づいてカードを提案します","根据您当前的位置推荐卡片","根據您當前的位置推薦卡片","Sugiere tarjetas según tu ubicación actual.","Suggère des cartes en fonction de votre position actuelle.","Menyarankan kartu berdasarkan lokasi Anda saat ini.","현재 위치를 기준으로 카드를 추천합니다.","根據你目前嘅位置推薦交通卡。"
+"NSUserTrackingUsageDescription","Privacy - Tracking Usage Description","This information is used to display Google ads.
+Allowing access may help us show you more relevant ads.","Google広告の表示に使用されます。許可すると関連性の高い広告が表示されます。","此信息将用于展示 Google 广告。
+允许后，我们可以为您展示更相关的广告。","此資訊將用於顯示 Google 廣告。
+允許後，我們可以為您顯示更相關的廣告。","Esta información se usa para mostrar anuncios de Google.
+Permitir el acceso puede ayudarnos a mostrarte anuncios más relevantes.","Ces informations servent à afficher des publicités Google.
+Autoriser l’accès peut nous aider à vous proposer des publicités plus pertinentes.","Informasi ini digunakan untuk menampilkan iklan Google.
+Memberikan izin dapat membantu menampilkan iklan yang lebih relevan.","이 정보는 Google 광고를 표시하는 데 사용됩니다.
+접근을 허용하면 더 관련성 높은 광고를 표시하는 데 도움이 됩니다.","呢啲資料用嚟顯示 Google 廣告。
+允許之後可能會睇到更相關嘅廣告。"

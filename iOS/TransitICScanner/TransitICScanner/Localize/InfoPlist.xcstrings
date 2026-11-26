@@ -27,6 +27,36 @@
             "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세계 교통카드 잔액 조회"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cek Saldo Kartu Transportasi Dunia"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球交通卡餘額查詢"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport du monde"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta de saldo de tarjetas de transporte del mundo"
+          }
         }
       }
     },
@@ -55,6 +85,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全球IC餘額查詢"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세계 교통카드 잔액 조회"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cek Saldo Kartu Transportasi Dunia"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球交通卡餘額查詢"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport du monde"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta de saldo de tarjetas de transporte del mundo"
           }
         }
       }
@@ -85,6 +145,36 @@
             "state" : "translated",
             "value" : "用於讀取卡片資訊"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드 정보를 읽는 데 사용합니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digunakan untuk membaca informasi kartu."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用嚟讀取卡嘅資料。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé pour lire les informations de la carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para leer la información de la tarjeta."
+          }
         }
       }
     },
@@ -113,6 +203,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用於讀取卡號"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드 번호를 읽는 데 사용합니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digunakan untuk membaca nomor kartu."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用嚟讀取卡號。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé pour lire le numéro de carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para leer el número de tarjeta."
           }
         }
       }
@@ -143,6 +263,36 @@
             "state" : "translated",
             "value" : "根據您當前的位置推薦卡片"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 위치를 기준으로 카드를 추천합니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyarankan kartu berdasarkan lokasi Anda saat ini."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根據你目前嘅位置推薦交通卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggère des cartes en fonction de votre position actuelle."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugiere tarjetas según tu ubicación actual."
+          }
         }
       }
     },
@@ -171,6 +321,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "此資訊將用於顯示 Google 廣告。\n允許後，我們可以為您顯示更相關的廣告。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 정보는 Google 광고를 표시하는 데 사용됩니다.\n접근을 허용하면 더 관련성 높은 광고를 표시하는 데 도움이 됩니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi ini digunakan untuk menampilkan iklan Google.\nMemberikan izin dapat membantu menampilkan iklan yang lebih relevan."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢啲資料用嚟顯示 Google 廣告。\n允許之後可能會睇到更相關嘅廣告。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ces informations servent à afficher des publicités Google.\nAutoriser l’accès peut nous aider à vous proposer des publicités plus pertinentes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta información se usa para mostrar anuncios de Google.\nPermitir el acceso puede ayudarnos a mostrarte anuncios más relevantes."
           }
         }
       }
