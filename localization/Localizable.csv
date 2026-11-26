@@ -645,11 +645,11 @@ Lihat [situs kami](https://rs6apps.com/transit/nfc_reader?lang=en) untuk informa
 "result.history.shopping.cancel","Used Location
 利用場所","Shopping Cancel","物販キャンセル","取消购物","取消購物","Anulación de compra","Annulation d’achat","Pembatalan pembelian","구매 취소","取消購物"
 "result.history.shopping.cash","Used Location
-利用場所","Shopping with cash","現金併用物販","现金并用支付","現金並用支付","Compra en efectivo","Achat en espèces","Belanja tunai","현금 구매","現金購物"
+利用場所","Shopping with cash","現金併用物販","现金并用支付","現金並用支付","Compra con tarjeta y efectivo","Achat par carte et en espèces","Belanja dengan kartu dan uang tunai","카드·현금 복합 결제","用卡同現金一齊畀錢購物"
 "result.history.shopping.platform","Used Location
 利用場所","Shopping (Station)","ショッピング（駅構内）","购物（车站内）","購物（車站內）","Compra en estación","Achat en gare","Belanja di stasiun","역내 구매","車站購物"
 "result.history.shopping.platform.cash","Used Location
-利用場所","Shopping with cash (Station)","現金併用物販（駅構内）","现金并用支付（站内）","現金並用支付（站內）","Compra en efectivo en estación","Achat en espèces en gare","Belanja tunai di stasiun","역내 현금 구매","車站現金購物"
+利用場所","Shopping with cash (Station)","現金併用物販（駅構内）","现金并用支付（站内）","現金並用支付（站內）","Compra en la estación con tarjeta y efectivo","Achat en gare par carte et en espèces","Belanja di stasiun dengan kartu dan uang tunai","역내 카드·현금 복합 결제","喺車站用卡同現金一齊畀錢購物"
 "result.history.shopping.vendingMachine","","Vending Machine","自動販売機","自动售货机","自動販賣機","Máquina expendedora","Distributeur automatique","Mesin penjual otomatis","자판기","自動售賣機"
 "result.history.stationOperation","Used Location
 利用場所","Card used","カード利用","卡片使用","卡片使用","Uso de tarjeta","Utilisation de la carte","Penggunaan kartu","카드 사용","用卡"

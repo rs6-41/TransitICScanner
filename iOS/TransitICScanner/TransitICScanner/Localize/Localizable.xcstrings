@@ -18600,31 +18600,31 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "현금 구매"
+            "value" : "카드·현금 복합 결제"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belanja tunai"
+            "value" : "Belanja dengan kartu dan uang tunai"
           }
         },
         "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "現金購物"
+            "value" : "用卡同現金一齊畀錢購物"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Achat en espèces"
+            "value" : "Achat par carte et en espèces"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Compra en efectivo"
+            "value" : "Compra con tarjeta y efectivo"
           }
         }
       }
@@ -18718,31 +18718,31 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "역내 현금 구매"
+            "value" : "역내 카드·현금 복합 결제"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belanja tunai di stasiun"
+            "value" : "Belanja di stasiun dengan kartu dan uang tunai"
           }
         },
         "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "車站現金購物"
+            "value" : "喺車站用卡同現金一齊畀錢購物"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Achat en espèces en gare"
+            "value" : "Achat en gare par carte et en espèces"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Compra en efectivo en estación"
+            "value" : "Compra en la estación con tarjeta y efectivo"
           }
         }
       }
