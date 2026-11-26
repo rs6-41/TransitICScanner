@@ -63,6 +63,12 @@
             "state" : "translated",
             "value" : "Publicités"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuncios"
+          }
         }
       }
     },
@@ -115,6 +121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer les publicités"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar anuncios"
           }
         }
       }
@@ -169,6 +181,12 @@
             "state" : "translated",
             "value" : "  Installer  "
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  Instalar  "
+          }
         }
       }
     },
@@ -222,6 +240,12 @@
             "state" : "translated",
             "value" : "Une app pour afficher des images en mode Image dans l’image."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una app para ver imágenes en modo Imagen dentro de imagen."
+          }
         }
       }
     },
@@ -271,6 +295,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IMGPiper"
@@ -328,6 +358,12 @@
             "state" : "translated",
             "value" : "Remplacez ou insérez facilement du texte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemplaza o inserta texto fácilmente."
+          }
         }
       }
     },
@@ -377,6 +413,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replacer"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Replacer"
@@ -434,6 +476,12 @@
             "state" : "translated",
             "value" : "Convertissez vos images en WebP. L’app prend en charge les PNG transparents et peut réduire leur taille."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convierte imágenes a WebP. Admite PNG transparentes y puede reducir el tamaño de sus archivos."
+          }
         }
       }
     },
@@ -486,6 +534,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Convertisseur WebP"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conversor WebP"
           }
         }
       }
@@ -540,6 +594,12 @@
             "state" : "translated",
             "value" : "Solde des cartes de transport du monde"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta de saldo de tarjetas de transporte del mundo"
+          }
         }
       }
     },
@@ -593,6 +653,12 @@
             "state" : "translated",
             "value" : "Solde de carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo de tarjeta"
+          }
         }
       }
     },
@@ -644,6 +710,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
@@ -697,6 +769,12 @@
             "state" : "translated",
             "value" : "Carte à puce"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta IC"
+          }
         }
       }
     },
@@ -746,6 +824,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple Pay"
@@ -804,6 +888,12 @@
             "state" : "translated",
             "value" : "Asaca"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asaca"
+          }
         }
       }
     },
@@ -854,6 +944,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR"
@@ -912,6 +1008,12 @@
             "state" : "translated",
             "value" : "Kotoden"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden"
+          }
         }
       }
     },
@@ -966,6 +1068,12 @@
             "state" : "translated",
             "value" : "Par défaut"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminada"
+          }
         }
       }
     },
@@ -1016,6 +1124,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard"
@@ -1074,6 +1188,12 @@
             "state" : "translated",
             "value" : "EZL"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL"
+          }
         }
       }
     },
@@ -1124,6 +1244,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayakaken"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hayakaken"
@@ -1182,6 +1308,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -1232,6 +1364,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Octopus"
@@ -1290,6 +1428,12 @@
             "state" : "translated",
             "value" : "ICOCA"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
         }
       }
     },
@@ -1340,6 +1484,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -1398,6 +1548,12 @@
             "state" : "translated",
             "value" : "Kartu Multi Trip"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
         }
       }
     },
@@ -1448,6 +1604,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -1506,6 +1668,12 @@
             "state" : "translated",
             "value" : "Carte IC Iwasaki"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta IC Iwasaki"
+          }
         }
       }
     },
@@ -1560,6 +1728,12 @@
             "state" : "translated",
             "value" : "Carte Ntasu de Nagasaki"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta Ntasu de Nagasaki"
+          }
         }
       }
     },
@@ -1610,6 +1784,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K-CASH"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "K-CASH"
@@ -1668,6 +1848,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -1718,6 +1904,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MOIBA"
@@ -1776,6 +1968,12 @@
             "state" : "translated",
             "value" : "nimoca"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
         }
       }
     },
@@ -1826,6 +2024,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OKICA"
@@ -1884,6 +2088,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -1938,6 +2148,12 @@
             "state" : "translated",
             "value" : "Téléphone"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teléfono"
+          }
         }
       }
     },
@@ -1988,6 +2204,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -2046,6 +2268,12 @@
             "state" : "translated",
             "value" : "Rapica"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
         }
       }
     },
@@ -2096,6 +2324,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -2154,6 +2388,12 @@
             "state" : "translated",
             "value" : "Snapper"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snapper"
+          }
         }
       }
     },
@@ -2203,6 +2443,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -2261,6 +2507,12 @@
             "state" : "translated",
             "value" : "SUGOCA"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
         }
       }
     },
@@ -2311,6 +2563,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suica"
@@ -2369,6 +2627,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -2419,6 +2683,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOICA"
@@ -2477,6 +2747,12 @@
             "state" : "translated",
             "value" : "EasyCard"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
         }
       }
     },
@@ -2527,6 +2803,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -2585,6 +2867,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -2635,6 +2923,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -2692,6 +2986,12 @@
             "state" : "translated",
             "value" : "EasyCard / carte nominative / Super Card"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard / tarjeta registrada / Super Card"
+          }
         }
       }
     },
@@ -2742,6 +3042,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPASS"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPASS"
@@ -2799,6 +3105,12 @@
             "state" : "translated",
             "value" : "Toutes les cartes"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las tarjetas"
+          }
         }
       }
     },
@@ -2853,6 +3165,12 @@
             "state" : "translated",
             "value" : "Chine continentale"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "China continental"
+          }
         }
       }
     },
@@ -2903,6 +3221,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "china"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "china"
@@ -2961,6 +3285,12 @@
             "state" : "translated",
             "value" : "Hong Kong"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
+          }
         }
       }
     },
@@ -3011,6 +3341,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "hongkong"
@@ -3069,6 +3405,12 @@
             "state" : "translated",
             "value" : "Indonésie"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indonesia"
+          }
         }
       }
     },
@@ -3123,6 +3465,12 @@
             "state" : "translated",
             "value" : "Japon"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japón"
+          }
         }
       }
     },
@@ -3173,6 +3521,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japan"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "japan"
@@ -3231,6 +3585,12 @@
             "state" : "translated",
             "value" : "Corée du Nord"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corea del Norte"
+          }
         }
       }
     },
@@ -3285,6 +3645,12 @@
             "state" : "translated",
             "value" : "Corée du Sud"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corea del Sur"
+          }
         }
       }
     },
@@ -3335,6 +3701,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korea"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "korea"
@@ -3393,6 +3765,12 @@
             "state" : "translated",
             "value" : "Macao"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macao"
+          }
         }
       }
     },
@@ -3443,6 +3821,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "macau"
@@ -3501,6 +3885,12 @@
             "state" : "translated",
             "value" : "Singapour"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapur"
+          }
         }
       }
     },
@@ -3555,6 +3945,12 @@
             "state" : "translated",
             "value" : "Taïwan"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taiwán"
+          }
         }
       }
     },
@@ -3605,6 +4001,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "taiwan"
@@ -3663,6 +4065,12 @@
             "state" : "translated",
             "value" : "États-Unis"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estados Unidos"
+          }
         }
       }
     },
@@ -3713,6 +4121,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-Union"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-Union"
@@ -3770,6 +4184,12 @@
             "state" : "translated",
             "value" : "Cartes de transport chinoises portant le logo T-Union"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjetas de transporte chinas con el logotipo T-Union"
+          }
         }
       }
     },
@@ -3820,6 +4240,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tunion"
@@ -3876,6 +4302,12 @@
             "state" : "translated",
             "value" : "Les marques citées ne sont ni partenaires ni affiliées à cette app et ne l’ont pas autorisée.\nLes résultats de lecture sont fournis à titre indicatif."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las marcas mencionadas no están asociadas ni afiliadas a esta app, ni la han autorizado.\nLos resultados de lectura son solo orientativos."
+          }
         }
       }
     },
@@ -3928,6 +4360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le lecteur de cartes est déconnecté."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El lector de tarjetas se ha desconectado."
           }
         }
       }
@@ -3982,6 +4420,12 @@
             "state" : "translated",
             "value" : "Connectez un lecteur externe pour scanner cette carte.\nLes restrictions matérielles empêchent sa lecture directe sur iPhone."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conecta un lector externo para leer esta tarjeta.\nPor limitaciones de hardware, el iPhone no puede leerla directamente."
+          }
         }
       }
     },
@@ -4034,6 +4478,12 @@
             "state" : "translated",
             "value" : "Non connecté"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin conexión"
+          }
         }
       }
     },
@@ -4085,6 +4535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Connecté"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectado"
           }
         }
       }
@@ -4139,6 +4595,12 @@
             "state" : "translated",
             "value" : "Lecteur externe uniquement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo lector externo"
+          }
         }
       }
     },
@@ -4189,6 +4651,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Octopus"
@@ -4247,6 +4715,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -4297,6 +4771,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "octopus"
@@ -4355,6 +4835,12 @@
             "state" : "translated",
             "value" : "Kartu Multi Trip"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
         }
       }
     },
@@ -4409,6 +4895,12 @@
             "state" : "translated",
             "value" : "Carte de transport de Jakarta"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de Yakarta"
+          }
         }
       }
     },
@@ -4459,6 +4951,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "kartumultitrip"
@@ -4517,6 +5015,12 @@
             "state" : "translated",
             "value" : "DoCard / Asaca"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
         }
       }
     },
@@ -4570,6 +5074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asahikawa Electric Railway et Douhoku Bus"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Electric Railway y Douhoku Bus"
           }
         }
       }
@@ -4625,6 +5135,12 @@
             "state" : "translated",
             "value" : "Carte de transport"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte"
+          }
         }
       }
     },
@@ -4675,6 +5191,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -4733,6 +5255,12 @@
             "state" : "translated",
             "value" : "Régie des transports de Sendai (仙台市交通局)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oficina de Transporte de Sendai (仙台市交通局)"
+          }
         }
       }
     },
@@ -4783,6 +5311,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -4841,6 +5375,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -4895,6 +5435,12 @@
             "state" : "translated",
             "value" : "Kotoden (compagnie ferroviaire Takamatsu-Kotohira)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden (ferrocarril eléctrico Takamatsu-Kotohira)"
+          }
         }
       }
     },
@@ -4945,6 +5491,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -5003,6 +5555,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -5057,6 +5615,12 @@
             "state" : "translated",
             "value" : "Carte de transport de la région de Sapporo"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de la región de Sapporo"
+          }
         }
       }
     },
@@ -5107,6 +5671,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sapica"
@@ -5165,6 +5735,12 @@
             "state" : "translated",
             "value" : "Cartes de transport utilisables dans tout le Japon, comme Suica, PASMO et ICOCA."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjetas de transporte de uso nacional en Japón, como Suica, PASMO e ICOCA."
+          }
         }
       }
     },
@@ -5215,6 +5791,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "transportationiccards"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "transportationiccards"
@@ -5273,6 +5855,12 @@
             "state" : "translated",
             "value" : "Carte Ntasu de Nagasaki"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta Ntasu de Nagasaki"
+          }
         }
       }
     },
@@ -5323,6 +5911,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki Bus / Saikai Transport"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nagasaki Bus / Saikai Transport"
@@ -5381,6 +5975,12 @@
             "state" : "translated",
             "value" : "ntasu"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
         }
       }
     },
@@ -5431,6 +6031,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OKICA"
@@ -5489,6 +6095,12 @@
             "state" : "translated",
             "value" : "Monorail et bus d’Okinawa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorraíl y autobuses de Okinawa"
+          }
         }
       }
     },
@@ -5539,6 +6151,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
@@ -5597,6 +6215,12 @@
             "state" : "translated",
             "value" : "Rapica / Iwasaki IC"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
+          }
         }
       }
     },
@@ -5651,6 +6275,12 @@
             "state" : "translated",
             "value" : "Carte de transport interopérable de Kagoshima"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte interoperable de Kagoshima"
+          }
         }
       }
     },
@@ -5701,6 +6331,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -5758,6 +6394,12 @@
             "state" : "translated",
             "value" : "La plupart des cartes de transport coréennes, dont T-money, EZL et WOWPASS."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La mayoría de las tarjetas de transporte coreanas, como T-money, EZL y WOWPASS."
+          }
         }
       }
     },
@@ -5808,6 +6450,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "onecardallpass"
@@ -5864,6 +6512,12 @@
             "state" : "translated",
             "value" : "Position actuelle"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubicación actual"
+          }
         }
       }
     },
@@ -5916,6 +6570,12 @@
             "state" : "translated",
             "value" : "Autre"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros"
+          }
         }
       }
     },
@@ -5964,6 +6624,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPhone"
@@ -6021,6 +6687,12 @@
             "state" : "translated",
             "value" : "Connecté"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectado"
+          }
         }
       }
     },
@@ -6073,6 +6745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le lecteur de cartes est déconnecté."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El lector de tarjetas se ha desconectado."
           }
         }
       }
@@ -6127,6 +6805,12 @@
             "state" : "translated",
             "value" : "Non connecté"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin conexión"
+          }
         }
       }
     },
@@ -6179,6 +6863,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lecteurs compatibles CCID pris en charge"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectores compatibles con CCID admitidos"
           }
         }
       }
@@ -6234,6 +6924,12 @@
             "state" : "translated",
             "value" : "Lecteur externe"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lector externo"
+          }
         }
       }
     },
@@ -6288,6 +6984,12 @@
             "state" : "translated",
             "value" : "Scanner avec"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leer con"
+          }
         }
       }
     },
@@ -6340,6 +7042,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lecteur externe indisponible."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lector externo no disponible."
           }
         }
       }
@@ -6394,6 +7102,12 @@
             "state" : "translated",
             "value" : "Cette carte ne peut pas encore être lue avec un lecteur externe. Utilisez le lecteur intégré."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta tarjeta aún no se puede leer con un lector externo. Usa el lector integrado."
+          }
         }
       }
     },
@@ -6446,6 +7160,12 @@
             "state" : "translated",
             "value" : "Rechercher par nom de carte, région et plus…"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar por nombre de tarjeta, región y otros criterios…"
+          }
         }
       }
     },
@@ -6497,6 +7217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Résultats de recherche"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resultados de búsqueda"
           }
         }
       }
@@ -6552,6 +7278,12 @@
             "state" : "translated",
             "value" : "Région (A–Z)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Región (A–Z)"
+          }
         }
       }
     },
@@ -6605,6 +7337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Région (Z–A)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Región (Z–A)"
           }
         }
       }
@@ -6660,6 +7398,12 @@
             "state" : "translated",
             "value" : "Nom de carte (A–Z)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de tarjeta (A–Z)"
+          }
         }
       }
     },
@@ -6714,6 +7458,12 @@
             "state" : "translated",
             "value" : "Nom de carte (Z–A)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de tarjeta (Z–A)"
+          }
         }
       }
     },
@@ -6764,6 +7514,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -6822,6 +7578,12 @@
             "state" : "translated",
             "value" : "Lire le solde et les transactions CEPAS"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consultar el saldo y las transacciones CEPAS"
+          }
         }
       }
     },
@@ -6874,6 +7636,12 @@
             "state" : "translated",
             "value" : "Carte de transport"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte"
+          }
         }
       }
     },
@@ -6924,6 +7692,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "easycard"
@@ -6982,6 +7756,12 @@
             "state" : "translated",
             "value" : "icash 2.0"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
         }
       }
     },
@@ -7036,6 +7816,12 @@
             "state" : "translated",
             "value" : "Carte de transport de 7-ELEVEN à Taïwan"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de 7-ELEVEN en Taiwán"
+          }
         }
       }
     },
@@ -7086,6 +7872,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -7144,6 +7936,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -7196,6 +7994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte de transport de la baie de San Francisco"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte del Área de la Bahía de San Francisco"
           }
         }
       }
@@ -7251,6 +8055,12 @@
             "state" : "translated",
             "value" : "China T-Union"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "China T-Union"
+          }
         }
       }
     },
@@ -7299,6 +8109,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HK$ %@"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HK$ %@"
@@ -7356,6 +8172,12 @@
             "state" : "translated",
             "value" : "%@ Rp."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Rp."
+          }
         }
       }
     },
@@ -7405,6 +8227,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ JPY"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ JPY"
@@ -7462,6 +8290,12 @@
             "state" : "translated",
             "value" : "%@ KPW"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
         }
       }
     },
@@ -7515,6 +8349,12 @@
             "state" : "translated",
             "value" : "₩ %@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "₩ %@"
+          }
         }
       }
     },
@@ -7563,6 +8403,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NT$ %@"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NT$ %@"
@@ -7620,6 +8466,12 @@
             "state" : "translated",
             "value" : "%@ RMB"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ RMB"
+          }
         }
       }
     },
@@ -7669,6 +8521,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SG$ %@"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SG$ %@"
@@ -7726,6 +8584,12 @@
             "state" : "translated",
             "value" : "$ %@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$ %@"
+          }
         }
       }
     },
@@ -7777,6 +8641,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminé"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         }
       }
@@ -7830,6 +8700,12 @@
             "state" : "translated",
             "value" : "Erreur"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
         }
       }
     },
@@ -7881,6 +8757,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptar"
           }
         }
       }
@@ -7934,6 +8816,12 @@
             "state" : "translated",
             "value" : "Les données APDU sont trop longues."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los datos APDU son demasiado largos."
+          }
         }
       }
     },
@@ -7985,6 +8873,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossible de lire la carte Clipper."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido leer la tarjeta Clipper."
           }
         }
       }
@@ -8038,6 +8932,12 @@
             "state" : "translated",
             "value" : "Les données de solde FeliCa sont incomplètes."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los datos del saldo FeliCa están incompletos."
+          }
         }
       }
     },
@@ -8089,6 +8989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échec de la commande FeliCa (état : %1$02X%2$02X)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en el comando FeliCa (estado: %1$02X%2$02X)."
           }
         }
       }
@@ -8143,6 +9049,12 @@
             "state" : "translated",
             "value" : "Impossible de sélectionner le service d’historique FeliCa (état : %1$02X%2$02X)."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido seleccionar el servicio de historial FeliCa (estado: %1$02X%2$02X)."
+          }
         }
       }
     },
@@ -8195,6 +9107,12 @@
             "state" : "translated",
             "value" : "Impossible de lire l’IDm FeliCa."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido leer el IDm FeliCa."
+          }
         }
       }
     },
@@ -8246,6 +9164,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossible de sélectionner le service d’informations FeliCa (état : %1$02X%2$02X)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido seleccionar el servicio de información FeliCa (estado: %1$02X%2$02X)."
           }
         }
       }
@@ -8300,6 +9224,12 @@
             "state" : "translated",
             "value" : "Le lecteur externe a renvoyé une réponse incomplète."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El lector externo ha devuelto una respuesta incompleta."
+          }
         }
       }
     },
@@ -8351,6 +9281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cette carte n’est pas une carte DESFire."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta no es una tarjeta DESFire."
           }
         }
       }
@@ -8405,6 +9341,12 @@
             "state" : "translated",
             "value" : "Présentez d’abord une carte au lecteur externe."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca primero una tarjeta al lector externo."
+          }
         }
       }
     },
@@ -8457,6 +9399,12 @@
             "state" : "translated",
             "value" : "Cette carte n’est pas une carte ISO 7816."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta no es una tarjeta ISO 7816."
+          }
         }
       }
     },
@@ -8508,6 +9456,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossible de lire la carte One Card coréenne."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido leer la tarjeta One Card coreana."
           }
         }
       }
@@ -8562,6 +9516,12 @@
             "state" : "translated",
             "value" : "Impossible de démarrer une session avec le lecteur externe."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido iniciar una sesión con el lector externo."
+          }
         }
       }
     },
@@ -8615,6 +9575,12 @@
             "state" : "translated",
             "value" : "Le lecteur de cartes à puce externe est indisponible."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El lector externo de tarjetas inteligentes no está disponible."
+          }
         }
       }
     },
@@ -8666,6 +9632,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La carte a été détectée, mais n’a pas pu être lue. Repositionnez-la et réessayez."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha detectado la tarjeta, pero no se ha podido leer. Cámbiala de posición e inténtalo de nuevo."
           }
         }
       }
@@ -8720,6 +9692,12 @@
             "state" : "translated",
             "value" : "Impossible d’ouvrir les données enregistrées. Les cartes scannées maintenant ne seront pas conservées après la fermeture de l’app. Relancez l’app ou mettez-la à jour."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han podido abrir los datos guardados. Las tarjetas leídas ahora no se conservarán al cerrar la app. Reinicia la app o actualízala a la última versión."
+          }
         }
       }
     },
@@ -8772,6 +9750,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La synchronisation iCloud n’a pas pu démarrer. Pour le moment, les cartes sont enregistrées uniquement sur cet appareil. Relancez l’app plus tard."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido iniciar la sincronización con iCloud. Por ahora, las tarjetas solo se guardan en este dispositivo. Reinicia la app más tarde."
           }
         }
       }
@@ -8826,6 +9810,12 @@
             "state" : "translated",
             "value" : "Impossible d’enregistrer les données"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han podido guardar los datos"
+          }
         }
       }
     },
@@ -8878,6 +9868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossible d’ouvrir les données enregistrées"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han podido abrir los datos guardados"
           }
         }
       }
@@ -8932,6 +9928,12 @@
             "state" : "translated",
             "value" : "Jour"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Día"
+          }
         }
       }
     },
@@ -8984,6 +9986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pour les cartes nominatives, saisissez votre date de naissance avec deux chiffres par champ. (Facultatif pour les cartes non nominatives.)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para las tarjetas registradas, introduce tu fecha de nacimiento con dos dígitos en cada campo. (No es necesario para las tarjetas sin registrar)."
           }
         }
       }
@@ -9038,6 +10046,12 @@
             "state" : "translated",
             "value" : "Mois"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes"
+          }
         }
       }
     },
@@ -9090,6 +10104,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date de naissance (carte nominative)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha de nacimiento (tarjeta registrada)"
           }
         }
       }
@@ -9144,6 +10164,12 @@
             "state" : "translated",
             "value" : "Saisissez les chiffres de l’image."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce los números de la imagen."
+          }
         }
       }
     },
@@ -9193,6 +10219,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA"
@@ -9250,6 +10282,12 @@
             "state" : "translated",
             "value" : "Saisissez les chiffres figurant au dos de la carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce los números del reverso de la tarjeta."
+          }
         }
       }
     },
@@ -9302,6 +10340,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nº de carte"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de tarjeta"
           }
         }
       }
@@ -9356,6 +10400,12 @@
             "state" : "translated",
             "value" : "Saisit automatiquement les informations sur le [site officiel d’EasyCard](https://ezweb.easycard.com.tw/search/CardSearch.php) et récupère les données.\n\nLes données peuvent être indisponibles entre 23 h et 6 h, heure locale, en raison de la maintenance du serveur.\n\nCette fonction peut cesser de fonctionner si le site change."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce automáticamente la información en el [sitio oficial de EasyCard](https://ezweb.easycard.com.tw/search/CardSearch.php) y recupera los datos.\n\nPor mantenimiento del servidor, los datos podrían no estar disponibles entre las 23:00 y las 6:00, hora local.\n\nEsta función podría dejar de estar disponible si cambia el sitio web."
+          }
         }
       }
     },
@@ -9409,6 +10459,12 @@
             "state" : "translated",
             "value" : "Terminé"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
         }
       }
     },
@@ -9460,6 +10516,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune carte scannée."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tarjetas leídas."
           }
         }
       }
@@ -9513,6 +10575,12 @@
             "state" : "translated",
             "value" : "Non scannée"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin leer"
+          }
         }
       }
     },
@@ -9565,6 +10633,12 @@
             "state" : "translated",
             "value" : "Votre carte n’a pas encore été scannée."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no has leído tu tarjeta."
+          }
         }
       }
     },
@@ -9615,6 +10689,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Octopus"
@@ -9673,6 +10753,12 @@
             "state" : "translated",
             "value" : "Carte de transport de Jakarta"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de Yakarta"
+          }
         }
       }
     },
@@ -9723,6 +10809,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -9780,6 +10872,12 @@
             "state" : "translated",
             "value" : "* Les anciennes cartes sans logo China T-Union ne sont pas prises en charge."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "* Las tarjetas antiguas sin el logotipo China T-Union no son compatibles."
+          }
         }
       }
     },
@@ -9832,6 +10930,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compatible avec les cartes de transport portant le logo « China T-Union » (交通联合)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible con las tarjetas de transporte que llevan el logotipo «China T-Union» (交通联合)."
           }
         }
       }
@@ -9886,6 +10990,12 @@
             "state" : "translated",
             "value" : "Toutes les cartes IC de transport compatibles avec le service national japonais d’interopérabilité sont prises en charge."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se admiten todas las tarjetas IC de transporte compatibles con el servicio japonés de interoperabilidad nacional."
+          }
         }
       }
     },
@@ -9938,6 +11048,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "* PiTaPa n’a pas de solde."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "* PiTaPa no tiene saldo."
           }
         }
       }
@@ -9992,6 +11108,12 @@
             "state" : "translated",
             "value" : "Les cartes IC des partenaires régionaux sont également prises en charge. Consultez [ici](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf) la liste à jour."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "También se admiten tarjetas IC de socios regionales. Consulta [aquí](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf) la lista actualizada."
+          }
         }
       }
     },
@@ -10041,6 +11163,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL (Cashbee)"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZL (Cashbee)"
@@ -10098,6 +11226,12 @@
             "state" : "translated",
             "value" : "One pass"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
         }
       }
     },
@@ -10147,6 +11281,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -10204,6 +11344,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -10253,6 +11399,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "WOWPASS"
@@ -10310,6 +11462,12 @@
             "state" : "translated",
             "value" : "Compatible avec toutes les cartes portant le logo « One Card All Pass (전국호환 교통카드) »."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible con todas las tarjetas que llevan el logotipo «One Card All Pass (전국호환 교통카드)»."
+          }
         }
       }
     },
@@ -10358,6 +11516,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@, %1$@"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2$@, %1$@"
@@ -10411,6 +11575,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KAI Commuter"
@@ -10469,6 +11639,12 @@
             "state" : "translated",
             "value" : "Asahikawa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa"
+          }
         }
       }
     },
@@ -10519,6 +11695,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sapporo"
@@ -10576,6 +11758,12 @@
             "state" : "translated",
             "value" : "Asahikawa Railway"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
         }
       }
     },
@@ -10629,6 +11817,12 @@
             "state" : "translated",
             "value" : "Douhoku Bus"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
         }
       }
     },
@@ -10678,6 +11872,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo Information Network Co., Ltd."
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sapporo Information Network Co., Ltd."
@@ -10736,6 +11936,12 @@
             "state" : "translated",
             "value" : "Takamatsu"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu"
+          }
         }
       }
     },
@@ -10785,6 +11991,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Takamatsu-Kotohira Railway Co., Ltd."
@@ -10842,6 +12054,12 @@
             "state" : "translated",
             "value" : "Iwasaki Corp."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
         }
       }
     },
@@ -10895,6 +12113,12 @@
             "state" : "translated",
             "value" : "Kagoshima transportation Bureau"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
         }
       }
     },
@@ -10944,6 +12168,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nangoku Transport"
@@ -11002,6 +12232,12 @@
             "state" : "translated",
             "value" : "Sendai"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendai"
+          }
         }
       }
     },
@@ -11051,6 +12287,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transportation Bureau City of Sendai"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transportation Bureau City of Sendai"
@@ -11108,6 +12350,12 @@
             "state" : "translated",
             "value" : "NTASU Co., Ltd."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
         }
       }
     },
@@ -11157,6 +12405,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okinawa IC Card Co., Ltd."
@@ -11214,6 +12468,12 @@
             "state" : "translated",
             "value" : "EZL Corp."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
         }
       }
     },
@@ -11263,6 +12523,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KFTC"
@@ -11320,6 +12586,12 @@
             "state" : "translated",
             "value" : "KORAIL"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
         }
       }
     },
@@ -11369,6 +12641,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Korea Smart Card"
@@ -11426,6 +12704,12 @@
             "state" : "translated",
             "value" : "EasyCard Co., Ltd."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
         }
       }
     },
@@ -11479,6 +12763,12 @@
             "state" : "translated",
             "value" : "icash Corp."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
         }
       }
     },
@@ -11528,6 +12818,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MTC"
@@ -11586,6 +12882,12 @@
             "state" : "translated",
             "value" : "Sapporo"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
         }
       }
     },
@@ -11639,6 +12941,12 @@
             "state" : "translated",
             "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pueden leer las 20 últimas transacciones de la tarjeta."
+          }
         }
       }
     },
@@ -11689,6 +12997,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard / Asaca"
@@ -11747,6 +13061,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -11796,6 +13116,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -11854,6 +13180,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -11903,6 +13235,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -11961,6 +13299,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -12013,6 +13357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pueden leer las 20 últimas transacciones de la tarjeta."
           }
         }
       }
@@ -12068,6 +13418,12 @@
             "state" : "translated",
             "value" : "Carte de transport japonaise"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte japonesa"
+          }
         }
       }
     },
@@ -12121,6 +13477,12 @@
             "state" : "translated",
             "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pueden leer las 20 últimas transacciones de la tarjeta."
+          }
         }
       }
     },
@@ -12171,6 +13533,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ntasu"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ntasu"
@@ -12229,6 +13597,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -12281,6 +13655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les 16 dernières transactions peuvent être lues sur la carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pueden leer las 16 últimas transacciones de la tarjeta."
           }
         }
       }
@@ -12336,6 +13716,12 @@
             "state" : "translated",
             "value" : "Carte de transport interopérable de Kagoshima"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte interoperable de Kagoshima"
+          }
         }
       }
     },
@@ -12386,6 +13772,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -12442,6 +13834,12 @@
             "state" : "translated",
             "value" : "Licences"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licencias"
+          }
         }
       }
     },
@@ -12492,6 +13890,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "San Francisco"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "San Francisco"
@@ -12550,6 +13954,12 @@
             "state" : "translated",
             "value" : "Île principale d’Okinawa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isla principal de Okinawa"
+          }
         }
       }
     },
@@ -12604,6 +14014,12 @@
             "state" : "translated",
             "value" : "Californie"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "California"
+          }
         }
       }
     },
@@ -12654,6 +14070,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hokkaidō"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hokkaidō"
@@ -12712,6 +14134,12 @@
             "state" : "translated",
             "value" : "Jakarta"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakarta"
+          }
         }
       }
     },
@@ -12762,6 +14190,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagawa"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kagawa"
@@ -12820,6 +14254,12 @@
             "state" : "translated",
             "value" : "Kagoshima"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima"
+          }
         }
       }
     },
@@ -12870,6 +14310,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyagi"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Miyagi"
@@ -12928,6 +14374,12 @@
             "state" : "translated",
             "value" : "Miyazaki"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyazaki"
+          }
         }
       }
     },
@@ -12978,6 +14430,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nagasaki"
@@ -13036,6 +14494,12 @@
             "state" : "translated",
             "value" : "Okinawa"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa"
+          }
         }
       }
     },
@@ -13089,6 +14553,12 @@
             "state" : "translated",
             "value" : "Lecteur de cartes"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lector de tarjetas"
+          }
         }
       }
     },
@@ -13140,6 +14610,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisir une carte"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir tarjeta"
           }
         }
       }
@@ -13193,6 +14669,12 @@
             "state" : "translated",
             "value" : "Aucune carte avec un journal de lecture."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tarjetas con registros de lectura."
+          }
         }
       }
     },
@@ -13244,6 +14726,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptar"
           }
         }
       }
@@ -13298,6 +14786,12 @@
             "state" : "translated",
             "value" : "Plus tard"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más tarde"
+          }
         }
       }
     },
@@ -13351,6 +14845,12 @@
             "state" : "translated",
             "value" : "Nous affichons des publicités pour financer le développement et la maintenance de l’app.\nAutoriser le suivi nous aide à afficher des publicités plus pertinentes et à mesurer leurs performances.\nTouchez « Autoriser » pour nous aider à maintenir l’app.\nMerci pour votre soutien."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostramos anuncios para financiar el desarrollo y el mantenimiento de la app.\nPermitir el seguimiento nos ayuda a mostrar anuncios más relevantes y a medir su rendimiento.\nToca «Permitir» para ayudarnos a mantener la app.\nGracias por tu apoyo."
+          }
         }
       }
     },
@@ -13403,6 +14903,12 @@
             "state" : "translated",
             "value" : "Si vous refusez le suivi, les publicités seront toujours affichées, mais elles seront peut-être moins pertinentes."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si no permites el seguimiento, seguirás viendo anuncios, pero podrían ser menos relevantes."
+          }
         }
       }
     },
@@ -13454,6 +14960,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Publicités pertinentes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuncios relevantes"
           }
         }
       }
@@ -13508,6 +15020,12 @@
             "state" : "translated",
             "value" : "Autorisé"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorizado"
+          }
         }
       }
     },
@@ -13559,6 +15077,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continuer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
           }
         }
       }
@@ -13612,6 +15136,12 @@
             "state" : "translated",
             "value" : "Tout est prêt !"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Todo listo!"
+          }
         }
       }
     },
@@ -13663,6 +15193,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout est prêt ! Vous pouvez commencer à utiliser l’app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Todo listo! Ya puedes usar la app."
           }
         }
       }
@@ -13716,6 +15252,12 @@
             "state" : "translated",
             "value" : "Cette app vous permet de consulter et d’enregistrer le solde de cartes de transport du monde entier sur votre téléphone.\nVérifiez les autorisations requises pour personnaliser votre expérience."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app te permite consultar y guardar el saldo de tarjetas de transporte de todo el mundo con tu móvil.\nRevisa los permisos necesarios para personalizar la experiencia."
+          }
         }
       }
     },
@@ -13768,6 +15310,12 @@
             "state" : "translated",
             "value" : "Suggère des cartes utilisables dans votre région actuelle selon la position de l’appareil."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugiere tarjetas que se pueden usar en tu región actual según la ubicación del dispositivo."
+          }
         }
       }
     },
@@ -13819,6 +15367,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Localisation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubicación"
           }
         }
       }
@@ -13873,6 +15427,12 @@
             "state" : "translated",
             "value" : "Lecteur de cartes"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lector de tarjetas"
+          }
         }
       }
     },
@@ -13925,6 +15485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous pouvez scanner les cartes avec le lecteur NFC intégré à l’iPhone.\n\nApprochez la carte de la zone de l’appareil photo au dos de l’iPhone.\n\nVous pouvez aussi connecter un lecteur de cartes à puce compatible CCID. Certaines cartes exigent un lecteur externe. Pour en savoir plus, consultez [notre site](https://rs6apps.com/transit/nfc_reader?lang=en)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes leer tarjetas con el lector NFC integrado del iPhone.\n\nAcerca la tarjeta a la zona de la cámara de la parte posterior del dispositivo.\n\nTambién puedes conectar un lector de tarjetas inteligentes compatible con CCID. Algunas tarjetas solo se pueden leer con un lector externo. Consulta [nuestro sitio web](https://rs6apps.com/transit/nfc_reader?lang=en) para obtener más información."
           }
         }
       }
@@ -13979,6 +15545,12 @@
             "state" : "translated",
             "value" : "Cet appareil ne dispose pas de lecteur NFC intégré. Vous pouvez connecter un lecteur de cartes à puce compatible CCID. Vous pouvez aussi consulter l’historique des cartes scannées avec un iPhone.\n\nPour en savoir plus, consultez [notre site](https://rs6apps.com/transit/nfc_reader?lang=en)."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este dispositivo no tiene lector NFC integrado. Puedes conectar un lector de tarjetas inteligentes compatible con CCID. También puedes consultar el historial de las tarjetas leídas con un iPhone.\n\nConsulta [nuestro sitio web](https://rs6apps.com/transit/nfc_reader?lang=en) para obtener más información."
+          }
         }
       }
     },
@@ -14031,6 +15603,12 @@
             "state" : "translated",
             "value" : "Vous informe des cartes disponibles dans votre région actuelle lors de vos déplacements."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te informa de las tarjetas disponibles en tu región actual cuando estás de viaje o en movimiento."
+          }
         }
       }
     },
@@ -14082,6 +15660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notifications"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones"
           }
         }
       }
@@ -14137,6 +15721,12 @@
             "state" : "translated",
             "value" : "Afrique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "África"
+          }
         }
       }
     },
@@ -14190,6 +15780,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asie centrale"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Central"
           }
         }
       }
@@ -14245,6 +15841,12 @@
             "state" : "translated",
             "value" : "Asie de l’Est"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Oriental"
+          }
         }
       }
     },
@@ -14298,6 +15900,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Europe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Europa"
           }
         }
       }
@@ -14353,6 +15961,12 @@
             "state" : "translated",
             "value" : "Régions du Japon"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regiones de Japón"
+          }
         }
       }
     },
@@ -14406,6 +16020,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amérique latine"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "América Latina"
           }
         }
       }
@@ -14461,6 +16081,12 @@
             "state" : "translated",
             "value" : "Moyen-Orient"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oriente Medio"
+          }
         }
       }
     },
@@ -14514,6 +16140,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amérique du Nord"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "América del Norte"
           }
         }
       }
@@ -14569,6 +16201,12 @@
             "state" : "translated",
             "value" : "Océanie"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oceanía"
+          }
         }
       }
     },
@@ -14622,6 +16260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asie du Sud"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Meridional"
           }
         }
       }
@@ -14677,6 +16321,12 @@
             "state" : "translated",
             "value" : "Asie du Sud-Est"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudeste Asiático"
+          }
         }
       }
     },
@@ -14728,6 +16378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scannez à nouveau une carte enregistrée pour mettre ses informations à jour."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuelve a leer una tarjeta guardada para actualizar su información."
           }
         }
       }
@@ -14781,6 +16437,12 @@
             "state" : "translated",
             "value" : "Historique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial"
+          }
         }
       }
     },
@@ -14832,6 +16494,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Historique (%lld opérations)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial (%lld operaciones)"
           }
         }
       }
@@ -14887,6 +16555,12 @@
             "state" : "translated",
             "value" : "Embarquement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Embarque"
+          }
         }
       }
     },
@@ -14939,6 +16613,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bus"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autobús"
           }
         }
       }
@@ -14993,6 +16673,12 @@
             "state" : "translated",
             "value" : "Recharge"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recarga"
+          }
         }
       }
     },
@@ -15045,6 +16731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recharge automatique"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recarga automática"
           }
         }
       }
@@ -15099,6 +16791,12 @@
             "state" : "translated",
             "value" : "Recharge (bus)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recarga (autobús)"
+          }
         }
       }
     },
@@ -15151,6 +16849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recharge (commerce)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recarga (tienda)"
           }
         }
       }
@@ -15205,6 +16909,12 @@
             "state" : "translated",
             "value" : "Paiement (hors rail)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pago (no ferroviario)"
+          }
         }
       }
     },
@@ -15257,6 +16967,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guichet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taquilla"
           }
         }
       }
@@ -15311,6 +17027,12 @@
             "state" : "translated",
             "value" : "Annulation de l’entrée"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anulación de entrada"
+          }
         }
       }
     },
@@ -15363,6 +17085,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guichet JR"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taquilla de JR"
           }
         }
       }
@@ -15417,6 +17145,12 @@
             "state" : "translated",
             "value" : "Vélo"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bicicleta"
+          }
         }
       }
     },
@@ -15468,6 +17202,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune transaction"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin transacciones"
           }
         }
       }
@@ -15522,6 +17262,12 @@
             "state" : "translated",
             "value" : "Remboursement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reembolso"
+          }
         }
       }
     },
@@ -15574,6 +17320,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tarif"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarifa"
           }
         }
       }
@@ -15628,6 +17380,12 @@
             "state" : "translated",
             "value" : "Ajustement tarifaire (JR)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuste de tarifa (JR)"
+          }
         }
       }
     },
@@ -15680,6 +17438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Différence de tarif"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diferencia de tarifa"
           }
         }
       }
@@ -15734,6 +17498,12 @@
             "state" : "translated",
             "value" : "Ferry"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferri"
+          }
         }
       }
     },
@@ -15786,6 +17556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Train à grande vitesse"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tren de alta velocidad"
           }
         }
       }
@@ -15840,6 +17616,12 @@
             "state" : "translated",
             "value" : "Métro léger"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tren ligero"
+          }
         }
       }
     },
@@ -15892,6 +17674,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monorail"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorraíl"
           }
         }
       }
@@ -15946,6 +17734,12 @@
             "state" : "translated",
             "value" : "Métro de Kaohsiung"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro de Kaohsiung"
+          }
         }
       }
     },
@@ -15998,6 +17792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Métro de Taipei"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro de Taipéi"
           }
         }
       }
@@ -16052,6 +17852,12 @@
             "state" : "translated",
             "value" : "Métro de Taichung"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro de Taichung"
+          }
         }
       }
     },
@@ -16104,6 +17910,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Métro de Taoyuan"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metro de Taoyuan"
           }
         }
       }
@@ -16158,6 +17970,12 @@
             "state" : "translated",
             "value" : "Première émission"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva emisión"
+          }
         }
       }
     },
@@ -16210,6 +18028,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L’historique des transactions est indisponible pour cette carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El historial de transacciones no está disponible para esta tarjeta."
           }
         }
       }
@@ -16264,6 +18088,12 @@
             "state" : "translated",
             "value" : "Autre"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros"
+          }
         }
       }
     },
@@ -16316,6 +18146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stationnement"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estacionamiento"
           }
         }
       }
@@ -16370,6 +18206,12 @@
             "state" : "translated",
             "value" : "Différence de tarif"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diferencia de tarifa"
+          }
         }
       }
     },
@@ -16422,6 +18264,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Train"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferrocarril"
           }
         }
       }
@@ -16477,6 +18325,12 @@
             "state" : "translated",
             "value" : "Enregistrement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
         }
       }
     },
@@ -16530,6 +18384,12 @@
             "state" : "translated",
             "value" : "Réémission"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reemisión"
+          }
         }
       }
     },
@@ -16579,6 +18439,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shinkansen"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shinkansen"
@@ -16636,6 +18502,12 @@
             "state" : "translated",
             "value" : "Achat"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra"
+          }
         }
       }
     },
@@ -16688,6 +18560,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulation d’achat"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anulación de compra"
           }
         }
       }
@@ -16742,6 +18620,12 @@
             "state" : "translated",
             "value" : "Achat en espèces"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra en efectivo"
+          }
         }
       }
     },
@@ -16794,6 +18678,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Achat en gare"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra en estación"
           }
         }
       }
@@ -16848,6 +18738,12 @@
             "state" : "translated",
             "value" : "Achat en espèces en gare"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra en efectivo en estación"
+          }
         }
       }
     },
@@ -16900,6 +18796,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distributeur automatique"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máquina expendedora"
           }
         }
       }
@@ -16954,6 +18856,12 @@
             "state" : "translated",
             "value" : "Utilisation de la carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso de tarjeta"
+          }
         }
       }
     },
@@ -17006,6 +18914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chemins de fer de Taïwan"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferrocarriles de Taiwán"
           }
         }
       }
@@ -17060,6 +18974,12 @@
             "state" : "translated",
             "value" : "Achat de billet"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra de billete"
+          }
         }
       }
     },
@@ -17112,6 +19032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carnet de trajets"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bono de varios viajes"
           }
         }
       }
@@ -17166,6 +19092,12 @@
             "state" : "translated",
             "value" : "Billet"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billete"
+          }
         }
       }
     },
@@ -17218,6 +19150,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informations"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
           }
         }
       }
@@ -17272,6 +19210,12 @@
             "state" : "translated",
             "value" : "Solde"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo"
+          }
         }
       }
     },
@@ -17324,6 +19268,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Catégorie"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categoría"
           }
         }
       }
@@ -17378,6 +19328,12 @@
             "state" : "translated",
             "value" : "Type"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
         }
       }
     },
@@ -17430,6 +19386,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dernier scan"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última lectura"
           }
         }
       }
@@ -17484,6 +19446,12 @@
             "state" : "translated",
             "value" : "Dernier scan"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última lectura"
+          }
         }
       }
     },
@@ -17536,6 +19504,12 @@
             "state" : "translated",
             "value" : "Impossible de lire les informations."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se puede leer la información."
+          }
         }
       }
     },
@@ -17584,6 +19558,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID"
@@ -17640,6 +19620,12 @@
             "state" : "translated",
             "value" : "Informations d’émission"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información de emisión"
+          }
         }
       }
     },
@@ -17691,6 +19677,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date d’émission"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha de emisión"
           }
         }
       }
@@ -17744,6 +19736,12 @@
             "state" : "translated",
             "value" : "Date d’expiration"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha de caducidad"
+          }
         }
       }
     },
@@ -17795,6 +19793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Émetteur"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emisor"
           }
         }
       }
@@ -17848,6 +19852,12 @@
             "state" : "translated",
             "value" : "Région"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Región"
+          }
         }
       }
     },
@@ -17899,6 +19909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Région"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Región"
           }
         }
       }
@@ -17952,6 +19968,12 @@
             "state" : "translated",
             "value" : "Région"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Región"
+          }
         }
       }
     },
@@ -18003,6 +20025,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icône"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icono"
           }
         }
       }
@@ -18056,6 +20084,12 @@
             "state" : "translated",
             "value" : "Nom affiché"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre mostrado"
+          }
         }
       }
     },
@@ -18107,6 +20141,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nom de la carte"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de tarjeta"
           }
         }
       }
@@ -18161,6 +20201,12 @@
             "state" : "translated",
             "value" : "Aucune carte détectée."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha detectado ninguna tarjeta."
+          }
         }
       }
     },
@@ -18212,6 +20258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cette carte n’est pas prise en charge."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta tarjeta no es compatible."
           }
         }
       }
@@ -18266,6 +20318,12 @@
             "state" : "translated",
             "value" : "Approchez « %@ » du centre de la partie supérieure de l’iPhone."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca «%@» al centro de la parte superior del iPhone."
+          }
         }
       }
     },
@@ -18317,6 +20375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminé"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         }
       }
@@ -18370,6 +20434,12 @@
             "state" : "translated",
             "value" : "Erreur de lecture"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error de lectura"
+          }
         }
       }
     },
@@ -18422,6 +20492,12 @@
             "state" : "translated",
             "value" : "Erreur d’indicateur d’état. s1 : %1$lld, s2 : %2$lld"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error de indicador de estado. s1: %1$lld, s2: %2$lld"
+          }
         }
       }
     },
@@ -18473,6 +20549,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lecture en cours…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leyendo…"
           }
         }
       }
@@ -18527,6 +20609,12 @@
             "state" : "translated",
             "value" : "Nom du service non défini."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de servicio sin definir."
+          }
         }
       }
     },
@@ -18579,6 +20667,12 @@
             "state" : "translated",
             "value" : "Rechercher"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
+          }
         }
       }
     },
@@ -18629,6 +20723,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OCR"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OCR"
@@ -18686,6 +20786,12 @@
             "state" : "translated",
             "value" : "NFC"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
         }
       }
     },
@@ -18739,6 +20845,12 @@
             "state" : "translated",
             "value" : "Consultation en ligne"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta en línea"
+          }
         }
       }
     },
@@ -18790,6 +20902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informations légales"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información legal"
           }
         }
       }
@@ -18845,6 +20963,12 @@
             "state" : "translated",
             "value" : "iPhone, iPad, App Store et Apple Pay sont des marques déposées d’Apple Inc."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone, iPad, App Store y Apple Pay son marcas registradas de Apple Inc."
+          }
         }
       }
     },
@@ -18894,6 +21018,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple"
@@ -18951,6 +21081,12 @@
             "state" : "translated",
             "value" : "Marques"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcas comerciales"
+          }
         }
       }
     },
@@ -19003,6 +21139,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les informations affichées dépendent de la région de l’émetteur de la carte.\nLes noms de sociétés, noms commerciaux, noms de produits et noms de services cités sont des marques déposées ou des marques de leurs titulaires respectifs."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La información mostrada se basa en la región del emisor de la tarjeta.\nLos nombres de empresas, nombres comerciales, nombres de productos y nombres de servicios mencionados son marcas registradas o marcas de sus respectivos titulares."
           }
         }
       }
@@ -19058,6 +21200,12 @@
             "state" : "translated",
             "value" : "« 交通联合 » (China T-Union) est une norme établie par le ministère des Transports de la République populaire de Chine.\n\nLes noms de sociétés, noms commerciaux, noms de produits et noms de services cités sont des marques déposées ou des marques de leurs titulaires respectifs."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«交通联合» (China T-Union) es una norma establecida por el Ministerio de Transporte de la República Popular China.\n\nLos nombres de empresas, nombres comerciales, nombres de productos y nombres de servicios citados son marcas registradas o marcas de sus respectivos titulares."
+          }
         }
       }
     },
@@ -19112,6 +21260,12 @@
             "state" : "translated",
             "value" : "« Android », « Google » et « Google Pay » : marques de Google LLC."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Android», «Google» y «Google Pay»: marcas de Google LLC."
+          }
         }
       }
     },
@@ -19161,6 +21315,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google"
@@ -19219,6 +21379,12 @@
             "state" : "translated",
             "value" : "« Octopus » et « 八達通 » : marques de Octopus Cards Limited（八達通卡有限公司）."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Octopus» y «八達通»: marcas de Octopus Cards Limited（八達通卡有限公司）."
+          }
         }
       }
     },
@@ -19272,6 +21438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« Kartu Multi Trip » : marque de KAI Commuter."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Kartu Multi Trip»: marca de KAI Commuter."
           }
         }
       }
@@ -19327,6 +21499,12 @@
             "state" : "translated",
             "value" : "« icsca » : marque déposée de Sendai-shi."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«icsca»: marca registrada de Sendai-shi."
+          }
         }
       }
     },
@@ -19380,6 +21558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« DoCard » : marque de 道北バス.\n« Asaca » : marque de 旭川電気軌道株式会社."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«DoCard»: marca de 道北バス.\n«Asaca»: marca de 旭川電気軌道株式会社."
           }
         }
       }
@@ -19435,6 +21619,12 @@
             "state" : "translated",
             "value" : "« Kitaca » : marque déposée de Hokkaido Railway Company.\n\n« Suica » : marque déposée de East Japan Railway Company.\n\n« PASMO » : marque déposée de PASMO CO., LTD.\n\n« TOICA » : marque déposée de Central Japan Railway Company.\n\n« manaca » : marque déposée de Nagoya Transportation Development Organization and MIC CO., LTD.\n\n« ICOCA » : marque déposée de West Japan Railway Company.\n\n« SUGOCA » : marque déposée de Kyushu Railway Company.\n\n« nimoca » : marque déposée de Nishi-Nippon Railroad Co., Ltd.\n\n« はやかけん » : marque déposée de Fukuoka City Transportation Bureau.\n\n« PiTaPa » : marque déposée de Surutto KANSAI Co., Ltd."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Kitaca»: marca registrada de Hokkaido Railway Company.\n\n«Suica»: marca registrada de East Japan Railway Company.\n\n«PASMO»: marca registrada de PASMO CO., LTD.\n\n«TOICA»: marca registrada de Central Japan Railway Company.\n\n«manaca»: marca registrada de Nagoya Transportation Development Organization and MIC CO., LTD.\n\n«ICOCA»: marca registrada de West Japan Railway Company.\n\n«SUGOCA»: marca registrada de Kyushu Railway Company.\n\n«nimoca»: marca registrada de Nishi-Nippon Railroad Co., Ltd.\n\n«はやかけん»: marca registrada de Fukuoka City Transportation Bureau.\n\n«PiTaPa»: marca registrada de Surutto KANSAI Co., Ltd."
+          }
         }
       }
     },
@@ -19488,6 +21678,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« icsca » : marque de 仙台市."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«icsca»: marca de 仙台市."
           }
         }
       }
@@ -19543,6 +21739,12 @@
             "state" : "translated",
             "value" : "« IruCa » : marque de Takamatsu-Kotohira Electric Railroad Co., Ltd."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«IruCa»: marca de Takamatsu-Kotohira Electric Railroad Co., Ltd."
+          }
         }
       }
     },
@@ -19596,6 +21798,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« SAPICA » : marque de Sapporo Information Center Co., Ltd."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«SAPICA»: marca de Sapporo Information Center Co., Ltd."
           }
         }
       }
@@ -19651,6 +21859,12 @@
             "state" : "translated",
             "value" : "« エヌタス », « N+ » et « 長崎バス » : marques de 長崎自動車株式会社.\n\n« Tカード » : marque de カルチュア・コンビニエンス・クラブ株式会社.\n\n« Vポイントカード », « Vポイント » et le logo Vポイント : marques de V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«エヌタス», «N+» y «長崎バス»: marcas de 長崎自動車株式会社.\n\n«Tカード»: marca de カルチュア・コンビニエンス・クラブ株式会社.\n\n«Vポイントカード», «Vポイント» y el logotipo Vポイント: marcas de V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
+          }
         }
       }
     },
@@ -19704,6 +21918,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« OKICA » : marque de 沖縄ICカード株式会社."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«OKICA»: marca de 沖縄ICカード株式会社."
           }
         }
       }
@@ -19759,6 +21979,12 @@
             "state" : "translated",
             "value" : "« Rapica » : marque de 鹿児島市交通局."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Rapica»: marca de 鹿児島市交通局."
+          }
         }
       }
     },
@@ -19813,6 +22039,12 @@
             "state" : "translated",
             "value" : "« One Card All Pass » (전국호환교통카드) est une norme établie par le ministère du Territoire, des Infrastructures et des Transports de la République de Corée.\n\n« T-money » et « 티머니 » : marques de Korea Smart Card Corporation.\n\n« WOWPASS » : marque de Orange Square, Inc.\n\n« EZL », « 이즐 », « Cashbee » et « 캐시비 » : marques de EZL Corp.\n\n« Rail+ » et « 레일플러스 » : marques de Korea Railroad Corporation.\n\n« OnePass » et « 발행원패스 » : marques de iM UPay Co., Ltd.\n\n« Hanpay » et « 한페이 » : marques de 한페이시스."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«One Card All Pass» (전국호환교통카드) es una norma establecida por el Ministerio de Territorio, Infraestructuras y Transporte de la República de Corea.\n\n«T-money» y «티머니»: marcas de Korea Smart Card Corporation.\n\n«WOWPASS»: marca de Orange Square, Inc.\n\n«EZL», «이즐», «Cashbee» y «캐시비»: marcas de EZL Corp.\n\n«Rail+» y «레일플러스»: marcas de Korea Railroad Corporation.\n\n«OnePass» y «발행원패스»: marcas de iM UPay Co., Ltd.\n\n«Hanpay» y «한페이»: marcas de 한페이시스."
+          }
         }
       }
     },
@@ -19864,6 +22096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Licences open source"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licencias de código abierto"
           }
         }
       }
@@ -19919,6 +22157,12 @@
             "state" : "translated",
             "value" : "« FeliCa » est une marque déposée ou une marque de Sony Group Corporation ou de ses sociétés affiliées."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«FeliCa» es una marca registrada o una marca de Sony Group Corporation o de sus filiales."
+          }
         }
       }
     },
@@ -19968,6 +22212,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sony"
@@ -20024,6 +22274,12 @@
             "state" : "translated",
             "value" : "Cartes"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjetas"
+          }
         }
       }
     },
@@ -20075,6 +22331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autre"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros"
           }
         }
       }
@@ -20130,6 +22392,12 @@
             "state" : "translated",
             "value" : "« EasyCard » et « 悠遊卡 » : marques de 悠遊卡股份有限公司."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«EasyCard» y «悠遊卡»: marcas de 悠遊卡股份有限公司."
+          }
         }
       }
     },
@@ -20183,6 +22451,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "« icash » et « 愛金卡 » : marques de 愛金卡股份有限公司.\n\n« 7-ELEVEN » : marque de 統一超商股份有限公司."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«icash» y «愛金卡»: marcas de 愛金卡股份有限公司.\n\n«7-ELEVEN»: marca de 統一超商股份有限公司."
           }
         }
       }
@@ -20238,6 +22512,12 @@
             "state" : "translated",
             "value" : "« Clipper » : marque de MTC."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Clipper»: marca de MTC."
+          }
         }
       }
     },
@@ -20289,6 +22569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Publicités"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuncios"
           }
         }
       }
@@ -20343,6 +22629,12 @@
             "state" : "translated",
             "value" : "Confidentialité des publicités"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacidad de los anuncios"
+          }
         }
       }
     },
@@ -20394,6 +22686,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminé"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         }
       }
@@ -20447,6 +22745,12 @@
             "state" : "translated",
             "value" : "L’achat de la suppression des publicités est terminé. Merci !"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha completado la compra para quitar los anuncios. ¡Gracias!"
+          }
         }
       }
     },
@@ -20498,6 +22802,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
           }
         }
       }
@@ -20552,6 +22862,12 @@
             "state" : "translated",
             "value" : "Achat en attente"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra pendiente"
+          }
         }
       }
     },
@@ -20605,6 +22921,12 @@
             "state" : "translated",
             "value" : "Les publicités seront supprimées automatiquement après validation de l’achat."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los anuncios se quitarán automáticamente cuando se apruebe la compra."
+          }
         }
       }
     },
@@ -20656,6 +22978,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Restaurer les achats"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar compras"
           }
         }
       }
@@ -20709,6 +23037,12 @@
             "state" : "translated",
             "value" : "Restauration terminée"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restauración completada"
+          }
         }
       }
     },
@@ -20760,6 +23094,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "L’achat a été restauré."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha restaurado la compra."
           }
         }
       }
@@ -20814,6 +23154,12 @@
             "state" : "translated",
             "value" : "Aucun achat trouvé"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han encontrado compras"
+          }
         }
       }
     },
@@ -20867,6 +23213,12 @@
             "state" : "translated",
             "value" : "Aucun achat de suppression des publicités n’a été trouvé pour ce compte Apple."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha encontrado ninguna compra para quitar anuncios en esta cuenta de Apple."
+          }
         }
       }
     },
@@ -20919,6 +23271,12 @@
             "state" : "translated",
             "value" : "Erreur"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
         }
       }
     },
@@ -20968,6 +23326,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BETA"
@@ -21025,6 +23389,12 @@
             "state" : "translated",
             "value" : "Développement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollo"
+          }
         }
       }
     },
@@ -21076,6 +23446,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gérer les données"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestion de datos"
           }
         }
       }
@@ -21129,6 +23505,12 @@
             "state" : "translated",
             "value" : "Synchronisation iCloud"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronización con iCloud"
+          }
         }
       }
     },
@@ -21180,6 +23562,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Désactiver la synchronisation iCloud"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivar la sincronización con iCloud"
           }
         }
       }
@@ -21233,6 +23621,12 @@
             "state" : "translated",
             "value" : "Si vous désactivez la synchronisation iCloud, les cartes scannées ne seront plus synchronisées.\nLes informations déjà synchronisées seront conservées."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si desactivas la sincronización con iCloud, las tarjetas leídas dejarán de sincronizarse.\nSe conservará la información ya sincronizada."
+          }
         }
       }
     },
@@ -21284,6 +23678,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Désactiver"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivar"
           }
         }
       }
@@ -21337,6 +23737,12 @@
             "state" : "translated",
             "value" : "Effacer l’historique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar historial"
+          }
         }
       }
     },
@@ -21389,6 +23795,12 @@
             "state" : "translated",
             "value" : "Les informations des cartes enregistrées seront supprimées. Cette action est irréversible."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se eliminará la información de las tarjetas guardadas. Esta acción no se puede deshacer."
+          }
         }
       }
     },
@@ -21440,6 +23852,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
           }
         }
       }
@@ -21494,6 +23912,12 @@
             "state" : "translated",
             "value" : "Débogage"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depuración"
+          }
         }
       }
     },
@@ -21546,6 +23970,12 @@
             "state" : "translated",
             "value" : "Publicités"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuncios"
+          }
         }
       }
     },
@@ -21597,6 +24027,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode débogage"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de depuración"
           }
         }
       }
@@ -21651,6 +24087,12 @@
             "state" : "translated",
             "value" : "État de l’achat (publicités)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado de la compra (anuncios)"
+          }
         }
       }
     },
@@ -21703,6 +24145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Achat de test"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra de prueba"
           }
         }
       }
@@ -21757,6 +24205,12 @@
             "state" : "translated",
             "value" : "Version publique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión pública"
+          }
         }
       }
     },
@@ -21810,6 +24264,12 @@
             "state" : "translated",
             "value" : "Test"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prueba"
+          }
         }
       }
     },
@@ -21861,6 +24321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le mode développeur reste actif jusqu’au redémarrage de l’app.\nPour revenir en arrière, touchez « Annuler »."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El modo de desarrollador seguirá activo hasta que reinicies la app.\nSi no querías activarlo, toca «Cancelar»."
           }
         }
       }
@@ -21914,6 +24380,12 @@
             "state" : "translated",
             "value" : "Activer"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar"
+          }
         }
       }
     },
@@ -21965,6 +24437,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode développeur"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de desarrollador"
           }
         }
       }
@@ -22019,6 +24497,12 @@
             "state" : "translated",
             "value" : "Activer les types de carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar tipos de tarjeta"
+          }
         }
       }
     },
@@ -22070,6 +24554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%(variableName)lld éléments"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)lld elementos"
           }
         }
       }
@@ -22123,6 +24613,12 @@
             "state" : "translated",
             "value" : "Développement"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollo"
+          }
         }
       }
     },
@@ -22174,6 +24670,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fonction bêta"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Función beta"
           }
         }
       }
@@ -22227,6 +24729,12 @@
             "state" : "translated",
             "value" : "Version publique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión pública"
+          }
         }
       }
     },
@@ -22278,6 +24786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher les infos de débogage"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar información de depuración"
           }
         }
       }
@@ -22331,6 +24845,12 @@
             "state" : "translated",
             "value" : "Localisation"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubicación"
+          }
         }
       }
     },
@@ -22382,6 +24902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Localiser l’appareil"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localizar dispositivo"
           }
         }
       }
@@ -22435,6 +24961,12 @@
             "state" : "translated",
             "value" : "Autorisations"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permisos"
+          }
         }
       }
     },
@@ -22486,6 +25018,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher l’écran de demande d’autorisation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar pantalla de solicitud de permisos"
           }
         }
       }
@@ -22539,6 +25077,12 @@
             "state" : "translated",
             "value" : "Achats intégrés"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compras dentro de la app"
+          }
         }
       }
     },
@@ -22590,6 +25134,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utiliser le conteneur de débogage"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar contenedor de depuración"
           }
         }
       }
@@ -22643,6 +25193,12 @@
             "state" : "translated",
             "value" : "Enregistre les données dans un conteneur distinct de celui de production."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda los datos en un contenedor distinto del de producción."
+          }
         }
       }
     },
@@ -22694,6 +25250,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter toutes les cartes d’exemple"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir todas las tarjetas de ejemplo"
           }
         }
       }
@@ -22747,6 +25309,12 @@
             "state" : "translated",
             "value" : "Ajouter des cartes de test"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir tarjetas de prueba"
+          }
         }
       }
     },
@@ -22798,6 +25366,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Convertisseur"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conversor"
           }
         }
       }
@@ -22852,6 +25426,12 @@
             "state" : "translated",
             "value" : "Devise"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moneda"
+          }
         }
       }
     },
@@ -22904,6 +25484,12 @@
             "state" : "translated",
             "value" : "Terminé"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
         }
       }
     },
@@ -22955,6 +25541,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter une transaction"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir transacción"
           }
         }
       }
@@ -23009,6 +25601,12 @@
             "state" : "translated",
             "value" : "Montant"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importe"
+          }
         }
       }
     },
@@ -23061,6 +25659,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solde après transaction"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo tras la transacción"
           }
         }
       }
@@ -23115,6 +25719,12 @@
             "state" : "translated",
             "value" : "Jour"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Día"
+          }
         }
       }
     },
@@ -23166,6 +25776,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Données d’historique"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos del historial"
           }
         }
       }
@@ -23220,6 +25836,12 @@
             "state" : "translated",
             "value" : "(Requête)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(Solicitud)"
+          }
         }
       }
     },
@@ -23271,6 +25893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Écran de résultats"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla de resultados"
           }
         }
       }
@@ -23324,6 +25952,12 @@
             "state" : "translated",
             "value" : "Afficher les types de carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar tipos de tarjeta"
+          }
         }
       }
     },
@@ -23375,6 +26009,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Développement"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollo"
           }
         }
       }
@@ -23428,6 +26068,12 @@
             "state" : "translated",
             "value" : "Fonction"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Función"
+          }
         }
       }
     },
@@ -23479,6 +26125,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non sélectionné"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin seleccionar"
           }
         }
       }
@@ -23532,6 +26184,12 @@
             "state" : "translated",
             "value" : "Version publique"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión pública"
+          }
         }
       }
     },
@@ -23583,6 +26241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liste des cartes à scanner"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de tarjetas para leer"
           }
         }
       }
@@ -23636,6 +26300,12 @@
             "state" : "translated",
             "value" : "Fonction bêta"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Función beta"
+          }
         }
       }
     },
@@ -23687,6 +26357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartes prises en charge en bêta"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjetas compatibles en beta"
           }
         }
       }
@@ -23740,6 +26416,12 @@
             "state" : "translated",
             "value" : "Active les cartes prises en charge en bêta."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa las tarjetas compatibles en beta."
+          }
         }
       }
     },
@@ -23791,6 +26473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ce réglage ne peut pas être modifié si des types de carte sont sélectionnés dans les réglages de développement.\nPour tester « Fonctions bêta », accédez à Réglages > Débogage > Afficher les types de carte et choisissez « Non sélectionné »."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este ajuste no se puede cambiar si has seleccionado tipos de tarjeta en los ajustes de desarrollo.\nPara probar «Funciones beta», ve a Ajustes > Depuración > Mostrar tipos de tarjeta y elige «Sin seleccionar»."
           }
         }
       }
@@ -23844,6 +26532,12 @@
             "state" : "translated",
             "value" : "Les fonctions expérimentales sont en cours de développement et peuvent présenter des erreurs ou d’autres problèmes.\nElles peuvent être supprimées ou modifiées sans préavis."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las funciones experimentales están en desarrollo y pueden contener errores u otros problemas.\nPueden eliminarse o modificarse sin previo aviso."
+          }
         }
       }
     },
@@ -23895,6 +26589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fonctions bêta"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funciones beta"
           }
         }
       }
@@ -23948,6 +26648,12 @@
             "state" : "translated",
             "value" : "Rejoindre la bêta"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unirse a la beta"
+          }
         }
       }
     },
@@ -23999,6 +26705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voir sur GitHub"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver en GitHub"
           }
         }
       }
@@ -24052,6 +26764,12 @@
             "state" : "translated",
             "value" : "Autre"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros"
+          }
         }
       }
     },
@@ -24103,6 +26821,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version %(variableName)@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión %(variableName)@"
           }
         }
       }
@@ -24157,6 +26881,12 @@
             "state" : "translated",
             "value" : "Sélectionner un élément"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir un elemento"
+          }
         }
       }
     },
@@ -24208,6 +26938,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mes cartes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis tarjetas"
           }
         }
       }
@@ -24261,6 +26997,12 @@
             "state" : "translated",
             "value" : "Filtrer"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar"
+          }
         }
       }
     },
@@ -24312,6 +27054,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo"
           }
         }
       }
@@ -24365,6 +27113,12 @@
             "state" : "translated",
             "value" : "Trier"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar"
+          }
         }
       }
     },
@@ -24416,6 +27170,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nom de carte (A–Z)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de tarjeta (A–Z)"
           }
         }
       }
@@ -24469,6 +27229,12 @@
             "state" : "translated",
             "value" : "Nom de carte (Z–A)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de tarjeta (Z–A)"
+          }
         }
       }
     },
@@ -24520,6 +27286,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plus récentes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más recientes"
           }
         }
       }
@@ -24573,6 +27345,12 @@
             "state" : "translated",
             "value" : "Plus anciennes"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más antiguas"
+          }
         }
       }
     },
@@ -24624,6 +27402,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scanner"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leer"
           }
         }
       }
@@ -24677,6 +27461,12 @@
             "state" : "translated",
             "value" : "Réglages"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
         }
       }
     },
@@ -24728,6 +27518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Outils"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herramientas"
           }
         }
       }
@@ -24781,6 +27577,12 @@
             "state" : "translated",
             "value" : "Ajoutez un widget à l’écran d’accueil pour consulter le dernier solde de votre carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un widget a la pantalla de inicio para consultar el saldo más reciente de tu tarjeta."
+          }
         }
       }
     },
@@ -24829,6 +27631,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Widget"
@@ -24885,6 +27693,12 @@
             "state" : "translated",
             "value" : "Journal de lecture (débogage)"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro de lectura (depuración)"
+          }
         }
       }
     },
@@ -24936,6 +27750,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le nombre maximal de tentatives est atteint."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha alcanzado el número máximo de intentos."
           }
         }
       }
@@ -24989,6 +27809,12 @@
             "state" : "translated",
             "value" : "La date de naissance est incorrecte ou la carte n’est pas nominative."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La fecha de nacimiento no es correcta o la tarjeta no está registrada."
+          }
         }
       }
     },
@@ -25040,6 +27866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La vérification CAPTCHA a échoué."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La verificación CAPTCHA ha fallado."
           }
         }
       }
@@ -25093,6 +27925,12 @@
             "state" : "translated",
             "value" : "Le numéro de carte est incorrect."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El número de tarjeta no es correcto."
+          }
         }
       }
     },
@@ -25145,6 +27983,12 @@
             "state" : "translated",
             "value" : "Date non valide"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha no válida"
+          }
         }
       }
     },
@@ -25196,6 +28040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Veuillez réessayer."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inténtalo de nuevo."
           }
         }
       }
@@ -25250,6 +28100,12 @@
             "state" : "translated",
             "value" : "Saisissez deux chiffres dans chaque champ de la date de naissance."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce dos dígitos en cada campo de la fecha de nacimiento."
+          }
         }
       }
     },
@@ -25302,6 +28158,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La vérification CAPTCHA a échoué."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La verificación CAPTCHA ha fallado."
           }
         }
       }
@@ -25356,6 +28218,12 @@
             "state" : "translated",
             "value" : "Saisissez le CAPTCHA."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce el CAPTCHA."
+          }
         }
       }
     },
@@ -25408,6 +28276,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saisissez un numéro de carte à 10 ou 16 chiffres."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce un número de tarjeta de 10 o 16 dígitos."
           }
         }
       }
@@ -25462,6 +28336,12 @@
             "state" : "translated",
             "value" : "Le numéro de carte est obligatoire."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce el número de tarjeta."
+          }
         }
       }
     },
@@ -25515,6 +28395,12 @@
             "state" : "translated",
             "value" : "Les données ne sont pas actualisées en temps réel. L’historique couvre les douze derniers mois jusqu’à hier."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los datos no se actualizan en tiempo real. El historial abarca el último año hasta ayer."
+          }
         }
       }
     },
@@ -25565,6 +28451,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -25622,6 +28514,12 @@
             "state" : "translated",
             "value" : "Seules les 12 dernières transactions peuvent être lues."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo se pueden leer las 12 últimas transacciones."
+          }
         }
       }
     },
@@ -25672,6 +28570,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash 2.0"
@@ -25728,6 +28632,12 @@
             "state" : "translated",
             "value" : "Inconnu"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconocido"
+          }
         }
       }
     },
@@ -25778,6 +28688,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper"
@@ -25834,6 +28750,12 @@
             "state" : "translated",
             "value" : "Filtrer"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar"
+          }
         }
       }
     },
@@ -25885,6 +28807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toutes les cartes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las tarjetas"
           }
         }
       }
@@ -25940,6 +28868,12 @@
             "state" : "translated",
             "value" : "Choisir une carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir tarjeta"
+          }
         }
       }
     },
@@ -25993,6 +28927,12 @@
             "state" : "translated",
             "value" : "Solde des cartes de transport"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo de tarjetas de transporte"
+          }
         }
       }
     },
@@ -26045,6 +28985,12 @@
             "state" : "translated",
             "value" : "Carte à puce"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta IC"
+          }
         }
       }
     },
@@ -26096,6 +29042,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisir"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir"
           }
         }
       }
@@ -26150,6 +29102,12 @@
             "state" : "translated",
             "value" : "Choisir une carte"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir tarjeta"
+          }
         }
       }
     },
@@ -26203,6 +29161,12 @@
             "state" : "translated",
             "value" : "Affiche le dernier solde de la carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestra el saldo más reciente de la tarjeta."
+          }
         }
       }
     },
@@ -26255,6 +29219,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solde des cartes de transport"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo de tarjetas de transporte"
           }
         }
       }
@@ -26310,6 +29280,12 @@
             "state" : "translated",
             "value" : "Shanghai"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shanghái"
+          }
         }
       }
     },
@@ -26364,6 +29340,12 @@
             "state" : "translated",
             "value" : "Carte de transport de Shanghai"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de Shanghái"
+          }
         }
       }
     },
@@ -26414,6 +29396,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Octopus"
@@ -26472,6 +29460,12 @@
             "state" : "translated",
             "value" : "Pékin"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pekín"
+          }
         }
       }
     },
@@ -26526,6 +29520,12 @@
             "state" : "translated",
             "value" : "Carte de transport de Pékin"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjeta de transporte de Pekín"
+          }
         }
       }
     },
@@ -26576,6 +29576,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichuan"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sichuan"
@@ -26634,6 +29640,12 @@
             "state" : "translated",
             "value" : "Chengdu"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chengdu"
+          }
         }
       }
     },
@@ -26684,6 +29696,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hangzhou Tong"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hangzhou Tong"
@@ -26742,6 +29760,12 @@
             "state" : "translated",
             "value" : "Shenzhen Tong"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shenzhen Tong"
+          }
         }
       }
     },
@@ -26792,6 +29816,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macao"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Macao"
@@ -26850,6 +29880,12 @@
             "state" : "translated",
             "value" : "Macau Pass"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau Pass"
+          }
         }
       }
     },
@@ -26904,6 +29940,12 @@
             "state" : "translated",
             "value" : "YangCheng Tong"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YangCheng Tong"
+          }
         }
       }
     },
@@ -26954,6 +29996,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong"

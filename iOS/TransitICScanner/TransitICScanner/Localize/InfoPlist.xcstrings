@@ -51,6 +51,12 @@
             "state" : "translated",
             "value" : "Solde des cartes de transport du monde"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta de saldo de tarjetas de transporte del mundo"
+          }
         }
       }
     },
@@ -103,6 +109,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solde des cartes de transport du monde"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consulta de saldo de tarjetas de transporte del mundo"
           }
         }
       }
@@ -157,6 +169,12 @@
             "state" : "translated",
             "value" : "Utilisé pour lire les informations de la carte."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para leer la información de la tarjeta."
+          }
         }
       }
     },
@@ -209,6 +227,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisé pour lire le numéro de carte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para leer el número de tarjeta."
           }
         }
       }
@@ -263,6 +287,12 @@
             "state" : "translated",
             "value" : "Suggère des cartes en fonction de votre position actuelle."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugiere tarjetas según tu ubicación actual."
+          }
         }
       }
     },
@@ -315,6 +345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ces informations servent à afficher des publicités Google.\nAutoriser l’accès peut nous aider à vous proposer des publicités plus pertinentes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta información se usa para mostrar anuncios de Google.\nPermitir el acceso puede ayudarnos a mostrarte anuncios más relevantes."
           }
         }
       }
