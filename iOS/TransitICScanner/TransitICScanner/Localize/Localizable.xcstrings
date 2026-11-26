@@ -45,6 +45,12 @@
             "state" : "translated",
             "value" : "광고"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iklan"
+          }
         }
       }
     },
@@ -79,6 +85,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "광고 제거"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus iklan"
           }
         }
       }
@@ -115,6 +127,12 @@
             "state" : "translated",
             "value" : "  설치  "
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  Instal  "
+          }
         }
       }
     },
@@ -150,6 +168,12 @@
             "state" : "translated",
             "value" : "화면 속 화면으로 이미지를 보는 앱입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi untuk melihat gambar dalam mode gambar-dalam-gambar."
+          }
         }
       }
     },
@@ -181,6 +205,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IMGPiper"
@@ -220,6 +250,12 @@
             "state" : "translated",
             "value" : "텍스트를 쉽게 바꾸거나 삽입할 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganti atau sisipkan teks dengan mudah."
+          }
         }
       }
     },
@@ -251,6 +287,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replacer"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Replacer"
@@ -290,6 +332,12 @@
             "state" : "translated",
             "value" : "이미지를 WebP로 변환합니다. 투명 PNG를 지원하며 파일 크기를 줄일 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konversi gambar ke WebP. Mendukung PNG transparan dan dapat memperkecil ukuran berkas."
+          }
         }
       }
     },
@@ -324,6 +372,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WebP 변환기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konverter WebP"
           }
         }
       }
@@ -360,6 +414,12 @@
             "state" : "translated",
             "value" : "세계 교통카드 잔액 조회"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cek Saldo Kartu Transportasi Dunia"
+          }
         }
       }
     },
@@ -395,6 +455,12 @@
             "state" : "translated",
             "value" : "교통카드 잔액"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo kartu"
+          }
         }
       }
     },
@@ -428,6 +494,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "취소"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
           }
         }
       }
@@ -463,6 +535,12 @@
             "state" : "translated",
             "value" : "IC 카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu IC"
+          }
         }
       }
     },
@@ -494,6 +572,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple Pay"
@@ -534,6 +618,12 @@
             "state" : "translated",
             "value" : "Asaca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asaca"
+          }
         }
       }
     },
@@ -566,6 +656,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR"
@@ -606,6 +702,12 @@
             "state" : "translated",
             "value" : "Kotoden"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden"
+          }
         }
       }
     },
@@ -642,6 +744,12 @@
             "state" : "translated",
             "value" : "기본값"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bawaan"
+          }
         }
       }
     },
@@ -674,6 +782,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard"
@@ -714,6 +828,12 @@
             "state" : "translated",
             "value" : "EZL"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL"
+          }
         }
       }
     },
@@ -746,6 +866,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayakaken"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hayakaken"
@@ -786,6 +912,12 @@
             "state" : "translated",
             "value" : "옥토퍼스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -822,6 +954,12 @@
             "state" : "translated",
             "value" : "옥토퍼스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -854,6 +992,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ICOCA"
@@ -894,6 +1038,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -926,6 +1076,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -966,6 +1122,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -1001,6 +1163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이와사키 IC 카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu IC Iwasaki"
           }
         }
       }
@@ -1038,6 +1206,12 @@
             "state" : "translated",
             "value" : "나가사키 Ntasu 카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Ntasu Nagasaki"
+          }
         }
       }
     },
@@ -1070,6 +1244,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K-CASH"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "K-CASH"
@@ -1110,6 +1290,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -1142,6 +1328,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MOIBA"
@@ -1182,6 +1374,12 @@
             "state" : "translated",
             "value" : "nimoca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
         }
       }
     },
@@ -1214,6 +1412,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OKICA"
@@ -1254,6 +1458,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -1290,6 +1500,12 @@
             "state" : "translated",
             "value" : "휴대전화"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponsel"
+          }
         }
       }
     },
@@ -1322,6 +1538,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -1362,6 +1584,12 @@
             "state" : "translated",
             "value" : "Rapica"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
         }
       }
     },
@@ -1394,6 +1622,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -1434,6 +1668,12 @@
             "state" : "translated",
             "value" : "Snapper"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snapper"
+          }
         }
       }
     },
@@ -1465,6 +1705,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -1505,6 +1751,12 @@
             "state" : "translated",
             "value" : "SUGOCA"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
         }
       }
     },
@@ -1537,6 +1789,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suica"
@@ -1577,6 +1835,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -1609,6 +1873,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOICA"
@@ -1649,6 +1919,12 @@
             "state" : "translated",
             "value" : "EasyCard"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
         }
       }
     },
@@ -1681,6 +1957,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -1721,6 +2003,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -1753,6 +2041,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -1792,6 +2086,12 @@
             "state" : "translated",
             "value" : "EasyCard / 기명 카드 / 슈퍼카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard / Kartu terdaftar / Super Card"
+          }
         }
       }
     },
@@ -1824,6 +2124,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPASS"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPASS"
@@ -1863,6 +2169,12 @@
             "state" : "translated",
             "value" : "모든 카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua kartu"
+          }
         }
       }
     },
@@ -1899,6 +2211,12 @@
             "state" : "translated",
             "value" : "중국 본토"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiongkok Daratan"
+          }
         }
       }
     },
@@ -1931,6 +2249,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "china"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "china"
@@ -1971,6 +2295,12 @@
             "state" : "translated",
             "value" : "홍콩"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
+          }
         }
       }
     },
@@ -2003,6 +2333,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "hongkong"
@@ -2043,6 +2379,12 @@
             "state" : "translated",
             "value" : "인도네시아"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indonesia"
+          }
         }
       }
     },
@@ -2079,6 +2421,12 @@
             "state" : "translated",
             "value" : "일본"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jepang"
+          }
         }
       }
     },
@@ -2111,6 +2459,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japan"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "japan"
@@ -2151,6 +2505,12 @@
             "state" : "translated",
             "value" : "북한"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Utara"
+          }
         }
       }
     },
@@ -2187,6 +2547,12 @@
             "state" : "translated",
             "value" : "한국"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Selatan"
+          }
         }
       }
     },
@@ -2219,6 +2585,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korea"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "korea"
@@ -2259,6 +2631,12 @@
             "state" : "translated",
             "value" : "마카오"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Makau"
+          }
         }
       }
     },
@@ -2291,6 +2669,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "macau"
@@ -2331,6 +2715,12 @@
             "state" : "translated",
             "value" : "싱가포르"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapura"
+          }
         }
       }
     },
@@ -2367,6 +2757,12 @@
             "state" : "translated",
             "value" : "대만"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taiwan"
+          }
         }
       }
     },
@@ -2399,6 +2795,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "taiwan"
@@ -2439,6 +2841,12 @@
             "state" : "translated",
             "value" : "미국"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amerika Serikat"
+          }
         }
       }
     },
@@ -2471,6 +2879,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-Union"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-Union"
@@ -2510,6 +2924,12 @@
             "state" : "translated",
             "value" : "T-Union 로고가 있는 중국 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Tiongkok berlogo T-Union"
+          }
         }
       }
     },
@@ -2542,6 +2962,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tunion"
@@ -2580,6 +3006,12 @@
             "state" : "translated",
             "value" : "각 브랜드는 이 앱과 제휴, 소속 또는 승인 관계가 없습니다.\n읽기 결과는 참고용입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merek terkait tidak bermitra dengan, terafiliasi dengan, atau mengesahkan aplikasi ini.\nHasil pembacaan hanya untuk referensi."
+          }
         }
       }
     },
@@ -2614,6 +3046,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 리더 연결이 끊겼습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kartu terputus."
           }
         }
       }
@@ -2650,6 +3088,12 @@
             "state" : "translated",
             "value" : "이 카드를 읽으려면 외장 리더를 연결하세요.\n하드웨어 제한으로 iPhone에서 직접 읽을 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hubungkan pembaca eksternal untuk memindai kartu ini.\nKarena keterbatasan perangkat keras, kartu ini tidak dapat dibaca langsung di iPhone."
+          }
         }
       }
     },
@@ -2683,6 +3127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "연결 안 됨"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak terhubung"
           }
         }
       }
@@ -2718,6 +3168,12 @@
             "state" : "translated",
             "value" : "연결됨"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terhubung"
+          }
         }
       }
     },
@@ -2752,6 +3208,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "외장 리더 전용"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hanya pembaca eksternal"
           }
         }
       }
@@ -2789,6 +3251,12 @@
             "state" : "translated",
             "value" : "옥토퍼스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -2821,6 +3289,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "八達通"
@@ -2861,6 +3335,12 @@
             "state" : "translated",
             "value" : "octopus"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
+          }
         }
       }
     },
@@ -2893,6 +3373,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -2933,6 +3419,12 @@
             "state" : "translated",
             "value" : "자카르타 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Jakarta"
+          }
         }
       }
     },
@@ -2965,6 +3457,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "kartumultitrip"
@@ -3005,6 +3503,12 @@
             "state" : "translated",
             "value" : "DoCard / Asaca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
         }
       }
     },
@@ -3040,6 +3544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아사히카와 전기궤도와 도호쿠 버스"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Electric Railway dan Douhoku Bus"
           }
         }
       }
@@ -3077,6 +3587,12 @@
             "state" : "translated",
             "value" : "교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi"
+          }
         }
       }
     },
@@ -3109,6 +3625,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -3149,6 +3671,12 @@
             "state" : "translated",
             "value" : "센다이시 교통국 (仙台市交通局)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biro Transportasi Kota Sendai (仙台市交通局)"
+          }
         }
       }
     },
@@ -3181,6 +3709,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -3221,6 +3755,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -3257,6 +3797,12 @@
             "state" : "translated",
             "value" : "고토덴 (다카마쓰코토히라 전기철도)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden (Takamatsu-Kotohira Electric Railroad)"
+          }
         }
       }
     },
@@ -3289,6 +3835,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -3329,6 +3881,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -3365,6 +3923,12 @@
             "state" : "translated",
             "value" : "삿포로 지역 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi wilayah Sapporo"
+          }
         }
       }
     },
@@ -3397,6 +3961,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sapica"
@@ -3437,6 +4007,12 @@
             "state" : "translated",
             "value" : "Suica, PASMO, ICOCA 등 일본 전국에서 사용할 수 있는 교통카드입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi yang dapat digunakan di seluruh Jepang, seperti Suica, PASMO, dan ICOCA."
+          }
         }
       }
     },
@@ -3469,6 +4045,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "transportationiccards"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "transportationiccards"
@@ -3509,6 +4091,12 @@
             "state" : "translated",
             "value" : "나가사키 Ntasu 카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Ntasu Nagasaki"
+          }
         }
       }
     },
@@ -3545,6 +4133,12 @@
             "state" : "translated",
             "value" : "나가사키 버스 / 사이카이 교통"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki Bus / Saikai Transport"
+          }
         }
       }
     },
@@ -3577,6 +4171,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ntasu"
@@ -3617,6 +4217,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -3653,6 +4259,12 @@
             "state" : "translated",
             "value" : "오키나와 모노레일 및 버스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorel dan bus Okinawa"
+          }
         }
       }
     },
@@ -3685,6 +4297,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
@@ -3725,6 +4343,12 @@
             "state" : "translated",
             "value" : "Rapica / Iwasaki IC"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
+          }
         }
       }
     },
@@ -3761,6 +4385,12 @@
             "state" : "translated",
             "value" : "가고시마 공통 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi terpadu Kagoshima"
+          }
         }
       }
     },
@@ -3793,6 +4423,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -3832,6 +4468,12 @@
             "state" : "translated",
             "value" : "T-money, EZL, WOWPASS 등 대부분의 한국 교통카드입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sebagian besar kartu transportasi Korea, seperti T-money, EZL, dan WOWPASS."
+          }
         }
       }
     },
@@ -3864,6 +4506,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "onecardallpass"
@@ -3902,6 +4550,12 @@
             "state" : "translated",
             "value" : "현재 위치"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi saat ini"
+          }
         }
       }
     },
@@ -3936,6 +4590,12 @@
             "state" : "translated",
             "value" : "기타"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
+          }
         }
       }
     },
@@ -3966,6 +4626,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPhone"
@@ -4005,6 +4671,12 @@
             "state" : "translated",
             "value" : "연결됨"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terhubung"
+          }
         }
       }
     },
@@ -4039,6 +4711,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 리더 연결이 끊겼습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kartu terputus."
           }
         }
       }
@@ -4075,6 +4753,12 @@
             "state" : "translated",
             "value" : "연결 안 됨"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak terhubung"
+          }
         }
       }
     },
@@ -4109,6 +4793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지원되는 CCID 호환 리더"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kompatibel CCID yang didukung"
           }
         }
       }
@@ -4146,6 +4836,12 @@
             "state" : "translated",
             "value" : "외장 리더"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca eksternal"
+          }
         }
       }
     },
@@ -4182,6 +4878,12 @@
             "state" : "translated",
             "value" : "읽기 방식"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pindai dengan"
+          }
         }
       }
     },
@@ -4216,6 +4918,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "외장 리더를 사용할 수 없습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca eksternal tidak tersedia."
           }
         }
       }
@@ -4252,6 +4960,12 @@
             "state" : "translated",
             "value" : "이 카드는 아직 외장 리더로 읽을 수 없습니다. 내장 리더로 전환하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu ini belum dapat dibaca dengan pembaca eksternal. Beralihlah ke pembaca internal."
+          }
         }
       }
     },
@@ -4286,6 +5000,12 @@
             "state" : "translated",
             "value" : "카드 이름, 지역 등으로 검색…"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cari berdasarkan nama kartu, wilayah, dan lainnya…"
+          }
         }
       }
     },
@@ -4319,6 +5039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "검색 결과"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasil pencarian"
           }
         }
       }
@@ -4356,6 +5082,12 @@
             "state" : "translated",
             "value" : "지역 (오름차순)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah (A–Z)"
+          }
         }
       }
     },
@@ -4391,6 +5123,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지역 (내림차순)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah (Z–A)"
           }
         }
       }
@@ -4428,6 +5166,12 @@
             "state" : "translated",
             "value" : "카드 이름 (오름차순)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama kartu (A–Z)"
+          }
         }
       }
     },
@@ -4464,6 +5208,12 @@
             "state" : "translated",
             "value" : "카드 이름 (내림차순)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama kartu (Z–A)"
+          }
         }
       }
     },
@@ -4496,6 +5246,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -4536,6 +5292,12 @@
             "state" : "translated",
             "value" : "CEPAS 잔액과 거래 내역 읽기"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baca saldo dan transaksi CEPAS"
+          }
         }
       }
     },
@@ -4570,6 +5332,12 @@
             "state" : "translated",
             "value" : "교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi"
+          }
         }
       }
     },
@@ -4602,6 +5370,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "easycard"
@@ -4642,6 +5416,12 @@
             "state" : "translated",
             "value" : "icash 2.0"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
         }
       }
     },
@@ -4678,6 +5458,12 @@
             "state" : "translated",
             "value" : "대만 7-ELEVEN 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi 7-ELEVEN Taiwan"
+          }
         }
       }
     },
@@ -4710,6 +5496,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -4750,6 +5542,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -4784,6 +5582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "샌프란시스코 베이 에어리어 교통카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Wilayah Teluk San Francisco"
           }
         }
       }
@@ -4821,6 +5625,12 @@
             "state" : "translated",
             "value" : "China T-Union"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "China T-Union"
+          }
         }
       }
     },
@@ -4851,6 +5661,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HK$ %@"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HK$ %@"
@@ -4890,6 +5706,12 @@
             "state" : "translated",
             "value" : "%@ Rp."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Rp."
+          }
         }
       }
     },
@@ -4921,6 +5743,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ JPY"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ JPY"
@@ -4960,6 +5788,12 @@
             "state" : "translated",
             "value" : "%@ KPW"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
         }
       }
     },
@@ -4995,6 +5829,12 @@
             "state" : "translated",
             "value" : "₩ %@"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "₩ %@"
+          }
         }
       }
     },
@@ -5025,6 +5865,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NT$ %@"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NT$ %@"
@@ -5064,6 +5910,12 @@
             "state" : "translated",
             "value" : "%@ RMB"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ RMB"
+          }
         }
       }
     },
@@ -5095,6 +5947,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SG$ %@"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SG$ %@"
@@ -5134,6 +5992,12 @@
             "state" : "translated",
             "value" : "$ %@"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$ %@"
+          }
         }
       }
     },
@@ -5167,6 +6031,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
           }
         }
       }
@@ -5202,6 +6072,12 @@
             "state" : "translated",
             "value" : "오류"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesalahan"
+          }
         }
       }
     },
@@ -5235,6 +6111,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "확인"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -5270,6 +6152,12 @@
             "state" : "translated",
             "value" : "APDU 데이터가 너무 깁니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data APDU terlalu panjang."
+          }
         }
       }
     },
@@ -5303,6 +6191,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper 카드를 읽을 수 없습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Clipper tidak dapat dibaca."
           }
         }
       }
@@ -5338,6 +6232,12 @@
             "state" : "translated",
             "value" : "FeliCa 잔액 데이터가 불완전합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data saldo FeliCa tidak lengkap."
+          }
         }
       }
     },
@@ -5371,6 +6271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "FeliCa 명령에 실패했습니다 (상태: %1$02X%2$02X)."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perintah FeliCa gagal (status: %1$02X%2$02X)."
           }
         }
       }
@@ -5407,6 +6313,12 @@
             "state" : "translated",
             "value" : "FeliCa 내역 서비스를 선택할 수 없습니다 (상태: %1$02X%2$02X)."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layanan riwayat FeliCa tidak dapat dipilih (status: %1$02X%2$02X)."
+          }
         }
       }
     },
@@ -5441,6 +6353,12 @@
             "state" : "translated",
             "value" : "FeliCa IDm을 읽을 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IDm FeliCa tidak dapat dibaca."
+          }
         }
       }
     },
@@ -5474,6 +6392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "FeliCa 정보 서비스를 선택할 수 없습니다 (상태: %1$02X%2$02X)."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layanan informasi FeliCa tidak dapat dipilih (status: %1$02X%2$02X)."
           }
         }
       }
@@ -5510,6 +6434,12 @@
             "state" : "translated",
             "value" : "외장 리더가 불완전한 응답을 반환했습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca eksternal mengembalikan respons yang tidak lengkap."
+          }
         }
       }
     },
@@ -5543,6 +6473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "DESFire 카드가 아닙니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ini bukan kartu DESFire."
           }
         }
       }
@@ -5579,6 +6515,12 @@
             "state" : "translated",
             "value" : "먼저 외장 리더에 카드를 대세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempelkan kartu pada pembaca eksternal terlebih dahulu."
+          }
         }
       }
     },
@@ -5613,6 +6555,12 @@
             "state" : "translated",
             "value" : "ISO 7816 카드가 아닙니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ini bukan kartu ISO 7816."
+          }
         }
       }
     },
@@ -5646,6 +6594,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "한국 교통카드를 읽을 수 없습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu One Card Korea tidak dapat dibaca."
           }
         }
       }
@@ -5682,6 +6636,12 @@
             "state" : "translated",
             "value" : "외장 리더 세션을 시작할 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesi dengan pembaca eksternal tidak dapat dimulai."
+          }
         }
       }
     },
@@ -5717,6 +6677,12 @@
             "state" : "translated",
             "value" : "외장 스마트 카드 리더를 사용할 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kartu pintar eksternal tidak tersedia."
+          }
         }
       }
     },
@@ -5750,6 +6716,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드가 감지됐지만 읽을 수 없습니다. 위치를 바꾸고 다시 시도하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu terdeteksi, tetapi tidak dapat dibaca. Ubah posisinya dan coba lagi."
           }
         }
       }
@@ -5786,6 +6758,12 @@
             "state" : "translated",
             "value" : "저장된 데이터를 열 수 없습니다. 지금 읽는 카드는 앱을 닫으면 보관되지 않습니다. 앱을 다시 시작하거나 최신 버전으로 업데이트하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data tersimpan tidak dapat dibuka. Kartu yang dipindai sekarang tidak akan disimpan setelah aplikasi ditutup. Mulai ulang aplikasi atau perbarui ke versi terbaru."
+          }
         }
       }
     },
@@ -5820,6 +6798,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud 동기화를 시작할 수 없어 당분간 카드가 이 기기에만 저장됩니다. 나중에 앱을 다시 시작하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sinkronisasi iCloud tidak dapat dimulai, sehingga kartu untuk sementara hanya disimpan di perangkat ini. Mulai ulang aplikasi nanti."
           }
         }
       }
@@ -5856,6 +6840,12 @@
             "state" : "translated",
             "value" : "데이터를 저장할 수 없음"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat menyimpan data"
+          }
         }
       }
     },
@@ -5890,6 +6880,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장된 데이터를 열 수 없음"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat membuka data tersimpan"
           }
         }
       }
@@ -5926,6 +6922,12 @@
             "state" : "translated",
             "value" : "일"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari"
+          }
         }
       }
     },
@@ -5960,6 +6962,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기명 카드의 경우 생년월일을 각 항목에 두 자리 숫자로 입력하세요. (무기명 카드는 입력하지 않아도 됩니다.)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk kartu terdaftar, masukkan tanggal lahir dengan dua digit pada setiap kolom. (Tidak wajib untuk kartu yang tidak terdaftar.)"
           }
         }
       }
@@ -5996,6 +7004,12 @@
             "state" : "translated",
             "value" : "월"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulan"
+          }
         }
       }
     },
@@ -6030,6 +7044,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "생년월일 (기명 카드)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal lahir (kartu terdaftar)"
           }
         }
       }
@@ -6066,6 +7086,12 @@
             "state" : "translated",
             "value" : "이미지의 숫자를 입력하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan angka pada gambar."
+          }
         }
       }
     },
@@ -6097,6 +7123,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA"
@@ -6136,6 +7168,12 @@
             "state" : "translated",
             "value" : "카드 뒷면에 표시된 숫자를 입력하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan angka di bagian belakang kartu."
+          }
         }
       }
     },
@@ -6170,6 +7208,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 번호"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomor kartu"
           }
         }
       }
@@ -6206,6 +7250,12 @@
             "state" : "translated",
             "value" : "[EasyCard 공식 웹사이트](https://ezweb.easycard.com.tw/search/CardSearch.php)에 정보를 자동으로 입력해 데이터를 가져옵니다.\n\n서버 점검으로 현지 시각 오후 11시부터 오전 6시까지 데이터를 가져오지 못할 수 있습니다.\n\n웹사이트 사양이 변경되면 이 기능을 사용하지 못할 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi dimasukkan secara otomatis di [situs resmi EasyCard](https://ezweb.easycard.com.tw/search/CardSearch.php) untuk mengambil data.\n\nKarena pemeliharaan server, data mungkin tidak tersedia pukul 23.00–06.00 waktu setempat.\n\nFitur ini mungkin tidak tersedia jika situs berubah."
+          }
         }
       }
     },
@@ -6241,6 +7291,12 @@
             "state" : "translated",
             "value" : "완료"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
         }
       }
     },
@@ -6274,6 +7330,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "읽은 카드가 없습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada kartu yang dipindai."
           }
         }
       }
@@ -6309,6 +7371,12 @@
             "state" : "translated",
             "value" : "읽기 전"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum dipindai"
+          }
         }
       }
     },
@@ -6342,6 +7410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 카드를 읽지 않았습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Anda belum dipindai."
           }
         }
       }
@@ -6379,6 +7453,12 @@
             "state" : "translated",
             "value" : "옥토퍼스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -6415,6 +7495,12 @@
             "state" : "translated",
             "value" : "자카르타 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Jakarta"
+          }
         }
       }
     },
@@ -6447,6 +7533,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -6486,6 +7578,12 @@
             "state" : "translated",
             "value" : "*China T-Union 로고가 없는 구형 카드는 지원되지 않습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*Kartu lama tanpa logo China T-Union tidak didukung."
+          }
         }
       }
     },
@@ -6520,6 +7618,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“China T-Union” (交通联合) 로고가 있는 교통카드를 지원합니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kompatibel dengan kartu transportasi berlogo “China T-Union” (交通联合)."
           }
         }
       }
@@ -6556,6 +7660,12 @@
             "state" : "translated",
             "value" : "일본 전국 상호 이용 서비스에 대응하는 모든 교통 IC 카드를 지원합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mendukung semua kartu IC transportasi yang kompatibel dengan layanan interoperabilitas nasional Jepang."
+          }
         }
       }
     },
@@ -6590,6 +7700,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "*PiTaPa는 잔액이 없습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*PiTaPa tidak memiliki saldo."
           }
         }
       }
@@ -6626,6 +7742,12 @@
             "state" : "translated",
             "value" : "지역 제휴 IC 카드도 지원합니다. 최신 지원 카드 목록은 [여기](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)에서 확인할 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu IC mitra regional juga didukung. Daftar kartu terbaru tersedia [di sini](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)."
+          }
         }
       }
     },
@@ -6657,6 +7779,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL (Cashbee)"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZL (Cashbee)"
@@ -6696,6 +7824,12 @@
             "state" : "translated",
             "value" : "One pass"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
         }
       }
     },
@@ -6727,6 +7861,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -6766,6 +7906,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -6797,6 +7943,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "WOWPASS"
@@ -6836,6 +7988,12 @@
             "state" : "translated",
             "value" : "“전국호환 교통카드 (One Card All Pass)” 로고가 있는 모든 카드를 지원합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kompatibel dengan semua kartu berlogo “One Card All Pass (전국호환 교통카드)”."
+          }
         }
       }
     },
@@ -6866,6 +8024,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@, %1$@"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2$@, %1$@"
@@ -6901,6 +8065,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KAI Commuter"
@@ -6941,6 +8111,12 @@
             "state" : "translated",
             "value" : "아사히카와"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa"
+          }
         }
       }
     },
@@ -6977,6 +8153,12 @@
             "state" : "translated",
             "value" : "삿포로"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
         }
       }
     },
@@ -7008,6 +8190,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asahikawa Railway"
@@ -7047,6 +8235,12 @@
             "state" : "translated",
             "value" : "Douhoku Bus"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
         }
       }
     },
@@ -7078,6 +8272,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo Information Network Co., Ltd."
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sapporo Information Network Co., Ltd."
@@ -7118,6 +8318,12 @@
             "state" : "translated",
             "value" : "다카마쓰"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu"
+          }
         }
       }
     },
@@ -7149,6 +8355,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Takamatsu-Kotohira Railway Co., Ltd."
@@ -7188,6 +8400,12 @@
             "state" : "translated",
             "value" : "Iwasaki Corp."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
         }
       }
     },
@@ -7223,6 +8441,12 @@
             "state" : "translated",
             "value" : "Kagoshima transportation Bureau"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
         }
       }
     },
@@ -7254,6 +8478,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nangoku Transport"
@@ -7294,6 +8524,12 @@
             "state" : "translated",
             "value" : "센다이"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendai"
+          }
         }
       }
     },
@@ -7325,6 +8561,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transportation Bureau City of Sendai"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transportation Bureau City of Sendai"
@@ -7364,6 +8606,12 @@
             "state" : "translated",
             "value" : "NTASU Co., Ltd."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
         }
       }
     },
@@ -7395,6 +8643,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okinawa IC Card Co., Ltd."
@@ -7434,6 +8688,12 @@
             "state" : "translated",
             "value" : "EZL Corp."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
         }
       }
     },
@@ -7465,6 +8725,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KFTC"
@@ -7504,6 +8770,12 @@
             "state" : "translated",
             "value" : "KORAIL"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
         }
       }
     },
@@ -7535,6 +8807,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Korea Smart Card"
@@ -7574,6 +8852,12 @@
             "state" : "translated",
             "value" : "EasyCard Co., Ltd."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
         }
       }
     },
@@ -7609,6 +8893,12 @@
             "state" : "translated",
             "value" : "icash Corp."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
         }
       }
     },
@@ -7640,6 +8930,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MTC"
@@ -7680,6 +8976,12 @@
             "state" : "translated",
             "value" : "삿포로"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
         }
       }
     },
@@ -7715,6 +9017,12 @@
             "state" : "translated",
             "value" : "카드에서 최근 거래 20건을 읽을 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 transaksi terakhir dapat dibaca dari kartu."
+          }
         }
       }
     },
@@ -7747,6 +9055,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard / Asaca"
@@ -7787,6 +9101,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -7818,6 +9138,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -7858,6 +9184,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -7889,6 +9221,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -7929,6 +9267,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -7963,6 +9307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드에서 최근 거래 20건을 읽을 수 있습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 transaksi terakhir dapat dibaca dari kartu."
           }
         }
       }
@@ -8000,6 +9350,12 @@
             "state" : "translated",
             "value" : "일본 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Jepang"
+          }
         }
       }
     },
@@ -8035,6 +9391,12 @@
             "state" : "translated",
             "value" : "카드에서 최근 거래 20건을 읽을 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 transaksi terakhir dapat dibaca dari kartu."
+          }
         }
       }
     },
@@ -8067,6 +9429,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ntasu"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ntasu"
@@ -8107,6 +9475,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -8141,6 +9515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드에서 최근 거래 16건을 읽을 수 있습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "16 transaksi terakhir dapat dibaca dari kartu."
           }
         }
       }
@@ -8178,6 +9558,12 @@
             "state" : "translated",
             "value" : "가고시마 공통 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi terpadu Kagoshima"
+          }
         }
       }
     },
@@ -8210,6 +9596,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -8248,6 +9640,12 @@
             "state" : "translated",
             "value" : "라이선스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisensi"
+          }
         }
       }
     },
@@ -8283,6 +9681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "샌프란시스코"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "San Francisco"
           }
         }
       }
@@ -8320,6 +9724,12 @@
             "state" : "translated",
             "value" : "오키나와 본섬"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulau Utama Okinawa"
+          }
         }
       }
     },
@@ -8355,6 +9765,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "캘리포니아"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "California"
           }
         }
       }
@@ -8392,6 +9808,12 @@
             "state" : "translated",
             "value" : "홋카이도"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hokkaido"
+          }
         }
       }
     },
@@ -8427,6 +9849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "자카르타"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakarta"
           }
         }
       }
@@ -8464,6 +9892,12 @@
             "state" : "translated",
             "value" : "가가와"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagawa"
+          }
         }
       }
     },
@@ -8499,6 +9933,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "가고시마"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima"
           }
         }
       }
@@ -8536,6 +9976,12 @@
             "state" : "translated",
             "value" : "미야기"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyagi"
+          }
         }
       }
     },
@@ -8571,6 +10017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "미야자키"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyazaki"
           }
         }
       }
@@ -8608,6 +10060,12 @@
             "state" : "translated",
             "value" : "나가사키"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki"
+          }
         }
       }
     },
@@ -8644,6 +10102,12 @@
             "state" : "translated",
             "value" : "오키나와"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa"
+          }
         }
       }
     },
@@ -8679,6 +10143,12 @@
             "state" : "translated",
             "value" : "카드 리더"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kartu"
+          }
         }
       }
     },
@@ -8712,6 +10182,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 선택"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih kartu"
           }
         }
       }
@@ -8747,6 +10223,12 @@
             "state" : "translated",
             "value" : "로그가 있는 카드가 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada kartu dengan log pemindaian."
+          }
         }
       }
     },
@@ -8780,6 +10262,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "확인"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -8816,6 +10304,12 @@
             "state" : "translated",
             "value" : "나중에"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nanti"
+          }
         }
       }
     },
@@ -8851,6 +10345,12 @@
             "state" : "translated",
             "value" : "앱의 지속적인 개발과 유지 관리를 위해 광고를 표시합니다.\n추적을 허용하면 더 관련성 높은 광고를 표시하고 광고 성과를 측정할 수 있습니다.\n앱의 유지 관리에 도움을 주시려면 “허용”을 탭하세요.\n지원해 주셔서 감사합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kami menampilkan iklan untuk mendukung pengembangan dan pemeliharaan aplikasi ini.\nIzin pelacakan membantu kami menampilkan iklan yang lebih relevan dan mengukur kinerjanya.\nKetuk “Izinkan” untuk mendukung pemeliharaan aplikasi.\nTerima kasih atas dukungan Anda."
+          }
         }
       }
     },
@@ -8885,6 +10385,12 @@
             "state" : "translated",
             "value" : "추적을 허용하지 않아도 광고는 표시되지만 관련성이 떨어질 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika pelacakan tidak diizinkan, iklan tetap ditampilkan, tetapi mungkin kurang relevan."
+          }
         }
       }
     },
@@ -8918,6 +10424,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "맞춤 광고"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iklan relevan"
           }
         }
       }
@@ -8954,6 +10466,12 @@
             "state" : "translated",
             "value" : "허용됨"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diizinkan"
+          }
         }
       }
     },
@@ -8987,6 +10505,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "계속"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lanjutkan"
           }
         }
       }
@@ -9022,6 +10546,12 @@
             "state" : "translated",
             "value" : "설정 완료!"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua siap!"
+          }
         }
       }
     },
@@ -9055,6 +10585,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정이 끝났습니다. 지금 바로 앱을 사용할 수 있습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua siap! Anda dapat langsung menggunakan aplikasi."
           }
         }
       }
@@ -9090,6 +10626,12 @@
             "state" : "translated",
             "value" : "스마트폰으로 세계 각지의 교통카드 잔액을 확인하고 저장할 수 있습니다.\n맞춤 사용 환경을 위해 필요한 권한을 확인하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Periksa dan simpan saldo kartu transportasi dari seluruh dunia melalui ponsel.\nTinjau izin yang diperlukan untuk menyesuaikan pengalaman Anda."
+          }
         }
       }
     },
@@ -9124,6 +10666,12 @@
             "state" : "translated",
             "value" : "기기 위치를 바탕으로 현재 지역에서 사용할 수 있는 카드를 추천합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyarankan kartu yang dapat digunakan di wilayah saat ini berdasarkan lokasi perangkat."
+          }
         }
       }
     },
@@ -9157,6 +10705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "위치"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi"
           }
         }
       }
@@ -9193,6 +10747,12 @@
             "state" : "translated",
             "value" : "카드 리더"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaca kartu"
+          }
         }
       }
     },
@@ -9227,6 +10787,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPhone의 내장 NFC 리더로 카드를 읽을 수 있습니다.\n\n기기 뒷면 카메라 주변에 카드를 가까이 대세요.\n\nCCID 호환 스마트 카드 리더를 연결해 카드를 읽을 수도 있습니다. 일부 카드는 외장 리더로만 읽을 수 있습니다. 자세한 내용은 [웹사이트](https://rs6apps.com/transit/nfc_reader?lang=en)에서 확인하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda dapat memindai kartu dengan pembaca NFC internal iPhone.\n\nDekatkan kartu ke area kamera di bagian belakang perangkat.\n\nAnda juga dapat menghubungkan pembaca kartu pintar yang kompatibel dengan CCID. Beberapa kartu hanya bisa dipindai dengan pembaca eksternal. Lihat [situs kami](https://rs6apps.com/transit/nfc_reader?lang=en) untuk informasi lebih lanjut."
           }
         }
       }
@@ -9263,6 +10829,12 @@
             "state" : "translated",
             "value" : "이 기기에는 내장 NFC 리더가 없습니다. CCID 호환 스마트 카드 리더를 연결해 카드를 읽을 수 있습니다. iPhone에서 읽은 카드의 내역도 볼 수 있습니다.\n\n자세한 내용은 [웹사이트](https://rs6apps.com/transit/nfc_reader?lang=en)에서 확인하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perangkat ini tidak memiliki pembaca NFC internal. Anda dapat menghubungkan pembaca kartu pintar yang kompatibel dengan CCID. Anda juga dapat melihat riwayat kartu yang dipindai dengan iPhone.\n\nLihat [situs kami](https://rs6apps.com/transit/nfc_reader?lang=en) untuk informasi lebih lanjut."
+          }
         }
       }
     },
@@ -9297,6 +10869,12 @@
             "state" : "translated",
             "value" : "여행하거나 이동할 때 현재 지역에서 사용할 수 있는 카드를 알려줍니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberi tahu Anda tentang kartu yang tersedia di wilayah saat ini ketika bepergian."
+          }
         }
       }
     },
@@ -9330,6 +10908,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알림"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi"
           }
         }
       }
@@ -9367,6 +10951,12 @@
             "state" : "translated",
             "value" : "아프리카"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afrika"
+          }
         }
       }
     },
@@ -9402,6 +10992,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "중앙아시아"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Tengah"
           }
         }
       }
@@ -9439,6 +11035,12 @@
             "state" : "translated",
             "value" : "동아시아"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Timur"
+          }
         }
       }
     },
@@ -9474,6 +11076,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "유럽"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eropa"
           }
         }
       }
@@ -9511,6 +11119,12 @@
             "state" : "translated",
             "value" : "일본 지역"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah Jepang"
+          }
         }
       }
     },
@@ -9546,6 +11160,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "라틴 아메리카"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amerika Latin"
           }
         }
       }
@@ -9583,6 +11203,12 @@
             "state" : "translated",
             "value" : "중동"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timur Tengah"
+          }
         }
       }
     },
@@ -9618,6 +11244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "북아메리카"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amerika Utara"
           }
         }
       }
@@ -9655,6 +11287,12 @@
             "state" : "translated",
             "value" : "오세아니아"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oseania"
+          }
         }
       }
     },
@@ -9690,6 +11328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "남아시아"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Selatan"
           }
         }
       }
@@ -9727,6 +11371,12 @@
             "state" : "translated",
             "value" : "동남아시아"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asia Tenggara"
+          }
         }
       }
     },
@@ -9760,6 +11410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장된 카드를 다시 읽으면 정보가 업데이트됩니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pindai ulang kartu yang tersimpan untuk memperbarui informasinya."
           }
         }
       }
@@ -9795,6 +11451,12 @@
             "state" : "translated",
             "value" : "이용 내역"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat"
+          }
         }
       }
     },
@@ -9828,6 +11490,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이용 내역(%lld건)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat (%lld transaksi)"
           }
         }
       }
@@ -9865,6 +11533,12 @@
             "state" : "translated",
             "value" : "승차"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naik"
+          }
         }
       }
     },
@@ -9899,6 +11573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버스"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bus"
           }
         }
       }
@@ -9935,6 +11615,12 @@
             "state" : "translated",
             "value" : "충전"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isi ulang"
+          }
         }
       }
     },
@@ -9969,6 +11655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "자동 충전"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isi ulang otomatis"
           }
         }
       }
@@ -10005,6 +11697,12 @@
             "state" : "translated",
             "value" : "충전 (버스)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isi ulang (bus)"
+          }
         }
       }
     },
@@ -10039,6 +11737,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "충전 (매장)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isi ulang (toko)"
           }
         }
       }
@@ -10075,6 +11779,12 @@
             "state" : "translated",
             "value" : "결제 (철도 외)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembayaran (nonkereta)"
+          }
         }
       }
     },
@@ -10109,6 +11819,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "창구"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loket"
           }
         }
       }
@@ -10145,6 +11861,12 @@
             "state" : "translated",
             "value" : "입장 취소"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembatalan masuk"
+          }
         }
       }
     },
@@ -10179,6 +11901,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR 창구"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loket JR"
           }
         }
       }
@@ -10215,6 +11943,12 @@
             "state" : "translated",
             "value" : "자전거"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepeda"
+          }
         }
       }
     },
@@ -10248,6 +11982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "거래 내역 없음"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada riwayat transaksi"
           }
         }
       }
@@ -10284,6 +12024,12 @@
             "state" : "translated",
             "value" : "환불"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembalian dana"
+          }
         }
       }
     },
@@ -10318,6 +12064,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "운임"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarif"
           }
         }
       }
@@ -10354,6 +12106,12 @@
             "state" : "translated",
             "value" : "운임 정산 (JR)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penyesuaian tarif (JR)"
+          }
         }
       }
     },
@@ -10388,6 +12146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "운임 차액"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selisih tarif"
           }
         }
       }
@@ -10424,6 +12188,12 @@
             "state" : "translated",
             "value" : "페리"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feri"
+          }
         }
       }
     },
@@ -10458,6 +12228,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "고속철도"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kereta cepat"
           }
         }
       }
@@ -10494,6 +12270,12 @@
             "state" : "translated",
             "value" : "경전철"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kereta ringan"
+          }
         }
       }
     },
@@ -10528,6 +12310,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모노레일"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorel"
           }
         }
       }
@@ -10564,6 +12352,12 @@
             "state" : "translated",
             "value" : "가오슝 지하철"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT Kaohsiung"
+          }
         }
       }
     },
@@ -10598,6 +12392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "타이베이 지하철"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT Taipei"
           }
         }
       }
@@ -10634,6 +12434,12 @@
             "state" : "translated",
             "value" : "타이중 지하철"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT Taichung"
+          }
         }
       }
     },
@@ -10668,6 +12474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "타오위안 지하철"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MRT Taoyuan"
           }
         }
       }
@@ -10704,6 +12516,12 @@
             "state" : "translated",
             "value" : "신규 발급"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penerbitan baru"
+          }
         }
       }
     },
@@ -10738,6 +12556,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 카드의 거래 내역은 제공되지 않습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat transaksi tidak tersedia untuk kartu ini."
           }
         }
       }
@@ -10774,6 +12598,12 @@
             "state" : "translated",
             "value" : "기타"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
+          }
         }
       }
     },
@@ -10808,6 +12638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "주차"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parkir"
           }
         }
       }
@@ -10844,6 +12680,12 @@
             "state" : "translated",
             "value" : "운임 차액"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selisih tarif"
+          }
         }
       }
     },
@@ -10878,6 +12720,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "철도"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kereta api"
           }
         }
       }
@@ -10915,6 +12763,12 @@
             "state" : "translated",
             "value" : "등록"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pendaftaran"
+          }
         }
       }
     },
@@ -10949,6 +12803,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "재발급"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penerbitan ulang"
           }
         }
       }
@@ -10985,6 +12845,12 @@
             "state" : "translated",
             "value" : "신칸센"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shinkansen"
+          }
         }
       }
     },
@@ -11019,6 +12885,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "구매"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belanja"
           }
         }
       }
@@ -11055,6 +12927,12 @@
             "state" : "translated",
             "value" : "구매 취소"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembatalan pembelian"
+          }
         }
       }
     },
@@ -11089,6 +12967,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "현금 구매"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belanja tunai"
           }
         }
       }
@@ -11125,6 +13009,12 @@
             "state" : "translated",
             "value" : "역내 구매"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belanja di stasiun"
+          }
         }
       }
     },
@@ -11159,6 +13049,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "역내 현금 구매"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belanja tunai di stasiun"
           }
         }
       }
@@ -11195,6 +13091,12 @@
             "state" : "translated",
             "value" : "자판기"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesin penjual otomatis"
+          }
         }
       }
     },
@@ -11229,6 +13131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 사용"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penggunaan kartu"
           }
         }
       }
@@ -11265,6 +13173,12 @@
             "state" : "translated",
             "value" : "타이완 철도"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kereta Taiwan"
+          }
         }
       }
     },
@@ -11299,6 +13213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "승차권 구매"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beli tiket"
           }
         }
       }
@@ -11335,6 +13255,12 @@
             "state" : "translated",
             "value" : "회수권"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiket beberapa perjalanan"
+          }
         }
       }
     },
@@ -11369,6 +13295,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "승차권"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiket"
           }
         }
       }
@@ -11405,6 +13337,12 @@
             "state" : "translated",
             "value" : "정보"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi"
+          }
         }
       }
     },
@@ -11439,6 +13377,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "잔액"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo"
           }
         }
       }
@@ -11475,6 +13419,12 @@
             "state" : "translated",
             "value" : "분류"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategori"
+          }
         }
       }
     },
@@ -11509,6 +13459,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "유형"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jenis"
           }
         }
       }
@@ -11545,6 +13501,12 @@
             "state" : "translated",
             "value" : "최근 읽기"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pemindaian terakhir"
+          }
         }
       }
     },
@@ -11580,6 +13542,12 @@
             "state" : "translated",
             "value" : "최근 읽기"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pemindaian terakhir"
+          }
         }
       }
     },
@@ -11614,6 +13582,12 @@
             "state" : "translated",
             "value" : "정보를 읽을 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi tidak dapat dibaca."
+          }
         }
       }
     },
@@ -11644,6 +13618,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID"
@@ -11682,6 +13662,12 @@
             "state" : "translated",
             "value" : "발급 정보"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi penerbitan"
+          }
         }
       }
     },
@@ -11715,6 +13701,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "발급일"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal penerbitan"
           }
         }
       }
@@ -11750,6 +13742,12 @@
             "state" : "translated",
             "value" : "만료일"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal kedaluwarsa"
+          }
         }
       }
     },
@@ -11783,6 +13781,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "발급사"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penerbit"
           }
         }
       }
@@ -11818,6 +13822,12 @@
             "state" : "translated",
             "value" : "지역"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah"
+          }
         }
       }
     },
@@ -11851,6 +13861,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지역"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah"
           }
         }
       }
@@ -11886,6 +13902,12 @@
             "state" : "translated",
             "value" : "지역"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilayah"
+          }
         }
       }
     },
@@ -11919,6 +13941,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아이콘"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikon"
           }
         }
       }
@@ -11954,6 +13982,12 @@
             "state" : "translated",
             "value" : "표시 이름"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama tampilan"
+          }
         }
       }
     },
@@ -11987,6 +14021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 이름"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama kartu"
           }
         }
       }
@@ -12023,6 +14063,12 @@
             "state" : "translated",
             "value" : "카드가 감지되지 않았습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu tidak terdeteksi."
+          }
         }
       }
     },
@@ -12056,6 +14102,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지원되지 않는 카드입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu ini tidak didukung."
           }
         }
       }
@@ -12092,6 +14144,12 @@
             "state" : "translated",
             "value" : "“%@” 카드를 iPhone 상단 중앙에 가까이 대세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dekatkan “%@” ke bagian tengah atas iPhone."
+          }
         }
       }
     },
@@ -12125,6 +14183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
           }
         }
       }
@@ -12160,6 +14224,12 @@
             "state" : "translated",
             "value" : "읽기 오류"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesalahan pemindaian"
+          }
         }
       }
     },
@@ -12194,6 +14264,12 @@
             "state" : "translated",
             "value" : "상태 플래그 오류. s1: %1$lld, s2:%2$lld"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesalahan penanda status. s1: %1$lld, s2:%2$lld"
+          }
         }
       }
     },
@@ -12227,6 +14303,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "읽는 중…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memindai…"
           }
         }
       }
@@ -12263,6 +14345,12 @@
             "state" : "translated",
             "value" : "정의되지 않은 서비스 이름입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama layanan tidak ditentukan."
+          }
         }
       }
     },
@@ -12297,6 +14385,12 @@
             "state" : "translated",
             "value" : "검색"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cari"
+          }
         }
       }
     },
@@ -12329,6 +14423,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OCR"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OCR"
@@ -12368,6 +14468,12 @@
             "state" : "translated",
             "value" : "NFC"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
         }
       }
     },
@@ -12403,6 +14509,12 @@
             "state" : "translated",
             "value" : "온라인 조회"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengambilan daring"
+          }
         }
       }
     },
@@ -12436,6 +14548,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "권리 정보"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi hak"
           }
         }
       }
@@ -12473,6 +14591,12 @@
             "state" : "translated",
             "value" : "iPhone, iPad, App Store 및 Apple Pay는 Apple Inc.의 등록 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone, iPad, App Store, dan Apple Pay adalah merek dagang terdaftar Apple Inc."
+          }
         }
       }
     },
@@ -12504,6 +14628,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple"
@@ -12543,6 +14673,12 @@
             "state" : "translated",
             "value" : "상표"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merek dagang"
+          }
         }
       }
     },
@@ -12577,6 +14713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "표시 정보는 카드 발급 지역을 기준으로 합니다.\n위 또는 다른 곳에 언급된 회사명, 상호, 제품명 및 서비스명은 각 회사의 등록 상표 또는 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi yang ditampilkan didasarkan pada wilayah penerbit kartu.\nNama perusahaan, nama dagang, nama produk, dan nama layanan yang disebutkan di atas atau di bagian lain adalah merek dagang terdaftar atau merek dagang perusahaan masing-masing."
           }
         }
       }
@@ -12614,6 +14756,12 @@
             "state" : "translated",
             "value" : "“交通联合” (China T-Union)은 중화인민공화국 교통운수부가 제정한 표준 규격입니다.\n\n이곳에 언급된 회사명, 상호, 제품명 및 서비스명은 각 회사의 등록 상표 또는 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“交通联合” (China T-Union) adalah standar yang ditetapkan oleh Kementerian Transportasi Republik Rakyat Tiongkok.\n\nNama perusahaan, nama dagang, nama produk, dan nama layanan yang disebutkan di sini adalah merek dagang terdaftar atau merek dagang perusahaan masing-masing."
+          }
         }
       }
     },
@@ -12650,6 +14798,12 @@
             "state" : "translated",
             "value" : "“Android”, “Google” 및 “Google Pay”은(는) Google LLC의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Android”, “Google” dan “Google Pay” adalah merek dagang Google LLC."
+          }
         }
       }
     },
@@ -12681,6 +14835,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google"
@@ -12721,6 +14881,12 @@
             "state" : "translated",
             "value" : "“Octopus” 및 “八達通”은(는) Octopus Cards Limited（八達通卡有限公司）의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Octopus” dan “八達通” adalah merek dagang Octopus Cards Limited（八達通卡有限公司）."
+          }
         }
       }
     },
@@ -12756,6 +14922,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“Kartu Multi Trip”은(는) KAI Commuter의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kartu Multi Trip” adalah merek dagang KAI Commuter."
           }
         }
       }
@@ -12793,6 +14965,12 @@
             "state" : "translated",
             "value" : "“icsca”은(는) Sendai-shi의 등록 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca” adalah merek dagang terdaftar Sendai-shi."
+          }
         }
       }
     },
@@ -12828,6 +15006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“DoCard”은(는) 道北バス의 상표입니다.\n“Asaca”은(는) 旭川電気軌道株式会社의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“DoCard” adalah merek dagang 道北バス.\n“Asaca” adalah merek dagang 旭川電気軌道株式会社."
           }
         }
       }
@@ -12865,6 +15049,12 @@
             "state" : "translated",
             "value" : "“Kitaca”은(는) Hokkaido Railway Company의 등록 상표입니다.\n\n“Suica”은(는) East Japan Railway Company의 등록 상표입니다.\n\n“PASMO”은(는) PASMO CO., LTD의 등록 상표입니다.\n\n“TOICA”은(는) Central Japan Railway Company의 등록 상표입니다.\n\n“manaca”은(는) Nagoya Transportation Development Organization and MIC CO., LTD의 등록 상표입니다.\n\n“ICOCA”은(는) West Japan Railway Company의 등록 상표입니다.\n\n“SUGOCA”은(는) Kyushu Railway Company의 등록 상표입니다.\n\n“nimoca”은(는) Nishi-Nippon Railroad Co., Ltd의 등록 상표입니다.\n\n“はやかけん”은(는) Fukuoka City Transportation Bureau의 등록 상표입니다.\n\n“PiTaPa”은(는) Surutto KANSAI Co., Ltd의 등록 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Kitaca” adalah merek dagang terdaftar Hokkaido Railway Company.\n\n“Suica” adalah merek dagang terdaftar East Japan Railway Company.\n\n“PASMO” adalah merek dagang terdaftar PASMO CO., LTD.\n\n“TOICA” adalah merek dagang terdaftar Central Japan Railway Company.\n\n“manaca” adalah merek dagang terdaftar Nagoya Transportation Development Organization and MIC CO., LTD.\n\n“ICOCA” adalah merek dagang terdaftar West Japan Railway Company.\n\n“SUGOCA” adalah merek dagang terdaftar Kyushu Railway Company.\n\n“nimoca” adalah merek dagang terdaftar Nishi-Nippon Railroad Co., Ltd.\n\n“はやかけん” adalah merek dagang terdaftar Fukuoka City Transportation Bureau.\n\n“PiTaPa” adalah merek dagang terdaftar Surutto KANSAI Co., Ltd."
+          }
         }
       }
     },
@@ -12900,6 +15090,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“icsca”은(는) 仙台市의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icsca” adalah merek dagang 仙台市."
           }
         }
       }
@@ -12937,6 +15133,12 @@
             "state" : "translated",
             "value" : "“IruCa”은(는) Takamatsu-Kotohira Electric Railroad Co., Ltd의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“IruCa” adalah merek dagang Takamatsu-Kotohira Electric Railroad Co., Ltd."
+          }
         }
       }
     },
@@ -12972,6 +15174,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“SAPICA”은(는) Sapporo Information Center Co., Ltd의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“SAPICA” adalah merek dagang Sapporo Information Center Co., Ltd."
           }
         }
       }
@@ -13009,6 +15217,12 @@
             "state" : "translated",
             "value" : "“エヌタス”, “N+” 및 “長崎バス”은(는) 長崎自動車株式会社의 상표입니다.\n\n“Tカード”은(는) カルチュア・コンビニエンス・クラブ株式会社의 상표입니다.\n\n“Vポイントカード”, “Vポイント” 및 Vポイント 로고은(는) V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“エヌタス”, “N+” dan “長崎バス” adalah merek dagang 長崎自動車株式会社.\n\n“Tカード” adalah merek dagang カルチュア・コンビニエンス・クラブ株式会社.\n\n“Vポイントカード”, “Vポイント” dan logo Vポイント adalah merek dagang V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
+          }
         }
       }
     },
@@ -13044,6 +15258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“OKICA”은(는) 沖縄ICカード株式会社의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“OKICA” adalah merek dagang 沖縄ICカード株式会社."
           }
         }
       }
@@ -13081,6 +15301,12 @@
             "state" : "translated",
             "value" : "“Rapica”은(는) 鹿児島市交通局의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Rapica” adalah merek dagang 鹿児島市交通局."
+          }
         }
       }
     },
@@ -13117,6 +15343,12 @@
             "state" : "translated",
             "value" : "“One Card All Pass” (전국호환교통카드)는 대한민국 국토교통부가 제정한 표준 규격입니다.\n\n“T-money” 및 “티머니”은(는) Korea Smart Card Corporation의 상표입니다.\n\n“WOWPASS”은(는) Orange Square, Inc의 상표입니다.\n\n“EZL”, “이즐”, “Cashbee” 및 “캐시비”은(는) EZL Corp의 상표입니다.\n\n“Rail+” 및 “레일플러스”은(는) Korea Railroad Corporation의 상표입니다.\n\n“OnePass” 및 “발행원패스”은(는) iM UPay Co., Ltd의 상표입니다.\n\n“Hanpay” 및 “한페이”은(는) 한페이시스의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“One Card All Pass” (전국호환교통카드) adalah standar yang ditetapkan oleh Kementerian Pertanahan, Infrastruktur, dan Transportasi Republik Korea.\n\n“T-money” dan “티머니” adalah merek dagang Korea Smart Card Corporation.\n\n“WOWPASS” adalah merek dagang Orange Square, Inc.\n\n“EZL”, “이즐”, “Cashbee” dan “캐시비” adalah merek dagang EZL Corp.\n\n“Rail+” dan “레일플러스” adalah merek dagang Korea Railroad Corporation.\n\n“OnePass” dan “발행원패스” adalah merek dagang iM UPay Co., Ltd.\n\n“Hanpay” dan “한페이” adalah merek dagang 한페이시스."
+          }
         }
       }
     },
@@ -13150,6 +15382,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오픈 소스 라이선스"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisensi sumber terbuka"
           }
         }
       }
@@ -13187,6 +15425,12 @@
             "state" : "translated",
             "value" : "“FeliCa”는 Sony Group Corporation 또는 그 계열사의 등록 상표 또는 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“FeliCa” adalah merek dagang terdaftar atau merek dagang Sony Group Corporation atau afiliasinya."
+          }
         }
       }
     },
@@ -13218,6 +15462,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sony"
@@ -13256,6 +15506,12 @@
             "state" : "translated",
             "value" : "카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu"
+          }
         }
       }
     },
@@ -13289,6 +15545,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기타"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
           }
         }
       }
@@ -13326,6 +15588,12 @@
             "state" : "translated",
             "value" : "“EasyCard” 및 “悠遊卡”은(는) 悠遊卡股份有限公司의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“EasyCard” dan “悠遊卡” adalah merek dagang 悠遊卡股份有限公司."
+          }
         }
       }
     },
@@ -13361,6 +15629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“icash” 및 “愛金卡”은(는) 愛金卡股份有限公司의 상표입니다.\n\n“7-ELEVEN”은(는) 統一超商股份有限公司의 상표입니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“icash” dan “愛金卡” adalah merek dagang 愛金卡股份有限公司.\n\n“7-ELEVEN” adalah merek dagang 統一超商股份有限公司."
           }
         }
       }
@@ -13398,6 +15672,12 @@
             "state" : "translated",
             "value" : "“Clipper”은(는) MTC의 상표입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Clipper” adalah merek dagang MTC."
+          }
         }
       }
     },
@@ -13431,6 +15711,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "광고"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iklan"
           }
         }
       }
@@ -13467,6 +15753,12 @@
             "state" : "translated",
             "value" : "광고 개인정보 보호 설정"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan privasi iklan"
+          }
         }
       }
     },
@@ -13500,6 +15792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
           }
         }
       }
@@ -13535,6 +15833,12 @@
             "state" : "translated",
             "value" : "광고 제거를 구매했습니다. 감사합니다!"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembelian untuk menghapus iklan selesai. Terima kasih!"
+          }
         }
       }
     },
@@ -13568,6 +15872,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오류"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesalahan"
           }
         }
       }
@@ -13604,6 +15914,12 @@
             "state" : "translated",
             "value" : "구매 대기 중"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembelian tertunda"
+          }
         }
       }
     },
@@ -13639,6 +15955,12 @@
             "state" : "translated",
             "value" : "구매가 승인되면 광고가 자동으로 제거됩니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iklan akan otomatis dihapus setelah pembelian disetujui."
+          }
         }
       }
     },
@@ -13672,6 +15994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "구매 복원"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulihkan pembelian"
           }
         }
       }
@@ -13707,6 +16035,12 @@
             "state" : "translated",
             "value" : "복원 완료"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pemulihan selesai"
+          }
         }
       }
     },
@@ -13740,6 +16074,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "구매를 복원했습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembelian berhasil dipulihkan."
           }
         }
       }
@@ -13776,6 +16116,12 @@
             "state" : "translated",
             "value" : "구매 내역 없음"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada pembelian"
+          }
         }
       }
     },
@@ -13811,6 +16157,12 @@
             "state" : "translated",
             "value" : "이 Apple 계정에서 광고 제거 구매를 찾지 못했습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ditemukan pembelian penghapusan iklan untuk Akun Apple ini."
+          }
         }
       }
     },
@@ -13845,6 +16197,12 @@
             "state" : "translated",
             "value" : "오류"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesalahan"
+          }
         }
       }
     },
@@ -13876,6 +16234,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BETA"
@@ -13915,6 +16279,12 @@
             "state" : "translated",
             "value" : "개발"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembangan"
+          }
         }
       }
     },
@@ -13948,6 +16318,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "데이터 관리"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelola data"
           }
         }
       }
@@ -13983,6 +16359,12 @@
             "state" : "translated",
             "value" : "iCloud 동기화"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sinkronisasi iCloud"
+          }
         }
       }
     },
@@ -14016,6 +16398,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud 동기화 끄기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nonaktifkan sinkronisasi iCloud"
           }
         }
       }
@@ -14051,6 +16439,12 @@
             "state" : "translated",
             "value" : "동기화를 끄면 읽은 카드가 iCloud에 동기화되지 않습니다.\n이미 동기화된 정보는 삭제되지 않습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika sinkronisasi iCloud dinonaktifkan, kartu yang dipindai tidak akan disinkronkan.\nInformasi yang sudah disinkronkan tidak akan dihapus."
+          }
         }
       }
     },
@@ -14084,6 +16478,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "끄기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nonaktifkan"
           }
         }
       }
@@ -14119,6 +16519,12 @@
             "state" : "translated",
             "value" : "내역 삭제"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus riwayat"
+          }
         }
       }
     },
@@ -14153,6 +16559,12 @@
             "state" : "translated",
             "value" : "저장된 카드 정보가 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informasi kartu yang tersimpan akan dihapus. Tindakan ini tidak dapat dibatalkan."
+          }
         }
       }
     },
@@ -14186,6 +16598,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "삭제"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
           }
         }
       }
@@ -14222,6 +16640,12 @@
             "state" : "translated",
             "value" : "디버그"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
         }
       }
     },
@@ -14256,6 +16680,12 @@
             "state" : "translated",
             "value" : "광고"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iklan"
+          }
         }
       }
     },
@@ -14289,6 +16719,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "디버그 모드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode debug"
           }
         }
       }
@@ -14325,6 +16761,12 @@
             "state" : "translated",
             "value" : "구매 상태 (광고)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status pembelian (iklan)"
+          }
         }
       }
     },
@@ -14359,6 +16801,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "테스트 구매"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembelian uji coba"
           }
         }
       }
@@ -14395,6 +16843,12 @@
             "state" : "translated",
             "value" : "릴리스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rilis"
+          }
         }
       }
     },
@@ -14430,6 +16884,12 @@
             "state" : "translated",
             "value" : "테스트"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uji"
+          }
         }
       }
     },
@@ -14463,6 +16923,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발자 모드는 앱을 다시 시작할 때까지 활성화됩니다.\n의도하지 않았다면 “취소”를 탭하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode pengembang tetap aktif sampai aplikasi dimulai ulang.\nJika tidak disengaja, ketuk “Batal”."
           }
         }
       }
@@ -14498,6 +16964,12 @@
             "state" : "translated",
             "value" : "활성화"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktifkan"
+          }
         }
       }
     },
@@ -14531,6 +17003,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발자 모드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode pengembang"
           }
         }
       }
@@ -14567,6 +17045,12 @@
             "state" : "translated",
             "value" : "카드 유형 활성화"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktifkan jenis kartu"
+          }
         }
       }
     },
@@ -14600,6 +17084,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%(variableName)lld개"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)lld item"
           }
         }
       }
@@ -14635,6 +17125,12 @@
             "state" : "translated",
             "value" : "개발"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembangan"
+          }
         }
       }
     },
@@ -14668,6 +17164,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "베타 기능"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur beta"
           }
         }
       }
@@ -14703,6 +17205,12 @@
             "state" : "translated",
             "value" : "릴리스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rilis"
+          }
         }
       }
     },
@@ -14736,6 +17244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "디버그 정보 표시"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilkan info debug"
           }
         }
       }
@@ -14771,6 +17285,12 @@
             "state" : "translated",
             "value" : "위치"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi"
+          }
         }
       }
     },
@@ -14804,6 +17324,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기기 위치 확인"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentukan lokasi perangkat"
           }
         }
       }
@@ -14839,6 +17365,12 @@
             "state" : "translated",
             "value" : "권한"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izin"
+          }
         }
       }
     },
@@ -14872,6 +17404,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "권한 요청 화면 표시"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilkan layar permintaan izin"
           }
         }
       }
@@ -14907,6 +17445,12 @@
             "state" : "translated",
             "value" : "앱 내 구입"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembelian dalam aplikasi"
+          }
         }
       }
     },
@@ -14940,6 +17484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "디버그 컨테이너 사용"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan kontainer debug"
           }
         }
       }
@@ -14975,6 +17525,12 @@
             "state" : "translated",
             "value" : "운영 환경과 별도의 컨테이너에 데이터를 저장합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan data di kontainer terpisah dari lingkungan produksi."
+          }
         }
       }
     },
@@ -15008,6 +17564,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모든 샘플 카드 추가"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan semua kartu contoh"
           }
         }
       }
@@ -15043,6 +17605,12 @@
             "state" : "translated",
             "value" : "테스트 카드 추가"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan kartu uji"
+          }
         }
       }
     },
@@ -15076,6 +17644,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "변환기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konverter"
           }
         }
       }
@@ -15112,6 +17686,12 @@
             "state" : "translated",
             "value" : "통화"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mata uang"
+          }
         }
       }
     },
@@ -15146,6 +17726,12 @@
             "state" : "translated",
             "value" : "완료"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
         }
       }
     },
@@ -15179,6 +17765,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "내역 추가"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan riwayat"
           }
         }
       }
@@ -15215,6 +17807,12 @@
             "state" : "translated",
             "value" : "금액"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jumlah"
+          }
         }
       }
     },
@@ -15249,6 +17847,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "거래 후 잔액"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo setelah transaksi"
           }
         }
       }
@@ -15285,6 +17889,12 @@
             "state" : "translated",
             "value" : "일"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari"
+          }
         }
       }
     },
@@ -15318,6 +17928,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "거래 데이터"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data riwayat"
           }
         }
       }
@@ -15354,6 +17970,12 @@
             "state" : "translated",
             "value" : "(요청)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(Permintaan)"
+          }
         }
       }
     },
@@ -15387,6 +18009,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "결과 화면"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan hasil"
           }
         }
       }
@@ -15422,6 +18050,12 @@
             "state" : "translated",
             "value" : "카드 유형 표시"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilkan jenis kartu"
+          }
         }
       }
     },
@@ -15455,6 +18089,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembangan"
           }
         }
       }
@@ -15490,6 +18130,12 @@
             "state" : "translated",
             "value" : "기능"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur"
+          }
         }
       }
     },
@@ -15523,6 +18169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "선택 안 함"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dipilih"
           }
         }
       }
@@ -15558,6 +18210,12 @@
             "state" : "translated",
             "value" : "릴리스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rilis"
+          }
         }
       }
     },
@@ -15591,6 +18249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "읽기 목록 화면"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan daftar pemindaian"
           }
         }
       }
@@ -15626,6 +18290,12 @@
             "state" : "translated",
             "value" : "베타 기능"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur beta"
+          }
         }
       }
     },
@@ -15659,6 +18329,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "베타 지원 카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu yang didukung dalam versi beta"
           }
         }
       }
@@ -15694,6 +18370,12 @@
             "state" : "translated",
             "value" : "베타 지원 카드를 활성화합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktifkan kartu yang didukung dalam versi beta."
+          }
         }
       }
     },
@@ -15727,6 +18409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발 설정에서 카드 유형을 선택한 경우 이 설정을 변경할 수 없습니다.\n“베타 기능”을 테스트하려면 설정 > 디버그 > 카드 유형 표시에서 “선택 안 함”을 선택하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan ini tidak dapat diubah jika jenis kartu dipilih di pengaturan pengembangan.\nUntuk menguji “Fitur beta”, buka Pengaturan > Debug > Tampilkan jenis kartu, lalu pilih “Tidak dipilih”."
           }
         }
       }
@@ -15762,6 +18450,12 @@
             "state" : "translated",
             "value" : "실험 기능은 개발 중이며 오류나 문제가 있을 수 있습니다.\n기능은 사전 안내 없이 제거되거나 변경될 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur eksperimental masih dikembangkan dan mungkin mengandung galat atau masalah lain.\nFitur dapat dihapus atau diubah tanpa pemberitahuan sebelumnya."
+          }
         }
       }
     },
@@ -15795,6 +18489,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "베타 기능"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur beta"
           }
         }
       }
@@ -15830,6 +18530,12 @@
             "state" : "translated",
             "value" : "베타 참여"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikuti beta"
+          }
         }
       }
     },
@@ -15863,6 +18569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "GitHub에서 보기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat di GitHub"
           }
         }
       }
@@ -15898,6 +18610,12 @@
             "state" : "translated",
             "value" : "기타"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
+          }
         }
       }
     },
@@ -15931,6 +18649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버전 %(variableName)@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versi %(variableName)@"
           }
         }
       }
@@ -15967,6 +18691,12 @@
             "state" : "translated",
             "value" : "항목 선택"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih item"
+          }
         }
       }
     },
@@ -16000,6 +18730,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "내 카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu saya"
           }
         }
       }
@@ -16035,6 +18771,12 @@
             "state" : "translated",
             "value" : "필터"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
         }
       }
     },
@@ -16068,6 +18810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "전체"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua"
           }
         }
       }
@@ -16103,6 +18851,12 @@
             "state" : "translated",
             "value" : "정렬"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urutkan"
+          }
         }
       }
     },
@@ -16136,6 +18890,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드 이름 (오름차순)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama kartu (A–Z)"
           }
         }
       }
@@ -16171,6 +18931,12 @@
             "state" : "translated",
             "value" : "카드 이름 (내림차순)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama kartu (Z–A)"
+          }
         }
       }
     },
@@ -16204,6 +18970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최신순"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terbaru"
           }
         }
       }
@@ -16239,6 +19011,12 @@
             "state" : "translated",
             "value" : "오래된순"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terlama"
+          }
         }
       }
     },
@@ -16272,6 +19050,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "읽기"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pindai"
           }
         }
       }
@@ -16307,6 +19091,12 @@
             "state" : "translated",
             "value" : "설정"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
         }
       }
     },
@@ -16340,6 +19130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "도구"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alat"
           }
         }
       }
@@ -16375,6 +19171,12 @@
             "state" : "translated",
             "value" : "홈 화면에 위젯을 추가하면 카드의 최신 잔액을 확인할 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan widget ke Layar Utama untuk melihat saldo kartu terbaru."
+          }
         }
       }
     },
@@ -16408,6 +19210,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "위젯"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
           }
         }
       }
@@ -16443,6 +19251,12 @@
             "state" : "translated",
             "value" : "읽기 로그 (디버그)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log pemindaian (debug)"
+          }
         }
       }
     },
@@ -16476,6 +19290,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최대 시도 횟수에 도달했습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batas percobaan tercapai."
           }
         }
       }
@@ -16511,6 +19331,12 @@
             "state" : "translated",
             "value" : "생년월일이 잘못되었거나 무기명 카드입니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal lahir salah atau kartu belum terdaftar."
+          }
         }
       }
     },
@@ -16544,6 +19370,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA 인증에 실패했습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verifikasi CAPTCHA gagal."
           }
         }
       }
@@ -16579,6 +19411,12 @@
             "state" : "translated",
             "value" : "카드 번호가 잘못되었습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomor kartu salah."
+          }
         }
       }
     },
@@ -16613,6 +19451,12 @@
             "state" : "translated",
             "value" : "유효하지 않은 날짜"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal tidak valid"
+          }
         }
       }
     },
@@ -16646,6 +19490,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다시 시도하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silakan coba lagi."
           }
         }
       }
@@ -16682,6 +19532,12 @@
             "state" : "translated",
             "value" : "생년월일을 각 항목에 두 자리 숫자로 입력하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan tanggal lahir dengan dua digit pada setiap kolom."
+          }
         }
       }
     },
@@ -16716,6 +19572,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA 인증에 실패했습니다."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verifikasi CAPTCHA gagal."
           }
         }
       }
@@ -16752,6 +19614,12 @@
             "state" : "translated",
             "value" : "CAPTCHA를 입력하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan CAPTCHA."
+          }
         }
       }
     },
@@ -16786,6 +19654,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "10자리 또는 16자리 카드 번호를 입력하세요."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan nomor kartu 10 atau 16 digit."
           }
         }
       }
@@ -16822,6 +19696,12 @@
             "state" : "translated",
             "value" : "카드 번호를 입력하세요."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomor kartu wajib diisi."
+          }
         }
       }
     },
@@ -16857,6 +19737,12 @@
             "state" : "translated",
             "value" : "최신 데이터가 아닙니다. 어제까지의 최근 1년 이용 내역이 표시됩니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data tidak diperbarui secara langsung. Riwayat penggunaan satu tahun terakhir ditampilkan hingga kemarin."
+          }
         }
       }
     },
@@ -16889,6 +19775,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -16928,6 +19820,12 @@
             "state" : "translated",
             "value" : "최근 거래 12건만 읽을 수 있습니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hanya 12 transaksi terakhir yang dapat dibaca."
+          }
         }
       }
     },
@@ -16960,6 +19858,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash 2.0"
@@ -16998,6 +19902,12 @@
             "state" : "translated",
             "value" : "알 수 없음"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak diketahui"
+          }
         }
       }
     },
@@ -17030,6 +19940,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper"
@@ -17068,6 +19984,12 @@
             "state" : "translated",
             "value" : "필터"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
         }
       }
     },
@@ -17101,6 +20023,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모든 카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua kartu"
           }
         }
       }
@@ -17138,6 +20066,12 @@
             "state" : "translated",
             "value" : "카드 선택"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih kartu"
+          }
         }
       }
     },
@@ -17173,6 +20107,12 @@
             "state" : "translated",
             "value" : "교통카드 잔액"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo kartu transportasi"
+          }
         }
       }
     },
@@ -17207,6 +20147,12 @@
             "state" : "translated",
             "value" : "IC 카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu IC"
+          }
         }
       }
     },
@@ -17240,6 +20186,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "선택"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih"
           }
         }
       }
@@ -17276,6 +20228,12 @@
             "state" : "translated",
             "value" : "카드 선택"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih kartu"
+          }
         }
       }
     },
@@ -17311,6 +20269,12 @@
             "state" : "translated",
             "value" : "카드의 최신 잔액을 표시합니다."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menampilkan saldo kartu terbaru."
+          }
         }
       }
     },
@@ -17345,6 +20309,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "교통카드 잔액"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo kartu transportasi"
           }
         }
       }
@@ -17382,6 +20352,12 @@
             "state" : "translated",
             "value" : "상하이"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shanghai"
+          }
         }
       }
     },
@@ -17417,6 +20393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "상하이 교통카드"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Shanghai"
           }
         }
       }
@@ -17454,6 +20436,12 @@
             "state" : "translated",
             "value" : "옥토퍼스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -17489,6 +20477,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "베이징"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beijing"
           }
         }
       }
@@ -17526,6 +20520,12 @@
             "state" : "translated",
             "value" : "베이징 교통카드"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu transportasi Beijing"
+          }
         }
       }
     },
@@ -17561,6 +20561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "쓰촨"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichuan"
           }
         }
       }
@@ -17598,6 +20604,12 @@
             "state" : "translated",
             "value" : "청두"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chengdu"
+          }
         }
       }
     },
@@ -17633,6 +20645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "항저우퉁"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hangzhou Tong"
           }
         }
       }
@@ -17670,6 +20688,12 @@
             "state" : "translated",
             "value" : "선전퉁"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shenzhen Tong"
+          }
         }
       }
     },
@@ -17705,6 +20729,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "마카오"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Makau"
           }
         }
       }
@@ -17742,6 +20772,12 @@
             "state" : "translated",
             "value" : "마카오 패스"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau Pass"
+          }
         }
       }
     },
@@ -17778,6 +20814,12 @@
             "state" : "translated",
             "value" : "양청퉁"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YangCheng Tong"
+          }
         }
       }
     },
@@ -17813,6 +20855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "홍콩"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
           }
         }
       }
