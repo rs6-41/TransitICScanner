@@ -248,6 +248,7 @@ final class SavedHistory {
 
     var transactionId: Int = 0
     var mappingID: String = ""
+    var responseOrder: Int?
 
     var card: SavedCard?
 
@@ -262,7 +263,8 @@ final class SavedHistory {
         lineOut: Int,
         stationOut: Int,
         transactionId: Int,
-        mappingID: String
+        mappingID: String,
+        responseOrder: Int? = nil
     ) {
         self.processType = processType
         self.processType4 = processType4
@@ -280,6 +282,7 @@ final class SavedHistory {
         self.stationOut = stationOut
         self.transactionId = transactionId
         self.mappingID = mappingID
+        self.responseOrder = responseOrder
     }
 
     var date: DateComponents {
@@ -324,7 +327,8 @@ extension SavedCard {
                 lineOut: UInt8(clamping: item.lineOut),
                 stationOut: UInt8(clamping: item.stationOut),
                 transactionId: item.transactionId,
-                mappingID: item.mappingID
+                mappingID: item.mappingID,
+                responseOrder: item.responseOrder
             )
         }
 
@@ -458,6 +462,7 @@ enum ResultSave {
                 {
                     savedHistory.balance = history.balance
                     savedHistory.mappingID = history.mappingID
+                    savedHistory.responseOrder = history.responseOrder
                 }
                 guard
                     !existingTransactionIDs.contains(
@@ -478,7 +483,8 @@ enum ResultSave {
                     lineOut: Int(history.lineOut),
                     stationOut: Int(history.stationOut),
                     transactionId: history.transactionId,
-                    mappingID: history.mappingID
+                    mappingID: history.mappingID,
+                    responseOrder: history.responseOrder
                 )
 
                 savedHistory.card = card

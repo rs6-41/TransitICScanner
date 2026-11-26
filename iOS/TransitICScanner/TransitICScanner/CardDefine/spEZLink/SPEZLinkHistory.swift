@@ -16,22 +16,33 @@ enum SPEZLinkHistory {
 
     static func newestFirst(_ history: [ResultHistory]) throws -> [ResultHistory] {
         let calendar = calendar
-        let dated = try history.map { item in
+        let dated = try history.enumerated().map { index, item in
             var components = item.date
             components.calendar = calendar
             components.timeZone = calendar.timeZone
             guard components.isValidDate(in: calendar), let date = calendar.date(from: components) else {
                 throw HistoryError.invalidDate
             }
-            return (item: item, date: date)
+            return (item: item, date: date, index: index)
         }
-        return dated.sorted { $0.date > $1.date }.map(\.item)
+        return dated.sorted { lhs, rhs in
+            if lhs.date != rhs.date { return lhs.date > rhs.date }
+            let lhsOrder = lhs.item.responseOrder ?? Int.max
+            let rhsOrder = rhs.item.responseOrder ?? Int.max
+            if lhsOrder != rhsOrder { return lhsOrder < rhsOrder }
+            return lhs.index < rhs.index
+        }.map(\.item)
     }
 
     static func calculatingBalances(_ history: [ResultHistory], currentBalanceCents: Int) throws -> [ResultHistory] {
         var balanceCents = currentBalanceCents
         var seen = Set<Int>()
-        return try newestFirst(history).compactMap { item in
+        let ordered = history.enumerated().map { index, item in
+            var updated = item
+            updated.responseOrder = index
+            return updated
+        }
+        return try newestFirst(ordered).compactMap { item in
             guard let amount = item.amount, seen.insert(item.transactionId).inserted else { return nil }
             var updated = item
             updated.balance = Double(balanceCents) / 100
