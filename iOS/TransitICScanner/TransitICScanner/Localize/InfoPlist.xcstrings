@@ -45,6 +45,12 @@
             "state" : "translated",
             "value" : "全球交通卡餘額查詢"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport du monde"
+          }
         }
       }
     },
@@ -91,6 +97,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全球交通卡餘額查詢"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport du monde"
           }
         }
       }
@@ -139,6 +151,12 @@
             "state" : "translated",
             "value" : "用嚟讀取卡嘅資料。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé pour lire les informations de la carte."
+          }
         }
       }
     },
@@ -185,6 +203,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用嚟讀取卡號。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé pour lire le numéro de carte."
           }
         }
       }
@@ -233,6 +257,12 @@
             "state" : "translated",
             "value" : "根據你目前嘅位置推薦交通卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggère des cartes en fonction de votre position actuelle."
+          }
         }
       }
     },
@@ -279,6 +309,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "呢啲資料用嚟顯示 Google 廣告。\n允許之後可能會睇到更相關嘅廣告。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ces informations servent à afficher des publicités Google.\nAutoriser l’accès peut nous aider à vous proposer des publicités plus pertinentes."
           }
         }
       }

@@ -57,6 +57,12 @@
             "state" : "translated",
             "value" : "廣告"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicités"
+          }
         }
       }
     },
@@ -103,6 +109,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "移除廣告"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer les publicités"
           }
         }
       }
@@ -151,6 +163,12 @@
             "state" : "translated",
             "value" : "  安裝  "
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  Installer  "
+          }
         }
       }
     },
@@ -198,6 +216,12 @@
             "state" : "translated",
             "value" : "用畫中畫睇圖片嘅 App。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une app pour afficher des images en mode Image dans l’image."
+          }
         }
       }
     },
@@ -241,6 +265,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IMGPiper"
@@ -292,6 +322,12 @@
             "state" : "translated",
             "value" : "輕鬆取代或者插入文字。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplacez ou insérez facilement du texte."
+          }
         }
       }
     },
@@ -335,6 +371,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replacer"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Replacer"
@@ -386,6 +428,12 @@
             "state" : "translated",
             "value" : "將圖片轉做 WebP，支援透明 PNG，亦可以縮細 PNG 檔案。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertissez vos images en WebP. L’app prend en charge les PNG transparents et peut réduire leur taille."
+          }
         }
       }
     },
@@ -432,6 +480,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "WebP 轉換器"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertisseur WebP"
           }
         }
       }
@@ -480,6 +534,12 @@
             "state" : "translated",
             "value" : "全球交通卡餘額查詢"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport du monde"
+          }
         }
       }
     },
@@ -527,6 +587,12 @@
             "state" : "translated",
             "value" : "交通卡餘額"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde de carte"
+          }
         }
       }
     },
@@ -572,6 +638,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
           }
         }
       }
@@ -619,6 +691,12 @@
             "state" : "translated",
             "value" : "IC 卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte à puce"
+          }
         }
       }
     },
@@ -662,6 +740,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple Pay"
@@ -714,6 +798,12 @@
             "state" : "translated",
             "value" : "Asaca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asaca"
+          }
         }
       }
     },
@@ -758,6 +848,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR"
@@ -810,6 +906,12 @@
             "state" : "translated",
             "value" : "Kotoden"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden"
+          }
         }
       }
     },
@@ -858,6 +960,12 @@
             "state" : "translated",
             "value" : "預設"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par défaut"
+          }
         }
       }
     },
@@ -902,6 +1010,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard"
@@ -954,6 +1068,12 @@
             "state" : "translated",
             "value" : "EZL"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL"
+          }
         }
       }
     },
@@ -998,6 +1118,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayakaken"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hayakaken"
@@ -1050,6 +1176,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -1098,6 +1230,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -1142,6 +1280,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ICOCA"
@@ -1194,6 +1338,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -1238,6 +1388,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -1290,6 +1446,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -1337,6 +1499,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "岩崎 IC 卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte IC Iwasaki"
           }
         }
       }
@@ -1386,6 +1554,12 @@
             "state" : "translated",
             "value" : "長崎 Ntasu 卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte Ntasu de Nagasaki"
+          }
         }
       }
     },
@@ -1430,6 +1604,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K-CASH"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "K-CASH"
@@ -1482,6 +1662,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -1526,6 +1712,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MOIBA"
@@ -1578,6 +1770,12 @@
             "state" : "translated",
             "value" : "nimoca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
         }
       }
     },
@@ -1622,6 +1820,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OKICA"
@@ -1674,6 +1878,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -1722,6 +1932,12 @@
             "state" : "translated",
             "value" : "手機"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Téléphone"
+          }
         }
       }
     },
@@ -1766,6 +1982,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -1818,6 +2040,12 @@
             "state" : "translated",
             "value" : "Rapica"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
         }
       }
     },
@@ -1862,6 +2090,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -1914,6 +2148,12 @@
             "state" : "translated",
             "value" : "Snapper"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snapper"
+          }
         }
       }
     },
@@ -1957,6 +2197,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -2009,6 +2255,12 @@
             "state" : "translated",
             "value" : "SUGOCA"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
         }
       }
     },
@@ -2053,6 +2305,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suica"
@@ -2105,6 +2363,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -2149,6 +2413,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOICA"
@@ -2201,6 +2471,12 @@
             "state" : "translated",
             "value" : "EasyCard"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
         }
       }
     },
@@ -2245,6 +2521,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -2297,6 +2579,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -2341,6 +2629,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -2392,6 +2686,12 @@
             "state" : "translated",
             "value" : "悠遊卡／記名卡／超級卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard / carte nominative / Super Card"
+          }
         }
       }
     },
@@ -2436,6 +2736,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPASS"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPASS"
@@ -2487,6 +2793,12 @@
             "state" : "translated",
             "value" : "所有卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toutes les cartes"
+          }
         }
       }
     },
@@ -2535,6 +2847,12 @@
             "state" : "translated",
             "value" : "中國內地"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chine continentale"
+          }
         }
       }
     },
@@ -2579,6 +2897,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "china"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "china"
@@ -2631,6 +2955,12 @@
             "state" : "translated",
             "value" : "香港"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
+          }
         }
       }
     },
@@ -2675,6 +3005,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "hongkong"
@@ -2727,6 +3063,12 @@
             "state" : "translated",
             "value" : "印尼"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indonésie"
+          }
         }
       }
     },
@@ -2775,6 +3117,12 @@
             "state" : "translated",
             "value" : "日本"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japon"
+          }
         }
       }
     },
@@ -2819,6 +3167,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japan"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "japan"
@@ -2871,6 +3225,12 @@
             "state" : "translated",
             "value" : "北韓"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corée du Nord"
+          }
         }
       }
     },
@@ -2919,6 +3279,12 @@
             "state" : "translated",
             "value" : "南韓"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corée du Sud"
+          }
         }
       }
     },
@@ -2963,6 +3329,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korea"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "korea"
@@ -3015,6 +3387,12 @@
             "state" : "translated",
             "value" : "澳門"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macao"
+          }
         }
       }
     },
@@ -3059,6 +3437,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "macau"
@@ -3111,6 +3495,12 @@
             "state" : "translated",
             "value" : "新加坡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapour"
+          }
         }
       }
     },
@@ -3159,6 +3549,12 @@
             "state" : "translated",
             "value" : "台灣"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taïwan"
+          }
         }
       }
     },
@@ -3203,6 +3599,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "taiwan"
@@ -3255,6 +3657,12 @@
             "state" : "translated",
             "value" : "美國"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "États-Unis"
+          }
         }
       }
     },
@@ -3299,6 +3707,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-Union"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-Union"
@@ -3350,6 +3764,12 @@
             "state" : "translated",
             "value" : "印有 T-Union 標誌嘅中國交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartes de transport chinoises portant le logo T-Union"
+          }
         }
       }
     },
@@ -3394,6 +3814,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tunion"
@@ -3444,6 +3870,12 @@
             "state" : "translated",
             "value" : "各品牌同本 App 並無合作、從屬或者授權關係。\n讀卡結果只供參考。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les marques citées ne sont ni partenaires ni affiliées à cette app et ne l’ont pas autorisée.\nLes résultats de lecture sont fournis à titre indicatif."
+          }
         }
       }
     },
@@ -3490,6 +3922,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀卡器已中斷連線。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le lecteur de cartes est déconnecté."
           }
         }
       }
@@ -3538,6 +3976,12 @@
             "state" : "translated",
             "value" : "請連接外置讀卡器讀呢張卡。\n受硬件限制，iPhone 無法直接讀取。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connectez un lecteur externe pour scanner cette carte.\nLes restrictions matérielles empêchent sa lecture directe sur iPhone."
+          }
         }
       }
     },
@@ -3583,6 +4027,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未連接"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non connecté"
           }
         }
       }
@@ -3630,6 +4080,12 @@
             "state" : "translated",
             "value" : "已連接"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecté"
+          }
         }
       }
     },
@@ -3676,6 +4132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "只支援外置讀卡器"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur externe uniquement"
           }
         }
       }
@@ -3725,6 +4187,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -3769,6 +4237,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "八達通"
@@ -3821,6 +4295,12 @@
             "state" : "translated",
             "value" : "octopus"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
+          }
         }
       }
     },
@@ -3865,6 +4345,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -3917,6 +4403,12 @@
             "state" : "translated",
             "value" : "雅加達交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de Jakarta"
+          }
         }
       }
     },
@@ -3961,6 +4453,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "kartumultitrip"
@@ -4013,6 +4511,12 @@
             "state" : "translated",
             "value" : "DoCard / Asaca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
         }
       }
     },
@@ -4060,6 +4564,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "旭川電氣軌道同道北巴士"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Electric Railway et Douhoku Bus"
           }
         }
       }
@@ -4109,6 +4619,12 @@
             "state" : "translated",
             "value" : "交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport"
+          }
         }
       }
     },
@@ -4153,6 +4669,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -4205,6 +4727,12 @@
             "state" : "translated",
             "value" : "仙台市交通局"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Régie des transports de Sendai (仙台市交通局)"
+          }
         }
       }
     },
@@ -4249,6 +4777,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -4301,6 +4835,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -4349,6 +4889,12 @@
             "state" : "translated",
             "value" : "琴電（高松琴平電氣鐵道）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden (compagnie ferroviaire Takamatsu-Kotohira)"
+          }
         }
       }
     },
@@ -4393,6 +4939,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -4445,6 +4997,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -4493,6 +5051,12 @@
             "state" : "translated",
             "value" : "札幌地區交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de la région de Sapporo"
+          }
         }
       }
     },
@@ -4537,6 +5101,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sapica"
@@ -4589,6 +5159,12 @@
             "state" : "translated",
             "value" : "日本全國通用嘅交通 IC 卡，例如 Suica、PASMO 同 ICOCA。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartes de transport utilisables dans tout le Japon, comme Suica, PASMO et ICOCA."
+          }
         }
       }
     },
@@ -4633,6 +5209,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "transportationiccards"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "transportationiccards"
@@ -4685,6 +5267,12 @@
             "state" : "translated",
             "value" : "長崎 Ntasu 卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte Ntasu de Nagasaki"
+          }
         }
       }
     },
@@ -4733,6 +5321,12 @@
             "state" : "translated",
             "value" : "長崎巴士／西海交通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki Bus / Saikai Transport"
+          }
         }
       }
     },
@@ -4777,6 +5371,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ntasu"
@@ -4829,6 +5429,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -4877,6 +5483,12 @@
             "state" : "translated",
             "value" : "沖繩單軌同巴士"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorail et bus d’Okinawa"
+          }
         }
       }
     },
@@ -4921,6 +5533,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
@@ -4973,6 +5591,12 @@
             "state" : "translated",
             "value" : "Rapica / Iwasaki IC"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
+          }
         }
       }
     },
@@ -5021,6 +5645,12 @@
             "state" : "translated",
             "value" : "鹿兒島通用交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport interopérable de Kagoshima"
+          }
         }
       }
     },
@@ -5065,6 +5695,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -5116,6 +5752,12 @@
             "state" : "translated",
             "value" : "大部分韓國交通卡，例如 T-money、EZL 同 WOWPASS。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La plupart des cartes de transport coréennes, dont T-money, EZL et WOWPASS."
+          }
         }
       }
     },
@@ -5160,6 +5802,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "onecardallpass"
@@ -5210,6 +5858,12 @@
             "state" : "translated",
             "value" : "目前位置"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position actuelle"
+          }
         }
       }
     },
@@ -5256,6 +5910,12 @@
             "state" : "translated",
             "value" : "其他"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
+          }
         }
       }
     },
@@ -5298,6 +5958,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPhone"
@@ -5349,6 +6015,12 @@
             "state" : "translated",
             "value" : "已連接"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecté"
+          }
         }
       }
     },
@@ -5395,6 +6067,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀卡器已中斷連線。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le lecteur de cartes est déconnecté."
           }
         }
       }
@@ -5443,6 +6121,12 @@
             "state" : "translated",
             "value" : "未連接"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non connecté"
+          }
         }
       }
     },
@@ -5489,6 +6173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "支援嘅 CCID 讀卡器"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteurs compatibles CCID pris en charge"
           }
         }
       }
@@ -5538,6 +6228,12 @@
             "state" : "translated",
             "value" : "外置讀卡器"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur externe"
+          }
         }
       }
     },
@@ -5586,6 +6282,12 @@
             "state" : "translated",
             "value" : "讀卡方式"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanner avec"
+          }
         }
       }
     },
@@ -5632,6 +6334,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無法使用外置讀卡器。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur externe indisponible."
           }
         }
       }
@@ -5680,6 +6388,12 @@
             "state" : "translated",
             "value" : "呢張卡未支援外置讀卡器。請改用內置讀卡器。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette carte ne peut pas encore être lue avec un lecteur externe. Utilisez le lecteur intégré."
+          }
         }
       }
     },
@@ -5726,6 +6440,12 @@
             "state" : "translated",
             "value" : "用卡名、地區等搜尋…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher par nom de carte, région et plus…"
+          }
         }
       }
     },
@@ -5771,6 +6491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "搜尋結果"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Résultats de recherche"
           }
         }
       }
@@ -5820,6 +6546,12 @@
             "state" : "translated",
             "value" : "地區（升序）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Région (A–Z)"
+          }
         }
       }
     },
@@ -5867,6 +6599,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "地區（降序）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Région (Z–A)"
           }
         }
       }
@@ -5916,6 +6654,12 @@
             "state" : "translated",
             "value" : "卡名（升序）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de carte (A–Z)"
+          }
         }
       }
     },
@@ -5964,6 +6708,12 @@
             "state" : "translated",
             "value" : "卡名（降序）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de carte (Z–A)"
+          }
         }
       }
     },
@@ -6008,6 +6758,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -6060,6 +6816,12 @@
             "state" : "translated",
             "value" : "讀取 CEPAS 餘額同交易紀錄"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lire le solde et les transactions CEPAS"
+          }
         }
       }
     },
@@ -6106,6 +6868,12 @@
             "state" : "translated",
             "value" : "交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport"
+          }
         }
       }
     },
@@ -6150,6 +6918,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "easycard"
@@ -6202,6 +6976,12 @@
             "state" : "translated",
             "value" : "icash 2.0"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
         }
       }
     },
@@ -6250,6 +7030,12 @@
             "state" : "translated",
             "value" : "台灣 7-ELEVEN 嘅交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de 7-ELEVEN à Taïwan"
+          }
         }
       }
     },
@@ -6294,6 +7080,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -6346,6 +7138,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -6392,6 +7190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "三藩市灣區交通卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de la baie de San Francisco"
           }
         }
       }
@@ -6441,6 +7245,12 @@
             "state" : "translated",
             "value" : "China T-Union"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "China T-Union"
+          }
         }
       }
     },
@@ -6483,6 +7293,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HK$ %@"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HK$ %@"
@@ -6534,6 +7350,12 @@
             "state" : "translated",
             "value" : "%@ Rp."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Rp."
+          }
         }
       }
     },
@@ -6577,6 +7399,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ JPY"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ JPY"
@@ -6628,6 +7456,12 @@
             "state" : "translated",
             "value" : "%@ KPW"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
         }
       }
     },
@@ -6675,6 +7509,12 @@
             "state" : "translated",
             "value" : "₩ %@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "₩ %@"
+          }
         }
       }
     },
@@ -6717,6 +7557,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NT$ %@"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NT$ %@"
@@ -6768,6 +7614,12 @@
             "state" : "translated",
             "value" : "%@ RMB"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ RMB"
+          }
         }
       }
     },
@@ -6811,6 +7663,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SG$ %@"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SG$ %@"
@@ -6862,6 +7720,12 @@
             "state" : "translated",
             "value" : "$ %@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$ %@"
+          }
         }
       }
     },
@@ -6907,6 +7771,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
           }
         }
       }
@@ -6954,6 +7824,12 @@
             "state" : "translated",
             "value" : "錯誤"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
         }
       }
     },
@@ -6999,6 +7875,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "確定"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -7046,6 +7928,12 @@
             "state" : "translated",
             "value" : "APDU 資料太長。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les données APDU sont trop longues."
+          }
         }
       }
     },
@@ -7091,6 +7979,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀唔到 Clipper 卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de lire la carte Clipper."
           }
         }
       }
@@ -7138,6 +8032,12 @@
             "state" : "translated",
             "value" : "FeliCa 餘額資料唔完整。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les données de solde FeliCa sont incomplètes."
+          }
         }
       }
     },
@@ -7183,6 +8083,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "FeliCa 指令失敗（狀態：%1$02X%2$02X）。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échec de la commande FeliCa (état : %1$02X%2$02X)."
           }
         }
       }
@@ -7231,6 +8137,12 @@
             "state" : "translated",
             "value" : "揀唔到 FeliCa 紀錄服務（狀態：%1$02X%2$02X）。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de sélectionner le service d’historique FeliCa (état : %1$02X%2$02X)."
+          }
         }
       }
     },
@@ -7277,6 +8189,12 @@
             "state" : "translated",
             "value" : "讀唔到 FeliCa IDm。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de lire l’IDm FeliCa."
+          }
         }
       }
     },
@@ -7322,6 +8240,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "揀唔到 FeliCa 資料服務（狀態：%1$02X%2$02X）。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de sélectionner le service d’informations FeliCa (état : %1$02X%2$02X)."
           }
         }
       }
@@ -7370,6 +8294,12 @@
             "state" : "translated",
             "value" : "外置讀卡器嘅回應唔完整。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le lecteur externe a renvoyé une réponse incomplète."
+          }
         }
       }
     },
@@ -7415,6 +8345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "呢張唔係 DESFire 卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette carte n’est pas une carte DESFire."
           }
         }
       }
@@ -7463,6 +8399,12 @@
             "state" : "translated",
             "value" : "請先將張卡拍喺外置讀卡器上。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Présentez d’abord une carte au lecteur externe."
+          }
         }
       }
     },
@@ -7509,6 +8451,12 @@
             "state" : "translated",
             "value" : "呢張唔係 ISO 7816 卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette carte n’est pas une carte ISO 7816."
+          }
         }
       }
     },
@@ -7554,6 +8502,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀唔到韓國 One Card。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de lire la carte One Card coréenne."
           }
         }
       }
@@ -7602,6 +8556,12 @@
             "state" : "translated",
             "value" : "開唔到外置讀卡器工作階段。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de démarrer une session avec le lecteur externe."
+          }
         }
       }
     },
@@ -7649,6 +8609,12 @@
             "state" : "translated",
             "value" : "無法使用外置智能卡讀卡器。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le lecteur de cartes à puce externe est indisponible."
+          }
         }
       }
     },
@@ -7694,6 +8660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "偵測到張卡，但讀唔到。請調整位置再試。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La carte a été détectée, mais n’a pas pu être lue. Repositionnez-la et réessayez."
           }
         }
       }
@@ -7742,6 +8714,12 @@
             "state" : "translated",
             "value" : "開唔到已儲存嘅資料。依家讀到嘅卡喺關閉 App 後唔會保留。請重新開啟 App 或更新到最新版。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d’ouvrir les données enregistrées. Les cartes scannées maintenant ne seront pas conservées après la fermeture de l’app. Relancez l’app ou mettez-la à jour."
+          }
         }
       }
     },
@@ -7788,6 +8766,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "啟動唔到 iCloud 同步，卡暫時只會儲存喺呢部裝置。請稍後重新開啟 App。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La synchronisation iCloud n’a pas pu démarrer. Pour le moment, les cartes sont enregistrées uniquement sur cet appareil. Relancez l’app plus tard."
           }
         }
       }
@@ -7836,6 +8820,12 @@
             "state" : "translated",
             "value" : "無法儲存資料"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d’enregistrer les données"
+          }
         }
       }
     },
@@ -7882,6 +8872,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無法開啟已儲存嘅資料"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d’ouvrir les données enregistrées"
           }
         }
       }
@@ -7930,6 +8926,12 @@
             "state" : "translated",
             "value" : "日"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jour"
+          }
         }
       }
     },
@@ -7976,6 +8978,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "如果係記名卡，請用兩位數字填寫出生日期嘅每一欄。（非記名卡唔使填。）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour les cartes nominatives, saisissez votre date de naissance avec deux chiffres par champ. (Facultatif pour les cartes non nominatives.)"
           }
         }
       }
@@ -8024,6 +9032,12 @@
             "state" : "translated",
             "value" : "月"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mois"
+          }
         }
       }
     },
@@ -8070,6 +9084,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "出生日期（記名卡）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de naissance (carte nominative)"
           }
         }
       }
@@ -8118,6 +9138,12 @@
             "state" : "translated",
             "value" : "請輸入圖片入面嘅數字。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez les chiffres de l’image."
+          }
         }
       }
     },
@@ -8161,6 +9187,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA"
@@ -8212,6 +9244,12 @@
             "state" : "translated",
             "value" : "請輸入卡背嘅號碼。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez les chiffres figurant au dos de la carte."
+          }
         }
       }
     },
@@ -8258,6 +9296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "卡號"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nº de carte"
           }
         }
       }
@@ -8306,6 +9350,12 @@
             "state" : "translated",
             "value" : "自動喺[悠遊卡官方網站](https://ezweb.easycard.com.tw/search/CardSearch.php)輸入資料再擷取結果。\n\n因為伺服器維護，本地時間晚上 11 點至朝早 6 點可能查唔到資料。\n\n如果網站規格有變，呢個功能可能用唔到。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisit automatiquement les informations sur le [site officiel d’EasyCard](https://ezweb.easycard.com.tw/search/CardSearch.php) et récupère les données.\n\nLes données peuvent être indisponibles entre 23 h et 6 h, heure locale, en raison de la maintenance du serveur.\n\nCette fonction peut cesser de fonctionner si le site change."
+          }
         }
       }
     },
@@ -8353,6 +9403,12 @@
             "state" : "translated",
             "value" : "完成"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
+          }
         }
       }
     },
@@ -8398,6 +9454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未有已讀取嘅卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune carte scannée."
           }
         }
       }
@@ -8445,6 +9507,12 @@
             "state" : "translated",
             "value" : "未讀卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non scannée"
+          }
         }
       }
     },
@@ -8490,6 +9558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "你仲未讀取張卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre carte n’a pas encore été scannée."
           }
         }
       }
@@ -8539,6 +9613,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -8587,6 +9667,12 @@
             "state" : "translated",
             "value" : "雅加達交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de Jakarta"
+          }
         }
       }
     },
@@ -8631,6 +9717,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -8682,6 +9774,12 @@
             "state" : "translated",
             "value" : "＊唔支援冇 China T-Union 標誌嘅舊卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "* Les anciennes cartes sans logo China T-Union ne sont pas prises en charge."
+          }
         }
       }
     },
@@ -8728,6 +9826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "支援印有「China T-Union」（交通联合）標誌嘅交通卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible avec les cartes de transport portant le logo « China T-Union » (交通联合)."
           }
         }
       }
@@ -8776,6 +9880,12 @@
             "state" : "translated",
             "value" : "支援所有適用於日本全國互通服務嘅交通 IC 卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toutes les cartes IC de transport compatibles avec le service national japonais d’interopérabilité sont prises en charge."
+          }
         }
       }
     },
@@ -8822,6 +9932,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "＊PiTaPa 冇餘額。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "* PiTaPa n’a pas de solde."
           }
         }
       }
@@ -8870,6 +9986,12 @@
             "state" : "translated",
             "value" : "亦支援地區合作 IC 卡。可以[喺呢度](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)睇最新支援卡一覽。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les cartes IC des partenaires régionaux sont également prises en charge. Consultez [ici](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf) la liste à jour."
+          }
         }
       }
     },
@@ -8913,6 +10035,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL (Cashbee)"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZL (Cashbee)"
@@ -8964,6 +10092,12 @@
             "state" : "translated",
             "value" : "One pass"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
         }
       }
     },
@@ -9007,6 +10141,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -9058,6 +10198,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -9101,6 +10247,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "WOWPASS"
@@ -9152,6 +10304,12 @@
             "state" : "translated",
             "value" : "支援所有印有「One Card All Pass（전국호환 교통카드）」標誌嘅卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible avec toutes les cartes portant le logo « One Card All Pass (전국호환 교통카드) »."
+          }
         }
       }
     },
@@ -9194,6 +10352,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@, %1$@"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2$@, %1$@"
@@ -9241,6 +10405,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KAI Commuter"
@@ -9293,6 +10463,12 @@
             "state" : "translated",
             "value" : "旭川"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa"
+          }
         }
       }
     },
@@ -9341,6 +10517,12 @@
             "state" : "translated",
             "value" : "札幌"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
         }
       }
     },
@@ -9384,6 +10566,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asahikawa Railway"
@@ -9435,6 +10623,12 @@
             "state" : "translated",
             "value" : "Douhoku Bus"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
         }
       }
     },
@@ -9478,6 +10672,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo Information Network Co., Ltd."
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sapporo Information Network Co., Ltd."
@@ -9530,6 +10730,12 @@
             "state" : "translated",
             "value" : "高松"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu"
+          }
         }
       }
     },
@@ -9573,6 +10779,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Takamatsu-Kotohira Railway Co., Ltd."
@@ -9624,6 +10836,12 @@
             "state" : "translated",
             "value" : "Iwasaki Corp."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
         }
       }
     },
@@ -9671,6 +10889,12 @@
             "state" : "translated",
             "value" : "Kagoshima transportation Bureau"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
         }
       }
     },
@@ -9714,6 +10938,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nangoku Transport"
@@ -9766,6 +10996,12 @@
             "state" : "translated",
             "value" : "仙台"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendai"
+          }
         }
       }
     },
@@ -9809,6 +11045,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transportation Bureau City of Sendai"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transportation Bureau City of Sendai"
@@ -9860,6 +11102,12 @@
             "state" : "translated",
             "value" : "NTASU Co., Ltd."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
         }
       }
     },
@@ -9903,6 +11151,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okinawa IC Card Co., Ltd."
@@ -9954,6 +11208,12 @@
             "state" : "translated",
             "value" : "EZL Corp."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
         }
       }
     },
@@ -9997,6 +11257,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KFTC"
@@ -10048,6 +11314,12 @@
             "state" : "translated",
             "value" : "KORAIL"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
         }
       }
     },
@@ -10091,6 +11363,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Korea Smart Card"
@@ -10142,6 +11420,12 @@
             "state" : "translated",
             "value" : "EasyCard Co., Ltd."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
         }
       }
     },
@@ -10189,6 +11473,12 @@
             "state" : "translated",
             "value" : "icash Corp."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
         }
       }
     },
@@ -10232,6 +11522,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MTC"
@@ -10284,6 +11580,12 @@
             "state" : "translated",
             "value" : "札幌"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo"
+          }
         }
       }
     },
@@ -10331,6 +11633,12 @@
             "state" : "translated",
             "value" : "可以讀取卡上最近 20 筆交易。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
+          }
         }
       }
     },
@@ -10375,6 +11683,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard / Asaca"
@@ -10427,6 +11741,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -10470,6 +11790,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -10522,6 +11848,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -10565,6 +11897,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -10617,6 +11955,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -10663,6 +12007,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "可以讀取卡上最近 20 筆交易。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
           }
         }
       }
@@ -10712,6 +12062,12 @@
             "state" : "translated",
             "value" : "日本交通 IC 卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport japonaise"
+          }
         }
       }
     },
@@ -10759,6 +12115,12 @@
             "state" : "translated",
             "value" : "可以讀取卡上最近 20 筆交易。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les 20 dernières transactions peuvent être lues sur la carte."
+          }
         }
       }
     },
@@ -10803,6 +12165,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ntasu"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ntasu"
@@ -10855,6 +12223,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -10901,6 +12275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "可以讀取卡上最近 16 筆交易。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les 16 dernières transactions peuvent être lues sur la carte."
           }
         }
       }
@@ -10950,6 +12330,12 @@
             "state" : "translated",
             "value" : "鹿兒島通用交通卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport interopérable de Kagoshima"
+          }
         }
       }
     },
@@ -10994,6 +12380,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -11044,6 +12436,12 @@
             "state" : "translated",
             "value" : "授權條款"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licences"
+          }
         }
       }
     },
@@ -11091,6 +12489,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "三藩市"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "San Francisco"
           }
         }
       }
@@ -11140,6 +12544,12 @@
             "state" : "translated",
             "value" : "沖繩本島"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Île principale d’Okinawa"
+          }
         }
       }
     },
@@ -11187,6 +12597,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "加州"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Californie"
           }
         }
       }
@@ -11236,6 +12652,12 @@
             "state" : "translated",
             "value" : "北海道"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hokkaidō"
+          }
         }
       }
     },
@@ -11283,6 +12705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "雅加達"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakarta"
           }
         }
       }
@@ -11332,6 +12760,12 @@
             "state" : "translated",
             "value" : "香川"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagawa"
+          }
         }
       }
     },
@@ -11379,6 +12813,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鹿兒島"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima"
           }
         }
       }
@@ -11428,6 +12868,12 @@
             "state" : "translated",
             "value" : "宮城"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyagi"
+          }
         }
       }
     },
@@ -11475,6 +12921,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "宮崎"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyazaki"
           }
         }
       }
@@ -11524,6 +12976,12 @@
             "state" : "translated",
             "value" : "長崎"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagasaki"
+          }
         }
       }
     },
@@ -11572,6 +13030,12 @@
             "state" : "translated",
             "value" : "沖繩"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa"
+          }
         }
       }
     },
@@ -11619,6 +13083,12 @@
             "state" : "translated",
             "value" : "讀卡器"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur de cartes"
+          }
         }
       }
     },
@@ -11664,6 +13134,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "揀卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir une carte"
           }
         }
       }
@@ -11711,6 +13187,12 @@
             "state" : "translated",
             "value" : "未有包含讀卡記錄嘅卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune carte avec un journal de lecture."
+          }
         }
       }
     },
@@ -11756,6 +13238,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "確定"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -11804,6 +13292,12 @@
             "state" : "translated",
             "value" : "遲啲"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus tard"
+          }
         }
       }
     },
@@ -11851,6 +13345,12 @@
             "state" : "translated",
             "value" : "我哋展示廣告，支持 App 繼續開發同維護。\n允許追蹤可以幫我哋顯示更相關嘅廣告同衡量成效。\n請撳「允許」支持我哋繼續維護 App。\n多謝支持。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous affichons des publicités pour financer le développement et la maintenance de l’app.\nAutoriser le suivi nous aide à afficher des publicités plus pertinentes et à mesurer leurs performances.\nTouchez « Autoriser » pour nous aider à maintenir l’app.\nMerci pour votre soutien."
+          }
         }
       }
     },
@@ -11897,6 +13397,12 @@
             "state" : "translated",
             "value" : "唔允許追蹤都會見到廣告，但廣告可能冇咁相關。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous refusez le suivi, les publicités seront toujours affichées, mais elles seront peut-être moins pertinentes."
+          }
         }
       }
     },
@@ -11942,6 +13448,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "相關廣告"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicités pertinentes"
           }
         }
       }
@@ -11990,6 +13502,12 @@
             "state" : "translated",
             "value" : "已允許"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisé"
+          }
         }
       }
     },
@@ -12035,6 +13553,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "繼續"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
           }
         }
       }
@@ -12082,6 +13606,12 @@
             "state" : "translated",
             "value" : "設定完成！"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout est prêt !"
+          }
         }
       }
     },
@@ -12127,6 +13657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "搞掂！依家可以開始用 App。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout est prêt ! Vous pouvez commencer à utiliser l’app."
           }
         }
       }
@@ -12174,6 +13710,12 @@
             "state" : "translated",
             "value" : "呢個 App 可以用手機查詢同儲存世界各地交通卡嘅餘額。\n請檢查所需權限，按需要設定使用體驗。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette app vous permet de consulter et d’enregistrer le solde de cartes de transport du monde entier sur votre téléphone.\nVérifiez les autorisations requises pour personnaliser votre expérience."
+          }
         }
       }
     },
@@ -12220,6 +13762,12 @@
             "state" : "translated",
             "value" : "按裝置目前位置，推薦當地可以用嘅卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggère des cartes utilisables dans votre région actuelle selon la position de l’appareil."
+          }
         }
       }
     },
@@ -12265,6 +13813,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "位置"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localisation"
           }
         }
       }
@@ -12313,6 +13867,12 @@
             "state" : "translated",
             "value" : "讀卡器"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur de cartes"
+          }
         }
       }
     },
@@ -12359,6 +13919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "可以用 iPhone 內置嘅 NFC 讀卡器讀卡。\n\n請將張卡靠近裝置背面鏡頭附近。\n\n你亦可以連接兼容 CCID 嘅智能卡讀卡器。部分卡只可以用外置讀卡器讀取。詳情請睇[我哋嘅網站](https://rs6apps.com/transit/nfc_reader?lang=en)。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez scanner les cartes avec le lecteur NFC intégré à l’iPhone.\n\nApprochez la carte de la zone de l’appareil photo au dos de l’iPhone.\n\nVous pouvez aussi connecter un lecteur de cartes à puce compatible CCID. Certaines cartes exigent un lecteur externe. Pour en savoir plus, consultez [notre site](https://rs6apps.com/transit/nfc_reader?lang=en)."
           }
         }
       }
@@ -12407,6 +13973,12 @@
             "state" : "translated",
             "value" : "呢部裝置冇內置 NFC 讀卡器。你可以連接兼容 CCID 嘅智能卡讀卡器，亦可以睇返用 iPhone 讀過嘅卡嘅紀錄。\n\n詳情請睇[我哋嘅網站](https://rs6apps.com/transit/nfc_reader?lang=en)。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cet appareil ne dispose pas de lecteur NFC intégré. Vous pouvez connecter un lecteur de cartes à puce compatible CCID. Vous pouvez aussi consulter l’historique des cartes scannées avec un iPhone.\n\nPour en savoir plus, consultez [notre site](https://rs6apps.com/transit/nfc_reader?lang=en)."
+          }
         }
       }
     },
@@ -12453,6 +14025,12 @@
             "state" : "translated",
             "value" : "旅行或者出行嗰陣，通知你目前所在地區可以用嘅卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous informe des cartes disponibles dans votre région actuelle lors de vos déplacements."
+          }
         }
       }
     },
@@ -12498,6 +14076,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "通知"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifications"
           }
         }
       }
@@ -12547,6 +14131,12 @@
             "state" : "translated",
             "value" : "非洲"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afrique"
+          }
         }
       }
     },
@@ -12594,6 +14184,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "中亞"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asie centrale"
           }
         }
       }
@@ -12643,6 +14239,12 @@
             "state" : "translated",
             "value" : "東亞"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asie de l’Est"
+          }
         }
       }
     },
@@ -12690,6 +14292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "歐洲"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Europe"
           }
         }
       }
@@ -12739,6 +14347,12 @@
             "state" : "translated",
             "value" : "日本地區"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Régions du Japon"
+          }
         }
       }
     },
@@ -12786,6 +14400,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "拉丁美洲"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amérique latine"
           }
         }
       }
@@ -12835,6 +14455,12 @@
             "state" : "translated",
             "value" : "中東"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moyen-Orient"
+          }
         }
       }
     },
@@ -12882,6 +14508,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "北美洲"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amérique du Nord"
           }
         }
       }
@@ -12931,6 +14563,12 @@
             "state" : "translated",
             "value" : "大洋洲"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Océanie"
+          }
         }
       }
     },
@@ -12978,6 +14616,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "南亞"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asie du Sud"
           }
         }
       }
@@ -13027,6 +14671,12 @@
             "state" : "translated",
             "value" : "東南亞"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asie du Sud-Est"
+          }
         }
       }
     },
@@ -13072,6 +14722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "再讀一次已儲存嘅卡，就可以更新資料。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scannez à nouveau une carte enregistrée pour mettre ses informations à jour."
           }
         }
       }
@@ -13119,6 +14775,12 @@
             "state" : "translated",
             "value" : "交易紀錄"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historique"
+          }
         }
       }
     },
@@ -13164,6 +14826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交易紀錄（%lld 筆）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historique (%lld opérations)"
           }
         }
       }
@@ -13213,6 +14881,12 @@
             "state" : "translated",
             "value" : "上車"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Embarquement"
+          }
         }
       }
     },
@@ -13259,6 +14933,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "巴士"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bus"
           }
         }
       }
@@ -13307,6 +14987,12 @@
             "state" : "translated",
             "value" : "增值"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recharge"
+          }
         }
       }
     },
@@ -13353,6 +15039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自動增值"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recharge automatique"
           }
         }
       }
@@ -13401,6 +15093,12 @@
             "state" : "translated",
             "value" : "增值（巴士）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recharge (bus)"
+          }
         }
       }
     },
@@ -13447,6 +15145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "增值（商店）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recharge (commerce)"
           }
         }
       }
@@ -13495,6 +15199,12 @@
             "state" : "translated",
             "value" : "付款（非鐵路）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paiement (hors rail)"
+          }
         }
       }
     },
@@ -13541,6 +15251,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "櫃位"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guichet"
           }
         }
       }
@@ -13589,6 +15305,12 @@
             "state" : "translated",
             "value" : "取消入閘"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulation de l’entrée"
+          }
         }
       }
     },
@@ -13635,6 +15357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR 櫃位"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guichet JR"
           }
         }
       }
@@ -13683,6 +15411,12 @@
             "state" : "translated",
             "value" : "單車"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vélo"
+          }
         }
       }
     },
@@ -13728,6 +15462,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未有交易紀錄"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune transaction"
           }
         }
       }
@@ -13776,6 +15516,12 @@
             "state" : "translated",
             "value" : "退款"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remboursement"
+          }
         }
       }
     },
@@ -13822,6 +15568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "車費"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarif"
           }
         }
       }
@@ -13870,6 +15622,12 @@
             "state" : "translated",
             "value" : "補車費（JR）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustement tarifaire (JR)"
+          }
         }
       }
     },
@@ -13916,6 +15674,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "車費差額"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Différence de tarif"
           }
         }
       }
@@ -13964,6 +15728,12 @@
             "state" : "translated",
             "value" : "渡輪"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferry"
+          }
         }
       }
     },
@@ -14010,6 +15780,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "高鐵"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Train à grande vitesse"
           }
         }
       }
@@ -14058,6 +15834,12 @@
             "state" : "translated",
             "value" : "輕鐵"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métro léger"
+          }
         }
       }
     },
@@ -14104,6 +15886,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "單軌列車"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monorail"
           }
         }
       }
@@ -14152,6 +15940,12 @@
             "state" : "translated",
             "value" : "高雄捷運"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métro de Kaohsiung"
+          }
         }
       }
     },
@@ -14198,6 +15992,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "台北捷運"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métro de Taipei"
           }
         }
       }
@@ -14246,6 +16046,12 @@
             "state" : "translated",
             "value" : "台中捷運"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métro de Taichung"
+          }
         }
       }
     },
@@ -14292,6 +16098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "桃園捷運"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métro de Taoyuan"
           }
         }
       }
@@ -14340,6 +16152,12 @@
             "state" : "translated",
             "value" : "新發卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Première émission"
+          }
         }
       }
     },
@@ -14386,6 +16204,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "呢張卡未提供交易紀錄。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’historique des transactions est indisponible pour cette carte."
           }
         }
       }
@@ -14434,6 +16258,12 @@
             "state" : "translated",
             "value" : "其他"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
+          }
         }
       }
     },
@@ -14480,6 +16310,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "泊車"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stationnement"
           }
         }
       }
@@ -14528,6 +16364,12 @@
             "state" : "translated",
             "value" : "車費差額"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Différence de tarif"
+          }
         }
       }
     },
@@ -14574,6 +16416,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鐵路"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Train"
           }
         }
       }
@@ -14623,6 +16471,12 @@
             "state" : "translated",
             "value" : "登記"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrement"
+          }
         }
       }
     },
@@ -14669,6 +16523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "補發"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réémission"
           }
         }
       }
@@ -14717,6 +16577,12 @@
             "state" : "translated",
             "value" : "新幹線"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shinkansen"
+          }
         }
       }
     },
@@ -14763,6 +16629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "購物"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat"
           }
         }
       }
@@ -14811,6 +16683,12 @@
             "state" : "translated",
             "value" : "取消購物"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulation d’achat"
+          }
         }
       }
     },
@@ -14857,6 +16735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "現金購物"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat en espèces"
           }
         }
       }
@@ -14905,6 +16789,12 @@
             "state" : "translated",
             "value" : "車站購物"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat en gare"
+          }
         }
       }
     },
@@ -14951,6 +16841,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "車站現金購物"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat en espèces en gare"
           }
         }
       }
@@ -14999,6 +16895,12 @@
             "state" : "translated",
             "value" : "自動售賣機"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distributeur automatique"
+          }
         }
       }
     },
@@ -15045,6 +16947,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisation de la carte"
           }
         }
       }
@@ -15093,6 +17001,12 @@
             "state" : "translated",
             "value" : "台鐵"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chemins de fer de Taïwan"
+          }
         }
       }
     },
@@ -15139,6 +17053,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "買車飛"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat de billet"
           }
         }
       }
@@ -15187,6 +17107,12 @@
             "state" : "translated",
             "value" : "多程票"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carnet de trajets"
+          }
         }
       }
     },
@@ -15233,6 +17159,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "車飛"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billet"
           }
         }
       }
@@ -15281,6 +17213,12 @@
             "state" : "translated",
             "value" : "資料"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations"
+          }
         }
       }
     },
@@ -15327,6 +17265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "餘額"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde"
           }
         }
       }
@@ -15375,6 +17319,12 @@
             "state" : "translated",
             "value" : "類別"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catégorie"
+          }
         }
       }
     },
@@ -15421,6 +17371,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "種類"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
           }
         }
       }
@@ -15469,6 +17425,12 @@
             "state" : "translated",
             "value" : "上次讀卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernier scan"
+          }
         }
       }
     },
@@ -15516,6 +17478,12 @@
             "state" : "translated",
             "value" : "上次讀卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernier scan"
+          }
         }
       }
     },
@@ -15562,6 +17530,12 @@
             "state" : "translated",
             "value" : "讀唔到資料。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de lire les informations."
+          }
         }
       }
     },
@@ -15604,6 +17578,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID"
@@ -15654,6 +17634,12 @@
             "state" : "translated",
             "value" : "發卡資料"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations d’émission"
+          }
         }
       }
     },
@@ -15699,6 +17685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "發卡日期"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date d’émission"
           }
         }
       }
@@ -15746,6 +17738,12 @@
             "state" : "translated",
             "value" : "到期日"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date d’expiration"
+          }
         }
       }
     },
@@ -15791,6 +17789,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "發卡機構"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Émetteur"
           }
         }
       }
@@ -15838,6 +17842,12 @@
             "state" : "translated",
             "value" : "地區"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Région"
+          }
         }
       }
     },
@@ -15883,6 +17893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "地區"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Région"
           }
         }
       }
@@ -15930,6 +17946,12 @@
             "state" : "translated",
             "value" : "地區"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Région"
+          }
         }
       }
     },
@@ -15975,6 +17997,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "圖示"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône"
           }
         }
       }
@@ -16022,6 +18050,12 @@
             "state" : "translated",
             "value" : "顯示名稱"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom affiché"
+          }
         }
       }
     },
@@ -16067,6 +18101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "卡名"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de la carte"
           }
         }
       }
@@ -16115,6 +18155,12 @@
             "state" : "translated",
             "value" : "偵測唔到卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune carte détectée."
+          }
         }
       }
     },
@@ -16160,6 +18206,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "唔支援呢張卡。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette carte n’est pas prise en charge."
           }
         }
       }
@@ -16208,6 +18260,12 @@
             "state" : "translated",
             "value" : "將「%@」靠近 iPhone 頂部中央。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approchez « %@ » du centre de la partie supérieure de l’iPhone."
+          }
         }
       }
     },
@@ -16253,6 +18311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
           }
         }
       }
@@ -16300,6 +18364,12 @@
             "state" : "translated",
             "value" : "讀卡錯誤"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur de lecture"
+          }
         }
       }
     },
@@ -16346,6 +18416,12 @@
             "state" : "translated",
             "value" : "狀態旗標錯誤。s1: %1$lld，s2:%2$lld"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur d’indicateur d’état. s1 : %1$lld, s2 : %2$lld"
+          }
         }
       }
     },
@@ -16391,6 +18467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀緊卡…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture en cours…"
           }
         }
       }
@@ -16439,6 +18521,12 @@
             "state" : "translated",
             "value" : "未定義服務名稱。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du service non défini."
+          }
         }
       }
     },
@@ -16485,6 +18573,12 @@
             "state" : "translated",
             "value" : "搜尋"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher"
+          }
         }
       }
     },
@@ -16529,6 +18623,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OCR"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OCR"
@@ -16580,6 +18680,12 @@
             "state" : "translated",
             "value" : "NFC"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
         }
       }
     },
@@ -16627,6 +18733,12 @@
             "state" : "translated",
             "value" : "網上查詢"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consultation en ligne"
+          }
         }
       }
     },
@@ -16672,6 +18784,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "權利資訊"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations légales"
           }
         }
       }
@@ -16721,6 +18839,12 @@
             "state" : "translated",
             "value" : "iPhone、iPad、App Store 同 Apple Pay 係 Apple Inc. 嘅註冊商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone, iPad, App Store et Apple Pay sont des marques déposées d’Apple Inc."
+          }
         }
       }
     },
@@ -16764,6 +18888,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple"
@@ -16815,6 +18945,12 @@
             "state" : "translated",
             "value" : "商標"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marques"
+          }
         }
       }
     },
@@ -16861,6 +18997,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "顯示嘅資料以發卡機構嘅地區為準。\n上面或者其他地方提到嘅公司名、商號、產品名同服務名，係各公司嘅註冊商標或者商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les informations affichées dépendent de la région de l’émetteur de la carte.\nLes noms de sociétés, noms commerciaux, noms de produits et noms de services cités sont des marques déposées ou des marques de leurs titulaires respectifs."
           }
         }
       }
@@ -16910,6 +19052,12 @@
             "state" : "translated",
             "value" : "「交通联合」（China T-Union）係中華人民共和國交通運輸部訂立嘅標準。\n\n本文提到嘅公司名、商號、產品名同服務名，係各公司嘅註冊商標或者商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« 交通联合 » (China T-Union) est une norme établie par le ministère des Transports de la République populaire de Chine.\n\nLes noms de sociétés, noms commerciaux, noms de produits et noms de services cités sont des marques déposées ou des marques de leurs titulaires respectifs."
+          }
         }
       }
     },
@@ -16958,6 +19106,12 @@
             "state" : "translated",
             "value" : "「Android」, 「Google」 同 「Google Pay」 係 Google LLC 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Android », « Google » et « Google Pay » : marques de Google LLC."
+          }
         }
       }
     },
@@ -17001,6 +19155,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google"
@@ -17053,6 +19213,12 @@
             "state" : "translated",
             "value" : "「Octopus」 同 「八達通」 係 Octopus Cards Limited（八達通卡有限公司） 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Octopus » et « 八達通 » : marques de Octopus Cards Limited（八達通卡有限公司）."
+          }
         }
       }
     },
@@ -17100,6 +19266,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「Kartu Multi Trip」 係 KAI Commuter 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Kartu Multi Trip » : marque de KAI Commuter."
           }
         }
       }
@@ -17149,6 +19321,12 @@
             "state" : "translated",
             "value" : "「icsca」 係 Sendai-shi 嘅註冊商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« icsca » : marque déposée de Sendai-shi."
+          }
         }
       }
     },
@@ -17196,6 +19374,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「DoCard」 係 道北バス 嘅商標。\n「Asaca」 係 旭川電気軌道株式会社 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« DoCard » : marque de 道北バス.\n« Asaca » : marque de 旭川電気軌道株式会社."
           }
         }
       }
@@ -17245,6 +19429,12 @@
             "state" : "translated",
             "value" : "「Kitaca」 係 Hokkaido Railway Company 嘅註冊商標。\n\n「Suica」 係 East Japan Railway Company 嘅註冊商標。\n\n「PASMO」 係 PASMO CO., LTD 嘅註冊商標。\n\n「TOICA」 係 Central Japan Railway Company 嘅註冊商標。\n\n「manaca」 係 Nagoya Transportation Development Organization and MIC CO., LTD 嘅註冊商標。\n\n「ICOCA」 係 West Japan Railway Company 嘅註冊商標。\n\n「SUGOCA」 係 Kyushu Railway Company 嘅註冊商標。\n\n「nimoca」 係 Nishi-Nippon Railroad Co., Ltd 嘅註冊商標。\n\n「はやかけん」 係 Fukuoka City Transportation Bureau 嘅註冊商標。\n\n「PiTaPa」 係 Surutto KANSAI Co., Ltd 嘅註冊商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Kitaca » : marque déposée de Hokkaido Railway Company.\n\n« Suica » : marque déposée de East Japan Railway Company.\n\n« PASMO » : marque déposée de PASMO CO., LTD.\n\n« TOICA » : marque déposée de Central Japan Railway Company.\n\n« manaca » : marque déposée de Nagoya Transportation Development Organization and MIC CO., LTD.\n\n« ICOCA » : marque déposée de West Japan Railway Company.\n\n« SUGOCA » : marque déposée de Kyushu Railway Company.\n\n« nimoca » : marque déposée de Nishi-Nippon Railroad Co., Ltd.\n\n« はやかけん » : marque déposée de Fukuoka City Transportation Bureau.\n\n« PiTaPa » : marque déposée de Surutto KANSAI Co., Ltd."
+          }
         }
       }
     },
@@ -17292,6 +19482,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「icsca」 係 仙台市 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« icsca » : marque de 仙台市."
           }
         }
       }
@@ -17341,6 +19537,12 @@
             "state" : "translated",
             "value" : "「IruCa」 係 Takamatsu-Kotohira Electric Railroad Co., Ltd 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« IruCa » : marque de Takamatsu-Kotohira Electric Railroad Co., Ltd."
+          }
         }
       }
     },
@@ -17388,6 +19590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「SAPICA」 係 Sapporo Information Center Co., Ltd 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« SAPICA » : marque de Sapporo Information Center Co., Ltd."
           }
         }
       }
@@ -17437,6 +19645,12 @@
             "state" : "translated",
             "value" : "「エヌタス」, 「N+」 同 「長崎バス」 係 長崎自動車株式会社 嘅商標。\n\n「Tカード」 係 カルチュア・コンビニエンス・クラブ株式会社 嘅商標。\n\n「Vポイントカード」, 「Vポイント」 同 Vポイント 標誌 係 V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« エヌタス », « N+ » et « 長崎バス » : marques de 長崎自動車株式会社.\n\n« Tカード » : marque de カルチュア・コンビニエンス・クラブ株式会社.\n\n« Vポイントカード », « Vポイント » et le logo Vポイント : marques de V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
+          }
         }
       }
     },
@@ -17484,6 +19698,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「OKICA」 係 沖縄ICカード株式会社 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« OKICA » : marque de 沖縄ICカード株式会社."
           }
         }
       }
@@ -17533,6 +19753,12 @@
             "state" : "translated",
             "value" : "「Rapica」 係 鹿児島市交通局 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Rapica » : marque de 鹿児島市交通局."
+          }
         }
       }
     },
@@ -17581,6 +19807,12 @@
             "state" : "translated",
             "value" : "「One Card All Pass」（전국호환교통카드）係大韓民國國土交通部訂立嘅標準。\n\n「T-money」 同 「티머니」 係 Korea Smart Card Corporation 嘅商標。\n\n「WOWPASS」 係 Orange Square, Inc 嘅商標。\n\n「EZL」, 「이즐」, 「Cashbee」 同 「캐시비」 係 EZL Corp 嘅商標。\n\n「Rail+」 同 「레일플러스」 係 Korea Railroad Corporation 嘅商標。\n\n「OnePass」 同 「발행원패스」 係 iM UPay Co., Ltd 嘅商標。\n\n「Hanpay」 同 「한페이」 係 한페이시스 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« One Card All Pass » (전국호환교통카드) est une norme établie par le ministère du Territoire, des Infrastructures et des Transports de la République de Corée.\n\n« T-money » et « 티머니 » : marques de Korea Smart Card Corporation.\n\n« WOWPASS » : marque de Orange Square, Inc.\n\n« EZL », « 이즐 », « Cashbee » et « 캐시비 » : marques de EZL Corp.\n\n« Rail+ » et « 레일플러스 » : marques de Korea Railroad Corporation.\n\n« OnePass » et « 발행원패스 » : marques de iM UPay Co., Ltd.\n\n« Hanpay » et « 한페이 » : marques de 한페이시스."
+          }
         }
       }
     },
@@ -17626,6 +19858,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開放原始碼授權"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licences open source"
           }
         }
       }
@@ -17675,6 +19913,12 @@
             "state" : "translated",
             "value" : "「FeliCa」係 Sony Group Corporation 或者其關聯公司嘅註冊商標或者商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« FeliCa » est une marque déposée ou une marque de Sony Group Corporation ou de ses sociétés affiliées."
+          }
         }
       }
     },
@@ -17718,6 +19962,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sony"
@@ -17768,6 +20018,12 @@
             "state" : "translated",
             "value" : "卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartes"
+          }
         }
       }
     },
@@ -17813,6 +20069,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "其他"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
           }
         }
       }
@@ -17862,6 +20124,12 @@
             "state" : "translated",
             "value" : "「EasyCard」 同 「悠遊卡」 係 悠遊卡股份有限公司 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« EasyCard » et « 悠遊卡 » : marques de 悠遊卡股份有限公司."
+          }
         }
       }
     },
@@ -17909,6 +20177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「icash」 同 「愛金卡」 係 愛金卡股份有限公司 嘅商標。\n\n「7-ELEVEN」 係 統一超商股份有限公司 嘅商標。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« icash » et « 愛金卡 » : marques de 愛金卡股份有限公司.\n\n« 7-ELEVEN » : marque de 統一超商股份有限公司."
           }
         }
       }
@@ -17958,6 +20232,12 @@
             "state" : "translated",
             "value" : "「Clipper」 係 MTC 嘅商標。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Clipper » : marque de MTC."
+          }
         }
       }
     },
@@ -18003,6 +20283,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "廣告"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicités"
           }
         }
       }
@@ -18051,6 +20337,12 @@
             "state" : "translated",
             "value" : "廣告私隱設定"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confidentialité des publicités"
+          }
         }
       }
     },
@@ -18096,6 +20388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
           }
         }
       }
@@ -18143,6 +20441,12 @@
             "state" : "translated",
             "value" : "已成功購買移除廣告，多謝！"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’achat de la suppression des publicités est terminé. Merci !"
+          }
         }
       }
     },
@@ -18188,6 +20492,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "錯誤"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
           }
         }
       }
@@ -18236,6 +20546,12 @@
             "state" : "translated",
             "value" : "等緊確認購買"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat en attente"
+          }
         }
       }
     },
@@ -18283,6 +20599,12 @@
             "state" : "translated",
             "value" : "購買獲確認之後會自動移除廣告。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les publicités seront supprimées automatiquement après validation de l’achat."
+          }
         }
       }
     },
@@ -18328,6 +20650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "還原購買項目"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les achats"
           }
         }
       }
@@ -18375,6 +20703,12 @@
             "state" : "translated",
             "value" : "還原完成"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restauration terminée"
+          }
         }
       }
     },
@@ -18420,6 +20754,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已還原購買項目。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’achat a été restauré."
           }
         }
       }
@@ -18468,6 +20808,12 @@
             "state" : "translated",
             "value" : "搵唔到購買項目"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun achat trouvé"
+          }
         }
       }
     },
@@ -18515,6 +20861,12 @@
             "state" : "translated",
             "value" : "呢個 Apple 帳户搵唔到移除廣告嘅購買項目。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun achat de suppression des publicités n’a été trouvé pour ce compte Apple."
+          }
         }
       }
     },
@@ -18561,6 +20913,12 @@
             "state" : "translated",
             "value" : "錯誤"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
         }
       }
     },
@@ -18604,6 +20962,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BETA"
@@ -18655,6 +21019,12 @@
             "state" : "translated",
             "value" : "開發"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Développement"
+          }
         }
       }
     },
@@ -18700,6 +21070,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "管理資料"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gérer les données"
           }
         }
       }
@@ -18747,6 +21123,12 @@
             "state" : "translated",
             "value" : "iCloud 同步"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchronisation iCloud"
+          }
         }
       }
     },
@@ -18792,6 +21174,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "關閉 iCloud 同步"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactiver la synchronisation iCloud"
           }
         }
       }
@@ -18839,6 +21227,12 @@
             "state" : "translated",
             "value" : "關閉 iCloud 同步之後，已讀取嘅卡唔會再同步。\n已經同步嘅資料會保留。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous désactivez la synchronisation iCloud, les cartes scannées ne seront plus synchronisées.\nLes informations déjà synchronisées seront conservées."
+          }
         }
       }
     },
@@ -18884,6 +21278,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "關閉"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactiver"
           }
         }
       }
@@ -18931,6 +21331,12 @@
             "state" : "translated",
             "value" : "刪除紀錄"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer l’historique"
+          }
         }
       }
     },
@@ -18977,6 +21383,12 @@
             "state" : "translated",
             "value" : "已儲存嘅卡資料會被刪除。呢個操作無法復原。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les informations des cartes enregistrées seront supprimées. Cette action est irréversible."
+          }
         }
       }
     },
@@ -19022,6 +21434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "刪除"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
           }
         }
       }
@@ -19070,6 +21488,12 @@
             "state" : "translated",
             "value" : "除錯"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débogage"
+          }
         }
       }
     },
@@ -19116,6 +21540,12 @@
             "state" : "translated",
             "value" : "廣告"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicités"
+          }
         }
       }
     },
@@ -19161,6 +21591,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "除錯模式"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode débogage"
           }
         }
       }
@@ -19209,6 +21645,12 @@
             "state" : "translated",
             "value" : "購買狀態（廣告）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "État de l’achat (publicités)"
+          }
         }
       }
     },
@@ -19255,6 +21697,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "測試購買"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat de test"
           }
         }
       }
@@ -19303,6 +21751,12 @@
             "state" : "translated",
             "value" : "正式版"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version publique"
+          }
         }
       }
     },
@@ -19350,6 +21804,12 @@
             "state" : "translated",
             "value" : "測試"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
         }
       }
     },
@@ -19395,6 +21855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開發者模式會維持啟用，直到重新開啟 App。\n如果唔係有意開啟，請撳「取消」。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le mode développeur reste actif jusqu’au redémarrage de l’app.\nPour revenir en arrière, touchez « Annuler »."
           }
         }
       }
@@ -19442,6 +21908,12 @@
             "state" : "translated",
             "value" : "啟用"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer"
+          }
         }
       }
     },
@@ -19487,6 +21959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開發者模式"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode développeur"
           }
         }
       }
@@ -19535,6 +22013,12 @@
             "state" : "translated",
             "value" : "啟用卡類型"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer les types de carte"
+          }
         }
       }
     },
@@ -19580,6 +22064,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%(variableName)lld 項"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)lld éléments"
           }
         }
       }
@@ -19627,6 +22117,12 @@
             "state" : "translated",
             "value" : "開發"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Développement"
+          }
         }
       }
     },
@@ -19672,6 +22168,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beta 功能"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonction bêta"
           }
         }
       }
@@ -19719,6 +22221,12 @@
             "state" : "translated",
             "value" : "正式版"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version publique"
+          }
         }
       }
     },
@@ -19764,6 +22272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "顯示除錯資訊"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher les infos de débogage"
           }
         }
       }
@@ -19811,6 +22325,12 @@
             "state" : "translated",
             "value" : "位置"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localisation"
+          }
         }
       }
     },
@@ -19856,6 +22376,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "定位裝置"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localiser l’appareil"
           }
         }
       }
@@ -19903,6 +22429,12 @@
             "state" : "translated",
             "value" : "權限"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisations"
+          }
         }
       }
     },
@@ -19948,6 +22480,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "顯示權限要求畫面"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher l’écran de demande d’autorisation"
           }
         }
       }
@@ -19995,6 +22533,12 @@
             "state" : "translated",
             "value" : "App 內購買"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achats intégrés"
+          }
         }
       }
     },
@@ -20040,6 +22584,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用除錯容器"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser le conteneur de débogage"
           }
         }
       }
@@ -20087,6 +22637,12 @@
             "state" : "translated",
             "value" : "將資料儲存喺同正式環境分開嘅容器。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistre les données dans un conteneur distinct de celui de production."
+          }
         }
       }
     },
@@ -20132,6 +22688,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "加入所有示範卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter toutes les cartes d’exemple"
           }
         }
       }
@@ -20179,6 +22741,12 @@
             "state" : "translated",
             "value" : "加入測試卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter des cartes de test"
+          }
         }
       }
     },
@@ -20224,6 +22792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "轉換器"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertisseur"
           }
         }
       }
@@ -20272,6 +22846,12 @@
             "state" : "translated",
             "value" : "貨幣"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devise"
+          }
         }
       }
     },
@@ -20318,6 +22898,12 @@
             "state" : "translated",
             "value" : "完成"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
+          }
         }
       }
     },
@@ -20363,6 +22949,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "加入交易紀錄"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une transaction"
           }
         }
       }
@@ -20411,6 +23003,12 @@
             "state" : "translated",
             "value" : "金額"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montant"
+          }
         }
       }
     },
@@ -20457,6 +23055,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交易後餘額"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde après transaction"
           }
         }
       }
@@ -20505,6 +23109,12 @@
             "state" : "translated",
             "value" : "日"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jour"
+          }
         }
       }
     },
@@ -20550,6 +23160,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交易紀錄資料"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Données d’historique"
           }
         }
       }
@@ -20598,6 +23214,12 @@
             "state" : "translated",
             "value" : "（要求）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(Requête)"
+          }
         }
       }
     },
@@ -20643,6 +23265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "結果畫面"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écran de résultats"
           }
         }
       }
@@ -20690,6 +23318,12 @@
             "state" : "translated",
             "value" : "顯示卡類型"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher les types de carte"
+          }
         }
       }
     },
@@ -20735,6 +23369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開發"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Développement"
           }
         }
       }
@@ -20782,6 +23422,12 @@
             "state" : "translated",
             "value" : "功能"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonction"
+          }
         }
       }
     },
@@ -20827,6 +23473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未揀選"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non sélectionné"
           }
         }
       }
@@ -20874,6 +23526,12 @@
             "state" : "translated",
             "value" : "正式版"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version publique"
+          }
         }
       }
     },
@@ -20919,6 +23577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀卡列表畫面"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste des cartes à scanner"
           }
         }
       }
@@ -20966,6 +23630,12 @@
             "state" : "translated",
             "value" : "Beta 功能"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonction bêta"
+          }
         }
       }
     },
@@ -21011,6 +23681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beta 支援嘅卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartes prises en charge en bêta"
           }
         }
       }
@@ -21058,6 +23734,12 @@
             "state" : "translated",
             "value" : "啟用 Beta 支援嘅卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active les cartes prises en charge en bêta."
+          }
         }
       }
     },
@@ -21103,6 +23785,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "如果喺開發設定揀咗卡類型，就改唔到呢個設定。\n要測試「Beta 功能」，請去設定 > 除錯 > 顯示卡類型，再揀「未揀選」。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce réglage ne peut pas être modifié si des types de carte sont sélectionnés dans les réglages de développement.\nPour tester « Fonctions bêta », accédez à Réglages > Débogage > Afficher les types de carte et choisissez « Non sélectionné »."
           }
         }
       }
@@ -21150,6 +23838,12 @@
             "state" : "translated",
             "value" : "實驗功能仲開發緊，可能有程式錯誤或者其他問題。\n功能可能會更改或者移除，恕不另行通知。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les fonctions expérimentales sont en cours de développement et peuvent présenter des erreurs ou d’autres problèmes.\nElles peuvent être supprimées ou modifiées sans préavis."
+          }
         }
       }
     },
@@ -21195,6 +23889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beta 功能"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonctions bêta"
           }
         }
       }
@@ -21242,6 +23942,12 @@
             "state" : "translated",
             "value" : "加入 Beta"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejoindre la bêta"
+          }
         }
       }
     },
@@ -21287,6 +23993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "喺 GitHub 睇"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir sur GitHub"
           }
         }
       }
@@ -21334,6 +24046,12 @@
             "state" : "translated",
             "value" : "其他"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
+          }
         }
       }
     },
@@ -21379,6 +24097,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "版本 %(variableName)@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %(variableName)@"
           }
         }
       }
@@ -21427,6 +24151,12 @@
             "state" : "translated",
             "value" : "揀選項目"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner un élément"
+          }
         }
       }
     },
@@ -21472,6 +24202,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "我嘅卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes cartes"
           }
         }
       }
@@ -21519,6 +24255,12 @@
             "state" : "translated",
             "value" : "篩選"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrer"
+          }
         }
       }
     },
@@ -21564,6 +24306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全部"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout"
           }
         }
       }
@@ -21611,6 +24359,12 @@
             "state" : "translated",
             "value" : "排序"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trier"
+          }
         }
       }
     },
@@ -21656,6 +24410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "卡名（升序）"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de carte (A–Z)"
           }
         }
       }
@@ -21703,6 +24463,12 @@
             "state" : "translated",
             "value" : "卡名（降序）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de carte (Z–A)"
+          }
         }
       }
     },
@@ -21748,6 +24514,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "由新至舊"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus récentes"
           }
         }
       }
@@ -21795,6 +24567,12 @@
             "state" : "translated",
             "value" : "由舊至新"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus anciennes"
+          }
         }
       }
     },
@@ -21840,6 +24618,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "讀卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanner"
           }
         }
       }
@@ -21887,6 +24671,12 @@
             "state" : "translated",
             "value" : "設定"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
         }
       }
     },
@@ -21932,6 +24722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "工具"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outils"
           }
         }
       }
@@ -21979,6 +24775,12 @@
             "state" : "translated",
             "value" : "將小工具加到主畫面，就可以睇到卡嘅最新餘額。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez un widget à l’écran d’accueil pour consulter le dernier solde de votre carte."
+          }
         }
       }
     },
@@ -22024,6 +24826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "小工具"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget"
           }
         }
       }
@@ -22071,6 +24879,12 @@
             "state" : "translated",
             "value" : "讀卡記錄（除錯）"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal de lecture (débogage)"
+          }
         }
       }
     },
@@ -22116,6 +24930,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已達嘗試次數上限。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le nombre maximal de tentatives est atteint."
           }
         }
       }
@@ -22163,6 +24983,12 @@
             "state" : "translated",
             "value" : "出生日期有誤，或者呢張係非記名卡。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La date de naissance est incorrecte ou la carte n’est pas nominative."
+          }
         }
       }
     },
@@ -22208,6 +25034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA 驗證失敗。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La vérification CAPTCHA a échoué."
           }
         }
       }
@@ -22255,6 +25087,12 @@
             "state" : "translated",
             "value" : "卡號有誤。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le numéro de carte est incorrect."
+          }
         }
       }
     },
@@ -22301,6 +25139,12 @@
             "state" : "translated",
             "value" : "日期無效"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date non valide"
+          }
         }
       }
     },
@@ -22346,6 +25190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "請再試一次。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veuillez réessayer."
           }
         }
       }
@@ -22394,6 +25244,12 @@
             "state" : "translated",
             "value" : "請用兩位數字填寫出生日期嘅每一欄。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez deux chiffres dans chaque champ de la date de naissance."
+          }
         }
       }
     },
@@ -22440,6 +25296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA 驗證失敗。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La vérification CAPTCHA a échoué."
           }
         }
       }
@@ -22488,6 +25350,12 @@
             "state" : "translated",
             "value" : "請輸入 CAPTCHA。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez le CAPTCHA."
+          }
         }
       }
     },
@@ -22534,6 +25402,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "請輸入 10 位或者 16 位卡號。"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez un numéro de carte à 10 ou 16 chiffres."
           }
         }
       }
@@ -22582,6 +25456,12 @@
             "state" : "translated",
             "value" : "請輸入卡號。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le numéro de carte est obligatoire."
+          }
         }
       }
     },
@@ -22629,6 +25509,12 @@
             "state" : "translated",
             "value" : "資料唔係即時更新。顯示截至尋日嘅最近一年使用紀錄。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les données ne sont pas actualisées en temps réel. L’historique couvre les douze derniers mois jusqu’à hier."
+          }
         }
       }
     },
@@ -22673,6 +25559,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -22724,6 +25616,12 @@
             "state" : "translated",
             "value" : "只可以讀取最近 12 筆交易。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seules les 12 dernières transactions peuvent être lues."
+          }
         }
       }
     },
@@ -22768,6 +25666,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash 2.0"
@@ -22818,6 +25722,12 @@
             "state" : "translated",
             "value" : "未知"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inconnu"
+          }
         }
       }
     },
@@ -22862,6 +25772,12 @@
           }
         },
         "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper"
@@ -22912,6 +25828,12 @@
             "state" : "translated",
             "value" : "篩選"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrer"
+          }
         }
       }
     },
@@ -22957,6 +25879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "所有卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toutes les cartes"
           }
         }
       }
@@ -23006,6 +25934,12 @@
             "state" : "translated",
             "value" : "揀卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir une carte"
+          }
         }
       }
     },
@@ -23053,6 +25987,12 @@
             "state" : "translated",
             "value" : "交通卡餘額"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport"
+          }
         }
       }
     },
@@ -23099,6 +26039,12 @@
             "state" : "translated",
             "value" : "IC 卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte à puce"
+          }
         }
       }
     },
@@ -23144,6 +26090,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "揀選"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir"
           }
         }
       }
@@ -23192,6 +26144,12 @@
             "state" : "translated",
             "value" : "揀卡"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir une carte"
+          }
         }
       }
     },
@@ -23239,6 +26197,12 @@
             "state" : "translated",
             "value" : "顯示卡嘅最新餘額。"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affiche le dernier solde de la carte."
+          }
         }
       }
     },
@@ -23285,6 +26249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交通卡餘額"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde des cartes de transport"
           }
         }
       }
@@ -23334,6 +26304,12 @@
             "state" : "translated",
             "value" : "上海"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shanghai"
+          }
         }
       }
     },
@@ -23381,6 +26357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上海公共交通卡"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de Shanghai"
           }
         }
       }
@@ -23430,6 +26412,12 @@
             "state" : "translated",
             "value" : "八達通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Octopus"
+          }
         }
       }
     },
@@ -23477,6 +26465,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "北京"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pékin"
           }
         }
       }
@@ -23526,6 +26520,12 @@
             "state" : "translated",
             "value" : "北京一卡通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte de transport de Pékin"
+          }
         }
       }
     },
@@ -23573,6 +26573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "四川"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichuan"
           }
         }
       }
@@ -23622,6 +26628,12 @@
             "state" : "translated",
             "value" : "成都"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chengdu"
+          }
         }
       }
     },
@@ -23669,6 +26681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "杭州通"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hangzhou Tong"
           }
         }
       }
@@ -23718,6 +26736,12 @@
             "state" : "translated",
             "value" : "深圳通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shenzhen Tong"
+          }
         }
       }
     },
@@ -23765,6 +26789,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "澳門"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macao"
           }
         }
       }
@@ -23814,6 +26844,12 @@
             "state" : "translated",
             "value" : "澳門通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macau Pass"
+          }
         }
       }
     },
@@ -23862,6 +26898,12 @@
             "state" : "translated",
             "value" : "羊城通"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YangCheng Tong"
+          }
         }
       }
     },
@@ -23909,6 +26951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "香港"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong"
           }
         }
       }
