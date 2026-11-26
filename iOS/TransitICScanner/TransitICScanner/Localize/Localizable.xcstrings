@@ -51,6 +51,12 @@
             "state" : "translated",
             "value" : "Iklan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告"
+          }
         }
       }
     },
@@ -91,6 +97,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hapus iklan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除廣告"
           }
         }
       }
@@ -133,6 +145,12 @@
             "state" : "translated",
             "value" : "  Instal  "
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "  安裝  "
+          }
         }
       }
     },
@@ -174,6 +192,12 @@
             "state" : "translated",
             "value" : "Aplikasi untuk melihat gambar dalam mode gambar-dalam-gambar."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用畫中畫睇圖片嘅 App。"
+          }
         }
       }
     },
@@ -211,6 +235,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IMGPiper"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IMGPiper"
@@ -256,6 +286,12 @@
             "state" : "translated",
             "value" : "Ganti atau sisipkan teks dengan mudah."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輕鬆取代或者插入文字。"
+          }
         }
       }
     },
@@ -293,6 +329,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replacer"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Replacer"
@@ -338,6 +380,12 @@
             "state" : "translated",
             "value" : "Konversi gambar ke WebP. Mendukung PNG transparan dan dapat memperkecil ukuran berkas."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將圖片轉做 WebP，支援透明 PNG，亦可以縮細 PNG 檔案。"
+          }
         }
       }
     },
@@ -378,6 +426,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konverter WebP"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WebP 轉換器"
           }
         }
       }
@@ -420,6 +474,12 @@
             "state" : "translated",
             "value" : "Cek Saldo Kartu Transportasi Dunia"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全球交通卡餘額查詢"
+          }
         }
       }
     },
@@ -461,6 +521,12 @@
             "state" : "translated",
             "value" : "Saldo kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡餘額"
+          }
         }
       }
     },
@@ -500,6 +566,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batal"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         }
       }
@@ -541,6 +613,12 @@
             "state" : "translated",
             "value" : "Kartu IC"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC 卡"
+          }
         }
       }
     },
@@ -578,6 +656,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pay"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple Pay"
@@ -624,6 +708,12 @@
             "state" : "translated",
             "value" : "Asaca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asaca"
+          }
         }
       }
     },
@@ -662,6 +752,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JR"
@@ -708,6 +804,12 @@
             "state" : "translated",
             "value" : "Kotoden"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotoden"
+          }
         }
       }
     },
@@ -750,6 +852,12 @@
             "state" : "translated",
             "value" : "Bawaan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設"
+          }
         }
       }
     },
@@ -788,6 +896,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard"
@@ -834,6 +948,12 @@
             "state" : "translated",
             "value" : "EZL"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL"
+          }
         }
       }
     },
@@ -872,6 +992,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayakaken"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hayakaken"
@@ -918,6 +1044,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -960,6 +1092,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -998,6 +1136,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICOCA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ICOCA"
@@ -1044,6 +1188,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -1082,6 +1232,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -1128,6 +1284,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -1169,6 +1331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu IC Iwasaki"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "岩崎 IC 卡"
           }
         }
       }
@@ -1212,6 +1380,12 @@
             "state" : "translated",
             "value" : "Kartu Ntasu Nagasaki"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎 Ntasu 卡"
+          }
         }
       }
     },
@@ -1250,6 +1424,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K-CASH"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "K-CASH"
@@ -1296,6 +1476,12 @@
             "state" : "translated",
             "value" : "manaca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "manaca"
+          }
         }
       }
     },
@@ -1334,6 +1520,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MOIBA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MOIBA"
@@ -1380,6 +1572,12 @@
             "state" : "translated",
             "value" : "nimoca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimoca"
+          }
         }
       }
     },
@@ -1418,6 +1616,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OKICA"
@@ -1464,6 +1668,12 @@
             "state" : "translated",
             "value" : "PASMO"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASMO"
+          }
         }
       }
     },
@@ -1506,6 +1716,12 @@
             "state" : "translated",
             "value" : "Ponsel"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手機"
+          }
         }
       }
     },
@@ -1544,6 +1760,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -1590,6 +1812,12 @@
             "state" : "translated",
             "value" : "Rapica"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica"
+          }
         }
       }
     },
@@ -1628,6 +1856,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -1674,6 +1908,12 @@
             "state" : "translated",
             "value" : "Snapper"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snapper"
+          }
         }
       }
     },
@@ -1711,6 +1951,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -1757,6 +2003,12 @@
             "state" : "translated",
             "value" : "SUGOCA"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUGOCA"
+          }
         }
       }
     },
@@ -1795,6 +2047,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suica"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suica"
@@ -1841,6 +2099,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -1879,6 +2143,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOICA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOICA"
@@ -1925,6 +2195,12 @@
             "state" : "translated",
             "value" : "EasyCard"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
         }
       }
     },
@@ -1963,6 +2239,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -2009,6 +2291,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -2047,6 +2335,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -2092,6 +2386,12 @@
             "state" : "translated",
             "value" : "EasyCard / Kartu terdaftar / Super Card"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "悠遊卡／記名卡／超級卡"
+          }
         }
       }
     },
@@ -2130,6 +2430,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPASS"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPASS"
@@ -2175,6 +2481,12 @@
             "state" : "translated",
             "value" : "Semua kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有卡"
+          }
         }
       }
     },
@@ -2217,6 +2529,12 @@
             "state" : "translated",
             "value" : "Tiongkok Daratan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中國內地"
+          }
         }
       }
     },
@@ -2255,6 +2573,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "china"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "china"
@@ -2301,6 +2625,12 @@
             "state" : "translated",
             "value" : "Hong Kong"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港"
+          }
         }
       }
     },
@@ -2339,6 +2669,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hongkong"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "hongkong"
@@ -2385,6 +2721,12 @@
             "state" : "translated",
             "value" : "Indonesia"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印尼"
+          }
         }
       }
     },
@@ -2427,6 +2769,12 @@
             "state" : "translated",
             "value" : "Jepang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本"
+          }
         }
       }
     },
@@ -2465,6 +2813,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japan"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "japan"
@@ -2511,6 +2865,12 @@
             "state" : "translated",
             "value" : "Korea Utara"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北韓"
+          }
         }
       }
     },
@@ -2553,6 +2913,12 @@
             "state" : "translated",
             "value" : "Korea Selatan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南韓"
+          }
         }
       }
     },
@@ -2591,6 +2957,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korea"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "korea"
@@ -2637,6 +3009,12 @@
             "state" : "translated",
             "value" : "Makau"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳門"
+          }
         }
       }
     },
@@ -2675,6 +3053,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macau"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "macau"
@@ -2721,6 +3105,12 @@
             "state" : "translated",
             "value" : "Singapura"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新加坡"
+          }
         }
       }
     },
@@ -2763,6 +3153,12 @@
             "state" : "translated",
             "value" : "Taiwan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台灣"
+          }
         }
       }
     },
@@ -2801,6 +3197,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taiwan"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "taiwan"
@@ -2847,6 +3249,12 @@
             "state" : "translated",
             "value" : "Amerika Serikat"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "美國"
+          }
         }
       }
     },
@@ -2885,6 +3293,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-Union"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "T-Union"
@@ -2930,6 +3344,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi Tiongkok berlogo T-Union"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印有 T-Union 標誌嘅中國交通卡"
+          }
         }
       }
     },
@@ -2968,6 +3388,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tunion"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tunion"
@@ -3012,6 +3438,12 @@
             "state" : "translated",
             "value" : "Merek terkait tidak bermitra dengan, terafiliasi dengan, atau mengesahkan aplikasi ini.\nHasil pembacaan hanya untuk referensi."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "各品牌同本 App 並無合作、從屬或者授權關係。\n讀卡結果只供參考。"
+          }
         }
       }
     },
@@ -3052,6 +3484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembaca kartu terputus."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器已中斷連線。"
           }
         }
       }
@@ -3094,6 +3532,12 @@
             "state" : "translated",
             "value" : "Hubungkan pembaca eksternal untuk memindai kartu ini.\nKarena keterbatasan perangkat keras, kartu ini tidak dapat dibaca langsung di iPhone."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請連接外置讀卡器讀呢張卡。\n受硬件限制，iPhone 無法直接讀取。"
+          }
         }
       }
     },
@@ -3133,6 +3577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak terhubung"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未連接"
           }
         }
       }
@@ -3174,6 +3624,12 @@
             "state" : "translated",
             "value" : "Terhubung"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已連接"
+          }
         }
       }
     },
@@ -3214,6 +3670,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hanya pembaca eksternal"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只支援外置讀卡器"
           }
         }
       }
@@ -3257,6 +3719,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -3295,6 +3763,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "八達通"
@@ -3341,6 +3815,12 @@
             "state" : "translated",
             "value" : "octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "octopus"
+          }
         }
       }
     },
@@ -3379,6 +3859,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -3425,6 +3911,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi Jakarta"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達交通卡"
+          }
         }
       }
     },
@@ -3463,6 +3955,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartumultitrip"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "kartumultitrip"
@@ -3509,6 +4007,12 @@
             "state" : "translated",
             "value" : "DoCard / Asaca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
         }
       }
     },
@@ -3550,6 +4054,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asahikawa Electric Railway dan Douhoku Bus"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川電氣軌道同道北巴士"
           }
         }
       }
@@ -3593,6 +4103,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡"
+          }
         }
       }
     },
@@ -3631,6 +4147,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -3677,6 +4199,12 @@
             "state" : "translated",
             "value" : "Biro Transportasi Kota Sendai (仙台市交通局)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台市交通局"
+          }
         }
       }
     },
@@ -3715,6 +4243,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icsca"
@@ -3761,6 +4295,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -3803,6 +4343,12 @@
             "state" : "translated",
             "value" : "Kotoden (Takamatsu-Kotohira Electric Railroad)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "琴電（高松琴平電氣鐵道）"
+          }
         }
       }
     },
@@ -3841,6 +4387,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -3887,6 +4439,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -3929,6 +4487,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi wilayah Sapporo"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌地區交通卡"
+          }
         }
       }
     },
@@ -3967,6 +4531,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sapica"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sapica"
@@ -4013,6 +4583,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi yang dapat digunakan di seluruh Jepang, seperti Suica, PASMO, dan ICOCA."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本全國通用嘅交通 IC 卡，例如 Suica、PASMO 同 ICOCA。"
+          }
         }
       }
     },
@@ -4051,6 +4627,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "transportationiccards"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "transportationiccards"
@@ -4097,6 +4679,12 @@
             "state" : "translated",
             "value" : "Kartu Ntasu Nagasaki"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎 Ntasu 卡"
+          }
         }
       }
     },
@@ -4139,6 +4727,12 @@
             "state" : "translated",
             "value" : "Nagasaki Bus / Saikai Transport"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎巴士／西海交通"
+          }
         }
       }
     },
@@ -4177,6 +4771,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ntasu"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ntasu"
@@ -4223,6 +4823,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -4265,6 +4871,12 @@
             "state" : "translated",
             "value" : "Monorel dan bus Okinawa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩單軌同巴士"
+          }
         }
       }
     },
@@ -4303,6 +4915,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "okica"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "okica"
@@ -4349,6 +4967,12 @@
             "state" : "translated",
             "value" : "Rapica / Iwasaki IC"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapica / Iwasaki IC"
+          }
         }
       }
     },
@@ -4391,6 +5015,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi terpadu Kagoshima"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島通用交通卡"
+          }
         }
       }
     },
@@ -4429,6 +5059,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -4474,6 +5110,12 @@
             "state" : "translated",
             "value" : "Sebagian besar kartu transportasi Korea, seperti T-money, EZL, dan WOWPASS."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大部分韓國交通卡，例如 T-money、EZL 同 WOWPASS。"
+          }
         }
       }
     },
@@ -4512,6 +5154,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "onecardallpass"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "onecardallpass"
@@ -4556,6 +5204,12 @@
             "state" : "translated",
             "value" : "Lokasi saat ini"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目前位置"
+          }
         }
       }
     },
@@ -4596,6 +5250,12 @@
             "state" : "translated",
             "value" : "Lainnya"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
+          }
         }
       }
     },
@@ -4632,6 +5292,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iPhone"
@@ -4677,6 +5343,12 @@
             "state" : "translated",
             "value" : "Terhubung"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已連接"
+          }
         }
       }
     },
@@ -4717,6 +5389,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembaca kartu terputus."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器已中斷連線。"
           }
         }
       }
@@ -4759,6 +5437,12 @@
             "state" : "translated",
             "value" : "Tidak terhubung"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未連接"
+          }
         }
       }
     },
@@ -4799,6 +5483,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembaca kompatibel CCID yang didukung"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援嘅 CCID 讀卡器"
           }
         }
       }
@@ -4842,6 +5532,12 @@
             "state" : "translated",
             "value" : "Pembaca eksternal"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外置讀卡器"
+          }
         }
       }
     },
@@ -4884,6 +5580,12 @@
             "state" : "translated",
             "value" : "Pindai dengan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡方式"
+          }
         }
       }
     },
@@ -4924,6 +5626,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembaca eksternal tidak tersedia."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法使用外置讀卡器。"
           }
         }
       }
@@ -4966,6 +5674,12 @@
             "state" : "translated",
             "value" : "Kartu ini belum dapat dibaca dengan pembaca eksternal. Beralihlah ke pembaca internal."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢張卡未支援外置讀卡器。請改用內置讀卡器。"
+          }
         }
       }
     },
@@ -5006,6 +5720,12 @@
             "state" : "translated",
             "value" : "Cari berdasarkan nama kartu, wilayah, dan lainnya…"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用卡名、地區等搜尋…"
+          }
         }
       }
     },
@@ -5045,6 +5765,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hasil pencarian"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋結果"
           }
         }
       }
@@ -5088,6 +5814,12 @@
             "state" : "translated",
             "value" : "Wilayah (A–Z)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區（升序）"
+          }
         }
       }
     },
@@ -5129,6 +5861,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wilayah (Z–A)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區（降序）"
           }
         }
       }
@@ -5172,6 +5910,12 @@
             "state" : "translated",
             "value" : "Nama kartu (A–Z)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡名（升序）"
+          }
         }
       }
     },
@@ -5214,6 +5958,12 @@
             "state" : "translated",
             "value" : "Nama kartu (Z–A)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡名（降序）"
+          }
         }
       }
     },
@@ -5252,6 +6002,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZ-Link"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZ-Link"
@@ -5298,6 +6054,12 @@
             "state" : "translated",
             "value" : "Baca saldo dan transaksi CEPAS"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀取 CEPAS 餘額同交易紀錄"
+          }
         }
       }
     },
@@ -5338,6 +6100,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡"
+          }
         }
       }
     },
@@ -5376,6 +6144,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "easycard"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "easycard"
@@ -5422,6 +6196,12 @@
             "state" : "translated",
             "value" : "icash 2.0"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
         }
       }
     },
@@ -5464,6 +6244,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi 7-ELEVEN Taiwan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台灣 7-ELEVEN 嘅交通卡"
+          }
         }
       }
     },
@@ -5502,6 +6288,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash"
@@ -5548,6 +6340,12 @@
             "state" : "translated",
             "value" : "Clipper"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
         }
       }
     },
@@ -5588,6 +6386,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu transportasi Wilayah Teluk San Francisco"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "三藩市灣區交通卡"
           }
         }
       }
@@ -5631,6 +6435,12 @@
             "state" : "translated",
             "value" : "China T-Union"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "China T-Union"
+          }
         }
       }
     },
@@ -5667,6 +6477,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HK$ %@"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HK$ %@"
@@ -5712,6 +6528,12 @@
             "state" : "translated",
             "value" : "%@ Rp."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Rp."
+          }
         }
       }
     },
@@ -5749,6 +6571,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ JPY"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ JPY"
@@ -5794,6 +6622,12 @@
             "state" : "translated",
             "value" : "%@ KPW"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ KPW"
+          }
         }
       }
     },
@@ -5835,6 +6669,12 @@
             "state" : "translated",
             "value" : "₩ %@"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "₩ %@"
+          }
         }
       }
     },
@@ -5871,6 +6711,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NT$ %@"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NT$ %@"
@@ -5916,6 +6762,12 @@
             "state" : "translated",
             "value" : "%@ RMB"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ RMB"
+          }
         }
       }
     },
@@ -5953,6 +6805,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SG$ %@"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SG$ %@"
@@ -5998,6 +6856,12 @@
             "state" : "translated",
             "value" : "$ %@"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$ %@"
+          }
         }
       }
     },
@@ -6037,6 +6901,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selesai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -6078,6 +6948,12 @@
             "state" : "translated",
             "value" : "Kesalahan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錯誤"
+          }
         }
       }
     },
@@ -6117,6 +6993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定"
           }
         }
       }
@@ -6158,6 +7040,12 @@
             "state" : "translated",
             "value" : "Data APDU terlalu panjang."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APDU 資料太長。"
+          }
         }
       }
     },
@@ -6197,6 +7085,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Clipper tidak dapat dibaca."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀唔到 Clipper 卡。"
           }
         }
       }
@@ -6238,6 +7132,12 @@
             "state" : "translated",
             "value" : "Data saldo FeliCa tidak lengkap."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FeliCa 餘額資料唔完整。"
+          }
         }
       }
     },
@@ -6277,6 +7177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perintah FeliCa gagal (status: %1$02X%2$02X)."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FeliCa 指令失敗（狀態：%1$02X%2$02X）。"
           }
         }
       }
@@ -6319,6 +7225,12 @@
             "state" : "translated",
             "value" : "Layanan riwayat FeliCa tidak dapat dipilih (status: %1$02X%2$02X)."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀唔到 FeliCa 紀錄服務（狀態：%1$02X%2$02X）。"
+          }
         }
       }
     },
@@ -6359,6 +7271,12 @@
             "state" : "translated",
             "value" : "IDm FeliCa tidak dapat dibaca."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀唔到 FeliCa IDm。"
+          }
         }
       }
     },
@@ -6398,6 +7316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layanan informasi FeliCa tidak dapat dipilih (status: %1$02X%2$02X)."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀唔到 FeliCa 資料服務（狀態：%1$02X%2$02X）。"
           }
         }
       }
@@ -6440,6 +7364,12 @@
             "state" : "translated",
             "value" : "Pembaca eksternal mengembalikan respons yang tidak lengkap."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外置讀卡器嘅回應唔完整。"
+          }
         }
       }
     },
@@ -6479,6 +7409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ini bukan kartu DESFire."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢張唔係 DESFire 卡。"
           }
         }
       }
@@ -6521,6 +7457,12 @@
             "state" : "translated",
             "value" : "Tempelkan kartu pada pembaca eksternal terlebih dahulu."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請先將張卡拍喺外置讀卡器上。"
+          }
         }
       }
     },
@@ -6561,6 +7503,12 @@
             "state" : "translated",
             "value" : "Ini bukan kartu ISO 7816."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢張唔係 ISO 7816 卡。"
+          }
         }
       }
     },
@@ -6600,6 +7548,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu One Card Korea tidak dapat dibaca."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀唔到韓國 One Card。"
           }
         }
       }
@@ -6642,6 +7596,12 @@
             "state" : "translated",
             "value" : "Sesi dengan pembaca eksternal tidak dapat dimulai."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開唔到外置讀卡器工作階段。"
+          }
         }
       }
     },
@@ -6683,6 +7643,12 @@
             "state" : "translated",
             "value" : "Pembaca kartu pintar eksternal tidak tersedia."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法使用外置智能卡讀卡器。"
+          }
         }
       }
     },
@@ -6722,6 +7688,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu terdeteksi, tetapi tidak dapat dibaca. Ubah posisinya dan coba lagi."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "偵測到張卡，但讀唔到。請調整位置再試。"
           }
         }
       }
@@ -6764,6 +7736,12 @@
             "state" : "translated",
             "value" : "Data tersimpan tidak dapat dibuka. Kartu yang dipindai sekarang tidak akan disimpan setelah aplikasi ditutup. Mulai ulang aplikasi atau perbarui ke versi terbaru."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開唔到已儲存嘅資料。依家讀到嘅卡喺關閉 App 後唔會保留。請重新開啟 App 或更新到最新版。"
+          }
         }
       }
     },
@@ -6804,6 +7782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sinkronisasi iCloud tidak dapat dimulai, sehingga kartu untuk sementara hanya disimpan di perangkat ini. Mulai ulang aplikasi nanti."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟動唔到 iCloud 同步，卡暫時只會儲存喺呢部裝置。請稍後重新開啟 App。"
           }
         }
       }
@@ -6846,6 +7830,12 @@
             "state" : "translated",
             "value" : "Tidak dapat menyimpan data"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法儲存資料"
+          }
         }
       }
     },
@@ -6886,6 +7876,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak dapat membuka data tersimpan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟已儲存嘅資料"
           }
         }
       }
@@ -6928,6 +7924,12 @@
             "state" : "translated",
             "value" : "Hari"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日"
+          }
         }
       }
     },
@@ -6968,6 +7970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Untuk kartu terdaftar, masukkan tanggal lahir dengan dua digit pada setiap kolom. (Tidak wajib untuk kartu yang tidak terdaftar.)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果係記名卡，請用兩位數字填寫出生日期嘅每一欄。（非記名卡唔使填。）"
           }
         }
       }
@@ -7010,6 +8018,12 @@
             "state" : "translated",
             "value" : "Bulan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月"
+          }
         }
       }
     },
@@ -7050,6 +8064,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tanggal lahir (kartu terdaftar)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出生日期（記名卡）"
           }
         }
       }
@@ -7092,6 +8112,12 @@
             "state" : "translated",
             "value" : "Masukkan angka pada gambar."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入圖片入面嘅數字。"
+          }
         }
       }
     },
@@ -7129,6 +8155,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CAPTCHA"
@@ -7174,6 +8206,12 @@
             "state" : "translated",
             "value" : "Masukkan angka di bagian belakang kartu."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入卡背嘅號碼。"
+          }
         }
       }
     },
@@ -7214,6 +8252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nomor kartu"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡號"
           }
         }
       }
@@ -7256,6 +8300,12 @@
             "state" : "translated",
             "value" : "Informasi dimasukkan secara otomatis di [situs resmi EasyCard](https://ezweb.easycard.com.tw/search/CardSearch.php) untuk mengambil data.\n\nKarena pemeliharaan server, data mungkin tidak tersedia pukul 23.00–06.00 waktu setempat.\n\nFitur ini mungkin tidak tersedia jika situs berubah."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動喺[悠遊卡官方網站](https://ezweb.easycard.com.tw/search/CardSearch.php)輸入資料再擷取結果。\n\n因為伺服器維護，本地時間晚上 11 點至朝早 6 點可能查唔到資料。\n\n如果網站規格有變，呢個功能可能用唔到。"
+          }
         }
       }
     },
@@ -7297,6 +8347,12 @@
             "state" : "translated",
             "value" : "Selesai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
         }
       }
     },
@@ -7336,6 +8392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belum ada kartu yang dipindai."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未有已讀取嘅卡。"
           }
         }
       }
@@ -7377,6 +8439,12 @@
             "state" : "translated",
             "value" : "Belum dipindai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未讀卡"
+          }
         }
       }
     },
@@ -7416,6 +8484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Anda belum dipindai."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你仲未讀取張卡。"
           }
         }
       }
@@ -7459,6 +8533,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -7501,6 +8581,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi Jakarta"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達交通卡"
+          }
         }
       }
     },
@@ -7539,6 +8625,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu Multi Trip"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu Multi Trip"
@@ -7584,6 +8676,12 @@
             "state" : "translated",
             "value" : "*Kartu lama tanpa logo China T-Union tidak didukung."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "＊唔支援冇 China T-Union 標誌嘅舊卡。"
+          }
         }
       }
     },
@@ -7624,6 +8722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kompatibel dengan kartu transportasi berlogo “China T-Union” (交通联合)."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援印有「China T-Union」（交通联合）標誌嘅交通卡。"
           }
         }
       }
@@ -7666,6 +8770,12 @@
             "state" : "translated",
             "value" : "Mendukung semua kartu IC transportasi yang kompatibel dengan layanan interoperabilitas nasional Jepang."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援所有適用於日本全國互通服務嘅交通 IC 卡。"
+          }
         }
       }
     },
@@ -7706,6 +8816,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "*PiTaPa tidak memiliki saldo."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "＊PiTaPa 冇餘額。"
           }
         }
       }
@@ -7748,6 +8864,12 @@
             "state" : "translated",
             "value" : "Kartu IC mitra regional juga didukung. Daftar kartu terbaru tersedia [di sini](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "亦支援地區合作 IC 卡。可以[喺呢度](https://www.jreast.co.jp/suica/corporate/pdf/card_issue.pdf)睇最新支援卡一覽。"
+          }
         }
       }
     },
@@ -7785,6 +8907,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL (Cashbee)"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EZL (Cashbee)"
@@ -7830,6 +8958,12 @@
             "state" : "translated",
             "value" : "One pass"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One pass"
+          }
         }
       }
     },
@@ -7867,6 +9001,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rail+"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rail+"
@@ -7912,6 +9052,12 @@
             "state" : "translated",
             "value" : "T-money"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T-money"
+          }
         }
       }
     },
@@ -7949,6 +9095,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WOWPASS"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "WOWPASS"
@@ -7994,6 +9146,12 @@
             "state" : "translated",
             "value" : "Kompatibel dengan semua kartu berlogo “One Card All Pass (전국호환 교통카드)”."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援所有印有「One Card All Pass（전국호환 교통카드）」標誌嘅卡。"
+          }
         }
       }
     },
@@ -8030,6 +9188,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@, %1$@"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2$@, %1$@"
@@ -8071,6 +9235,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KAI Commuter"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KAI Commuter"
@@ -8117,6 +9287,12 @@
             "state" : "translated",
             "value" : "Asahikawa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旭川"
+          }
         }
       }
     },
@@ -8159,6 +9335,12 @@
             "state" : "translated",
             "value" : "Sapporo"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌"
+          }
         }
       }
     },
@@ -8196,6 +9378,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asahikawa Railway"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asahikawa Railway"
@@ -8241,6 +9429,12 @@
             "state" : "translated",
             "value" : "Douhoku Bus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Douhoku Bus"
+          }
         }
       }
     },
@@ -8278,6 +9472,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sapporo Information Network Co., Ltd."
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sapporo Information Network Co., Ltd."
@@ -8324,6 +9524,12 @@
             "state" : "translated",
             "value" : "Takamatsu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高松"
+          }
         }
       }
     },
@@ -8361,6 +9567,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takamatsu-Kotohira Railway Co., Ltd."
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Takamatsu-Kotohira Railway Co., Ltd."
@@ -8406,6 +9618,12 @@
             "state" : "translated",
             "value" : "Iwasaki Corp."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iwasaki Corp."
+          }
         }
       }
     },
@@ -8447,6 +9665,12 @@
             "state" : "translated",
             "value" : "Kagoshima transportation Bureau"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kagoshima transportation Bureau"
+          }
         }
       }
     },
@@ -8484,6 +9708,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nangoku Transport"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nangoku Transport"
@@ -8530,6 +9760,12 @@
             "state" : "translated",
             "value" : "Sendai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仙台"
+          }
         }
       }
     },
@@ -8567,6 +9803,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transportation Bureau City of Sendai"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Transportation Bureau City of Sendai"
@@ -8612,6 +9854,12 @@
             "state" : "translated",
             "value" : "NTASU Co., Ltd."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTASU Co., Ltd."
+          }
         }
       }
     },
@@ -8649,6 +9897,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okinawa IC Card Co., Ltd."
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okinawa IC Card Co., Ltd."
@@ -8694,6 +9948,12 @@
             "state" : "translated",
             "value" : "EZL Corp."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EZL Corp."
+          }
         }
       }
     },
@@ -8731,6 +9991,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KFTC"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "KFTC"
@@ -8776,6 +10042,12 @@
             "state" : "translated",
             "value" : "KORAIL"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KORAIL"
+          }
         }
       }
     },
@@ -8813,6 +10085,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korea Smart Card"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Korea Smart Card"
@@ -8858,6 +10136,12 @@
             "state" : "translated",
             "value" : "EasyCard Co., Ltd."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard Co., Ltd."
+          }
         }
       }
     },
@@ -8899,6 +10183,12 @@
             "state" : "translated",
             "value" : "icash Corp."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash Corp."
+          }
         }
       }
     },
@@ -8936,6 +10226,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MTC"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MTC"
@@ -8982,6 +10278,12 @@
             "state" : "translated",
             "value" : "Sapporo"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "札幌"
+          }
         }
       }
     },
@@ -9023,6 +10325,12 @@
             "state" : "translated",
             "value" : "20 transaksi terakhir dapat dibaca dari kartu."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以讀取卡上最近 20 筆交易。"
+          }
         }
       }
     },
@@ -9061,6 +10369,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DoCard / Asaca"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DoCard / Asaca"
@@ -9107,6 +10421,12 @@
             "state" : "translated",
             "value" : "icsca"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icsca"
+          }
         }
       }
     },
@@ -9144,6 +10464,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "IruCa"
@@ -9190,6 +10516,12 @@
             "state" : "translated",
             "value" : "IruCa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IruCa"
+          }
         }
       }
     },
@@ -9227,6 +10559,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SAPICA"
@@ -9273,6 +10611,12 @@
             "state" : "translated",
             "value" : "SAPICA"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAPICA"
+          }
         }
       }
     },
@@ -9313,6 +10657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "20 transaksi terakhir dapat dibaca dari kartu."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以讀取卡上最近 20 筆交易。"
           }
         }
       }
@@ -9356,6 +10706,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi Jepang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本交通 IC 卡"
+          }
         }
       }
     },
@@ -9397,6 +10753,12 @@
             "state" : "translated",
             "value" : "20 transaksi terakhir dapat dibaca dari kartu."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以讀取卡上最近 20 筆交易。"
+          }
         }
       }
     },
@@ -9435,6 +10797,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ntasu"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ntasu"
@@ -9481,6 +10849,12 @@
             "state" : "translated",
             "value" : "OKICA"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OKICA"
+          }
         }
       }
     },
@@ -9521,6 +10895,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "16 transaksi terakhir dapat dibaca dari kartu."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以讀取卡上最近 16 筆交易。"
           }
         }
       }
@@ -9564,6 +10944,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi terpadu Kagoshima"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島通用交通卡"
+          }
         }
       }
     },
@@ -9602,6 +10988,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One Card All Pass"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "One Card All Pass"
@@ -9646,6 +11038,12 @@
             "state" : "translated",
             "value" : "Lisensi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權條款"
+          }
         }
       }
     },
@@ -9687,6 +11085,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "San Francisco"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "三藩市"
           }
         }
       }
@@ -9730,6 +11134,12 @@
             "state" : "translated",
             "value" : "Pulau Utama Okinawa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩本島"
+          }
         }
       }
     },
@@ -9771,6 +11181,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "California"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加州"
           }
         }
       }
@@ -9814,6 +11230,12 @@
             "state" : "translated",
             "value" : "Hokkaido"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北海道"
+          }
         }
       }
     },
@@ -9855,6 +11277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jakarta"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "雅加達"
           }
         }
       }
@@ -9898,6 +11326,12 @@
             "state" : "translated",
             "value" : "Kagawa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香川"
+          }
         }
       }
     },
@@ -9939,6 +11373,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kagoshima"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鹿兒島"
           }
         }
       }
@@ -9982,6 +11422,12 @@
             "state" : "translated",
             "value" : "Miyagi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮城"
+          }
         }
       }
     },
@@ -10023,6 +11469,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Miyazaki"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宮崎"
           }
         }
       }
@@ -10066,6 +11518,12 @@
             "state" : "translated",
             "value" : "Nagasaki"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長崎"
+          }
         }
       }
     },
@@ -10108,6 +11566,12 @@
             "state" : "translated",
             "value" : "Okinawa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沖繩"
+          }
         }
       }
     },
@@ -10149,6 +11613,12 @@
             "state" : "translated",
             "value" : "Pembaca kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器"
+          }
         }
       }
     },
@@ -10188,6 +11658,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pilih kartu"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀卡"
           }
         }
       }
@@ -10229,6 +11705,12 @@
             "state" : "translated",
             "value" : "Tidak ada kartu dengan log pemindaian."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未有包含讀卡記錄嘅卡。"
+          }
         }
       }
     },
@@ -10268,6 +11750,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定"
           }
         }
       }
@@ -10310,6 +11798,12 @@
             "state" : "translated",
             "value" : "Nanti"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遲啲"
+          }
         }
       }
     },
@@ -10351,6 +11845,12 @@
             "state" : "translated",
             "value" : "Kami menampilkan iklan untuk mendukung pengembangan dan pemeliharaan aplikasi ini.\nIzin pelacakan membantu kami menampilkan iklan yang lebih relevan dan mengukur kinerjanya.\nKetuk “Izinkan” untuk mendukung pemeliharaan aplikasi.\nTerima kasih atas dukungan Anda."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我哋展示廣告，支持 App 繼續開發同維護。\n允許追蹤可以幫我哋顯示更相關嘅廣告同衡量成效。\n請撳「允許」支持我哋繼續維護 App。\n多謝支持。"
+          }
         }
       }
     },
@@ -10391,6 +11891,12 @@
             "state" : "translated",
             "value" : "Jika pelacakan tidak diizinkan, iklan tetap ditampilkan, tetapi mungkin kurang relevan."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "唔允許追蹤都會見到廣告，但廣告可能冇咁相關。"
+          }
         }
       }
     },
@@ -10430,6 +11936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iklan relevan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相關廣告"
           }
         }
       }
@@ -10472,6 +11984,12 @@
             "state" : "translated",
             "value" : "Diizinkan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已允許"
+          }
         }
       }
     },
@@ -10511,6 +12029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lanjutkan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繼續"
           }
         }
       }
@@ -10552,6 +12076,12 @@
             "state" : "translated",
             "value" : "Semua siap!"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定完成！"
+          }
         }
       }
     },
@@ -10591,6 +12121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Semua siap! Anda dapat langsung menggunakan aplikasi."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搞掂！依家可以開始用 App。"
           }
         }
       }
@@ -10632,6 +12168,12 @@
             "state" : "translated",
             "value" : "Periksa dan simpan saldo kartu transportasi dari seluruh dunia melalui ponsel.\nTinjau izin yang diperlukan untuk menyesuaikan pengalaman Anda."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢個 App 可以用手機查詢同儲存世界各地交通卡嘅餘額。\n請檢查所需權限，按需要設定使用體驗。"
+          }
         }
       }
     },
@@ -10672,6 +12214,12 @@
             "state" : "translated",
             "value" : "Menyarankan kartu yang dapat digunakan di wilayah saat ini berdasarkan lokasi perangkat."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按裝置目前位置，推薦當地可以用嘅卡。"
+          }
         }
       }
     },
@@ -10711,6 +12259,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lokasi"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置"
           }
         }
       }
@@ -10753,6 +12307,12 @@
             "state" : "translated",
             "value" : "Pembaca kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡器"
+          }
         }
       }
     },
@@ -10793,6 +12353,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anda dapat memindai kartu dengan pembaca NFC internal iPhone.\n\nDekatkan kartu ke area kamera di bagian belakang perangkat.\n\nAnda juga dapat menghubungkan pembaca kartu pintar yang kompatibel dengan CCID. Beberapa kartu hanya bisa dipindai dengan pembaca eksternal. Lihat [situs kami](https://rs6apps.com/transit/nfc_reader?lang=en) untuk informasi lebih lanjut."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可以用 iPhone 內置嘅 NFC 讀卡器讀卡。\n\n請將張卡靠近裝置背面鏡頭附近。\n\n你亦可以連接兼容 CCID 嘅智能卡讀卡器。部分卡只可以用外置讀卡器讀取。詳情請睇[我哋嘅網站](https://rs6apps.com/transit/nfc_reader?lang=en)。"
           }
         }
       }
@@ -10835,6 +12401,12 @@
             "state" : "translated",
             "value" : "Perangkat ini tidak memiliki pembaca NFC internal. Anda dapat menghubungkan pembaca kartu pintar yang kompatibel dengan CCID. Anda juga dapat melihat riwayat kartu yang dipindai dengan iPhone.\n\nLihat [situs kami](https://rs6apps.com/transit/nfc_reader?lang=en) untuk informasi lebih lanjut."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢部裝置冇內置 NFC 讀卡器。你可以連接兼容 CCID 嘅智能卡讀卡器，亦可以睇返用 iPhone 讀過嘅卡嘅紀錄。\n\n詳情請睇[我哋嘅網站](https://rs6apps.com/transit/nfc_reader?lang=en)。"
+          }
         }
       }
     },
@@ -10875,6 +12447,12 @@
             "state" : "translated",
             "value" : "Memberi tahu Anda tentang kartu yang tersedia di wilayah saat ini ketika bepergian."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旅行或者出行嗰陣，通知你目前所在地區可以用嘅卡。"
+          }
         }
       }
     },
@@ -10914,6 +12492,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notifikasi"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
           }
         }
       }
@@ -10957,6 +12541,12 @@
             "state" : "translated",
             "value" : "Afrika"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非洲"
+          }
         }
       }
     },
@@ -10998,6 +12588,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asia Tengah"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中亞"
           }
         }
       }
@@ -11041,6 +12637,12 @@
             "state" : "translated",
             "value" : "Asia Timur"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東亞"
+          }
         }
       }
     },
@@ -11082,6 +12684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eropa"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歐洲"
           }
         }
       }
@@ -11125,6 +12733,12 @@
             "state" : "translated",
             "value" : "Wilayah Jepang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本地區"
+          }
         }
       }
     },
@@ -11166,6 +12780,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amerika Latin"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拉丁美洲"
           }
         }
       }
@@ -11209,6 +12829,12 @@
             "state" : "translated",
             "value" : "Timur Tengah"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中東"
+          }
         }
       }
     },
@@ -11250,6 +12876,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amerika Utara"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北美洲"
           }
         }
       }
@@ -11293,6 +12925,12 @@
             "state" : "translated",
             "value" : "Oseania"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大洋洲"
+          }
         }
       }
     },
@@ -11334,6 +12972,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asia Selatan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "南亞"
           }
         }
       }
@@ -11377,6 +13021,12 @@
             "state" : "translated",
             "value" : "Asia Tenggara"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "東南亞"
+          }
         }
       }
     },
@@ -11416,6 +13066,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pindai ulang kartu yang tersimpan untuk memperbarui informasinya."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再讀一次已儲存嘅卡，就可以更新資料。"
           }
         }
       }
@@ -11457,6 +13113,12 @@
             "state" : "translated",
             "value" : "Riwayat"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易紀錄"
+          }
         }
       }
     },
@@ -11496,6 +13158,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riwayat (%lld transaksi)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易紀錄（%lld 筆）"
           }
         }
       }
@@ -11539,6 +13207,12 @@
             "state" : "translated",
             "value" : "Naik"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上車"
+          }
         }
       }
     },
@@ -11579,6 +13253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bus"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "巴士"
           }
         }
       }
@@ -11621,6 +13301,12 @@
             "state" : "translated",
             "value" : "Isi ulang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增值"
+          }
         }
       }
     },
@@ -11661,6 +13347,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Isi ulang otomatis"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動增值"
           }
         }
       }
@@ -11703,6 +13395,12 @@
             "state" : "translated",
             "value" : "Isi ulang (bus)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增值（巴士）"
+          }
         }
       }
     },
@@ -11743,6 +13441,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Isi ulang (toko)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增值（商店）"
           }
         }
       }
@@ -11785,6 +13489,12 @@
             "state" : "translated",
             "value" : "Pembayaran (nonkereta)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "付款（非鐵路）"
+          }
         }
       }
     },
@@ -11825,6 +13535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loket"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "櫃位"
           }
         }
       }
@@ -11867,6 +13583,12 @@
             "state" : "translated",
             "value" : "Pembatalan masuk"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消入閘"
+          }
         }
       }
     },
@@ -11907,6 +13629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loket JR"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JR 櫃位"
           }
         }
       }
@@ -11949,6 +13677,12 @@
             "state" : "translated",
             "value" : "Sepeda"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "單車"
+          }
         }
       }
     },
@@ -11988,6 +13722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak ada riwayat transaksi"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未有交易紀錄"
           }
         }
       }
@@ -12030,6 +13770,12 @@
             "state" : "translated",
             "value" : "Pengembalian dana"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退款"
+          }
         }
       }
     },
@@ -12070,6 +13816,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tarif"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車費"
           }
         }
       }
@@ -12112,6 +13864,12 @@
             "state" : "translated",
             "value" : "Penyesuaian tarif (JR)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "補車費（JR）"
+          }
         }
       }
     },
@@ -12152,6 +13910,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selisih tarif"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車費差額"
           }
         }
       }
@@ -12194,6 +13958,12 @@
             "state" : "translated",
             "value" : "Feri"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "渡輪"
+          }
         }
       }
     },
@@ -12234,6 +14004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kereta cepat"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高鐵"
           }
         }
       }
@@ -12276,6 +14052,12 @@
             "state" : "translated",
             "value" : "Kereta ringan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輕鐵"
+          }
         }
       }
     },
@@ -12316,6 +14098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monorel"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "單軌列車"
           }
         }
       }
@@ -12358,6 +14146,12 @@
             "state" : "translated",
             "value" : "MRT Kaohsiung"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高雄捷運"
+          }
         }
       }
     },
@@ -12398,6 +14192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MRT Taipei"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台北捷運"
           }
         }
       }
@@ -12440,6 +14240,12 @@
             "state" : "translated",
             "value" : "MRT Taichung"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台中捷運"
+          }
         }
       }
     },
@@ -12480,6 +14286,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MRT Taoyuan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桃園捷運"
           }
         }
       }
@@ -12522,6 +14334,12 @@
             "state" : "translated",
             "value" : "Penerbitan baru"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新發卡"
+          }
         }
       }
     },
@@ -12562,6 +14380,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riwayat transaksi tidak tersedia untuk kartu ini."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢張卡未提供交易紀錄。"
           }
         }
       }
@@ -12604,6 +14428,12 @@
             "state" : "translated",
             "value" : "Lainnya"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
+          }
         }
       }
     },
@@ -12644,6 +14474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parkir"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "泊車"
           }
         }
       }
@@ -12686,6 +14522,12 @@
             "state" : "translated",
             "value" : "Selisih tarif"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車費差額"
+          }
         }
       }
     },
@@ -12726,6 +14568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kereta api"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鐵路"
           }
         }
       }
@@ -12769,6 +14617,12 @@
             "state" : "translated",
             "value" : "Pendaftaran"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登記"
+          }
         }
       }
     },
@@ -12809,6 +14663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penerbitan ulang"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "補發"
           }
         }
       }
@@ -12851,6 +14711,12 @@
             "state" : "translated",
             "value" : "Shinkansen"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新幹線"
+          }
         }
       }
     },
@@ -12891,6 +14757,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belanja"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購物"
           }
         }
       }
@@ -12933,6 +14805,12 @@
             "state" : "translated",
             "value" : "Pembatalan pembelian"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消購物"
+          }
         }
       }
     },
@@ -12973,6 +14851,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belanja tunai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現金購物"
           }
         }
       }
@@ -13015,6 +14899,12 @@
             "state" : "translated",
             "value" : "Belanja di stasiun"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車站購物"
+          }
         }
       }
     },
@@ -13055,6 +14945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belanja tunai di stasiun"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車站現金購物"
           }
         }
       }
@@ -13097,6 +14993,12 @@
             "state" : "translated",
             "value" : "Mesin penjual otomatis"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動售賣機"
+          }
         }
       }
     },
@@ -13137,6 +15039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penggunaan kartu"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用卡"
           }
         }
       }
@@ -13179,6 +15087,12 @@
             "state" : "translated",
             "value" : "Kereta Taiwan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台鐵"
+          }
         }
       }
     },
@@ -13219,6 +15133,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beli tiket"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "買車飛"
           }
         }
       }
@@ -13261,6 +15181,12 @@
             "state" : "translated",
             "value" : "Tiket beberapa perjalanan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "多程票"
+          }
         }
       }
     },
@@ -13301,6 +15227,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tiket"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "車飛"
           }
         }
       }
@@ -13343,6 +15275,12 @@
             "state" : "translated",
             "value" : "Informasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料"
+          }
         }
       }
     },
@@ -13383,6 +15321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saldo"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "餘額"
           }
         }
       }
@@ -13425,6 +15369,12 @@
             "state" : "translated",
             "value" : "Kategori"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "類別"
+          }
         }
       }
     },
@@ -13465,6 +15415,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jenis"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "種類"
           }
         }
       }
@@ -13507,6 +15463,12 @@
             "state" : "translated",
             "value" : "Pemindaian terakhir"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次讀卡"
+          }
         }
       }
     },
@@ -13548,6 +15510,12 @@
             "state" : "translated",
             "value" : "Pemindaian terakhir"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次讀卡"
+          }
         }
       }
     },
@@ -13588,6 +15556,12 @@
             "state" : "translated",
             "value" : "Informasi tidak dapat dibaca."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀唔到資料。"
+          }
         }
       }
     },
@@ -13624,6 +15598,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID"
@@ -13668,6 +15648,12 @@
             "state" : "translated",
             "value" : "Informasi penerbitan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發卡資料"
+          }
         }
       }
     },
@@ -13707,6 +15693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tanggal penerbitan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發卡日期"
           }
         }
       }
@@ -13748,6 +15740,12 @@
             "state" : "translated",
             "value" : "Tanggal kedaluwarsa"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "到期日"
+          }
         }
       }
     },
@@ -13787,6 +15785,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penerbit"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發卡機構"
           }
         }
       }
@@ -13828,6 +15832,12 @@
             "state" : "translated",
             "value" : "Wilayah"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區"
+          }
         }
       }
     },
@@ -13867,6 +15877,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wilayah"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區"
           }
         }
       }
@@ -13908,6 +15924,12 @@
             "state" : "translated",
             "value" : "Wilayah"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "地區"
+          }
         }
       }
     },
@@ -13947,6 +15969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ikon"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圖示"
           }
         }
       }
@@ -13988,6 +16016,12 @@
             "state" : "translated",
             "value" : "Nama tampilan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示名稱"
+          }
         }
       }
     },
@@ -14027,6 +16061,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nama kartu"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡名"
           }
         }
       }
@@ -14069,6 +16109,12 @@
             "state" : "translated",
             "value" : "Kartu tidak terdeteksi."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "偵測唔到卡。"
+          }
         }
       }
     },
@@ -14108,6 +16154,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu ini tidak didukung."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "唔支援呢張卡。"
           }
         }
       }
@@ -14150,6 +16202,12 @@
             "state" : "translated",
             "value" : "Dekatkan “%@” ke bagian tengah atas iPhone."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將「%@」靠近 iPhone 頂部中央。"
+          }
         }
       }
     },
@@ -14189,6 +16247,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selesai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -14230,6 +16294,12 @@
             "state" : "translated",
             "value" : "Kesalahan pemindaian"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡錯誤"
+          }
         }
       }
     },
@@ -14270,6 +16340,12 @@
             "state" : "translated",
             "value" : "Kesalahan penanda status. s1: %1$lld, s2:%2$lld"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "狀態旗標錯誤。s1: %1$lld，s2:%2$lld"
+          }
         }
       }
     },
@@ -14309,6 +16385,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Memindai…"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀緊卡…"
           }
         }
       }
@@ -14351,6 +16433,12 @@
             "state" : "translated",
             "value" : "Nama layanan tidak ditentukan."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未定義服務名稱。"
+          }
         }
       }
     },
@@ -14391,6 +16479,12 @@
             "state" : "translated",
             "value" : "Cari"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋"
+          }
         }
       }
     },
@@ -14429,6 +16523,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OCR"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OCR"
@@ -14474,6 +16574,12 @@
             "state" : "translated",
             "value" : "NFC"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
         }
       }
     },
@@ -14515,6 +16621,12 @@
             "state" : "translated",
             "value" : "Pengambilan daring"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "網上查詢"
+          }
         }
       }
     },
@@ -14554,6 +16666,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informasi hak"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "權利資訊"
           }
         }
       }
@@ -14597,6 +16715,12 @@
             "state" : "translated",
             "value" : "iPhone, iPad, App Store, dan Apple Pay adalah merek dagang terdaftar Apple Inc."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone、iPad、App Store 同 Apple Pay 係 Apple Inc. 嘅註冊商標。"
+          }
         }
       }
     },
@@ -14634,6 +16758,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple"
@@ -14679,6 +16809,12 @@
             "state" : "translated",
             "value" : "Merek dagang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商標"
+          }
         }
       }
     },
@@ -14719,6 +16855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informasi yang ditampilkan didasarkan pada wilayah penerbit kartu.\nNama perusahaan, nama dagang, nama produk, dan nama layanan yang disebutkan di atas atau di bagian lain adalah merek dagang terdaftar atau merek dagang perusahaan masing-masing."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示嘅資料以發卡機構嘅地區為準。\n上面或者其他地方提到嘅公司名、商號、產品名同服務名，係各公司嘅註冊商標或者商標。"
           }
         }
       }
@@ -14762,6 +16904,12 @@
             "state" : "translated",
             "value" : "“交通联合” (China T-Union) adalah standar yang ditetapkan oleh Kementerian Transportasi Republik Rakyat Tiongkok.\n\nNama perusahaan, nama dagang, nama produk, dan nama layanan yang disebutkan di sini adalah merek dagang terdaftar atau merek dagang perusahaan masing-masing."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「交通联合」（China T-Union）係中華人民共和國交通運輸部訂立嘅標準。\n\n本文提到嘅公司名、商號、產品名同服務名，係各公司嘅註冊商標或者商標。"
+          }
         }
       }
     },
@@ -14804,6 +16952,12 @@
             "state" : "translated",
             "value" : "“Android”, “Google” dan “Google Pay” adalah merek dagang Google LLC."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Android」, 「Google」 同 「Google Pay」 係 Google LLC 嘅商標。"
+          }
         }
       }
     },
@@ -14841,6 +16995,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google"
@@ -14887,6 +17047,12 @@
             "state" : "translated",
             "value" : "“Octopus” dan “八達通” adalah merek dagang Octopus Cards Limited（八達通卡有限公司）."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Octopus」 同 「八達通」 係 Octopus Cards Limited（八達通卡有限公司） 嘅商標。"
+          }
         }
       }
     },
@@ -14928,6 +17094,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“Kartu Multi Trip” adalah merek dagang KAI Commuter."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Kartu Multi Trip」 係 KAI Commuter 嘅商標。"
           }
         }
       }
@@ -14971,6 +17143,12 @@
             "state" : "translated",
             "value" : "“icsca” adalah merek dagang terdaftar Sendai-shi."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」 係 Sendai-shi 嘅註冊商標。"
+          }
         }
       }
     },
@@ -15012,6 +17190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“DoCard” adalah merek dagang 道北バス.\n“Asaca” adalah merek dagang 旭川電気軌道株式会社."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「DoCard」 係 道北バス 嘅商標。\n「Asaca」 係 旭川電気軌道株式会社 嘅商標。"
           }
         }
       }
@@ -15055,6 +17239,12 @@
             "state" : "translated",
             "value" : "“Kitaca” adalah merek dagang terdaftar Hokkaido Railway Company.\n\n“Suica” adalah merek dagang terdaftar East Japan Railway Company.\n\n“PASMO” adalah merek dagang terdaftar PASMO CO., LTD.\n\n“TOICA” adalah merek dagang terdaftar Central Japan Railway Company.\n\n“manaca” adalah merek dagang terdaftar Nagoya Transportation Development Organization and MIC CO., LTD.\n\n“ICOCA” adalah merek dagang terdaftar West Japan Railway Company.\n\n“SUGOCA” adalah merek dagang terdaftar Kyushu Railway Company.\n\n“nimoca” adalah merek dagang terdaftar Nishi-Nippon Railroad Co., Ltd.\n\n“はやかけん” adalah merek dagang terdaftar Fukuoka City Transportation Bureau.\n\n“PiTaPa” adalah merek dagang terdaftar Surutto KANSAI Co., Ltd."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Kitaca」 係 Hokkaido Railway Company 嘅註冊商標。\n\n「Suica」 係 East Japan Railway Company 嘅註冊商標。\n\n「PASMO」 係 PASMO CO., LTD 嘅註冊商標。\n\n「TOICA」 係 Central Japan Railway Company 嘅註冊商標。\n\n「manaca」 係 Nagoya Transportation Development Organization and MIC CO., LTD 嘅註冊商標。\n\n「ICOCA」 係 West Japan Railway Company 嘅註冊商標。\n\n「SUGOCA」 係 Kyushu Railway Company 嘅註冊商標。\n\n「nimoca」 係 Nishi-Nippon Railroad Co., Ltd 嘅註冊商標。\n\n「はやかけん」 係 Fukuoka City Transportation Bureau 嘅註冊商標。\n\n「PiTaPa」 係 Surutto KANSAI Co., Ltd 嘅註冊商標。"
+          }
         }
       }
     },
@@ -15096,6 +17286,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“icsca” adalah merek dagang 仙台市."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icsca」 係 仙台市 嘅商標。"
           }
         }
       }
@@ -15139,6 +17335,12 @@
             "state" : "translated",
             "value" : "“IruCa” adalah merek dagang Takamatsu-Kotohira Electric Railroad Co., Ltd."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「IruCa」 係 Takamatsu-Kotohira Electric Railroad Co., Ltd 嘅商標。"
+          }
         }
       }
     },
@@ -15180,6 +17382,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“SAPICA” adalah merek dagang Sapporo Information Center Co., Ltd."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「SAPICA」 係 Sapporo Information Center Co., Ltd 嘅商標。"
           }
         }
       }
@@ -15223,6 +17431,12 @@
             "state" : "translated",
             "value" : "“エヌタス”, “N+” dan “長崎バス” adalah merek dagang 長崎自動車株式会社.\n\n“Tカード” adalah merek dagang カルチュア・コンビニエンス・クラブ株式会社.\n\n“Vポイントカード”, “Vポイント” dan logo Vポイント adalah merek dagang V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「エヌタス」, 「N+」 同 「長崎バス」 係 長崎自動車株式会社 嘅商標。\n\n「Tカード」 係 カルチュア・コンビニエンス・クラブ株式会社 嘅商標。\n\n「Vポイントカード」, 「Vポイント」 同 Vポイント 標誌 係 V Point Marketing Co., Ltd. and Sumitomo Mitsui Banking Corporation 嘅商標。"
+          }
         }
       }
     },
@@ -15264,6 +17478,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“OKICA” adalah merek dagang 沖縄ICカード株式会社."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「OKICA」 係 沖縄ICカード株式会社 嘅商標。"
           }
         }
       }
@@ -15307,6 +17527,12 @@
             "state" : "translated",
             "value" : "“Rapica” adalah merek dagang 鹿児島市交通局."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Rapica」 係 鹿児島市交通局 嘅商標。"
+          }
         }
       }
     },
@@ -15349,6 +17575,12 @@
             "state" : "translated",
             "value" : "“One Card All Pass” (전국호환교통카드) adalah standar yang ditetapkan oleh Kementerian Pertanahan, Infrastruktur, dan Transportasi Republik Korea.\n\n“T-money” dan “티머니” adalah merek dagang Korea Smart Card Corporation.\n\n“WOWPASS” adalah merek dagang Orange Square, Inc.\n\n“EZL”, “이즐”, “Cashbee” dan “캐시비” adalah merek dagang EZL Corp.\n\n“Rail+” dan “레일플러스” adalah merek dagang Korea Railroad Corporation.\n\n“OnePass” dan “발행원패스” adalah merek dagang iM UPay Co., Ltd.\n\n“Hanpay” dan “한페이” adalah merek dagang 한페이시스."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「One Card All Pass」（전국호환교통카드）係大韓民國國土交通部訂立嘅標準。\n\n「T-money」 同 「티머니」 係 Korea Smart Card Corporation 嘅商標。\n\n「WOWPASS」 係 Orange Square, Inc 嘅商標。\n\n「EZL」, 「이즐」, 「Cashbee」 同 「캐시비」 係 EZL Corp 嘅商標。\n\n「Rail+」 同 「레일플러스」 係 Korea Railroad Corporation 嘅商標。\n\n「OnePass」 同 「발행원패스」 係 iM UPay Co., Ltd 嘅商標。\n\n「Hanpay」 同 「한페이」 係 한페이시스 嘅商標。"
+          }
         }
       }
     },
@@ -15388,6 +17620,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisensi sumber terbuka"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開放原始碼授權"
           }
         }
       }
@@ -15431,6 +17669,12 @@
             "state" : "translated",
             "value" : "“FeliCa” adalah merek dagang terdaftar atau merek dagang Sony Group Corporation atau afiliasinya."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「FeliCa」係 Sony Group Corporation 或者其關聯公司嘅註冊商標或者商標。"
+          }
         }
       }
     },
@@ -15468,6 +17712,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sony"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sony"
@@ -15512,6 +17762,12 @@
             "state" : "translated",
             "value" : "Kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡"
+          }
         }
       }
     },
@@ -15551,6 +17807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lainnya"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
           }
         }
       }
@@ -15594,6 +17856,12 @@
             "state" : "translated",
             "value" : "“EasyCard” dan “悠遊卡” adalah merek dagang 悠遊卡股份有限公司."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「EasyCard」 同 「悠遊卡」 係 悠遊卡股份有限公司 嘅商標。"
+          }
         }
       }
     },
@@ -15635,6 +17903,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“icash” dan “愛金卡” adalah merek dagang 愛金卡股份有限公司.\n\n“7-ELEVEN” adalah merek dagang 統一超商股份有限公司."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「icash」 同 「愛金卡」 係 愛金卡股份有限公司 嘅商標。\n\n「7-ELEVEN」 係 統一超商股份有限公司 嘅商標。"
           }
         }
       }
@@ -15678,6 +17952,12 @@
             "state" : "translated",
             "value" : "“Clipper” adalah merek dagang MTC."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Clipper」 係 MTC 嘅商標。"
+          }
         }
       }
     },
@@ -15717,6 +17997,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iklan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告"
           }
         }
       }
@@ -15759,6 +18045,12 @@
             "state" : "translated",
             "value" : "Pengaturan privasi iklan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告私隱設定"
+          }
         }
       }
     },
@@ -15798,6 +18090,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selesai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -15839,6 +18137,12 @@
             "state" : "translated",
             "value" : "Pembelian untuk menghapus iklan selesai. Terima kasih!"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已成功購買移除廣告，多謝！"
+          }
         }
       }
     },
@@ -15878,6 +18182,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kesalahan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錯誤"
           }
         }
       }
@@ -15920,6 +18230,12 @@
             "state" : "translated",
             "value" : "Pembelian tertunda"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等緊確認購買"
+          }
         }
       }
     },
@@ -15961,6 +18277,12 @@
             "state" : "translated",
             "value" : "Iklan akan otomatis dihapus setelah pembelian disetujui."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購買獲確認之後會自動移除廣告。"
+          }
         }
       }
     },
@@ -16000,6 +18322,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pulihkan pembelian"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還原購買項目"
           }
         }
       }
@@ -16041,6 +18369,12 @@
             "state" : "translated",
             "value" : "Pemulihan selesai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還原完成"
+          }
         }
       }
     },
@@ -16080,6 +18414,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembelian berhasil dipulihkan."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已還原購買項目。"
           }
         }
       }
@@ -16122,6 +18462,12 @@
             "state" : "translated",
             "value" : "Tidak ada pembelian"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搵唔到購買項目"
+          }
         }
       }
     },
@@ -16163,6 +18509,12 @@
             "state" : "translated",
             "value" : "Tidak ditemukan pembelian penghapusan iklan untuk Akun Apple ini."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呢個 Apple 帳户搵唔到移除廣告嘅購買項目。"
+          }
         }
       }
     },
@@ -16203,6 +18555,12 @@
             "state" : "translated",
             "value" : "Kesalahan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "錯誤"
+          }
         }
       }
     },
@@ -16240,6 +18598,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BETA"
@@ -16285,6 +18649,12 @@
             "state" : "translated",
             "value" : "Pengembangan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發"
+          }
         }
       }
     },
@@ -16324,6 +18694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelola data"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "管理資料"
           }
         }
       }
@@ -16365,6 +18741,12 @@
             "state" : "translated",
             "value" : "Sinkronisasi iCloud"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud 同步"
+          }
         }
       }
     },
@@ -16404,6 +18786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nonaktifkan sinkronisasi iCloud"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉 iCloud 同步"
           }
         }
       }
@@ -16445,6 +18833,12 @@
             "state" : "translated",
             "value" : "Jika sinkronisasi iCloud dinonaktifkan, kartu yang dipindai tidak akan disinkronkan.\nInformasi yang sudah disinkronkan tidak akan dihapus."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉 iCloud 同步之後，已讀取嘅卡唔會再同步。\n已經同步嘅資料會保留。"
+          }
         }
       }
     },
@@ -16484,6 +18878,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nonaktifkan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉"
           }
         }
       }
@@ -16525,6 +18925,12 @@
             "state" : "translated",
             "value" : "Hapus riwayat"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除紀錄"
+          }
         }
       }
     },
@@ -16565,6 +18971,12 @@
             "state" : "translated",
             "value" : "Informasi kartu yang tersimpan akan dihapus. Tindakan ini tidak dapat dibatalkan."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已儲存嘅卡資料會被刪除。呢個操作無法復原。"
+          }
         }
       }
     },
@@ -16604,6 +19016,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hapus"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除"
           }
         }
       }
@@ -16646,6 +19064,12 @@
             "state" : "translated",
             "value" : "Debug"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "除錯"
+          }
         }
       }
     },
@@ -16686,6 +19110,12 @@
             "state" : "translated",
             "value" : "Iklan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "廣告"
+          }
         }
       }
     },
@@ -16725,6 +19155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode debug"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "除錯模式"
           }
         }
       }
@@ -16767,6 +19203,12 @@
             "state" : "translated",
             "value" : "Status pembelian (iklan)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購買狀態（廣告）"
+          }
         }
       }
     },
@@ -16807,6 +19249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pembelian uji coba"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "測試購買"
           }
         }
       }
@@ -16849,6 +19297,12 @@
             "state" : "translated",
             "value" : "Rilis"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正式版"
+          }
         }
       }
     },
@@ -16890,6 +19344,12 @@
             "state" : "translated",
             "value" : "Uji"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "測試"
+          }
         }
       }
     },
@@ -16929,6 +19389,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode pengembang tetap aktif sampai aplikasi dimulai ulang.\nJika tidak disengaja, ketuk “Batal”."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發者模式會維持啟用，直到重新開啟 App。\n如果唔係有意開啟，請撳「取消」。"
           }
         }
       }
@@ -16970,6 +19436,12 @@
             "state" : "translated",
             "value" : "Aktifkan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用"
+          }
         }
       }
     },
@@ -17009,6 +19481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode pengembang"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發者模式"
           }
         }
       }
@@ -17051,6 +19529,12 @@
             "state" : "translated",
             "value" : "Aktifkan jenis kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用卡類型"
+          }
         }
       }
     },
@@ -17090,6 +19574,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%(variableName)lld item"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%(variableName)lld 項"
           }
         }
       }
@@ -17131,6 +19621,12 @@
             "state" : "translated",
             "value" : "Pengembangan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發"
+          }
         }
       }
     },
@@ -17170,6 +19666,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fitur beta"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta 功能"
           }
         }
       }
@@ -17211,6 +19713,12 @@
             "state" : "translated",
             "value" : "Rilis"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正式版"
+          }
         }
       }
     },
@@ -17250,6 +19758,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tampilkan info debug"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示除錯資訊"
           }
         }
       }
@@ -17291,6 +19805,12 @@
             "state" : "translated",
             "value" : "Lokasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置"
+          }
         }
       }
     },
@@ -17330,6 +19850,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tentukan lokasi perangkat"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "定位裝置"
           }
         }
       }
@@ -17371,6 +19897,12 @@
             "state" : "translated",
             "value" : "Izin"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "權限"
+          }
         }
       }
     },
@@ -17410,6 +19942,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tampilkan layar permintaan izin"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示權限要求畫面"
           }
         }
       }
@@ -17451,6 +19989,12 @@
             "state" : "translated",
             "value" : "Pembelian dalam aplikasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 內購買"
+          }
         }
       }
     },
@@ -17490,6 +20034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gunakan kontainer debug"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用除錯容器"
           }
         }
       }
@@ -17531,6 +20081,12 @@
             "state" : "translated",
             "value" : "Simpan data di kontainer terpisah dari lingkungan produksi."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將資料儲存喺同正式環境分開嘅容器。"
+          }
         }
       }
     },
@@ -17570,6 +20126,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tambahkan semua kartu contoh"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入所有示範卡"
           }
         }
       }
@@ -17611,6 +20173,12 @@
             "state" : "translated",
             "value" : "Tambahkan kartu uji"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入測試卡"
+          }
         }
       }
     },
@@ -17650,6 +20218,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konverter"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉換器"
           }
         }
       }
@@ -17692,6 +20266,12 @@
             "state" : "translated",
             "value" : "Mata uang"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貨幣"
+          }
         }
       }
     },
@@ -17732,6 +20312,12 @@
             "state" : "translated",
             "value" : "Selesai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
         }
       }
     },
@@ -17771,6 +20357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tambahkan riwayat"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入交易紀錄"
           }
         }
       }
@@ -17813,6 +20405,12 @@
             "state" : "translated",
             "value" : "Jumlah"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "金額"
+          }
         }
       }
     },
@@ -17853,6 +20451,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saldo setelah transaksi"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易後餘額"
           }
         }
       }
@@ -17895,6 +20499,12 @@
             "state" : "translated",
             "value" : "Hari"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日"
+          }
         }
       }
     },
@@ -17934,6 +20544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data riwayat"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交易紀錄資料"
           }
         }
       }
@@ -17976,6 +20592,12 @@
             "state" : "translated",
             "value" : "(Permintaan)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "（要求）"
+          }
         }
       }
     },
@@ -18015,6 +20637,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tampilan hasil"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "結果畫面"
           }
         }
       }
@@ -18056,6 +20684,12 @@
             "state" : "translated",
             "value" : "Tampilkan jenis kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示卡類型"
+          }
         }
       }
     },
@@ -18095,6 +20729,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengembangan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發"
           }
         }
       }
@@ -18136,6 +20776,12 @@
             "state" : "translated",
             "value" : "Fitur"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "功能"
+          }
         }
       }
     },
@@ -18175,6 +20821,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak dipilih"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未揀選"
           }
         }
       }
@@ -18216,6 +20868,12 @@
             "state" : "translated",
             "value" : "Rilis"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正式版"
+          }
         }
       }
     },
@@ -18255,6 +20913,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tampilan daftar pemindaian"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡列表畫面"
           }
         }
       }
@@ -18296,6 +20960,12 @@
             "state" : "translated",
             "value" : "Fitur beta"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta 功能"
+          }
         }
       }
     },
@@ -18335,6 +21005,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu yang didukung dalam versi beta"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta 支援嘅卡"
           }
         }
       }
@@ -18376,6 +21052,12 @@
             "state" : "translated",
             "value" : "Aktifkan kartu yang didukung dalam versi beta."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用 Beta 支援嘅卡。"
+          }
         }
       }
     },
@@ -18415,6 +21097,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengaturan ini tidak dapat diubah jika jenis kartu dipilih di pengaturan pengembangan.\nUntuk menguji “Fitur beta”, buka Pengaturan > Debug > Tampilkan jenis kartu, lalu pilih “Tidak dipilih”."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果喺開發設定揀咗卡類型，就改唔到呢個設定。\n要測試「Beta 功能」，請去設定 > 除錯 > 顯示卡類型，再揀「未揀選」。"
           }
         }
       }
@@ -18456,6 +21144,12 @@
             "state" : "translated",
             "value" : "Fitur eksperimental masih dikembangkan dan mungkin mengandung galat atau masalah lain.\nFitur dapat dihapus atau diubah tanpa pemberitahuan sebelumnya."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "實驗功能仲開發緊，可能有程式錯誤或者其他問題。\n功能可能會更改或者移除，恕不另行通知。"
+          }
         }
       }
     },
@@ -18495,6 +21189,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fitur beta"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beta 功能"
           }
         }
       }
@@ -18536,6 +21236,12 @@
             "state" : "translated",
             "value" : "Ikuti beta"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加入 Beta"
+          }
         }
       }
     },
@@ -18575,6 +21281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lihat di GitHub"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喺 GitHub 睇"
           }
         }
       }
@@ -18616,6 +21328,12 @@
             "state" : "translated",
             "value" : "Lainnya"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他"
+          }
         }
       }
     },
@@ -18655,6 +21373,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versi %(variableName)@"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 %(variableName)@"
           }
         }
       }
@@ -18697,6 +21421,12 @@
             "state" : "translated",
             "value" : "Pilih item"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀選項目"
+          }
         }
       }
     },
@@ -18736,6 +21466,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu saya"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我嘅卡"
           }
         }
       }
@@ -18777,6 +21513,12 @@
             "state" : "translated",
             "value" : "Filter"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "篩選"
+          }
         }
       }
     },
@@ -18816,6 +21558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Semua"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
           }
         }
       }
@@ -18857,6 +21605,12 @@
             "state" : "translated",
             "value" : "Urutkan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "排序"
+          }
         }
       }
     },
@@ -18896,6 +21650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nama kartu (A–Z)"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡名（升序）"
           }
         }
       }
@@ -18937,6 +21697,12 @@
             "state" : "translated",
             "value" : "Nama kartu (Z–A)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡名（降序）"
+          }
         }
       }
     },
@@ -18976,6 +21742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terbaru"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由新至舊"
           }
         }
       }
@@ -19017,6 +21789,12 @@
             "state" : "translated",
             "value" : "Terlama"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由舊至新"
+          }
         }
       }
     },
@@ -19056,6 +21834,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pindai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡"
           }
         }
       }
@@ -19097,6 +21881,12 @@
             "state" : "translated",
             "value" : "Pengaturan"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
         }
       }
     },
@@ -19136,6 +21926,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alat"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工具"
           }
         }
       }
@@ -19177,6 +21973,12 @@
             "state" : "translated",
             "value" : "Tambahkan widget ke Layar Utama untuk melihat saldo kartu terbaru."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將小工具加到主畫面，就可以睇到卡嘅最新餘額。"
+          }
         }
       }
     },
@@ -19216,6 +22018,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Widget"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小工具"
           }
         }
       }
@@ -19257,6 +22065,12 @@
             "state" : "translated",
             "value" : "Log pemindaian (debug)"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讀卡記錄（除錯）"
+          }
         }
       }
     },
@@ -19296,6 +22110,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batas percobaan tercapai."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已達嘗試次數上限。"
           }
         }
       }
@@ -19337,6 +22157,12 @@
             "state" : "translated",
             "value" : "Tanggal lahir salah atau kartu belum terdaftar."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出生日期有誤，或者呢張係非記名卡。"
+          }
         }
       }
     },
@@ -19376,6 +22202,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verifikasi CAPTCHA gagal."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA 驗證失敗。"
           }
         }
       }
@@ -19417,6 +22249,12 @@
             "state" : "translated",
             "value" : "Nomor kartu salah."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "卡號有誤。"
+          }
         }
       }
     },
@@ -19457,6 +22295,12 @@
             "state" : "translated",
             "value" : "Tanggal tidak valid"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日期無效"
+          }
         }
       }
     },
@@ -19496,6 +22340,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Silakan coba lagi."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請再試一次。"
           }
         }
       }
@@ -19538,6 +22388,12 @@
             "state" : "translated",
             "value" : "Masukkan tanggal lahir dengan dua digit pada setiap kolom."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請用兩位數字填寫出生日期嘅每一欄。"
+          }
         }
       }
     },
@@ -19578,6 +22434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verifikasi CAPTCHA gagal."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CAPTCHA 驗證失敗。"
           }
         }
       }
@@ -19620,6 +22482,12 @@
             "state" : "translated",
             "value" : "Masukkan CAPTCHA."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入 CAPTCHA。"
+          }
         }
       }
     },
@@ -19660,6 +22528,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Masukkan nomor kartu 10 atau 16 digit."
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入 10 位或者 16 位卡號。"
           }
         }
       }
@@ -19702,6 +22576,12 @@
             "state" : "translated",
             "value" : "Nomor kartu wajib diisi."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入卡號。"
+          }
         }
       }
     },
@@ -19743,6 +22623,12 @@
             "state" : "translated",
             "value" : "Data tidak diperbarui secara langsung. Riwayat penggunaan satu tahun terakhir ditampilkan hingga kemarin."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "資料唔係即時更新。顯示截至尋日嘅最近一年使用紀錄。"
+          }
         }
       }
     },
@@ -19781,6 +22667,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyCard"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EasyCard"
@@ -19826,6 +22718,12 @@
             "state" : "translated",
             "value" : "Hanya 12 transaksi terakhir yang dapat dibaca."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只可以讀取最近 12 筆交易。"
+          }
         }
       }
     },
@@ -19864,6 +22762,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "icash 2.0"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "icash 2.0"
@@ -19908,6 +22812,12 @@
             "state" : "translated",
             "value" : "Tidak diketahui"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
         }
       }
     },
@@ -19946,6 +22856,12 @@
           }
         },
         "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clipper"
+          }
+        },
+        "yue-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clipper"
@@ -19990,6 +22906,12 @@
             "state" : "translated",
             "value" : "Filter"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "篩選"
+          }
         }
       }
     },
@@ -20029,6 +22951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Semua kartu"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有卡"
           }
         }
       }
@@ -20072,6 +23000,12 @@
             "state" : "translated",
             "value" : "Pilih kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀卡"
+          }
         }
       }
     },
@@ -20113,6 +23047,12 @@
             "state" : "translated",
             "value" : "Saldo kartu transportasi"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡餘額"
+          }
         }
       }
     },
@@ -20153,6 +23093,12 @@
             "state" : "translated",
             "value" : "Kartu IC"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC 卡"
+          }
         }
       }
     },
@@ -20192,6 +23138,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pilih"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀選"
           }
         }
       }
@@ -20234,6 +23186,12 @@
             "state" : "translated",
             "value" : "Pilih kartu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "揀卡"
+          }
         }
       }
     },
@@ -20275,6 +23233,12 @@
             "state" : "translated",
             "value" : "Menampilkan saldo kartu terbaru."
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示卡嘅最新餘額。"
+          }
         }
       }
     },
@@ -20315,6 +23279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saldo kartu transportasi"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "交通卡餘額"
           }
         }
       }
@@ -20358,6 +23328,12 @@
             "state" : "translated",
             "value" : "Shanghai"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海"
+          }
         }
       }
     },
@@ -20399,6 +23375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kartu transportasi Shanghai"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上海公共交通卡"
           }
         }
       }
@@ -20442,6 +23424,12 @@
             "state" : "translated",
             "value" : "Octopus"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八達通"
+          }
         }
       }
     },
@@ -20483,6 +23471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beijing"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京"
           }
         }
       }
@@ -20526,6 +23520,12 @@
             "state" : "translated",
             "value" : "Kartu transportasi Beijing"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "北京一卡通"
+          }
         }
       }
     },
@@ -20567,6 +23567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sichuan"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "四川"
           }
         }
       }
@@ -20610,6 +23616,12 @@
             "state" : "translated",
             "value" : "Chengdu"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成都"
+          }
         }
       }
     },
@@ -20651,6 +23663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hangzhou Tong"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "杭州通"
           }
         }
       }
@@ -20694,6 +23712,12 @@
             "state" : "translated",
             "value" : "Shenzhen Tong"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深圳通"
+          }
         }
       }
     },
@@ -20735,6 +23759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Makau"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳門"
           }
         }
       }
@@ -20778,6 +23808,12 @@
             "state" : "translated",
             "value" : "Macau Pass"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "澳門通"
+          }
         }
       }
     },
@@ -20820,6 +23856,12 @@
             "state" : "translated",
             "value" : "YangCheng Tong"
           }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "羊城通"
+          }
         }
       }
     },
@@ -20861,6 +23903,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hong Kong"
+          }
+        },
+        "yue-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "香港"
           }
         }
       }
