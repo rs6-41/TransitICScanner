@@ -10,21 +10,27 @@ DIRECTORY = Path(__file__).resolve().parent
 APP = DIRECTORY.parent / "iOS/TransitICScanner/TransitICScanner"
 CATALOGS = (
     APP / "Localize/Localizable.xcstrings",
+    APP / "Localize/InfoPlist.xcstrings",
     APP / "CardDefine/cnTunion/cnTunion_cards.xcstrings",
 )
-LOCALES = ("en", "ja", "zh-Hans", "zh-Hant")
-HEADER = ("key", "comment", *LOCALES)
+BASE_LOCALES = ("en", "ja", "zh-Hans", "zh-Hant")
+
+
+def catalog_locales(strings):
+    additional = {locale for entry in strings.values() for locale in entry.get("localizations", {})}
+    return (*BASE_LOCALES, *sorted(additional.difference(BASE_LOCALES)))
 
 
 def render_csv(strings):
     output = StringIO(newline="")
     writer = csv.writer(output, lineterminator="\n", quoting=csv.QUOTE_ALL)
-    writer.writerow(HEADER)
+    locales = catalog_locales(strings)
+    writer.writerow(("key", "comment", *locales))
     for key, entry in strings.items():
         localizations = entry.get("localizations", {})
         values = [
             localizations.get(locale, {}).get("stringUnit", {}).get("value", "")
-            for locale in LOCALES
+            for locale in locales
         ]
         writer.writerow([key, entry.get("comment", ""), *values])
     return output.getvalue()
@@ -35,12 +41,19 @@ def apply_csv(path, strings):
     seen = set()
     with path.open(encoding="utf-8-sig", newline="") as file:
         reader = csv.reader(file, strict=True)
-        if tuple(next(reader, ())) != HEADER:
-            raise ValueError(f"{path.name}: expected header {','.join(HEADER)}")
+        header = tuple(next(reader, ()))
+        required = ("key", "comment", *BASE_LOCALES)
+        locales = header[2:]
+        if (
+            header[:len(required)] != required
+            or len(set(locales)) != len(locales)
+            or any(not locale or locale != locale.strip() for locale in locales)
+        ):
+            raise ValueError(f"{path.name}: invalid header; expected {','.join(required)} followed by optional locales")
         for row in reader:
             location = f"{path.name}:{reader.line_num}"
-            if len(row) != len(HEADER):
-                raise ValueError(f"{location}: expected {len(HEADER)} columns")
+            if len(row) != len(header):
+                raise ValueError(f"{location}: expected {len(header)} columns")
             key, comment, *values = row
             if key in seen:
                 raise ValueError(f"{location}: duplicate key {key!r}")
@@ -57,7 +70,7 @@ def apply_csv(path, strings):
             changed = bool(comment) and entry.get("comment") != comment
             if changed:
                 entry["comment"] = comment
-            for locale, value in zip(LOCALES, values):
+            for locale, value in zip(locales, values):
                 if value == "":
                     continue
                 localization = entry.setdefault("localizations", {}).setdefault(locale, {})
@@ -89,8 +102,8 @@ def write_text(path, content):
 def main():
     parser = argparse.ArgumentParser(description="Sync translation CSVs with Xcode string catalogs.")
     mode = parser.add_mutually_exclusive_group()
-    mode.add_argument("--export", action="store_true", help="Regenerate both CSVs from the catalogs.")
-    mode.add_argument("--dry-run", action="store_true", help="Validate both CSVs and report changes.")
+    mode.add_argument("--export", action="store_true", help="Regenerate CSVs from the catalogs.")
+    mode.add_argument("--dry-run", action="store_true", help="Validate CSVs and report changes.")
     args = parser.parse_args()
     try:
         pending = []
