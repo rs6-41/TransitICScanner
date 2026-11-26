@@ -43,6 +43,8 @@ extension NFCScannerModel {
             return
         case .spEZLink:
             spEZLinkScan(tag, session)
+        case .spFlashPay:
+            session.invalidate(errorMessage: String(localized: "cardList.reader.unsupported"))
         }
     }
 
@@ -64,7 +66,7 @@ extension NFCScannerModel {
             try await twICashScanExternal(using: manager)
         case .spEZLink:
             try await spEZLinkScanExternal(using: manager)
-        case .twEasyCard_old:
+        case .twEasyCard_old, .spFlashPay:
             throw ReaderError.message(
                 String(localized: "cardList.reader.unsupported")
             )
@@ -92,7 +94,7 @@ extension NFCScannerModel {
         case .idKAI:
             await idKAIRead(felicaTag)
         case .cnTunion, .krOneCard, .twICash, .usClipper,
-            .twEasyCard_old, .spEZLink:
+            .twEasyCard_old, .spFlashPay, .spEZLink:
             nil
         }
     }

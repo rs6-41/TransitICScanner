@@ -67,6 +67,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
         Task { @MainActor in
+            guard self.session === session else { return }
             self.session = nil
 
             guard let readerError = error as? NFCReaderError else {
@@ -111,6 +112,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
 
             Log.debug("CoreNFC scan tag connected")
             Task { @MainActor in
+                guard self.session === session else { return }
                 session.alertMessage = String(localized: "scanner.coreNFC.scanning.message")
                 await self.switchCard(id: self.scanOption.id, tag, session)
             }
@@ -122,6 +124,7 @@ final class NFCScannerModel: NSObject, ObservableObject, NFCTagReaderSessionDele
     /// CoreNFC での読取成功時の共通処理。結果を公開し、完了メッセージを表示してセッションを終える。
     @MainActor
     func completeScan(_ result: ScanResult, session: NFCTagReaderSession) {
+        guard self.session === session else { return }
         self.result = result
         session.alertMessage = String(localized: "scanner.coreNFC.scanning.done")
         session.invalidate()

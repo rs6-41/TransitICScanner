@@ -151,7 +151,7 @@ private func spEZLinkResult(using send: APDUSend) async throws -> ScanResult {
         let records = try await spEZLinkHistory(
             using: send, logfileRecordCount: purse.logfileRecordCount, readError: readError
         )
-        history = SPEZLinkHistory.calculatingBalances(records, currentBalanceCents: purse.balanceCents)
+        history = try SPEZLinkHistory.calculatingBalances(records, currentBalanceCents: purse.balanceCents)
     } catch {
         Log.debug("CEPAS history could not be read")
         history = nil
@@ -170,7 +170,7 @@ private func spEZLinkResult(using send: APDUSend) async throws -> ScanResult {
     )
 }
 
-private func spEZLinkHistory(
+func spEZLinkHistory(
     using send: APDUSend, logfileRecordCount: Int, readError: ReaderError
 ) async throws -> [ResultHistory] {
     let (first, sw1, sw2) = try await spEZLinkReadPurse(using: send, payload: Data([0]))
@@ -181,18 +181,14 @@ private func spEZLinkHistory(
     Log.debug("EZ-Link history logfile record count:", logfileRecordCount)
     guard recordsRead > 0, logfileRecordCount == 0 || recordsRead < logfileRecordCount else { return firstPage }
 
-    do {
-        let (second, secondSW1, secondSW2) = try await spEZLinkReadPurse(
-            using: send, payload: Data([UInt8(recordsRead)])
-        )
-        Log.debug(String(format: "CEPAS history second page SW=%02X%02X length=%d", secondSW1, secondSW2, second.count))
-        if secondSW1 == 0x90, let secondPage = SPEZLinkHistory.parse(second) {
-            return firstPage + secondPage
-        }
-    } catch {
-        Log.debug("CEPAS history second page could not be read")
-    }
-    return firstPage
+    let (second, secondSW1, secondSW2) = try await spEZLinkReadPurse(
+        using: send, payload: Data([UInt8(recordsRead)])
+    )
+    Log.debug(String(format: "CEPAS history second page SW=%02X%02X length=%d", secondSW1, secondSW2, second.count))
+    guard secondSW1 == 0x90, let secondPage = SPEZLinkHistory.parse(second),
+        recordsRead + second.count / 16 >= logfileRecordCount
+    else { throw readError }
+    return firstPage + secondPage
 }
 
 private func spEZLinkReadPurse(

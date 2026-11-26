@@ -4,17 +4,34 @@ import Foundation
 enum SPEZLinkHistory {
     static let balanceMappingID = "cepasBalance"
 
-    static func newestFirst(_ history: [ResultHistory]) -> [ResultHistory] {
-        let calendar = Calendar(identifier: .gregorian)
-        return history.sorted {
-            (calendar.date(from: $0.date) ?? .distantPast) > (calendar.date(from: $1.date) ?? .distantPast)
-        }
+    enum HistoryError: Error {
+        case invalidDate
     }
 
-    static func calculatingBalances(_ history: [ResultHistory], currentBalanceCents: Int) -> [ResultHistory] {
+    private static var calendar: Calendar {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Asia/Singapore") ?? TimeZone(secondsFromGMT: 8 * 3600)!
+        return calendar
+    }
+
+    static func newestFirst(_ history: [ResultHistory]) throws -> [ResultHistory] {
+        let calendar = calendar
+        let dated = try history.map { item in
+            var components = item.date
+            components.calendar = calendar
+            components.timeZone = calendar.timeZone
+            guard components.isValidDate(in: calendar), let date = calendar.date(from: components) else {
+                throw HistoryError.invalidDate
+            }
+            return (item: item, date: date)
+        }
+        return dated.sorted { $0.date > $1.date }.map(\.item)
+    }
+
+    static func calculatingBalances(_ history: [ResultHistory], currentBalanceCents: Int) throws -> [ResultHistory] {
         var balanceCents = currentBalanceCents
         var seen = Set<Int>()
-        return newestFirst(history).compactMap { item in
+        return try newestFirst(history).compactMap { item in
             guard let amount = item.amount, seen.insert(item.transactionId).inserted else { return nil }
             var updated = item
             updated.balance = Double(balanceCents) / 100
@@ -28,10 +45,7 @@ enum SPEZLinkHistory {
         let bytes = Array(data)
         guard bytes.count <= 256, bytes.count.isMultiple(of: 16) else { return nil }
 
-        var calendar = Calendar(identifier: .gregorian)
-        if let singapore = TimeZone(identifier: "Asia/Singapore") {
-            calendar.timeZone = singapore
-        }
+        let calendar = calendar
         let epoch = Date(timeIntervalSince1970: 788_889_600)
 
         return stride(from: 0, to: bytes.count, by: 16).compactMap { offset in

@@ -339,7 +339,7 @@ struct ResultView: View {
     ) -> some View {
         let sortedHistory =
             result.converter == .spEZLink
-            ? SPEZLinkHistory.newestFirst(history)
+            ? ((try? SPEZLinkHistory.newestFirst(history)) ?? history)
             : history.sorted { $0.transactionId > $1.transactionId }
 
         ForEach(
