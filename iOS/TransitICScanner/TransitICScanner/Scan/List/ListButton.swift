@@ -69,7 +69,12 @@ struct ListButtonInner: View {
 
     var body: some View {
         HStack {
-            CardImage(name: item.logo)
+            if item.logo.isEmpty {
+                Image(systemName: "creditcard")
+                    .frame(width: 55, height: 55)
+            } else {
+                CardImage(name: item.logo)
+            }
 
             VStack(alignment: .leading) {
                 HStack(spacing: 3) {
@@ -170,6 +175,7 @@ struct ScanningButton: View {
         Button(action: startScan) {
             ListButtonInner(item: item)
         }
+        .disabled(Self.usesSimulatedScan && smartCardManager.selectedSource != .external && item.sample == nil)
         .onChange(of: model.result) {
             // 読取結果を呼び出し元へ渡したら消しておく（同じカードを続けて読めるように）
             guard let result = model.result else { return }

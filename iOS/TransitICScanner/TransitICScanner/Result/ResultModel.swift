@@ -29,6 +29,7 @@ struct ResultHistory: Hashable, Codable {
     var stationOut: UInt8
     var transactionId: Int
     var mappingID: String = ""
+    var responseOrder: Int? = nil
 }
 
 extension ResultHistory {

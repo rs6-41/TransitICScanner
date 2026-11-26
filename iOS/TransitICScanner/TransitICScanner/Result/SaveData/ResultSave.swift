@@ -221,7 +221,7 @@ final class SavedCard {
             return .jpIC
         }
 
-        return ConverterType(rawValue: converterTypeRaw) ?? .jpIC
+        return ConverterType(rawValue: CardIdentity.savedConverterID(converterTypeRaw, cardNumber: idm)) ?? .jpIC
     }
     #endif
 }
@@ -248,6 +248,7 @@ final class SavedHistory {
 
     var transactionId: Int = 0
     var mappingID: String = ""
+    var responseOrder: Int?
 
     var card: SavedCard?
 
@@ -262,7 +263,8 @@ final class SavedHistory {
         lineOut: Int,
         stationOut: Int,
         transactionId: Int,
-        mappingID: String
+        mappingID: String,
+        responseOrder: Int? = nil
     ) {
         self.processType = processType
         self.processType4 = processType4
@@ -280,6 +282,7 @@ final class SavedHistory {
         self.stationOut = stationOut
         self.transactionId = transactionId
         self.mappingID = mappingID
+        self.responseOrder = responseOrder
     }
 
     var date: DateComponents {
@@ -324,7 +327,8 @@ extension SavedCard {
                 lineOut: UInt8(clamping: item.lineOut),
                 stationOut: UInt8(clamping: item.stationOut),
                 transactionId: item.transactionId,
-                mappingID: item.mappingID
+                mappingID: item.mappingID,
+                responseOrder: item.responseOrder
             )
         }
 
@@ -338,7 +342,7 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #else
         return ScanResult(
@@ -351,13 +355,40 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #endif
     }
 }
 
 enum ResultSave {
+    private static func updateEZLinkResponseOrder(
+        saved: [SavedHistory], scanned: [SavedHistory]
+    ) {
+        let savedByDate = Dictionary(grouping: saved, by: \.date)
+        for (date, incoming) in Dictionary(grouping: scanned, by: \.date) {
+            let previous = (savedByDate[date] ?? []).sorted {
+                let lhs = $0.responseOrder ?? Int.max
+                let rhs = $1.responseOrder ?? Int.max
+                return lhs == rhs ? $0.transactionId < $1.transactionId : lhs < rhs
+            }
+            let incomingIDs = Set(incoming.map(\.transactionId))
+            var beforeAnchor: [Int: [SavedHistory]] = [:]
+            var pending: [SavedHistory] = []
+            for item in previous {
+                if incomingIDs.contains(item.transactionId) {
+                    beforeAnchor[item.transactionId] = pending
+                    pending = []
+                } else {
+                    pending.append(item)
+                }
+            }
+            let merged = incoming.flatMap { (beforeAnchor[$0.transactionId] ?? []) + [$0] } + pending
+            for (index, item) in merged.enumerated() {
+                item.responseOrder = index
+            }
+        }
+    }
 
     static func loadResults(
         from modelContext: ModelContext
@@ -445,7 +476,25 @@ enum ResultSave {
                 (card.histories ?? []).map(\.transactionId)
             )
 
+            let previousHistories = card.histories ?? []
+            var scannedEZLinkHistories: [SavedHistory] = []
+            var cepasHistoriesByID: [Int: SavedHistory] = [:]
+            if result.converter == .spEZLink {
+                for savedHistory in previousHistories {
+                    cepasHistoriesByID[savedHistory.transactionId] = savedHistory
+                }
+            }
+
             for history in histories {
+                if let savedHistory = cepasHistoriesByID[history.transactionId],
+                    history.mappingID == SPEZLinkHistory.balanceMappingID
+                {
+                    savedHistory.balance = history.balance
+                    savedHistory.mappingID = history.mappingID
+                    if !scannedEZLinkHistories.contains(where: { $0.transactionId == history.transactionId }) {
+                        scannedEZLinkHistories.append(savedHistory)
+                    }
+                }
                 guard
                     !existingTransactionIDs.contains(
                         history.transactionId
@@ -465,9 +514,13 @@ enum ResultSave {
                     lineOut: Int(history.lineOut),
                     stationOut: Int(history.stationOut),
                     transactionId: history.transactionId,
-                    mappingID: history.mappingID
+                    mappingID: history.mappingID,
+                    responseOrder: history.responseOrder
                 )
 
+                if result.converter == .spEZLink, history.mappingID == SPEZLinkHistory.balanceMappingID {
+                    scannedEZLinkHistories.append(savedHistory)
+                }
                 savedHistory.card = card
 
                 if card.histories == nil {
@@ -481,6 +534,9 @@ enum ResultSave {
                 existingTransactionIDs.insert(
                     history.transactionId
                 )
+            }
+            if result.converter == .spEZLink {
+                updateEZLinkResponseOrder(saved: previousHistories, scanned: scannedEZLinkHistories)
             }
         }
 
