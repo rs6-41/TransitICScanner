@@ -56,7 +56,7 @@ let cardDesignList: [CardDesign] = [
 
     // MARK: idKAI
     CardDesign(type: .idKAI, name: "card.idKAI", imageName: "idKAI", isDefault: true),
-    
+
     // MARL: spEZLink
     CardDesign(type: .spEZLink, name: "card.spEZLink", imageName: "spEZLink", isDefault: true),
 ]
