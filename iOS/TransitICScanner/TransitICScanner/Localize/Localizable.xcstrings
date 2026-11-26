@@ -6832,6 +6832,12 @@
             "state" : "translated",
             "value" : "Licenses"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライセンス"
+          }
         }
       }
     },
@@ -13536,6 +13542,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add a widget to your Home Screen to see your latest card balance."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム画面にウィジェットを追加すると、カードの最新残高を確認できます。"
           }
         }
       }
