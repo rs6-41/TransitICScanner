@@ -27,6 +27,12 @@
             "state" : "translated",
             "value" : "全球IC餘額查詢"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세계 교통카드 잔액 조회"
+          }
         }
       }
     },
@@ -55,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全球IC餘額查詢"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세계 교통카드 잔액 조회"
           }
         }
       }
@@ -85,6 +97,12 @@
             "state" : "translated",
             "value" : "用於讀取卡片資訊"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드 정보를 읽는 데 사용합니다."
+          }
         }
       }
     },
@@ -113,6 +131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用於讀取卡號"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드 번호를 읽는 데 사용합니다."
           }
         }
       }
@@ -143,6 +167,12 @@
             "state" : "translated",
             "value" : "根據您當前的位置推薦卡片"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 위치를 기준으로 카드를 추천합니다."
+          }
         }
       }
     },
@@ -171,6 +201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "此資訊將用於顯示 Google 廣告。\n允許後，我們可以為您顯示更相關的廣告。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 정보는 Google 광고를 표시하는 데 사용됩니다.\n접근을 허용하면 더 관련성 높은 광고를 표시하는 데 도움이 됩니다."
           }
         }
       }
