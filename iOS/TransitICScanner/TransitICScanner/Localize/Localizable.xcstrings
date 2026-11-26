@@ -6826,7 +6826,14 @@
       }
     },
     "LICENSE" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licenses"
+          }
+        }
+      }
     },
     "locate.city.CA.SF" : {
       "comment" : "Area Name\n地域名",
@@ -13524,7 +13531,14 @@
       }
     },
     "tip.widget.message" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a widget to your Home Screen to see your latest card balance."
+          }
+        }
+      }
     },
     "tip.widget.title" : {
       "localizations" : {
