@@ -116,7 +116,7 @@ struct DebugSettingView: View {
                         Task { @MainActor in
                             isLoading = true
                             for card in cardItemsStore.cardItems {
-                                let result = makeSampleResult(model: card)
+                                guard let result = makeSampleResult(model: card) else { continue }
                                 saveAction(result: result)
                                 try? await Task.sleep(nanoseconds: 200_000_000)
                             }

@@ -14,9 +14,9 @@
 ## プラットフォーム
 | OS | リンク | 要件 | 外部リーダー |
 | -- | -- | -- | -- |
-| iOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/GYrHt3mb) | iOS 26.4+ | 対応 |
-| macOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/GYrHt3mb)  | macOS 26.4+ | 必須 |
-| watchOS | [Testflight](https://testflight.apple.com/join/GYrHt3mb)  | watchOS 26.4+ | - |
+| iOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/bANTBhFn) | iOS 26.4+ | 対応 |
+| macOS | [AppStore](https://apps.apple.com/us/app/世界ic残高確認/id6812794719) / [Testflight](https://testflight.apple.com/join/bANTBhFn)  | macOS 26.4+ | 必須 |
+| watchOS | [Testflight](https://testflight.apple.com/join/bANTBhFn)  | watchOS 26.4+ | - |
 | Android | 未実装 | 未定 | 未定 |
 | HarmonyOS | 未実装 | HarmonyOS NEXT | 未定 |
 | Windows | 未実装 | 未定 | 必須 |
@@ -55,6 +55,10 @@
 | 宮城 | icsca | jpIC_icsca | Type-F | [🈹サイバネ](./doc/cards/jpIC.md) | ✅ | |
 | 沖縄 | OKICA | jpOKICA | Type-F | [OKICA](./doc/cards/jpOKICA.md) | ✅ | |
 | 鹿児島 | Rapica/いわさきICカード | jpRapica | Type-F | [Rapica](./doc/cards/jpRapica.md) | ✅ | |
+
+### 東南アジア
+
+- シンガポール [EZ-Link（CEPAS）](./doc/cards/spEZLink.md) — 開発用一覧に残高・取引履歴の読み取りを実装。EZ-Linkの残高と履歴はMacのPaSoRiで確認済み。
 
 ### 北アメリカ
 | 地域 | 名称 | 実装名 | NFC | 規格 | 実装状況 | 備考 |

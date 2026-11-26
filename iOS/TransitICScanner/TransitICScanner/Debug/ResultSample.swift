@@ -1,8 +1,8 @@
 import SwiftUI
 
 // サンプルデータを取得する
-func makeSampleResult(model: CardInfo) -> ScanResult {
-    let sample = model.sample
+func makeSampleResult(model: CardInfo) -> ScanResult? {
+    guard let sample = model.sample else { return nil }
     let info = ResultCardInfo(
         idm: sample.idm, name: model.name, nameShort: model.scanOption.nameShort,
         displayName: localizedString(model.name),

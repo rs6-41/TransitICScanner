@@ -24,6 +24,38 @@ struct ResultSaveTests {
         #expect(cards.first { $0.idm == "SYNTHETIC-CARD-B" }?.balance == 200)
     }
 
+    @Test func ezLinkKeepsResponseOrderAfterRescanningAndReloading() throws {
+        let container = try ModelContainer(
+            for: SavedCard.self, SavedHistory.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none)
+        )
+        let date = DateComponents(year: 2026, month: 11, day: 26, hour: 12, minute: 0, second: 0)
+        let first = ResultHistory(
+            date: date, balance: 0, amount: -1, lineIn: 0, stationIn: 0, lineOut: 0, stationOut: 0,
+            transactionId: 20
+        )
+        var second = first
+        second.transactionId = 10
+        second.amount = -2
+
+        var result = makeResult(idm: "SYNTHETIC-EZ-LINK", balance: 10)
+        result.converter = .spEZLink
+        result.isHistory = true
+        result.history = [second, first]
+        try ResultSave.save(result, in: container.mainContext)
+
+        result.history = try SPEZLinkHistory.calculatingBalances([first, second], currentBalanceCents: 1_000)
+        try ResultSave.save(result, in: container.mainContext)
+
+        let reloaded = ModelContext(container)
+        let saved = try #require(reloaded.fetch(FetchDescriptor<SavedCard>()).first)
+        let records = try #require(saved.result().history)
+        let restored = try SPEZLinkHistory.newestFirst(records.sorted { $0.transactionId < $1.transactionId })
+        #expect(restored.map(\.transactionId) == [20, 10])
+        #expect(restored.map(\.responseOrder) == [0, 1])
+        #expect(restored.map(\.balance) == [10, 11])
+    }
+
     private func makeResult(idm: String, balance: Double) -> ScanResult {
         ScanResult(
             balance: balance,

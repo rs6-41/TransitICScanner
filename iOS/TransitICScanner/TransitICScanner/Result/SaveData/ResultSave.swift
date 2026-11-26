@@ -221,7 +221,7 @@ final class SavedCard {
             return .jpIC
         }
 
-        return ConverterType(rawValue: converterTypeRaw) ?? .jpIC
+        return ConverterType(rawValue: CardIdentity.savedConverterID(converterTypeRaw, cardNumber: idm)) ?? .jpIC
     }
     #endif
 }
@@ -248,6 +248,7 @@ final class SavedHistory {
 
     var transactionId: Int = 0
     var mappingID: String = ""
+    var responseOrder: Int?
 
     var card: SavedCard?
 
@@ -262,7 +263,8 @@ final class SavedHistory {
         lineOut: Int,
         stationOut: Int,
         transactionId: Int,
-        mappingID: String
+        mappingID: String,
+        responseOrder: Int? = nil
     ) {
         self.processType = processType
         self.processType4 = processType4
@@ -280,6 +282,7 @@ final class SavedHistory {
         self.stationOut = stationOut
         self.transactionId = transactionId
         self.mappingID = mappingID
+        self.responseOrder = responseOrder
     }
 
     var date: DateComponents {
@@ -324,7 +327,8 @@ extension SavedCard {
                 lineOut: UInt8(clamping: item.lineOut),
                 stationOut: UInt8(clamping: item.stationOut),
                 transactionId: item.transactionId,
-                mappingID: item.mappingID
+                mappingID: item.mappingID,
+                responseOrder: item.responseOrder
             )
         }
 
@@ -338,7 +342,7 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #else
         return ScanResult(
@@ -351,7 +355,7 @@ extension SavedCard {
             description: CardIdentity.localizationKey(cardDescription),
             savedAt: savedAt,
             fullLog: fullLog,
-            converterTypeRaw: converterTypeRaw.map(CardIdentity.canonicalID)
+            converterTypeRaw: converterTypeRaw.map { CardIdentity.savedConverterID($0, cardNumber: idm) }
         )
         #endif
     }
@@ -445,7 +449,21 @@ enum ResultSave {
                 (card.histories ?? []).map(\.transactionId)
             )
 
+            var cepasHistoriesByID: [Int: SavedHistory] = [:]
+            if result.converter == .spEZLink {
+                for savedHistory in card.histories ?? [] {
+                    cepasHistoriesByID[savedHistory.transactionId] = savedHistory
+                }
+            }
+
             for history in histories {
+                if let savedHistory = cepasHistoriesByID[history.transactionId],
+                    history.mappingID == SPEZLinkHistory.balanceMappingID
+                {
+                    savedHistory.balance = history.balance
+                    savedHistory.mappingID = history.mappingID
+                    savedHistory.responseOrder = history.responseOrder
+                }
                 guard
                     !existingTransactionIDs.contains(
                         history.transactionId
@@ -465,7 +483,8 @@ enum ResultSave {
                     lineOut: Int(history.lineOut),
                     stationOut: Int(history.stationOut),
                     transactionId: history.transactionId,
-                    mappingID: history.mappingID
+                    mappingID: history.mappingID,
+                    responseOrder: history.responseOrder
                 )
 
                 savedHistory.card = card

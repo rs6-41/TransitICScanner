@@ -3,7 +3,19 @@ import Foundation
 /// 現行のカード識別子と、旧バージョンが保存した文字列との互換性を管理する。
 nonisolated enum CardIdentity {
     static func canonicalID(_ identifier: String) -> String {
-        identifier == "idKMT" ? "idKAI" : identifier
+        switch identifier {
+        case "idKMT": "idKAI"
+        default: identifier
+        }
+    }
+
+    static func savedConverterID(_ identifier: String, cardNumber: String) -> String {
+        if identifier == "spFlashPay", cardNumber.hasPrefix("100"),
+            cardNumber.utf8.count == 16, cardNumber.utf8.allSatisfy({ (48...57).contains($0) })
+        {
+            return "spEZLink"
+        }
+        return canonicalID(identifier)
     }
 
     static func localizationKey(_ key: String) -> String {
