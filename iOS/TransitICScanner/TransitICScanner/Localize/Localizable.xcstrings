@@ -4221,13 +4221,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ SG$"
+            "value" : "SG$ %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ SG$"
+            "value" : "SG$ %@"
           }
         },
         "zh-Hans" : {
