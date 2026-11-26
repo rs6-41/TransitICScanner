@@ -387,7 +387,7 @@ Webサイトの仕様変更により利用できなくなる場合がありま�
 短縮カード名","Kagoshima common IC Card","かごしま共通乗車カード","鹿儿岛通用 IC 卡","鹿兒島通用 IC 卡"
 "krOneCard.short","Short Card Name
 短縮カード名","One Card All Pass","One Card All Pass","One Card All Pass","One Card All Pass"
-"LICENSE","","Licenses","ライセンス","",""
+"LICENSE","","Licenses","ライセンス","许可证","授權條款"
 "locate.city.CA.SF","Area Name
 地域名","San Francisco","サンフランシスコ","旧金山","舊金山"
 "locate.city.okinawa.mainIsland","Area Name
@@ -858,7 +858,7 @@ Features may be removed or changed without prior notice.","試験的な機能は
 "tab.scan","","Scan","スキャン","扫描","掃描"
 "tab.setting","","Setting","設定","设置","設定"
 "tab.tool","","Tool","ツール","工具","工具"
-"tip.widget.message","","Add a widget to your Home Screen to see your latest card balance.","ホーム画面にウィジェットを追加すると、カードの最新残高を確認できます。","",""
+"tip.widget.message","","Add a widget to your Home Screen to see your latest card balance.","ホーム画面にウィジェットを追加すると、カードの最新残高を確認できます。","将小组件添加到主屏幕，即可查看卡片的最新余额。","將小工具加入主畫面，即可查看卡片的最新餘額。"
 "tip.widget.title","","Widget","ウィジェット","小组件","小組件"
 "tool.fullLog","","Scan Log (Debug)","スキャンログ (Debug)","扫描日志 (Debug)","掃描日誌 (Debug)"
 "twEasyCard_old.error.server.invalid.audio","","Maximum number of attempts reached.","試行回数の上限に達しました。","已达到尝试次数上限。","已達到嘗試次數上限。"

@@ -6838,6 +6838,18 @@
             "state" : "translated",
             "value" : "ライセンス"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "许可证"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授權條款"
+          }
         }
       }
     },
@@ -13548,6 +13560,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ホーム画面にウィジェットを追加すると、カードの最新残高を確認できます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将小组件添加到主屏幕，即可查看卡片的最新余额。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將小工具加入主畫面，即可查看卡片的最新餘額。"
           }
         }
       }
